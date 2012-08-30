@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+
+  {% if page.title %}
+    <title>{{ page.title }} - {{ site.title }}</title>
+  {% else %}
+    <title>{{ site.title }}</title>
+  {% endif %}
+
+  <!-- Included CSS Files -->
+  <link rel="stylesheet" href="/stylesheets/foundation.css">
+  <link rel="stylesheet" href="/stylesheets/app.css">
+  <link rel="stylesheet" href="/stylesheets/obs.css">
+  
+  <script src="/javascripts/modernizr.foundation.js"></script>
+
+  <!-- IE Fix for HTML5 Tags -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+
+<div class="row" id="header">
+  <div class="four columns header">
+    <a href="/index.html"><img src="/images/obs-logo.png" class="displayed"></a>
+  </div>  
+  <div class="four columns offset-by-three header">
+    <span id="main-nav">
+      {% for link in site.navigation %}
+      {% if page.url contains link.url %}
+      <a href="/{{link.url}}" class="active">{{link.text}}</a> ·
+      {% else %}
+      <a href="/{{link.url}}">{{link.text}}</a> ·
+      {% endif %}
+      {% endfor %}
+    </span> 
+  </div>
+</div>
+
+{{ content }}
+
+<div class="row" id="footer">  
+  <div class="twelve columns centered">  
+    <strong>The <a href="http://www.open-build-service.org/" title="Open Build Service - Home">Open Build Service</a></strong> is an <strong><a href="http://www.opensuse.org/" title="openSUSE.org">openSUSE project</a></strong>. 
+  </div>
+</div>
+  <!-- Included JS Files (Uncompressed) -->
+  <!--
+  
+  <script src="javascripts/modernizr.foundation.js"></script>
+  
+  <script src="javascripts/jquery.js"></script>
+  
+  <script src="javascripts/jquery.foundation.reveal.js"></script>
+  
+  <script src="javascripts/jquery.foundation.orbit.js"></script>
+  
+  <script src="javascripts/jquery.foundation.navigation.js"></script>
+  
+  <script src="javascripts/jquery.foundation.buttons.js"></script>
+  
+  <script src="javascripts/jquery.foundation.tabs.js"></script>
+  
+  <script src="javascripts/jquery.foundation.forms.js"></script>
+  
+  <script src="javascripts/jquery.foundation.tooltips.js"></script>
+  
+  <script src="javascripts/jquery.foundation.accordion.js"></script>
+  
+  <script src="javascripts/jquery.placeholder.js"></script>
+  
+  <script src="javascripts/jquery.foundation.alerts.js"></script>
+  
+  -->
+  
+  <!-- Included JS Files (Compressed) -->
+  <script src="/javascripts/foundation.js"></script>
+
+  <!-- Initialize JS Plugins -->
+  <script src="/javascripts/app.js"></script>
+    
+  <script type="text/javascript">
+   $(window).load(function() {
+       $('#featured').orbit({
+       directionalNav: false,
+       captions: true,
+       });
+   });
+  </script>
+  
+  <script type="text/javascript">
+  $(document).ready(function() {
+    $('#Video1ModalButton').click(function() {
+      $('#Video1Modal').reveal();
+    });
+    $('#Video2ModalButton').click(function() {
+      $('#Video2Modal').reveal();
+    });
+    $('#Video3ModalButton').click(function() {
+      $('#Video3Modal').reveal();
+    });
+  });
+</script>
+  </body>
+</html>
