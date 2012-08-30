@@ -1,0 +1,17 @@
+title: Open Build Service
+pygments: true
+permalink: /:month/:day/:year/:title.html
+
+navigation:
+- text: About
+  url: about/
+- text: Download
+  url: download/
+- text: Help
+  url: help/
+- text: Blog
+  url: blog/
+- text: Team
+  url: team/
+- text: Buy
+  url: buy/

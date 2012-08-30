@@ -1,0 +1,52 @@
+---
+layout: post
+title: You Most Awesome Title
+category: documentation
+author: The Author
+---
+
+A First Level Header
+====================
+
+A Second Level Header
+---------------------
+
+This is just a regular paragraph. With one or
+more lines of text.
+
+### Header 3
+
+> For blockquotes you can use email style angle brackets
+
+Some of these words _are emphasized_.
+Or you __use two underscores instead__ for strong emphasis.
+
+* This is a
+* unordered
+* list
+
+1. This is a
+2. numbered 
+3. list
+
+This is a [link to an example page](http://example.com/)
+
+Or you can define footnotes for links like this: 
+I get 10 times more traffic from [Google][1] than from
+[Yahoo][2] or [MSN][3].
+
+[1]: http://google.com/
+[2]: http://search.yahoo.com/
+[3]: http://search.msn.com/
+
+![Image Alt Text](/path/to/img.jpg "Image Title")
+
+You can highlight code with:
+
+{% highlight xml %}
+<publish>
+<disable />
+</publish>
+{% endhighlight %}
+
+For further markdown syntax read http://daringfireball.net/projects/markdown/

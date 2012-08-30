@@ -1,0 +1,63 @@
+---
+layout: post
+title: Open Build Service Did It!
+category: project
+author: Klaas Freitag
+---
+<p>
+The <a href="http://news.opensuse.org/2008/09/20/development-release-opensuse-111-beta-1-now-available/"> openSUSE 11.1 beta 1
+release</a> marks a significant change for openSUSE. For the first time in 11 years, a SUSE release was not built in the SUSE
+internal AutoBuild service -- openSUSE 11.1 beta 1 was built using the Open Build Service!
+</p>
+
+<p>
+AutoBuild was the first full automated system on this planet which built Linux distributions.
+It served us well, with reliable building of the SUSE distributions. It guaranteed that
+depending packages got rebuilt to avoid unexpected incompatibilities, and guaranteed that
+a build is reproducible by setting up a complete system for each package build.
+This happens around 3,500 times per full distribution build and per architecture. This results
+in more than 10 thousand system installations for building a openSUSE distribution once!
+</p>
+
+<p>
+However, 11 years is a long time in the IT industry. New requirements are appearing and the
+openSUSE project in particular needed an open system, not limited to SUSE/Novell employees.
+</p>
+<p>
+The Open Build Service is designed with all the good ideas from AutoBuild, but as a more
+transparent and distributable system. For example we invented the
+<a href="http://en.opensuse.org/Build_Service/Concepts/Product_Definition">Product Definition</a>
+lately, which describes all needed information describing all openSUSE media. The Build Service
+automatically creates needed packages and <a href="http://en.opensuse.org/KIWI">KIWI</a> image
+build descriptions, and will create the openSUSE product flavours, like the ISO images, or
+installation source trees.
+</p>
+<p>
+This functionality makes it easy to rebuild the entire distribution. Together with the
+functionality of Build Service interconnect it makes it even possible that you can rebuild the
+openSUSE distribution at home. Either by recompiling it completely, replacing only a few packages,
+or just adding one.
+</p>
+
+<p>
+Projects like the <a href="http://en.opensuse.org/Education">openSUSE Education</a> project can use
+this to create their derived distribution more easily. Howeever, the current status is that some of
+this functionality needs still manual work. We will release a new version of the Build Service as
+soon as we have automated it fully and integrated it well.
+</p>
+<p>
+It is now really transparent to see what state things are in, just by visiting the openSUSE:Factory
+project in Build Service. Everybody can also join in to fix stuff using the OBS collaboration features-
+</p>
+
+<p>
+All this new transparency, flexibility, and reliability of the OBS led to the situation that SUSE
+currently is also switch internally from AutoBuild to Build Service for building SUSE Linux Enterprise 11.
+This proves that this system is also good enough for SUSE to rely on  it. Even though we need to add
+some more functionality and fix some more bugs!
+</p>
+
+<p>
+<em>PS: Greetings to SUSE founder Burchard Steinbild, who implemented the first version of AutoBuild,
+which was the reason of the success of SUSE :)</em>
+</p>

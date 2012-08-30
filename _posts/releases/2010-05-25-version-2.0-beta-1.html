@@ -1,0 +1,85 @@
+---
+layout: post
+title: Open Build Service 2.0 Beta1 released
+category: releases
+---
+
+{% include about.inc %}
+
+<p>
+This is the first beta release of version 2.0. Version 2.0 is planned to be released on June 10th.
+We have updated the reference server <a href="http://build.opensuse.org/" target="_blank">http://build.opensuse.org</a>
+with the current code stream as part of our testing.  We invite others running a build service to
+test the code and give feedback via the <a href="http://lists.opensuse.org" target="_blank">opensuse-buildservice</a>
+mailing list and report bugs in <a href="https://bugzilla.novell.com/enter_bug.cgi?alias=&amp;assigned_to=bnc-team-screening%40forge.provo.novell.com&amp;blocked=&amp;bug_file_loc=http%3A%2F%2F&amp;bug_severity=--Please%20Select--&amp;bug_status=NEW&amp;cf_biz_priority=&amp;cf_blocker=---&amp;cf_foundby=---&amp;cf_nts_priority=&amp;cf_partnerid=&amp;cloned_bug_id=&amp;comment=&amp;component=BuildService&amp;contenttypeentry=&amp;contenttypemethod=autodetect&amp;contenttypeselection=text%2Fplain&amp;data=&amp;deadline=&amp;dependson=&amp;description=&amp;estimated_time=0.0&amp;flag_type-2=X&amp;flag_type-3=X&amp;form_name=enter_bug&amp;keywords=&amp;maketemplate=Remember%20values%20as%20bookmarkable%20template&amp;op_sys=Other&amp;priority=P5%20-%20None&amp;product=openSUSE.org&amp;qa_contact=adrian%40novell.com&amp;rep_platform=Other&amp;short_desc=&amp;version=unspecified" target="_blank">bugzilla</a>.
+</p>
+
+<p>
+Beta1 is feature complete, new features will go in the next major release (release planned for end of 2010),
+we will concentrate on fixing bugs now.
+</p>
+
+<h4>Major Changes</h4>
+
+<h5>New Web UI Tailor-Made for Packagers</h5>
+<p>
+The new Web UI makes your work more efficient as stuff is where it is expected, it loads faster
+and gives you a better access to projects, packages and meta data.
+</p>
+
+<h5>Public Read Access For Convenient Collaboration</h5>
+<p>
+Anonymous access gets you to packages and projects without log-in. This is pretty convenient for
+the users and promotes all packages in the Build Service more to the world as now search engines
+can index the Build Service as well. It makes it also easy to collaborate with other developers
+to show them your patches or log files.
+</p>
+
+<h5>New Features for Cooperation in a Team</h5>
+<p>
+With obs 2.0 review handling by a team is possible and roles can get assigned to groups instead
+of just to a single person.
+</p>
+
+<h5>Additional Changes</h5>
+<p>
+The full list of changes is available as part of the <a href="/roadmap.html">roadmap</a>
+and includes also the following enhancements:
+</p>
+
+<ul>
+ <li>An easy way to view unsubmitted changes in development projects or new upstream releases.
+    This is used especially for our openSUSE distribution development.</li>
+ <li> The request system has been enhanced: A new request type to add or change the user list
+    of packages or projects has been added. Also review handling is now possible to allow a team to review changes prior to accepting a request.</li>
+ <li>Developers can receive notifications if one of their package gets branched by others.</li>
+ <li>Improved source handling: It's possible to undelete packages.  Meta data are now under
+    version control.</li>
+ <li>The build service has seen many speedups so that packages get build faster.</li>
+</ul>
+
+
+<h4>Try OBS 2.0 Beta 1</h4>
+
+<p>
+{% include reference_server.inc %}
+</p>
+
+<p>
+{% include download.inc %}
+</p>
+
+<h4>Thanks!</h4>
+<p>
+This is a release where many different people were involved in development and even more in
+testing by using the openSUSE instance. We received also a number of good feature requests
+that got implemented. Thanks to everybody that participated!
+</p>
+
+<p>
+We'd like to give special credit for the great WebUI work done by the
+<a href="http://en.opensuse.org/openSUSE:Boosters_team" target="_blank">Boosters team</a>, 
+mainly Coolo and Tom!
+</p>
+
+<p><em>Update:</em> Some more technical details are <a href="http://lists.opensuse.org/opensuse-buildservice/2010-05/msg00264.html" target="_blank">available as well</a>.</p>

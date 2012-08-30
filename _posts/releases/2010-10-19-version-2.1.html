@@ -1,0 +1,65 @@
+---
+layout: post
+title: Open Build Service 2.1 released
+category: releases
+---
+
+<p>
+The Open Build Service (OBS) - is  now officially at release 2.1. We're delighted with the improvements
+in this release, including an enhanced  web interface, integration with online code management systems and
+better access controls.
+</p>
+
+<h4>Key Features</h2>
+
+<h5> Enhanced web user interface</h5>
+<div class="row">
+  <div class="six columns">
+    <p>
+    This iteration has enhanced the web user interface of Open Build Service  with features that were previously
+    only in the osc command line client. It now allows submitting of packages to other projects, showing a history
+    of changes and who did them, with  associated comments. This means that the full work flow needed to build 
+    packages, contribute them to projects and collaborate on them is  available from the web interface.
+    </p>
+  </div> 
+  <div class="six columns">
+    <img title="Source Services" src="/images/posts/obs21-sourceservice.png" alt="Source Services Screenshot" width="240" height="260" />
+  </div>
+</div>    
+
+<h5>Integration with online source code management tools</h5>
+<p>
+Users of the Build Service may now access a new concept called 'source services'. Source services allow, for
+example, the automatic checkout of source code for a package from a remote server via Git or  Subversion,
+building a tar ball from these checked out sources, and using them for building a package. It also enables 
+direct download of tar balls from remote sites. This allows packagers to work with external sources without 
+downloading them to their own workstations, and makes it easy to rebuild packages after upstream changes 
+with a single click.
+</p>
+
+<h5>Better access controls</h5>
+<p>
+The access controls have been enhanced so that read/write access to a project  can be granted on an individual basis.
+This allows for tighter control of work flows where needed. You can for example ensure people don't have access to
+security updates while they are being tested.
+</p>
+
+
+<h2>Thanks</h2>
+<p>
+This release of the OBS has received many contributions from other  companies, community  members and foundations, 
+making this release a  truly collaborative product. We would like to thank everyone who helped make the
+Open Build Service 2.1 possible! Special thanks go to Martin Mohring and the OBS team at The Linux Foundation, 
+who contributed the extended access handling.
+</p>
+
+<h4>About the Build Service</h4>
+{% include about.inc %}
+
+<h4>Try OBS 2.1</h4>
+
+<h5>Reference Server - build.opensuse.org</h5>
+{% include reference_server.inc %}
+
+<h5>Download</h5>
+{% include download.inc %}

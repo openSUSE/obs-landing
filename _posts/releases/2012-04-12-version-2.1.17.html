@@ -1,0 +1,34 @@
+---
+layout: post
+title: OBS 2.1.17 released
+category: releases
+---
+
+<p>
+Yet another OBS 2.1 release is out there. 2.1.17 brings compatibility
+with OBS 2.3 instances and has an extra protection layer against programming
+errors on the rails level.
+</p>
+
+<h4>Changes</h4>
+<ul>
+  <li>enforce rubygems < 1.6.0 to avoid runtime errors
+  <li> update to version 2.1.17
+  <li> Support linking to remote OBS 2.3 package which contains links with vrev attribute
+  <li> Added new default targets for SUSE Linux Enterprise SP1 and SP2 builds
+  <li> Removed RHEL-4 default target (EOL)
+  <li> Additional protection layer against a possible undetect security leak due to mass-assignment handling
+</ul>
+
+<h4>Bugfixes</h4>
+<ul>
+<li> reopen not accepted reviews when re-opening a request
+<li> fixed icon links in distribution list
+<li> fixed execution with rails 2.3.8 on SLE 11 SP 1
+</ul>
+
+<h4>Try OBS 2.1.17</h4>
+
+{% include reference_server.inc %}
+
+{% include download.inc %}

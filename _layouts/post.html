@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+<div class="row">
+  <div class="twelve columns">
+    <h3 class="post-headline"><a href="{{ page.url }}">{{ page.title }}</a></h3>
+    <div class="post-meta">
+    {% if page.author %}
+    by {{ page.author }}
+    {% else %}
+    by the OBS Team
+    {% endif %}
+    on {{ page.date | date: "%B %d. %Y" }}
+    {% if page.category %} in the category <a href="/categories/{{ page.category | slugize }}">{{ page.category }}</a> {% endif %}  
+    </div>
+  {{ content }}
+  </div>
+  
+   <div class="four columns post-nav">
+    {% if page.previous.url %}
+      &laquo;&nbsp;<a href="{{ page.previous.url }}" rel="previous" title="Previous Post: {{ page.previous.title }}">{{ page.previous.title }}</a>
+    {% endif %}
+  </div>
+  <div class="four columns post-nav">
+    <p>|</p>
+  </div>
+  <div class="four columns post-nav"> 
+    {% if page.next.url %}
+      <a href="{{ page.next.url }}" rel="next" title="Next Post: {{ page.next.title }}">{{ page.next.title }}</a>&nbsp;&raquo;
+    {% endif %}
+  </div>
+    <br />
+  </div>
+</div>

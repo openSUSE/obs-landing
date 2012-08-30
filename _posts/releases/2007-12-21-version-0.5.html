@@ -1,0 +1,45 @@
+---
+layout: post
+title: Open Build Service 0.5 (Poinsettia) Released
+category: releases
+---
+<p>
+The openSUSE project releases the version 0.5 of the openSUSE Build Service.
+This code drop does provides the same functionality as on <a href="https://build.opensuse.org/">build.opensuse.org</a>
+the first time as official <strong>tar ball release</strong>. OBS 0.5 provides
+the complete infrastructure to build single hardware architecture distributions.
+System images can be created via <a href="http://en.opensuse.org/Portal:KIWI">KIWI</a>.
+</p>
+
+<h3>Overview of enhancements in OBS 0.5:</h3>
+<ul> 
+<li>Improved repository generation. Repositories get generated out of process of the scheduler.
+    This makes the scheduler faster and more reliable</li>
+<li>Improved signing for repositories. Each project get now its individual gpg key for the repositories</li>
+<li>Convenient project deletion now available </li>
+<li>Bugzilla linkage. Link added to create new Bugzilla reports for certain projects or packages</li>
+<li>For a detailed list look <a href="http://en.opensuse.org/openSUSE:Build_Service_Roadmap#Milestone_Poinsettia_.28Version_0.5.29.2C_end_of_2007">at our roadmap</a></li>
+</ul>
+
+<h3>About the Open Build Service</h3>
+<p>
+The Open Build Service is designed to host sources of packages. It can reuse sources from other
+source repository systems like svn or cvs, but it is more often used to maintain all necessary files
+around a tar ball release from another open source project. 
+</p>
+<p>
+The OBS features a project modell, which easily allows team building around a set of packages and
+allow the cooperation between upstream software developers and multiple packagers. It does also enable
+developers to adapt existing packages and to offer different flavors of them for their use cases.
+</p>
+<p>
+The goal of the openSUSE Build Service is to become a complete open development platform for the
+Linux distributions. Therefore it does focus esp. on consistent package building via automatic
+package rebuilding in case of changes of dependend package changes to guarantee always a consistent build. 
+</p>
+<p>
+<a href="http://en.opensuse.org/openSUSE:Build_Service_Roadmap">Next years developing</a> will focus on
+improving the collaboration features to allow submissions requests to all projects, what will allow direct
+contributions to distributions. Later on we will complete the necessary features for creating installation
+medias and improving the End-User interface.
+</p>

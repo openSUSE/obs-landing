@@ -1,0 +1,57 @@
+---
+layout: post
+title: Open Build Service version 2.3 released
+category: releases
+---
+<p>
+The <a href="http://www.open-build-service.org" title="OBS Home Page">Open Build Service(OBS)</a>
+version 2.3.0 brings new features especially in the Maintenance and Release Management area and is
+the latest stable maintained version. It is recommended to update to this version to get improved
+security protections. It is also the first version which comes with
+<a href="http://www.open-build-service.org/contact/">official support offerings</a> from B1-Systems
+backed by SUSE.
+</p>
+
+<h4>Major Features</h4>
+<p>
+OBS 2.3 brings the functionality to maintain a released software product in an efficient and transparent way. This includes
+</p>
+
+<ul>
+  <li>Update coordination: One or more maintenance groups can decide if and when to start or release an update. This includes also the tracking of new, running and processed updates.</li>
+  <li>QA and Review integration: The current state of an update is always visible and trackable. Review processes can be integrated.</li>
+  <li>Release Management: Isolated build and tested updates can be released or revoked via OBS mechanism.</li>
+  <li>Multiple code stream support: An issue can be handled for multiple code streams.</li>
+  <li>Documentation support: The documentation of an update for the end-user is integrated</li>
+</ul>
+
+<p>
+This functionality is already used for doing the
+<a href="https://build.opensuse.org/project/maintenance_incidents?project=openSUSE%3AMaintenance"
+   title="Running openSUSE Incidents">maintenance updates for the openSUSE distributions</a>.
+The features can be used all together or in parts for own products.
+</p>
+<p>
+
+<h4>In addition OBS 2.3 provides</h4>
+<ul>
+  <li>A greatly improved web interface, including user management, syntax highlighted source editor and improved source diff review views</li>
+  <li>Improved Cross Build Support via Qemu</li>
+  <li>Functionality to hide entire projects</li>
+  <li>Issue tracking support, tracking documented fixes in external bugzilla, fate and CVE instances in packages.</li>
+</ul>
+
+<h4>Updating</h4>
+<p>
+It is recommended to read the
+<a href="https://github.com/openSUSE/open-build-service/blob/2.3/ReleaseNotes-2.3"
+   title="OBS 2.3 Release Notes">Release Notes</a>
+before updating an instance. 
+<p>
+        
+<h4>Try OBS 2.3</h4>
+{% include reference_server.inc %}
+{% include download.inc %}
+
+<h4>About the Open Build Service</h4>
+{% include about.inc %}

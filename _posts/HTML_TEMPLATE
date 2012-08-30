@@ -1,0 +1,12 @@
+---
+layout: post
+title: You Most Awesome Title
+category: documentation
+author: The Author
+---
+
+Just use any HTML you want. For a list of elements like
+Buttons, Navigation, Tabs, Alerts, Labels or Panels 
+checkout the documentation of our toolkit "foundation"
+
+http://foundation.zurb.com/docs/index.php

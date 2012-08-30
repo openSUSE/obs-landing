@@ -1,0 +1,49 @@
+---
+layout: post
+title: Build Service team releases new versions fixing security problems
+category: releases
+---
+<p>
+The Open Build Service team has released verison 2.0.8 and 2.1.6. of OBS.
+Both versions are fixing a critical security leak which can be used to modify
+projects or packages without having write permission to them. We highly recommend
+to update your instance of OBS as soon as possible to these new versions.
+Version 1.7 is not affected by this issue.
+<em>Thanks to Marcus Hüwe for reporting this issue.</em>
+</p>
+
+<h4>Other Fixes in OBS 2.1.6</h4>
+<p>
+Additionally OBS 2.1.6 is also fixing security issues in LDAP mode and a
+possible crossite scripting attack vector on the login screen (full XSS protection
+in all webui interfaces will be part of OBS 2.3).
+<em>Thanks to Dean Pierce from Intel for discussing these issues and possible solutions with us.</em>
+</p>
+
+<h5>Security fixes</h5>
+<ul>
+  <li>api: fix security leak which allowed to modify packages or projects without write access (CVE-2011-0466)</li>
+  <li>api: change password in LDAP mode was possible for foreign user (bnc #648982)</li>
+  <li>webui: Fix possible XSS attack vectors in login page (bnc #669909, CVE-2011-0462)</li>
+</ul>
+
+<h5>Bug fixes</h5>
+<ul>
+  <li>webui: Fix link to moved OBS web forums</li>
+  <li>webui: Fix adding of repositories from remote projects in advanced repository interface</li>
+  <li>api and webui: Do not use (and fail with) rails 3 environment</li>
+  <li>api: allow admins to raise "sourceaccess" permissions on existing projects or packages</li>
+  <li>api: do not allow to create packages with invalid chars via branch command</li>
+  <li>api: do not fail on "mbranch" when a package gets found directly and indirectly via project link</li>
+  <li>backend: Allow browsing of repositories of remote projects (fixes advanced webui view for adding repos)</li>
+</ul>
+</blockquote>
+
+<h4>Download</h4>
+{% include download.inc %}
+
+<h4>Update Notes</h4>
+<p>
+Updaters from any OBS 2.1 release can just upgrade the packages and restart all services. Updaters from former
+releases should read the README.UPDATERS file.
+</p>

@@ -1,0 +1,44 @@
+---
+layout: post
+title: Open Build Service 1.7 released
+category: releases
+author: Adrian Schröter
+---
+<p>
+Today the team released the latest version of the Open Build Service, a tool
+that provides software developers with the ability to create and release software
+for openSUSE, SUSE Linux Enterprise and other Linux distributions, including
+Fedora, Red Hat, Mandriva, Debian and Ubuntu. The Open Build Service allows
+developers to create packages, software stacks or even whole distributions
+as well as use and integrate them with other open source components.
+</p>
+
+<p>
+This release brings beside bug fixes also some new features back ported from
+master branch. The new features makes the initial setup easier and offers
+optionally also authentification against a LDAP server.
+</p>
+
+<p>
+Users can download the <a href="http://en.opensuse.org/Build_Service/OBS-Appliance">OBS Appliance</a>
+as USB, hard disc -, VMware image or Live CD. The new administration interface allows
+the intial setup via your web browser with this release.
+</p>
+
+<h3>Key features of the 1.7 release:</h3>
+<ul>
+  <li><a href="http://en.opensuse.org/openSUSE:Build_Service_Concept_AttributeStorage">A new attribute system</a> -
+      A flexible system that stores information related to projects or packages. This gives a good overview and
+      enables teams or individuals to use the Open Build Service as database for their information.</li>
+  <li>Faster build speeds – The SAT Solver speeds up the dependency calculation by factor of 1,000, which means
+      a package change submitted to the build service starts building in seconds instead of minutes.</li>
+  <li>Customized branding - For local instances of the openSUSE Build Service, this release offers the ability
+      to add custom branding and the Web user interface (UI) now supports individual themes.</li>
+  <li>An <a href="http://en.opensuse.org/Build_Service/OBS-Appliance">Open Build Service server appliance</a> -
+      Built as hard disk image and live CD, this appliance allows users to run the system from a USB stick and
+      just replace it with a new version on update without losing the data they have submitted to the server.</li>
+  <li>In addition to bug fixes, other improvements include a request system that now offers
+      <a href="http://en.opensuse.org/Build_Service/Concepts/Review">a review mechanism</a>, improved status
+      information (package build dependencies, repository status, etc.), and improved merge handling of sources
+      for automated conflict resolution.</li>
+</ul>

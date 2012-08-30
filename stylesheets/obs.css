@@ -1,0 +1,64 @@
+html, body {
+  color: #666;
+  background: #F2F3F4 url('/images/bg-paper.png') repeat fixed 0 0;
+}
+
+#main-nav {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+}
+
+#footer { 
+  text-align: center;
+  color: #999;
+  font-size: 0.8em;
+}
+
+#hero {
+  border: 5px solid white;
+  box-shadow: 0 1px 2px #999;
+  -moz-box-shadow: 0 1px 2px #999;
+  -webkit-box-shadow: 0 1px 2px #999;
+}
+
+#featured {
+  height: 350px;
+}
+#featured img { display: none; }
+#featured.orbit { background: none; }
+#featured.orbit img { display: block; }
+
+.post-headline {
+  margin-bottom: 0.1em;
+}
+
+.post-meta { 
+  margin-top: 0.1em;
+  margin-bottom: 1em;
+  color: #999;
+  font-size: 0.8em;
+}
+
+.post-nav {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  text-align: center;
+}
+
+.post-more {
+  text-align: right;
+}
+
+IMG.displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto }
+
+.row {
+  margin-top: 2em;
+}
+
+.header {
+  height: 101px;
+}
