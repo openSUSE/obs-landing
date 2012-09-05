@@ -3,23 +3,27 @@ html, body {
   background: #F2F3F4 url('/images/bg-paper.png') repeat fixed 0 0;
 }
 
-#main-nav {
-  text-align: center;
-  position: absolute;
-  bottom: 0;
-}
-
 #footer { 
   text-align: center;
   color: #999;
-  font-size: 0.8em;
 }
 
-#hero {
+#hero-slider {
   border: 5px solid white;
   box-shadow: 0 1px 2px #999;
   -moz-box-shadow: 0 1px 2px #999;
   -webkit-box-shadow: 0 1px 2px #999;
+}
+
+#hero-text {
+  text-align: justify;
+}
+#hero-text h3 {
+  text-align: center;
+}
+#hero-buttons a {
+  width: 100%;
+  margin: 0 auto;
 }
 
 #featured {
