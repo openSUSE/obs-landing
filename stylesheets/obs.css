@@ -62,3 +62,38 @@ IMG.displayed {
 .header {
   height: 101px;
 }
+
+.presentation {
+background: rgba(0, 0, 0, 0.05);
+-webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 0,rgba(255, 255, 255, 0.8) 0 1px 0;
+-moz-box-shadow: rgba(0,0,0,0.2) 0 -1px 0,rgba(255,255,255,0.8) 0 1px 0;
+box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 0,rgba(255, 255, 255, 0.8) 0 1px 0;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+-ms-border-radius: 5px;
+-o-border-radius: 5px;
+border-radius: 5px;
+width: 350px;
+height: 322px;
+margin:0 auto;
+}
+
+.presentation-meta {
+text-align: justify;
+padding:10px;
+margin:0 auto;
+}
+
+.screencast {
+background: rgba(0, 0, 0, 0.05);
+-webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 0,rgba(255, 255, 255, 0.8) 0 1px 0;
+-moz-box-shadow: rgba(0,0,0,0.2) 0 -1px 0,rgba(255,255,255,0.8) 0 1px 0;
+box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 0,rgba(255, 255, 255, 0.8) 0 1px 0;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+-ms-border-radius: 5px;
+-o-border-radius: 5px;
+border-radius: 5px;
+margin:0 auto;
+}
+

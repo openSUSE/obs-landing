@@ -12,15 +12,18 @@
 		<div class="row">
 			<div class="twelve columns author-title">
 				<h4>Marcus Hüwe</h4>
-				<h5>Commandline Client Hacker, Youngie  </h5>
+				<h5>Commandline Client Hacker, whelp</h5>
 			</div>
 			<div class="twelve columns author-bio">
 				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in purus id tellus hendrerit
-					tempus eget eu mauris. Fusce tincidunt massa id libero varius ultrices. In non ligula felis.
-					Nullam eu egestas tortor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices 
-					posuere cubilia Curae; Nulla condimentum interdum semper. Pellentesque sed interdum neque. 
-					Nulla rhoncus faucibus orci sed tristique. Aliquam ac augue augue.
+					Marcus is currently getting his education in computer science at the University of Paderborn. When he's not busy
+					with lectures, writing papers and enjoying the sweet student life he is taking care of the OBS command line client
+					and library. His participation in the Free and Open Source community sparked as packager for the PackMan project, a 3rd party
+					application repository for SUSE/openSUSE distributions.
+				</p>
+				<p>
+				  As the only guy not well in his thirties and with full hair he proudly represents the next generation of Open Build
+				  Service hackers.
 				</p>
 			</div>
 			<div class="twelve columns author-links">

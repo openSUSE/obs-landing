@@ -16,11 +16,15 @@
 			</div>
 			<div class="twelve columns author-bio">
 				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in purus id tellus hendrerit
-					tempus eget eu mauris. Fusce tincidunt massa id libero varius ultrices. In non ligula felis.
-					Nullam eu egestas tortor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices 
-					posuere cubilia Curae; Nulla condimentum interdum semper. Pellentesque sed interdum neque. 
-					Nulla rhoncus faucibus orci sed tristique. Aliquam ac augue augue.
+					Henne is the newest addition to the OBS team. Previously fully engaged in the openSUSE project
+					as founding and board member, admin and infrastructure hacker, marketing fumbler and packager he brings
+					the experience of building an open source project from the ground up. Henne can also draw upon a 10+
+					year career working for SUSE as package maintainer and project manager.
+				</p>
+				<p>
+				  You will see him beefing up the OBS web client, project resources, documentation and promotion when he's not
+				  out viciously supporting his hometown football club S.V. Werder Bremen, hiking the alps or exploring the breweries
+				  of the franconian switzerland.
 				</p>
 			</div>
 			<div class="twelve columns author-links">

@@ -12,21 +12,28 @@
 		<div class="row">
 			<div class="twelve columns author-title">
 				<h4>Stephan Kulow</h4>
-				<h5>Web UI and API hacker, most important user, braniac</h5>
+				<h5>Web UI and API hacker, most important user!</h5>
 			</div>
 			<div class="twelve columns author-bio">
 				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in purus id tellus hendrerit
-					tempus eget eu mauris. Fusce tincidunt massa id libero varius ultrices. In non ligula felis.
-					Nullam eu egestas tortor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices 
-					posuere cubilia Curae; Nulla condimentum interdum semper. Pellentesque sed interdum neque. 
-					Nulla rhoncus faucibus orci sed tristique. Aliquam ac augue augue.
+          After years of being the source maintainer of the KDE desktop environment (over 6 million lines
+					of code and more than 1800 contributors) and being the release manager of two different GNU/Linux
+					distributions (Caldera and openSUSE) Stephan "Coolo" Kulow knows what makes maintainers of huge
+					projects tick and uses that knowledge to make the OBS better suited for this job.
+				</p>
+				<p>
+				  As a father of two, passionate gamer of project manager games (Diabolo, Age of Empires) and football
+				  statistics freak Coolo obviously likes to guard a sacks of fleas. And as the openSUSE Release Manager
+				  he is deemed by us our most important user. If you know Coolo it won't surprise you that he won't be
+				  reduced to using OBS and takes action with hacking the web client, API and other components to make
+				  his work easier.
 				</p>
 			</div>
 			<div class="twelve columns author-links">
 				<ul class="link-list">
 				<li><a href="mailto:coolo@suse.de"><img src="/images/icons/email.png" title="Email Adrian"></a></li>
 				<li><a href="http://lizards.opensuse.org/author/coolo/"><img src="/images/icons/rss.png" title="Coolos Blog"></a></li>
+				<li><a href="http://twitter.com/felixpapa"><img src="/images/icons/twitter.png" title="Coolo on Twitter"></a></li>
 				<li><a href="http://github.com/coolo"><img src="/images/icons/github.png" title="Coolo on Github"></a></li>
 				</ul>
 			</div>

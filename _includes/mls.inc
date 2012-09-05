@@ -16,11 +16,17 @@
 			</div>
 			<div class="twelve columns author-bio">
 				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in purus id tellus hendrerit
-					tempus eget eu mauris. Fusce tincidunt massa id libero varius ultrices. In non ligula felis.
-					Nullam eu egestas tortor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices 
-					posuere cubilia Curae; Nulla condimentum interdum semper. Pellentesque sed interdum neque. 
-					Nulla rhoncus faucibus orci sed tristique. Aliquam ac augue augue.
+					Michael, a Ph.D. in Computer Science from the famous University of Erlangen-Nuremberg, is another FOSS
+					old-timer in the team. Most hackers probably know him as one of the GNU screen maintainers,
+					perl guru and dependency solver expert.
+					Even before the inauguration of the Open Build Service Michael worked on the SUSE internal OBS predecessor
+					<em>autobuild</em> which means he brings more than 10 years of experience in developing build system backends
+					to the table! At SUSE Michael shares the role of project manager for the SUSE and openSUSE build infrastructure
+					with Adrian.
+				</p>
+				<p>
+				  Apart from expanding the OBS backend with all kinds of cool features and taking care of the reference server
+				  backend, cooking good food and gaming make Michael a happy man.
 				</p>
 			</div>
 			<div class="twelve columns author-links">

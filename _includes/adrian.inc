@@ -12,15 +12,21 @@
 		<div class="row">
 			<div class="twelve columns author-title">
 				<h4>Adrian Schröter</h4>
-				<h5>Admin, Hacker, Project Manager, here since day one</h5>
+				<h5>Project Manager, Hacker, Admin, here since day one</h5>
 			</div>
 			<div class="twelve columns author-bio">
 				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in purus id tellus hendrerit
-					tempus eget eu mauris. Fusce tincidunt massa id libero varius ultrices. In non ligula felis.
-					Nullam eu egestas tortor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices 
-					posuere cubilia Curae; Nulla condimentum interdum semper. Pellentesque sed interdum neque. 
-					Nulla rhoncus faucibus orci sed tristique. Aliquam ac augue augue.
+					Adrian started his open source career as a developer of the first ripping tool for the 
+					KDE desktop (<a href="#" data-reveal-id="adrianModal">Krabber</a>). In '99 SUSE hired him to 
+					be their Linux Desktop guy, so he spent the next couple of years taking care of the KDE desktop
+					of the different SUSE Linux distributions. During that time he gathered a lot of knowledge about
+					building software packages for consumer and enterprise customers. Which eventually lead him to
+					his current position as project manager for the SUSE and openSUSE build infrastructure.
+				</p>
+				<p>
+				  When he's not out sailing or hiking and taking <a href="http://www.flickr.com/photos/adrianschroeter/" alt="Adrians
+				  flickr stream" title="Adrians Flickr Stream">great pictures</a> of it, you will most likely catch him thinking
+				  about the future of OBS, creating great concepts and taking care of the reference servers for openSUSE/SUSE.
 				</p>
 			</div>
 			<div class="twelve columns author-links">
@@ -33,4 +39,10 @@
 			</div>
 		</div>
 	</div>
+</div>
+
+<div id="adrianModal" class="reveal-modal">
+  <img src="/images/krabber.jpg">
+  <p>Krabber!</p>
+  <a class="close-reveal-modal">&#215;</a>
 </div>
