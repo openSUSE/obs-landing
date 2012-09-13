@@ -5,68 +5,47 @@ title: Download
 
 <div class="row">
  <div class="twelve columns">
+  <h2>Run Your Own</h2>
     <p>
-    The Open Build Service consists of four main components. Clients, an application programming interface (API)
-    a server backend and workers. Each piece of the OBS can be downloaded and run individually, all they need is
-    a network connection to each other.
+      The easiest way to run your own Open Build Service is to download and install our software appliance.
+      It's the whole package, a recent and stable Linux Operating System 
+      (<a href="http://en.opensuse.org/Portal:12.1">openSUSE 12.1</a>)
+      bundled with all the server and OBS components you need to get going.
     </p>
- </div>
-</div>
+  </div>
 
-<div class="row">
+  <div class="five columns offset-by-one">   
+    <p>
+      <a href="http://download.opensuse.org/repositories/openSUSE:/Tools/images/iso/obs-server-install.x86_64-2.3.4-Build5.5.iso"
+         title="OBS Server Install Disc (i686)"
+         class="radius large button">Download the OBS Server Appliance Installer (64 Bit)
+      </a>
+    </p>
+  </div>
+  <div class="five columns offset-by-one">
+    <p>
+      <a href="http://download.opensuse.org/repositories/openSUSE:/Tools/images/iso/obs-server-install.i686-2.3.4-Build5.5.iso"
+         title="OBS Server Install Disc (i686)"
+         class="radius large secondary button">Download the OBS Server Appliance Installer (32 Bit)
+      </a>
+    </p>
+  </div>
+
  <div class="twelve columns">
-  <dl class="tabs contained">
-    <dd class="active"><a href="#osc">Commandline Client</a></dd>
-    <dd><a href="#webui">Web Client</a></dd>
-    <dd><a href="#api">API</a></dd>
-    <dd><a href="#server">Server</a></dd>
-    <dd><a href="#worker">Worker</a></dd>
-    <dd><a href="#appliance">Appliances</a></dd>
-  </dl>
+  <h3>Installation</h3>
+    <p>
+      Burn the installer iso to a blank CD/DVD and boot from it. The installer will ask you about the harddisk you want
+      to deploy the appliance to. Please note that
+      <span class="has-tip" data-width="210" title="Data, master boot record, partitions, every single bit will be gone for good.
+      Be careful!">all data</span>
+      on the whole harddisk will get overwritten. 
+    </p>
+  </div>
 
-  <ul class="tabs-content contained">
-    <li class="active" id="oscTab">
-      <p>
-        The commandline client (osc) is a subversion-like tool for the OBS. Use it to edit sources, metadata, trigger builds and gather results.
-      </p>
-      <iframe src='http://software.opensuse.org/download/iframe?project=openSUSE:Tools&amp;package=osc&amp;fcolor=607890&amp;hcolor=607890&amp;acolor=607890' width="100%" height="500" frameborder="0" seamless="seamless">
-      </iframe>
-    </li>
-    <li id="webuiTab">
-      <p>
-        A full fledged web based user interface for the OBS. Your users can access all the OBS functionality right from any browser.
-      </p>
-      <iframe src='http://software.opensuse.org/download/iframe?project=openSUSE:Tools&amp;package=obs-webui&amp;fcolor=607890&amp;hcolor=607890&amp;acolor=607890' width="100%" height="500" frameborder="0" seamless="seamless">
-      </iframe>
-    </li>
-    <li id="apiTab">
-      <p>
-        An REST based application programming interface (API) for all the OBS server functionality. The clients use this to control the server.
-      </p>
-      <iframe src='http://software.opensuse.org/download/iframe?project=openSUSE:Tools&amp;package=obs-api&amp;fcolor=607890&amp;hcolor=607890&amp;acolor=607890' width="100%" height="500" frameborder="0" seamless="seamless">
-      </iframe>
-    </li>
-    <li id="serverTab">
-      <p>
-        The server backend stores all the sources and binaries, schedules builds, controls the workers and generates the repositories.
-      </p>
-      <iframe id='packages' src='http://software.opensuse.org/download/iframe?project=openSUSE:Tools&amp;package=obs-server&amp;fcolor=607890&amp;hcolor=607890&amp;acolor=607890' width="100%" height="500" frameborder="0" seamless="seamless">
-      </iframe>
-    </li>
-    <li id="workerTab">
-      <p>
-        The worker requests all the sources and binaries from the server and then does the actual compiling work.
-      </p>
-      <iframe src='http://software.opensuse.org/download/iframe?project=openSUSE:Tools&amp;package=obs-worker&amp;fcolor=607890&amp;hcolor=607890&amp;acolor=607890' width="100%" height="500" frameborder="0" seamless="seamless">
-      </iframe>
-    </li>
-    <li id="applianceTab">
-      <p>
-        Use these images to deploy a Linux OS (openSUSE) and OBS components to your own physical or virtual server.
-      </p>
-      <iframe id='appliances'" src='http://software.opensuse.org/download/appliance.iframe?project=openSUSE:Tools&amp;fcolor=607890&amp;hcolor=607890&amp;acolor=607890' width="100%" height="500" frameborder="0" seamless="seamless">
-      </iframe>
-    </li>   
-  </ul>
+ <div class="twelve columns">
+  <h3></h3>
+    <p>
+      
+    </p>
  </div>
 </div>

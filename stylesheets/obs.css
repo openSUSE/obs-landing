@@ -3,9 +3,8 @@ html, body {
   background: #F2F3F4 url('/images/bg-paper.png') repeat fixed 0 0;
 }
 
-#footer { 
-  text-align: center;
-  color: #999;
+#mobile-nav {
+  margin: 0px;
 }
 
 #hero-slider {
@@ -13,6 +12,10 @@ html, body {
   box-shadow: 0 1px 2px #999;
   -moz-box-shadow: 0 1px 2px #999;
   -webkit-box-shadow: 0 1px 2px #999;
+}
+
+#hero-slider p {
+  text-align: justify;
 }
 
 #hero-text {
@@ -95,5 +98,10 @@ box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 0,rgba(255, 255, 255, 0.8) 0 1px 0;
 -o-border-radius: 5px;
 border-radius: 5px;
 margin:0 auto;
+}
+
+#footer { 
+  text-align: center;
+  color: #999;
 }
 
