@@ -14,24 +14,21 @@ title: Download
     </p>
   </div>
 
-  <div class="five columns offset-by-one">   
+  <div class="four columns offset-by-four">   
     <p>
       <a href="http://download.opensuse.org/repositories/openSUSE:/Tools/images/iso/obs-server-install.x86_64-2.3.4-Build5.5.iso"
-         title="OBS Server Install Disc (i686)"
-         class="radius large button">Download the OBS Server Appliance Installer (64 Bit)
+         title="OBS Server Install x86_64 2.3.4 Build5.5 iso  "
+         class="radius large button">Download the OBS Server Appliance Installer
       </a>
     </p>
   </div>
-  <div class="five columns offset-by-one">
-    <p>
-      <a href="http://download.opensuse.org/repositories/openSUSE:/Tools/images/iso/obs-server-install.i686-2.3.4-Build5.5.iso"
-         title="OBS Server Install Disc (i686)"
-         class="radius large secondary button">Download the OBS Server Appliance Installer (32 Bit)
-      </a>
+  <div class="two columns offset-by-ten">
+    <p class="hint">
+      <a href="http://download.opensuse.org/repositories/openSUSE:/Tools/images/iso/obs-server-install.i686-2.3.4-Build5.5.iso" class="tiny radius secondary button">Still using 32 Bit?</a>
     </p>
   </div>
 
- <div class="twelve columns">
+  <div class="twelve columns">
   <h3>Installation</h3>
     <p>
       Burn the installer iso to a blank CD/DVD and boot from it. The installer will ask you about the harddisk you want
@@ -42,10 +39,14 @@ title: Download
     </p>
   </div>
 
- <div class="twelve columns">
-  <h3></h3>
+  <div class="twelve columns">
+  <h2>Access the reference server</h2>
+    {% include reference_server.inc %}
     <p>
-      
+      Access it via the webfrontend or download the command line client. The commandline client (osc) is a subversion-like
+      tool for the OBS. Use it to edit sources, metadata, trigger builds and gather results.
     </p>
- </div>
+    <iframe src='http://software.opensuse.org/download/iframe?project=openSUSE:Tools&amp;package=osc&amp;fcolor=607890&amp;hcolor=607890&amp;acolor=607890' width="100%" height="700" frameborder="0" seamless="seamless">
+    </iframe>
+    </div>
 </div>

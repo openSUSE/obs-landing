@@ -1,0 +1,78 @@
+---
+layout: post
+title: Open Build Service adds support for Arch Linux
+category: releases
+---
+<p>
+  We are happy to announce that the <em>Open Build Service</em> (OBS) is now able to build the
+  package format used by Arch Linux! With this new format you can deliver automatic, consistent
+  and reproducible builds of your software to your users and customers for yet another Free and
+  Open Source Software distribution. In total the OBS now supports 10 base distributions in more
+  than 20 flavors and versions.
+</p>
+
+<p>
+  Last years <em>Google Summer of Code</em> marked the beginning of this endeavor when 
+  <a href="http://www.google-melange.com/gsoc/project/google/gsoc2011/madgnu/13001" title="GSoC 2011 Project Page ">
+  Nikolay Rysev</a> started to add all the necessary features to to support, after the RPM Package
+  Manager (RPM) and the Debian package management system (deb), the third package format in the OBS.
+  And with the latest deployment the OBS Team has rolled out the last missing features to the OBS
+  reference server to support this.
+</p>
+
+<h4>Arch Linux</h4>
+<div class="row">
+  <div class="four columns">
+    <img height="174" src="http://www.open-build-service.org/wp-content/uploads/2012/09/archlinux-vert-dark.png" title="Arch Linux Logo" width="233">
+  </div>>
+  <div class="eight columns">
+    <p>
+      Arch Linux is a lightweight and flexible Linux distribution that has the core principles of focus
+      on simplicity (from the developers view), elegance, code correctness, and minimalism which all stem
+      from the most popular <strong>Keep it simple, Stupid</strong> (KISS) principle. It’s packages are built
+      for 32it and 64bit architecture, it has a rolling release model and uses a package manager written
+      specifically for Arch Linux: pacman.
+    </p>
+  </div>
+</div>
+
+<h3>How to build Arch Linux packages</h3>
+<p>
+All you need to do is to add the Arch:Extra repository to your OBS project and a 
+<a href="https://wiki.archlinux.org/index.php/PKGBUILD" title="PKGBUILD Documentation">PKGBUILD</a> description
+to your package sources and the OBS will build and publish a repository of <em>.pkg.tar.xz</em> packages.
+</p>
+
+<p>
+  All your users need to do is to add this repository their
+  <a href="https://wiki.archlinux.org/index.php/Pacman" title="Pacman Documentation">pacman</a> configuration
+</p>
+
+<h2>About the Open Build Service</h2>
+<h3>Comprehensive</h3>
+  <p>
+    The Open Build Service (OBS) is a generic system to build and distribute binary packages from sources in
+    an automatic, consistent and reproducible way. Your users can always download the latest version of your
+    software as binary packages for their operating system.
+  </p>
+
+<h3>Collaborative</h3>
+  <p>
+    The OBS has collaboration build in and will help you to harness the power of the open source development
+    model. Your developers get a one-stop-shop experience for all their software packaging and releasing needs.
+  </p>
+  
+<h3>Open Source</h3>
+  <p>
+    Of course the OBS is Free Software licensed under the GNU General Public License (GPL). It’s available
+    for you as source, packages and as easily deployable appliance. You are free to use, fix, extend and re-use
+    the code. Check out our project <a href="http://www.openbuildservice.org/download">download page</a>.
+  </p>
+  <p>
+    Our reference server <a href="http://build.opensuse.org/">http://build.opensuse.org</a> is available for
+    all open source developers to build packages for the most popular distributions including openSUSE, Debian,
+    Fedora, Ubuntu, Arch Linux, Red Hat Enterprise Linux, SUSE Linux Enterprise. It is also used to build the
+    <a href="http://www.opensuse.org" title="openSUSE Linux">openSUSE</a> distribution.
+  </p>
+  
+<h2>Find out more, visit <a href="http://www.openbuildservice.org">www.openbuildservice.org</a></h2>

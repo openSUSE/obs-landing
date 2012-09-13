@@ -1,3 +1,4 @@
 title: Open Build Service
 pygments: true
-permalink: /:month/:day/:year/:title.html
+permalink: /:year/:month/:day/:title/
+
