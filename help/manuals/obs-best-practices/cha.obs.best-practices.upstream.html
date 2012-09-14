@@ -1,0 +1,152 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Chapter 3.  Publishing upstream binaries</title><link rel="stylesheet" type="text/css" href="susebooks.css"><meta name="generator" content="DocBook XSL Stylesheets V1.77.1"><link rel="home" href="index.html" title="Open Build Service"><link rel="up" href="index.html" title="Open Build Service"><link rel="prev" href="cha.obs.best-practices.basics.html" title="Chapter 2. Basic Concepts and Work Styles"><link rel="next" href="cha.obs.best-practices.localsetup.html" title="Chapter 4. OBS Local Setup"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header" border="0" class="bctable"><tr><td width="80%"><div class="breadcrumbs"><p><a href="index.html">Open Build Service</a><span class="breadcrumbs-sep"> &gt; </span><strong><a accesskey="p" title="Chapter 2. Basic Concepts and Work Styles" href="cha.obs.best-practices.basics.html"><span>&#9664;</span></a>  <a accesskey="n" title="Chapter 4. OBS Local Setup" href="cha.obs.best-practices.localsetup.html"><span>&#9654;</span></a></strong></p></div></td></tr></table></div><div class="chapter"><div class="titlepage"><div><div><h2 class="title"><a name="cha.obs.best-practices.upstream"></a>Chapter 3.  Publishing upstream binaries <span class="permalink"><a alt="Permalink" title="Copy Permalink" href="#cha.obs.best-practices.upstream">¶</a></span></h2></div></div></div><div class="toc"><p><b>Contents</b></p><dl><dt><span class="section"><a href="cha.obs.best-practices.upstream.html#id2930387">3.1.  Which instance to use? </a></span></dt><dt><span class="section"><a href="cha.obs.best-practices.upstream.html#id2911956">3.2.  Where to place your project? </a></span></dt><dt><span class="section"><a href="cha.obs.best-practices.upstream.html#id2898134">3.3. Creating a package</a></span></dt><dt><span class="section"><a href="cha.obs.best-practices.upstream.html#id2898156">3.4. Getting binaries?</a></span></dt></dl></div><p> This chapter covers main step of using OBS to publish binaries of your
+  project for multiple distributions.
+ </p><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id2930387"></a>3.1.  Which instance to use? <span class="permalink"><a alt="Permalink" title="Copy Permalink" href="#id2930387">¶</a></span></h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="id2941370"></a>3.1.1.  Private OBS instance <span class="permalink"><a alt="Permalink" title="Copy Permalink" href="#id2941370">¶</a></span></h3></div></div></div><p> OBS is open source project and therefore you can setup your own
+    instance and run it by your own. The main advantage of this approach is
+    that you can keep all your sources and recepies unpublished if you need to
+    (for example because of NDA). Obvious downside of this approach is that you
+    need to maintain your own server/servers for running builds, publishing and
+    mirroring. Also making your project public may attract some potentional
+    contributors.
+   </p><p>
+    More information about setting up your own private OBS instance can be
+    found in <a class="xref" href="cha.obs.best-practices.localsetup.html" title="Chapter 4. OBS Local Setup">Chapter 4, <i>OBS Local Setup</i></a>
+    .
+   </p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="id2869303"></a>3.1.2.  openSUSE Build Service <span class="permalink"><a alt="Permalink" title="Copy Permalink" href="#id2869303">¶</a></span></h3></div></div></div><p>Other option is to use some publically available instance of OBS. One
+    good example is openSUSE Build Service - <a class="ulink" href="http://build.opensuse.org" target="_top">http://build.opensuse.org</a>
+     . This OBS instance can be used by
+    anybody to freely create binaries for any of the supported distributions.
+    Big advanatage is that somebody is already taking care of all the
+    infrastructure. You can store your sources there, build your packages and
+    got them mirrored around the world. You don't need to get your own server a
+    configure it, you can start using it right a way.
+   </p></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id2911956"></a>3.2.  Where to place your project? <span class="permalink"><a alt="Permalink" title="Copy Permalink" href="#id2911956">¶</a></span></h2></div></div></div><p>
+   This part helps you to decide on how to name and where to place your
+   project and what project structure to create. This is more important if you
+   are sharing your OBS instance with other people like in <a class="ulink" href="http://build.opensuse.org" target="_top">openSUSE Build Service</a>.
+  </p><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="id2911975"></a>3.2.1.  Base project <span class="permalink"><a alt="Permalink" title="Copy Permalink" href="#id2911975">¶</a></span></h3></div></div></div><p>
+    If there are more packages in OBS, like for example in <a class="ulink" href="http://build.opensuse.org" target="_top">openSUSE Build Service</a>, these
+    packages needs to be somehow divided into projects so it is easier to
+    find what people are looking for and it isn't all just one big
+    mess.
+   </p><p>In openSUSE Build Service, packages are divided into categories
+    regarding their function. MySQL is in
+    <span class="emphasis"><em>server:database</em></span> repository, lighttpd in
+    <span class="emphasis"><em>server:http</em></span> and for example KMyMoney has it's own
+    subproject in <span class="emphasis"><em>KDE:Apps</em></span>. So it is a good idea to
+    think about in what category available on the OBS your application will
+    fit the best.
+   </p><p>If you need whole project for yourself - for example some of your
+    dependencies is being built in the same project, you need to request
+    creating subproject. In openSUSE Build Service, this is done through
+    asking OBS admins for it on <a class="ulink" href="mailto:opensuse-buildservice+subscribe@opensuse.org" target="_top">opensuse-buildservice
+     mailing list
+    </a>
+    .It's archive and link for subscribing can be found
+    at <a class="ulink" href="http://lists.opensuse.org/opensuse-buildservice/" target="_top">http://lists.opensuse.org/opensuse-buildservice/</a>
+    .
+   </p><p>If you need to just put yout package somewhere, you can create it
+    in your home project and then send submitrequest to the project you want
+    your packge to get included in.
+   </p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="id2912042"></a>3.2.2.  More supported versions? <span class="permalink"><a alt="Permalink" title="Copy Permalink" href="#id2912042">¶</a></span></h3></div></div></div><p>If you want to support more than just one version of your program,
+    you will need to use several projects for that. There can't be same
+    packages with.
+   </p><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="id2912054"></a>3.2.2.1.  Stable and development version <span class="permalink"><a alt="Permalink" title="Copy Permalink" href="#id2912054">¶</a></span></h4></div></div></div><p>Let's asume that you have found project suitable for your program.
+     Some projects already have something like <span class="emphasis"><em>STABLE</em></span> and
+     <span class="emphasis"><em>UNSTABLE</em></span> subprojects. So you can use these, if you
+     discuss it with maintainers of these project. Other way is to ask somebody
+     from the maintainers of the project to create either these subprojects (if
+     they don't exists) or something similar. Always try to discuss it with the
+     maintainers of the project. They might have good ideas, sugestions and may
+     help you in various ways.
+    </p></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="id2829709"></a>3.2.2.2.  Multiple stable versions <span class="permalink"><a alt="Permalink" title="Copy Permalink" href="#id2829709">¶</a></span></h4></div></div></div><p>If you want to support multiple version, you would need more
+     projects then just two as suggested in previous section. These special
+     project should contain version they are supposed to support in their
+     name. If you are creating them under some project you are sharing with
+     other packages, having you package name in the name of projects is a good
+     idea as well. Good example can be Gnome. It has
+     <span class="emphasis"><em>GNOME</em></span> project and many subprojects projects. Among
+     them are for example <span class="emphasis"><em>GNOME:STABLE:2.30</em></span>,
+     <span class="emphasis"><em>GNOME:STABLE:2.32</em></span> and
+     <span class="emphasis"><em>GNOME:STABLE:3.0</em></span>. These projects holds different
+     stable versions of Gnome with latest fixes.
+    </p></div></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id2898134"></a>3.3. Creating a package<span class="permalink"><a alt="Permalink" title="Copy Permalink" href="#id2898134">¶</a></span></h2></div></div></div><p> Packaging is quite a complex topic. Instead of trying to cover it in
+   this book, it is a good idea to start with available internet documentation.
+   One of the recomended online resource is Portal:Packaging on openSUSE wiki.
+   You can find it at <a class="ulink" href="http://en.opensuse.org/Portal:Packaging" target="_top">http://en.opensuse.org/Portal:Packaging</a>.
+   It contains links to several packaging tutorials and other packaging related
+   documentation.
+   </p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id2898156"></a>3.4. Getting binaries?<span class="permalink"><a alt="Permalink" title="Copy Permalink" href="#id2898156">¶</a></span></h2></div></div></div><div class="note"><table border="0" cellpadding="3" cellspacing="0" width="100%" summary="Note"><tr class="head"><td width="32"><img alt="[Note]" src="admon/note.png"></td><th align="left"></th></tr><tr><td colspan="2" align="left" valign="top"><p> This sections discuss feature available only in openSUSE Build
+    Service - one of the freely availble instances of OBS.
+   </p></td></tr></table></div><p>
+   If you want a nice download page for your software published on openSUSE
+   Build Service, you can use openSUSE download page. You can include it for
+   example using either <code class="code">iframe</code> or <code class="code">object</code> on newer
+   webs . Example of download page can be following one <a class="ulink" href="http://software.opensuse.org/download.html?project=openSUSE:Tools&amp;package=osc" target="_top">http://software.opensuse.org/download.html?project=openSUSE:Tools&amp;package=osc</a>.
+   You can see how it looks like in <a class="xref" href="cha.obs.best-practices.upstream.html#cha.obs.best-practices.upstream.download.screenshot" title="Figure 3.1. openSUSE download page for package from OBS">Figure 3.1, &#8220;openSUSE download page for package from OBS&#8221;</a>. It contains
+   links to the packages and instructions how to install them.
+  </p><div class="figure"><a name="cha.obs.best-practices.upstream.download.screenshot"></a><p class="title"><b>Figure 3.1. openSUSE download page for package from OBS</b><span class="permalink"><a alt="Permalink" title="Copy Permalink" href="#cha.obs.best-practices.upstream.download.screenshot">¶</a></span></p><div class="figure-contents"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="800"><tr><td><img src="images/download_page_screenshot.png" width="800" alt="openSUSE download page for package from OBS"></td></tr></table></div></div></div><br class="figure-break"><p>
+   Url always has to start with <a class="ulink" href="http://software.opensuse.org/download.html?" target="_top">http://software.opensuse.org/download.html?</a>.You can attach any
+   number of '&amp;'-seperated parameters. But at least two of them -
+   <span class="emphasis"><em>project</em></span> and <span class="emphasis"><em>package</em></span> - are
+   required. All parameters with descriptions can be found in <a class="xref" href="cha.obs.best-practices.upstream.html#cha.obs.best-practices.upstream.download.params" title="Table 3.1. Possible parameters for download page">Table 3.1, &#8220;Possible parameters for download page&#8221;</a>.
+  </p><div class="table"><a name="cha.obs.best-practices.upstream.download.params"></a><p class="title"><b>Table 3.1. Possible parameters for download page</b><span class="permalink"><a alt="Permalink" title="Copy Permalink" href="#cha.obs.best-practices.upstream.download.params">¶</a></span></p><div class="table-contents"><table summary="Possible parameters for download page" border="1"><colgroup><col><col></colgroup><thead><tr><th align="left">parameter</th><th align="left">description</th></tr></thead><tbody><tr><td align="left">
+       <code class="code">project</code>
+      </td><td align="left">Project in which your package is located</td></tr><tr><td align="left">
+       <code class="code">package</code>
+      </td><td align="left">Name of your package as it is specified in OBS</td></tr><tr><td align="left">
+       <code class="code">bcolor</code>
+      </td><td align="left">
+       Background color in hexa (for example <code class="code">bcolor=004</code>) to make
+       the download page better match your project page
+      </td></tr><tr><td align="left">
+       <code class="code">fcolor</code>
+      </td><td align="left">
+       Text color in hexa (for example <code class="code">fcolor=fff</code>) to make the
+       download page better match your project page
+      </td></tr><tr><td align="left">
+       <code class="code">acolor</code>
+      </td><td align="left">
+       Link color in hexa (for example <code class="code">acolor=ff0</code>) to make the
+       download page better match your project page
+      </td></tr><tr><td align="left">
+       <code class="code">hcolor</code>
+      </td><td align="left">
+       Highlight color in hexa (for example <code class="code">hcolor=0ff</code>) to make
+       the download page better match your project page
+      </td></tr></tbody></table></div></div><br class="table-break"><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="id2906888"></a>3.4.1. Examples<span class="permalink"><a alt="Permalink" title="Copy Permalink" href="#id2906888">¶</a></span></h3></div></div></div><p>Now we will take a look at how to include the download page into your
+   project pages. As example we will use <span class="emphasis"><em>osc</em></span> client from
+   <span class="emphasis"><em>openSUSE:Tools</em></span> project. To demonstrate the colors
+   change, we will use theme that would match Midnight Commander.
+  </p><p>First we will start with recent web page supporting new standarts. On such a website, we would use <code class="code">object</code> to include download code:</p><pre class="screen">
+  <span class="command"><strong>
+&lt;object type="text/html" 
+   data="http://software.opensuse.org/download.html?project=openSUSE:Tools&amp;amp;package=osc&amp;amp;bcolor=004&amp;amp;acolor=ff0&amp;amp;fcolor=fff&amp;amp;hcolor=0ff"
+   width="100%" height="100%"&gt;
+   &lt;param name="src" 
+      value="http://software.opensuse.org/download.html?project=openSUSE:Tools&amp;amp;package=osc&amp;amp;bcolor=004&amp;amp;acolor=ff0&amp;amp;fcolor=fff&amp;amp;hcolor=0ff" /&gt;
+   Your browser doesn't support objects, please continue to the
+   &lt;a href="http://software.opensuse.org/download.html?project=openSUSE:Tools&amp;amp;package=osc&amp;amp;bcolor=004&amp;amp;acolor=ff0&amp;amp;fcolor=fff&amp;amp;hcolor=0ff"&gt;
+   download page&lt;/a&gt;
+&lt;/object&gt;
+  </strong></span>
+  </pre><p>If you are using php on your server, you can make it easier by using following code:</p><pre class="screen">
+  <span class="command"><strong>
+&lt;?php
+   $url = "http://software.opensuse.org/download.html?project=openSUSE:Tools&amp;amp;package=osc&amp;amp;bcolor=004&amp;amp;acolor=ff0&amp;amp;fcolor=fff&amp;amp;hcolor=0ff";
+   echo '
+&lt;object type="text/html" 
+   data="' . $url . '"
+   width="100%" height="100%"&gt;
+   &lt;param name="src" 
+      value="' . $url . '" /&gt;
+   Your browser doesn't support objects, please continue to the
+   &lt;a href="' . $url . '"&gt;download page&lt;/a&gt;
+&lt;/object&gt;
+';
+?&gt;
+  </strong></span>
+  </pre><p>If you are running some legacy website, you might have to use <code class="code">iframe</code>:</p><pre class="screen">
+  <span class="command"><strong>
+  &lt;iframe src="http://software.opensuse.org/download.html?project=openSUSE:Tools&amp;amp;package=osc&amp;amp;bcolor=004&amp;amp;acolor=ff0&amp;amp;fcolor=fff&amp;amp;hcolor=0ff"/&gt;
+  </strong></span>
+  </pre></div></div></div><div class="navfooter"><table width="100%" summary="Navigation footer" border="0" class="bctable"><tr><td width="80%"><div class="breadcrumbs"><p><a href="index.html">Open Build Service</a><span class="breadcrumbs-sep"> &gt; </span><strong><a accesskey="p" title="Chapter 2. Basic Concepts and Work Styles" href="cha.obs.best-practices.basics.html"><span>&#9664;</span></a>  <a accesskey="n" title="Chapter 4. OBS Local Setup" href="cha.obs.best-practices.localsetup.html"><span>&#9654;</span></a></strong></p></div></td></tr></table></div></body></html>

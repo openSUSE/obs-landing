@@ -1,5 +1,6 @@
 (function($){  
   $(function(){
+    $(document).foundationMediaQueryViewer();
     
     $(document).foundationAlerts();
     $(document).foundationAccordion();
@@ -23,6 +24,9 @@
       
       $(document).foundationTabs({callback:$.foundation.customForms.appendCustomMarkup});
       
+    
+    
+    
     
     
     // UNCOMMENT THE LINE YOU WANT BELOW IF YOU WANT IE8 SUPPORT AND ARE USING .block-grids

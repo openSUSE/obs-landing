@@ -1,0 +1,62 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Chapter 8. Source Services</title><link rel="stylesheet" type="text/css" href="susebooks.css"><meta name="generator" content="DocBook XSL Stylesheets V1.77.1"><link rel="home" href="index.html" title="Open Build Service"><link rel="up" href="index.html" title="Open Build Service"><link rel="prev" href="cha.obs.build_config.html" title="Chapter 7. Build Configuration"><link rel="next" href="cha.obs.signing.html" title="Chapter 9. Signing"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header" border="0" class="bctable"><tr><td width="80%"><div class="breadcrumbs"><p><a href="index.html">Open Build Service</a><span class="breadcrumbs-sep"> &gt; </span><strong><a accesskey="p" title="Chapter 7. Build Configuration" href="cha.obs.build_config.html"><span>&#9664;</span></a>  <a accesskey="n" title="Chapter 9. Signing" href="cha.obs.signing.html"><span>&#9654;</span></a></strong></p></div></td></tr></table></div><div class="chapter"><div class="titlepage"><div><div><h2 class="title"><a name="cha.obs.source_service"></a>Chapter 8. Source Services<span class="permalink"><a alt="Permalink" title="Copy Permalink" href="#cha.obs.source_service">¶</a></span></h2></div></div></div><div class="toc"><p><b>Contents</b></p><dl><dt><span class="section"><a href="cha.obs.source_service.html#id3099575">8.1. Using services for validation</a></span></dt><dt><span class="section"><a href="cha.obs.source_service.html#id3128781">8.2. Different Modes when using services</a></span></dt><dt><span class="section"><a href="cha.obs.source_service.html#id3100171">8.3. How are source service definitions stored</a></span></dt><dt><span class="section"><a href="cha.obs.source_service.html#id3100238">8.4. How to write a source service</a></span></dt><dt><span class="section"><a href="cha.obs.source_service.html#id3100249">8.5. Interfaces for using source services</a></span></dt></dl></div><p>Source Services are tools to validate, generate or modify sources in a trustable way. They are
+        designed as smallest possible tools and can be combined following the powerful idea of the
+        classic UNIX design.</p><p>Design goals of source services were:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+     server side generated files must be easy to identify and must not be modifiable by the user. 
+     This way others user can trust them to be generated in the documented way without modifications.
+    </li><li class="listitem">
+     generated files must never create merge conflicts
+    </li><li class="listitem">
+     generated files must be a separate commit to the user change
+    </li><li class="listitem">
+     services must be runnable at any time without user commit
+    </li><li class="listitem">
+     services must be runnable on server and client side in the same way
+    </li><li class="listitem">
+     services must be designed in a safe way. A source checkout and service run must never harm the system of a user.
+    </li><li class="listitem">
+     services shall be designed in a way to avoid unnecessary commits. This means there shall be no time-dependent
+     changes. In case the package already contains the same file, the newly generated file must be dropped.
+    </li><li class="listitem">
+     local services can be added and used by everybody.
+    </li><li class="listitem">
+     server side services must be installed by the admin of the OBS server.
+    </li><li class="listitem">
+     service can be defined per package or project wide.
+    </li></ul></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id3099575"></a>8.1. Using services for validation<span class="permalink"><a alt="Permalink" title="Copy Permalink" href="#id3099575">¶</a></span></h2></div></div></div><p>Source Services may be used to validate sources. This can happen per package, which is useful when the
+          packager wants to validate that downloaded sources are really from the original maintainer. 
+          Or validation can happen for an entire project to apply general policies. These services can't get
+          skipped in any package</p><p>Validation can happen by validating files (for example using the <span class="command"><strong>verify_file</strong></span> or
+          <span class="command"><strong>source_validator</strong></span> service. These services just fail in the error case which leads to
+          the build state "broken". Or validation can happen by redoing a certain action and store the result
+          as new file as <span class="command"><strong>download_files</strong></span> is doing. In this case the newly generated file will be
+          used instead of the committed one during build.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id3128781"></a>8.2. Different Modes when using services<span class="permalink"><a alt="Permalink" title="Copy Permalink" href="#id3128781">¶</a></span></h2></div></div></div><p>Each service can be used in a special mode defining when it should run and how to use the result.
+          This can be done per package or globally for an entire project.</p><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="id3126097"></a>8.2.1. Default Mode<span class="permalink"><a alt="Permalink" title="Copy Permalink" href="#id3126097">¶</a></span></h3></div></div></div><p>The default mode of a service is to always run after each commit on the server side and locally before
+            every local build.</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="id3092569"></a>8.2.2. trylocal Mode<span class="permalink"><a alt="Permalink" title="Copy Permalink" href="#id3092569">¶</a></span></h3></div></div></div><p>The trylocal mode is running the service locally when using current osc versions. The result gets committed as standard
+            files and not named with _service: prefix. Additionally the service runs on the server by default, but usually the service should
+            detect that the result is the same and skip the generated files. In case they differ for any reason (because the webui
+            or api was used for example) they get generated and added on the server.</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="id3100128"></a>8.2.3. localonly Mode<span class="permalink"><a alt="Permalink" title="Copy Permalink" href="#id3100128">¶</a></span></h3></div></div></div><p>The localonly mode is running the service locally when using current osc versions. The result gets committed as standard
+            files and not named with _service: prefix. The service is never running on the server side. It is also not possible to trigger
+            it manually.</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="id3100144"></a>8.2.4. disabled Mode<span class="permalink"><a alt="Permalink" title="Copy Permalink" href="#id3100144">¶</a></span></h3></div></div></div><p>The disabled mode is neither running the service locally or on the server side. It can be used to temporarily disable the service
+            but keeping the definition as part of the service definition. Or it can be used to define the way how to generate the sources and
+            doing so by manually calling
+      </p><pre class="screen"><span class="command"><strong>osc service disabledrun</strong></span></pre><p>
+            The result will get committed as standard files again.
+      </p></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id3100171"></a>8.3. How are source service definitions stored<span class="permalink"><a alt="Permalink" title="Copy Permalink" href="#id3100171">¶</a></span></h2></div></div></div><p>The called services are always defined in a <span class="command"><strong>_service</strong></span> file. It is either part of the package sources or used project-wide
+          when stored inside the <span class="command"><strong>_project</strong></span> package.</p><p>The _service file contains a list of services which get called in this order. Each service may define a list of parameters and a
+          mode. The project wide services get called after the per package defined services. The _service file is an xml file like this example:
+        </p><pre class="screen"><span class="command"><strong>
+&lt;services&gt;
+  &lt;service name="download_files" mode="trylocal" /&gt;
+  &lt;service name="verify_file"&gt;
+    &lt;param name="file"&gt;krabber-1.0.tar.gz&lt;/param&gt;
+    &lt;param name="verifier"&gt;sha256&lt;/param&gt;
+    &lt;param name="checksum"&gt;7f535a96a834b31ba2201a90c4d365990785dead92be02d4cf846713be938b78&lt;/param&gt;
+  &lt;/service&gt;
+  &lt;service name="update_source" mode="disabled" /&gt;
+&lt;/services&gt;
+        </strong></span></pre><p>
+          This example downloads the files via download_files service via the given URLs from the spec file. When using osc this file gets committed as
+          part of the commit. Afterwards the krabber-1.0.tar.gz file will always be compared with the sha256 checksum. And last but not least there is the 
+          <span class="command"><strong>update_source</strong></span> service mentioned, which is usually not executed. Except when <span class="command"><strong>osc service disabledrun</strong></span>
+          is called, which will try to upgrade the package to a newer source version available online.
+    </p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id3100238"></a>8.4. How to write a source service<span class="permalink"><a alt="Permalink" title="Copy Permalink" href="#id3100238">¶</a></span></h2></div></div></div><p>..</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id3100249"></a>8.5. Interfaces for using source services<span class="permalink"><a alt="Permalink" title="Copy Permalink" href="#id3100249">¶</a></span></h2></div></div></div><p>..</p></div></div><div class="navfooter"><table width="100%" summary="Navigation footer" border="0" class="bctable"><tr><td width="80%"><div class="breadcrumbs"><p><a href="index.html">Open Build Service</a><span class="breadcrumbs-sep"> &gt; </span><strong><a accesskey="p" title="Chapter 7. Build Configuration" href="cha.obs.build_config.html"><span>&#9664;</span></a>  <a accesskey="n" title="Chapter 9. Signing" href="cha.obs.signing.html"><span>&#9654;</span></a></strong></p></div></td></tr></table></div></body></html>
