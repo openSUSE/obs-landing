@@ -1,0 +1,105 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Chapter 5.  Boot Strapping</title><link rel="stylesheet" type="text/css" href="susebooks.css"><meta name="generator" content="DocBook XSL Stylesheets V1.77.1"><link rel="home" href="index.html" title="Open Build Service"><link rel="up" href="index.html" title="Open Build Service"><link rel="prev" href="cha.obs.best-practices.localsetup.html" title="Chapter 4. OBS Local Setup"><link rel="next" href="cha.obs.best-practices.oscexamples.html" title="Chapter 6. OSC commands examples"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header" border="0" class="bctable"><tr><td width="80%"><div class="breadcrumbs"><p><a href="index.html">Open Build Service</a><span class="breadcrumbs-sep"> &gt; </span><strong><a accesskey="p" title="Chapter 4. OBS Local Setup" href="cha.obs.best-practices.localsetup.html"><span>&#9664;</span></a>  <a accesskey="n" title="Chapter 6. OSC commands examples" href="cha.obs.best-practices.oscexamples.html"><span>&#9654;</span></a></strong></p></div></td></tr></table></div><div class="chapter"><div class="titlepage"><div><div><h2 class="title"><a name="cha.obs.best-practices.bootstrapping"></a>Chapter 5.  Boot Strapping <span class="permalink"><a alt="Permalink" title="Copy Permalink" href="#cha.obs.best-practices.bootstrapping">¶</a></span></h2></div></div></div><div class="toc"><p><b>Contents</b></p><dl><dt><span class="section"><a href="cha.obs.best-practices.bootstrapping.html#id3138365">5.1.  The issue </a></span></dt><dt><span class="section"><a href="cha.obs.best-practices.bootstrapping.html#id3096518">5.2.  A cheat sheet </a></span></dt><dt><span class="section"><a href="cha.obs.best-practices.bootstrapping.html#id3097028">5.3.  Creating my first project </a></span></dt></dl></div><p>This chapter explains Boot strapping.
+        In this chapter, You would learn how you could have other OBS projects and packages to your local OBS instance after your OBS install.
+        There are some useful OSC commands examples and OBS working mechanism explanation in this chapter also. 
+        Basically this chapter is a copy from Build Service portal.
+        please check below for OBS bootstrap from Build Service portal.        
+  </p><pre class="screen"> <span class="command"><strong>  http://en.opensuse.org/openSUSE:Build_Service_private_instance_boot_strapping </strong></span> </pre><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id3138365"></a>5.1.  The issue <span class="permalink"><a alt="Permalink" title="Copy Permalink" href="#id3138365">¶</a></span></h2></div></div></div><p> If you create a private instance of an OBS it is likely to be be fully independent. This means that your OBS needs to build its full reference tools chain.
+
+This process - called Bootstrap - presents the same problem as the Chicken and the Egg, which one came first !
+
+In other words, you need to create a tool chain with the tool chain that you want to create. 
+    </p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id3096518"></a>5.2.  A cheat sheet <span class="permalink"><a alt="Permalink" title="Copy Permalink" href="#id3096518">¶</a></span></h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="id3096524"></a>5.2.1.  Create your first project <span class="permalink"><a alt="Permalink" title="Copy Permalink" href="#id3096524">¶</a></span></h3></div></div></div><p> Log on to the Web API.
+      The default user Admin, with the password opensuse is available. Create your own login and password and set yourself as Admin.
+
+       Log on to the Web UI as Admin and click on the Icon "Setup OBS". Accept the default. It should work.
+
+       Select from under 'Locations' -&gt; 'Projects'. At the end of the list click on 'Add_Project'. Give it a name (e.g. Meego-test)
+
+       Select your new project and create a sub-project 0.1. You have now a project Meego-test:1.0
+Sub projects are handy to propagate Access Control Lists (acl) and for creating the version as a sub project simplifies the user and project administration.        
+       </p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="id3078828"></a>5.2.2.  Import your base Linux project <span class="permalink"><a alt="Permalink" title="Copy Permalink" href="#id3078828">¶</a></span></h3></div></div></div><p> We are now going to import the base project. I will describe two methods, one where you have a login on a remote OBS instance, one where you have only access to the rpm repository.
+In both cases you will need access to binary and source rpm. 
+       </p><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="id3083309"></a>5.2.2.1.  With a login on a remote OBS <span class="permalink"><a alt="Permalink" title="Copy Permalink" href="#id3083309">¶</a></span></h4></div></div></div><p> The osc copypac (I assume that you have installed the osc package on your workstation) has an option -t which enables copying towards a remote target OBS instance.
+
+osc help and osc help command will advise on how to use these.
+
+First you need to import the project configuration.  
+       </p><pre class="screen"> 
+           <span class="command"><strong> 
+            $ export PROJECT=MeeGo-test:0.1
+            $ osc -A http://api-url-source-obs meta prjconf $PROJECT &gt; my_project.conf
+            $ osc -A http://api-url-target-obs meta prjconf -F my_project.conf $PROJECT
+           </strong></span> 
+         </pre><p> Then import the project. As you might have some Links in the project that you import, it is a good idea to keep the source and target project names identical. 
+        </p><pre class="screen"> 
+           <span class="command"><strong> 
+        $ PRJ=ProjectToCopy; for i in `osc -A http://api.source.obs.domain ls $PRJ`; do \\
+osc -A http://api.source.obs.domain \\
+copypac -t http://api.target.obs.domain $PRJ $i $PRJ ;done 
+           </strong></span> 
+         </pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="id3096569"></a>5.2.2.2.  Without a Login on a remote OBS <span class="permalink"><a alt="Permalink" title="Copy Permalink" href="#id3096569">¶</a></span></h4></div></div></div><p> If you have access only to the repositories of your source reference target, then your life will be a bit more difficult. My advice would be to recheck if you find you cannot get a login on a public OBS service - such as provided by openSUSE or MeeGo - before proceeding this way.
+
+
+You will not be able to import the project config and you will have to create it by hand. This is too long to be covered in this HowTo.
+
+For more explanation about Build Service project config, please visit below.
+       </p><pre class="screen"> <span class="command"><strong> http://en.opensuse.org/openSUSE:Build_Service_prjconf </strong></span> </pre><p> Then you need to download all your rpm source on to a local machine and import it into your project with the command. 
+        </p><pre class="screen"> <span class="command"><strong> $ osc importsrcpkg  </strong></span> </pre></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="id3075464"></a>5.2.2.3.  Bootstrapping <span class="permalink"><a alt="Permalink" title="Copy Permalink" href="#id3075464">¶</a></span></h4></div></div></div><p> To initiate the build process, we will copy the rpm binary from the source OBS of the source project. These binary rpms, from which we will remove any reference to release and version, will be used to trigger the first build.
+The OBS appliance will recompile all the rpms until all rpms in the project have been compiled only with packages compiled from their source code.
+Some base packages (e.g. tool chains) will be compiled several times during that process.
+
+Alternative You can build a first time against a target which is similar to the base that you need to boot strap in lieu of building against your own base and change the build reference to your bootstrap base once that the first build has been successful. Remember that you can also build against remote baseline. 
+
+    Double check that the preliminary step have been executed correctly. You must have already :
+        copied a Linux base distribution in an OBS project
+        defined a build target for that base project. 
+
+Note : If you have not defined a build target the need directory structure will not exist. It's a preliminary mandatory step.
+
+    stop the scheduler as it will create a mess if the system is not stable 
+       </p><pre class="screen"> <span class="command"><strong> # rcobsscheduler stop  </strong></span> </pre><p> * Add binaries to the :full directory of the Project
+       ssh onto the OBS server. Now go to the project&#8217;s build directory, and create a directory called &#8220;:full&#8221;. 
+Note : standard is the default name of your Build repository as defined in your project. It might change depending of who created the initial build repo. 
+        </p><pre class="screen"> <span class="command"><strong> # cd /obs/build/$PROJECT/standard/i586 </strong></span> </pre><p> This directory structure should already exist. If not, there is a problem (note that /obs is link and the target may vary with your implementation). Now create the &#8220;:full&#8221; directory. $ mkdir :full Copy over all the binary rpms of the project you are trying to build from scratch. 
+
+These rpms should have the release and version numbers stripped from them. e.g. alsa-utils-1.0.22-2.7.i586.rpm -- should be &#8211; alsa-utils.rpm
+
+Note : If the original project has a :full directory you can copy from there to avoid the issue of stripping version and release numbers.
+
+    * Add binaries to the :full directory of the Project. Change all user/group privileges under /srv/obs/build/ to &#8220;obsrun&#8221; 
+        </p><pre class="screen"> <span class="command"><strong> # chown -R obsrun:obsrun /srv/obs/build </strong></span> </pre><p> If you leave root as owner of :full, it will still build but the scheduler will fail (almost silently) to upgrade :full with the latest built packages. Except in very special cases, it is very unlikely that you want to do so. 
+    * Start the OBS scheduler
+         </p><pre class="screen"> <span class="command"><strong> # rcobsscheduler start </strong></span> </pre><p> 
+    * Force the obs to reindex your new :full directory. It will send an event to the scheduler which will create a file named :full.solv 
+        </p><pre class="screen"> 
+             <span class="command"><strong> # obs_admin --rescan-repository $OBS-PROJECT $REPO $ARCH 
+             </strong></span> 
+           </pre><div class="section"><div class="titlepage"><div><div><h5 class="title"><a name="id3082506"></a>5.2.2.3.1.  Troubleshooting <span class="permalink"><a alt="Permalink" title="Copy Permalink" href="#id3082506">¶</a></span></h5></div></div></div><p> At that time you should see your project restarting to build. If that would not be the case. 
+      * check that your files in your target :full directory are all own by the user obsrun. The following command should not return any file name. 
+       </p><pre class="screen"> 
+           <span class="command"><strong> 
+             #find /obs/build ! -user obsrun
+             #chown -R obsrun:obsrun  /obs/build   (will correct ownership issue)
+           </strong></span> 
+         </pre><p> * Force the obs to reindex your new :full directory. It will create a file named :full.solv  
+        </p><pre class="screen"> <span class="command"><strong> $obs_admin --rescan-repository $OBS-PROJECT $REPO $ARCH  </strong></span> </pre><p> * Check that your rpm are valid (e.g. not damaged during transfer)   
+        </p><pre class="screen"> 
+            <span class="command"><strong> 
+              #cd /obs/build/$PROJECT/standard/i586:full
+              #for I in `ls *.rpm` ; do rpm -qlp $I &gt;/dev/null; if [ $? -ne 0 ] ;then echo $I &gt;&gt;../error.lst ; fi ; done
+              #cat ../error.lst (must be empty, all rpm in error needs re-installation) 
+            </strong></span> 
+         </pre><p> * Still not working, get a look in the log files in the directory /obs/log.
+You can start by having a look at /obs/log/scheduler_TARGET_ARCH.log and search from the end for the string "expanding dependencies". You will find from there why the scheduler fails.  
+        </p><pre class="screen"> <span class="command"><strong> #tail -f /obs/log/scheduler_i586.log  </strong></span> </pre></div></div></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id3097028"></a>5.3.  Creating my first project <span class="permalink"><a alt="Permalink" title="Copy Permalink" href="#id3097028">¶</a></span></h2></div></div></div><p> After creating a dedicated user via the web API, relog onto the web UI with your new login.
+
+Open your home project and create a sub project called "MyTest".
+
+To add a package in your new Home project, simply create a link [link Package from other Project] with one of the packages recently copied in your new OBS instance (see previous chapter Import your base project). Pick up a small one to speed compilation time.
+
+Click on the "+" near Build Repositories to add a repository. Move to the end of the page where all the standard Linux distributions are listed and click on [Advance].
+
+Give a name to your repo, e.g. my-test and pick fom the list the project/repo that you have just imported and rebuilt. This will request the OBS to build your new Home project against that repository.
+
+You can now check out your Home project with the ocs command, modify a file or two and at your next check-in, the OBS will rebuild your Home project. If your reference project changes, the OBS will also rebuild your Home project. 
+    </p></div></div><div class="navfooter"><table width="100%" summary="Navigation footer" border="0" class="bctable"><tr><td width="80%"><div class="breadcrumbs"><p><a href="index.html">Open Build Service</a><span class="breadcrumbs-sep"> &gt; </span><strong><a accesskey="p" title="Chapter 4. OBS Local Setup" href="cha.obs.best-practices.localsetup.html"><span>&#9664;</span></a>  <a accesskey="n" title="Chapter 6. OSC commands examples" href="cha.obs.best-practices.oscexamples.html"><span>&#9654;</span></a></strong></p></div></td></tr></table></div></body></html>

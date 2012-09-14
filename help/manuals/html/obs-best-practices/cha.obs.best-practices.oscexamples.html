@@ -1,0 +1,237 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Chapter 6. OSC commands examples</title><link rel="stylesheet" type="text/css" href="susebooks.css"><meta name="generator" content="DocBook XSL Stylesheets V1.77.1"><link rel="home" href="index.html" title="Open Build Service"><link rel="up" href="index.html" title="Open Build Service"><link rel="prev" href="cha.obs.best-practices.bootstrapping.html" title="Chapter 5.  Boot Strapping"><link rel="next" href="cha.obs.best-practices.advanced.html" title="Chapter 7. Advanced Project Setups"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header" border="0" class="bctable"><tr><td width="80%"><div class="breadcrumbs"><p><a href="index.html">Open Build Service</a><span class="breadcrumbs-sep"> &gt; </span><strong><a accesskey="p" title="Chapter 5.  Boot Strapping " href="cha.obs.best-practices.bootstrapping.html"><span>&#9664;</span></a>  <a accesskey="n" title="Chapter 7. Advanced Project Setups" href="cha.obs.best-practices.advanced.html"><span>&#9654;</span></a></strong></p></div></td></tr></table></div><div class="chapter"><div class="titlepage"><div><div><h2 class="title"><a name="cha.obs.best-practices.oscexamples"></a>Chapter 6. OSC commands examples<span class="permalink"><a alt="Permalink" title="Copy Permalink" href="#cha.obs.best-practices.oscexamples">¶</a></span></h2></div></div></div><div class="toc"><p><b>Contents</b></p><dl><dt><span class="section"><a href="cha.obs.best-practices.oscexamples.html#id2906362">6.1. osc, the Python command line client</a></span></dt><dt><span class="section"><a href="cha.obs.best-practices.oscexamples.html#id3131228">6.2. Package tracking</a></span></dt><dt><span class="section"><a href="cha.obs.best-practices.oscexamples.html#id3131324">6.3.  .oscrc cheatsheet </a></span></dt></dl></div><p>This chapter explains and shows OSC commands examples.
+        You could use OBS much more efficiently with OSC commands.
+        $man OSC will show you [GLOBALOPTS], SUBCOMMAND, [OPTS][ARGS....].
+        You also could find some OSC commands examples from OBS Build Service portal.
+        This chapter will take every OSC command examples from OBS Build Service portal and describes it in here.
+        You could visit Build Service portal OSC command explanation via below described URL.        
+  </p><pre class="screen"> <span class="command"><strong>  http://en.opensuse.org/Build_Service/CLI  </strong></span> </pre><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id2906362"></a>6.1. osc, the Python command line client<span class="permalink"><a alt="Permalink" title="Copy Permalink" href="#id2906362">¶</a></span></h2></div></div></div><p> osc is written in Python, and in addition to the commandline interface it also provides a Python module, for use by other Python programs. Packages can be found at http://download.opensuse.org/repositories/openSUSE:/Tools/ for various distributions (openSUSE, SLES, Fedora, Mandriva, Debian, etc.). If you want to check out the latest source code, you can do so with Git:
+    </p><pre class="screen"> <span class="command"><strong> git clone git://gitorious.org/opensuse/osc.git </strong></span> </pre><p> osc is a subversion-like client. It serves as client for the source code repository part of the build service, and it is used to edit metadata or query about build results. Introductory usage examples are shown below. Note the Build Service Tutorial, which gives a more systematic introduction.
+osc is extensible. You can modify the behavior or write your own commands.
+osc will ask you for your credentials when you use it for the first time, and store them in ~/.oscrc. The password is stored in plain text. Protect your ~/.oscrc file and your filesystem appropriately.  
+     </p><p> Show usage info on a command </p><pre class="screen"> 
+            <span class="command"><strong>
+               osc help
+               osc help [cmd] 
+            </strong></span> 
+         </pre><p> List existing content on the server        
+     </p><pre class="screen"> 
+            <span class="command"><strong>
+               osc ls                    #list projects
+               osc ls Apache             #list packages in a project
+               osc ls Apache flood       #list files of package of a project 
+            </strong></span> 
+         </pre><p> "osc ls" shows you a list of projects on OBS. But which OBS it would show?
+             it depends on your .oscrc setting. please have a look on your .oscrc file.
+             If it is set as "apiurl = https://api.opensuse.org".
+             osc ls would show build.opensuse.org OBS projects list to you.
+             So what if you would like to list projects of another OBS?
+      </p><pre class="screen"> 
+            <span class="command"><strong>
+               osc -A http://localhost:81 ls        #list your local OBS instance projects
+               osc -A https://api.opensuse.org ls   #list build.opensuse.org projects
+            </strong></span> 
+         </pre><p> Check out content 
+       </p><pre class="screen"> 
+            <span class="command"><strong>
+               osc co Apache                   #entire project
+               osc co Apache flood             #a package
+               osc co Apache flood flood.spec  # single file
+            </strong></span>                   
+         </pre><p> Update a working directory
+         </p><pre class="screen"> 
+            <span class="command"><strong>
+               osc up
+               osc up [directory]
+               osc up *            # from within a project dir, update all packages
+               osc up              # from within a project dir, update all packages AND check out all newly added packages
+            </strong></span> 
+         </pre><p> Upload changed content
+         </p><pre class="screen"> Upload changed content
+             <span class="command"><strong>
+		osc ci                          # current dir
+		osc ci [file1] [file2]          # only specific files
+		osc ci [dir1] [dir2] ...        # multiple packages
+		osc ci -m "updated foobar"      # specify a commit message
+             </strong></span>
+          </pre><p> See the commit log
+          </p><pre class="screen">
+              <span class="command"><strong>
+		osc log
+              </strong></span>
+          </pre><p> Show the status (which files have been changed locally)
+          </p><pre class="screen">
+             <span class="command"><strong>
+		osc st
+		osc st [directory]
+              </strong></span>
+          </pre><p> If an update cannot be merged automatically, a file is in 'C' (conflict) state, and conflicts are marked with special lines. After manually resolving the problem, use
+          </p><pre class="screen">
+             <span class="command"><strong>
+		osc resolved [file]
+	     </strong></span>
+           </pre><p> Mark files to be added or removed on the next 'checkin'
+          </p><pre class="screen">
+ 	      <span class="command"><strong> 
+		osc add foo
+		osc rm foo
+              </strong></span>
+           </pre><p> Add all new files in local copy and removes all disappeared files.
+           </p><pre class="screen">
+		<span class="command"><strong>
+		  osc addremove
+                </strong></span>
+            </pre><p> Generate a diff to view the changes
+	    </p><pre class="screen">
+		<span class="command"><strong>
+		    osc diff [file]
+                </strong></span>
+            </pre><p> Show the build results of the package
+            </p><pre class="screen">
+		<span class="command"><strong>
+		    osc results
+		    osc results [platform]
+ 		</strong></span>
+	    </pre><p> Show the log file of a package (you need to be inside a package directory)
+	    </p><pre class="screen"> 
+		<span class="command"><strong>
+		    osc buildlog [platform] [arch]
+		</strong></span>
+	    </pre><p> Show the URLs of .repo files which are packages sources for Yum/YaST/smart
+	    </p><pre class="screen">
+		<span class="command"><strong>
+		    osc repourls [dir]
+		</strong></span>
+	    </pre><p> Trigger a package rebuild for all repositories/architectures of a package
+	    </p><pre class="screen">
+		<span class="command"><strong> 
+		osc rebuildpac [dir]
+ 		</strong></span>
+	    </pre><p> Build a package on your local plattform
+	    </p><pre class="screen">
+		<span class="command"><strong>
+		  osc build [platform] [arch] [specfile] [--clean|--noinit|...]
+		</strong></span>
+	    </pre><p> Show the configured platforms/build targets.
+            </p><pre class="screen">
+		<span class="command"><strong>
+		   osc platforms [project]
+		</strong></span>
+	    </pre><p> Show the possible build targets for your project.
+	    </p><pre class="screen">
+		<span class="command"><strong>
+ 		    osc repos
+		</strong></span>
+	    </pre><p> Show meta information 
+	    </p><pre class="screen">
+		<span class="command"><strong>	
+		   osc meta prj [project]
+		   osc meta pkg [project] [package]
+		   osc meta user [username]
+		   osc meta prjconf [project]
+		</strong></span>
+	    </pre><p> Edit meta information. Creates new package/project if it doesn't exist. It will open an Editor with the raw XML metadata. If unsure about XML, you can use the web client instead.
+            </p><pre class="screen">
+		<span class="command"><strong>
+		   osc meta prj -e [project]
+		   osc meta pkg -e [project] [package]
+		   osc meta prjconf -e [project]
+		</strong></span>
+	    </pre><p> (The project configuration (prjconf) may well be empty. It is needed in special cases only.) Update package meta data with metadata taken from spec file
+	    </p><pre class="screen">
+		<span class="command"><strong> 
+		    osc updatepacmetafromspec [dir]
+		</strong></span>
+	     </pre></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id3131228"></a>6.2. Package tracking<span class="permalink"><a alt="Permalink" title="Copy Permalink" href="#id3131228">¶</a></span></h2></div></div></div><p> With osc it is also possible to manage packages in a svn like way. This feature is called package tracking and has to be enabled in ~/.oscrc's [general] section 
+    </p><pre class="screen"> 
+           <span class="command"><strong> 
+             # manage your packages in a svn like way
+             do_package_tracking = 1 
+           </strong></span> 
+         </pre><p> Add a new package to a project   
+    </p><pre class="screen"> <span class="command"><strong> osc mkpac [package] </strong></span> </pre><p> Add an already existing directory and its files to a project </p><pre class="screen"> <span class="command"><strong>  osc add [directory] </strong></span> </pre><p> Remove a package and its files from a project 
+      </p><pre class="screen"> <span class="command"><strong> osc deletepac [package] </strong></span> </pre><p> All the commands above only change your local working copy. To submit your changes to the buildservice you have to commit them (osc ci -m [message]).
+
+The status command also displays the state of the packages  
+       </p><pre class="screen"> <span class="command"><strong>  osc st  </strong></span> </pre></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="id3131324"></a>6.3.  .oscrc cheatsheet <span class="permalink"><a alt="Permalink" title="Copy Permalink" href="#id3131324">¶</a></span></h2></div></div></div><p> The [general] section
+
+Storage:  
+    </p><pre class="screen"> 
+           <span class="command"><strong> 
+             # Downloaded packages are cached here. Must be writable by you.
+             # default:
+             packagecachedir = /var/tmp/osbuild-packagecache 
+           </strong></span> 
+         </pre><pre class="screen"> 
+           <span class="command"><strong> 
+             # rootdir to setup the chroot environment
+             # can contain %(repo)s and/or %(arch)s for replacement
+             # /[path]/%(repo)s-%(arch)s-%(project)s-%(package)s
+             # default:
+             build-root = /var/tmp/build-root/ 
+           </strong></span> 
+         </pre><p> API communication:    
+    </p><pre class="screen"> 
+            <span class="command"><strong> 
+              # use this API server (hostname[:port])
+              # (it needs a section [api.opensuse.org] with the credentials)
+              # default:
+              apiurl = api.opensuse.org 
+            </strong></span> 
+         </pre><pre class="screen"> 
+            <span class="command"><strong> 
+              # use this protocol to access the API server (http or https)
+              # default:
+              scheme = https
+            </strong></span> 
+         </pre><p> API host: </p><pre class="screen"> 
+            <span class="command"><strong>  
+             # API hosts can be referenced by aliases, e.g. 'osc -A alias ...'
+             # List aliases for API hosts under the API host section.
+             # https://api.opensuse.org
+             # user=jdoe
+             # aliases= 
+            </strong></span> 
+         </pre><p> Local build:  </p><pre class="screen"> 
+            <span class="command"><strong> 
+               # Wrapper to call build as root (sudo, su -, ...)
+               # default: 
+               su-wrapper = su -c
+               # no password required with:
+               #su-wrapper = sudo
+               #with entry in sudoers file:
+               # [username] ALL = NOPASSWD: /usr/bin/build
+            </strong></span> 
+         </pre><pre class="screen"> 
+            <span class="command"><strong> 
+              # For convenience/debugging, osc adds internally vim gdb strace to 
+              # the packages installed in the build chroot if extra-pkgs is not set to:
+              #extra-pkgs=
+            </strong></span> 
+         </pre><pre class="screen"> 
+            <span class="command"><strong> 
+              # build type - possibe values:
+              #  * empty -&gt; chroot
+              #  * xen -&gt; xen VM
+              #  * kvm -&gt; kvm VM (testing needed) 
+              # default: not set/chroot
+              #build-type=xen
+            </strong></span> 
+         </pre><pre class="screen"> 
+            <span class="command"><strong> 
+              # build-device - root filesystem to use for VM
+              # default: not set
+              #build-device=/tmp/FILE.root
+            </strong></span> 
+         </pre><pre class="screen"> 
+            <span class="command"><strong> 
+              # build-swap - swap filesystem to use for VM
+              # default: not set
+              #build-swap=/tmp/FILE.swap
+            </strong></span> 
+         </pre><pre class="screen"> 
+            <span class="command"><strong> 
+              # build-memory - amount of memory for VM
+              # default: not set
+              #build-memory=512
+            </strong></span> 
+         </pre></div></div><div class="navfooter"><table width="100%" summary="Navigation footer" border="0" class="bctable"><tr><td width="80%"><div class="breadcrumbs"><p><a href="index.html">Open Build Service</a><span class="breadcrumbs-sep"> &gt; </span><strong><a accesskey="p" title="Chapter 5.  Boot Strapping " href="cha.obs.best-practices.bootstrapping.html"><span>&#9664;</span></a>  <a accesskey="n" title="Chapter 7. Advanced Project Setups" href="cha.obs.best-practices.advanced.html"><span>&#9654;</span></a></strong></p></div></td></tr></table></div></body></html>
