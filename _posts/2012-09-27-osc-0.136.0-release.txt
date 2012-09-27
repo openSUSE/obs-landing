@@ -1,0 +1,20 @@
+---
+layout: post
+title: new osc 0.136.0 release
+category: releases
+author: Marcus Hüwe
+---
+
+h1. osc 0.136.0 release
+
+p. We are happy to announce the osc 0.136.0 release. This release is mostly a bugfix release and contains the following changes:
+
+* prefer TLS v1.1 or v1.2 if available
+* declined is considered to be an open state (that is "osc rq list" also shows declined requests)
+* added support to move files across packages via "osc mv" (fixes issue "#10":https://github.com/openSUSE/osc/issues/10)
+* show source package name when running "osc se --binary ..."
+* fixed encoding detection
+* fixed build result listing for arch packages (affects "osc build")
+* "osc ci --noservice" also works for "external"/flat packages
+
+p. Thanks to everyone who contributed to osc!
