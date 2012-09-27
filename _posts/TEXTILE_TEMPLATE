@@ -27,7 +27,7 @@ Or you *use asterisks instead* for strong emphasis.
 # numbered 
 # list
 
-This is a "link to an example page"http://example.com/
+This is a "link to an example page":http://example.com/
 
 !image!:/path/to/image.jpg
 
