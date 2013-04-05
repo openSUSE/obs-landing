@@ -1,0 +1,74 @@
+---
+layout: post
+title: Open Build Service projects during Hackweek 9
+category: events
+author: Henne Vogelsang
+---
+<p>
+Next week is Hackweek! At least twice a year all SUSE engineers are free to work for
+one week on projects of their passion. They can choose to contribute to an
+existing open source project or try something new, nobody has tried before. 
+One whole week of innovation, collaboration, and learning. If you want to know more
+check the great <a href="http://hackweek.suse.com">hackweek.suse.com</a>.
+</p>
+
+<p>
+As very integral building block of the openSUSE/SUSE universum the Open Build Service
+will be one of the big topics that all those smart SUSE folks will work on. Let us
+introduce you to some of the projects that are going to happen in and around the OBS.
+</p>
+
+<h5>Improved group submission workflow, &hearts;Stephan Kulow&hearts;</h5>
+<p>
+Our very own Coolo will scratch a nasty, sore, purulent itch of his. In his
+day job he's a release manager and has to take care that all the great packaging work of the
+openSUSE community ends up neatly folded in the development distribution (Factory).
+</p>
+<p>
+openSUSE is developed by teams of people that work in their own projects, taking care of a
+group of packages that belong to a topic like GNOME, Openstack or Geosciences. They usually
+nurture their packages in their project until they are ready to be included into Factory, then submit
+all of them at once. Thanks to the OBS project model and collaboration features submitting is easily 
+done, however that doesn't mean that handling so many inter-dependent requests at once
+on the receiving end is as easy. Coolo sets out to change that! You can see all the nitty, gritty details
+on his <a href="https://github.com/SUSE/hackweek/wiki/Improved-Factory-devel-project-submission-workflow">Hackweek 9 project page</a>
+</p>
+
+<h5>Less I/O &rarr; faster builds, Dinar Valeev</h5>
+<p>
+Dinar Valeev, a power pc guy from SUSE, want's to see if he can improve the I/O and therefor
+the time that is needed to set up the virtual environment where the OBS workers build packages in.
+He's going to try to achive that with read only mounted filesystem images for common dependencies.
+Surprise, surprise, this is especially beneficial for I/O poor archs like PPC970. You can see at
+SUSE they live and breathe the #1 guideline for creating good open source software:
+</p>
+
+<blockquote>
+"Every good work of software starts by scratching a developer's personal itch." - <em>Eric S. Raymond</em>
+</blockquote>
+
+<h5>Social Software, Ancor González Sosa</h5>
+<p style="float:right;">
+<a href="#" data-reveal-id="soomod"><img src="/images/posts/software-o-o.thumb.png"></a>
+</p>
+<p>
+While not directly part of the OBS the openSUSE software portal is a major consumer of the OBS
+API. It provides a nice "app store" like interface and a package search over all the great stuff
+you can find in the projects of the OBS reference server build.opensuse.org. Ancor González Sosa, recently hired by SUSE, is going to 
+<a href="https://github.com/SUSE/hackweek/wiki/The-road-to-AppStream:-software.opensuse.org-goes-social">make the portal social</a>
+by adding ratings, comments and best-of lists. He's going to base his work on the Appstream architecture and the
+Open Collaboration Services specification. This certainly will add a lot of fun to it!
+</p>
+<br clear="both" />
+
+<div id="soomod" class="large reveal-modal">
+  <img src="/images/posts/software-o-o.png">
+  <p>software.opensuse.org</p>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+<h3>OBS - Smack in the middle</h3>
+<p>
+As you can see, also at hackweek there is a lot going on with the Open Build Service. All of us
+are certainly looking forward to the results of this week of hack. Are you? :-)
+</p>
