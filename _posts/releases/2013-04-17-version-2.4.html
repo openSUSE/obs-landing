@@ -1,0 +1,59 @@
+---
+layout: post
+title: Open Build Service version 2.4 released
+category: releases
+---
+<p>
+The <a href="http://www.open-build-service.org" title="OBS Home Page">Open Build Service(OBS)</a>
+version 2.4 adds support for yet another package format, secure boot signing and appstream
+app stores. It also adds constraint system to better match build hardware to build jobs and brings
+a lot of speed improvements. OBS 2.4 is the latest and greatest version and a rock solid release that
+is already used by our <a href="http://build.opensuse.org">reference server</a> since January.
+We strongly recommended to update to this version.
+</p>
+
+<h6>New Build Constraints System</h6>
+<p>
+Constraints can be defined for packages and projects inside the OBS to only build on worker instances
+that fulfill these constraints. The types of constraints vary from software constraints like requiring
+a minimum kernel version, over hardware constraints like requiring a specific CPU flag or size of disk/memory
+to OBS constraints like the type of sandbox the worker uses to execute the build.
+<br />
+Each successfull build in OBS 2.4 now produces statistics over the used disk space, memory and I/O usage which 
+can be used as a base for setting constraints.
+</p>
+
+<p>
+With this constraint system it's not only possible to better match build jobs to build environments but it also can
+be used to run, for instance, package benchmarks always on the same worker or distinguish between secure and insecure
+build environments. Documentation about this can be found in the
+<a href="http://openbuildservice.org/help/manuals/obs-reference-guide/cha.obs.build_job_constraints.html">
+Open Build Service Reference Guide</a>
+</p>
+
+
+<h6>Massive Speed Improvements</h6>
+<p>
+Packager/Developer time is a very valueable so we are constantly working on improving the speed of the OBS.
+For 2.4 we have added support for preinstall images of dependencies to speed up the assembly of the worker sandboxes.
+These images include all the files so unpacking them is way faster than unpacking single packages. We also added better
+caching of build metadata, grouping of repository metadata writes and more efficient merging of scheduler metadata. 
+And we have made the interconnect of different OBS instances asynchronus. This will avoid scheduler hangups with slow
+or broken network to a remote instance.
+</p>
+
+<h6>More information</h6>
+<p>
+If you are longing for a deeper look into all the changes this major version update bings
+check out the detailed 
+<a href="https://github.com/openSUSE/open-build-service/blob/2.4/ReleaseNotes-2.4"
+   title="OBS 2.4 Release Notes">2.4 Release Notes</a>.
+It is also recommended to read these before updating your instance. 
+<p>
+        
+<h3>Try OBS 2.4</h3>
+{% include reference_server.inc %}
+{% include download.inc %}
+
+<h3>About the Open Build Service</h3>
+{% include about.inc %}
