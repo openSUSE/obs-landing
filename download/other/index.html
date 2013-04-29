@@ -13,10 +13,15 @@ title: Download
     </p>
   </div>
   <div class="twelve columns">
-  <h4>Appliance Images</h4>
+  <h4>Appliances</h4>
+  <p>
+    The preferred method of deploying an Open Build Service instance are the OBS software appliances. In these
+    appliances the OBS components are combined with the openSUSE Distribution to run optimally on a server or
+    in a virtual machine
+  </p>
   <h5>Installation Image</h5>
     <p>
-      This installation image runs a basic installer that let's you choose the block device to deploy the image to.
+      This installation image runs a basic installer that let's you choose the block device to deploy the appliance to.
     </p>
     <p>
       You put this image on a USB device and boot from it.
@@ -102,16 +107,8 @@ title: Download
 
 <div class="row">
   <div class="twelve columns">
-    <h5>Appliance Configuration<h5>
-    <p>
-    On the first boot the system adapts to the hardware and defaults to automatic IP and DNS configuration via DHCP.
-    The OBS scans for a LVM volume group called "OBS" and will use that to set up logical volumes for the worker file systems.
-    Additionally if this volume group contains a logical volume named "server" it will be used as the data partition for the server.
-    Please note that
-    <span class="has-tip" data-width="210" title="Data, master boot record, partitions, every single bit will be gone for good.
-    Be careful!">all data</span>
-    on the harddisk you deploy the image to will get overwritten.
-    </p>
+    <h5>Appliance Configuration</h5>
+    {% include appliance_config.inc %}
   </div>
 </div>
 

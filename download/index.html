@@ -27,31 +27,20 @@ title: Download
   </div>
 
   <div class="twelve columns">
-  <h3>Installation</h3>
+   <h4>Installation</h4>
     <p>
-      Burn the installer iso to a blank CD/DVD and boot from it. The installer will ask you about the harddisk you want
+      Burn the installer iso to a blank CD/DVD and boot from it. The installer will ask you about the block device you want
       to deploy the appliance to.
     </p>
-    <p>
-      On the first boot the system adapts to the hardware and defaults to automatic IP and DNS configuration via DHCP.
-      The OBS scans for a LVM volume group called "OBS" and will use that to set up logical volumes for the worker file systems.
-      Additionally if this volume group contains a logical volume named "server" it will be used as the data partition for the server.
-      Please note that
-      <span class="has-tip" data-width="210" title="Data, master boot record, partitions, every single bit will be gone for good.
-      Be careful!">all data</span>
-      on the harddisk you deploy the image to will get overwritten.
-    </p>
+   <h4>Configuration</h4>
+    {% include appliance_config.inc %}  
     <p>
       <a href="other/" class="radius small button" style="width: 100%; border-color: #d0d0d0; background: #e9e9e9; color: #505050;">Looking for other deployment methods like installation images for USB sticks or disk images for virtual machines? Click here.</a>
     </p>
   </div>
 
-  <div class="twelve columns" id="deploydocs">
-    
-  </div>
-
   <div class="twelve columns">
-  <h2>Access the reference server</h2>
+    <h2>Access the reference server</h2>
     {% include reference_server.inc %}
     <p>
       Access it via the webfrontend or download the command line client. The commandline client (osc) is a subversion-like
@@ -59,5 +48,5 @@ title: Download
     </p>
     <iframe src='http://software.opensuse.org/download/iframe?project=openSUSE:Tools&amp;package=osc&amp;fcolor=607890&amp;hcolor=607890&amp;acolor=607890' width="100%" height="700" frameborder="0" seamless="seamless">
     </iframe>
-    </div>
+  </div>
 </div>
