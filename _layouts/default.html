@@ -31,27 +31,22 @@
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 
-  <!-- Piwik -->
+  <!-- Piwik --> 
   <script type="text/javascript">
-    var _paq = _paq || [];
-    (function(){
-      var u=(("https:" == document.location.protocol) ? "https://beans.opensuse.org/piwik/" : "http://beans.opensuse.org/piwik/");
-      _paq.push(['setSiteId', 20]);
-      _paq.push(['setTrackerUrl', u+'piwik.php']);
-      _paq.push(['trackPageView']);
-      _paq.push([ 'setDomains', ["*.open-build-service.org"]]);
-      var d=document,
-      g=d.createElement('script'),
-      s=d.getElementsByTagName('script')[0];
-      g.type='text/javascript';
-      g.defer=true;
-      g.async=true;
-      g.src=u+'piwik.js';
-      s.parentNode.insertBefore(g,s);
-    })();
+    var pkBaseURL = (("https:" == document.location.protocol) ? "https://beans.opensuse.org/piwik/" : "http://beans.opensuse.org/piwik/");
+    document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
   </script>
-  <!-- End Piwik Code -->
-
+  <script type="text/javascript">
+    try {
+    var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 20);
+    piwikTracker.trackPageView();
+    piwikTracker.enableLinkTracking();
+    } catch( err ) {}
+  </script>
+  <noscript>
+    <p><img src="http://beans.opensuse.org/piwik/piwik.php?idsite=20" style="border:0" alt="" /></p>
+  </noscript>
+  <!-- End Piwik Tracking Code -->
 
 </head>
 <body>
