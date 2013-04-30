@@ -55,82 +55,83 @@
 
 </head>
 <body>
-<div class="show-for-small">
-  <ul class="nav-bar" id="mobile-nav">
-    <li class="has-flyout">
-      <a href="#">Menu</a>
-      <a href="#" class="flyout-toggle"><span> </span></a>
-      <ul class="flyout">
+<div class="container">
+  <div class="show-for-small">
+    <ul class="nav-bar" id="mobile-nav">
+      <li class="has-flyout">
+        <a href="#">Menu</a>
+        <a href="#" class="flyout-toggle"><span> </span></a>
+        <ul class="flyout">
+          <li><a href="/about" title="What the heck is this OBS?">About</a></li>
+          <li><a href="/download" title="Get all the OBS components">Download</a></li>
+          <li><a href="/help" title="Read up upon the OBS">Documentation</a></li>
+          <li><a href="/support" title="Talk to human beings about your OBS problems">Support</a></li>
+          <li><a href="/team" title="The People behind OBS">Team</a></li>
+          <li><a href="/blog" title="News about OBS">Blog</a></li>
+        </ul>
+      </li>
+    </ul> 
+  </div>
+
+  <div class="row">
+    <div class="four columns header">
+      <a href="/" alt="Home" title="Home"><img src="/images/obs-logo.png" class="displayed"></a>
+    </div>  
+    <div class="eight columns hide-for-small">
+      <ul class="nav-bar">
         <li><a href="/about" title="What the heck is this OBS?">About</a></li>
         <li><a href="/download" title="Get all the OBS components">Download</a></li>
-        <li><a href="/help" title="Read up upon the OBS">Documentation</a></li>
+        <li class="has-flyout">
+          <a href="#">Documentation</a>
+          <a href="#" class="flyout-toggle"><span> </span></a>
+            <ul class="flyout">
+              <li><a href="/help/manuals" title="Read up upon the OBS">Manuals</a></li>
+              <li><a href="/help/materials" title="Screencasts, Talks, Workshops">Materials</a></li>
+            </ul>
+        </li>
         <li><a href="/support" title="Talk to human beings about your OBS problems">Support</a></li>
         <li><a href="/team" title="The People behind OBS">Team</a></li>
         <li><a href="/blog" title="News about OBS">Blog</a></li>
-      </ul>
-    </li>
-  </ul> 
+      </ul> 
+    </div>
+  </div>
+
+    {{ content }}
+
+  <div class="row" id="footer">  
+    <div class="twelve columns">  
+      <strong>The <a href="http://www.open-build-service.org/" title="Open Build Service - Home">Open Build Service</a></strong> is an <strong><a href="http://www.opensuse.org/" title="openSUSE.org">openSUSE project</a></strong>. 
+    </div>
   </div>
 </div>
 
-<div class="row">
-  <div class="four columns header">
-    <a href="/" alt="Home" title="Home"><img src="/images/obs-logo.png" class="displayed"></a>
-  </div>  
-  <div class="eight columns hide-for-small">
-    <ul class="nav-bar">
-      <li><a href="/about" title="What the heck is this OBS?">About</a></li>
-      <li><a href="/download" title="Get all the OBS components">Download</a></li>
-      <li class="has-flyout">
-        <a href="#">Documentation</a>
-        <a href="#" class="flyout-toggle"><span> </span></a>
-          <ul class="flyout">
-            <li><a href="/help/manuals" title="Read up upon the OBS">Manuals</a></li>
-            <li><a href="/help/materials" title="Screencasts, Talks, Workshops">Materials</a></li>
-          </ul>
-      </li>
-      <li><a href="/support" title="Talk to human beings about your OBS problems">Support</a></li>
-      <li><a href="/team" title="The People behind OBS">Team</a></li>
-      <li><a href="/blog" title="News about OBS">Blog</a></li>
-    </ul> 
-  </div>
-</div>
-<div id="content">
-  {{ content }}
-</div>
-<div class="row" id="footer">  
-  <div class="twelve columns">  
-    <strong>The <a href="http://www.open-build-service.org/" title="Open Build Service - Home">Open Build Service</a></strong> is an <strong><a href="http://www.opensuse.org/" title="openSUSE.org">openSUSE project</a></strong>. 
-  </div>
-</div>
-  
-  <!-- Included JS Files (Compressed) -->
-  <script src="/javascripts/foundation.min.js"></script>
+<!-- Included JS Files (Compressed) -->
+<script src="/javascripts/foundation.min.js"></script>
 
-  <!-- Initialize JS Plugins -->
-  <script src="/javascripts/app.js"></script>
-    
-  <script type="text/javascript">
-   $(window).load(function() {
-       $('#featured').orbit({
-       directionalNav: false,
-       captions: true,
-       });
-   });
-  </script>
-  
-  <script type="text/javascript">
-  $(document).ready(function() {
-    $('#Video1ModalButton').click(function() {
-      $('#Video1Modal').reveal();
-    });
-    $('#Video2ModalButton').click(function() {
-      $('#Video2Modal').reveal();
-    });
-    $('#Video3ModalButton').click(function() {
-      $('#Video3Modal').reveal();
-    });
-  });
+<!-- Initialize JS Plugins -->
+<script src="/javascripts/app.js"></script>
+
+<script type="text/javascript">
+ $(window).load(function() {
+     $('#featured').orbit({
+     directionalNav: false,
+     captions: true,
+     });
+ });
 </script>
-  </body>
+  
+<script type="text/javascript">
+$(document).ready(function() {
+  $('#Video1ModalButton').click(function() {
+    $('#Video1Modal').reveal();
+  });
+  $('#Video2ModalButton').click(function() {
+    $('#Video2Modal').reveal();
+  });
+  $('#Video3ModalButton').click(function() {
+    $('#Video3Modal').reveal();
+  });
+});
+</script>
+</body>
 </html>
