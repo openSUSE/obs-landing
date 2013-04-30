@@ -1,0 +1,148 @@
+---
+layout: default
+title: Download
+---
+
+<div class="row">
+  <div class="twelve columns">
+  <h2>Have it your way <br /><span style="color: #999; font-size: 65%;">OBS deployment methods</span></h2>
+    <p>
+      Every company, project and data center is different. Thats why you can deploy the OBS as
+      packages, appliance images or source code to real hardware and different virtualization solutions.
+      Everything is possible.
+    </p>
+  </div>
+  <div class="twelve columns">
+  <h4>Appliances</h4>
+  <p>
+    The preferred method of deploying an Open Build Service instance are the OBS software appliances. In these
+    appliances the OBS components are combined with the openSUSE Distribution to run optimally on a server or
+    in a virtual machine
+  </p>
+  <h5>Installation Image</h5>
+    <p>
+      This installation image runs a basic installer that let's you choose the block device to deploy the appliance to.
+    </p>
+    <p>
+      You put this image on a USB device and boot from it.
+    </p>
+    <pre>
+      xzcat obs-server-install.x86_64.raw.xz > /dev/sdX
+    </pre>
+    <p>
+      where <em>/dev/sdX</em> is the block device corresponding to your USB device.
+    </p>
+    <p style="color: #999">
+       If you're not using Linux/*nix go checkout out
+      <a href="http://www.kekaosx.com/en/">Keka</a>, <a href="http://www.7-zip.org/">7-zip.org</a> and the
+      <a href="https://github.com/downloads/openSUSE/kiwi/ImageWriter.exe">SUSE Studio Image writer</a>
+    </p>
+    <a href="http://download.opensuse.org/repositories/OBS:/Server:/2.4/images/obs-server.x86_64.raw.install.raw.xz"
+       title="OBS Appliance Installer Image"
+       class="radius large button">
+       Download obs-server.x86_64.raw.install.raw.xz
+    </a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="four columns">
+    <h5>VirtualBox/VMware Image</h5>
+    <p>
+      For VirtualBox and VMware there is an archive containing a configuration file (.vmx) and a disk image (.vmdk).
+      You can load the configuration into VMware workstation/player or VirtualBox.
+    </p>
+  </div>
+  <div class="four columns">
+    <h5>KVM/QEmu Image</h5>
+    <p>
+      For QEMU/KVM there is a disk image in the qcow format which you can start with <em>qemu-kvm</em> or any other
+      virtualization framework which is capable of using the QCow file system.
+    </p>
+  </div>
+
+  <div class="four columns">
+    <h5>Raw Disk Image</h5>
+    <p>
+      If you want to deploy directly to a block device of your bare-metal server or if you are using a virtualization
+      framework that can handle raw disk images there is an file system image for you.
+    </p>
+  </div>
+</div>
+
+
+
+<div class="row">
+  <div class="four columns">
+    <a href="http://download.opensuse.org/repositories/OBS:/Server:/2.4/images/obs-server.x86_64-vmx.tar.bz2"
+       title="OBS Appliance VMX/VMDK Image"
+       class="radius large button"
+       style="width: 100%">
+       Download<br />
+       VirtualBox/VMware Image<br />
+       <small>obs-server.x86_64-vmx.tar.bz2</small>
+    </a>
+  </div>
+  <div class="four columns">
+    <a href="http://download.opensuse.org/repositories/OBS:/Server:/2.4/images/obs-server.x86_64.qcow2"
+       title="OBS Appliance QCow Image"
+       class="radius large button"
+       style="width: 100%">
+       Download<br />
+       KVM/QEmu Image<br />
+       <small>obs-server.x86_64.qcow2</small>
+    </a>
+  </div>
+  <div class="four columns">
+    <a href="http://download.opensuse.org/repositories/OBS:/Server:/2.4/images/obs-server.x86_64.raw.xz"
+       title="OBS Appliance Raw Image"
+       class="radius large button"
+       style="width: 100%">
+       Download<br />
+       Raw Disk Image <br />
+       <small>obs-server.x86_64.raw.xz</small>
+    </a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="twelve columns">
+    <h5>Appliance Configuration</h5>
+    {% include appliance_config.inc %}
+  </div>
+</div>
+
+<div class="row">
+  <div class="twelve columns">
+    <h3>Packages<h3>
+    <p>
+      If you already have a Linux server running you can use our binary packages to install OBS and follow our
+      <a href="https://raw.github.com/openSUSE/open-build-service/master/dist/README.SETUP">README.Setup</a> to set everything
+      up yourself. Currently we maintain packages for the openSUSE and SUSE Linux Enterprise distributions. 
+    </p>
+    <h5>SUSE Linux Enterprise</h5>
+    <pre>
+      zypper ar -f http://download.opensuse.org/repositories/OBS:/Server:/2.4/SLE_11_SP2/OBS:Server:2.4.repo
+      zypper in -t pattern OBS_Server
+    </pre>
+    <h5>openSUSE</h5>
+    <pre>
+      zypper ar -f http://download.opensuse.org/repositories/OBS:/Server:/2.4/openSUSE_12.3/OBS:Server:2.4.repo
+      zypper in -t pattern OBS_Server
+    </pre>
+  </div>
+</div>
+
+<div class="row">
+  <div class="twelve columns">
+    <h3>Source Code<h3>
+    <p>
+      You can also grab the <a href="https://github.com/openSUSE/open-build-service">source code from github</a> and follow our
+      <a href="https://raw.github.com/openSUSE/open-build-service/master/dist/README.SETUP">README.Setup</a> to set everything
+      up yourself.
+    </p>
+    <pre>
+      git clone git@github.com:openSUSE/open-build-service.git 
+    </pre>
+  </div>
+</div>
