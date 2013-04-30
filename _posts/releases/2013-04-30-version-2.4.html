@@ -1,0 +1,109 @@
+---
+layout: post
+title: Open Build Service version 2.4 released
+category: releases
+---
+<p>
+After one whole year of hard work, toil, tears and sweat from all our awesome contributors the latest
+release of the <a href="http://www.open-build-service.org" title="OBS Home Page">Open Build Service(OBS)</a>
+is ready for you. Version 2.4 adds support for yet another package format, secure boot signing and appstream
+app stores. It also brings a constraint system to better match build hardware to build jobs and includes a lot
+of speed improvements. OBS 2.4 is the latest, greatest and rock solid release that is already used by our
+reference server since January. We strongly recommended to update to this version.
+</p>
+
+<div style="float: right;">
+<a href="#" data-reveal-id="AppStreamModal">
+<img src="/images/posts/obs-2.4-app_store.png" width="280px" style="margin: 10px;">
+</a>
+<hr style="width: 80%; margin-left: 10%">
+<a href="#" data-reveal-id="PKGBUILDModal">
+<img src="/images/posts/obs-2.4-PKGBUILD.png" width="280px" style="margin: 10px;">
+</a>
+<hr style="width: 80%; margin-left: 10%">
+<a href="#" data-reveal-id="SpeedModal">
+<img src="/images/posts/obs-2.4-constraints.png" width="280px" style="float:right">
+</a>
+</div>
+
+<div id="SpeedModal" class="reveal-modal">
+  <img src="/images/posts/obs-2.4-constraints.png">
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+<div id="PKGBUILDModal" class="reveal-modal">
+  <img src="/images/posts/obs-2.4-PKGBUILD.png">
+  <p>A PKGBUILD file edited in OBS</p>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+<div id="AppStreamModal" class="reveal-modal">
+  <img src="/images/posts/obs-2.4-app_store.png">
+  <p>The AppStream based app store on <a href="http://software.opensuse.org/appstore">software.opensuse.org</a></p>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+<h6>PKGBUILD, Secure Boot and AppStream Support</h6>
+<p>
+With OBS 2.4 it is now possible to build packages in the PKGBUILD format used for instance by the popular
+Arch Linux distribution. This is the third package format, after RPM and DEB, supported by the OBS which makes
+it feasible to build and ship software for all the major Linux distributions that use a binary package format.
+Another popular demand for build servers these days is the support for signing individual files (bootloader, driver etc.)
+inside packages with a cryptographic key to support standards like UEFI secure boot. In version 2.4 the
+OBS sign daemon has been extend to handle this security feature. And with the rise of App-Stores as means to
+distribute software to end users this OBS release brings support for the cross-distribution application metadata
+standard AppStream.
+</p>
+
+
+<h6>New Build Constraints System</h6>
+<p>
+Constraints can be defined for packages and projects inside the OBS to only build on worker instances that fulfill
+these constraints. The types of constraints vary from software constraints like requiring a minimum kernel version,
+over hardware constraints like requiring a specific CPU flag or size of disk/memory to OBS constraints like the type
+of sandbox the worker uses to execute the build.
+<br />
+Each successfull build in OBS 2.4 now produces statistics over the used disk space, memory and I/O usage which can
+be used as a base for setting constraints.
+<br />
+With this constraint system it is not only possible to better match build jobs to build environments but it also can
+be used to run, for instance, package benchmarks always on the same worker or distinguish between secure and insecure
+build environments. Documentation about this can be found in the
+<a href="http://openbuildservice.org/help/manuals/obs-reference-guide/cha.obs.build_job_constraints.html">
+Open Build Service Reference Guide.</a>
+</p>
+
+
+<h6>Massive Speed Improvements</h6>
+<p>
+Packager/Developer time is a very valueable so we are constantly working on improving the speed of the OBS.
+For 2.4 we have added support for preinstall images of dependencies to speed up the assembly of the worker sandboxes.
+These images include all the files so unpacking them is way faster than unpacking single packages. We also added better
+caching of build metadata, grouping of repository metadata writes and more efficient merging of scheduler metadata. 
+And we have made the interconnect of different OBS instances asynchronus. This will avoid scheduler hangups with slow
+or broken network to a remote instance.
+</p>
+
+
+<h3>More information</h3>
+<p>
+If you are longing for a deeper look into all the changes this major version update bings
+check out the detailed 
+<a href="https://github.com/openSUSE/open-build-service/blob/2.4/ReleaseNotes-2.4"
+   title="OBS 2.4 Release Notes">2.4 Release Notes</a>.
+It is also recommended to read these before updating your instance. 
+<p>
+
+<div style="float: left;">
+<a href="http://openbuildservice.org/download/">
+<img src="/images/posts/obs-2.4-get.png" style="margin: 10px;">
+</a>
+</div>
+<h5>Try OBS 2.4</h5>
+{% include reference_server.inc %}
+
+<h5>Get OBS 2.4</h5>
+{% include download.inc %}
+
+<h5>About the Open Build Service</h5>
+{% include about.inc %}
