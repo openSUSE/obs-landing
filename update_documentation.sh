@@ -18,7 +18,13 @@ pushd open-build-service-documentation/
     # update epub
     rm ../files/manuals/${doc}.epub || exit 1
     mv epub/${doc}.xml ../files/manuals/${doc}.epub || exit 1
+
+    # add to git 
+    git add help/manuals/$doc files/manuals/$doc.epub || exit 1
   done
 
 popd
+
+git add open-build-service-documentation || exit 1
+git commit -m "Update books to current state" || exit 1
 
