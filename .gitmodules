@@ -1,0 +1,3 @@
+[submodule "open-build-service-documentation"]
+	path = open-build-service-documentation
+	url = https://github.com/openSUSE/open-build-service-documentation.git
