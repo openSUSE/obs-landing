@@ -1,0 +1,38 @@
+---
+layout: post
+title: OBS Webui Gets New Search Functionality
+category: documentation
+author: Stephan Kulow
+---
+
+<div class="entry">
+<h2>Search</h2>
+<p>For years one of the biggest complaint about the webUI was that it is impossible to find packages. The <a href="https://build.opensuse.org/search" target="_blank">search ability</a> has been part of the interface from the beginning, but with over 200.000 packages being build today it is crucial to get the <strong>right</strong> package.</p>
+
+<h3>Where is my kernel?</h3>
+<p>Especially for developers new to openSUSE and the build service it is common to have to search for the package to fix for a specific bug. So you find yourself looking for <em>kernel</em> in the webUI and you are prompted with tons of results that are displayed in a rather random order and the notion that your search resulted in more than 200 hits and is basically invalid. Huh? home:foobar:latest-experiments:kernel is surely <em>not</em> the openSUSE kernel to fix, but then what is?</p>
+<p>Now if you ask google about <a href="https://www.google.com/search?q=kernel+site%3Abuild.opensuse.org&amp;hl=en">&#8220;kernel site:build.opensuse.org&#8221;</a> you get closer to the problem at hand: &#8220;About 16,800 results&#8221; &#8211; that is a lot to pick the first 20 results to display from. The OBS webUI tried to find a good pick with an algorithm that might have been clever when build.opensuse.org had 100 projects. Today, it can only be called old and useless.<br />
+<a href="//lizards.opensuse.org/wp-content/uploads/2013/09/obs-in-action.jpg"><img src="//lizards.opensuse.org/wp-content/uploads/2013/09/obs-in-action-300x199.jpg" alt="obs in the dark" width="300" height="199" class="alignright size-medium wp-image-9864" /></a></p>
+
+<h2>Ancor for world fame</h2>
+<p>So I tricked <a href="https://plus.google.com/114260811841185028896/about">Ancor</a> to look into the problem by claiming he would get all the praises in the OBS world for implementing a sane search.</p>
+<p>The problem is far from trivial, but there are good tools to get a better result than what we had now and Ancor has a lot of experience with these (and <a href="http://en.wikipedia.org/wiki/Ruby_on_Rails" target="_blank">Rails</a> in general). So it seemed like he could attain a great balance between effort and outcome.</p>
+<p>But as always the devil lay in the details, so this post is also about getting feedback about the actual result.</p>
+
+<h3>What we did</h3>
+<p>Ancor integrated <a href="http://pat.github.io/thinking-sphinx/">Thinking Sphinx</a> into the OBS, so the name, title and description can be combined with other attributes into one big index that allows page ranking.</p>
+<p>Additionally there is nomit of 200 results anymore, the webUI will display all results now, but only 20 at a time as you might have seen in larger sites offering search results display&#8230;</p>
+<p>We collected attributes which are most likely relevant for people searching for packages. For example, we gather the linkcount of a package into the database (so far only the backend knows what is a link and what is a plain package). The idea is to move links down in the source results.</p>
+<p>Coming back to the kernel example, the kernel-source package is the <em>real</em> package, while kernel-default, kernel-desktop, kernel-xen, &#8230;. exist too but are all links to kernel-source. So it is fair to present kernel-source first.</p>
+<p>Problem is: there are still 228 kernel-source packages in the build service (yes, people like branching the kernel &#8211; a lot), so the number of links pointing <strong>to</strong> the package is another attribute. Packages that other packages branch go up in the list while the resulting branches move down. What also plays a role in the calculation: is a package the devel package of another? (which is the final punch to have Kernel:HEAD/kernel-source as <a href="https://build.opensuse.org/search?utf8=%E2%9C%93&amp;search_text=kernel&amp;commit=Senden&amp;issue_tracker=bnc&amp;issue=&amp;project=0&amp;project=1&amp;package=0&amp;package=1&amp;name=0&amp;name=1&amp;title=0&amp;description=0&amp;attrib_type_id=" target="_blank">first result displayed</a>, as opposed to the old searching algorithm displaying a discontinued &#8220;linux-kernel-nutshell&#8221; as shown in the screen shots).<br />
+<a href="https://build.opensuse.org/search?utf8=%E2%9C%93&amp;search_text=kernel&amp;commit=Senden&amp;issue_tracker=bnc&amp;issue=&amp;project=0&amp;project=1&amp;package=0&amp;package=1&amp;name=0&amp;name=1&amp;title=0&amp;description=0&amp;attrib_type_id="><img src="//lizards.opensuse.org/wp-content/uploads/2013/09/search-kernel.gif" alt="search for kernel on OBS" width="688" height="406" class="alignnone size-full wp-image-9872" /></a></p>
+<p>To sort the vast majority of results that are all _links, not linked to and not devel packages, we take the activity index. This is a number the OBS tracks for every package, but is nowhere displayed. It goes from 0 to 100 and goes down with time and goes up with regular commits. So if you look for kde, you will actually see KDE:Unstable:Playground as first project to match. This is because of two things:</p>
+<ul>
+<li>kde is indeed a very bad search term</li>
+<li>the unstable playground sees a lot of commits, so your chance of getting something fresh there is the highest</li>
+</ul>
+
+<h2>Your feedback wanted</h2>
+<p>Of course nobody is perfect, and while the code of Ancor is close to, the weights given to the attributes were my choice, so all problems in the sorting you see are my fault. Please take some time and redo some <a href="https://build.opensuse.org/search" target="_blank">searches</a> you might have done in the past and report if the results are sane to your experienced eye. Within the HTML of the search results is a hidden span with the raw attributes used in the calculation, so if you find something strange, look for weight, linked_count, activity_index, is_devel and co. Possibly the package that looks bogus to you in the top results is just very active.</p>
+<p>Depending on the feedback we get, we might need to change the weights or add yet more attributes in the search and ranking. Do your own experiments on <a href="https://build.opensuse.org/search" target="_blank">build.opensuse.org</a> today!</p>
+
