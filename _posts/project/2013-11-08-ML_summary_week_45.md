@@ -25,14 +25,17 @@ hung.
 Christoph Dwertmann reported a problem building a package with `ruby`
 as a build dependency. It works for Fedora 17 and 18, but appears to
 be broken on Fedora 19.
+
 > * Klaus Kaempf noted that, since Fedora 19 couldn't decide on a Ruby
 > version, it is necessary to add `rubypick` to the `.spec` file for
 > F19 builds, like so:
+
 <pre>
 %if 0%{?fedora} == 19
 BuildRequires:  rubypick
 %endif
 </pre>
+
 <p align="center">§§§</p>
 
 Stefan Botter reported a problem on he has been seeing on his private
@@ -69,7 +72,8 @@ in the current `.spec` file to:
 
 <pre>
 %{?make_install} %{!?make_install:%{__make} install DESTDIR=%{buildroot}}
-</pre><br>
+</pre>
+
 He would like to do something similar with other packages, but their
 maintainers are reluctant to support old targets, especially when this
 means adding such "ugly" lines to the `.spec` file. To get around this,
@@ -77,8 +81,10 @@ he had the idea of handling the matter in his `prjconfig` like so:
 
 <pre>
 %{!?make_install: %define make_install %{__make} install %DESTDIR=%{buildroot}}
-</pre><br>
+</pre>
+
 But it doesn't work.
+
 > * Jan Engelhardt recommended dispensing with the macro altogether,
 > i.e. `make install DESTDIR="%buildroot"` -- which is better and
 > cleaner in his opinion. It is also
