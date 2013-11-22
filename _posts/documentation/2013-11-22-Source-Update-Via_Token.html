@@ -1,0 +1,40 @@
+---
+layout: post
+title: Let github.com trigger your source update
+category: documentation
+author: Adrian Schröter
+---
+<div class="row">
+  <div class="twelve columns">
+
+    <p>
+    OBS as running on <a href="https://build.opensuse.org">build.opensuse.org</a> is supporting
+    now to execute source services via authentification tokens. That means you do not use your
+    secret login credentials for this kind of operations which makes it easy to hook into other
+    services like github.com. 
+    </p>
+
+    <p>
+    Please find details about source services and authentification tokens in the 
+    <a href="http://openbuildservice.org/help/manuals/obs-reference-guide">OBS reference guide</a>.
+    Or learn about this example. You need also latest osc version 0.142 to use this.
+    </p>
+
+    <p>Create a new package container and check it out with osc. Afterwards create the source service
+       using osc with this command: <strong>osc add git://github.com/openSUSE/obs-build.git</strong>
+       and checkin the generated _service file. You need also to provide a spec file.</p>
+
+    <p>Now create a token for this package via <strong>osc token --create YOUR_PROJECT YOUR_PACKAGE</strong>.
+       The command will return the token id or list all your tokens via <strong>osc token</strong>.
+       The execution can be tested via <strong>osc token --trigger YOUR_TOKEN</strong>.
+
+    <p>If you want to update this package always when doing a <strong>git push</strong> you can register
+       this token on github. Go to your repository, find the Settings and the Service Hooks button. One
+       of the many services is the Obs service. Paste the token id to the token field, check on the Active
+       button and click on update. You do not need to fill out the other three fields if you are using
+       the opensuse obs instance and registered the package when creating the token as described above.</p>
+
+    <p>Each <strong>git push</strong> will lead to a service update now. Your username will appear in the 
+       <strong>osc log</strong> source history.</p>
+  </div>
+</div>
