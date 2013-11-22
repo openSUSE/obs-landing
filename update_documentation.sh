@@ -3,6 +3,11 @@
 git submodule init
 git submodule update
 
+pushd open-build-service-documentation/
+git fetch
+git checkout master
+popd
+
 for doc in obs-best-practices obs-reference-guide; do
   pushd open-build-service-documentation/
 
