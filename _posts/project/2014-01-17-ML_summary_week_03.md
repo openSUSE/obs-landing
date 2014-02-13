@@ -17,18 +17,14 @@ proxy settings for OBS do not work. He based his proxy settings
 on <a
 href="http://en.opensuse.org/openSUSE:Build_Service_private_installation">http://en.opensuse.org/openSUSE:Build_Service_private_installation</a>.
 Yet despite best efforts, the Add Repositories page is empty.
-> * Martin Weber, who runs OBS behind a proxy, provided some pointers:
-> <a
-> href="http://lists.opensuse.org/opensuse-buildservice/2014-01/msg00119.html">http://lists.opensuse.org/opensuse-buildservice/2014-01/msg00119.html</a>
+> * Martin Weber, who runs OBS behind a proxy, provided some pointers: <a href="http://lists.opensuse.org/opensuse-buildservice/2014-01/msg00119.html">http://lists.opensuse.org/opensuse-buildservice/2014-01/msg00119.html</a>
 
 <p align="center">§§§</p>
 
 Roger Oberholtzer would like to change the name of an existing 
 project that contains packages. How to proceed, when `osc` lacks
-a rename option?
-> * Answer: 
->
->   for pkg in $(osc ls oldprj); do osc copypac oldprj pkg newprj; done
+a rename option? The list suggested that he do something like this:
+> `for pkg in $(osc ls oldprj); do osc copypac oldprj pkg newprj; done`
 
 <p align="center">§§§</p>
 

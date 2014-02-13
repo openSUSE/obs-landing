@@ -35,12 +35,12 @@ Roger Oberholtzer is trying to build a package that `BuildRequires`
 components in `windows:mingw:win32`. OBS complains that nothing provides
 this. He tried linking to the project in the package metadata, but that
 doesn't work.
-* > List's response: you can only add project links in project meta data,
-* not package meta data. In this case the OP does not want to link the sources
-* of another project, but rather to build against binaries from another repo.
-* So, he should edit his repositories using `osc meta prj -e $PROJECT` and
-* modify the path line to build against the other project/repo which
-* provides the rpm.
+> * List's response: you can only add project links in project meta data,
+> not package meta data. In this case the OP does not want to link the sources
+> of another project, but rather to build against binaries from another repo.
+> So, he should edit his repositories using `osc meta prj -e $PROJECT` and
+> modify the path line to build against the other project/repo which
+> provides the rpm.
 
 <p align="center">§§§</p>
 
