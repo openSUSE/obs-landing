@@ -1,0 +1,149 @@
+---
+layout: post
+title: Open Build Service version 2.5 released
+category: releases
+---
+<p>
+Are you ready for another set of great features for your free software packaging needs?
+We are with version 2.5. of the <a href="http://openbuildservice.org" title="OBS Home Page">Open Build Service(OBS)</a>.
+With this release you can plug OBS into your continuous integration/delivery chain thanks to the new
+token API that let's you trigger builds from revision control systems like github.
+2.5 further merges the Web UI and API into one single Ruby on Rails app, so it is easier for
+you to maintain, easier for us to extend and most important way snappier to use for your packagers.
+This release also begins to unify the various places where you can configure things into the
+OBS API, introduces an integrated comment and notification system and saves your OBS servers
+some cycles by automatically cleaning up left over branches. As you can see our team never tires
+to be awesome! Read on for more, in depth, information about OBS version 2.5.
+</p>
+
+
+<div style="float: right;">
+<a href="#" data-reveal-id="TokenModal">
+<img src="/images/posts/obs-2.5-token.png" width="280px" style="float:right">
+</a>
+<hr style="width: 80%; margin-left: 10%">
+<a href="#" data-reveal-id="NotificationModal">
+<img src="/images/posts/obs-2.5-notification.png" width="280px" style="margin: 10px;">
+</a>
+<hr style="width: 80%; margin-left: 10%">
+<a href="#" data-reveal-id="ConfigModal">
+<img src="/images/posts/obs-2.5-configuration.png" width="280px" style="margin: 10px;">
+</a>
+</div>
+
+<div id="ConfigModal" class="reveal-modal large">
+  <img src="/images/posts/obs-2.5-configuration.png">
+  <p>Nearly all of the configuration options are now exposed in the API/UI</p>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+<div id="NotificationModal" class="reveal-modal large">
+  <img src="/images/posts/obs-2.5-notification.png">
+  <p>Expect way more detail from the new integrated OBS notification system</p>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+<div id="TokenModal" class="reveal-modal large">
+  <img src="/images/posts/obs-2.5-token.png">
+  <p>Let other systems in you setup trigger actions on your OBS with tokens</p>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+<h6>Let github.com trigger your source update</h6>
+<p>
+OBS 2.5 provides an API to create authentification tokens to allow the execution of
+<a href="http://openbuildservice.org/help/manuals/obs-reference-guide/cha.obs.source_service.html">source services</a>.
+That means you do not have to use your secret login credentials for
+this, which makes it easy to hook the OBS into aps like github.com for your
+continuous integration/delivery needs. Check out an example of this 2.5 feature
+<a href="http://openbuildservice.org/2013/11/22/Source-Update-Via_Token/">on our blog</a>
+and make sure you read the chapter in our
+<a href="http://openbuildservice.org/help/manuals/obs-reference-guide/cha.obs.authorization.token.html#idm139695666033392">reference manual</a>
+on this topic.
+</p>
+
+
+<h6>Web UI + API = ♥</h6>
+<p>
+This is the first OBS release that has the web user interface (Web UI) and the application
+programming interface (API) merged into a single ruby on rails app. A couple of months ago
+the team decided to do this for three reasons. Most importantly it would expose the API
+database, where nearly all the OBS data is stored, directly to the Web UI. Having direct
+access to the API database and getting rid of the layer in between with all the overhead
+(network, parsing, rendering etc.) makes the Web UI way faster, your packagers will feel this
+instantly! And as OBS admin you'll have one service less to maintain, monitor and support,
+isn't that something? Last but not least the new merged frontend also feels and behaves more like a standard
+Ruby on Rails app, which makes all OBS developers happier and more productive! Want to know more?
+Read about the merge <a href="http://openbuildservice.org/2013/10/28/webui-plus-api/">on our blog</a>!
+</p>
+
+
+<h6>New configuration API/interface</h6>
+<p>
+We try to make the OBS as flexible as possible, with sane defaults. Up until now there where several
+files, spread over the different OBS components to do that. With this release we conflated this into
+the new configuration API and started to get an admin panel going so you have one place to adapt
+your OBS to your needs. Once we'll finish and integrate the statistics into it, this is going to be
+your new browser home page! Make sure you read the <em>configuration</em> section in the 
+<a href="https://github.com/openSUSE/open-build-service/blob/2.5/dist/README.UPDATERS">README.UPDATERS</a>
+file to learn more about this feature.
+</p>
+
+<h6>Integrated Comment and Notification System</h6>
+<p>
+Born out of a <a href="https://www.google-melange.com/gsoc/project/google/gsoc2013/shayonj/4978038894755840">Google Summer of Code project from last year</a>
+OBS 2.5 ships with comments for projects, packages and requests. We wanted to make it possible for
+our users to discuss things without ever leaving the OBS interface. The comment feature, the stalled
+development of the current notification solution and the WebUI+API merge, also lead to a brand-new integrated
+notification system. Up until now we have made used of a couple of external services (Hermes, RabbitMQ)
+to notify about events inside the OBS. But now we are in need of a more generic system that can handle a little
+bit more than sending events somewhere else. The most noteable change are that notifications are more rich in
+content and the new ability for your packagers to configure their notifications inside the OBS. Additionally
+the notification system has been moved from the backend to the API. The backend system is still available
+but declared as deprecated.
+</p>
+
+<h6>Autodesctruct sequence for ancient branches</h6>
+<p>
+The amazingly neat branch->change->submit exercise inside the OBS is the essence of the Free and Open
+Source developer workflow. Sometimes though, life gets in the way, and packagers have more important
+stuff to do, forget or otherwise loose interest in completing this cycle, which means there are undead
+branches laying around on your OBS which keep eating resources. Up until now it was a manual task to
+find and kill these. With OBS 2.5 branching a package automatically sets a time at which the branch will
+self-destruct (via an admin delete reuest). This is a neat feature to save resources and build power on
+your OBS!
+</p>
+
+<h6>New Search Functionality</h6>
+<p>
+For years one of the biggest complaints about the OBS was that it was impossible to find packages. The
+search ability has been part of the interface from the beginning, but with over 200.000 packages being
+build today on our <a href="http://build.opensuse.org">reference server</a> it is crucial to get the
+<em>right</em> package. To get to this point <a href="https://connect.opensuse.org/pg/profile/ancorgs">Ancor</a>,
+from openSUSE, integrated the sphinx search engine into the OBS, so the name, title and description of
+packages and projects can be combined with other attributes like the number of links/branches or activity
+over time, into one big index that allows page ranking. This makes it possible for us to tweak the settings
+so you find the package you're really looking for. 
+</p>
+
+<h3>More information</h3>
+<p>
+If you are longing for a deeper look into all the changes this major version update bings check out the detailed 
+<a href="https://github.com/openSUSE/open-build-service/blob/2.5/ReleaseNotes-2.5" title="OBS 2.5 Release Notes">2.5 Release Notes</a>.
+It is also recommended to read these before updating your OBS instance!
+<p>
+
+<div style="float: left;">
+<a href="http://openbuildservice.org/download/">
+<img src="/images/posts/obs-2.4-get.png" style="margin: 10px;">
+</a>
+</div>
+
+<h5>Try OBS 2.5</h5>
+{% include reference_server.inc %}
+
+<h5>Get OBS 2.5</h5>
+{% include download.inc %}
+
+<h5>About the Open Build Service</h5>
+{% include about.inc %}

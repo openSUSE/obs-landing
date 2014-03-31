@@ -37,7 +37,7 @@ title: Download
       <a href="http://www.kekaosx.com/en/">Keka</a>, <a href="http://www.7-zip.org/">7-zip.org</a> and the
       <a href="https://github.com/downloads/openSUSE/kiwi/ImageWriter.exe">SUSE Studio Image writer</a>
     </p>
-    <a href="http://download.opensuse.org/repositories/OBS:/Server:/2.4/images/obs-server.x86_64.raw.install.raw.xz"
+    <a href="http://download.opensuse.org/repositories/OBS:/Server:/2.5/images/obs-server.x86_64.raw.install.raw.xz"
        title="OBS Appliance Installer Image"
        class="radius large button piwik_download">
        Download obs-server.x86_64.raw.install.raw.xz
@@ -46,22 +46,15 @@ title: Download
 </div>
 
 <div class="row">
-  <div class="four columns">
+  <div class="six columns">
     <h5>VirtualBox/VMware Image</h5>
     <p>
       For VirtualBox and VMware there is an archive containing a configuration file (.vmx) and a disk image (.vmdk).
       You can load the configuration into VMware workstation/player or VirtualBox.
     </p>
   </div>
-  <div class="four columns">
-    <h5>KVM/QEmu Image</h5>
-    <p>
-      For QEMU/KVM there is a disk image in the qcow format which you can start with <em>qemu-kvm</em> or any other
-      virtualization framework which is capable of using the QCow file system.
-    </p>
-  </div>
 
-  <div class="four columns">
+  <div class="six columns">
     <h5>Raw Disk Image</h5>
     <p>
       If you want to deploy directly to a block device of your bare-metal server or if you are using a virtualization
@@ -73,8 +66,8 @@ title: Download
 
 
 <div class="row">
-  <div class="four columns">
-    <a href="http://download.opensuse.org/repositories/OBS:/Server:/2.4/images/obs-server.x86_64-vmx.tar.bz2"
+  <div class="six columns">
+    <a href="http://download.opensuse.org/repositories/OBS:/Server:/2.5/images/obs-server.x86_64-vmx.tar.bz2"
        title="OBS Appliance VMX/VMDK Image"
        class="radius large button piwik_download"
        style="width: 100%">
@@ -83,18 +76,8 @@ title: Download
        <small>obs-server.x86_64-vmx.tar.bz2</small>
     </a>
   </div>
-  <div class="four columns">
-    <a href="http://download.opensuse.org/repositories/OBS:/Server:/2.4/images/obs-server.x86_64.qcow2"
-       title="OBS Appliance QCow Image"
-       class="radius large button piwik_download"
-       style="width: 100%">
-       Download<br />
-       KVM/QEmu Image<br />
-       <small>obs-server.x86_64.qcow2</small>
-    </a>
-  </div>
-  <div class="four columns">
-    <a href="http://download.opensuse.org/repositories/OBS:/Server:/2.4/images/obs-server.x86_64.raw.xz"
+  <div class="six columns">
+    <a href="http://download.opensuse.org/repositories/OBS:/Server:/2.5/images/obs-server.x86_64.raw.xz"
        title="OBS Appliance Raw Image"
        class="radius large button piwik_download"
        style="width: 100%">
@@ -117,17 +100,17 @@ title: Download
     <h3>Packages<h3>
     <p>
       If you already have a Linux server running you can use our binary packages to install OBS and follow our
-      <a href="https://raw.github.com/openSUSE/open-build-service/master/dist/README.SETUP">README.Setup</a> to set everything
+      <a href="https://github.com/openSUSE/open-build-service/blob/master/README.md">README</a> to set everything
       up yourself. Currently we maintain packages for the openSUSE and SUSE Linux Enterprise distributions. 
     </p>
     <h5>SUSE Linux Enterprise</h5>
     <pre>
-      zypper ar -f http://download.opensuse.org/repositories/OBS:/Server:/2.4/SLE_11_SP2/OBS:Server:2.4.repo
+      zypper ar -f http://download.opensuse.org/repositories/OBS:/Server:/2.5/SLE_11_SP3/OBS:Server:2.5.repo
       zypper in -t pattern OBS_Server
     </pre>
     <h5>openSUSE</h5>
     <pre>
-      zypper ar -f http://download.opensuse.org/repositories/OBS:/Server:/2.4/openSUSE_12.3/OBS:Server:2.4.repo
+      zypper ar -f http://download.opensuse.org/repositories/OBS:/Server:/2.5/openSUSE_13.1/OBS:Server:2.5.repo
       zypper in -t pattern OBS_Server
     </pre>
   </div>
@@ -138,7 +121,7 @@ title: Download
     <h3>Source Code<h3>
     <p>
       You can also grab the <a href="https://github.com/openSUSE/open-build-service">source code from github</a> and follow our
-      <a href="https://raw.github.com/openSUSE/open-build-service/master/dist/README.SETUP">README.Setup</a> to set everything
+      <a href="https://github.com/openSUSE/open-build-service/blob/master/README.md">README</a> to set everything
       up yourself.
     </p>
     <pre>
