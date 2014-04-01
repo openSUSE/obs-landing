@@ -51,7 +51,7 @@ to be awesome! Read on for more, in depth, information about OBS version 2.5.
 
 <h6>Let github.com trigger your source update</h6>
 <p>
-OBS 2.5 provides an API to create authentification tokens to allow the execution of
+OBS 2.5 provides an API to create authentication tokens to allow the execution of
 <a href="http://openbuildservice.org/help/manuals/obs-reference-guide/cha.obs.source_service.html">source services</a>.
 That means you do not have to use your secret login credentials for
 this, which makes it easy to hook the OBS into aps like github.com for your
@@ -71,8 +71,8 @@ the team decided to do this for three reasons. Most importantly it would expose 
 database, where nearly all the OBS data is stored, directly to the Web UI. Having direct
 access to the API database and getting rid of the layer in between with all the overhead
 (network, parsing, rendering etc.) makes the Web UI way faster, your packagers will feel this
-instantly! And as OBS admin you'll have one service less to maintain, monitor and support,
-isn't that something? Last but not least the new merged frontend also feels and behaves more like a standard
+instantly! And as OBS admin you'll have one service less to maintain, monitor and support. Last
+but not least the new merged frontend also feels and behaves more like a standard
 Ruby on Rails app, which makes all OBS developers happier and more productive! Want to know more?
 Read about the merge <a href="http://openbuildservice.org/2013/10/28/webui-plus-api/">on our blog</a>!
 </p>
@@ -97,20 +97,20 @@ our users to discuss things without ever leaving the OBS interface. The comment 
 development of the current notification solution and the WebUI+API merge, also lead to a brand-new integrated
 notification system. Up until now we have made used of a couple of external services (Hermes, RabbitMQ)
 to notify about events inside the OBS. But now we are in need of a more generic system that can handle a little
-bit more than sending events somewhere else. The most noteable change are that notifications are more rich in
+bit more than sending events somewhere else. The most notable change are that notifications are more rich in
 content and the new ability for your packagers to configure their notifications inside the OBS. Additionally
 the notification system has been moved from the backend to the API. The backend system is still available
 but declared as deprecated.
 </p>
 
-<h6>Autodesctruct sequence for ancient branches</h6>
+<h6>Autodestruct sequence for ancient branches</h6>
 <p>
 The amazingly neat branch->change->submit exercise inside the OBS is the essence of the Free and Open
 Source developer workflow. Sometimes though, life gets in the way, and packagers have more important
 stuff to do, forget or otherwise loose interest in completing this cycle, which means there are undead
 branches laying around on your OBS which keep eating resources. Up until now it was a manual task to
 find and kill these. With OBS 2.5 branching a package automatically sets a time at which the branch will
-self-destruct (via an admin delete reuest). This is a neat feature to save resources and build power on
+self-destruct (via an admin delete reuqest). This is a neat feature to save resources and build power on
 your OBS!
 </p>
 
