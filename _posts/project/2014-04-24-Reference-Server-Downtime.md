@@ -5,7 +5,10 @@ category: project
 ---
 <img src="/images/posts/reference-server-downtime.jpg" width="420px" style="float:right; margin: 20px;" title="CC BY 2.0 - Damian Gadal https://www.flickr.com/photos/23024164@N06/5763326263">
 
-### Bad news everyone!
+### Good news ... we are back.
+
+Former announcement was:
+
 Since earlier today the [storage area network (SAN)](https://de.wikipedia.org/wiki/Storage_Area_Network)
 that holds all the binary build results from our reference server has a severe
 problem (crashes before it can do a fail-over) and it looks like it will not come back today :-(
