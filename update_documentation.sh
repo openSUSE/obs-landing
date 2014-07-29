@@ -5,7 +5,7 @@ git submodule update
 
 pushd open-build-service-documentation/
 git fetch
-git checkout master
+git checkout origin/master
 popd
 
 for doc in obs-best-practices obs-reference-guide; do
