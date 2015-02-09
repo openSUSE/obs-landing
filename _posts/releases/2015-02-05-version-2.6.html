@@ -1,0 +1,104 @@
+---
+layout: post
+title: Open Build Service version 2.6 released
+category: releases
+---
+
+<p>
+Another year, another release. It's time for the Open Build Service Version 2.6! This release very much focuses
+on bug fixing. Since OBS 2.5 there have been over 800 commits by 16 contributors, changing 565 files with 7.000
+additions and 4,550 deletions. But don't despair we did not only fix bugs, two large features also made it into 
+this release. We worked on the collaboration features of the OBS, requests now support priority and have a better
+history and we have added support for building Debian live images. 
+</p>
+<p>
+Read on for more, in depth, information about OBS version 2.6. 
+</p>
+
+<div style="float: right;">
+
+  <a href="#" data-reveal-id="Modal2">
+    <img src="/images/posts/obs-2.6-request.png" width="280px" style="margin: 10px;">
+  </a>
+
+  <hr style="width: 80%; margin-left: 10%">
+
+  <a href="#" data-reveal-id="Modal1">
+    <img src="/images/posts/obs-2.6-changes.png" width="280px" style="margin: 10px;">
+  </a>
+
+  <hr style="width: 80%; margin-left: 10%">
+
+  <a href="#" data-reveal-id="Modal3">
+    <img src="/images/posts/obs-2.6-debian.jpg" width="280px" style="margin: 10px;">
+  </a>
+</div>
+
+<div id="Modal1" class="reveal-modal large">
+  <img src="/images/posts/obs-2.6-changes.jpg">
+  <p>Lots of bugfixes to the OBS 2.6 codebase</p>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+<div id="Modal2" class="reveal-modal large">
+  <img src="/images/posts/obs-2.6-request.png">
+  <p>A nice OBS 2.6 request history</p>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+<div id="Modal3" class="reveal-modal large">
+  <img src="/images/posts/obs-2.6-debian.jpg">
+  <p>Build Debian Live Images with OBS 2.6</p>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+<h6>More Powerful Requests</h6>
+<p>
+Requests, which are the way people submit and evaluate changes to each others projects in OBS, now have a priority
+so all parties involved can signal the weight and urgency they give their changes. This is especially useful for larger
+projects that handle hundreds of requests or projects that sometimes have very urgent changes, like security updates for
+distribution maintenance channels. Another feature we have added to requests is a history of it's reviews. It's perfectly
+understandable now how a request got into the state (accepted, declined, under review) it is in. Additionally the requests
+history elements now have a finer granularity, which enables us to display them more flexible.
+</p>
+
+<h6>Debian Live Images</h6>
+<p>
+Additionally to all the imaging capabilities of <a href="https://en.opensuse.org/Portal:KIWI">KIWI</a> which the OBS supports
+we now can also build images with Debians live-build. These images contains a Debian system that can boot without modifying
+any files on the hard drive and also allow installation of Debian from the contents of the image. Special thanks for adding 
+this feature go to <a href="http://www.brocade.com/">Jan Blunck of Brocade</a>.
+</p>
+
+
+<h6>Smaller features...</h6>
+<p>
+<ul>
+  <li>Groups can have maintainers now, who can modify the member list</li>
+  <li>Optional binary package tracking, can be used to track released packages. This is especially useful for distribution maintenance.</li>
+  <li>The Web UI displays project links correctly.</li>
+  <li>Entire projects can be linked now with frozen source revisions.</li>
+  <li>We are now handling the case of multiple binary packages with the same name by default.</li>
+</p>
+
+<h3>More information</h3>
+<p>
+If you are longing for a deeper look into all the changes this major version update brings check out the detailed 
+<a href="https://github.com/openSUSE/open-build-service/blob/2.6/ReleaseNotes-2.6" title="OBS 2.6 Release Notes">2.6 Release Notes</a>.
+It is also recommended to read these before updating your OBS instance!
+<p>
+
+<div style="float: left;">
+<a href="http://openbuildservice.org/download/">
+<img src="/images/posts/obs-2.4-get.png" style="margin: 10px;">
+</a>
+</div>
+
+<h5>Try OBS 2.6</h5>
+{% include reference_server.inc %}
+
+<h5>Get OBS 2.6</h5>
+{% include download.inc %}
+
+<h5>About the Open Build Service</h5>
+{% include about.inc %}
