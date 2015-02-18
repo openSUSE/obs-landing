@@ -13,20 +13,23 @@ for doc in obs-best-practices obs-reference-guide; do
 
   source ./DC-$doc || exit 1
   rm -rf build 
-  daps html  || exit 1
+  daps html || exit 1
+  daps epub || exit 1
 
   # update html
   rm -rf ../help/manuals/$doc || exit 1
   cp -aL build/$doc/html//$doc ../help/manuals/$doc || exit 1
-  rm -r build/$doc
 
   # update epub
-#   rm ../files/manuals/${doc}.epub || exit 1
-#   mv epub/${doc}.xml ../files/manuals/${doc}.epub || exit 1
+  rm ../files/manuals/${doc}.epub || exit 1
+  mv build/$doc/${doc}_en.epub ../files/manuals/${doc}.epub || exit 1
+
+  #cleanup
+  rm -r build/$doc
   popd
 
   # add to git 
-  #git add help/manuals/$doc files/manuals/$doc.epub || exit 1
+  git add help/manuals/$doc files/manuals/$doc.epub || exit 1
   git add help/manuals/$doc || exit 1
 done
 
