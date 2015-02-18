@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Chapter 12. Binary Package Tracking</title><link rel="stylesheet" type="text/css" href="static/css/susebooks.css" /><meta name="generator" content="DocBook XSL Stylesheets V1.78.1" /><link rel="self" href="cha.obs.binary_tracking.html" title="Binary Package Tracking" /><link rel="home" href="index.html" title="Open Build Service" /><link rel="up" href="index.html" title="Open Build Service" /><link rel="previous" href="cha.obs.maintenance_setup.html" title="Chapter 11. Maintenance Support" /><link rel="next" href="cha.obs.cross_arch_build.html" title="Chapter 13. Cross Architecture Build" /></head><body><div class="navheader"><table width="100%" summary="Navigation header" border="0" class="bctable"><tr><td width="80%"><div class="breadcrumbs"><p><a href="index.html">Open Build Service</a><strong><a accesskey="p" title="Chapter 11. Maintenance Support" href="cha.obs.maintenance_setup.html"><span>◀</span></a>  <a accesskey="n" title="Chapter 13. Cross Architecture Build" href="cha.obs.cross_arch_build.html"><span>▶</span></a></strong></p></div></td></tr></table></div><div class="chapter"><div class="titlepage"><div><div><h2 class="title"><a id="cha.obs.binary_tracking"></a>Chapter 12. Binary Package Tracking<span class="permalink"><a title="Copy Permalink" href="#cha.obs.binary_tracking">¶</a></span></h2></div></div></div><div class="toc"><p><strong>Contents</strong></p><dl class="toc"><dt><span class="section"><a href="cha.obs.binary_tracking.html#idm140625642768016">12.1. Which binaries get tracked?</a></span></dt><dt><span class="section"><a href="cha.obs.binary_tracking.html#idm140625645887040">12.2. What data is tracked?</a></span></dt><dt><span class="section"><a href="cha.obs.binary_tracking.html#idm140625643785472">12.3. What data is tracked?</a></span></dt><dt><span class="section"><a href="cha.obs.binary_tracking.html#idm140625642441184">12.4. osc search interface</a></span></dt><dt><span class="section"><a href="cha.obs.binary_tracking.html#idm140625642439696">12.5. webui search interface</a></span></dt><dt><span class="section"><a href="cha.obs.binary_tracking.html#idm140625642438208">12.6. API search interface</a></span></dt></dl></div><p>Official products and their updates are often claimed to be supported.
+        Multiple parties, like release managers, maintenance engineers, QA and support
+        need to be able to check which exact versions of a package got released.
+         OBS server can track these binaries and offers a database to search them.</p><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="idm140625642768016"></a>12.1. Which binaries get tracked?<span class="permalink"><a title="Copy Permalink" href="#idm140625642768016">¶</a></span></h2></div></div></div><p>All binaries which get released in to projects providing kind=maintenance_release
+          get tracked. In addition to that the OBS admininistrator may configure addition projects
+          via the packtrack setting in BSConfig.pm</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="idm140625645887040"></a>12.2. What data is tracked?<span class="permalink"><a title="Copy Permalink" href="#idm140625645887040">¶</a></span></h2></div></div></div><p>product media, appliance, repository...</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="idm140625643785472"></a>12.3. What data is tracked?<span class="permalink"><a title="Copy Permalink" href="#idm140625643785472">¶</a></span></h2></div></div></div><p>In short the informations to identify a binary, it's building place and timestamps are tracked. In addition to that also information about possible successor versions or if the binary got removed meanwhile. If products do reference the repositories the search interface does offer also a listing of products which are supposed to use it. Either as part of the product media itself or in one of it's update repositories.</p><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="idm140625643601952"></a>12.3.1. Binary Identifier<span class="permalink"><a title="Copy Permalink" href="#idm140625643601952">¶</a></span></h3></div></div></div><p>A binary gets identified by the following informations. This is basically the components
+            of the storage path and filename of the binary. 
+	   </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+	      repository: where is the binary hosted
+	     </li><li class="listitem">
+	      name: the name of the binary file
+	     </li><li class="listitem">
+	      epoch: the epoch version (optional, usually not used)
+	     </li><li class="listitem">
+	      version: the version
+	     </li><li class="listitem">
+	      release: the release number
+	     </li><li class="listitem">
+	      architecture: the architecture
+	     </li><li class="listitem">
+	      medium: the medium name, this exists only for product builds
+	     </li></ul></div><p>
+       </p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="idm140625644253376"></a>12.3.2. Binary informations<span class="permalink"><a title="Copy Permalink" href="#idm140625644253376">¶</a></span></h3></div></div></div><p>Additional informations of a binary are informations which get updated when a binary gets
+            added or replaced.
+	   </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+	      operation, got the binary added, removed or modified
+	     </li><li class="listitem">
+	      publish time, aka the time when the repository gets published by OBS. This is not the same time as when the release action gots invoked.
+	     </li><li class="listitem">
+	      build time
+	     </li><li class="listitem">
+	      obsolete time, exists only when a binary gets removed or replaced
+	     </li><li class="listitem">
+	      supportstatus, meta information about the level of support which is granted for the binary at the time of releasing it.
+	     </li><li class="listitem">
+	      updateinfo id from rpm-md repository
+	     </li><li class="listitem">
+	      maintainer of the binary who has prepared this update
+	     </li><li class="listitem">
+	      disturl, the exact identifier to the source and build repository
+	     </li></ul></div><p>
+       </p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="idm140625642444720"></a>12.3.3. Product informations<span class="permalink"><a title="Copy Permalink" href="#idm140625642444720">¶</a></span></h3></div></div></div><p>Additional informations about products referencing to this binary.
+	   </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+	      updatefor: the listed products do reference the repository as update channel.
+	     </li><li class="listitem">
+	      product: exists when the binary was part of a product medium
+	     </li></ul></div><p>
+       </p></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="idm140625642441184"></a>12.4. osc search interface<span class="permalink"><a title="Copy Permalink" href="#idm140625642441184">¶</a></span></h2></div></div></div><p>not yet implemented</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="idm140625642439696"></a>12.5. webui search interface<span class="permalink"><a title="Copy Permalink" href="#idm140625642439696">¶</a></span></h2></div></div></div><p>not yet implemented</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="idm140625642438208"></a>12.6. API search interface<span class="permalink"><a title="Copy Permalink" href="#idm140625642438208">¶</a></span></h2></div></div></div><p>The search is provided via the generic xpath search interface. It is provided below the pathes:
+      </p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+          /search/released/binary/id : short form, just listing the matched binary identifiers
+        </li><li class="listitem">
+         /search/released/binary : long form, provides all other tracked informations as described above
+        </li></ul></div><p>
+    </p><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="idm140625643970880"></a>12.6.1. Examples<span class="permalink"><a title="Copy Permalink" href="#idm140625643970880">¶</a></span></h3></div></div></div><p>To find the latest version of given glibc-devel binary in all products. Skipping old and revoked versions:
+         </p><pre class="screen"><span class="command"><strong>/search/released/binary?match=@name"=glibc-devel"+and+obsolete[not(@time)]</strong></span></pre><p>
+       </p><p>To find a specific version by given updateinfo id. This ID is visible in the update tools to the end user:
+         </p><pre class="screen"><span class="command"><strong>/search/released/binary?match=updateinfo/@id="OBS-2014-42"</strong></span></pre><p>
+       </p><p>To find a specific version by given disturl. Used to find all affected products by a certain build of a binary:
+         </p><pre class="screen"><span class="command"><strong>/search/released/binary?match=disturl="obs://..."</strong></span></pre><p>
+       </p><p>When got the specific package version got released the first time:
+         </p><pre class="screen"><span class="command"><strong>/search/released/binary?match=@name='kernel-default'+and+@version='1.0'+and+@release='1'+and+@arch='i586'+and+supportstatus='l3'+and+operation='added'</strong></span></pre><p>
+       </p><p>All binaries in a given repository:
+         </p><pre class="screen"><span class="command"><strong>/search/released/binary?match=repository/[@project='BaseDistro3'+and+@name='BaseDistro3_repo']</strong></span></pre><p>
+       </p><p>All binaries part of a product release:
+         </p><pre class="screen"><span class="command"><strong>/search/released/binary?match=product/[@project='openSUSE'+and+@name='openSUSE'+and+(@arch='x86_64'+or+not(@arch))]</strong></span></pre><p>
+       </p><p>All binaries part of the update repositories of a product:
+         </p><pre class="screen"><span class="command"><strong>/search/released/binary?match=updatefor/[@project='openSUSE'+and+@product='openSUSE'+and+(@arch='x86_64'+or+not(@arch))]</strong></span></pre><p>
+       </p><p>All binaries part of the update repositories of a versioned product:
+         </p><pre class="screen"><span class="command"><strong>/search/released/binary?match=updatefor/[@project='openSUSE'+and+@product='openSUSE'+and+@version='13.2']</strong></span></pre><p>
+       </p><p>All binaries part of the update repositories of a versioned product (enterprise style):
+         </p><pre class="screen"><span class="command"><strong>/search/released/binary?match=updatefor/[@project='openSUSE'+and+@product='openSUSE'+and+@baseversion='12'+and+@patchlevel='1']</strong></span></pre><p>
+       </p></div></div></div><div class="navfooter"><table width="100%" summary="Navigation footer" border="0" class="bctable"><tr><td width="80%"><div class="breadcrumbs"><p><a href="index.html">Open Build Service</a><strong><a accesskey="p" title="Chapter 11. Maintenance Support" href="cha.obs.maintenance_setup.html"><span>◀</span></a>  <a accesskey="n" title="Chapter 13. Cross Architecture Build" href="cha.obs.cross_arch_build.html"><span>▶</span></a></strong></p></div></td></tr></table></div></body></html>
