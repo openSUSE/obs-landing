@@ -15,14 +15,19 @@ for doc in obs-best-practices obs-reference-guide; do
   rm -rf build 
   daps html || exit 1
   daps epub || exit 1
+  daps pdf || exit 1
 
   # update html
   rm -rf ../help/manuals/$doc || exit 1
-  cp -aL build/$doc/html//$doc ../help/manuals/$doc || exit 1
+  cp -aL build/$doc/html/$doc ../help/manuals/$doc || exit 1
 
   # update epub
   rm ../files/manuals/${doc}.epub || exit 1
   mv build/$doc/${doc}_en.epub ../files/manuals/${doc}.epub || exit 1
+
+  # update pdf
+  rm ../files/manuals/${doc}.pdf || exit 1
+  mv build/$doc/${doc}_color_en.pdf ../files/manuals/${doc}.pdf || exit 1
 
   #cleanup
   rm -r build/$doc
