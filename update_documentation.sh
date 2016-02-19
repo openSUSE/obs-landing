@@ -40,5 +40,7 @@ done
 
 
 git add open-build-service-documentation || exit 1
+git add open-build-service-documentation || exit 1
+git add files/manuals/*.pdf || exit 1
 git commit -m "Update books to current state" || exit 1
 
