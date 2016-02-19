@@ -15,99 +15,158 @@ else {
    document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
 }
 
-</script><noscript><link rel="stylesheet" type="text/css" href="http://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script></head><body class="offline js-off"><div id="_outer-wrap"><div id="_white-bg"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Open Build Service"><span class="book-icon">Open Build Service</span></a><span> › </span><a class="crumb" href="cha.obs.build_job_constraints.html">Build Job Constraints</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Open Build Service</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="pr01.html"><span class="number"> </span><span class="name">About this Guide</span></a></li><li class="inactive"><a href="cha.obs.motivation.html"><span class="number">1 </span><span class="name">Distributing Free Software: Herding Cats</span></a></li><li class="inactive"><a href="cha.obs.concepts.html"><span class="number">2 </span><span class="name">OBS Concepts</span></a></li><li class="inactive"><a href="cha.obs.build_process.html"><span class="number">3 </span><span class="name">Build Process</span></a></li><li class="inactive"><a href="cha.obs.source_management.html"><span class="number">4 </span><span class="name">Source Management</span></a></li><li class="inactive"><a href="cha.obs.request_and_review_ystem.html"><span class="number">5 </span><span class="name">Request And Review System</span></a></li><li class="inactive"><a href="cha.obs.package_formats.html"><span class="number">6 </span><span class="name">Package Formats </span></a></li><li class="inactive"><a href="cha.obs.build_config.html"><span class="number">7 </span><span class="name">Build Configuration</span></a></li><li class="inactive"><a href="cha.obs.source_service.html"><span class="number">8 </span><span class="name">Source Services</span></a></li><li class="inactive"><a href="cha.obs.signing.html"><span class="number">9 </span><span class="name">Signing</span></a></li><li class="inactive"><a href="cha.obs.product_building.html"><span class="number">10 </span><span class="name">Product Building</span></a></li><li class="inactive"><a href="cha.obs.maintenance_setup.html"><span class="number">11 </span><span class="name">Maintenance Support</span></a></li><li class="inactive"><a href="cha.obs.binary_tracking.html"><span class="number">12 </span><span class="name">Binary Package Tracking</span></a></li><li class="inactive"><a href="cha.obs.cross_arch_build.html"><span class="number">13 </span><span class="name">Cross Architecture Build</span></a></li><li class="inactive"><a href="cha.obs.admin.html"><span class="number">14 </span><span class="name">Administration</span></a></li><li class="inactive"><a href="cha.obs.build_scheduling_and_dispatching.html"><span class="number">15 </span><span class="name">Scheduling and Dispatching</span></a></li><li class="inactive"><a href="cha.obs.build_job_constraints.html"><span class="number">16 </span><span class="name">Build Job Constraints</span></a></li><li class="inactive"><a href="cha.obs.build_preinstall.html"><span class="number">17 </span><span class="name">Build Preinstall Images</span></a></li><li class="inactive"><a href="cha.obs.authorization.token.html"><span class="number">18 </span><span class="name">Authorization</span></a></li><li class="inactive"><a href="cha.obs.qa_hooks.html"><span class="number">19 </span><span class="name">Quality Assurance(QA) Hooks</span></a></li><li class="inactive"><a href="cha.obs.factory.html"><span class="number">20 </span><span class="name">openSUSE Factory</span></a></li><li class="inactive"><a href="go01.html"><span class="number"> </span><span class="name">Glossary</span></a></li><li class="inactive"><a href="appendix.work_on_obs_book.html"><span class="number">A </span><span class="name">How to work on this Book</span></a></li><li class="inactive"><a href="apb.html"><span class="number">B </span><span class="name">GNU Licenses</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 15. Scheduling and Dispatching" href="cha.obs.build_scheduling_and_dispatching.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 17. Build Preinstall Images" href="cha.obs.build_preinstall.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Open Build Service"><span class="book-icon">Open Build Service</span></a><span> › </span><a class="crumb" href="cha.obs.build_job_constraints.html">Build Job Constraints</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 15. Scheduling and Dispatching" href="cha.obs.build_scheduling_and_dispatching.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 17. Build Preinstall Images" href="cha.obs.build_preinstall.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class=""><div class="documentation"><div class="chapter " id="cha.obs.build_job_constraints"><div class="titlepage"><div><div><h1 class="title"><span class="number">16 </span><span class="name">Build Job Constraints</span> </h1></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="cha.obs.build_job_constraints.html#idm139741986710096"><span class="number">16.1 </span><span class="name">hostlabel</span></a></span></dt><dt><span class="section"><a href="cha.obs.build_job_constraints.html#idm139741987842448"><span class="number">16.2 </span><span class="name">sandbox</span></a></span></dt><dt><span class="section"><a href="cha.obs.build_job_constraints.html#idm139741991685200"><span class="number">16.3 </span><span class="name">linux</span></a></span></dt><dt><span class="section"><a href="cha.obs.build_job_constraints.html#idm139741986844656"><span class="number">16.4 </span><span class="name">hardware</span></a></span></dt></dl></div></div><p>The build job constraints can define requirements to the hardware or software of the used
-        build host. The constraints can be defined per package or for repositories.
-        </p><p>The build constraints for a package is part of of the package sources. An _constraints source
-        file can contain following values. The format of the file is XML and gets validated on submission.
-  </p><p>The build constraints for entire project or specific repositories is part of the project config.
-        It contains for each constraint a line
-        </p><div class="verbatim-wrap"><pre class="screen"><code class="command">Constraint: &lt;SELECTOR&gt; &lt;STRING&gt;</code></pre></div><p>
-        The selector is a collon seperated list.
-  </p><p>NOTE: If no build host is offering the constraints, the package will stay in scheduled state and
-        never get dispatched.</p><div class="section "><div class="titlepage"><div><div><h2 class="title" id="idm139741986710096"><span class="number">16.1 </span><span class="name">hostlabel</span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm139741986710096">#</a></h2></div></div></div><p>The hostlabel is any string which can be assigned to build hosts when starting the bs_worker
-          process. It can be used to run on specific hosts, which may be used for running benchmarks
-          in a reproducible way. This constraints does also support to be defined as a negative definition
-          via the exclude=true attribute. However, the hostlabel is always specific to one OBS instance. You should avoid it as much as possible, since building with this constraint in another instance is usually not possible. Use any of the other constraints if possible.</p><p>Example for _constraints file:
-      </p><div class="verbatim-wrap"><pre class="screen"><code class="command">&lt;constraints exclude="false"&gt;
+</script><noscript><link rel="stylesheet" type="text/css" href="http://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script></head><body class="offline js-off"><div id="_outer-wrap"><div id="_white-bg"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Open Build Service"><span class="book-icon">Open Build Service</span></a><span> › </span><a class="crumb" href="cha.obs.build_job_constraints.html">Build Job Constraints</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Open Build Service</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="pr01.html"><span class="number"> </span><span class="name">About this Guide</span></a></li><li class="inactive"><a href="cha.obs.motivation.html"><span class="number">1 </span><span class="name">Distributing Free Software: Herding Cats</span></a></li><li class="inactive"><a href="cha.obs.concepts.html"><span class="number">2 </span><span class="name">OBS Concepts</span></a></li><li class="inactive"><a href="cha.obs.build_process.html"><span class="number">3 </span><span class="name">Build Process</span></a></li><li class="inactive"><a href="cha.obs.source_management.html"><span class="number">4 </span><span class="name">Source Management</span></a></li><li class="inactive"><a href="cha.obs.request_and_review_ystem.html"><span class="number">5 </span><span class="name">Request And Review System</span></a></li><li class="inactive"><a href="cha.obs.package_formats.html"><span class="number">6 </span><span class="name">Package Formats</span></a></li><li class="inactive"><a href="cha.obs.build_config.html"><span class="number">7 </span><span class="name">Build Configuration</span></a></li><li class="inactive"><a href="cha.obs.source_service.html"><span class="number">8 </span><span class="name">Source Services</span></a></li><li class="inactive"><a href="cha.obs.signing.html"><span class="number">9 </span><span class="name">Signing</span></a></li><li class="inactive"><a href="cha.obs.product_building.html"><span class="number">10 </span><span class="name">Product Building</span></a></li><li class="inactive"><a href="cha.obs.maintenance_setup.html"><span class="number">11 </span><span class="name">Maintenance Support</span></a></li><li class="inactive"><a href="cha.obs.binary_tracking.html"><span class="number">12 </span><span class="name">Binary Package Tracking</span></a></li><li class="inactive"><a href="cha.obs.cross_arch_build.html"><span class="number">13 </span><span class="name">Cross Architecture Build</span></a></li><li class="inactive"><a href="cha.obs.admin.html"><span class="number">14 </span><span class="name">Administration</span></a></li><li class="inactive"><a href="cha.obs.build_scheduling_and_dispatching.html"><span class="number">15 </span><span class="name">Scheduling and Dispatching</span></a></li><li class="inactive"><a href="cha.obs.build_job_constraints.html"><span class="number">16 </span><span class="name">Build Job Constraints</span></a></li><li class="inactive"><a href="cha.obs.build_preinstall.html"><span class="number">17 </span><span class="name">Build Preinstall Images</span></a></li><li class="inactive"><a href="cha.obs.authorization.token.html"><span class="number">18 </span><span class="name">Authorization</span></a></li><li class="inactive"><a href="cha.obs.qa_hooks.html"><span class="number">19 </span><span class="name">Quality Assurance(QA) Hooks</span></a></li><li class="inactive"><a href="cha.obs.factory.html"><span class="number">20 </span><span class="name">openSUSE Factory</span></a></li><li class="inactive"><a href="go01.html"><span class="number"> </span><span class="name">Glossary</span></a></li><li class="inactive"><a href="appendix.work_on_obs_book.html"><span class="number">A </span><span class="name">How to work on this Book</span></a></li><li class="inactive"><a href="apb.html"><span class="number">B </span><span class="name">GNU Licenses</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 15. Scheduling and Dispatching" href="cha.obs.build_scheduling_and_dispatching.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 17. Build Preinstall Images" href="cha.obs.build_preinstall.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Open Build Service"><span class="book-icon">Open Build Service</span></a><span> › </span><a class="crumb" href="cha.obs.build_job_constraints.html">Build Job Constraints</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 15. Scheduling and Dispatching" href="cha.obs.build_scheduling_and_dispatching.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 17. Build Preinstall Images" href="cha.obs.build_preinstall.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class=""><div class="documentation"><div class="chapter " id="cha.obs.build_job_constraints"><div class="titlepage"><div><div><h1 class="title"><span class="number">16 </span><span class="name">Build Job Constraints</span> </h1></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="cha.obs.build_job_constraints.html#idm140285657168224"><span class="number">16.1 </span><span class="name">hostlabel</span></a></span></dt><dt><span class="section"><a href="cha.obs.build_job_constraints.html#idm140285657194688"><span class="number">16.2 </span><span class="name">sandbox</span></a></span></dt><dt><span class="section"><a href="cha.obs.build_job_constraints.html#idm140285658148016"><span class="number">16.3 </span><span class="name">linux</span></a></span></dt><dt><span class="section"><a href="cha.obs.build_job_constraints.html#idm140285657093632"><span class="number">16.4 </span><span class="name">hardware</span></a></span></dt></dl></div></div><p>
+  The build job constraints can define requirements to the hardware or
+  software of the used build host. The constraints can be defined per
+  package or for repositories.
+ </p><p>
+  The build constraints for a package is part of of the package sources. An
+  _constraints source file can contain following values. The format of the
+  file is XML and gets validated on submission.
+ </p><p>
+  The build constraints for entire project or specific repositories is part
+  of the project config. It contains for each constraint a line
+</p><div class="verbatim-wrap"><pre class="screen"><code class="command">Constraint: &lt;SELECTOR&gt; &lt;STRING&gt;</code></pre></div><p>
+  The selector is a collon seperated list.
+ </p><p>
+  NOTE: If no build host is offering the constraints, the package will stay
+  in scheduled state and never get dispatched.
+ </p><div class="section " id="idm140285657168224"><div class="titlepage"><div><div><h2 class="title" id="idm140285657168224"><span class="number">16.1 </span><span class="name">hostlabel</span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140285657168224">#</a></h2></div></div></div><p>
+   The hostlabel is any string which can be assigned to build hosts when
+   starting the bs_worker process. It can be used to run on specific hosts,
+   which may be used for running benchmarks in a reproducible way. This
+   constraints does also support to be defined as a negative definition via
+   the exclude=true attribute. However, the hostlabel is always specific to
+   one OBS instance. You should avoid it as much as possible, since building
+   with this constraint in another instance is usually not possible. Use any
+   of the other constraints if possible.
+  </p><p>
+   Example for _constraints file:
+</p><div class="verbatim-wrap"><pre class="screen"><code class="command">&lt;constraints exclude="false"&gt;
   &lt;hostlabel&gt;benchmark_runner&lt;/hostlabel&gt;
 &lt;/constraints&gt; </code></pre></div><p>
-      Example for project configuration:
-      </p><div class="verbatim-wrap"><pre class="screen"><code class="command">Constraint: hostlabel benchmark_runner</code></pre></div><p>
-    </p></div><div class="section "><div class="titlepage"><div><div><h2 class="title" id="idm139741987842448"><span class="number">16.2 </span><span class="name">sandbox</span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm139741987842448">#</a></h2></div></div></div><p>Defines the sandbox which is used for the build job. Sandboxes are chroot, xen or kvm environments.
-          There is also the virtual secure sandbox, which allows building on xen or kvm. This constraints does
-          also support to be defined as a negative definition via the exclude=true attribute.</p><p>Example for _constraints file:
-      </p><div class="verbatim-wrap"><pre class="screen"><code class="command">&lt;constraints&gt; exclude="true"
+   Example for project configuration:
+</p><div class="verbatim-wrap"><pre class="screen"><code class="command">Constraint: hostlabel benchmark_runner</code></pre></div><p>
+  </p></div><div class="section " id="idm140285657194688"><div class="titlepage"><div><div><h2 class="title" id="idm140285657194688"><span class="number">16.2 </span><span class="name">sandbox</span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140285657194688">#</a></h2></div></div></div><p>
+   Defines the sandbox which is used for the build job. Sandboxes are
+   chroot, xen or kvm environments. There is also the virtual secure
+   sandbox, which allows building on xen or kvm. This constraints does also
+   support to be defined as a negative definition via the exclude=true
+   attribute.
+  </p><p>
+   Example for _constraints file:
+</p><div class="verbatim-wrap"><pre class="screen"><code class="command">&lt;constraints&gt; exclude="true"
   &lt;sandbox&gt;secure&lt;/sandbox&gt;
 &lt;/constraints&gt; </code></pre></div><p>
-      Example for project configuration:
-      </p><div class="verbatim-wrap"><pre class="screen"><code class="command">Constraint: sandbox secure</code></pre></div><p>
-    </p></div><div class="section "><div class="titlepage"><div><div><h2 class="title" id="idm139741991685200"><span class="number">16.3 </span><span class="name">linux</span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm139741991685200">#</a></h2></div></div></div><p>The linux kernel specific part.</p><div class="section "><div class="titlepage"><div><div><h3 class="title" id="idm139741991483232"><span class="number">16.3.1 </span><span class="name">version</span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm139741991483232">#</a></h3></div></div></div><p>To require a specific linux kernel version.</p><p>Example for _constraints file:
-        </p><div class="verbatim-wrap"><pre class="screen"><code class="command">&lt;constraints&gt;
+   Example for project configuration:
+</p><div class="verbatim-wrap"><pre class="screen"><code class="command">Constraint: sandbox secure</code></pre></div><p>
+  </p></div><div class="section " id="idm140285658148016"><div class="titlepage"><div><div><h2 class="title" id="idm140285658148016"><span class="number">16.3 </span><span class="name">linux</span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140285658148016">#</a></h2></div></div></div><p>
+   The linux kernel specific part.
+  </p><div class="section " id="idm140285652584304"><div class="titlepage"><div><div><h3 class="title" id="idm140285652584304"><span class="number">16.3.1 </span><span class="name">version</span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140285652584304">#</a></h3></div></div></div><p>
+    To require a specific linux kernel version.
+   </p><p>
+    Example for _constraints file:
+</p><div class="verbatim-wrap"><pre class="screen"><code class="command">&lt;constraints&gt;
   &lt;linux&gt;&lt;version&gt;
     &lt;min&gt;3.0&lt;/min&gt;
     &lt;max&gt;4.0&lt;/max&gt;
   &lt;/version&gt;&lt;/linux&gt;
 &lt;/constraints&gt; </code></pre></div><p>
-        Example for project configuration:
-        </p><div class="verbatim-wrap"><pre class="screen"><code class="command">Constraint: linux:version:min 3.0
+    Example for project configuration:
+</p><div class="verbatim-wrap"><pre class="screen"><code class="command">Constraint: linux:version:min 3.0
 Constraint: linux:version:max 4.0</code></pre></div><p>
-      </p><div class="section "><div class="titlepage"><div><div><h4 class="title" id="idm139741992378944"><span class="number">16.3.1.1 </span><span class="name">min</span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm139741992378944">#</a></h4></div></div></div><p>Minimal kernel version.</p></div><div class="section "><div class="titlepage"><div><div><h4 class="title" id="idm139741992377440"><span class="number">16.3.1.2 </span><span class="name">max</span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm139741992377440">#</a></h4></div></div></div><p>Maximal kernel version.</p></div></div><div class="section "><div class="titlepage"><div><div><h3 class="title" id="idm139741992375760"><span class="number">16.3.2 </span><span class="name">flavor</span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm139741992375760">#</a></h3></div></div></div><p>A specific kernel flavor like default or smp (from kernel packages kernel-default or kernel-smp).</p><p>Example for _constraints file:
-        </p><div class="verbatim-wrap"><pre class="screen"><code class="command">&lt;constraints&gt;
+   </p><div class="section " id="idm140285658778752"><div class="titlepage"><div><div><h4 class="title" id="idm140285658778752"><span class="number">16.3.1.1 </span><span class="name">min</span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140285658778752">#</a></h4></div></div></div><p>
+     Minimal kernel version.
+    </p></div><div class="section " id="idm140285667408544"><div class="titlepage"><div><div><h4 class="title" id="idm140285667408544"><span class="number">16.3.1.2 </span><span class="name">max</span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140285667408544">#</a></h4></div></div></div><p>
+     Maximal kernel version.
+    </p></div></div><div class="section " id="idm140285667406864"><div class="titlepage"><div><div><h3 class="title" id="idm140285667406864"><span class="number">16.3.2 </span><span class="name">flavor</span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140285667406864">#</a></h3></div></div></div><p>
+    A specific kernel flavor like default or smp (from kernel packages
+    kernel-default or kernel-smp).
+   </p><p>
+    Example for _constraints file:
+</p><div class="verbatim-wrap"><pre class="screen"><code class="command">&lt;constraints&gt;
   &lt;linux&gt;
     &lt;flavor&gt;default&lt;/flavor&gt;
   &lt;/linux&gt;
 &lt;/constraints&gt; </code></pre></div><p>
-        Example for project configuration:
-        </p><div class="verbatim-wrap"><pre class="screen"><code class="command">Constraint: linux:flavor default</code></pre></div><p>
-      </p></div></div><div class="section "><div class="titlepage"><div><div><h2 class="title" id="idm139741986844656"><span class="number">16.4 </span><span class="name">hardware</span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm139741986844656">#</a></h2></div></div></div><p>To require hardware or build instance features.</p><div class="section "><div class="titlepage"><div><div><h3 class="title" id="idm139741986843376"><span class="number">16.4.1 </span><span class="name">cpu</span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm139741986843376">#</a></h3></div></div></div><p>To require a specific linux kernel version.</p><div class="section "><div class="titlepage"><div><div><h4 class="title" id="idm139741986842096"><span class="number">16.4.1.1 </span><span class="name">flag</span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm139741986842096">#</a></h4></div></div></div><p>CPU features which are provided by the hardware. On linux they can be found in /proc/cpuinfo. The flag
-              element may be used multiple times to require multiple cpu features.</p><p>Example for _constraints file:
-        </p><div class="verbatim-wrap"><pre class="screen"><code class="command">&lt;constraints&gt;
+    Example for project configuration:
+</p><div class="verbatim-wrap"><pre class="screen"><code class="command">Constraint: linux:flavor default</code></pre></div><p>
+   </p></div></div><div class="section " id="idm140285657093632"><div class="titlepage"><div><div><h2 class="title" id="idm140285657093632"><span class="number">16.4 </span><span class="name">hardware</span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140285657093632">#</a></h2></div></div></div><p>
+   To require hardware or build instance features.
+  </p><div class="section " id="idm140285657092352"><div class="titlepage"><div><div><h3 class="title" id="idm140285657092352"><span class="number">16.4.1 </span><span class="name">cpu</span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140285657092352">#</a></h3></div></div></div><p>
+    To require a specific linux kernel version.
+   </p><div class="section " id="idm140285657091072"><div class="titlepage"><div><div><h4 class="title" id="idm140285657091072"><span class="number">16.4.1.1 </span><span class="name">flag</span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140285657091072">#</a></h4></div></div></div><p>
+     CPU features which are provided by the hardware. On linux they can be
+     found in /proc/cpuinfo. The flag element may be used multiple times to
+     require multiple cpu features.
+    </p><p>
+     Example for _constraints file:
+</p><div class="verbatim-wrap"><pre class="screen"><code class="command">&lt;constraints&gt;
   &lt;hardware&gt;&lt;cpu&gt;
     &lt;flag&gt;mmx&lt;/flag&gt;
     &lt;flag&gt;sse2&lt;/flag&gt;
   &lt;/cpu&gt;&lt;/hardware&gt;
 &lt;/constraints&gt; </code></pre></div><p>
-        Example for project configuration:
-        </p><div class="verbatim-wrap"><pre class="screen"><code class="command">Constraint: hardware:cpu:flag mmx
+     Example for project configuration:
+</p><div class="verbatim-wrap"><pre class="screen"><code class="command">Constraint: hardware:cpu:flag mmx
 Constraint: hardware:cpu:flag sse2</code></pre></div><p>
-      </p></div></div><div class="section "><div class="titlepage"><div><div><h3 class="title" id="idm139741990234384"><span class="number">16.4.2 </span><span class="name">processors</span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm139741990234384">#</a></h3></div></div></div><p>To require a minimal number of processors for the build job.</p><p>Example for _constraints file:
-        </p><div class="verbatim-wrap"><pre class="screen"><code class="command">&lt;constraints&gt;
+    </p></div></div><div class="section " id="idm140285657086384"><div class="titlepage"><div><div><h3 class="title" id="idm140285657086384"><span class="number">16.4.2 </span><span class="name">processors</span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140285657086384">#</a></h3></div></div></div><p>
+    To require a minimal number of processors for the build job.
+   </p><p>
+    Example for _constraints file:
+</p><div class="verbatim-wrap"><pre class="screen"><code class="command">&lt;constraints&gt;
   &lt;hardware&gt;
     &lt;processors&gt;4&lt;/processors&gt;
   &lt;/hardware&gt;
 &lt;/constraints&gt; </code></pre></div><p>
-        Example for project configuration:
-        </p><div class="verbatim-wrap"><pre class="screen"><code class="command">Constraint: hardware:processors 4</code></pre></div><p>
-      </p></div><div class="section "><div class="titlepage"><div><div><h3 class="title" id="idm139741990229968"><span class="number">16.4.3 </span><span class="name">disk</span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm139741990229968">#</a></h3></div></div></div><p>Hard disk specific.</p><div class="section "><div class="titlepage"><div><div><h4 class="title" id="idm139741990228656"><span class="number">16.4.3.1 </span><span class="name">size</span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm139741990228656">#</a></h4></div></div></div><p>To require a minimal size of the disk.</p><p>Example for _constraints file:
-        </p><div class="verbatim-wrap"><pre class="screen"><code class="command">&lt;constraints&gt;
+    Example for project configuration:
+</p><div class="verbatim-wrap"><pre class="screen"><code class="command">Constraint: hardware:processors 4</code></pre></div><p>
+   </p></div><div class="section " id="idm140285652523264"><div class="titlepage"><div><div><h3 class="title" id="idm140285652523264"><span class="number">16.4.3 </span><span class="name">disk</span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140285652523264">#</a></h3></div></div></div><p>
+    Hard disk specific.
+   </p><div class="section " id="idm140285652521936"><div class="titlepage"><div><div><h4 class="title" id="idm140285652521936"><span class="number">16.4.3.1 </span><span class="name">size</span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140285652521936">#</a></h4></div></div></div><p>
+     To require a minimal size of the disk.
+    </p><p>
+     Example for _constraints file:
+</p><div class="verbatim-wrap"><pre class="screen"><code class="command">&lt;constraints&gt;
   &lt;hardware&gt;
     &lt;disk&gt;
       &lt;size unit="G"&gt;4&lt;/size&gt;
     &lt;/disk&gt;
   &lt;/hardware&gt;
 &lt;/constraints&gt; </code></pre></div><p>
-        Example for project configuration:
-        </p><div class="verbatim-wrap"><pre class="screen"><code class="command">Constraint: hardware:disk:size unit="G" 4</code></pre></div><p>
-      </p></div></div><div class="section "><div class="titlepage"><div><div><h3 class="title" id="idm139741992082800"><span class="number">16.4.4 </span><span class="name">memory</span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm139741992082800">#</a></h3></div></div></div><p>Memory specific.</p><div class="section "><div class="titlepage"><div><div><h4 class="title" id="idm139741992081488"><span class="number">16.4.4.1 </span><span class="name">size</span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm139741992081488">#</a></h4></div></div></div><p>To require a minimal memory size including swap space.</p><p>Example for _constraints file:
-        </p><div class="verbatim-wrap"><pre class="screen"><code class="command">&lt;constraints&gt;
+     Example for project configuration:
+</p><div class="verbatim-wrap"><pre class="screen"><code class="command">Constraint: hardware:disk:size unit="G" 4</code></pre></div><p>
+    </p></div></div><div class="section " id="idm140285656071952"><div class="titlepage"><div><div><h3 class="title" id="idm140285656071952"><span class="number">16.4.4 </span><span class="name">memory</span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140285656071952">#</a></h3></div></div></div><p>
+    Memory specific.
+   </p><div class="section " id="idm140285656070624"><div class="titlepage"><div><div><h4 class="title" id="idm140285656070624"><span class="number">16.4.4.1 </span><span class="name">size</span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140285656070624">#</a></h4></div></div></div><p>
+     To require a minimal memory size including swap space.
+    </p><p>
+     Example for _constraints file:
+</p><div class="verbatim-wrap"><pre class="screen"><code class="command">&lt;constraints&gt;
   &lt;hardware&gt;
     &lt;memory&gt;
       &lt;size unit="M"&gt;1400&lt;/size&gt;
     &lt;/memory&gt;
   &lt;/hardware&gt;
 &lt;/constraints&gt; </code></pre></div><p>
-        Example for project configuration:
-        </p><div class="verbatim-wrap"><pre class="screen"><code class="command">Constraint: hardware:memory:size unit="M" 1400</code></pre></div><p>
-      </p></div></div><div class="section "><div class="titlepage"><div><div><h3 class="title" id="idm139741992077056"><span class="number">16.4.5 </span><span class="name">physicalmemory</span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm139741992077056">#</a></h3></div></div></div><p>Memory specific.</p><div class="section "><div class="titlepage"><div><div><h4 class="title" id="idm139741991156896"><span class="number">16.4.5.1 </span><span class="name">size</span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm139741991156896">#</a></h4></div></div></div><p>To require a minimal memory size. Swap space is not taken into account here.</p><p>Example for _constraints file:
-        </p><div class="verbatim-wrap"><pre class="screen"><code class="command">&lt;constraints&gt;
+     Example for project configuration:
+</p><div class="verbatim-wrap"><pre class="screen"><code class="command">Constraint: hardware:memory:size unit="M" 1400</code></pre></div><p>
+    </p></div></div><div class="section " id="idm140285656066144"><div class="titlepage"><div><div><h3 class="title" id="idm140285656066144"><span class="number">16.4.5 </span><span class="name">physicalmemory</span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140285656066144">#</a></h3></div></div></div><p>
+    Memory specific.
+   </p><div class="section " id="idm140285656064816"><div class="titlepage"><div><div><h4 class="title" id="idm140285656064816"><span class="number">16.4.5.1 </span><span class="name">size</span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140285656064816">#</a></h4></div></div></div><p>
+     To require a minimal memory size. Swap space is not taken into account
+     here.
+    </p><p>
+     Example for _constraints file:
+</p><div class="verbatim-wrap"><pre class="screen"><code class="command">&lt;constraints&gt;
   &lt;hardware&gt;
     &lt;physicalmemory&gt;
       &lt;size unit="M"&gt;1400&lt;/size&gt;
     &lt;/physicalmemory&gt;
   &lt;/hardware&gt;
 &lt;/constraints&gt; </code></pre></div><p>
-        Example for project configuration:
-        </p><div class="verbatim-wrap"><pre class="screen"><code class="command">Constraint: hardware:physicalmemory:size unit="M" 1400</code></pre></div><p>
-      </p></div></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="cha.obs.build_preinstall.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 17 </span>Build Preinstall Images</span></a><a class="nav-link" href="cha.obs.build_scheduling_and_dispatching.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 15 </span>Scheduling and Dispatching</span></a></div><div id="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span id="_share-fb" class="bottom-button">Facebook</span><span class="spacer"> • </span><span id="_share-gp" class="bottom-button">Google+</span><span class="spacer"> • </span><span id="_share-tw" class="bottom-button">Twitter</span><span class="spacer"> • </span><span id="_share-mail" class="bottom-button">E-Mail</span></span></div><div class="print"><span id="_print-button" class="bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
-        2015 
+     Example for project configuration:
+</p><div class="verbatim-wrap"><pre class="screen"><code class="command">Constraint: hardware:physicalmemory:size unit="M" 1400</code></pre></div><p>
+    </p></div></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="cha.obs.build_preinstall.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 17 </span>Build Preinstall Images</span></a><a class="nav-link" href="cha.obs.build_scheduling_and_dispatching.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 15 </span>Scheduling and Dispatching</span></a></div><div id="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span id="_share-fb" class="bottom-button">Facebook</span><span class="spacer"> • </span><span id="_share-gp" class="bottom-button">Google+</span><span class="spacer"> • </span><span id="_share-tw" class="bottom-button">Twitter</span><span class="spacer"> • </span><span id="_share-mail" class="bottom-button">E-Mail</span></span></div><div class="print"><span id="_print-button" class="bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2016 
         SUSE</p><ul><li><a href="http://www.suse.com/company/careers/" target="_top">Careers</a></li><li><a href="http://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="http://www.suse.com/company/" target="_top">About</a></li><li><a href="http://www.suse.com/ContactsOffices/contacts_offices.jsp" target="_top">Contact Us</a></li></ul></div></div></body></html>
