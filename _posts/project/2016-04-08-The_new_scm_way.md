@@ -96,12 +96,20 @@ Further informations
 The three services obs_scm, tar and tar_scm are all comming from the new obs-service-tar_scm
 package. Note that you need at least version 0.6
 
-You can find the real life example of the mentioned qground package 
+You can find the real life example of the mentioned qgroundcontrol package 
 <a 
 href="https://build.opensuse.org/package/show/hardware:RC-Model:Unstable/qgroundcontrol">
 here</a>.
 
-#The documentation for this is here... FIXME
+The OBS unstable packages are using this of course as well. That is an example where the
+spec files get maintained direct in git.
+<a 
+href="https://build.opensuse.org/package/show/OBS:Server:Unstable/obs-server">
+here</a>.
+
+The official documentation for this is<a 
+href="http://openbuildservice.org/help/manuals/obs-reference-guide/cha.obs.concepts.html#concept_scm_integration">
+here</a>.
 
 Some more tricks
 ----------------
