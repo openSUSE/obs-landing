@@ -12,53 +12,26 @@ title: Download
       Everything is possible.
     </p>
   </div>
-  <div class="twelve columns">
-  <h4>Appliances</h4>
-  <p>
-    The preferred method of deploying an Open Build Service instance are the OBS software appliances. In these
-    appliances the OBS components are combined with the openSUSE Distribution to run optimally on a server or
-    in a virtual machine
-  </p>
-  <h5>Installation Image</h5>
-    <p>
-      This installation image runs a basic installer that let's you choose the block device to deploy the appliance to.
-    </p>
-    <p>
-      You put this image on a USB device and boot from it.
-    </p>
-    <pre>
-      xzcat obs-server-install.x86_64.raw.xz > /dev/sdX
-    </pre>
-    <p>
-      where <em>/dev/sdX</em> is the block device corresponding to your USB device.
-    </p>
-    <p style="color: #999">
-       If you're not using Linux/*nix go checkout out
-      <a href="http://www.kekaosx.com/en/">Keka</a>, <a href="http://www.7-zip.org/">7-zip.org</a> and the
-      <a href="https://github.com/downloads/openSUSE/kiwi/ImageWriter.exe">SUSE Studio Image writer</a>
-    </p>
-    <a href="http://download.opensuse.org/repositories/OBS:/Server:/2.7/images/obs-server.x86_64.raw.install.raw.xz"
-       title="OBS Appliance Installer Image"
-       class="radius large button piwik_download">
-       Download obs-server.x86_64.raw.install.raw.xz
-    </a>
-  </div>
 </div>
 
 <div class="row">
-  <div class="six columns">
-    <h5>VirtualBox/VMware Image</h5>
+  <div class="four columns">
+    <h5>VMware Image</h5>
     <p>
-      For VirtualBox and VMware there is an <a href="http://download.opensuse.org/repositories/OBS:/Server:/2.7/images/obs-server.x86_64.vmx">configuration file (.vmx)</a> and a disk image (.vmdk).
-      You can load the configuration into VMware workstation/player or VirtualBox.
+      For VMware there is an <a href="http://download.opensuse.org/repositories/OBS:/Server:/2.7/images/obs-server.x86_64.vmx">configuration file (.vmx)</a> and a disk image (.vmdk).
+      You can load the configuration into VMware workstation/player.
     </p>
   </div>
-
-  <div class="six columns">
-    <h5>Raw Disk Image</h5>
+  <div class="four columns">
+    <h5>VirtualBox Image</h5>
     <p>
-      If you want to deploy directly to a block device of your bare-metal server or if you are using a virtualization
-      framework that can handle raw disk images there is an file system image for you.
+      For VirtualBox there is an disk image (.vdi).
+    </p>
+  </div>
+  <div class="four columns">
+    <h5>QCow2 Image</h5>
+    <p>
+      For KVM/Qemu there is a QCow2 Image (.qcow2)
     </p>
   </div>
 </div>
@@ -66,24 +39,34 @@ title: Download
 
 
 <div class="row">
-  <div class="six columns">
+  <div class="four columns">
     <a href="http://download.opensuse.org/repositories/OBS:/Server:/2.7/images/obs-server.x86_64.vmdk"
        title="OBS Appliance VMDK Image"
        class="radius large button piwik_download"
        style="width: 100%">
        Download<br />
-       VirtualBox/VMware Disk Image<br />
+       VMware Disk Image<br />
        <small>obs-server.x86_64.vmdk</small>
     </a>
   </div>
-  <div class="six columns">
-    <a href="http://download.opensuse.org/repositories/OBS:/Server:/2.7/images/obs-server.x86_64.raw.xz"
-       title="OBS Appliance Raw Image"
+  <div class="four columns">
+    <a href="http://download.opensuse.org/repositories/OBS:/Server:/2.7/images/obs-server.x86_64.vdi"
+       title="OBS Appliance VDI Image"
        class="radius large button piwik_download"
        style="width: 100%">
        Download<br />
-       Raw Disk Image <br />
-       <small>obs-server.x86_64.raw.xz</small>
+       VirtualBox Disk Image<br />
+       <small>obs-server.x86_64.vdi</small>
+    </a>
+  </div>
+  <div class="four columns">
+    <a href="http://download.opensuse.org/repositories/OBS:/Server:/2.7/images/obs-server.x86_64.qcow2"
+       title="OBS Appliance QCow2 Image"
+       class="radius large button piwik_download"
+       style="width: 100%">
+       Download<br />
+       KVM/Qemu QCow2 Image<br />
+       <small>obs-server.x86_64.qcow2</small>
     </a>
   </div>
 </div>
@@ -105,7 +88,7 @@ title: Download
     </p>
     <h5>SUSE Linux Enterprise</h5>
     <pre>
-      zypper ar -f http://download.opensuse.org/repositories/OBS:/Server:/2.7/SLE_11_SP3/OBS:Server:2.7.repo
+      zypper ar -f http://download.opensuse.org/repositories/OBS:/Server:/2.7/SLE_12/OBS:Server:2.7.repo
       zypper in -t pattern OBS_Server
     </pre>
     <h5>openSUSE</h5>
