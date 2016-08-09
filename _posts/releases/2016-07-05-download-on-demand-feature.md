@@ -4,9 +4,9 @@ title: Download on Demand (DoD)
 category: releases
 ---
 
-Using Download on Demand (DoD) Feature
+# Using Download on Demand (DoD) Feature
 
-The Downloand on Demand feature enables you to configure a repository which only download needed packages during build time.
+The Download on Demand feature enables you to configure a repository which only download needed packages during build time.
 
 ## Why using DoD ? 
 
@@ -16,9 +16,26 @@ There are several reasons for using a DoD repository:
 * **Automatic package updates:** Get updates when upstream changes
 * **Simple configuration:** Configurable in project meta
 
-## Using DoD
+## Using DoD on OBS
 
-To setup a DoD repository, choose **Add DoD repository** in the Repositories section and fill in necessary information regarding 
+There is already a variety of DoD repositories available in OBS, ready to use:
+
+* **Fedora:23** (standard, update)
+* **Fedora:24** (standard, update)
+* **Fedora:Rawhide** (standard)
+* **Ubuntu:16.04** (standard, universe, update)
+* **Arch:Core** (standard)
+* **Arch:Extra** (standard)
+* **Arch:Community** (standard)
+* **Debian:8** (ga, update)
+
+To add this repos to your project, go to the **Repositories** tab and click on **Add repositories** and choose **Expert Mode**. Please fill in your prefered project, e.g. Fedora:Rawhide, select the repository and a name and you are ready to go.  
+
+## Using DoD on your own instance
+
+Please note that you need **admin privileges** in order to add DoD repositories to a buildservice instance.
+
+To do so, choose **Add DoD repository** in the Repositories section and fill in necessary information regarding 
 the repo (name, architecture, type and URL).
 
 On next build, the required packages should be downloaded on demand for that repository and the packages gets updated when a newer
