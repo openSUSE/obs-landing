@@ -18,7 +18,11 @@ There are several reasons for using a DoD repository:
 
 ## Using DoD on OBS
 
-There is already a variety of DoD repositories available in OBS, ready to use:
+New distributions in build.opensuse.org instance get added using DoD now. This allows us to add also repositories which are not static. New repositories are the maintenance update repositories of various distributions. Ubuntu universe is also accessable now. And last but not least rolling release distributions like Fedora Rawhide or Arch.
+
+Keep in mind that the changes in these repositories may lead to the situation that the build configuration needs to be adapted. So you might see failures during the setup of the build environment from time to time.
+
+Full list of repositories:
 
 * **Fedora:23** (standard, update)
 * **Fedora:24** (standard, update)
