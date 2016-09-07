@@ -1,0 +1,2177 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Overview filesystem | Open Build Service</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DocBook XSL Stylesheets V1.78.1" /><meta name="book-title" content="Open Build Service" /><meta name="chapter-title" content="Chapter 2. Overview filesystem" /><link rel="home" href="index.html" title="Open Build Service" /><link rel="up" href="index.html" title="Open Build Service" /><link rel="prev" href="_installation_and_configuration.html" title="Chapter 1. Installation and configuration" /><link rel="next" href="_administration.html" title="Chapter 3. Administration" /><script type="text/javascript">
+
+var protocol = window.location.protocol.toLowerCase();
+if ( protocol != 'file:' ) {
+  var agent = navigator.userAgent.toLowerCase();
+  var wanted = ( protocol == 'https:') ? 'https' : 'http';
+  var file = 'fonts.css';
+  if (agent.indexOf('android') != -1 && agent.indexOf('chrom') != -1 ) {
+      file = 'fonts-nolocal.css';
+  }
+  document.write('<link rel="stylesheet" type="text/css" href="' + wanted + '://static.opensuse.org/fonts/'+ file +'"></link>');cd
+}
+else {
+   document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+}
+
+</script><noscript><link rel="stylesheet" type="text/css" href="http://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="offline js-off"><div id="_outer-wrap"><div id="_white-bg"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Open Build Service"><span class="book-icon">Open Build Service</span></a><span> › </span><a class="crumb" href="_overview_filesystem.html">Overview filesystem</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Open Build Service</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="pr01.html"><span class="number"> </span><span class="name">About this Guide</span></a></li><li class="inactive"><a href="_installation_and_configuration.html"><span class="number">1 </span><span class="name">Installation and configuration</span></a></li><li class="inactive"><a href="_overview_filesystem.html"><span class="number">2 </span><span class="name">Overview filesystem</span></a></li><li class="inactive"><a href="_administration.html"><span class="number">3 </span><span class="name">Administration</span></a></li><li class="inactive"><a href="_troubleshooting.html"><span class="number">4 </span><span class="name">Troubleshooting</span></a></li><li class="inactive"><a href="apa.html"><span class="number">A </span><span class="name">GNU Licenses</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 1. Installation and configuration" href="_installation_and_configuration.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 3. Administration" href="_administration.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Open Build Service"><span class="book-icon">Open Build Service</span></a><span> › </span><a class="crumb" href="_overview_filesystem.html">Overview filesystem</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 1. Installation and configuration" href="_installation_and_configuration.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 3. Administration" href="_administration.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class=""><div class="documentation"><div class="chapter " id="_overview_filesystem"><div class="titlepage"><div><div><h1 class="title"><span class="number">2 </span><span class="name">Overview filesystem</span> </h1></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="_overview_filesystem.html#_configuration_files"><span class="number">2.1 </span><span class="name">Configuration files</span></a></span></dt><dt><span class="section"><a href="_overview_filesystem.html#_log_files"><span class="number">2.2 </span><span class="name">Log files</span></a></span></dt><dt><span class="section"><a href="_overview_filesystem.html#_src_obs_tree"><span class="number">2.3 </span><span class="name">/src/obs tree</span></a></span></dt><dt><span class="section"><a href="_overview_filesystem.html#_meta_data"><span class="number">2.4 </span><span class="name">Meta data</span></a></span></dt></dl></div></div><div class="sect1" id="_configuration_files"><div class="titlepage"><div><div><h2 class="title" id="_configuration_files"><span class="number">2.1 </span><span class="name">Configuration files</span> <a title="Permalink" class="permalink" href="_overview_filesystem.html#_configuration_files">#</a></h2></div></div></div><div class="sect2" id="_frontend_configuration"><div class="titlepage"><div><div><h3 class="title" id="_frontend_configuration"><span class="number">2.1.1 </span><span class="name">Frontend Configuration</span> <a title="Permalink" class="permalink" href="_overview_filesystem.html#_frontend_configuration">#</a></h3></div></div></div><p>The Frontend is configured with 3 files:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
+/srv/www/obs/api/config/database.yml
+</li><li class="listitem ">
+/srv/www/obs/api/config/options.yml
+</li><li class="listitem ">
+/etc/apache2/vhosts.d/obs.conf
+</li></ul></div><div class="sect3" id="_database_yml"><div class="titlepage"><div><div><h4 class="title" id="_database_yml"><span class="number">2.1.1.1 </span><span class="name">database.yml</span> <a title="Permalink" class="permalink" href="_overview_filesystem.html#_database_yml">#</a></h4></div></div></div><p>This file has the information needed to access the database. It contain
+credentials for the database access and should be only readable by root and
+the group running the webserver (www).</p><p>The file has settings for the production, development and test ruby
+environment, for production systems only the production section is
+important.</p><p>Example production section</p><div class="verbatim-wrap"><pre class="screen">production:
+  adapter: mysql2
+  database: api_production
+  username: obsapiuser
+  password: topsecret
+  encoding: utf8
+  timeout: 15
+  pool: 30</pre></div><div class="table" id="idm139982921085040"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 2.1: </span><span class="name">Database configuration keywords </span><a title="Permalink" class="permalink" href="_overview_filesystem.html#idm139982921085040">#</a></h6></div><div class="table-contents"><table summary="Database configuration keywords" border="1"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /></colgroup><thead><tr><th align="left" valign="top"> keyword </th><th align="left" valign="top"> Description </th><th align="left" valign="top">Remarks</th></tr></thead><tbody><tr><td align="left" valign="top">
+         <p>adapter</p>
+        </td><td align="left" valign="top">
+         <p>Database driver</p>
+        </td><td align="left" valign="top">
+         <p>only mysql databases are supported</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>database</p>
+        </td><td align="left" valign="top">
+         <p>Database name</p>
+        </td><td align="left" valign="top">
+         <p>do not change !</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>username</p>
+        </td><td align="left" valign="top">
+         <p>mysql user name</p>
+        </td><td align="left" valign="top">
+         <p>database user, not a system user</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>password</p>
+        </td><td align="left" valign="top">
+         <p>password for this user</p>
+        </td><td align="left" valign="top">
+         <p>clear text</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>encoding</p>
+        </td><td align="left" valign="top">
+         <p>codetable</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>timeout</p>
+        </td><td align="left" valign="top">
+         <p>wait time in milliseconds</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>pool</p>
+        </td><td align="left" valign="top">
+         <p>number of open connections per thread</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>socket</p>
+        </td><td align="left" valign="top">
+         <p>path to the mysql socket</p>
+        </td><td align="left" valign="top">
+         <p>same host only</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>host</p>
+        </td><td align="left" valign="top">
+         <p>Ip address or hostname of the mysql server</p>
+        </td><td align="left" valign="top">
+         <p>for remote servers</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>port</p>
+        </td><td align="left" valign="top">
+         <p>port number of the mysql server</p>
+        </td><td align="left" valign="top">
+         <p>for remote servers</p>
+        </td></tr></tbody></table></div></div></div><div class="sect3" id="_options_yml"><div class="titlepage"><div><div><h4 class="title" id="_options_yml"><span class="number">2.1.1.2 </span><span class="name">options.yml</span> <a title="Permalink" class="permalink" href="_overview_filesystem.html#_options_yml">#</a></h4></div></div></div><p>The configuration file /srv/www/obs/api/config/options.yml is the default
+configuration file for the Open Build Service WebUI and API. It contains
+configuration parameters for example for backend connections and connection to the
+API. Important are the configurations for source and frontend hosts
+The configuration for LDAP authentication is also located in this file.</p><div id="idm139982920045232" class="admonition note"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>More and more configurations will be moved to the database and do not longer
+exist in this file. The database configuration can be accessed via the API
+<span class="emphasis"><em>/configuration</em></span> path.</p></div><div class="table" id="idm139982920043760"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 2.2: </span><span class="name">option.yml configuration items </span><a title="Permalink" class="permalink" href="_overview_filesystem.html#idm139982920043760">#</a></h6></div><div class="table-contents"><table summary="option.yml configuration items" border="1"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /><col class="col_4" /></colgroup><thead><tr><th align="left" valign="top"> Config item </th><th align="left" valign="top"> Description </th><th align="left" valign="top"> Values <code class="literal">default</code>
+        </th><th align="left" valign="top"> Remarks</th></tr></thead><tbody><tr><td align="left" valign="top">
+         <p>use_xforward</p>
+        </td><td align="left" valign="top">
+         <p>Use mod_xforward module</p>
+        </td><td align="left" valign="top">
+         <p><code class="literal">true</code> false</p>
+        </td><td align="left" valign="top">
+         <p>apache only, should be true</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>use_nginx_redirect</p>
+        </td><td align="left" valign="top">
+         <p>Use X-Accel-Redirect</p>
+        </td><td align="left" valign="top">
+         <p><code class="literal">/internal_redirect</code>
+         </p>
+        </td><td align="left" valign="top">
+         <p>Nginx only</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>min_votes_for_rating</p>
+        </td><td align="left" valign="top">
+         <p>Minimum votes for a rating</p>
+        </td><td align="left" valign="top">
+         <p>integer <code class="literal">3</code>
+         </p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>response_schema_validation</p>
+        </td><td align="left" valign="top">
+         <p>Set to true to verify XML reponses comply to the schema</p>
+        </td><td align="left" valign="top">
+         <p>true <code class="literal">false</code>
+         </p>
+        </td><td align="left" valign="top">
+         <p>test/debug option</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>source_host</p>
+        </td><td align="left" valign="top">
+         <p>backend source server host</p>
+        </td><td align="left" valign="top">
+         <p><code class="literal">localhost</code>
+         </p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>source_port</p>
+        </td><td align="left" valign="top">
+         <p>backend source server port</p>
+        </td><td align="left" valign="top">
+         <p>integer <code class="literal">5352</code>
+         </p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>source_protocol</p>
+        </td><td align="left" valign="top">
+         <p>backend source server protocol</p>
+        </td><td align="left" valign="top">
+         <p><code class="literal">http</code>, https</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>frontend_host</p>
+        </td><td align="left" valign="top">
+         <p>Frontend host</p>
+        </td><td align="left" valign="top">
+         <p><code class="literal">localhost</code>
+         </p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>frontend_port</p>
+        </td><td align="left" valign="top">
+         <p>Frontend port</p>
+        </td><td align="left" valign="top">
+         <p>integer <code class="literal">443</code>
+         </p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>frontend_protocol</p>
+        </td><td align="left" valign="top">
+         <p>Frontend protocol</p>
+        </td><td align="left" valign="top">
+         <p>http <code class="literal">https</code>
+         </p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>external_frontend_host</p>
+        </td><td align="left" valign="top">
+         <p>External Frontend host</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td><td align="left" valign="top">
+         <p>if your users access the hosts through a proxy or different name</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>external_frontend_port</p>
+        </td><td align="left" valign="top">
+         <p>External Frontend port</p>
+        </td><td align="left" valign="top">
+         <p>integer <code class="literal">443</code>
+         </p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>external_frontend_protocol</p>
+        </td><td align="left" valign="top">
+         <p>External Frontend protocol</p>
+        </td><td align="left" valign="top">
+         <p>http <code class="literal">https</code>
+         </p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>extended_backend_log</p>
+        </td><td align="left" valign="top">
+         <p>Extended backen log</p>
+        </td><td align="left" valign="top">
+         <p><code class="literal">true</code> false</p>
+        </td><td align="left" valign="top">
+         <p>test/debug option</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>proxy_auth_mode:</p>
+        </td><td align="left" valign="top">
+         <p>turn proxy mode on/off</p>
+        </td><td align="left" valign="top">
+         <p><code class="literal">:off</code> :on</p>
+        </td><td align="left" valign="top">
+         <p>see LDAP section</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>proxy_auth_test_user</p>
+        </td><td align="left" valign="top">
+         <p>Test user</p>
+        </td><td align="left" valign="top">
+         <p><code class="literal">coolguy</code>
+         </p>
+        </td><td align="left" valign="top">
+         <p>test/debug option</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>proxy_auth_test_email</p>
+        </td><td align="left" valign="top">
+         <p>Email of Test user</p>
+        </td><td align="left" valign="top">
+         <p><code class="literal">coolguy@ example.com</code>
+         </p>
+        </td><td align="left" valign="top">
+         <p>test/debug option</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>global_write_through</p>
+        </td><td align="left" valign="top">
+         <p>if set to false, the API will only fake writes to backend</p>
+        </td><td align="left" valign="top">
+         <p><code class="literal">true</code> false</p>
+        </td><td align="left" valign="top">
+         <p>test/debug option</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>auto_cleanup_after_days</p>
+        </td><td align="left" valign="top">
+         <p>not longer used</p>
+        </td><td align="left" valign="top">
+         <p><code class="literal">30</code>
+         </p>
+        </td><td align="left" valign="top">
+         <p>moved to /configuration API</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>errbit_api_key</p>
+        </td><td align="left" valign="top">
+         <p>API key of the application</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td><td align="left" valign="top">
+         <p>test/debug option</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>errbit_host</p>
+        </td><td align="left" valign="top">
+         <p>installation  of errbit.com a Ruby error catcher</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td><td align="left" valign="top">
+         <p>test/debug option</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>errbit_api_key</p>
+        </td><td align="left" valign="top">
+         <p>API key of the application</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td><td align="left" valign="top">
+         <p>test/debug option</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>ldap_mode:</p>
+        </td><td align="left" valign="top">
+         <p>OBS LDAP mode on/off</p>
+        </td><td align="left" valign="top">
+         <p><code class="literal">:off</code> :on</p>
+        </td><td align="left" valign="top">
+         <p>see LDAP setion</p>
+        </td></tr></tbody></table></div></div><p>Example options.yml</p><div class="verbatim-wrap"><pre class="screen">#
+# This file contains the default configuration of the Open Build Service
+# API.
+#
+
+
+# Make use of mod_xforward module in apache
+use_xforward: true
+
+# Make use of X-Accel-Redirect for Nginx.
+# http://kovyrin.net/2010/07/24/nginx-fu-x-accel-redirect-remote
+#use_nginx_redirect: /internal_redirect
+
+# Minimum count of rating votes a project/package needs to # be taken in
+# account
+# for global statistics:
+min_votes_for_rating: 3
+
+# Set to true to verify XML reponses comply to the schema
+response_schema_validation: false
+
+# backend source server
+source_host: localhost
+source_port: 5352
+#source_protocol: https
+
+# api access to this instance
+frontend_host: localhost
+frontend_port: 443
+frontend_protocol: https
+# if your users access the hosts through a proxy (or just a different name,
+# use this to
+# overwrite the settings for users)
+#external_frontend_host: api.opensuse.org
+#external_frontend_port: 443
+#external_frontend_protocol: https
+
+
+extended_backend_log: true
+
+# proxy_auth_mode can be :off, :on or :simulate
+proxy_auth_mode: :off
+
+# ATTENTION: If proxy_auth_mode'is :on, the frontend takes the user
+# name that is coming as headervalue X-username as a
+# valid user does no further authentication. So take care...
+proxy_auth_test_user: coolguy
+proxy_auth_test_email: coolguy@example.com
+
+# set this to enable auto cleanup requests after the given days
+auto_cleanup_after_days: 30
+
+#schema_location
+
+#version
+
+# if set to false, the API will only fake writes to backend (useful in
+# testing)
+# global_write_through: true
+
+# see
+# http://colszowka.heroku.com/2011/02/22/setting-up-your-custom-hoptoad-notifier-endpoint-for-free-using-errbit-on-heroku
+#errbit_api_key: api_key_of_your_app
+#errbit_host: installation.of.errbit.com</pre></div></div><div class="sect3" id="_apache_vhost_obs_conf"><div class="titlepage"><div><div><h4 class="title" id="_apache_vhost_obs_conf"><span class="number">2.1.1.3 </span><span class="name">Apache vhost obs.conf</span> <a title="Permalink" class="permalink" href="_overview_filesystem.html#_apache_vhost_obs_conf">#</a></h4></div></div></div><p>The apache configuration depends on the apache version and what extra
+options are used, so please use the documentation of the apache version you
+are using.</p><p>Here as example the standard configuration used by the appliance:
+Apache vhost example</p><div class="verbatim-wrap"><pre class="screen">Listen 82
+# May needed on old distributions or after an update from them.
+#Listen 443
+
+# Passenger defaults
+PassengerSpawnMethod "smart"
+PassengerMaxPoolSize 20
+#RailsEnv "development"
+
+# allow long request urls and being part of headers
+LimitRequestLine 20000
+LimitRequestFieldsize 20000
+
+# Just the overview page
+&lt;VirtualHost *:80&gt;
+        # just give an overview about this OBS instance via static web page
+        DocumentRoot  "/srv/www/obs/overview"
+
+        &lt;Directory /srv/www/obs/overview&gt;
+           Options Indexes
+           Require all granted
+        &lt;/Directory&gt;
+&lt;/VirtualHost&gt;
+
+
+# Build Results
+&lt;VirtualHost *:82&gt;
+        # The resulting repositories
+        DocumentRoot  "/srv/obs/repos"
+
+        &lt;Directory /srv/obs/repos&gt;
+           Options Indexes FollowSymLinks
+           Require all granted
+        &lt;/Directory&gt;
+&lt;/VirtualHost&gt;
+
+
+# OBS WEBUI &amp; API
+&lt;VirtualHost *:443&gt;
+        ServerName api
+
+        #  General setup for the virtual host
+        DocumentRoot  "/srv/www/obs/api/public"
+        ErrorLog /srv/www/obs/api/log/apache_error.log
+        TransferLog /srv/www/obs/api/log/apache_access.log
+
+        PassengerMinInstances 2
+        PassengerPreStart https://api
+
+        SSLEngine on
+
+        #  SSL protocols
+        #  Supporting TLS only is adequate nowadays
+        SSLProtocol all -SSLv2 -SSLv3
+
+        #   SSL Cipher Suite:
+        #   List the ciphers that the client is permitted to negotiate.
+        #   We disable weak ciphers by default.
+        #   See the mod_ssl documentation or "openssl ciphers -v" for a
+        #   complete list.
+        SSLCipherSuite ALL:!aNULL:!eNULL:!SSLv2:!LOW:!EXP:!MD5:@STRENGTH
+
+        SSLCertificateFile /srv/obs/certs/server.crt
+        SSLCertificateKeyFile /srv/obs/certs/server.key
+
+        &lt;Directory /srv/www/obs/api/public&gt;
+           AllowOverride all
+           Options -MultiViews
+
+           # This requires mod_xforward loaded in apache
+           # Enable the usage via options.yml
+           # This will decrease the load due to long running requests a lot (unloading from rails stack)
+           XForward on
+
+           Require all granted
+        &lt;/Directory&gt;
+
+        SetEnvIf User-Agent ".*MSIE [1-5].*" \
+                 nokeepalive ssl-unclean-shutdown \
+                 downgrade-1.0 force-response-1.0
+
+        CustomLog /var/log/apache2/ssl_request_log   ssl_combined
+
+
+        # from http://guides.rubyonrails.org/asset_pipeline.html
+        &lt;LocationMatch "^/assets/.*$"&gt;
+          Header unset ETag
+          FileETag None
+          # RFC says only cache for 1 year
+          ExpiresActive On
+          ExpiresDefault "access plus 1 year"
+       &lt;/LocationMatch&gt;
+
+        SetEnvIf User-Agent ".*MSIE [1-5].*" \
+                 nokeepalive ssl-unclean-shutdown \
+                 downgrade-1.0 force-response-1.0
+
+        ## Older firefox versions needs this, otherwise it wont cache anything over SSL.
+        Header append Cache-Control "public"
+
+&lt;/VirtualHost&gt;</pre></div></div></div><div class="sect2" id="_backend_configuration"><div class="titlepage"><div><div><h3 class="title" id="_backend_configuration"><span class="number">2.1.2 </span><span class="name">Backend Configuration</span> <a title="Permalink" class="permalink" href="_overview_filesystem.html#_backend_configuration">#</a></h3></div></div></div><p>The Backend is configured with 2 files:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
+/etc/sysconfig/obs-server - a shell script used for workers and the OBS start scripts
+</li><li class="listitem ">
+/usr/lib/obs/server/BSConfig.pm - a perl script defining some global variables
+</li></ul></div><div class="sect3" id="_etc_sysconfig_obs_server"><div class="titlepage"><div><div><h4 class="title" id="_etc_sysconfig_obs_server"><span class="number">2.1.2.1 </span><span class="name">/etc/sysconfig/obs-server</span> <a title="Permalink" class="permalink" href="_overview_filesystem.html#_etc_sysconfig_obs_server">#</a></h4></div></div></div><p>This script is used to setup the basic pathes and the worker.
+the most important settings are the <span class="strong"><strong>OBS_SRC_SERVER</strong></span> and <span class="strong"><strong>OBS_REPO_SERVERS</strong></span> and the
+<span class="strong"><strong>OBS_WORKER_INSTANCES</strong></span>.</p><div class="table" id="idm139982919875296"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 2.3: </span><span class="name">obs-server variables </span><a title="Permalink" class="permalink" href="_overview_filesystem.html#idm139982919875296">#</a></h6></div><div class="table-contents"><table summary="obs-server variables" border="1"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /><col class="col_4" /></colgroup><thead><tr><th align="left" valign="top"> Variable </th><th align="left" valign="top"> Description </th><th align="left" valign="top"> Values <code class="literal">default</code>
+        </th><th align="left" valign="top"> Remarks</th></tr></thead><tbody><tr><td align="left" valign="top">
+         <p>OBS_BACKENDCODE_DIR</p>
+        </td><td align="left" valign="top">
+         <p>Path to the backend scripts</p>
+        </td><td align="left" valign="top">
+         <p>/usr/lib/obs/server/</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>OBS_RUN_DIR</p>
+        </td><td align="left" valign="top">
+         <p>communication directory base</p>
+        </td><td align="left" valign="top">
+         <p>/srv/obs/run</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>OBS_LOG_DIR</p>
+        </td><td align="left" valign="top">
+         <p>logging directory</p>
+        </td><td align="left" valign="top">
+         <p>/srv/obs/log</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>OBS_BASE_DIR</p>
+        </td><td align="left" valign="top">
+         <p>base directory</p>
+        </td><td align="left" valign="top">
+         <p>/srv/obs</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>OBS_API_AUTOSETUP</p>
+        </td><td align="left" valign="top">
+         <p>Automatically setup api and webui</p>
+        </td><td align="left" valign="top">
+         <p>yes <code class="literal">no</code>
+         </p>
+        </td><td align="left" valign="top">
+         <p>appliance only, will overwrite config files</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>OBS_SRC_SERVER</p>
+        </td><td align="left" valign="top">
+         <p>source server host</p>
+        </td><td align="left" valign="top">
+         <p>localhost:5352</p>
+        </td><td align="left" valign="top">
+         <p>only one</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>OBS_REPO_SERVERS</p>
+        </td><td align="left" valign="top">
+         <p>repository server host</p>
+        </td><td align="left" valign="top">
+         <p>localhost:5252</p>
+        </td><td align="left" valign="top">
+         <p>maybe a list</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>OBS_WORKER_INSTANCES</p>
+        </td><td align="left" valign="top">
+         <p>number of build instances</p>
+        </td><td align="left" valign="top">
+         <p>integer <code class="literal">0</code>
+         </p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>OBS_WORKER_INSTANCE _NAMES</p>
+        </td><td align="left" valign="top">
+         <p>names of the workers</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td><td align="left" valign="top">
+         <p>space separated list</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>OBS_WORKER_DIRECTORY</p>
+        </td><td align="left" valign="top">
+         <p>worker base directory</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>OBS_WORKER_PORTBASE</p>
+        </td><td align="left" valign="top">
+         <p>The base for port numbers used by worker</p>
+        </td><td align="left" valign="top">
+         <p>integer <code class="literal">0</code>
+         </p>
+        </td><td align="left" valign="top">
+         <p>0 OS assign number</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>OBS_WORKER_JOBS</p>
+        </td><td align="left" valign="top">
+         <p>Number of parallel compile jobs</p>
+        </td><td align="left" valign="top">
+         <p>integer <code class="literal">1</code>
+         </p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>OBS_WORKER_TEST_MODE</p>
+        </td><td align="left" valign="top">
+         <p>Run in test mode</p>
+        </td><td align="left" valign="top">
+         <p>yes <code class="literal">no</code>
+         </p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>OBS_WORKER_HOST LABELS</p>
+        </td><td align="left" valign="top">
+         <p>one or more labels for the build host</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td><td align="left" valign="top">
+         <p>may used by constraints</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>OBS_USE_SLP</p>
+        </td><td align="left" valign="top">
+         <p>Register in SLP server</p>
+        </td><td align="left" valign="top">
+         <p><code class="literal">yes</code> no</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>OBS_CACHE_DIR</p>
+        </td><td align="left" valign="top">
+         <p>cache directory for downloaded packages</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>OBS_CACHE_SIZE</p>
+        </td><td align="left" valign="top">
+         <p>package cache size</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td><td align="left" valign="top">
+         <p>in MB</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>OBS_WORKER_NICE _LEVEL</p>
+        </td><td align="left" valign="top">
+         <p>nice level of running workers</p>
+        </td><td align="left" valign="top">
+         <p><code class="literal">18</code>
+         </p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>OBS_VM_TYPE</p>
+        </td><td align="left" valign="top">
+         <p>VM type</p>
+        </td><td align="left" valign="top">
+         <p><span class="strong"><strong>auto</strong></span> xen kvm lxc zvm emulator:$arch none</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>OBS_VM_KERNEL</p>
+        </td><td align="left" valign="top">
+         <p>Set kernel used by worker</p>
+        </td><td align="left" valign="top">
+         <p><code class="literal">none</code> (/boot/vmlinuz)</p>
+        </td><td align="left" valign="top">
+         <p>KVM option</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>OBS_VM_INITRD</p>
+        </td><td align="left" valign="top">
+         <p>initrd used by worker</p>
+        </td><td align="left" valign="top">
+         <p><code class="literal">none</code> (/boot/vmlinuz)</p>
+        </td><td align="left" valign="top">
+         <p>KVM option</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>OBS_VM_DISK_AUTOSETUP _ROOT_FILESIZE</p>
+        </td><td align="left" valign="top">
+         <p>Autosetup disk size</p>
+        </td><td align="left" valign="top">
+         <p><code class="literal">4096</code>
+         </p>
+        </td><td align="left" valign="top">
+         <p>in MB</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>OBS_VM_DISK_AUTOSETUP _SWAP_FILESIZE</p>
+        </td><td align="left" valign="top">
+         <p>Autosetup swap size</p>
+        </td><td align="left" valign="top">
+         <p><code class="literal">1024</code>
+         </p>
+        </td><td align="left" valign="top">
+         <p>on MB</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>OBS_VM_DISK_AUTOSETUP _FILESYSTEM</p>
+        </td><td align="left" valign="top">
+         <p>Filesystem used with autosetup</p>
+        </td><td align="left" valign="top">
+         <p><code class="literal">ext3</code>
+         </p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>OBS_VM_DISK_AUTOSETUP _MOUNT_OPTIONS</p>
+        </td><td align="left" valign="top">
+         <p>Special mountoptions</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>OBS_VM_USE_TMPFS</p>
+        </td><td align="left" valign="top">
+         <p>Enable build in memory</p>
+        </td><td align="left" valign="top">
+         <p>yes <code class="literal">no</code>
+         </p>
+        </td><td align="left" valign="top">
+         <p>requires much memory</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>OBS_INSTANCE_MEMORY</p>
+        </td><td align="left" valign="top">
+         <p>Memory allocated for a VM</p>
+        </td><td align="left" valign="top">
+         <p><code class="literal">512</code>
+         </p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>OBS_STORAGE_AUTOSETUP</p>
+        </td><td align="left" valign="top">
+         <p>storage auto configuration</p>
+        </td><td align="left" valign="top">
+         <p>yes <code class="literal">no</code>
+         </p>
+        </td><td align="left" valign="top">
+         <p>may destroy disk content</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>OBS_SETUP_WORKER _PARTITIONS</p>
+        </td><td align="left" valign="top">
+         <p>LVM via obsstoragesetup</p>
+        </td><td align="left" valign="top">
+         <p>take_all <code class="literal">use_obs_vg</code> none</p>
+        </td><td align="left" valign="top">
+         <p>may destroy disk content</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>OBS_WORKER_CACHE_SIZE</p>
+        </td><td align="left" valign="top">
+         <p>LVM partition for cache size</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>OBS_WORKER_ROOT_SIZE</p>
+        </td><td align="left" valign="top">
+         <p>LVM partition for root size</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>OBS_WORKER_SWAP_SIZE</p>
+        </td><td align="left" valign="top">
+         <p>LVM partition for swap size</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>OBS_WORKER_BINARIES _PROXY</p>
+        </td><td align="left" valign="top">
+         <p>proxy service for caching binaries</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>OBS_ROOT_SSHD_KEY_URL</p>
+        </td><td align="left" valign="top">
+         <p>ssh pub key to allow root user login</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td><td align="left" valign="top">
+         <p>for mass deployment</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>OBS_WORKER_SCRIPT_URL</p>
+        </td><td align="left" valign="top">
+         <p>URL to the initial script</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr></tbody></table></div></div><p>For workers the settings could be declared in the <span class="emphasis"><em>/etc/buildhost.config</em></span>
+file as well.</p><div class="verbatim-wrap"><pre class="screen">#
+# NOTE: all these options can be also declared in /etc/buildhost.config on each worker differently.
+#
+
+## Path:        Applications/OBS
+## Description: The OBS backend code directory
+## Type:        string
+## Default:     ""
+## Config:      OBS
+#
+# An empty dir will lead to the fall back directory, typically /usr/lib/obs/server/
+#
+OBS_BACKENDCODE_DIR=""
+
+## Path:        Applications/OBS
+## Description: The base for OBS communication directory
+## Type:        string
+## Default:     ""
+## Config:      OBS
+#
+# An empty dir will lead to the fall back directory, typically /srv/obs/run
+#
+OBS_RUN_DIR="/srv/obs/run"
+
+## Path:        Applications/OBS
+## Description: The base for OBS logging directory
+## Type:        string
+## Default:     ""
+## Config:      OBS
+#
+# An empty dir will lead to the fall back directory, typically /srv/obs/log
+#
+OBS_LOG_DIR="/srv/obs/log"
+
+## Path:        Applications/OBS
+## Description: The base directory for OBS
+## Type:        string
+## Default:     ""
+## Config:      OBS
+#
+# An empty dir will lead to the fall back directory, typically /srv/obs
+#
+OBS_BASE_DIR=""
+
+## Path:        Applications/OBS
+## Description: Automatically setup api and webui for OBS server, be warned, this will replace config files !
+## Type:        ("yes" | "no")
+## Default:     "no"
+## Config:      OBS
+#
+# This is usally only enabled on the OBS Appliance
+#
+OBS_API_AUTOSETUP="yes"
+#
+# NOTE: all these options can be also declared in /etc/buildhost.config on each worker differently.
+#
+
+## Path:        Applications/OBS
+## Description: define source server host to be used
+## Type:        string
+## Default:     ""
+## Config:      OBS
+#
+# An empty setting will point to localhost:5352 by default
+#
+OBS_SRC_SERVER=""
+
+## Path:        Applications/OBS
+## Description: define repository server host to be used
+## Type:        string
+## Default:     ""
+## Config:      OBS
+#
+# An empty setting will point to localhost:5252 by default
+#
+OBS_REPO_SERVERS=""
+
+## Path:        Applications/OBS
+## Description: define number of build instances
+## Type:        integer
+## Default:     0
+## Config:      OBS
+#
+# 0 instances will automatically use the number of CPU's
+#
+OBS_WORKER_INSTANCES="0"
+
+## Path:        Applications/OBS
+## Description: define names of build instances for z/VM
+## Type:        string
+## Default:     ""
+## Config:      OBS
+#
+# The names of the workers as defined in z/VM. These must have two minidisks
+# assigned, and have a secondary console configured to the local machine:
+# 0150 is the root device
+# 0250 is the swap device
+#
+#OBS_WORKER_INSTANCE_NAMES="LINUX075 LINUX076 LINUX077"
+OBS_WORKER_INSTANCE_NAMES=""
+
+## Path:        Applications/OBS
+## Description: The base directory, where sub directories for each worker will get created
+## Type:        string
+## Default:     ""
+## Config:      OBS
+#
+#
+OBS_WORKER_DIRECTORY=""
+
+## Path:        Applications/OBS
+## Description: The base for port numbers used by worker instances
+## Type:        integer
+## Default:     "0"
+## Config:      OBS
+#
+# 0 means let the operating system assign a port number
+#
+OBS_WORKER_PORTBASE="0"
+
+## Path:        Applications/OBS
+## Description: Number of parallel compile jobs per worker
+## Type:        integer
+## Default:     "1"
+## Config:      OBS
+#
+# this maps usually to "make -j1" during build
+#
+OBS_WORKER_JOBS="1"
+
+## Path:        Applications/OBS
+## Description: Run in test mode (build results will be ignore, no job blocking)
+## Type:        ("yes" | "")
+## Default:     ""
+## Config:      OBS
+#
+OBS_WORKER_TEST_MODE=""
+
+## Path:        Applications/OBS
+## Description: define one or more labels for the build host.
+## Type:        string
+## Default:     ""
+## Config:      OBS
+#
+# A label can be used to build specific packages only on dedicated hosts.
+# For example for benchmarking.
+#
+OBS_WORKER_HOSTLABELS=""
+
+## Path:        Applications/OBS
+## Description: Register in SLP server
+## Type:        ("yes" | "no")
+## Default:     "yes"
+## Config:      OBS
+#
+#
+OBS_USE_SLP="yes"
+
+## Path:        Applications/OBS
+## Description: Use a common cache directory for downloaded packages
+## Type:        string
+## Default:     ""
+## Config:      OBS
+#
+# Enable caching requires a given directory here. Be warned, content will be
+# removed there !
+#
+OBS_CACHE_DIR=""
+
+## Path:        Applications/OBS
+## Description: Defines the package cache size
+## Type:        size in MB
+## Default:     ""
+## Config:      OBS
+#
+# Set the size to 50% of the maximum usable size of this partition
+#
+OBS_CACHE_SIZE=""
+
+## Path:        Applications/OBS
+## Description: Defines the nice level of running workers
+## Type:        integer
+## Default:     18
+## Config:      OBS
+#
+# Nicenesses range from -20 (most favorable  scheduling) to 19 (least
+# favorable).
+# Default to 18 as some testsuites depend on being able to switch to
+# one priority below (19) _and_ having changed the numeric level
+# (so going from 19-&gt;19 makes them fail).
+#
+OBS_WORKER_NICE_LEVEL=18
+
+## Path:        Applications/OBS
+## Description: Set used VM type by worker
+## Type:        ("auto" | "xen" | "kvm" | "lxc" | "zvm" | "emulator:$arch" | "emulator:$arch:$script" | "none")
+## Default:     "auto"
+## Config:      OBS
+#
+#
+OBS_VM_TYPE="auto"
+
+## Path:        Applications/OBS
+## Description: Set kernel used by worker (kvm)
+## Type:        ("none" | "/boot/vmlinuz" | "/foo/bar/vmlinuz)
+## Default:     "none"
+## Config:      OBS
+#
+# For z/VM this is normally /boot/image
+#
+OBS_VM_KERNEL="none"
+
+## Path:        Applications/OBS
+## Description: Set initrd used by worker (kvm)
+## Type:        ("none" | "/boot/initrd" | "/foo/bar/initrd-foo)
+## Default:     "none"
+## Config:      OBS
+#
+# for KVM, you have to create with (example for openSUSE 11.2):
+#
+# export rootfstype="ext4"
+# mkinitrd -d /dev/null -m "ext4 binfmt_misc virtio_pci virtio_blk" -k vmlinuz-2.6.31.12-0.2-default -i initrd-2.6.31.12-0.2-default-obs_worker
+#
+# a working initrd file which includes virtio and binfmt_misc for OBS in order to work fine
+#
+# for z/VM, the build script will create a initrd at the given location if
+# it does not yet exist.
+#
+OBS_VM_INITRD="none"
+
+## Path:        Applications/OBS
+## Description: Autosetup for XEN/KVM/TMPFS disk (root) - Filesize in MB
+## Type:        integer
+## Default:     "4096"
+## Config:      OBS
+#
+#
+OBS_VM_DISK_AUTOSETUP_ROOT_FILESIZE="4096"
+
+## Path:        Applications/OBS
+## Description: Autosetup for XEN/KVM disk (swap) - Filesize in MB
+## Type:        integer
+## Default:     "1024"
+## Config:      OBS
+#
+#
+OBS_VM_DISK_AUTOSETUP_SWAP_FILESIZE="1024"
+
+## Path:        Applications/OBS
+## Description: Filesystem to use for autosetup {none,ext4}=ext4, ext3=ext3
+## Type:        string
+## Default:     "ext3"
+## Config:      OBS
+#
+#
+OBS_VM_DISK_AUTOSETUP_FILESYSTEM="ext3"
+
+## Path:        Applications/OBS
+## Description: Filesystem mount options to use for autosetup
+## Type:        string
+## Default:     ""
+## Config:      OBS
+#
+#
+OBS_VM_DISK_AUTOSETUP_MOUNT_OPTIONS=""
+
+## Path:        Applications/OBS
+## Description: Enable build in memory
+## Type:        ("yes" | "")
+## Default:     ""
+## Config:      OBS
+#
+# WARNING: this requires much memory!
+#
+OBS_VM_USE_TMPFS=""
+
+## Path:        Applications/OBS
+## Description: Memory allocated for each VM (512) if not set
+## Type:        integer
+## Default:     ""
+## Config:      OBS
+#
+#
+OBS_INSTANCE_MEMORY=""
+
+## Path:        Applications/OBS
+## Description: Enable storage auto configuration
+## Type:        ("yes" | "")
+## Default:     ""
+## Config:      OBS
+#
+# WARNING: this may destroy data on your hard disk !
+# This is usually only used on mass deployed worker instances
+#
+OBS_STORAGE_AUTOSETUP="yes"
+
+## Path:        Applications/OBS
+## Description: Setup LVM via obsstoragesetup
+## Type:        ("take_all" | "use_obs_vg" | "none")
+## Default:     "use_obs_vg"
+## Config:      OBS
+#
+# take_all: WARNING: all LVM partitions will be used and all data erased !
+# use_obs_vg:  A lvm volume group named "OBS" will be re-setup for the workers.
+#
+OBS_SETUP_WORKER_PARTITIONS="use_obs_vg"
+
+## Path:        Applications/OBS
+## Description: Size in MB when creating LVM partition for cache partition
+## Type:        integer
+## Default:     ""
+## Config:      OBS
+#
+#
+OBS_WORKER_CACHE_SIZE=""
+
+## Path:        Applications/OBS
+## Description: Size in MB when creating LVM partition for each worker root partition
+## Type:        integer
+## Default:     ""
+## Config:      OBS
+#
+#
+OBS_WORKER_ROOT_SIZE=""
+
+## Path:        Applications/OBS
+## Description: Size in MB when creating LVM partition for each worker swap partition
+## Type:        integer
+## Default:     ""
+## Config:      OBS
+#
+#
+OBS_WORKER_SWAP_SIZE=""
+
+## Path:        Applications/OBS
+## Description: URL to a proxy service for caching binaries used by worker
+## Type:        string
+## Default:     ""
+## Config:      OBS
+#
+#
+OBS_WORKER_BINARIES_PROXY=""
+
+## Path:        Applications/OBS
+## Description: URL to a ssh pub key to allow root user login
+## Type:        string
+## Default:     ""
+## Config:      OBS
+#
+# This is usually used on mass (PXE) deployed workers)
+#
+OBS_ROOT_SSHD_KEY_URL=""
+
+## Path:        Applications/OBS
+## Description: URL to a script to be downloaded and executed
+## Type:        string
+## Default:     ""
+## Config:      OBS
+#
+# This is a hook for doing special things in your setup at boot time
+#
+OBS_WORKER_SCRIPT_URL=""</pre></div></div><div class="sect3" id="_bsconfig_pm"><div class="titlepage"><div><div><h4 class="title" id="_bsconfig_pm"><span class="number">2.1.2.2 </span><span class="name">BSConfig.pm</span> <a title="Permalink" class="permalink" href="_overview_filesystem.html#_bsconfig_pm">#</a></h4></div></div></div><p>This file is a perl module used by most backend scripts, it mainly defines global
+variables. Since it is a perl module, after changes the backend servers need
+to be restarted to become aware of the changes.</p><div id="idm139982919637744" class="admonition caution"><img class="symbol" alt="Caution" title="Caution" src="static/images/icon-caution.png" /><h6>Caution</h6><p>If you have an perl syntax error in this file, the services won’t start.
+Most likely you forgot the semicolon on the end of a statement.</p></div><div class="table" id="idm139982919636720"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 2.4: </span><span class="name">BSConfig.pm variables </span><a title="Permalink" class="permalink" href="_overview_filesystem.html#idm139982919636720">#</a></h6></div><div class="table-contents"><table summary="BSConfig.pm variables" border="1"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /><col class="col_4" /></colgroup><thead><tr><th align="left" valign="top"> Variable </th><th align="left" valign="top"> Description </th><th align="left" valign="top"> Values <code class="literal">default</code>
+        </th><th align="left" valign="top"> Remarks</th></tr></thead><tbody><tr><td align="left" valign="top">
+         <p>$hostname</p>
+        </td><td align="left" valign="top">
+         <p>FQDN of the backend host</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td><td align="left" valign="top">
+         <p>leave as it is</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$ip</p>
+        </td><td align="left" valign="top">
+         <p>IP address of the backen host</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td><td align="left" valign="top">
+         <p>leave as it is</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$frontend</p>
+        </td><td align="left" valign="top">
+         <p>FQDN of the frontend host</p>
+        </td><td align="left" valign="top">
+         <p><code class="literal">undef</code>
+         </p>
+        </td><td align="left" valign="top">
+         <p>set only if the frontend runs on another host</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$ipaccess</p>
+        </td><td align="left" valign="top">
+         <p>Map of IP access rules</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td><td align="left" valign="top">
+         <p>Add all hosts if partition are used</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$srcserver</p>
+        </td><td align="left" valign="top">
+         <p>URL of the source server</p>
+        </td><td align="left" valign="top">
+         <p><code class="literal">'http://$hostname: 5352'</code>
+         </p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$reposerver</p>
+        </td><td align="left" valign="top">
+         <p>URL of the repo server</p>
+        </td><td align="left" valign="top">
+         <p><code class="literal">'http://$hostname: 5252'</code>
+         </p>
+        </td><td align="left" valign="top">
+         <p>partition specific</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$serviceserver</p>
+        </td><td align="left" valign="top">
+         <p>URL of the service server</p>
+        </td><td align="left" valign="top">
+         <p><code class="literal">'http://$hostname: 5152'</code>
+         </p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$workersrcserver</p>
+        </td><td align="left" valign="top">
+         <p>URL of the source server</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td><td align="left" valign="top">
+         <p>optional for worker access</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$workerreposerver</p>
+        </td><td align="left" valign="top">
+         <p>URL of the repo server</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td><td align="left" valign="top">
+         <p>optional for worker access</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$servicedir</p>
+        </td><td align="left" valign="top">
+         <p>Path to the service scripts</p>
+        </td><td align="left" valign="top">
+         <p><code class="literal">/usr/lib/obs/service/</code>
+         </p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$servicetempdir</p>
+        </td><td align="left" valign="top">
+         <p>Path to service temp dir</p>
+        </td><td align="left" valign="top">
+         <p><code class="literal">/var/tmp/</code>
+         </p>
+        </td><td align="left" valign="top">
+         <p>optional</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$serviceroot</p>
+        </td><td align="left" valign="top">
+         <p>Prefix to servicedir</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td><td align="left" valign="top">
+         <p>optional</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$service_maxchild</p>
+        </td><td align="left" valign="top">
+         <p>Maximum number of concurrent jobs for source service</p>
+        </td><td align="left" valign="top">
+         <p>integer</p>
+        </td><td align="left" valign="top">
+         <p>unlimited if not set</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$gpg_standard_key</p>
+        </td><td align="left" valign="top">
+         <p>Path to the standard sign key</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$hermesserver</p>
+        </td><td align="left" valign="top">
+         <p>URL of the notification server</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td><td align="left" valign="top">
+         <p>optional</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$hermesnamespace</p>
+        </td><td align="left" valign="top">
+         <p>Namespace for the notifications</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td><td align="left" valign="top">
+         <p>optional</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$notification _plugin</p>
+        </td><td align="left" valign="top">
+         <p>notification plugins</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td><td align="left" valign="top">
+         <p>optional</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>@reposervers</p>
+        </td><td align="left" valign="top">
+         <p>List of reposervers</p>
+        </td><td align="left" valign="top">
+         <p><code class="literal">("http://$hostname: 5252")</code>
+         </p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$bsdir</p>
+        </td><td align="left" valign="top">
+         <p>Path to the backend directory</p>
+        </td><td align="left" valign="top">
+         <p><code class="literal">/srv/obs</code>
+         </p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$bsuser</p>
+        </td><td align="left" valign="top">
+         <p>OS user running the backend</p>
+        </td><td align="left" valign="top">
+         <p><code class="literal">obsrun</code>
+         </p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$bsgroup</p>
+        </td><td align="left" valign="top">
+         <p>OS group running the backend</p>
+        </td><td align="left" valign="top">
+         <p><code class="literal">obsrun</code>
+         </p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$bsquotafile</p>
+        </td><td align="left" valign="top">
+         <p>Package quota for projects</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td><td align="left" valign="top">
+         <p>optional</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$sched_asyncmode</p>
+        </td><td align="left" valign="top">
+         <p>Use asynchronus scheduler</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td><td align="left" valign="top">
+         <p>Avoid issues with remote projects on slow networks</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$sched_startupmode</p>
+        </td><td align="left" valign="top">
+         <p>Cold start mode</p>
+        </td><td align="left" valign="top">
+         <p><code class="literal">0</code> 1 2</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$disable_data_sync</p>
+        </td><td align="left" valign="top">
+         <p>fdatasync</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td><td align="left" valign="top">
+         <p>may cause data corruption</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$rundir</p>
+        </td><td align="left" valign="top">
+         <p>backend communication</p>
+        </td><td align="left" valign="top">
+         <p><code class="literal">$bsdir/run</code>
+         </p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$logdir</p>
+        </td><td align="left" valign="top">
+         <p>log directory</p>
+        </td><td align="left" valign="top">
+         <p><code class="literal">$bsdir/log</code>
+         </p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$nosharedtrees</p>
+        </td><td align="left" valign="top">
+         <p>Shared trees 0=shared 1=not shared 2=not shared with fallback</p>
+        </td><td align="left" valign="top">
+         <p>0 1 <code class="literal">2</code>
+         </p>
+        </td><td align="left" valign="top">
+         <p>optional for non-acl systems, should be set for access control</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$packtrack</p>
+        </td><td align="left" valign="top">
+         <p>enable binary release tracking</p>
+        </td><td align="left" valign="top">
+         <p><code class="literal">[]</code>
+         </p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$limit_projects</p>
+        </td><td align="left" valign="top">
+         <p>limit visibility of projects for some architectures</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td><td align="left" valign="top">
+         <p>optional</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$relsync_pool</p>
+        </td><td align="left" valign="top">
+         <p>allow seperation of releasenumber syncing per architecture</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$stageserver</p>
+        </td><td align="left" valign="top">
+         <p>stage server</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td><td align="left" valign="top">
+         <p>rsync URI</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$stageserver_sync</p>
+        </td><td align="left" valign="top">
+         <p>Extra stage sync server</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td><td align="left" valign="top">
+         <p>rsync URI</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$sign</p>
+        </td><td align="left" valign="top">
+         <p>Path to sign script</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$sign_project</p>
+        </td><td align="left" valign="top">
+         <p>call sign with --project &lt;project&gt;</p>
+        </td><td align="left" valign="top">
+         <p>0 <code class="literal">1</code>
+         </p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$keyfile</p>
+        </td><td align="left" valign="top">
+         <p>Global sign key</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$localarch</p>
+        </td><td align="left" valign="top">
+         <p>Local architecture for product building</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$buildlog_maxsize</p>
+        </td><td align="left" valign="top">
+         <p>worker max buildlog size</p>
+        </td><td align="left" valign="top">
+         <p><code class="literal">'500 * 1000000'</code>
+         </p>
+        </td><td align="left" valign="top">
+         <p>in bytes</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$buildlog_maxidle</p>
+        </td><td align="left" valign="top">
+         <p>Time with no changes in the buildlog will kill the job</p>
+        </td><td align="left" valign="top">
+         <p><code class="literal">'8 * 3600'</code>
+         </p>
+        </td><td align="left" valign="top">
+         <p>in sec</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$xenstore_maxsize</p>
+        </td><td align="left" valign="top">
+         <p>xenstore size</p>
+        </td><td align="left" valign="top">
+         <p><code class="literal">'20 * 1000000'</code>
+         </p>
+        </td><td align="left" valign="top">
+         <p>current XEN has no xenstore anymore</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$gettimeout</p>
+        </td><td align="left" valign="top">
+         <p>Max timeout for get</p>
+        </td><td align="left" valign="top">
+         <p><code class="literal">'1 * 3600'</code>
+         </p>
+        </td><td align="left" valign="top">
+         <p>in sec</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$workerhostcheck</p>
+        </td><td align="left" valign="top">
+         <p>check script for worker</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$powerhosts</p>
+        </td><td align="left" valign="top">
+         <p>Worker with more resources</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td><td align="left" valign="top">
+         <p>obsolete use contraints</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$powerpkgs</p>
+        </td><td align="left" valign="top">
+         <p>packages which need workers with more resources</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td><td align="left" valign="top">
+         <p>obsolete use contraints</p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$norootexceptions</p>
+        </td><td align="left" valign="top">
+         <p>List of packages need to build as root</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$old_style_services</p>
+        </td><td align="left" valign="top">
+         <p>Use old style source service handling</p>
+        </td><td align="left" valign="top">
+         <p><code class="literal">0</code> 1</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$partition</p>
+        </td><td align="left" valign="top">
+         <p>Current partition</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td><td align="left" valign="top">
+         <p>see <a class="xref" href="_installation_and_configuration.html#_distributed_setup" title="1.4. Distributed setup">Section 1.4, “Distributed setup”</a>
+         </p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$partitioning</p>
+        </td><td align="left" valign="top">
+         <p>Partition project mapping</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td><td align="left" valign="top">
+         <p>see <a class="xref" href="_installation_and_configuration.html#_distributed_setup" title="1.4. Distributed setup">Section 1.4, “Distributed setup”</a>
+         </p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$partitionservers</p>
+        </td><td align="left" valign="top">
+         <p>Partition server mapping</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td><td align="left" valign="top">
+         <p>see <a class="xref" href="_installation_and_configuration.html#_distributed_setup" title="1.4. Distributed setup">Section 1.4, “Distributed setup”</a>
+         </p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$dispatch_adjust</p>
+        </td><td align="left" valign="top">
+         <p>Adjust dispatch priority</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td><td align="left" valign="top">
+         <p>see <a class="xref" href="_administration.html#_dispatch_adjust_array" title="3.4.2. dispatch_adjust array">Section 3.4.2, “dispatch_adjust array”</a>
+         </p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$publishedhook_use _regex</p>
+        </td><td align="left" valign="top">
+         <p>Use regular expressions in publish hook map</p>
+        </td><td align="left" valign="top">
+         <p><code class="literal">0</code> 1</p>
+        </td><td align="left" valign="top">
+         <p>see  <a class="xref" href="_administration.html#_publisher_hooks" title="3.5. Publisher Hooks">Section 3.5, “Publisher Hooks”</a>
+         </p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$publishedhook</p>
+        </td><td align="left" valign="top">
+         <p>Publish hook map</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td><td align="left" valign="top">
+         <p>see  <a class="xref" href="_administration.html#_publisher_hooks" title="3.5. Publisher Hooks">Section 3.5, “Publisher Hooks”</a>
+         </p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$unpublishedhook_use _regex</p>
+        </td><td align="left" valign="top">
+         <p>Use regular expressions in unpublish hook map</p>
+        </td><td align="left" valign="top">
+         <p><code class="literal">0</code> 1</p>
+        </td><td align="left" valign="top">
+         <p>see  <a class="xref" href="_administration.html#_unpublisher_hooks" title="3.6. Unpublisher Hooks">Section 3.6, “Unpublisher Hooks”</a>
+         </p>
+        </td></tr><tr><td align="left" valign="top">
+         <p>$unpublishedhook</p>
+        </td><td align="left" valign="top">
+         <p>Unpublish hook map</p>
+        </td><td align="left" valign="top">
+         <p></p>
+        </td><td align="left" valign="top">
+         <p>see  <a class="xref" href="_administration.html#_unpublisher_hooks" title="3.6. Unpublisher Hooks">Section 3.6, “Unpublisher Hooks”</a>
+         </p>
+        </td></tr></tbody></table></div></div><p>Example BSConfig.pm</p><div class="verbatim-wrap"><pre class="screen">#
+# Copyright (c) 2006, 2007 Michael Schroeder, Novell Inc.
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License version 2 as
+# published by the Free Software Foundation.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program (see the file COPYING); if not, write to the
+# Free Software Foundation, Inc.,
+# 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA
+#
+################################################################
+#
+# Open Build Service Configuration
+#
+
+package BSConfig;
+
+use Net::Domain;
+use Socket;
+
+my $hostname = Net::Domain::hostfqdn() || 'localhost';
+# IP corresponding to hostname (only used for $ipaccess); fallback to localhost since inet_aton may fail to resolve at shutdown.
+my $ip = quotemeta inet_ntoa(inet_aton($hostname) || inet_aton("localhost"));
+
+my $frontend = undef; # FQDN of the WebUI/API server if it's not $hostname
+
+# If defined, restrict access to the backend servers (bs_repserver, bs_srcserver, bs_service)
+our $ipaccess = {
+   '127\..*' =&gt; 'rw', # only the localhost can write to the backend
+   "^$ip" =&gt; 'rw',    # Permit IP of FQDN
+   '.*' =&gt; 'worker',  # build results can be delivered from any client in the network
+};
+
+# IP of the WebUI/API Server (only used for $ipaccess)
+if ($frontend) {
+  my $frontendip = quotemeta inet_ntoa(inet_aton($frontend) || inet_aton("localhost"));
+  $ipaccess-&gt;{$frontendip} = 'rw' ; # in dotted.quad format
+}
+
+# Change also the SLP reg files in /etc/slp.reg.d/ when you touch hostname or port
+our $srcserver = "http://$hostname:5352";
+our $reposerver = "http://$hostname:5252";
+our $serviceserver = "http://$hostname:5152";
+
+# you can use different ports for worker connections
+#our $workersrcserver = "http://$hostname:5353";
+#our $workerreposerver = "http://$hostname:5253";
+
+our $servicedir = "/usr/lib/obs/service/";
+#our $servicetempdir = "/var/temp/";
+#our $serviceroot = "/opt/obs/MyServiceSystem";
+
+# Maximum number of concurrent jobs for source service
+#our $service_maxchild = 20;
+
+our $gpg_standard_key = "/srv/obs/obs-default-gpg.asc";
+# optional notification service:
+#our $hermesserver = "http://$hostname/hermes";
+#our $hermesnamespace = "OBS";
+#
+# Notification Plugin, multiple plugins supported, separated by space
+#our $notification_plugin = "notify_hermes notify_rabbitmq";
+#
+
+# For the workers only, it is possible to define multiple repository servers here.
+# But only one source server is possible yet.
+our @reposervers = ("http://$hostname:5252");
+
+# Package defaults
+our $bsdir = '/srv/obs';
+our $bsuser = 'obsrun';
+our $bsgroup = 'obsrun';
+#our $bsquotafile = '/srv/obs/quota.xml';
+
+# Use asynchronus scheduler. This avoids hanging schedulers on remote projects,
+# when the network is slow or broken. This will become the default in future
+# our $sched_asyncmode = 1;
+
+# Define how the scheduler does a cold start. The default (0) is to request the
+# data for all packages, (1) means that only the non-remote packages are fetched,
+# (2) means that all of the package data fetches get delayed.
+# our $sched_startupmode = 0;
+
+# Disable fdatasync calls, increases the speed, but may lead to data
+# corruption on system crash when the filesystem does not guarantees
+# data write before rename.
+# It is esp. required on XFS filesystem.
+# It is safe to be disabled on ext4 and btrfs filesystems.
+#our $disable_data_sync = 1;
+
+# Package rc script / backend communication + log files
+our $rundir = "$bsdir/run";
+our $logdir = "$bsdir/log";
+
+# optional for non-acl systems, should be set for access control
+# 0: trees are shared between projects (built-in default)
+# 1: trees are not shared (only usable for new installations)
+# 2: new trees are not shared, in case of a missing tree the shared
+#    location is also tried (package default)
+our $nosharedtrees = 2;
+
+# enable binary release tracking by default for release projects
+our $packtrack = [];
+
+# optional: limit visibility of projects for some architectures
+#our $limit_projects = {
+# "ppc" =&gt; [ "openSUSE:Factory", "FATE" ],
+# "ppc64" =&gt; [ "openSUSE:Factory", "FATE" ],
+#};
+
+# optional: allow seperation of releasnumber syncing per architecture
+# one counter pool for all ppc architectures, one for i586/x86_64,
+# arm archs are seperated and one for the rest in this example
+our $relsync_pool = {
+ "local" =&gt; "local",
+ "i586" =&gt; "i586",
+ "x86_64" =&gt; "i586",
+ "ppc" =&gt; "ppc",
+ "ppc64" =&gt; "ppc",
+ "ppc64le" =&gt; "ppc",
+ "mips" =&gt; "mips",
+ "mips64" =&gt; "mips",
+ "mipsel" =&gt; "mipsel",
+ "mips64el" =&gt; "mipsel",
+ "aarch64"  =&gt; "arm",
+ "aarch64_ilp32"  =&gt; "arm",
+ "armv4l"  =&gt; "arm",
+ "armv5l"  =&gt; "arm",
+ "armv6l"  =&gt; "arm",
+ "armv6hl" =&gt; "arm",
+ "armv7l"  =&gt; "arm",
+ "armv7hl" =&gt; "arm",
+ "armv5el" =&gt; "armv5el", # they do not exist
+ "armv6el" =&gt; "armv6el",
+ "armv7el" =&gt; "armv7el",
+ "armv8el" =&gt; "armv8el",
+ "sparcv9" =&gt; "sparcv9",
+ "sparc64" =&gt; "sparcv9",
+};
+
+#No extra stage server sync
+#our $stageserver = 'rsync://127.0.0.1/put-repos-main';
+#our $stageserver_sync = 'rsync://127.0.0.1/trigger-repos-sync';
+
+#No package signing server
+our $sign = "/usr/bin/sign";
+#Extend sign call with project name as argument "--project $NAME"
+#our $sign_project = 1;
+#Global sign key
+our $keyfile = "/srv/obs/obs-default-gpg.asc";
+
+# Use a special local arch for product building
+# our $localarch = "x86_64";
+
+# config options for the bs_worker
+#
+#our buildlog_maxsize = 500 * 1000000;
+#our buildlog_maxidle =   8 * 3600;
+#our xenstore_maxsize =  20 * 1000000;
+#our gettimeout =         1 * 3600;
+#
+# run a script to check if the worker is good enough for the job
+#our workerhostcheck = 'my_check_script';
+#
+# Allow to build as root, exceptions per package
+# the keys are actually anchored regexes
+# our $norootexceptions = { "my_project/my_package" =&gt; 1, "openSUSE:Factory.*/installation-images" =&gt; 1 };
+
+# Use old style source service handling
+# our $old_style_services = 1;
+
+###
+# Optional support to split the binary backend. This can be used on large servers
+# to seperate projects for better scalability.
+# There is still just one source server, but there can be multiple servers which
+# run each repserver, schedulers, dispatcher, warden and publisher
+#
+# This repo service is the 'home' server for all home:* projects. This and the
+# $reposerver setting must be different on the binary backend servers.
+# our $partition = 'home';
+#
+# this defines how the projects are split. All home: projects are hosted
+# on an own server in this example. Order is important.
+# our $partitioning = [ 'home:' =&gt; 'home',
+#                       '.*'    =&gt; 'main',
+#                     ];
+#
+# our $partitionservers = { 'home' =&gt; 'http://home-backend-server:5252',
+#                           'main' =&gt; 'http://main-backend-server:5252',
+#                         };
+
+# Publish hooks
+our $publishedhook_use_regex = 1;
+our $publishedhook = {
+    "Product\/SLES12"     =&gt; "/usr/local/bin/script2run_sles12",
+    "Product\/SLES11.*"   =&gt; "/usr/local/bin/script2run_sles11",
+};
+
+
+# host specific configs
+my $hostconfig = __FILE__;
+$hostconfig =~ s/[^\/]*$/bsconfig.$hostname/;
+if (-r $hostconfig) {
+  print STDERR "reading $hostconfig...\n";
+  require $hostconfig;
+}
+
+1;</pre></div></div></div></div><div class="sect1" id="_log_files"><div class="titlepage"><div><div><h2 class="title" id="_log_files"><span class="number">2.2 </span><span class="name">Log files</span> <a title="Permalink" class="permalink" href="_overview_filesystem.html#_log_files">#</a></h2></div></div></div><div class="sect2" id="_frontend"><div class="titlepage"><div><div><h3 class="title" id="_frontend"><span class="number">2.2.1 </span><span class="name">Frontend</span> <a title="Permalink" class="permalink" href="_overview_filesystem.html#_frontend">#</a></h3></div></div></div><p>The frontend log files are foound under <span class="emphasis"><em>/srv/www/obs/api/log</em></span>.</p><p>The following frontend logfiles exist:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
+apache_access.log - apache reqests
+</li><li class="listitem ">
+apache_error.log - errors from apache
+</li><li class="listitem ">
+backend_access.log - API → backend requests
+</li><li class="listitem ">
+clockworkd.clock.output → timer event log
+</li><li class="listitem ">
+delayed_job.log → delayed job log
+</li><li class="listitem ">
+production.log→ main ruby log
+</li><li class="listitem ">
+production.searchd.log - search daemon log
+</li><li class="listitem ">
+production.searchd.query.log - search request logs
+</li></ul></div></div><div class="sect2" id="_backend"><div class="titlepage"><div><div><h3 class="title" id="_backend"><span class="number">2.2.2 </span><span class="name">Backend</span> <a title="Permalink" class="permalink" href="_overview_filesystem.html#_backend">#</a></h3></div></div></div><p>The backend logfiles are found by default under <span class="emphasis"><em>/srv/obs/log/</em></span>.</p><p>The following backend logfiles exist:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
+dispatcher.log - dispatcher log
+</li><li class="listitem ">
+dodup.log - download on demand log (since 2.7)
+</li><li class="listitem ">
+publisher.log - publisher log
+</li><li class="listitem ">
+rep_server.log - repo server log
+</li><li class="listitem ">
+scheduler_&lt;arch&gt;.log - scheduler log for each architecture
+</li><li class="listitem ">
+signer.log - sign service log
+</li><li class="listitem ">
+src_server.log - source server log
+</li><li class="listitem ">
+src_service.log - source service daemon log
+</li><li class="listitem ">
+warden.log - warden log
+</li></ul></div></div></div><div class="sect1" id="_src_obs_tree"><div class="titlepage"><div><div><h2 class="title" id="_src_obs_tree"><span class="number">2.3 </span><span class="name">/src/obs tree</span> <a title="Permalink" class="permalink" href="_overview_filesystem.html#_src_obs_tree">#</a></h2></div></div></div><p>The default backend data directory is located under
+<span class="emphasis"><em>/srv/obs/</em></span>. Here are a bunch of subdirectories used for communication
+between the different server, to store data, status information und logs.
+Here is one file <span class="strong"><strong><span class="emphasis"><em>configuration.xml</em></span></strong></span> in the top directory, which stores
+the global OBS configuration for the backend. You should not modify this
+file directely, but use the API /configuration interface instead, since this
+information needs to kept in sync with the frontend.</p><div class="sect2" id="_build_directory"><div class="titlepage"><div><div><h3 class="title" id="_build_directory"><span class="number">2.3.1 </span><span class="name">build directory</span> <a title="Permalink" class="permalink" href="_overview_filesystem.html#_build_directory">#</a></h3></div></div></div><p>In this subdirectory managed by the repo server daemon, all repository data,
+meta data and build results are stored in a hierachical tree.</p><p>Example build directory tree of a binary imported distribution (OpenSuSE:13.2)
+and a small test project with 3 packages:</p><div class="verbatim-wrap"><pre class="screen">├── openSUSE:13.2
+│   └── standard
+│       ├── i586
+│       │   └── :full
+│       └── x86_64
+│           └── :full
+├── Test1
+│   └── os13.2
+│       ├── i586
+│       │   ├── :full
+│       │   ├── :logfiles.fail
+│       │   ├── :logfiles.success
+│       │   ├── :meta
+│       │   ├── :repo
+│       │   └── rsync
+│       │   └── srtp
+│       │   └── wget
+│       └── x86_64
+│           ├── :full
+│           ├── :logfiles.fail
+│           ├── :logfiles.success
+│           ├── :meta
+│           ├── :repo
+│           └── rsync
+│           └── srtp
+│           └── wget</pre></div></div><div class="sect2" id="_db_directory"><div class="titlepage"><div><div><h3 class="title" id="_db_directory"><span class="number">2.3.2 </span><span class="name">db directory</span> <a title="Permalink" class="permalink" href="_overview_filesystem.html#_db_directory">#</a></h3></div></div></div><p>Backend database root directory use by the source server, repo server
+scheduler and publisher. Nobody should touch this.</p></div><div class="sect2" id="_diffcache_directory"><div class="titlepage"><div><div><h3 class="title" id="_diffcache_directory"><span class="number">2.3.3 </span><span class="name">diffcache directory</span> <a title="Permalink" class="permalink" href="_overview_filesystem.html#_diffcache_directory">#</a></h3></div></div></div><p>Cache for source server compare operations.</p></div><div class="sect2" id="_events_directory"><div class="titlepage"><div><div><h3 class="title" id="_events_directory"><span class="number">2.3.4 </span><span class="name">events directory</span> <a title="Permalink" class="permalink" href="_overview_filesystem.html#_events_directory">#</a></h3></div></div></div><p>Communication between services.</p></div><div class="sect2" id="_info_directory"><div class="titlepage"><div><div><h3 class="title" id="_info_directory"><span class="number">2.3.5 </span><span class="name">info directory</span> <a title="Permalink" class="permalink" href="_overview_filesystem.html#_info_directory">#</a></h3></div></div></div><p>Scheduler information managed by the scheduler and used by the repo server.</p></div><div class="sect2" id="_jobs_directory"><div class="titlepage"><div><div><h3 class="title" id="_jobs_directory"><span class="number">2.3.6 </span><span class="name">jobs directory</span> <a title="Permalink" class="permalink" href="_overview_filesystem.html#_jobs_directory">#</a></h3></div></div></div><p>The build jobs are stored in the /srv/obs/jobs directory. They are organized
+bybuild architecture:</p><div class="verbatim-wrap"><pre class="screen">jobs
+├── armv7l
+├── i586
+├── load
+└── x86_64
+    └── Release:Stable::SLE-12_GA::CI-demo-36db80552b735e193dced13f058f866f</pre></div><p>The jobs/load file contains statistical data about the build jobs.</p></div><div class="sect2" id="_log_directory"><div class="titlepage"><div><div><h3 class="title" id="_log_directory"><span class="number">2.3.7 </span><span class="name">log directory</span> <a title="Permalink" class="permalink" href="_overview_filesystem.html#_log_directory">#</a></h3></div></div></div><p>Contains the log files of the backend daemons.</p></div><div class="sect2" id="_projects_directory"><div class="titlepage"><div><div><h3 class="title" id="_projects_directory"><span class="number">2.3.8 </span><span class="name">projects directory</span> <a title="Permalink" class="permalink" href="_overview_filesystem.html#_projects_directory">#</a></h3></div></div></div><p>Contains the project hierachy and meta data under revision control.</p></div><div class="sect2" id="_remotecache_directory"><div class="titlepage"><div><div><h3 class="title" id="_remotecache_directory"><span class="number">2.3.9 </span><span class="name">remotecache directory</span> <a title="Permalink" class="permalink" href="_overview_filesystem.html#_remotecache_directory">#</a></h3></div></div></div><p>Cache for remote repository information.</p></div><div class="sect2" id="_repos_directory"><div class="titlepage"><div><div><h3 class="title" id="_repos_directory"><span class="number">2.3.10 </span><span class="name">repos directory</span> <a title="Permalink" class="permalink" href="_overview_filesystem.html#_repos_directory">#</a></h3></div></div></div><p>Directory managed by the publisher to collect build results, also used by
+the repo server and scheduler to find build results.</p></div><div class="sect2" id="_repos_sync_directory"><div class="titlepage"><div><div><h3 class="title" id="_repos_sync_directory"><span class="number">2.3.11 </span><span class="name">repos_sync directory</span> <a title="Permalink" class="permalink" href="_overview_filesystem.html#_repos_sync_directory">#</a></h3></div></div></div><p>Directory with files pointing to the project root directories, helper for
+publisher rsync.</p></div><div class="sect2" id="_run_directory"><div class="titlepage"><div><div><h3 class="title" id="_run_directory"><span class="number">2.3.12 </span><span class="name">run directory</span> <a title="Permalink" class="permalink" href="_overview_filesystem.html#_run_directory">#</a></h3></div></div></div><p>State and lock information for the backend daemons</p></div><div class="sect2" id="_sources_directory"><div class="titlepage"><div><div><h3 class="title" id="_sources_directory"><span class="number">2.3.13 </span><span class="name">sources directory</span> <a title="Permalink" class="permalink" href="_overview_filesystem.html#_sources_directory">#</a></h3></div></div></div><p>All package sources under revision control in one directory per package, managed by the source server.
+Package sources are by default deduplicated across all projects, as long a source
+file has the same MD5 sum, it is only stored once.
+A pseudo <span class="strong"><strong><span class="emphasis"><em>'_project'</em></span></strong></span> package exist in the directory containing the
+project meta data revisions. <span class="strong"><strong><span class="emphasis"><em>':service'</em></span></strong></span> and <span class="strong"><strong><span class="emphasis"><em>':upload'</em></span></strong></span> are temporary directories used by
+the source server.</p><p>Example sources directory structure:</p><div class="verbatim-wrap"><pre class="screen">sources/
+├── CI-demo
+...
+├── srtp
+├── test1
+├── _project
+├── :service
+├── :upload</pre></div></div><div class="sect2" id="_trees_directory"><div class="titlepage"><div><div><h3 class="title" id="_trees_directory"><span class="number">2.3.14 </span><span class="name">trees directory</span> <a title="Permalink" class="permalink" href="_overview_filesystem.html#_trees_directory">#</a></h3></div></div></div><p>Revision control data for project and packages, managed by the source
+server.</p></div><div class="sect2" id="_upload_directory"><div class="titlepage"><div><div><h3 class="title" id="_upload_directory"><span class="number">2.3.15 </span><span class="name">upload directory</span> <a title="Permalink" class="permalink" href="_overview_filesystem.html#_upload_directory">#</a></h3></div></div></div><p>Temporary directory for uploading files for other backend components.</p></div><div class="sect2" id="_workers_directory"><div class="titlepage"><div><div><h3 class="title" id="_workers_directory"><span class="number">2.3.16 </span><span class="name">workers directory</span> <a title="Permalink" class="permalink" href="_overview_filesystem.html#_workers_directory">#</a></h3></div></div></div><p>Worker information</p></div></div><div class="sect1" id="_meta_data"><div class="titlepage"><div><div><h2 class="title" id="_meta_data"><span class="number">2.4 </span><span class="name">Meta data</span> <a title="Permalink" class="permalink" href="_overview_filesystem.html#_meta_data">#</a></h2></div></div></div><div class="sect2" id="_obs_revision_control"><div class="titlepage"><div><div><h3 class="title" id="_obs_revision_control"><span class="number">2.4.1 </span><span class="name">OBS revision control</span> <a title="Permalink" class="permalink" href="_overview_filesystem.html#_obs_revision_control">#</a></h3></div></div></div><p>This section gives a short generic overview how the revision informations are stored
+in the OBS backend for packages and projects.
+The OBS backend stores all files in a light weight content based hierarchical tree. Each
+file is hashed (with MD5) and stored with the hash as part of the filename
+under the <span class="emphasis"><em>/srv/obs/tree</em></span> or <span class="emphasis"><em>/srv/obs/sources</em></span> directories.
+The revision information is stored in separate files by the Source Server int he <span class="emphasis"><em>/srv/obs/projects directory</em></span>.</p><div class="sect3" id="_obs_revision_control_files"><div class="titlepage"><div><div><h4 class="title" id="_obs_revision_control_files"><span class="number">2.4.1.1 </span><span class="name">OBS revision control files</span> <a title="Permalink" class="permalink" href="_overview_filesystem.html#_obs_revision_control_files">#</a></h4></div></div></div><p>The revision information is stored in simple CSV like file format with a bar
+(|) as delimiter between the 8 columns. The files do have the extension
+<span class="emphasis"><em>.rev</em></span> for package/project revision data  and <span class="emphasis"><em>.mref</em></span> for meta revision
+data. The hash then points to a &lt;hash&gt;-MD5SUMS file in the <span class="emphasis"><em>/srv/obs/tree/</em></span>
+directories which have the file list with MD5 hashes of this revision.
+The hashes in this file list are pointing to the source files in the
+<span class="emphasis"><em>/srv/obs/sources</em></span> tree.</p><p>An example revision file:</p><div class="verbatim-wrap"><pre class="screen">1|1|56cdd3adb778089d1fcc49b92bb93e5b|0.9|1464005086|user4|initial version|
+2|2|fe7aa1ade5c9d005de738c234c90bc90|0.9|1464005304|user4|fix spec file|
+3|1|72c7986e694f45ab1a62779e64e92a8f|1.0|1464005339|user4|new version|
+4|2|699e9931e6f167d78e65bbe5853f592f|1.0|1464006221|user4|add patch file|
+5|1|0cfc3a2297f38d2aa9d8d0e98fc22a38|1.1|1464007797|user4|new version|</pre></div><div class="table" id="idm139982919218784"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 2.5: </span><span class="name">The 8 columns </span><a title="Permalink" class="permalink" href="_overview_filesystem.html#idm139982919218784">#</a></h6></div><div class="table-contents"><table summary="The 8 columns" border="1" width="80%"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /><col class="col_4" /></colgroup><thead><tr><th align="center" valign="middle"> Column </th><th align="center" valign="middle"> Content </th><th align="center" valign="middle"> XML tag </th><th align="center" valign="middle"> may empty</th></tr></thead><tbody><tr><td align="center" valign="middle">
+         <p>1</p>
+        </td><td align="center" valign="middle">
+         <p>revision number</p>
+        </td><td align="center" valign="middle">
+         <p>ref</p>
+        </td><td align="center" valign="middle">
+         <p>no</p>
+        </td></tr><tr><td align="center" valign="middle">
+         <p>2</p>
+        </td><td align="center" valign="middle">
+         <p>version revision number</p>
+        </td><td align="center" valign="middle">
+         <p>vref</p>
+        </td><td align="center" valign="middle">
+         <p>yes</p>
+        </td></tr><tr><td align="center" valign="middle">
+         <p>3</p>
+        </td><td align="center" valign="middle">
+         <p>hash</p>
+        </td><td align="center" valign="middle">
+         <p>srcmd5</p>
+        </td><td align="center" valign="middle">
+         <p>no</p>
+        </td></tr><tr><td align="center" valign="middle">
+         <p>4</p>
+        </td><td align="center" valign="middle">
+         <p>version</p>
+        </td><td align="center" valign="middle">
+         <p>version</p>
+        </td><td align="center" valign="middle">
+         <p>yes</p>
+        </td></tr><tr><td align="center" valign="middle">
+         <p>5</p>
+        </td><td align="center" valign="middle">
+         <p>time stamp</p>
+        </td><td align="center" valign="middle">
+         <p>time</p>
+        </td><td align="center" valign="middle">
+         <p>no</p>
+        </td></tr><tr><td align="center" valign="middle">
+         <p>6</p>
+        </td><td align="center" valign="middle">
+         <p>user</p>
+        </td><td align="center" valign="middle">
+         <p>user</p>
+        </td><td align="center" valign="middle">
+         <p>no</p>
+        </td></tr><tr><td align="center" valign="middle">
+         <p>7</p>
+        </td><td align="center" valign="middle">
+         <p>commit message</p>
+        </td><td align="center" valign="middle">
+         <p>comment</p>
+        </td><td align="center" valign="middle">
+         <p>yes</p>
+        </td></tr><tr><td align="center" valign="middle">
+         <p>8</p>
+        </td><td align="center" valign="middle">
+         <p>request id</p>
+        </td><td align="center" valign="middle">
+         <p>requestid</p>
+        </td><td align="center" valign="middle">
+         <p>yes</p>
+        </td></tr></tbody></table></div></div><p>Depending for what kind of target (package, project or meta data) is used,
+fields can be empty or have special values e.g. <span class="strong"><strong>unknown</strong></span> for the version.</p><p>Example MD5SUMS file</p><div class="verbatim-wrap"><pre class="screen">/srv/obs # cat trees/Test1/package1/56cdd3adb778089d1fcc49b92bb93e5b-MD5SUMS
+0a17daaa913df9e50ee65e83a1898363  package1.spec
+1f810b3521242a98333b7bbf6b2b7ef7  test1.sh</pre></div></div><div class="sect3" id="_obs_revision_api"><div class="titlepage"><div><div><h4 class="title" id="_obs_revision_api"><span class="number">2.4.1.2 </span><span class="name">OBS revision API</span> <a title="Permalink" class="permalink" href="_overview_filesystem.html#_obs_revision_api">#</a></h4></div></div></div><p>The revision info can be retrieved via API calls for the
+specific package, e.g using <code class="literal">/source/&lt;project&gt;/&lt;package&gt;/_history</code>.</p><p>Specific revisions of files can be retrieved with the optional "rev=N"
+parameter e.g. <span class="emphasis"><em>/source/&lt;project&gt;/&lt;package&gt;/&lt;file&gt;?rev=N</em></span>.</p><p>On PUT and POST methods for files the optional "comment=some+comment" can be
+used to set a commit message.</p></div></div><div class="sect2" id="_project_meta_data"><div class="titlepage"><div><div><h3 class="title" id="_project_meta_data"><span class="number">2.4.2 </span><span class="name">Project meta data</span> <a title="Permalink" class="permalink" href="_overview_filesystem.html#_project_meta_data">#</a></h3></div></div></div><p>Project meta data are XML files containing the meta project infomation, such
+as title, description, related user and groups with roles, build settings, repository
+settings, publish setiings, debug settings and more.</p><div class="table" id="idm139982919151472"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 2.6: </span><span class="name">Project meta XML </span><a title="Permalink" class="permalink" href="_overview_filesystem.html#idm139982919151472">#</a></h6></div><div class="table-contents"><table summary="Project meta XML" border="1"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /></colgroup><thead><tr><th align="left" valign="top"> XML tag </th><th align="left" valign="top"> Attributes</th><th align="left" valign="top"> Content</th></tr></thead><tbody><tr><td align="left" valign="top">
+        <p>project</p>
+       </td><td align="left" valign="top">
+        <p>name</p>
+       </td><td align="left" valign="top">
+        <p>project name</p>
+       </td></tr><tr><td align="left" valign="top">
+        <p>title</p>
+       </td><td align="left" valign="top">
+        <p></p>
+       </td><td align="left" valign="top">
+        <p>Short description</p>
+       </td></tr><tr><td align="left" valign="top">
+        <p>description</p>
+       </td><td align="left" valign="top">
+        <p></p>
+       </td><td align="left" valign="top">
+        <p>Developer information</p>
+       </td></tr><tr><td align="left" valign="top">
+        <p>person</p>
+       </td><td align="left" valign="top">
+        <p>userid</p>
+       </td><td align="left" valign="top">
+        <p>login name</p>
+       </td></tr><tr><td align="left" valign="top">
+        <p>person</p>
+       </td><td align="left" valign="top">
+        <p>role</p>
+       </td><td align="left" valign="top">
+        <p>role (maintainer, bugowner, …)</p>
+       </td></tr><tr><td align="left" valign="top">
+        <p>group</p>
+       </td><td align="left" valign="top">
+        <p>groupid</p>
+       </td><td align="left" valign="top">
+        <p>group name</p>
+       </td></tr><tr><td align="left" valign="top">
+        <p>group</p>
+       </td><td align="left" valign="top">
+        <p>role</p>
+       </td><td align="left" valign="top">
+        <p>role (maintainer, bugowner, …)</p>
+       </td></tr><tr><td align="left" valign="top">
+        <p>devel</p>
+       </td><td align="left" valign="top">
+        <p></p>
+       </td><td align="left" valign="top">
+        <p>An optional devel project</p>
+       </td></tr><tr><td align="left" valign="top">
+        <p>build</p>
+       </td><td align="left" valign="top">
+        <p></p>
+       </td><td align="left" valign="top">
+        <p>optional build flags</p>
+       </td></tr><tr><td align="left" valign="top">
+        <p>publish</p>
+       </td><td align="left" valign="top">
+        <p></p>
+       </td><td align="left" valign="top">
+        <p>optional publish flags</p>
+       </td></tr><tr><td align="left" valign="top">
+        <p>useforbuild</p>
+       </td><td align="left" valign="top">
+        <p></p>
+       </td><td align="left" valign="top">
+        <p>optional useforbuild flags</p>
+       </td></tr><tr><td align="left" valign="top">
+        <p>debuginfo</p>
+       </td><td align="left" valign="top">
+        <p></p>
+       </td><td align="left" valign="top">
+        <p>optional debuginfo flags</p>
+       </td></tr><tr><td align="left" valign="top">
+        <p>binarydownload</p>
+       </td><td align="left" valign="top">
+        <p></p>
+       </td><td align="left" valign="top">
+        <p>optional binarydownload flags</p>
+       </td></tr><tr><td align="left" valign="top">
+        <p>repository</p>
+       </td><td align="left" valign="top">
+        <p>name</p>
+       </td><td align="left" valign="top">
+        <p>name of the repository for build results</p>
+       </td></tr><tr><td align="left" valign="top">
+        <p>repository path</p>
+       </td><td align="left" valign="top">
+        <p>project</p>
+       </td><td align="left" valign="top">
+        <p>name of the source project for remaining build requires</p>
+       </td></tr><tr><td align="left" valign="top">
+        <p>repository path</p>
+       </td><td align="left" valign="top">
+        <p>repository</p>
+       </td><td align="left" valign="top">
+        <p>name of repository in the source project</p>
+       </td></tr><tr><td align="left" valign="top">
+        <p>repository arch</p>
+       </td><td align="left" valign="top">
+        <p></p>
+       </td><td align="left" valign="top">
+        <p>architecture name</p>
+       </td></tr><tr><td align="left" valign="top">
+        <p>remoteurl</p>
+       </td><td align="left" valign="top">
+        <p></p>
+       </td><td align="left" valign="top">
+        <p>path to a remote OBS API for interconnect</p>
+       </td></tr></tbody></table></div></div><p>Example project meta data:</p><div class="verbatim-wrap"><pre class="screen">&lt;project name="Test11"&gt;
+  &lt;title&gt;Test project 11&lt;/title&gt;
+  &lt;description&gt;Project for demo&lt;/description&gt;
+  &lt;person userid="Admin" role="maintainer"/&gt;
+  &lt;person userid="user0" role="maintainer"/&gt;
+  &lt;group groupid="obsprj3" role="maintainer"/&gt;
+  &lt;repository name="openSUSE_13.2"&gt;
+    &lt;path project="openSUSE.org:openSUSE:13.2" repository="standard"/&gt;
+    &lt;arch&gt;x86_64&lt;/arch&gt;
+  &lt;/repository&gt;
+&lt;/project&gt;</pre></div></div><div class="sect2" id="_package_meta_data"><div class="titlepage"><div><div><h3 class="title" id="_package_meta_data"><span class="number">2.4.3 </span><span class="name">Package meta data</span> <a title="Permalink" class="permalink" href="_overview_filesystem.html#_package_meta_data">#</a></h3></div></div></div><p>XML file about package meta informations, like Title, description,
+related user and groups with roles, build settings, publish setiings, debug
+settings and more. Most XML tags are the same as for projects.</p><p>Example package meta data:</p><div class="verbatim-wrap"><pre class="screen">&lt;package name="test1" project="Test11"&gt;
+  &lt;title&gt;A test package for learning&lt;/title&gt;
+  &lt;description&gt;A example test package for learning.&amp;#13;
+&lt;/description&gt;
+  &lt;person userid="user5" role="bugowner"/&gt;
+  &lt;person userid="user5" role="maintainer"/&gt;
+  &lt;build&gt;
+    &lt;enable repository="openSUSE_13.2"/&gt;
+  &lt;/build&gt;
+  &lt;publish&gt;
+    &lt;disable repository="openSUSE_13.2"/&gt;
+  &lt;/publish&gt;
+  &lt;debuginfo&gt;
+    &lt;disable/&gt;
+  &lt;/debuginfo&gt;
+&lt;/package&gt;</pre></div></div><div class="sect2" id="_attribute_meta_data"><div class="titlepage"><div><div><h3 class="title" id="_attribute_meta_data"><span class="number">2.4.4 </span><span class="name">Attribute meta data</span> <a title="Permalink" class="permalink" href="_overview_filesystem.html#_attribute_meta_data">#</a></h3></div></div></div><p>Attributes can be used to add special information to packages. Attributes
+can be used to trigger special actions.</p><p>Example atrribute data:</p><div class="verbatim-wrap"><pre class="screen">&lt;attributes&gt;
+  &lt;attribute name="Issues" namespace="OBS"/&gt;
+  &lt;attribute name="AutoCleanup" namespace="OBS"&gt;
+    &lt;value&gt;2016-06-30 00:00:00&lt;/value&gt;
+  &lt;/attribute&gt;
+  &lt;attribute name="AutoCleanup" namespace="OBS"&gt;
+    &lt;value&gt;&lt;/value&gt;
+  &lt;/attribute&gt;
+&lt;/attributes&gt;</pre></div></div><div class="sect2" id="_job_files"><div class="titlepage"><div><div><h3 class="title" id="_job_files"><span class="number">2.4.5 </span><span class="name">Job files</span> <a title="Permalink" class="permalink" href="_overview_filesystem.html#_job_files">#</a></h3></div></div></div><p>Jobs are stored bei the scheduler in the <span class="emphasis"><em>/srv/obs/jobs</em></span> directory and
+contain the build setup information for the package, e.g. reference to the
+exact source version, build dependencies, build repository information,
+timestamps.</p><p>Sample job file:</p><div class="verbatim-wrap"><pre class="screen">&lt;buildinfo project="Release:Stable" repository="SLE-12_GA" package="CI-demo"
+srcserver="http://obs.b1-systems.de:5352"
+reposerver="http://obs.b1-systems.de:5252"&gt;
+  &lt;job&gt;Release:Stable::SLE-12_GA::
+ CI-demo-36db80552b735e193dced13f058f866f&lt;/job&gt;
+  &lt;arch&gt;x86_64&lt;/arch&gt;
+  &lt;srcmd5&gt;36db80552b735e193dced13f058f866f&lt;/srcmd5&gt;
+  &lt;verifymd5&gt;36db80552b735e193dced13f058f866f&lt;/verifymd5&gt;
+  &lt;rev&gt;2&lt;/rev&gt;
+  &lt;disturl&gt;obs://b1-systems.de/Release:Stable/SLE-12_GA/
+  36db80552b735e193dced13f058f866f-CI-demo&lt;/disturl&gt;
+  &lt;reason&gt;new build&lt;/reason&gt;
+  &lt;needed&gt;0&lt;/needed&gt;
+  &lt;revtime&gt;1461077600&lt;/revtime&gt;
+  &lt;readytime&gt;1461077708&lt;/readytime&gt;
+  &lt;file&gt;CI-demo.spec&lt;/file&gt;
+  &lt;versrel&gt;0.1.9-2&lt;/versrel&gt;
+  &lt;bcnt&gt;1&lt;/bcnt&gt;
+  &lt;release&gt;2.1&lt;/release&gt;
+  &lt;debuginfo&gt;1&lt;/debuginfo&gt;
+  &lt;prjconfconstraint&gt;linux:version:min 3.0.0&lt;/prjconfconstraint&gt;
+  &lt;bdep name="aaa_base" preinstall="1" runscripts="1" notmeta="1" /&gt;
+  &lt;bdep name="attr" preinstall="1" notmeta="1" /&gt;
+  &lt;bdep name="bash" preinstall="1" notmeta="1" /&gt;
+  &lt;bdep name="coreutils" preinstall="1" notmeta="1" /&gt;
+  &lt;bdep name="diffutils" preinstall="1" notmeta="1" /&gt;
+  &lt;bdep name="filesystem" preinstall="1" notmeta="1" /&gt;
+  &lt;bdep name="fillup" preinstall="1" notmeta="1" /&gt;
+  &lt;bdep name="glibc" preinstall="1" notmeta="1" /&gt;
+  &lt;bdep name="grep" preinstall="1" notmeta="1" /&gt;
+  &lt;bdep name="libbz2-1" preinstall="1" notmeta="1" /&gt;
+  &lt;bdep name="libgcc_s1" preinstall="1" notmeta="1" /&gt;
+  &lt;bdep name="m4" preinstall="1" notmeta="1" /&gt;
+...
+  &lt;path project="Release:Stable" repository="SLE-12_GA"
+ server="http://obs.b1-systems.de:5252" /&gt;
+  &lt;path project="SUSE:SLE-12:GA" repository="standard"
+ server="http://obs.b1-systems.de:5252" /&gt;
+&lt;/buildinfo&gt;</pre></div></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="_administration.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 3 </span>Administration</span></a><a class="nav-link" href="_installation_and_configuration.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 1 </span>Installation and configuration</span></a></div><div id="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span id="_share-fb" class="bottom-button">Facebook</span><span class="spacer"> • </span><span id="_share-gp" class="bottom-button">Google+</span><span class="spacer"> • </span><span id="_share-tw" class="bottom-button">Twitter</span><span class="spacer"> • </span><span id="_share-mail" class="bottom-button">E-Mail</span></span></div><div class="print"><span id="_print-button" class="bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2016 
+        SUSE</p><ul><li><a href="http://www.suse.com/company/careers/" target="_top">Careers</a></li><li><a href="http://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="http://www.suse.com/company/" target="_top">About</a></li><li><a href="http://www.suse.com/ContactsOffices/contacts_offices.jsp" target="_top">Contact Us</a></li></ul></div></div></body></html>
