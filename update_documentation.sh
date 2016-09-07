@@ -8,7 +8,7 @@ git fetch
 git checkout origin/master
 popd
 
-for doc in obs-best-practices obs-reference-guide; do
+for doc in obs-best-practices obs-reference-guide obs-admin-guide; do
   pushd open-build-service-documentation/
 
   source ./DC-$doc || exit 1
