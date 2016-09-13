@@ -157,7 +157,7 @@ for some tasks also admin people need this tool. It has an builtin help
 simple call <span class="emphasis"><em>osc --help</em></span>. The tool need to be configured first to know the
 OBS API URL and your user details.</p><p>To configure the <span class="strong"><strong><span class="emphasis"><em>osc</em></span></strong></span> tool the first time you need to call it with</p><div class="verbatim-wrap"><pre class="screen">osc -A &lt;URL to the OBS API&gt;
 For example:
-osc -A https://api.testobs.org</pre></div><p>Follow the instructions on the terminal.</p><div id="idm139982920664224" class="admonition warning"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning</h6><p>The password is stored in clear text in the .oscrc file by default, so you need to
+osc -A https://api.testobs.org</pre></div><p>Follow the instructions on the terminal.</p><div id="idm140386395490256" class="admonition warning"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning</h6><p>The password is stored in clear text in the .oscrc file by default, so you need to
 give this file restrictive access rights, only read/write access for your user
 should be allowed. <span class="strong"><strong>osc</strong></span> allows to store the password in other ways (in keyrings
 for example) and may use different methods for authentification like
@@ -358,7 +358,7 @@ SUSE:13.2:</p><div class="verbatim-wrap"><pre class="screen">/srv/obs/
 │           │   └── :schedulerstate
 │           └── x86_64
 │               ├── :bininfo
-│               └── :schedulerstate</pre></div><div id="idm139982914908448" class="admonition warning"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning</h6><p>All the directories under /srv/obs/build have to be owned by the <span class="strong"><strong>obsrun</strong></span> user and
+│               └── :schedulerstate</pre></div><div id="idm140386395232256" class="admonition warning"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning</h6><p>All the directories under /srv/obs/build have to be owned by the <span class="strong"><strong>obsrun</strong></span> user and
 group. The <span class="strong"><strong>obsrun</strong></span> user need write access to them.
  <span class="strong"><strong>If not the scheduler process will crash on your instance.</strong></span>
     </p></div><p>You need to import the project configuration as well, you can get them for example from the openSUSE buildserver.</p><div class="verbatim-wrap"><pre class="screen">osc -A https://api.opensuse.org meta prjconf openSUSE:13.2 &gt;/tmp/13.2.prjconf
@@ -369,7 +369,7 @@ testobs:/srv/www/obs/api # chown obsrun:obsrun \
                                  /srv/obs/build/SUSE\:13.2/standard/i586/:full
 testobs:/srv/www/obs/api # chown obsrun:obsrun \
                                  /srv/obs/build/SUSE\:13.2/standard/x86_64/:full</pre></div><p>Now you can copy (or link) all binary packages for the architecture in the <span class="emphasis"><em>:full</em></span> directory.
-You need the architecture specific package and the <span class="emphasis"><em>noarch</em></span> packages as well.</p><div id="idm139982916538480" class="admonition important"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>If you import packages for enterprise distributions like SLES12 you also need the packages
+You need the architecture specific package and the <span class="emphasis"><em>noarch</em></span> packages as well.</p><div id="idm140386396386256" class="admonition important"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>If you import packages for enterprise distributions like SLES12 you also need the packages
 from the SDK. Maybe you need packages from addon products as well, depending what software you want build.</p></div><p>Finally you should trigger a rescan for the project on the backend server using <span class="strong"><strong>obs_admin</strong></span>:</p><div class="verbatim-wrap"><pre class="screen">testobs # obs_admin --rescan-repository SUSE:13.2 standard i586
 testobs # obs_admin --rescan-repository SUSE:13.2 standard x86_64</pre></div><p>This reads all packages and creates the dependency tree.</p></div></div></div><div class="sect1" id="cha.obs.source_service"><div class="titlepage"><div><div><h2 class="title" id="cha.obs.source_service"><span class="number">3.3 </span><span class="name">Source Services</span> <a title="Permalink" class="permalink" href="_administration.html#cha.obs.source_service">#</a></h2></div></div></div><p>
   Source Services are tools to validate, generate or modify sources in a
@@ -399,7 +399,7 @@ testobs # obs_admin --rescan-repository SUSE:13.2 standard x86_64</pre></div><p>
      server side services must be installed by the admin of the OBS server.
     </li><li class="listitem ">
      service can be defined per package or project wide.
-    </li></ul></div><div class="sect2" id="idm139982918146960"><div class="titlepage"><div><div><h3 class="title" id="idm139982918146960"><span class="number">3.3.1 </span><span class="name">Using services for validation</span> <a title="Permalink" class="permalink" href="_administration.html#idm139982918146960">#</a></h3></div></div></div><p>
+    </li></ul></div><div class="sect2" id="idm140386397037600"><div class="titlepage"><div><div><h3 class="title" id="idm140386397037600"><span class="number">3.3.1 </span><span class="name">Using services for validation</span> <a title="Permalink" class="permalink" href="_administration.html#idm140386397037600">#</a></h3></div></div></div><p>
    Source Services may be used to validate sources. This can happen per
    package, which is useful when the packager wants to validate that downloaded
    sources are really from the original maintainer. Or validation can happen
@@ -413,44 +413,44 @@ testobs # obs_admin --rescan-repository SUSE:13.2 standard x86_64</pre></div><p>
    store the result as new file as <code class="command">download_files</code> is doing.
    In this case the newly generated file will be used instead of the committed
    one during build.
-  </p></div><div class="sect2" id="idm139982915770720"><div class="titlepage"><div><div><h3 class="title" id="idm139982915770720"><span class="number">3.3.2 </span><span class="name">Different Modes when using services</span> <a title="Permalink" class="permalink" href="_administration.html#idm139982915770720">#</a></h3></div></div></div><p>
+  </p></div><div class="sect2" id="idm140386397632704"><div class="titlepage"><div><div><h3 class="title" id="idm140386397632704"><span class="number">3.3.2 </span><span class="name">Different Modes when using services</span> <a title="Permalink" class="permalink" href="_administration.html#idm140386397632704">#</a></h3></div></div></div><p>
    Each service can be used in a special mode defining when it should run and
    how to use the result. This can be done per package or globally for an
    entire project.
-  </p><div class="sect3" id="idm139982918146656"><div class="titlepage"><div><div><h4 class="title" id="idm139982918146656"><span class="number">3.3.2.1 </span><span class="name">Default Mode</span> <a title="Permalink" class="permalink" href="_administration.html#idm139982918146656">#</a></h4></div></div></div><p>
+  </p><div class="sect3" id="idm140386394531488"><div class="titlepage"><div><div><h4 class="title" id="idm140386394531488"><span class="number">3.3.2.1 </span><span class="name">Default Mode</span> <a title="Permalink" class="permalink" href="_administration.html#idm140386394531488">#</a></h4></div></div></div><p>
     The default mode of a service is to always run after each commit on the
     server side and locally before every local build.
-   </p></div><div class="sect3" id="idm139982917436720"><div class="titlepage"><div><div><h4 class="title" id="idm139982917436720"><span class="number">3.3.2.2 </span><span class="name">trylocal Mode</span> <a title="Permalink" class="permalink" href="_administration.html#idm139982917436720">#</a></h4></div></div></div><p>
+   </p></div><div class="sect3" id="idm140386397540288"><div class="titlepage"><div><div><h4 class="title" id="idm140386397540288"><span class="number">3.3.2.2 </span><span class="name">trylocal Mode</span> <a title="Permalink" class="permalink" href="_administration.html#idm140386397540288">#</a></h4></div></div></div><p>
     The trylocal mode is running the service locally when using current osc
     versions. The result gets committed as standard files and not named with
     _service: prefix. Additionally the service runs on the server by default,
     but usually the service should detect that the result is the same and skip
     the generated files. In case they differ for any reason (because the webui
     or api was used for example) they get generated and added on the server.
-   </p></div><div class="sect3" id="idm139982917439088"><div class="titlepage"><div><div><h4 class="title" id="idm139982917439088"><span class="number">3.3.2.3 </span><span class="name">localonly Mode</span> <a title="Permalink" class="permalink" href="_administration.html#idm139982917439088">#</a></h4></div></div></div><p>
+   </p></div><div class="sect3" id="idm140386400054736"><div class="titlepage"><div><div><h4 class="title" id="idm140386400054736"><span class="number">3.3.2.3 </span><span class="name">localonly Mode</span> <a title="Permalink" class="permalink" href="_administration.html#idm140386400054736">#</a></h4></div></div></div><p>
     The localonly mode is running the service locally when using current osc
     versions. The result gets committed as standard files and not named with
     _service: prefix. The service is never running on the server side. It is
     also not possible to trigger it manually.
-   </p></div><div class="sect3" id="idm139982922555280"><div class="titlepage"><div><div><h4 class="title" id="idm139982922555280"><span class="number">3.3.2.4 </span><span class="name">serveronly Mode</span> <a title="Permalink" class="permalink" href="_administration.html#idm139982922555280">#</a></h4></div></div></div><p>
+   </p></div><div class="sect3" id="idm140386396389648"><div class="titlepage"><div><div><h4 class="title" id="idm140386396389648"><span class="number">3.3.2.4 </span><span class="name">serveronly Mode</span> <a title="Permalink" class="permalink" href="_administration.html#idm140386396389648">#</a></h4></div></div></div><p>
     The serviceonly mode is running the service on the service only. This can
     be usefull, when the service is not available or can not work on developer
     workstations.
-   </p></div><div class="sect3" id="idm139982917434800"><div class="titlepage"><div><div><h4 class="title" id="idm139982917434800"><span class="number">3.3.2.5 </span><span class="name">buildtime Mode</span> <a title="Permalink" class="permalink" href="_administration.html#idm139982917434800">#</a></h4></div></div></div><p>
+   </p></div><div class="sect3" id="idm140386396570256"><div class="titlepage"><div><div><h4 class="title" id="idm140386396570256"><span class="number">3.3.2.5 </span><span class="name">buildtime Mode</span> <a title="Permalink" class="permalink" href="_administration.html#idm140386396570256">#</a></h4></div></div></div><p>
     The service is running inside of the build job, for local and server side
     builds. A side effect is that the service package is becoming a build
     dependency and must be available. Every user can provide and use a service
     this way in their projects. The generated sources are not part of the
     source repository, but part of the generated source packages. Network
     access is not be available when the workers are running in a secure mode.
-   </p></div><div class="sect3" id="idm139982915460544"><div class="titlepage"><div><div><h4 class="title" id="idm139982915460544"><span class="number">3.3.2.6 </span><span class="name">disabled Mode</span> <a title="Permalink" class="permalink" href="_administration.html#idm139982915460544">#</a></h4></div></div></div><p>
+   </p></div><div class="sect3" id="idm140386399509616"><div class="titlepage"><div><div><h4 class="title" id="idm140386399509616"><span class="number">3.3.2.6 </span><span class="name">disabled Mode</span> <a title="Permalink" class="permalink" href="_administration.html#idm140386399509616">#</a></h4></div></div></div><p>
     The disabled mode is neither running the service locally or on the server
     side. It can be used to temporarily disable the service but keeping the
     definition as part of the service definition. Or it can be used to define
     the way how to generate the sources and doing so by manually calling
 </p><div class="verbatim-wrap"><pre class="screen"><code class="command">osc service disabledrun</code></pre></div><p>
     The result will get committed as standard files again.
-   </p></div></div><div class="sect2" id="idm139982915834752"><div class="titlepage"><div><div><h3 class="title" id="idm139982915834752"><span class="number">3.3.3 </span><span class="name">How are source service definitions stored</span> <a title="Permalink" class="permalink" href="_administration.html#idm139982915834752">#</a></h3></div></div></div><p>
+   </p></div></div><div class="sect2" id="idm140386397093648"><div class="titlepage"><div><div><h3 class="title" id="idm140386397093648"><span class="number">3.3.3 </span><span class="name">How are source service definitions stored</span> <a title="Permalink" class="permalink" href="_administration.html#idm140386397093648">#</a></h3></div></div></div><p>
    The called services are always defined in a <code class="command">_service</code>
    file. It is either part of the package sources or used project-wide when
    stored inside the <code class="command">_project</code> package.
@@ -478,7 +478,7 @@ testobs # obs_admin --rescan-repository SUSE:13.2 standard x86_64</pre></div><p>
    executed. Except when <code class="command">osc service disabledrun</code> is called,
    which will try to upgrade the package to a newer source version available
    online.
-  </p></div><div class="sect2" id="idm139982917686544"><div class="titlepage"><div><div><h3 class="title" id="idm139982917686544"><span class="number">3.3.4 </span><span class="name">Dropping a source service again</span> <a title="Permalink" class="permalink" href="_administration.html#idm139982917686544">#</a></h3></div></div></div><p>
+  </p></div><div class="sect2" id="idm140386397901872"><div class="titlepage"><div><div><h3 class="title" id="idm140386397901872"><span class="number">3.3.4 </span><span class="name">Dropping a source service again</span> <a title="Permalink" class="permalink" href="_administration.html#idm140386397901872">#</a></h3></div></div></div><p>
    Sometimes it is useful to continued to work on generated files manualy. In
    this situation the _service file needs to be dropped, but all generated
    files need to be commited as standard files. The OBS provides the
@@ -507,7 +507,7 @@ build time.</p><p>Example dispatchprios XML file</p><div class="verbatim-wrap"><
    &lt;prio project="DemoProject1" repository="openSUSE_Leap_42.1" adjust="10" /&gt;
    &lt;prio project="Test1" adjust="5" /&gt;
    &lt;prio project="Test11" repository="openSUSE_13.2" arch="i586" adjust="-10"/&gt;
-&lt;/dispatchprios&gt;</pre></div><div class="table" id="idm139982916212640"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 3.1: </span><span class="name">Rounded scale factors resulting from a priority </span><a title="Permalink" class="permalink" href="_administration.html#idm139982916212640">#</a></h6></div><div class="table-contents"><table summary="Rounded scale factors resulting from a priority" border="1" width="70%"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /><col class="col_4" /><col class="col_5" /></colgroup><thead><tr><th align="left" valign="top"> priority </th><th align="left" valign="top"> scale factor </th><th align="left" valign="top"> </th><th align="left" valign="top"> priority </th><th align="left" valign="top"> scale factor</th></tr></thead><tbody><tr><td align="left" valign="top">
+&lt;/dispatchprios&gt;</pre></div><div class="table" id="idm140386395139520"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 3.1: </span><span class="name">Rounded scale factors resulting from a priority </span><a title="Permalink" class="permalink" href="_administration.html#idm140386395139520">#</a></h6></div><div class="table-contents"><table summary="Rounded scale factors resulting from a priority" border="1" width="70%"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /><col class="col_4" /><col class="col_5" /></colgroup><thead><tr><th align="left" valign="top"> priority </th><th align="left" valign="top"> scale factor </th><th align="left" valign="top"> </th><th align="left" valign="top"> priority </th><th align="left" valign="top"> scale factor</th></tr></thead><tbody><tr><td align="left" valign="top">
        <p>-50</p>
       </td><td align="left" valign="top">
        <p>100000</p>
@@ -624,7 +624,7 @@ with test in the name get some penalty, also home projects are getting only
 about half of the build time as a normal project, with the exception of the
 home project from king, the user account of the boss.
 The SLES12-SP2 repository is not in real use yet, but if here is nothing
-else to do build for it as well.</p><div id="idm139982915910384" class="admonition important"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>The dispatcher calculates the values form the <span class="strong"><strong><span class="emphasis"><em>'dispatch_adjust'</em></span></strong></span> array
+else to do build for it as well.</p><div id="idm140386396672672" class="admonition important"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>The dispatcher calculates the values form the <span class="strong"><strong><span class="emphasis"><em>'dispatch_adjust'</em></span></strong></span> array
 first, if the same project and repository also has an entry in the
 dispatchprios XML file, the XML file entry will overwrite the calculated
 priority. The best practice is to only use one of the methods.</p></div></div></div><div class="sect1" id="_publisher_hooks"><div class="titlepage"><div><div><h2 class="title" id="_publisher_hooks"><span class="number">3.5 </span><span class="name">Publisher Hooks</span> <a title="Permalink" class="permalink" href="_administration.html#_publisher_hooks">#</a></h2></div></div></div><p>The job of the publisher service is to publish the build packages and/or images
@@ -749,7 +749,7 @@ The hook script’s output is not logged by the publisher and should be written 
     calling unpublished hook /usr/local/bin/script2run_sles12
     /usr/local/bin/script2run_sles12 failed: 65280
     syncing database (6 ops)</pre></div><p>Interactive scripts are not working and will fail immediately.</p><p>If you need to do a lot of work in the hook script and don’t want to block the publisher all the time, consider using a separate daemon that does all the work and just
-gets triggered by the configured hook script.</p><p>The scripts are called without a timeout.</p><div id="idm139982918938208" class="admonition note"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p><span class="strong"><strong>Reminder:</strong></span> If <span class="emphasis"><em>unpublish hooks</em></span> and <span class="emphasis"><em>publish hooks</em></span> are defined, the
+gets triggered by the configured hook script.</p><p>The scripts are called without a timeout.</p><div id="idm140386399474496" class="admonition note"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p><span class="strong"><strong>Reminder:</strong></span> If <span class="emphasis"><em>unpublish hooks</em></span> and <span class="emphasis"><em>publish hooks</em></span> are defined, the
 <span class="emphasis"><em>unpublish hook</em></span> runs before the <span class="emphasis"><em>publish hook</em></span>.</p></div></div><div class="sect2" id="_example_unpublisher_scripts"><div class="titlepage"><div><div><h3 class="title" id="_example_unpublisher_scripts"><span class="number">3.6.2 </span><span class="name">Example Unpublisher Scripts</span> <a title="Permalink" class="permalink" href="_administration.html#_example_unpublisher_scripts">#</a></h3></div></div></div><div class="sect3" id="_simple_unpublisher_hook"><div class="titlepage"><div><div><h4 class="title" id="_simple_unpublisher_hook"><span class="number">3.6.2.1 </span><span class="name">Simple Unpublisher Hook</span> <a title="Permalink" class="permalink" href="_administration.html#_simple_unpublisher_hook">#</a></h4></div></div></div><p>The following example script deletes all packages from the target directory
 that have been removed from the repository.</p><div class="verbatim-wrap"><pre class="screen">#!/bin/bash
 OBSHOME="/srv/obs"
@@ -804,7 +804,7 @@ by an Admin (e.g. the Repository Menu) as long the Admin is not a Maintainer
 for the project as well. But the same change can be done via editing the
 meta data directely.
 The other roles are specific to projects and packages and can be assigned
-to an user or a group.</p><div class="table" id="idm139982917444736"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 3.2: </span><span class="name">OBS roles </span><a title="Permalink" class="permalink" href="_administration.html#idm139982917444736">#</a></h6></div><div class="table-contents"><table summary="OBS roles" border="1"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /></colgroup><thead><tr><th align="left" valign="top"> Role </th><th align="left" valign="top"> Description </th><th align="left" valign="top"> Remarks</th></tr></thead><tbody><tr><td align="left" valign="top">
+to an user or a group.</p><div class="table" id="idm140386394603104"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 3.2: </span><span class="name">OBS roles </span><a title="Permalink" class="permalink" href="_administration.html#idm140386394603104">#</a></h6></div><div class="table-contents"><table summary="OBS roles" border="1"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /></colgroup><thead><tr><th align="left" valign="top"> Role </th><th align="left" valign="top"> Description </th><th align="left" valign="top"> Remarks</th></tr></thead><tbody><tr><td align="left" valign="top">
        <p>Maintainer</p>
       </td><td align="left" valign="top">
        <p>Read and write access to projects or packages</p>
@@ -844,12 +844,12 @@ server shall not get connected to the network directly. There are authentificati
 out there which do the authentification and send the user name via a HTTP header to OBS.
 Original this was developed for IChain - a legacy single login authentification method from Novell.
 This has also the advantage that the user password never reaches OBS.</p><p>The proxy mode can also be used for LDAP or Active Directory, but only for
-authentification.</p><div id="idm139982916312080" class="admonition caution"><img class="symbol" alt="Caution" title="Caution" src="static/images/icon-caution.png" /><h6>Caution</h6><p>With enabled proxy mode the OBS trust the username in the http header.
+authentification.</p><div id="idm140386395485680" class="admonition caution"><img class="symbol" alt="Caution" title="Caution" src="static/images/icon-caution.png" /><h6>Caution</h6><p>With enabled proxy mode the OBS trust the username in the http header.
 Since this was verified by the Web server and the the Web server only forward requests
 for a verified and authentificated session, this is safe, as long you make
 sure that the direct web/API interface of the OBS is not reachable from the
 outside.</p></div><p>With the proxy mode the user still need to be registered in the OBS and all OBS
-roles and user properties are managed inside the OBS.</p><div class="sect3" id="_obs_proxy_mode_configuration"><div class="titlepage"><div><div><h4 class="title" id="_obs_proxy_mode_configuration"><span class="number">3.7.3.1 </span><span class="name">OBS proxy mode configuration</span> <a title="Permalink" class="permalink" href="_administration.html#_obs_proxy_mode_configuration">#</a></h4></div></div></div><p>Currently the LDAP configuration is in the <span class="emphasis"><em>option.yml</em></span> file.</p><div class="table" id="idm139982916800832"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 3.3: </span><span class="name">Proxy mode configuration option </span><a title="Permalink" class="permalink" href="_administration.html#idm139982916800832">#</a></h6></div><div class="table-contents"><table summary="Proxy mode configuration option" border="1"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /><col class="col_4" /></colgroup><thead><tr><th align="left" valign="top"> Config item </th><th align="left" valign="top"> Description </th><th align="left" valign="top"> Values <code class="literal">default</code>
+roles and user properties are managed inside the OBS.</p><div class="sect3" id="_obs_proxy_mode_configuration"><div class="titlepage"><div><div><h4 class="title" id="_obs_proxy_mode_configuration"><span class="number">3.7.3.1 </span><span class="name">OBS proxy mode configuration</span> <a title="Permalink" class="permalink" href="_administration.html#_obs_proxy_mode_configuration">#</a></h4></div></div></div><p>Currently the LDAP configuration is in the <span class="emphasis"><em>option.yml</em></span> file.</p><div class="table" id="idm140386397772976"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 3.3: </span><span class="name">Proxy mode configuration option </span><a title="Permalink" class="permalink" href="_administration.html#idm140386397772976">#</a></h6></div><div class="table-contents"><table summary="Proxy mode configuration option" border="1"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /><col class="col_4" /></colgroup><thead><tr><th align="left" valign="top"> Config item </th><th align="left" valign="top"> Description </th><th align="left" valign="top"> Values <code class="literal">default</code>
        </th><th align="left" valign="top"> Remarks</th></tr></thead><tbody><tr><td align="left" valign="top">
         <p>proxy_auth_mode</p>
        </td><td align="left" valign="top">
@@ -881,7 +881,7 @@ server.
 As alternative method group mirroring was implemented. This allows that the
 internal OBS group database is updated with the group membership information
 during the user authentification. All role test are made local against the
-OBS database and do not need additional LDAPoperations.</p><div id="idm139982918311664" class="admonition note"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>The local user group membership in :mirror mode is updated as follows: When the user logins,
+OBS database and do not need additional LDAPoperations.</p><div id="idm140386397863936" class="admonition note"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>The local user group membership in :mirror mode is updated as follows: When the user logins,
 the user <span class="emphasis"><em>memberOf</em></span> attributes are parsed and compared with the global OBS
 grouplist, if a group match the user is added, if he does not longer be a
 group member, he is removed. since this maybe a costly operation, depending
@@ -895,7 +895,7 @@ Beside the settings here also the openldap config file is evaluated by the
 Ruby LDAP implementation. This configfile is usually located at
 <span class="emphasis"><em>/etc/openldap/ldap.conf</em></span>. You can set here additional TLS/SSL directives
 like <span class="strong"><strong>TLS_CACERT</strong></span>, <span class="strong"><strong>TLS_CACERTDIR</strong></span> and <span class="strong"><strong>TLS_REQCERT</strong></span>. For more information
-refer to the openldap ldap.conf man page.</p><div class="table" id="idm139982916696992"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 3.4: </span><span class="name">LDAP configuration options </span><a title="Permalink" class="permalink" href="_administration.html#idm139982916696992">#</a></h6></div><div class="table-contents"><table summary="LDAP configuration options" border="1"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /><col class="col_4" /></colgroup><thead><tr><th align="left" valign="top"> Config item </th><th align="left" valign="top"> Description </th><th align="left" valign="top"> Values <code class="literal">default</code>
+refer to the openldap ldap.conf man page.</p><div class="table" id="idm140386397571952"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 3.4: </span><span class="name">LDAP configuration options </span><a title="Permalink" class="permalink" href="_administration.html#idm140386397571952">#</a></h6></div><div class="table-contents"><table summary="LDAP configuration options" border="1"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /><col class="col_4" /></colgroup><thead><tr><th align="left" valign="top"> Config item </th><th align="left" valign="top"> Description </th><th align="left" valign="top"> Values <code class="literal">default</code>
        </th><th align="left" valign="top"> Remarks</th></tr></thead><tbody><tr><td align="left" valign="top">
         <p>ldap_mode</p>
        </td><td align="left" valign="top">
@@ -1261,19 +1261,19 @@ Local method.
 
    The provided credentials checked locally against the content of the
    of the <span class="emphasis"><em>userPassword</em></span> attribute.
-</li></ol></div><div id="idm139982914242992" class="admonition caution"><img class="symbol" alt="Caution" title="Caution" src="static/images/icon-caution.png" /><h6>Caution</h6><p>The local method should be not used, since the <span class="emphasis"><em>userPassword</em></span> attribute in most
+</li></ol></div><div id="idm140386396648480" class="admonition caution"><img class="symbol" alt="Caution" title="Caution" src="static/images/icon-caution.png" /><h6>Caution</h6><p>The local method should be not used, since the <span class="emphasis"><em>userPassword</em></span> attribute in most
 LDAP installations will not be available until you are bind with a
 priviledge user.</p></div></div><div class="sect3" id="_kerberos"><div class="titlepage"><div><div><h4 class="title" id="_kerberos"><span class="number">3.7.5.2 </span><span class="name">Kerberos</span> <a title="Permalink" class="permalink" href="_administration.html#_kerberos">#</a></h4></div></div></div><p>For connecting the API you can use single sign on via kerberos tickets.</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
 Need more information **
-</li></ul></div></div><div class="sect3" id="idm139982915542416"><div class="titlepage"><div><div><h4 class="title" id="idm139982915542416"><span class="number">3.7.5.3 </span><span class="name">OBS Token Authorization</span> <a title="Permalink" class="permalink" href="_administration.html#idm139982915542416">#</a></h4></div></div></div><p>
+</li></ul></div></div><div class="sect3" id="idm140386396526528"><div class="titlepage"><div><div><h4 class="title" id="idm140386396526528"><span class="number">3.7.5.3 </span><span class="name">OBS Token Authorization</span> <a title="Permalink" class="permalink" href="_administration.html#idm140386396526528">#</a></h4></div></div></div><p>
     OBS 2.5 provides a mechanism to create tokens for specific operations. This
     can be used to allow certain operations in the name of a user to others.
     This is esp. useful when integrating external infrastructure. The create
     token should be kept secret by default, but it can also be revoked at any
     time if it became obsolete or leaked.
-   </p><div class="sect4" id="idm139982915540752"><div class="titlepage"><div><div><h5 class="title" id="idm139982915540752"><span class="number">3.7.5.3.1 </span><span class="name">Manage tokens of a user</span> <a title="Permalink" class="permalink" href="_administration.html#idm139982915540752">#</a></h5></div></div></div><p>
+   </p><div class="sect4" id="idm140386396443056"><div class="titlepage"><div><div><h5 class="title" id="idm140386396443056"><span class="number">3.7.5.3.1 </span><span class="name">Manage tokens of a user</span> <a title="Permalink" class="permalink" href="_administration.html#idm140386396443056">#</a></h5></div></div></div><p>
      Tokens belong always to a user. A list of active tokens can received via
-    </p><div class="verbatim-wrap"><pre class="screen"><code class="command">osc token</code></pre></div><div class="verbatim-wrap"><pre class="screen"><code class="command">osc token --delete &lt;TOKEN&gt;</code></pre></div></div><div class="sect4" id="idm139982918837008"><div class="titlepage"><div><div><h5 class="title" id="idm139982918837008"><span class="number">3.7.5.3.2 </span><span class="name">Execute a source service</span> <a title="Permalink" class="permalink" href="_administration.html#idm139982918837008">#</a></h5></div></div></div><p>
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="command">osc token</code></pre></div><div class="verbatim-wrap"><pre class="screen"><code class="command">osc token --delete &lt;TOKEN&gt;</code></pre></div></div><div class="sect4" id="idm140386394198400"><div class="titlepage"><div><div><h5 class="title" id="idm140386394198400"><span class="number">3.7.5.3.2 </span><span class="name">Execute a source service</span> <a title="Permalink" class="permalink" href="_administration.html#idm140386394198400">#</a></h5></div></div></div><p>
      A token can be used to execute a source service. The source service has to
      be setup for the package first, check the source service chapter for this.
      A typical example is to update sources of a package from git. A source
