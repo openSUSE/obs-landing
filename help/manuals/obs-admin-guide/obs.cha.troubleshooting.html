@@ -6,10 +6,7 @@ if ( protocol != 'file:' ) {
   var agent = navigator.userAgent.toLowerCase();
   var wanted = ( protocol == 'https:') ? 'https' : 'http';
   var file = 'fonts.css';
-  if (agent.indexOf('android') != -1 && agent.indexOf('chrom') != -1 ) {
-      file = 'fonts-nolocal.css';
-  }
-  document.write('<link rel="stylesheet" type="text/css" href="' + wanted + '://static.opensuse.org/fonts/'+ file +'"></link>');cd
+  document.write('<link rel="stylesheet" type="text/css" href="' + wanted + '://static.opensuse.org/fonts/'+ file +'"></link>');
 }
 else {
    document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
@@ -68,7 +65,7 @@ developers. If you get a error message from osc the <span class="strong"><strong
 give the developer some more information about the problem. The <span class="strong"><strong><span class="emphasis"><em>-H, --http-debug</em></span></strong></span> and
 <span class="strong"><strong><span class="emphasis"><em>--http-full-debug</em></span></strong></span> options are useful to see the raw answers of OBS API, often this gives a hint what maybe
 wrong. If you report a problem regarding the <span class="strong"><strong><span class="emphasis"><em>osc</em></span></strong></span> tool, it may help to include the osc output with
-<span class="strong"><strong>additional *<span class="emphasis"><em>--http-debug --traceback</em></span></strong></span> options.</p><div id="idm139795743557920" class="admonition warning"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning</h6><p>With <span class="strong"><strong><span class="emphasis"><em>--http-full-debug</em></span></strong></span> all http headers are included, this may include
+<span class="strong"><strong>additional *<span class="emphasis"><em>--http-debug --traceback</em></span></strong></span> options.</p><div id="idm139823461614816" class="admonition warning"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning</h6><p>With <span class="strong"><strong><span class="emphasis"><em>--http-full-debug</em></span></strong></span> all http headers are included, this may include
 user data and authentification stuff so review and replace such data with
 XXXXXXXX or so before you post it on the internet.</p></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="apa.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Appendix A </span>GNU Licenses</span></a><a class="nav-link" href="obs.cha.administration.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 3 </span>Administration</span></a></div><div id="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span id="_share-fb" class="bottom-button">Facebook</span><span class="spacer"> • </span><span id="_share-gp" class="bottom-button">Google+</span><span class="spacer"> • </span><span id="_share-tw" class="bottom-button">Twitter</span><span class="spacer"> • </span><span id="_share-mail" class="bottom-button">E-Mail</span></span></div><div class="print"><span id="_print-button" class="bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
         2016 

@@ -6,10 +6,7 @@ if ( protocol != 'file:' ) {
   var agent = navigator.userAgent.toLowerCase();
   var wanted = ( protocol == 'https:') ? 'https' : 'http';
   var file = 'fonts.css';
-  if (agent.indexOf('android') != -1 && agent.indexOf('chrom') != -1 ) {
-      file = 'fonts-nolocal.css';
-  }
-  document.write('<link rel="stylesheet" type="text/css" href="' + wanted + '://static.opensuse.org/fonts/'+ file +'"></link>');cd
+  document.write('<link rel="stylesheet" type="text/css" href="' + wanted + '://static.opensuse.org/fonts/'+ file +'"></link>');
 }
 else {
    document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
@@ -34,19 +31,19 @@ hljs.configure({
     The openSUSE Build Service is the concrete instance of
     <a class="xref" href="go01.html#obs.glos.obs" title="Open Build Service">Open Build Service</a> from the openSUSE project at
     http://build.opensuse.org.
-   </p></dd><dt id="idm140222161284592"><span><span class="glossterm">Appliance</span></span></dt><dd class="glossdef"><p>
+   </p></dd><dt id="idm140373399594816"><span><span class="glossterm">Appliance</span></span></dt><dd class="glossdef"><p>
     A software appliance is a preconfigured combination of an application (for
     example, a Web server) and its configuration, and includes an operating
     system (for example, SUSE Linux Enterprise Server). All these parts are integrated into a single
     image and can be deployed on industry hardware or on a virtual environment.
-   </p></dd><dt id="idm140222163619344"><span><span class="glossterm">EULA</span></span></dt><dd class="glossdef"><p>
+   </p></dd><dt id="idm140373401932384"><span><span class="glossterm">EULA</span></span></dt><dd class="glossdef"><p>
     End User License Agreement. For software that needs a special license
     (usually non-open source) which the user has to agree to before installing.
    </p></dd><dt id="obs.glos.kiwi"><span><span class="glossterm">KIWI</span></span></dt><dd class="glossdef"><p>
     KIWI provides a complete operating system image solution. It can create
     images for Linux supported hardware platforms or for virtualization
     systems.
-   </p></dd><dt id="idm140222163537904"><span><span class="glossterm">Overlay Files</span></span></dt><dd class="glossdef"><p>
+   </p></dd><dt id="idm140373401028160"><span><span class="glossterm">Overlay Files</span></span></dt><dd class="glossdef"><p>
     Files which are created, removed, or modified in your testdrive are
     considered as <span class="emphasis"><em>overlay files</em></span>. These files can be added
     later as a supplement to your appliance.
