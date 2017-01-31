@@ -229,7 +229,7 @@ html, body {
 .back-icon, #_find-button, .bubble-corner:before, .bubble-closer,
 .single-contents-icon, #_print-button:before, #_share-fb:before,
 #_share-gp:before, #_share-tw:before, #_share-mail:before,
-.arch-arrow-start:after, .arch-arrow-end, .ulink:after, .link:after {
+.arch-arrow-start:after, .arch-arrow-end, .ulink:after {
     background-image: url(../images/icons.png);
     background-repeat: no-repeat;
 }
@@ -1099,7 +1099,7 @@ button:focus::-moz-focus-inner, button::-moz-focus-inner {
     border-top: 1px solid #999;
     clear: both;
     display: none;
-    color: #666;
+    color: 666;
 }
 
 .offline .online-contents {
@@ -1208,7 +1208,7 @@ button:focus::-moz-focus-inner, button::-moz-focus-inner {
 }
 
 
-.ulink:after, .link:after {
+.ulink:after {
     content: "\0020\2197";
     color: transparent;
     width: 18px;
@@ -1221,13 +1221,13 @@ button:focus::-moz-focus-inner, button::-moz-focus-inner {
     top: 2px;
 }
 
-.legalnotice .ulink:after, .legalnotice .link:after {
+.legalnotice .ulink:after {
     background-position: -216px -101px;
     width: 15px;
     height: 10px;
 }
 
-.ulink-url, .link-url {
+.ulink-url {
     display: none;
 }
 
@@ -1320,6 +1320,7 @@ h6.version-info {
 }
 
 .sect1 .title, .single .sect1 .title,
+.section .title, .single .section .title,
 .chapter .qandaset .title, .preface .qandaset .title, .appendix .qandaset .title,
 .bibliography .qandaset .title, .reference .qandaset .title,
 .part .qandaset .title, .glossary .qandaset .title {
@@ -1329,14 +1330,16 @@ h6.version-info {
     text-align: left;
 }
 
-.sect2 .title, .single .sect2 .title, .sect1 .qandaset .title {
+.sect2 .title, .single .sect2 .title, .sect1 .qandaset .title,
+.section .section .title, .single .section .section .title {
     font-size: 22px;
     padding: 40px 0 0;
     text-align: left;
 }
 
 .sect3 .title, .single .sect3 .title,
-.sect2 .qandaset .title, .refentry h2, h2, .indexdiv h3 {
+.sect2 .qandaset .title, .refentry h2, h2, .indexdiv h3,
+.section .section .section .title, .single .section .section .section .title  {
     font-size: 20px;
     font-weight: normal;
     padding: 33px 0 0;
@@ -1344,7 +1347,8 @@ h6.version-info {
 }
 
 .sect4 .title, .single .sect4 .title,
-.sect5 .title, .single .sect5 .title {
+.sect5 .title, .single .sect5 .title,
+.section .section .section .title, .single .section .section .section .title  {
     font-size: 16px;
     padding: 53px 0 0;
     margin: 0 0 -33px;
@@ -1354,12 +1358,12 @@ h6.version-info {
     text-align: left;
 }
 
-.sect4 .title {
-    font-weight: 600 !important;
+.sect4 .title, .section .section .section .section .title {
+    font-weight: 600;
 }
 
-.sect5 .title {
-    font-weight: normal !important;
+.sect5 .title, .section .section .section .section .section .title {
+    font-weight: normal;
 }
 
 .legal-section p {
@@ -1572,7 +1576,7 @@ a.leads-to-page:active .name, .refentrytitle a:hover, .refentrytitle a:focus,
     z-index: 2;
 }
 
-em, i, .guimenu, .intraxref {
+em, i, .guimenu {
     font-style: italic;
 }
 
@@ -1627,7 +1631,7 @@ p, td {
     hyphens: auto;
 }
 
-.ulink, .link, .email, .phrase {
+.ulink, .email, .phrase {
     -webkit-hyphens: none;
     -moz-hyphens: none;
     -ms-hyphens: none;
@@ -2297,7 +2301,7 @@ ul {
 }
 
 .qandadiv {
-    margin: 0 0 40px 0;
+    margin: 0 0 40px 0;#
 }
 
 .answer .table-title, .answer .verbatim-wrap, .answer .variablelist {
@@ -2479,7 +2483,7 @@ p.ds-message {
 }
 
 @page {
-    size: portrait;
+    size: 100%;
     margin: 20mm 22.5mm 22.5mm 22.5mm;
 }
 
@@ -2528,14 +2532,14 @@ p.ds-message {
         break-after: avoid;
     }
 
-    .ulink:after, .link:after {
+    .ulink:after {
         color: inherit;
         background-image: none;
         width: auto;
         height: auto;
     }
 
-    .ulink-url, .link-url {
+    .ulink-url {
         display: inline;
         -webkit-hyphens: none;
         -moz-hyphens: none;
@@ -3063,6 +3067,7 @@ p.ds-message {
     }
 
     .sect1 .title, .single .sect1 .title,
+    .section .title, .single .section .title,
     .chapter .qandaset .title, .preface .qandaset .title, .appendix .qandaset .title,
     .bibliography .qandaset .title, .reference .qandaset .title,
     .part .qandaset .title, .glossary .qandaset .title, .set .subtitle,
@@ -3070,12 +3075,14 @@ p.ds-message {
         font-size: 22px;
     }
 
-    .sect2 .title, .single .sect2 .title, .sect1 .qandaset .title {
+    .sect2 .title, .single .sect2 .title, .sect1 .qandaset .title,
+    .section .section .title, .single .section .section .title {
         font-size: 20px;
     }
 
     .sect3 .title, .single .sect3 .title,
-    .sect2 .qandaset .title, .refentry h2, h2, .indexdiv h3 {
+    .sect2 .qandaset .title, .refentry h2, h2, .indexdiv h3,
+    .section .section .section .title, .single .section .section .section .title  {
         font-size: 18px;
     }
 }
