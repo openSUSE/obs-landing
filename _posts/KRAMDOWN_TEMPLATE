@@ -1,0 +1,44 @@
+---
+layout: post
+title: Your Most Awesome Title
+category: documentation
+author: The Author
+---
+
+# A First Level Header
+
+## A Second Level Header
+
+This is just a regular paragraph. With one or
+more lines of text.
+
+### Header 3
+
+> For blockquotes you can use email style angle brackets
+
+Some of these words _are emphasized_.
+Or you *use asterisks instead* for strong emphasis.
+
+* This is a
+* unordered
+* list
+
+1. This is a
+2. numbered 
+3. list
+
+This is a ~~~ Code block ~~~
+
+Indenting text
+    by 4 chars makes it a code block too
+
+~~~bash
+Blocks can be highlighted by adding a language tag
+~~~
+
+
+This is a [link to an example page](http://example.com/)
+
+![image](/path/to/image.jpg)
+
+For further kramdown syntax read https://kramdown.gettalong.org/quickref.html
