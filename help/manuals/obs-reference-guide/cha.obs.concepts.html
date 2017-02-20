@@ -1,28 +1,36 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>OBS Concepts | Open Build Service</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><meta name="generator" content="DocBook XSL Stylesheets V1.78.1" /><meta name="book-title" content="Open Build Service" /><meta name="chapter-title" content="Chapter 3. OBS Concepts" /><link rel="home" href="index.html" title="Open Build Service" /><link rel="up" href="index.html" title="Open Build Service" /><link rel="prev" href="cha.obs.architecture.html" title="Chapter 2. OBS Architecture" /><link rel="next" href="cha.obs.build_process.html" title="Chapter 4. Build Process" /><script type="text/javascript">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>OBS Concepts | Open Build Service</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DocBook XSL Stylesheets V1.78.1" /><meta name="book-title" content="Open Build Service" /><meta name="chapter-title" content="Chapter 3. OBS Concepts" /><link rel="home" href="index.html" title="Open Build Service" /><link rel="up" href="index.html" title="Open Build Service" /><link rel="prev" href="cha.obs.architecture.html" title="Chapter 2. OBS Architecture" /><link rel="next" href="cha.obs.build_process.html" title="Chapter 4. Build Process" /><script type="text/javascript">
 
 var protocol = window.location.protocol.toLowerCase();
 if ( protocol != 'file:' ) {
   var agent = navigator.userAgent.toLowerCase();
   var wanted = ( protocol == 'https:') ? 'https' : 'http';
   var file = 'fonts.css';
-  if (agent.indexOf('android') != -1 && agent.indexOf('chrom') != -1 ) {
-      file = 'fonts-nolocal.css';
-  }
   document.write('<link rel="stylesheet" type="text/css" href="' + wanted + '://static.opensuse.org/fonts/'+ file +'"></link>');
 }
 else {
    document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
 }
 
-</script><noscript><link rel="stylesheet" type="text/css" href="http://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script></head><body class="offline js-off"><div id="_outer-wrap"><div id="_white-bg"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Open Build Service"><span class="book-icon">Open Build Service</span></a><span> › </span><a class="crumb" href="cha.obs.concepts.html">OBS Concepts</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Open Build Service</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="pr01.html"><span class="number"> </span><span class="name">About this Guide</span></a></li><li class="inactive"><a href="cha.obs.motivation.html"><span class="number">1 </span><span class="name">Distributing Free Software: Herding Cats</span></a></li><li class="inactive"><a href="cha.obs.architecture.html"><span class="number">2 </span><span class="name">OBS Architecture</span></a></li><li class="inactive"><a href="cha.obs.concepts.html"><span class="number">3 </span><span class="name">OBS Concepts</span></a></li><li class="inactive"><a href="cha.obs.build_process.html"><span class="number">4 </span><span class="name">Build Process</span></a></li><li class="inactive"><a href="cha.obs.source_management.html"><span class="number">5 </span><span class="name">Source Management</span></a></li><li class="inactive"><a href="cha.obs.request_and_review_ystem.html"><span class="number">6 </span><span class="name">Request And Review System</span></a></li><li class="inactive"><a href="cha.obs.package_formats.html"><span class="number">7 </span><span class="name">Package Formats</span></a></li><li class="inactive"><a href="cha.obs.image_templates.html"><span class="number">8 </span><span class="name">Image templates</span></a></li><li class="inactive"><a href="cha.obs.build_config.html"><span class="number">9 </span><span class="name">Build Configuration</span></a></li><li class="inactive"><a href="cha.obs.source_service.html"><span class="number">10 </span><span class="name">Source Services</span></a></li><li class="inactive"><a href="cha.obs.multibuild.html"><span class="number">11 </span><span class="name">Multibuild</span></a></li><li class="inactive"><a href="cha.obs.signing.html"><span class="number">12 </span><span class="name">Signing</span></a></li><li class="inactive"><a href="cha.obs.product_building.html"><span class="number">13 </span><span class="name">Product Building</span></a></li><li class="inactive"><a href="cha.obs.maintenance_setup.html"><span class="number">14 </span><span class="name">Maintenance Support</span></a></li><li class="inactive"><a href="cha.obs.binary_tracking.html"><span class="number">15 </span><span class="name">Binary Package Tracking</span></a></li><li class="inactive"><a href="cha.obs.cross_arch_build.html"><span class="number">16 </span><span class="name">Cross Architecture Build</span></a></li><li class="inactive"><a href="cha.obs.admin.html"><span class="number">17 </span><span class="name">Administration</span></a></li><li class="inactive"><a href="cha.obs.build_scheduling_and_dispatching.html"><span class="number">18 </span><span class="name">Scheduling and Dispatching</span></a></li><li class="inactive"><a href="cha.obs.build_job_constraints.html"><span class="number">19 </span><span class="name">Build Job Constraints</span></a></li><li class="inactive"><a href="cha.obs.build_preinstall.html"><span class="number">20 </span><span class="name">Build Preinstall Images</span></a></li><li class="inactive"><a href="cha.obs.authorization.token.html"><span class="number">21 </span><span class="name">Authorization</span></a></li><li class="inactive"><a href="cha.obs.qa_hooks.html"><span class="number">22 </span><span class="name">Quality Assurance(QA) Hooks</span></a></li><li class="inactive"><a href="cha.obs.factory.html"><span class="number">23 </span><span class="name">openSUSE Factory</span></a></li><li class="inactive"><a href="go01.html"><span class="number"> </span><span class="name">Glossary</span></a></li><li class="inactive"><a href="appendix.work_on_obs_book.html"><span class="number">A </span><span class="name">How to work on this Book</span></a></li><li class="inactive"><a href="apb.html"><span class="number">B </span><span class="name">GNU Licenses</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 2. OBS Architecture" href="cha.obs.architecture.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 4. Build Process" href="cha.obs.build_process.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Open Build Service"><span class="book-icon">Open Build Service</span></a><span> › </span><a class="crumb" href="cha.obs.concepts.html">OBS Concepts</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 2. OBS Architecture" href="cha.obs.architecture.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 4. Build Process" href="cha.obs.build_process.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class=""><div class="documentation"><div class="chapter " id="cha.obs.concepts"><div class="titlepage"><div><div><h1 class="title"><span class="number">3 </span><span class="name">OBS Concepts</span> </h1></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="cha.obs.concepts.html#idm140309314930384"><span class="number">3.1 </span><span class="name">Project organization</span></a></span></dt><dt><span class="section"><a href="cha.obs.concepts.html#idm140309319608912"><span class="number">3.2 </span><span class="name">The API</span></a></span></dt><dt><span class="section"><a href="cha.obs.concepts.html#idm140309314746480"><span class="number">3.3 </span><span class="name">The OBS Interconnect</span></a></span></dt><dt><span class="section"><a href="cha.obs.concepts.html#concept_dod"><span class="number">3.4 </span><span class="name">Download on Demand Repositories (DoD)</span></a></span></dt><dt><span class="section"><a href="cha.obs.concepts.html#concept_scm_integration"><span class="number">3.5 </span><span class="name">Integrate External Source Repositories</span></a></span></dt><dt><span class="section"><a href="cha.obs.concepts.html#idm140309313715536"><span class="number">3.6 </span><span class="name">Attribute System</span></a></span></dt><dt><span class="section"><a href="cha.obs.concepts.html#idm140309314399472"><span class="number">3.7 </span><span class="name">Automatic source processing</span></a></span></dt></dl></div></div><p>
+</script><noscript><link rel="stylesheet" type="text/css" href="http://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="offline js-off"><div id="_outer-wrap"><div id="_white-bg"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Open Build Service"><span class="book-icon">Open Build Service</span></a><span> › </span><a class="crumb" href="cha.obs.concepts.html">OBS Concepts</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Open Build Service</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="pr01.html"><span class="number"> </span><span class="name">About this Guide</span></a></li><li class="inactive"><a href="cha.obs.motivation.html"><span class="number">1 </span><span class="name">Distributing Free Software: Herding Cats</span></a></li><li class="inactive"><a href="cha.obs.architecture.html"><span class="number">2 </span><span class="name">OBS Architecture</span></a></li><li class="inactive"><a href="cha.obs.concepts.html"><span class="number">3 </span><span class="name">OBS Concepts</span></a></li><li class="inactive"><a href="cha.obs.build_process.html"><span class="number">4 </span><span class="name">Build Process</span></a></li><li class="inactive"><a href="cha.obs.source_management.html"><span class="number">5 </span><span class="name">Source Management</span></a></li><li class="inactive"><a href="cha.obs.request_and_review_ystem.html"><span class="number">6 </span><span class="name">Request And Review System</span></a></li><li class="inactive"><a href="cha.obs.package_formats.html"><span class="number">7 </span><span class="name">Package Formats</span></a></li><li class="inactive"><a href="cha.obs.image_templates.html"><span class="number">8 </span><span class="name">Image templates</span></a></li><li class="inactive"><a href="cha.obs.build_config.html"><span class="number">9 </span><span class="name">Build Configuration</span></a></li><li class="inactive"><a href="cha.obs.source_service.html"><span class="number">10 </span><span class="name">Source Services</span></a></li><li class="inactive"><a href="cha.obs.multibuild.html"><span class="number">11 </span><span class="name">Multiple Build Description File Handling</span></a></li><li class="inactive"><a href="cha.obs.signing.html"><span class="number">12 </span><span class="name">Signing</span></a></li><li class="inactive"><a href="cha.obs.product_building.html"><span class="number">13 </span><span class="name">Product Building</span></a></li><li class="inactive"><a href="cha.obs.maintenance_setup.html"><span class="number">14 </span><span class="name">Maintenance Support</span></a></li><li class="inactive"><a href="cha.obs.binary_tracking.html"><span class="number">15 </span><span class="name">Binary Package Tracking</span></a></li><li class="inactive"><a href="cha.obs.cross_arch_build.html"><span class="number">16 </span><span class="name">Cross Architecture Build</span></a></li><li class="inactive"><a href="cha.obs.admin.html"><span class="number">17 </span><span class="name">Administration</span></a></li><li class="inactive"><a href="cha.obs.build_scheduling_and_dispatching.html"><span class="number">18 </span><span class="name">Scheduling and Dispatching</span></a></li><li class="inactive"><a href="cha.obs.build_job_constraints.html"><span class="number">19 </span><span class="name">Build Job Constraints</span></a></li><li class="inactive"><a href="cha.obs.build_preinstall.html"><span class="number">20 </span><span class="name">Build Preinstall Images</span></a></li><li class="inactive"><a href="cha.obs.authorization.token.html"><span class="number">21 </span><span class="name">Authorization</span></a></li><li class="inactive"><a href="cha.obs.qa_hooks.html"><span class="number">22 </span><span class="name">Quality Assurance(QA) Hooks</span></a></li><li class="inactive"><a href="cha.obs.factory.html"><span class="number">23 </span><span class="name">openSUSE Factory</span></a></li><li class="inactive"><a href="go01.html"><span class="number"> </span><span class="name">Glossary</span></a></li><li class="inactive"><a href="appendix.work_on_obs_book.html"><span class="number">A </span><span class="name">How to work on this Book</span></a></li><li class="inactive"><a href="apb.html"><span class="number">B </span><span class="name">GNU Licenses</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 2. OBS Architecture" href="cha.obs.architecture.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 4. Build Process" href="cha.obs.build_process.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Open Build Service"><span class="book-icon">Open Build Service</span></a><span> › </span><a class="crumb" href="cha.obs.concepts.html">OBS Concepts</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 2. OBS Architecture" href="cha.obs.architecture.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 4. Build Process" href="cha.obs.build_process.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class=""><div class="documentation"><div class="chapter " id="cha.obs.concepts"><div class="titlepage"><div><div><h1 class="title"><span class="number">3 </span><span class="name">OBS Concepts</span> </h1></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="cha.obs.concepts.html#idm140381851977264"><span class="number">3.1 </span><span class="name">Project organization</span></a></span></dt><dt><span class="section"><a href="cha.obs.concepts.html#idm140381853592768"><span class="number">3.2 </span><span class="name">The API</span></a></span></dt><dt><span class="section"><a href="cha.obs.concepts.html#idm140381850762256"><span class="number">3.3 </span><span class="name">The OBS Interconnect</span></a></span></dt><dt><span class="section"><a href="cha.obs.concepts.html#concept_dod"><span class="number">3.4 </span><span class="name">Download on Demand Repositories (DoD)</span></a></span></dt><dt><span class="section"><a href="cha.obs.concepts.html#concept_scm_integration"><span class="number">3.5 </span><span class="name">Integrate External Source Repositories</span></a></span></dt><dt><span class="section"><a href="cha.obs.concepts.html#idm140381848022000"><span class="number">3.6 </span><span class="name">Attribute System</span></a></span></dt><dt><span class="section"><a href="cha.obs.concepts.html#idm140381848020512"><span class="number">3.7 </span><span class="name">Automatic source processing</span></a></span></dt></dl></div></div><p>
   We describe here the high level concepts how Open Build Service is designed, manages it's
   content and is supposed to work.
- </p><div class="section " id="idm140309314930384"><div class="titlepage"><div><div><h2 class="title" id="idm140309314930384"><span class="number">3.1 </span><span class="name">Project organization</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140309314930384">#</a></h2></div></div></div><p>
+ </p><div class="sect1" id="idm140381851977264"><div class="titlepage"><div><div><h2 class="title" id="idm140381851977264"><span class="number">3.1 </span><span class="name">Project organization</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140381851977264">#</a></h2></div></div></div><p>
    All sources and binaries which are hosted inside of OBS are organized in
    projects. A project is the container defining a larger task. It defines who
    is working there
-  </p><div class="section " id="idm140309313296224"><div class="titlepage"><div><div><h3 class="title" id="idm140309313296224"><span class="number">3.1.1 </span><span class="name">Project meta data</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140309313296224">#</a></h3></div></div></div><p>
+  </p><div class="sect2" id="idm140381855011376"><div class="titlepage"><div><div><h3 class="title" id="idm140381855011376"><span class="number">3.1.1 </span><span class="name">Project meta data</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140381855011376">#</a></h3></div></div></div><p>
     A project gets configured in the project
     <code class="command">/source/$PROJECT/_meta</code> path. It can be edited in web
     interface in the <code class="command">RAW Config</code> tab or via command line via
@@ -77,7 +85,7 @@ else {
             makes it impossible to get the binaries via the API directly. But it is still possible
             to get the binaries via build time in any case.
             Default is enabled.
-              </li></ul></div></div><div class="section " id="idm140309318451872"><div class="titlepage"><div><div><h3 class="title" id="idm140309318451872"><span class="number">3.1.2 </span><span class="name">Project build configuration.</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140309318451872">#</a></h3></div></div></div><p>
+              </li></ul></div></div><div class="sect2" id="idm140381851759744"><div class="titlepage"><div><div><h3 class="title" id="idm140381851759744"><span class="number">3.1.2 </span><span class="name">Project build configuration.</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140381851759744">#</a></h3></div></div></div><p>
     A project gets configured in the project
     <code class="command">/source/$PROJECT/_config</code> path. It can be edited in web
     interface in the <code class="command">Project Config</code> tab or via one of the
@@ -85,22 +93,22 @@ else {
 </p><div class="verbatim-wrap"><pre class="screen"><code class="command">osc meta prjconf -e $PROJECT</code>
 <code class="command">osc co $PROJECT _project</code></pre></div><p>
     This file contains information on how to setup a build environment.
-   </p></div><div class="section " id="idm140309318476448"><div class="titlepage"><div><div><h3 class="title" id="idm140309318476448"><span class="number">3.1.3 </span><span class="name">Project build macro configuration</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140309318476448">#</a></h3></div></div></div><p>
+   </p></div><div class="sect2" id="idm140381848367392"><div class="titlepage"><div><div><h3 class="title" id="idm140381848367392"><span class="number">3.1.3 </span><span class="name">Project build macro configuration</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140381848367392">#</a></h3></div></div></div><p>
     The macro configuration is part of the build configuration in
     <code class="command">/source/$PROJECT/_config</code>. It can be added at the end
     behind a <code class="command">Macro:</code>
-   </p></div><div class="section " id="idm140309319093648"><div class="titlepage"><div><div><h3 class="title" id="idm140309319093648"><span class="number">3.1.4 </span><span class="name">An OBS Package</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140309319093648">#</a></h3></div></div></div><p>
+   </p></div><div class="sect2" id="idm140381850651488"><div class="titlepage"><div><div><h3 class="title" id="idm140381850651488"><span class="number">3.1.4 </span><span class="name">An OBS Package</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140381850651488">#</a></h3></div></div></div><p>
     An OBS Package is a sub name space below a project. It contains the
     specification of a single package build for all specified repositories.
-   </p></div></div><div class="section " id="idm140309319608912"><div class="titlepage"><div><div><h2 class="title" id="idm140309319608912"><span class="number">3.2 </span><span class="name">The API</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140309319608912">#</a></h2></div></div></div><p>
+   </p></div></div><div class="sect1" id="idm140381853592768"><div class="titlepage"><div><div><h2 class="title" id="idm140381853592768"><span class="number">3.2 </span><span class="name">The API</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140381853592768">#</a></h2></div></div></div><p>
    ...
-  </p></div><div class="section " id="idm140309314746480"><div class="titlepage"><div><div><h2 class="title" id="idm140309314746480"><span class="number">3.3 </span><span class="name">The OBS Interconnect</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140309314746480">#</a></h2></div></div></div><p>
+  </p></div><div class="sect1" id="idm140381850762256"><div class="titlepage"><div><div><h2 class="title" id="idm140381850762256"><span class="number">3.3 </span><span class="name">The OBS Interconnect</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140381850762256">#</a></h2></div></div></div><p>
    The OBS interconnect is a mechanism to connect two OBS instances. All
    content, including sources and binary build results will be available in the
    connecting instance. Unlike other methods the instances will also notify
    each other about changes.
 
-  </p></div><div class="section " id="concept_dod"><div class="titlepage"><div><div><h2 class="title" id="concept_dod"><span class="number">3.4 </span><span class="name">Download on Demand Repositories (DoD)</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#concept_dod">#</a></h2></div></div></div><div class="section " id="idm140309316244032"><div class="titlepage"><div><div><h3 class="title" id="idm140309316244032"><span class="number">3.4.1 </span><span class="name">Motivation</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140309316244032">#</a></h3></div></div></div><p>
+  </p></div><div class="sect1" id="concept_dod"><div class="titlepage"><div><div><h2 class="title" id="concept_dod"><span class="number">3.4 </span><span class="name">Download on Demand Repositories (DoD)</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#concept_dod">#</a></h2></div></div></div><div class="sect2" id="idm140381851754752"><div class="titlepage"><div><div><h3 class="title" id="idm140381851754752"><span class="number">3.4.1 </span><span class="name">Motivation</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140381851754752">#</a></h3></div></div></div><p>
    In a DoD repository external software repositories can be configured which
    are used for dependency resolution and where packages will be downloaded at
    build time. A DoD repository has some main advantages in comparison to
@@ -118,23 +126,20 @@ else {
    configure a &lt;master&gt; with an <code class="command">https</code> url and a
    <code class="command">sslfinger</code> in order to avoid man in the middle attacks by
    peer verification.
-  </p></div><div class="section " id="idm140309318530160"><div class="titlepage"><div><div><h3 class="title" id="idm140309318530160"><span class="number">3.4.2 </span><span class="name">XML Document Hirarchy</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140309318530160">#</a></h3></div></div></div><div class="verbatim-wrap"><pre class="screen">&lt;project&gt;
+  </p></div><div class="sect2" id="idm140381849836016"><div class="titlepage"><div><div><h3 class="title" id="idm140381849836016"><span class="number">3.4.2 </span><span class="name">XML Document Hirarchy</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140381849836016">#</a></h3></div></div></div><div class="verbatim-wrap"><pre class="screen">&lt;project&gt;
   &lt;repository&gt;
     &lt;download&gt;
       &lt;master/&gt; (optional)
       &lt;pubkey/&gt; (optional)
     &lt;/download&gt;
   &lt;/repository&gt;
-&lt;/project&gt;
-      </pre></div></div><div class="section " id="idm140309321932752"><div class="titlepage"><div><div><h3 class="title" id="idm140309321932752"><span class="number">3.4.3 </span><span class="name">The Daemon</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140309321932752">#</a></h3></div></div></div><p>
+&lt;/project&gt;</pre></div></div><div class="sect2" id="idm140381850060624"><div class="titlepage"><div><div><h3 class="title" id="idm140381850060624"><span class="number">3.4.3 </span><span class="name">The Daemon</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140381850060624">#</a></h3></div></div></div><p>
    The bs_dodup daemon periodically checks for new meta data in remote
    repositories. This daemon can be enabled for startup with the command
-</p><div class="verbatim-wrap"><pre class="screen">            systemctl enable obsdodup.service
-          </pre></div><p>
+</p><div class="verbatim-wrap"><pre class="screen">            systemctl enable obsdodup.service</pre></div><p>
    and can be started with
-</p><div class="verbatim-wrap"><pre class="screen">            systemctl start obsdodup.service
-          </pre></div><p>
-  </p></div><div class="section " id="idm140309313008208"><div class="titlepage"><div><div><h3 class="title" id="idm140309313008208"><span class="number">3.4.4 </span><span class="name">The &lt;download&gt; element</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140309313008208">#</a></h3></div></div></div><p>
+</p><div class="verbatim-wrap"><pre class="screen">            systemctl start obsdodup.service</pre></div><p>
+  </p></div><div class="sect2" id="idm140381850057488"><div class="titlepage"><div><div><h3 class="title" id="idm140381850057488"><span class="number">3.4.4 </span><span class="name">The &lt;download&gt; element</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140381850057488">#</a></h3></div></div></div><p>
    mandatory attributes:
    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
               arch
@@ -143,7 +148,7 @@ else {
             </li><li class="listitem ">
               repotype
             </li></ul></div><p>
-  </p></div><div class="section " id="idm140309315591904"><div class="titlepage"><div><div><h3 class="title" id="idm140309315591904"><span class="number">3.4.5 </span><span class="name">The &lt;master&gt; subelement</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140309315591904">#</a></h3></div></div></div><p>
+  </p></div><div class="sect2" id="idm140381850545584"><div class="titlepage"><div><div><h3 class="title" id="idm140381850545584"><span class="number">3.4.5 </span><span class="name">The &lt;master&gt; subelement</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140381850545584">#</a></h3></div></div></div><p>
    The <code class="command">&lt;master&gt;</code> tag as shown in the rpmmd example
    below is optional but strongly recommended for security reasons.
   </p><p>
@@ -165,13 +170,12 @@ else {
   </p><p>
    You can easily query the ssl fingerprint of a remote server by calling the
    following command:
-</p><div class="verbatim-wrap"><pre class="screen">openssl s_client -connect &lt;host&gt;:&lt;port&gt; &lt; /dev/null 2&gt;/dev/null | openssl x509 -fingerprint -noout
-        </pre></div><p>
-  </p></div><div class="section " id="idm140309314250656"><div class="titlepage"><div><div><h3 class="title" id="idm140309314250656"><span class="number">3.4.6 </span><span class="name">The &lt;pubkey&gt; subelement</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140309314250656">#</a></h3></div></div></div><p>
+</p><div class="verbatim-wrap"><pre class="screen">openssl s_client -connect &lt;host&gt;:&lt;port&gt; &lt; /dev/null 2&gt;/dev/null | openssl x509 -fingerprint -noout</pre></div><p>
+  </p></div><div class="sect2" id="idm140381845914944"><div class="titlepage"><div><div><h3 class="title" id="idm140381845914944"><span class="number">3.4.6 </span><span class="name">The &lt;pubkey&gt; subelement</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140381845914944">#</a></h3></div></div></div><p>
    The pubkey element contains one or more gpg public keys in order to verify
    repository information but not packages. For an example have a look at the
    repotype "deb" documentation below.
-  </p></div><div class="section " id="idm140309321637392"><div class="titlepage"><div><div><h3 class="title" id="idm140309321637392"><span class="number">3.4.7 </span><span class="name">Repository Types</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140309321637392">#</a></h3></div></div></div><p></p><div class="section " id="idm140309321636368"><div class="titlepage"><div><div><h4 class="title" id="idm140309321636368"><span class="number">3.4.7.1 </span><span class="name">YAST sources (susetags)</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140309321636368">#</a></h4></div></div></div><p>
+  </p></div><div class="sect2" id="idm140381845913312"><div class="titlepage"><div><div><h3 class="title" id="idm140381845913312"><span class="number">3.4.7 </span><span class="name">Repository Types</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140381845913312">#</a></h3></div></div></div><p></p><div class="sect3" id="idm140381845912176"><div class="titlepage"><div><div><h4 class="title" id="idm140381845912176"><span class="number">3.4.7.1 </span><span class="name">YAST sources (susetags)</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140381845912176">#</a></h4></div></div></div><p>
     <code class="command">Example:</code>
    </p><div class="verbatim-wrap"><pre class="screen">&lt;project name="My::SuSE::CD"&gt;
 
@@ -183,8 +187,7 @@ else {
     &lt;arch&gt;x86_64&lt;/arch&gt;
     &lt;arch&gt;i586&lt;/arch&gt;
   &lt;/repository&gt;
-&lt;/project&gt;
-        </pre></div></div><div class="section " id="idm140309321358128"><div class="titlepage"><div><div><h4 class="title" id="idm140309321358128"><span class="number">3.4.7.2 </span><span class="name">RPM sources (rpmmd)</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140309321358128">#</a></h4></div></div></div><p>
+&lt;/project&gt;</pre></div></div><div class="sect3" id="idm140381850288768"><div class="titlepage"><div><div><h4 class="title" id="idm140381850288768"><span class="number">3.4.7.2 </span><span class="name">RPM sources (rpmmd)</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140381850288768">#</a></h4></div></div></div><p>
     <code class="command">Example:</code>
    </p><p>
 </p><div class="verbatim-wrap"><pre class="screen">&lt;project name="Fedora:Rawhide"&gt;
@@ -201,9 +204,8 @@ else {
     &lt;arch&gt;x86_64&lt;/arch&gt;
     &lt;arch&gt;i586&lt;/arch&gt;
   &lt;/repository&gt;
-&lt;/project&gt;
-          </pre></div><p>
-   </p></div><div class="section " id="idm140309314929776"><div class="titlepage"><div><div><h4 class="title" id="idm140309314929776"><span class="number">3.4.7.3 </span><span class="name">Apt Repository (deb)</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140309314929776">#</a></h4></div></div></div><p>
+&lt;/project&gt;</pre></div><p>
+   </p></div><div class="sect3" id="idm140381850284608"><div class="titlepage"><div><div><h4 class="title" id="idm140381850284608"><span class="number">3.4.7.3 </span><span class="name">Apt Repository (deb)</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140381850284608">#</a></h4></div></div></div><p>
     Apt supports two repository types, flat repositories and distribution
     repositories.
    </p><p>
@@ -244,8 +246,7 @@ Version: GnuPG v1.4.12 (GNU/Linux)
     &lt;arch&gt;x86_64&lt;/arch&gt;
     &lt;arch&gt;i586&lt;/arch&gt;
   &lt;/repository&gt;
-&lt;/project&gt;
-        </pre></div></div><div class="section " id="idm140309311188288"><div class="titlepage"><div><div><h4 class="title" id="idm140309311188288"><span class="number">3.4.7.4 </span><span class="name">Arch Repository (arch)</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140309311188288">#</a></h4></div></div></div><p>
+&lt;/project&gt;</pre></div></div><div class="sect3" id="idm140381849500560"><div class="titlepage"><div><div><h4 class="title" id="idm140381849500560"><span class="number">3.4.7.4 </span><span class="name">Arch Repository (arch)</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140381849500560">#</a></h4></div></div></div><p>
     Please be aware that there is no way atm to verify the origin of repository
     for Arch.
    </p><p>
@@ -260,8 +261,7 @@ Version: GnuPG v1.4.12 (GNU/Linux)
     &lt;arch&gt;x86_64&lt;/arch&gt;
     &lt;arch&gt;i586&lt;/arch&gt;
   &lt;/repository&gt;
-&lt;/project&gt;
-        </pre></div></div><div class="section " id="idm140309313161024"><div class="titlepage"><div><div><h4 class="title" id="idm140309313161024"><span class="number">3.4.7.5 </span><span class="name">Mandriva Repository (mdk)</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140309313161024">#</a></h4></div></div></div><p>
+&lt;/project&gt;</pre></div></div><div class="sect3" id="idm140381845920432"><div class="titlepage"><div><div><h4 class="title" id="idm140381845920432"><span class="number">3.4.7.5 </span><span class="name">Mandriva Repository (mdk)</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140381845920432">#</a></h4></div></div></div><p>
     <code class="command">Example:</code>
    </p><div class="verbatim-wrap"><pre class="screen">&lt;project name="Mageia:5"&gt;
 
@@ -273,8 +273,7 @@ Version: GnuPG v1.4.12 (GNU/Linux)
     &lt;arch&gt;x86_64&lt;/arch&gt;
     &lt;arch&gt;i586&lt;/arch&gt;
   &lt;/repository&gt;
-&lt;/project&gt;
-        </pre></div></div></div></div><div class="section " id="concept_scm_integration"><div class="titlepage"><div><div><h2 class="title" id="concept_scm_integration"><span class="number">3.5 </span><span class="name">Integrate External Source Repositories</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#concept_scm_integration">#</a></h2></div></div></div><div class="section " id="idm140309314369584"><div class="titlepage"><div><div><h3 class="title" id="idm140309314369584"><span class="number">3.5.1 </span><span class="name">Motivation</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140309314369584">#</a></h3></div></div></div><p>
+&lt;/project&gt;</pre></div></div></div></div><div class="sect1" id="concept_scm_integration"><div class="titlepage"><div><div><h2 class="title" id="concept_scm_integration"><span class="number">3.5 </span><span class="name">Integrate External Source Repositories</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#concept_scm_integration">#</a></h2></div></div></div><div class="sect2" id="idm140381849519744"><div class="titlepage"><div><div><h3 class="title" id="idm140381849519744"><span class="number">3.5.1 </span><span class="name">Motivation</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140381849519744">#</a></h3></div></div></div><p>
    This chapter makes some recommendations how upstream resources can be
    integrated into the build process. SCM stands for source control management.
    git, subversion or CVS are concrete implementations of a SCM. The OBS itself
@@ -292,7 +291,7 @@ Version: GnuPG v1.4.12 (GNU/Linux)
         tested via local builds before pushing to the SCM server.
       </li><li class="listitem ">
         The sources can be stored incremental and need less storage on the server.
-      </li></ul></div></div><div class="section " id="idm140309317229648"><div class="titlepage"><div><div><h3 class="title" id="idm140309317229648"><span class="number">3.5.2 </span><span class="name">Creating a external SCM reference</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140309317229648">#</a></h3></div></div></div><p>
+      </li></ul></div></div><div class="sect2" id="idm140381849513760"><div class="titlepage"><div><div><h3 class="title" id="idm140381849513760"><span class="number">3.5.2 </span><span class="name">Creating a external SCM reference</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140381849513760">#</a></h3></div></div></div><p>
    External refernces are defined in _service files. The file can look like
    this:
 </p><div class="verbatim-wrap"><pre class="screen">&lt;services&gt;
@@ -306,9 +305,7 @@ Version: GnuPG v1.4.12 (GNU/Linux)
     &lt;param name="compression"&gt;xz&lt;/param&gt;
   &lt;/service&gt;
   &lt;service name="set_version" mode="buildtime" /&gt;
-&lt;/services&gt;
-      
-</pre></div><p>
+&lt;/services&gt;</pre></div><p>
    The services are doing the following:
    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
       obs_scm: is mirroring the source. It is storing it as cpio archive, but for the build process this looks like a directory. It stores also additional information from the meta data to a file with obsinfo suffix.
@@ -323,10 +320,9 @@ Version: GnuPG v1.4.12 (GNU/Linux)
    server. The other services are running during the build process. They can
    also be replaced by any user by providing alternative implementations of
    them or writing their own service from scratch.
-  </p></div><div class="section " id="idm140309317639056"><div class="titlepage"><div><div><h3 class="title" id="idm140309317639056"><span class="number">3.5.3 </span><span class="name">Working with local checkouts</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140309317639056">#</a></h3></div></div></div><p>
+  </p></div><div class="sect2" id="idm140381850364976"><div class="titlepage"><div><div><h3 class="title" id="idm140381850364976"><span class="number">3.5.3 </span><span class="name">Working with local checkouts</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140381850364976">#</a></h3></div></div></div><p>
    Using
-</p><div class="verbatim-wrap"><pre class="screen">            osc build
-          </pre></div><p>
+</p><div class="verbatim-wrap"><pre class="screen">            osc build</pre></div><p>
    in any package with such a defintion will do the same process local. The
    only difference is that you get a local subdirectory with the SCM content.
    You can go inside and work as you are used to. Any changes inside will be
@@ -334,13 +330,13 @@ Version: GnuPG v1.4.12 (GNU/Linux)
    server or not. However, you need to push it to upstream when you let the OBS
    server re-fetch the changes from upstream. The only way out would be to set
    the "obs_scm" service to mode disabled and upload your local archive.
-  </p></div><div class="section " id="idm140309313717360"><div class="titlepage"><div><div><h3 class="title" id="idm140309313717360"><span class="number">3.5.4 </span><span class="name">Manage your build description in SCM</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140309313717360">#</a></h3></div></div></div><p>
+  </p></div><div class="sect2" id="idm140381848024000"><div class="titlepage"><div><div><h3 class="title" id="idm140381848024000"><span class="number">3.5.4 </span><span class="name">Manage your build description in SCM</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140381848024000">#</a></h3></div></div></div><p>
    The "obs_scm" service allows you to export files next to the archive. You
    can specify one or more files using the "extract" parameter. Use it for your
    build description files.
-  </p></div></div><div class="section " id="idm140309313715536"><div class="titlepage"><div><div><h2 class="title" id="idm140309313715536"><span class="number">3.6 </span><span class="name">Attribute System</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140309313715536">#</a></h2></div></div></div><p>
+  </p></div></div><div class="sect1" id="idm140381848022000"><div class="titlepage"><div><div><h2 class="title" id="idm140381848022000"><span class="number">3.6 </span><span class="name">Attribute System</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140381848022000">#</a></h2></div></div></div><p>
    ...
-  </p></div><div class="section " id="idm140309314399472"><div class="titlepage"><div><div><h2 class="title" id="idm140309314399472"><span class="number">3.7 </span><span class="name">Automatic source processing</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140309314399472">#</a></h2></div></div></div><p>
+  </p></div><div class="sect1" id="idm140381848020512"><div class="titlepage"><div><div><h2 class="title" id="idm140381848020512"><span class="number">3.7 </span><span class="name">Automatic source processing</span> <a title="Permalink" class="permalink" href="cha.obs.concepts.html#idm140381848020512">#</a></h2></div></div></div><p>
    ...
   </p></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="cha.obs.build_process.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 4 </span>Build Process</span></a><a class="nav-link" href="cha.obs.architecture.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 2 </span>OBS Architecture</span></a></div><div id="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span id="_share-fb" class="bottom-button">Facebook</span><span class="spacer"> • </span><span id="_share-gp" class="bottom-button">Google+</span><span class="spacer"> • </span><span id="_share-tw" class="bottom-button">Twitter</span><span class="spacer"> • </span><span id="_share-mail" class="bottom-button">E-Mail</span></span></div><div class="print"><span id="_print-button" class="bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
         2017 
