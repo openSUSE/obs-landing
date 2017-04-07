@@ -1686,6 +1686,10 @@ p, .simplelist td {
     text-decoration: none;
 }
 
+.remark .xref, .remark .ulink, .remark .link{
+    color: #FFFFFF;
+}
+
 .title .xref, .subtitle .xref, .table-title .xref, .example-title .xref,
 .figure-title .xref, .procedure-title .xref, .orderedlist-title .xref,
 .itemizedlist-title .xref, .variablelist-title .xref, .qandadiv-title .xref,
@@ -2306,6 +2310,15 @@ ul {
 
 li > p {
     font-weight: normal;
+}
+
+.step-optional {
+    color: #666;
+    font-style: italic;
+}
+
+.step-optional + p {
+    margin-top: 0;
 }
 
 .procedure > p {
