@@ -2,7 +2,7 @@
 layout: post
 title: Highlights of the OBS frontend development sprint
 category: development
-author: Henne Vogelsang
+author: Henne Vogelsang, Björn Geuken
 ---
 <p>
   This is the first in a series of posts in which the frontend hackers want
@@ -65,7 +65,7 @@ author: Henne Vogelsang
 
 <h3>Improving wiping binaries</h3>
 <p>
-  With <a href="https://github.com/openSUSE/open-build-service/pull/3030">pull-request #3030</a>
+  With <a href="https://github.com/openSUSE/open-build-service/pull/3030">pull request #3030</a>
   it's now possible to wipe all built binaries for the package and all built
   binaries per architecture. Thanks to <a href="https://github.com/openSUSE/open-build-service/issues/2951">
   Andreas Färber for reporting this!</a>
@@ -105,15 +105,61 @@ end
 
 <h3>Job History</h3>
 <p>
+  Whenever a new build starts, OBS is collecting some metadata and adds it to the so called
+  jobhistory of a package.
+  Data that goes into the jobhistory are the time when a build started, it's duration, build result,
+  reason why a build was started, the build revision and the worker instance where the build was
+  running.
 </p>
 
-* https://trello.com/c/R33enw1H/382-5-p9-show-job-history - David
-
-* https://trello.com/c/ABmVsXfI/377-5-p4-refactor-package-project-requests-page - Evan
-
-* https://trello.com/c/xzZYK5LL - Extend key handling in webui
+<p>
+  It was already possible to view these data via the API, or OSC, and with
+  <a href="https://github.com/openSUSE/open-build-service/pull/3059">pull request #3059</a> it's now nicely
+  integrated into the WebUI.
+</p>
 
 <p>
-* https://trello.com/c/0FhorkaO/379-8-p6-app-controllers-webui-package-controller-rb - Björn
-* https://trello.com/c/JKkREwnW - Henne
+  The job history is linked via the binary page of the package binaries. To reach that page, go to the
+  package view and click on the repository you want to inspect.
+  Each architecture has a separate job history. Click on 'Job history' link to open the job history page.
+</p>
+
+<p>And this is how it looks like.</p>
+
+<img src="/images/posts/jobhistory_webui.png" style="margin:20px;" title="Jobhistory of a Package Build">
+
+<h3>Refactor requests page for packages and projects</h3>
+<p>
+  We recently refactored the user request data tables to use a DataTable and DataTableRow model. The
+  new models take care of preparing all data needed for rendering them in a list of requests.
+  This <a href="https://trello.com/c/ABmVsXfI/377-5-p4-refactor-package-project-requests-page">card</a>
+  was about using these models also for the package and project request pages. 
+</p>
+
+<h3>GPG key handling</h3>
+<p>
+  OBS already allowed user to download a project's GPG key via the WebUI. With the recent changes, you can
+  get a full overview of relevant GPG key data.
+  That makes it much easier to verify rpms of a project.
+</p>
+
+<img src="/images/posts/gpg-key-dialog.png" style="margin:20px;" title="GPG dialog">
+
+<h3>Migrated package controller tests to RSpec</h3>
+<p>
+  Some month ago we created a new, shiny RSpec based test suite to OBS. Now we are in the process of
+  migrating existing tests to RSpec. Once this is done we can finally turn off the old test suite.
+  By moving the <a href="https://trello.com/c/0FhorkaO/379-8-p6-app-controllers-webui-package-controller-rb">package controller tests</a>
+  to the new test suite, we got one step further towards this goal.
+</p>
+
+<h3>Note down Hermes features we want to keep</h3>
+<p>
+  OBS is using <a href="https://github.com/openSUSE/hermes">Hermes</a> to send out notifications for
+  many years. Since the project is unmaintained by now it's time to revamp our notification system.
+  So in this sprint we sat together, wrote down Hermes functionality we want to keep using and created
+  a list covering these features.
+  The result can be found in our <a href="https://trello.com/b/kCXtUSYN/obs-frontend-backlog">Sprint backlog</a>
+  and are referenced from the
+  <a href="https://trello.com/c/JKkREwnW/160-2-p2-find-out-what-hermes-features-we-want-to-implement-in-obs-directly">card we have been working on</a>.
 </p>
