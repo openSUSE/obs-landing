@@ -1,0 +1,165 @@
+---
+layout: post
+title: Highlights of the OBS frontend development sprint
+category: development
+author: Henne Vogelsang, Björn Geuken
+---
+<p>
+  This is the first in a series of posts in which the frontend hackers want
+  to report to the OBS community about the progress they have made developing the
+  web user interface and the API of the OBS. You can expect these posts to come
+  in roughly every 2 weeks, and we very much hope you enjoy them!
+</p>
+
+<p>
+  But first things first, let us introduce how we are getting to these results.
+</p>
+
+<h2>Our process: SCRUM<h2>
+<p>
+  Since a couple of months, the OBS frontend developers that are employed
+  by <a href="https://www.suse.com">SUSE<a/> started to do
+  <a href="http://agilemanifesto.org/">agile software development</a>,
+  specifically <a href="http://www.scrumguides.org/">SCRUM</a>. <em>SCRUM</em> is a
+  process used to manage complex development with a team packing closely
+  together to achieve more (<em>SCRUM</em> is a rugby analogy).
+</p>
+
+<p>
+  <img src="/images/posts/scrum.jpg" style="margin: 30px 0 30px 0;">
+</p>
+
+<p>
+  You should read up on it, it's has been a very interesting ride for us so far.
+  In SCRUM there are some roles to fulfill. Adrian is our <strong>product owner</strong>
+  responsible for expressing the goals/requirements of all the OBS stakeholders
+  to the developers via our <a href="https://trello.com/b/kCXtUSYN">product
+  backlog</a>. The <strong>development team</strong> consists of every frontend hacker
+  available, doing the work which is organized in our
+  <a href="https://trello.com/b/Fs7boVwI">sprint backlog</a>. During a period of
+  2 weeks (called <strong>the sprint</strong>) the team is responsible for delivering
+  incremental changes to the the OBS. And to facilitate all of this there is our
+  <strong>scrum master</strong> Björn who is responsible for making sure everyone else
+  adheres to the <em>SCRUM</em> theory, practices, and rules.
+</p>
+
+<p>
+  This is our process we have been working with for the last couple
+  of months and from now on we want to report our sprint results to you in this
+  little series.
+</p>
+
+<h2>Results Sprint <span title="2017-04-24 to 2017-05-05">15</span></h2>
+<p>
+  So here are the results the OBS frontend team has achieved in the last 2 weeks.
+</p>
+
+<h3>Fix image branching from remote</h3>
+<p>
+  When you branch a package from a project on another OBS instance over
+  <a href="http://openbuildservice.org/help/manuals/obs-reference-guide/cha.obs.concepts.html#idm140659249453056">interconnect</a>
+  the OBS would not pick up the repositories from the project you branch from.
+  This only worked for branching from a local project. This was fixed in the
+  <a href="https://github.com/openSUSE/open-build-service/pull/3000">pull request #3000</a>.
+</p>
+
+<h3>Improving wiping binaries</h3>
+<p>
+  With <a href="https://github.com/openSUSE/open-build-service/pull/3030">pull request #3030</a>
+  it's now possible to wipe all built binaries for the package and all built
+  binaries per architecture. Thanks to <a href="https://github.com/openSUSE/open-build-service/issues/2951">
+  Andreas Färber for reporting this!</a>
+</p>
+
+<p>
+  <img src="/images/posts/sprint_15_wipe_binaries.jpg" style="margin: 10px 0 10px 0;">
+</p>
+
+<h3>Package with names that include a mime type suffix</h3>
+<p>
+  After we have updated the frontend to <a href="http://rubyonrails.org/">
+  Ruby on Rails version 5</a> packages with a name like <em>python-ruamel.yaml</em>
+  started to be rendered as YAML by rails. This change was part of a Ruby on Rails pull request
+  (<a href="https://github.com/rails/rails/pull/20831">#20831</a>) which was required
+  for the new API application feature in Rails 5.0. Previously to this the path
+  parameter <em>:format</em> was nil and it was falling through to the default
+  format of <em>text/html</em>. In this case it's better to be explicit, so turn
+  off the :format path parameter and provide an explicit default of html so that
+  it doesn't use the path, e.g:
+</p>
+<pre>
+  <code>
+scope format: false do
+  defaults format: 'html' do
+    constraints my_file: %r{[^\/]+} do
+      get 'my_files/:my_file', to: 'my_files#show', as: 'my_file'
+    end
+  end
+end
+</code>
+</pre>
+<p>
+  With <a href="https://github.com/openSUSE/open-build-service/pull/3061">pull-request #3061</a>
+  we have solved this.
+</p>
+
+<h3>Job History</h3>
+<p>
+  Whenever a new build starts, OBS is collecting some metadata and adds it to the so called
+  jobhistory of a package.
+  Data that goes into the jobhistory are the time when a build started, it's duration, build result,
+  reason why a build was started, the build revision and the worker instance where the build was
+  running.
+</p>
+
+<p>
+  It was already possible to view these data via the API, or OSC, and with
+  <a href="https://github.com/openSUSE/open-build-service/pull/3059">pull request #3059</a> it's now nicely
+  integrated into the WebUI.
+</p>
+
+<p>
+  The job history is linked via the binary page of the package binaries. To reach that page, go to the
+  package view and click on the repository you want to inspect.
+  Each architecture has a separate job history. Click on 'Job history' link to open the job history page.
+</p>
+
+<p>And this is how it looks like.</p>
+
+<img src="/images/posts/jobhistory_webui.png" style="margin:20px;" title="Jobhistory of a Package Build">
+
+<h3>Refactor requests page for packages and projects</h3>
+<p>
+  We recently refactored the user request data tables to use a DataTable and DataTableRow model. The
+  new models take care of preparing all data needed for rendering them in a list of requests.
+  This <a href="https://trello.com/c/ABmVsXfI/377-5-p4-refactor-package-project-requests-page">card</a>
+  was about using these models also for the package and project request pages. 
+</p>
+
+<h3>GPG key handling</h3>
+<p>
+  OBS already allowed user to download a project's GPG key via the WebUI. With the recent changes, you can
+  get a full overview of relevant GPG key data.
+  That makes it much easier to verify rpms of a project.
+</p>
+
+<img src="/images/posts/gpg-key-dialog.png" style="margin:20px;" title="GPG dialog">
+
+<h3>Migrated package controller tests to RSpec</h3>
+<p>
+  Some month ago we created a new, shiny RSpec based test suite to OBS. Now we are in the process of
+  migrating existing tests to RSpec. Once this is done we can finally turn off the old test suite.
+  By moving the <a href="https://trello.com/c/0FhorkaO/379-8-p6-app-controllers-webui-package-controller-rb">package controller tests</a>
+  to the new test suite, we got one step further towards this goal.
+</p>
+
+<h3>Note down Hermes features we want to keep</h3>
+<p>
+  OBS is using <a href="https://github.com/openSUSE/hermes">Hermes</a> to send out notifications for
+  many years. Since the project is unmaintained by now it's time to revamp our notification system.
+  So in this sprint we sat together, wrote down Hermes functionality we want to keep using and created
+  a list covering these features.
+  The result can be found in our <a href="https://trello.com/b/kCXtUSYN/obs-frontend-backlog">Sprint backlog</a>
+  and are referenced from the
+  <a href="https://trello.com/c/JKkREwnW/160-2-p2-find-out-what-hermes-features-we-want-to-implement-in-obs-directly">card we have been working on</a>.
+</p>
