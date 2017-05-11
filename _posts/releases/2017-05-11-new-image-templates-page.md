@@ -46,15 +46,12 @@ like you would for any other OBS project.
 
 You can also provide your own image templates to other users. There are two ways to do this.
 
-<li style="margin:20px;">
-  <p>Submit your image template to a project that is already registered on the template page.</p>
-  <p>For that you just have to create a Submit Request to that project.</p>
-</li>
 
-<li style="margin:20px;">
-  <p>Or register your templates project directly with us.</p>
-  <p>For that you just have to write an email to admin@opensuse.org.</p>
-</li>
+Submit your image template to a project that is already registered on the template page.  
+For that you just have to create a Submit Request to that project.  
+
+Or register your templates project directly with us.
+For that you just have to write an email to admin@opensuse.org.
 
 
 Enjoy checking out your first image template!
