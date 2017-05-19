@@ -19,7 +19,7 @@ category: development
 
 <h3>Maintenance</h3>
 <p>
-  This sprint we did some maintenance on our code base.
+  Let's start off with the maintenance tasks we did on our code base.
 </p>
 
 <h4>Migrating tests to RSpec</h4>
@@ -39,7 +39,8 @@ category: development
   </li>
   <li>
     package helper tests -
-    <a href="https://github.com/openSUSE/open-build-service/pull/3098">PR#3098</a>
+    <a href="https://github.com/openSUSE/open-build-service/pull/3098">PR#3098</a> and
+    <a href="https://github.com/openSUSE/open-build-service/pull/3115">PR#3115</a>
   </li>
 </ul>
 
@@ -51,6 +52,28 @@ category: development
   <a href="https://github.com/openSUSE/open-build-service/pull/3101">PR#3101</a>
   we also have done this for the build results of the projects. No more horrible
   code 💪
+</p>
+
+<h4>Refactoring Request Associations</h4>
+<p>
+  Our <em>*Request*</em> system is using associations based on strings. So for instance a <em>*Request Action*</em>
+  has an attribute <em>:target_package</em> that is a string for a package name (like "firefox")
+  and <em>*:target_project*</em> that is a project name (like "openSUSE:Factory"). And then we
+  have a 90 lines Class method (<em>*BsRequest.collection*</em>) for queries on those.
+</p>
+<p>
+  All of this feels very awkward to a rails developer, it makes the code kind of
+  complicated and has the result that some queries are very pretty slow. So we started
+  to look into refactoring this using activerecord associations and scopes.
+  First results trickle in via associations between BsRequestAction and packages/project
+  <a href="https://github.com/openSUSE/open-build-service/pull/3100">(PR#3100)</a>.
+  User.declined_requests
+  <a href="https://github.com/openSUSE/open-build-service/pull/3107">(PR#3107)</a>,
+  User.involved_packages and User.involved_reviews
+  <a href="https://github.com/openSUSE/open-build-service/pull/3105">(PR#3105)</a>. And by adding
+  a polymorphic association to reviews
+  <a href="https://github.com/openSUSE/open-build-service/pull/3070">(PR#3070)</a>.
+  Chris is going wild on those 🐅
 </p>
 
 <h4>RubyGem Package Cleanup</h4>
@@ -110,10 +133,15 @@ category: development
   Apparently we didn't integrate this into the build results API, which was reported by <a href="https://github.com/openSUSE/open-build-service/issues/3026">nilxam</a>.
   With <a href="https://github.com/openSUSE/open-build-service/pull/3106">pull request #3106</a> this has been fixed.
 </p>
+<h4>Fix request wiping</h4>
+<p>
+  <code>osc rq wipe *id*</code> crashed. This is fixed with
+  <a href="https://github.com/openSUSE/open-build-service/issues/3074">PR#3074</a>
+</p>
 
 <h2>Happy?</h2>
 <p>
-  What do you think? Let us know in the comments, on our
+  We for sure are! What do you think? Let us know in the comments, on our
   <a href="mailto:opensuse-buildservice@opensuse.org">mailing list</a> or on
   <a href="irc://irc.freenode.net/openSUSE-buildservice">IRC</a>!
 </p>
