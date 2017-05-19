@@ -1,0 +1,124 @@
+---
+layout: post
+title: Frontend dev-team sprint report
+category: development
+---
+<p>
+  Here are the results the OBS frontend developer team has achieved in the last
+  <strong>2 weeks</strong> (2017-05-08 to 2017-05-19).
+</p>
+
+<h3>OBS 2.8.1 Release</h3>
+<p>
+  We have pushed out version 2.8.1. You probably have already installed this new
+  release last week right? If not check out the
+  <a href="https://lists.opensuse.org/opensuse-buildservice/2017-05/msg00022.html">announcement</a>
+  about all the cool new things we rolled into our stable release and
+  <a href="/download">download</a> it.
+</p>
+
+<h3>Maintenance</h3>
+<p>
+  This sprint we did some maintenance on our code base.
+</p>
+
+<h4>Migrating tests to RSpec</h4>
+<p>
+  We continued moving tests to our new RSpec based test suite. This sprint we've
+  migrated:
+</p>
+<ul>
+  <li>
+    request controller tests -
+    <a href="https://github.com/openSUSE/open-build-service/pull/3052">PR#3052</a>
+  </li>
+  <li>
+    webui helper tests -
+    <a href="https://github.com/openSUSE/open-build-service/pull/3119">PR#3119</a> and
+    <a href="https://github.com/openSUSE/open-build-service/pull/3121">PR#3121</a>
+  </li>
+  <li>
+    package helper tests -
+    <a href="https://github.com/openSUSE/open-build-service/pull/3098">PR#3098</a>
+  </li>
+</ul>
+
+<h4>Refactoring Project Build Results</h4>
+<p>
+  Earlier this year, in January, we have refactored how the build results of
+  packages are gathered from the backend and displayed to you. This was necessary
+  because the code was really horrible and difficult to maintain for us. With
+  <a href="https://github.com/openSUSE/open-build-service/pull/3101">PR#3101</a>
+  we also have done this for the build results of the projects. No more horrible
+  code 💪
+</p>
+
+<h4>RubyGem Package Cleanup</h4>
+<p>
+  We have inspected the RubyGem packages of
+  <a href="https://build.opensuse.org/project/show/OBS:Server:Unstable">OBS:Server:Unstable</a>
+  for dangling dependencies and managed to remove 86 packages that we did not need anymore,
+  🎉 hooraayyyy 🎉
+</p>
+
+<h3>Features</h3>
+<p>
+  But of course we also introduced some new functionality for you 🎁!
+</p>
+
+<h4>Download GPG keys and SSL certificates</h4>
+<p>
+  You can find a download link for both GPG key and SSL certificates at the project page now.
+</p>
+
+<p>
+  <img src="/images/posts/sprint_16_key_dialog.jpg" alt="The OBS key dialog" style="margin: 30px 0 30px 0;">
+</p>
+
+<h4>Maintenance Page</h4>
+<p>
+  <img src="/images/posts/sprint_16_obs-down.png" alt="A man re-painting the OBS logo" style="margin: 0 0 0 10px; float: right;">
+  The OBS now has its own maintenance page (HTTP status code 503 - Service Unavailable) and a way to
+  enable "maintenance mode" it in the shipped Apache web server configuration. As soon as we
+  introduced it you were able to see it for a whole weekend because of the
+  <a href="https://status.opensuse.org/incidents/7">problems with the openSUSE Login System</a>.
+  Shite happens…
+</p>
+
+<h4>Researching Message Queues</h4>
+<p>
+  In <a href="https://github.com/openSUSE/open-build-service/pull/2592">PR#2592</a>
+  Stephan Kulow, ex OBS hacker, ex openSUSE release manager and currently one of
+  the developers of the awesome <a href="http://open.qa/">openQA</a>, requested
+  that we introduce a message queue for push notification to other tools. This
+  sprint we have spent some time researching the current status of message queues
+  with ruby integration. The results of this you can find in our
+  <a href="https://trello.com/c/4AnoRkV3">sprint board</a>. During this
+  research we have also documented our <em>Event</em> sub-system in our
+  <a href="https://github.com/openSUSE/open-build-service/wiki">developer wiki</a>.
+</p>
+
+<h3>Bugs</h3>
+<p>
+  And believe it or not the OBS isn't perfect yet (close, but no cigar) so we
+  had to fix some problems.
+</p>
+<h4>Last Success for Multibuilds</h4>
+<p>
+  Some month ago we introduced the <a href="http://openbuildservice.org/help/manuals/obs-reference-guide/cha.obs.multibuild.html">multibuild</a>
+  feature, which makes it possible to have multiple build descriptions in a package source and use so called flavors to filter them.
+  Apparently we didn't integrate this into the build results API, which was reported by <a href="https://github.com/openSUSE/open-build-service/issues/3026">nilxam</a>.
+  With <a href="https://github.com/openSUSE/open-build-service/pull/3106">pull request #3106</a> this has been fixed.
+</p>
+
+<h2>Happy?</h2>
+<p>
+  What do you think? Let us know in the comments, on our
+  <a href="mailto:opensuse-buildservice@opensuse.org">mailing list</a> or on
+  <a href="irc://irc.freenode.net/openSUSE-buildservice">IRC</a>!
+</p>
+
+<p>
+  And don't forget to check out our previous sprint reports!
+</p>
+{% include sprint_reports.inc %}
