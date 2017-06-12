@@ -24,7 +24,7 @@ category: development
 <h4>Blog about the STUDIO import/export feature</h4>
 <p>
   In case you have not heard about it. It's possible to import <a href="https://doc.opensuse.org/projects/kiwi/doc/">KIWI</a> configurations from <a href="https://susestudio.com/">SUSE Studio</a> to OBS. This sprint we
-<a href"http://openbuildservice.org/2017/05/31/studio-import/">released</a> a blog article that explains this feature in detail.
+<a href="http://openbuildservice.org/2017/05/31/studio-import/">released</a> a blog article that explains this feature in detail.
 </p>
 
 <h4>Build Schedule Reason on WebUI</h4>
