@@ -16,9 +16,7 @@ category: development
 <ul>
   <li>
     UpdateBackendInfos job spec
-    <a href="https://github.com/openSUSE/open-build-service/pull/3234">PR#3234</a>
-  </li>
-  <li>    
+    <a href="https://github.com/openSUSE/open-build-service/pull/3234">PR#3234</a> 
   </li>
 </ul>
 
@@ -53,4 +51,5 @@ PR: <a href="https://github.com/openSUSE/open-build-service/pull/3259">PR#3259</
 <p>We still removing BsRequest.collection from OBS, this time in User#requests, you can see it in the following PR <a href='https://github.com/openSUSE/open-build-service/pull/3265'>#3265</a>
 </p>
 
+<hr>
 <h5>And we were also working in some new features that will be soon finished!</h5>
