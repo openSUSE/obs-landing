@@ -1,0 +1,157 @@
+---
+layout: post
+title: "Post-mortem: Extended Deployment time on June 30, 2017"
+category: development
+---
+<p>
+  On June 30, 2017 we had an extended deployment time of roughly 45 minutes for our
+  <a href="https://build.opensuse.org/">reference server</a> because of a couple
+  of problems with one of the data migrations. We implemented a new feature,
+  user notifications via RSS, that included a migration of data in our database.
+  This migration was broken, causing this deployment to go terribly wrong.
+</p>
+<p>
+  The frontend team afterward met to do a post-mortem to identify the problems,
+  solutions and possible take aways for the future. This is the first post-mortem
+  meeting we held, hopefully but not likely the last. Here goes the report.
+</p>
+
+<h2>Problems/Timeline</h2>
+<h3>Wednesday 28-07-2017</h3>
+<p>
+  We deployed the first bits of the user-RSS feature, creating the <code>Notifications::RssFeedItem</code>
+  model in our database. A model that uses
+  <a href="http://api.rubyonrails.org/classes/ActiveRecord/Inheritance.html">single table inheritance</a>
+  which stores the model name in a type attribute in the database.
+</p>
+
+<h3>Wednesday to Friday</h3>
+<p>
+  A reoccurring job created a couple of hundred entries in the database for this model.
+</p>
+<h3>Friday 30-07-2017</h3>
+<p>
+  <strong>Problem 1:</strong>
+  On Friday we deployed another code change which among other things renamed the class to
+  <code>Notification::RssFeedItem</code> (from plural to singular). However,
+  the included migration did not update the type column to match the new class
+  name. Which made the migration fail during the deployment.
+  We investigated immediately the cause and:
+  <ul>
+    <li>
+      temporarily renamed the class again to `Notifications::RssFeedItem` to
+      be able to rename the `type` attribute in the rails console
+    </li>
+    <li>
+      after the rename succeeded we moved the class back to it's current name
+      and ran the migration again
+    </li>
+  </ul>
+</p>
+<p>
+  <strong>Problem 2:</strong>
+  The migration failed again because another change had happened to the
+  <code>Notifications::RssFeedItem</code> class. The class before had a direct
+  association to <code>User</code>/<code>Group</code> which was refactored to be
+  a <a href="http://guides.rubyonrails.org/association_basics.html#polymorphic-associations">polymorphic association</a>.
+  However the direct associations were still used in
+  the migration.
+  <ul>
+    <li>
+      we fixed the migration to use the new association type and then re-ran it.
+    </li>
+  </ul>
+</p>
+
+<p>
+  <strong>Problem 3:</strong>
+  The migration still failed. Because the code changed the attribute <em>event_payload</em>
+  to be a serialized <code>hash</code>, which caused the <code>Notifications::RssFeedItem</code>
+  save operation in the migration to fail, because we already had stored data as
+  a <code>string</code> type in the event_payload attribute which caused a type mismatch.
+  <ul>
+    <li>
+      we removed the <code>hash</code> type for the attribute and ran the migration
+      again.
+    </li>
+  </ul>
+</p>
+
+<p>
+  <strong>Problem 4:</strong>
+  The migration ran through successfully but after booting up the service we
+  noticed we had many SQL lock timeouts related to the <code>Events</code> table.
+  <ul>
+    <li>we restarted the obsapidelayed service, to no avail.</li>
+    <li>we disabled the generation of <code>Notifications::RssFeedItem</code> in
+      the reoccurring job responsible for that, to no avail.</li>
+    <li>we then noticed that reoccurring job was running that was previously
+      disabled by a monkey patch. This patch was overwritten by the deployment.
+      After applying the patch again and a restart of the reoccurring jobs, the
+      timeouts stopped.
+    </li>
+  </ul>
+</p>
+
+<p>
+  After those changes build.opensuse.org was back to be fully operational after
+  around 40 minutes.
+</p>
+
+<h2>Improvements</h2>
+<p>
+  Obviously we are in need of more automated testing of migrations with data.
+  A couple of things we are going to try are:
+  <ul>
+    <li>
+      if a deployment includes data migrations we run them on a production DB
+      clone. For making this easier we want to write a rake task to import data
+      from production into development.
+    </li>
+    <li>
+      add a [migration] label to pull requests that includes migrations. The
+      submitter has to OK that he tested the migration before merging the change.
+    </li>
+    <li>
+      research how we can write migration tests with RSpec. There is no clear
+      path how to do this for Ruby On Rails but there are many ideas floating around (
+      <a href="http://blog.carbonfive.com/2011/01/27/start-testing-your-migrations-right-now/">migration tests</a>,
+      <a href="https://robots.thoughtbot.com/data-migrations-in-rails">separating data migration from database changes</a>
+      etc.)
+    </li>
+  </ul>
+</p>
+<p>
+  Another area we have to get better in is tracking of monkey patches that are
+  applied to production. To make sure they are included in the deployment or are
+  re-applied afterwards. Here are some ideas how to do that:
+  <ul>
+    <li>
+      always apply the [Monkey Patched] label to the pull request if you have
+      applied it in some way to production
+    </li>
+    <li>
+      track monkey patches in /etc/motd of the server
+    </li>
+  </ul>
+</p>
+<p>
+  We also had a couple of general ideas.
+  <ul>
+    <li>
+      all people having developed a migration in the deployment have to be
+      present during it
+    </li>
+    <li>
+      only submit the minimum of code-changes needed for a migration in a pull
+      request so its easier reviewable
+    </li>
+  </ul>
+</p>
+
+<h2>Resolution</h2>
+<p>
+  We are sorry for the downtime we have caused with this for our users but
+  we hope you trust us to do better in the future. We already have implemented
+  a couple of the proposed improvements and we are working on more to come!
+</p>
