@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Highlights of the OBS frontend development sprint 17
+title: Highlights of the OBS frontend development – Sprint 17
 category: development
 ---
 
