@@ -63,6 +63,9 @@ on the refference server and generate your RSS feed.
   When saving a meta with a repository with an illegal name, no error was shown although
   nothing was saved as it was invalid information. That was quite confusing for users as it 
   was not clear why it was not saved. Now a detailed error message appears.
+</p>
+
+<p>
   See <a href="https://github.com/openSUSE/open-build-service/issues/3140">issue #3140</a> and
   <a href="https://github.com/openSUSE/open-build-service/pull/3259">pull request #3259</a> for
   details.
@@ -72,9 +75,16 @@ on the refference server and generate your RSS feed.
 <p>
   Some unexpected downtime of our reference server in the first week of the sprint, lead to around 2 million
   notifications that were not processed by our reoccuring jobs. When our delayed job system tried to process them 
-  it exposed several problems in how the jobs are implemented. Basically it was one big
+  it exposed several problems in how the jobs are implemented.
+</p>
+
+<p>
+  Basically it was one big
   <a href="http://api.rubyonrails.org/classes/ActiveRecord/Locking/Pessimistic.html">pessimistic locking</a>
   mud fight. Several jobs, that ran in several queues, fought to lock thousands of records for updating in our database.
+</p>
+
+<p>
   Some of us took the rest of the sprint to analyze why this has happened, why the locking was implemented this way and
   what we could do about this. In the end we fixed it by a combination of more determistic queing of jobs and less locking.
   See all the gory details in pull request <a href="https://github.com/openSUSE/open-build-service/pull/3350">#3350</a>.
