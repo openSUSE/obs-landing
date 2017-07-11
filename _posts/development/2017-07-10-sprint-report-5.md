@@ -94,11 +94,18 @@ of Project#open_requests and User#nr_of_requests_that_need_work, take a look at 
 
 <p>
   The User#nr_of_requests_that_need_work function, as the name already implies, calculates the number of requests which need some input from you 
-  e.g. requests for projects you're the maintainer or requests which you need to review. The result gets displayed in the top right corner next to your username when you're logged in, 
-  which means the function gets called on every page load! To improve the performance we cached it so far for two minutes and recalculated it, however, this caused for instance
-  not necessary recalculations or that the number "jumps" unexpectetly (e.g. you close a request and the number stays the same for the next two minutes). 
+  e.g. requests for projects you're the maintainer for or requests which you need to review. The result gets displayed in the top right corner next to your username when you're logged in,
+  which means the function gets called on every page load!
+</p>
+
+<p>
+  To improve the performance we cached it for two minutes and recalculated it, however, this caused for instance
+  unnecessary recalculations or that the number "jumps" unexpectetly (e.g. you close a request and the number stays the same for the next two minutes until the cache expires).
+</p>
+
+<p>
   With the latest refactorings, it was now possible to calculate proper cache keys and improve the performance tremendously (for some users it is now 80 times faster).
-  Positive sideeffects are also that the code now reuses already existing functions and is more readable. 
+  Positive side effects are also that the code now reuses already existing functions and is more readable.
 </p>
 
 <h4>Migrating tests to RSpec</h4>
