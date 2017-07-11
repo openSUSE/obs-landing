@@ -20,11 +20,24 @@ category: development
 
 <h4>KIWI repositories editor</h4>
   <p>
-    Now it is possible to edit the repositories of a kiwi file of a package. OBS provides you a form to edit them,
+    We have been working on this feature for a while and now finished the first step. The KIWI repository
+    editor provides an easy way to edit repositories of a KIWI file. It provides you a form to edit them,
     taking care of the validations that must be followed (mandatory fields, possible values of a field, syntax 
-    checking, ...)
+    checking, etc.).
+  </p>
 
-    You can find more information in the Best Practice Guide, 
+  <p>
+    This features is not released yet and will also continue to extend it over time, allowing you to configure
+    most of KIWIs configuration options.
+  </p>
+
+  <p>
+    Here is how it current looks like:
+    <img src="/images/posts/sprint_19_edit_kiwi_show.png" style="margin: 30px 0 30px 0;" title='Kiwi editor – show page' >
+
+    <img src="/images/posts/sprint_19_edit_kiwi_edit.png" style="margin: 30px 0 30px 0;" title='Kiwi editor – edit page' >
+
+    And we also started to provide documentation for this feature in our Best Practice Guide, 
     <a href="http://openbuildservice.org/help/manuals/obs-best-practices/cha.obs.best-practices.webuiusage.html#kiwi_editor_how_to">here</a>.
 </p>
 
