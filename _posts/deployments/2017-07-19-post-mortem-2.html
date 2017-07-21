@@ -1,0 +1,85 @@
+---
+layout: post
+title: "Post-mortem: Extended Deployment time on July 19, 2017"
+category: development
+author: Björn Geuken
+
+---
+<p>
+  We did it again!
+  Yesterday, on 19th of July 2017, we had an extended deployment time because of an issue
+  during the deployment. Though this time it "only" took 15 minutes;-)
+</p>
+<p>
+  This sucks and that's why we want to give you some insight in what happened.
+</p>
+
+<h2>Problems/Timeline</h2>
+<h3>19-07-2017</h3>
+<p>
+  <b>12:37 UTC</b> – We installed the newest OBS packages from our
+  <a href='https://build.opensuse.org/package/show/OBS:Server:Unstable/obs-server'>Unstable project</a>
+  and ran the migrations.
+</p>
+<p>
+  <b>12:40 UTC</b> – Installation and migration finished. We checked the ui and everything looked normal.
+</p>
+<p>
+  <b>12:41 UTC</b> – A user reported that the stylesheets for his request page looked broken.
+</p>
+<p>
+  <b>12:50 UTC</b> – We inspected the assets stored in public/assets and noticed that there was an additional
+  <a href='http://guides.rubyonrails.org/asset_pipeline.html#manifest-files-and-directives'>manifest</a>
+  file from 2015. Sprocket is using these files to know what assets (CSS, javascript, images) it should
+  serve.
+</p>
+<p>
+  Knowing that having multiple manifests can cause issues with sprocket, we moved the additional file to
+  a temporary directory and tried to precompile the assets again.
+</p>
+<p>
+  But precompiling the assets caused unexpected trouble due to permissions errors and were not sure either,
+  if that really was causing the trouble.
+</p>
+<p>
+  One of the other theories we had were that a recent <a href=''>change</a> in the 
+</p>
+<p>
+  <b>12:55 UTC</b> – Since we were not able to pinpoint the problem and didn't want to delay the deployment
+  any longer, we decided to downgrade the packages.
+</p>
+<p>
+  <b>12:57 UTC</b> – The package downgrade finished and everything was back to normal and OBS was running.
+</p>
+
+<h2>Analyzing what went wrong</h2>
+<p>
+  We used our test instance to verify our theory that the additional asset files were causing the breakage. It
+  turned out that it did. And apparently we would just have to restart the server to allow Rails
+  to pick up the right manifest file.
+</p>
+
+<p>
+  This morning we upgraded the packages again. The broken CSS appeared again, but this time we knew that
+  restarting the server solves the faulty state.
+</p>
+
+
+<h2>Improvements</h2>
+<p>
+  We need to find a way to prevent having additional asset manifests in our app. Since our deployments
+  are packages based, we might have to improve our package spec.
+  To find a good solution for that, we've created
+  <a href='https://trello.com/c/2HRVCSTJ/466-ensure-public-assets-dir-of-our-packages-is-in-clean-state'>a card</a>
+  in our product backlog. 
+</p>
+
+<h2>Resolution</h2>
+<p>
+  We apologize for the downtime we have caused. The faulty manifest has been deleted and we look
+  forward to find a way to prevent this from happening again.
+  And of course we aim for improving our deployments over time.
+</p>
+<p>
+  Please bear with us!
+</p>
