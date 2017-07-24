@@ -39,7 +39,7 @@ If you're interested in our openQA tests, have a look at the <a href="https://op
 
 <p>
 <a href="https://twitter.com/nateberkopec">Nate Berkopec</a>, a famous Ruby on Rails performance consultant, just recently tweeted:
-<img src="https://paste.opensuse.org/63753309" alt="Nate Berkopec tweet">
+<img src="/images/posts/sprint_20_quotation.png" alt="Nate Berkopec tweet">
 </p>
 
 <p>
@@ -47,6 +47,8 @@ Why is that so important?
  Imagine that a database query works perfectly fine when your database is small in development.
  However, in production when your database is usually several gigabytes, this query can take several seconds and slow down your whole application.
  Not a very nice user experience.
+</p>
+<p>
  A few weeks ago we also released a <a href="http://openbuildservice.org/2017/07/04/post-mortem-1/">post mortem report</a> about a downtime caused by a wrong data migration.
  As we stated out in the post mortem, one reason this happened was that we didn't test this migration with production like data before.
  Therefore we invested some time in this sprint to <a href="https://github.com/openSUSE/open-build-service/pull/3401">develop a script</a> to import database dumps as easy as possible in development environment.
@@ -57,6 +59,18 @@ Why is that so important?
 <p>
  If you're hosting your own Open Build Service instance there are several methods to setup authentication like a local user database or a LDAP server.
  However, using LDAP as authentication method is currently not official supported.
- As more and more of people start now to use LDAP as authentication method of choice, we decided to investigate about the current state in OBS and the quality of the tests to officially support LDAP in the near future.
- You can read about the result in <a href"https://trello.com/c/63kHnPkW/436-5-p5-analyze-test-cases-for-ldap-support">this trell card</a>.
 </p>
+<p>
+ As more and more of people start now to use LDAP as authentication method of choice, we decided to investigate about the current state in OBS and the quality of the tests to officially support LDAP in the near future.
+ You can read about the result in <a href="https://trello.com/c/63kHnPkW/436-5-p5-analyze-test-cases-for-ldap-support">this trello card</a>.
+</p>
+
+<h3>Event/Notification Architecture Review</h3>
+
+<p>
+  Working on the notification features in the previous sprints has turned out to be difficult with the current event and notification
+  architecture. This sprint we've inspected our current event & notification system and researched how to improve it. As a result we
+  wrote down 3 alternatives how we could do so in our
+  <a href="https://github.com/openSUSE/open-build-service/wiki/Event-Subsystem-Architecture-Review">developer wiki</a>.
+</p>
+
