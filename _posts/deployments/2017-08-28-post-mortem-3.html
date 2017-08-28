@@ -1,0 +1,54 @@
+---
+layout: post
+title: "Post-mortem: Extended Deployment time on August 28, 2017"
+category: development
+author: Manuel Schnitzer
+
+---
+<p>
+  During deployment, we were facing some issues and build.opensuse.org was not accessible for a couple
+  of minutes.
+</p>
+<p>
+  This sucks and that's why we want to give you some insight in what happened.
+</p>
+
+<h2>Problems/Timeline</h2>
+<h3>2017-08-23</h3>
+<p>
+  We updated Rails to 5.1.3 and dropped one of our initializers which is no longer needed.
+  (See <a href='https://github.com/openSUSE/open-build-service/pull/3659'>#3659</a>)
+</p>
+<h3>2017-08-28</h3>
+<p>
+  <b>09:21 UTC</b> – We installed the newest OBS packages from our
+  <a href='https://build.opensuse.org/package/show/OBS:Server:Unstable/obs-server'>Unstable project</a>. During
+  the installation process, our Apache server gets restarted. After restarting, the Rails application crashed
+  in the initializer we dropped as described above.
+</p>
+<p>
+  <b>09:22 UTC</b> – We were waiting for the packages to be completely installed. Including all service restarts,
+  but this didn't fix the problem.
+</p>
+<p>
+  <b>09:24 UTC</b> – We manually restarted our Apache server. The problem was gone afterward.
+</p>
+
+<h2>Analyzing what went wrong</h2>
+<p>
+  The package installation triggered a restart of the Apache server when old source code files are still present
+  in the file system, thus the Rails initialization still loaded the dropped initializer, which went horribly wrong.
+</p>
+
+
+<h2>Improvements</h2>
+<p>
+  We're considering to restart the Apache server during package installation at a later point (%posttrans) and
+  documenting this effect in our deployment guide.
+</p>
+
+<h2>Resolution</h2>
+<p>
+  We apologize for the downtime we have caused. The server is back again. We've recorded what went wrong and we make
+  it better next time.
+</p>
