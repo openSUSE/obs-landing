@@ -12,7 +12,7 @@ layout: null
     <author><name>OBS Team</name></author>
     <rights>Copyright (c) 2012 OBS Team</rights>
 
-    {% for post in site.posts limit:10 }
+    {% for post in site.posts limit:10 %}
       <entry>
           <title>{{ post.title }}</title>
           <link href="{{ site.url }}{{ post.url }}/"/>
