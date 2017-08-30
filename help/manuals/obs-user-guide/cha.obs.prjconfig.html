@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Project Configuration | User Guide</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DocBook XSL Stylesheets V1.79.0" /><meta name="book-title" content="User Guide" /><meta name="chapter-title" content="Chapter 4. Project Configuration" /><link rel="home" href="index.html" title="OBS Documentation" /><link rel="up" href="bk02pt02.html" title="Part II. Setup" /><link rel="prev" href="cha.obs.osc.html" title="Chapter 3. osc, the Command Line Tool" /><link rel="next" href="par.working.html" title="Part III. Usage" /><script type="text/javascript">
+
+var protocol = window.location.protocol.toLowerCase();
+if ( protocol != 'file:' ) {
+  var agent = navigator.userAgent.toLowerCase();
+  var wanted = ( protocol == 'https:') ? 'https' : 'http';
+  var file = 'fonts.css';
+  document.write('<link rel="stylesheet" type="text/css" href="' + wanted + '://static.opensuse.org/fonts/'+ file +'"></link>');
+}
+else {
+   document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+}
+
+</script><noscript><link rel="stylesheet" type="text/css" href="http://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="offline js-off"><div id="_outer-wrap"><div id="_white-bg"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="User Guide"><span class="book-icon">User Guide</span></a><span> › </span><a class="crumb" href="bk02pt02.html">Setup</a><span> › </span><a class="crumb" href="cha.obs.prjconfig.html">Project Configuration</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.htmlindex.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>User Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="bk02pr01.html"><span class="number"> </span><span class="name">About this Guide</span></a></li><li class="inactive"><a href="par.concepts.html"><span class="number">I </span><span class="name">Concepts</span></a><ol><li class="inactive"><a href="cha.obs.usrconcept.html"><span class="number">1 </span><span class="name">Open Build Service</span></a></li><li class="inactive"><a href="cha.obs.package_formats.html"><span class="number">2 </span><span class="name">Supported Build Recipes and Package Formats</span></a></li></ol></li><li class="inactive"><a href="bk02pt02.html"><span class="number">II </span><span class="name">Setup</span></a><ol><li class="inactive"><a href="cha.obs.osc.html"><span class="number">3 </span><span class="name">osc, the Command Line Tool</span></a></li><li class="inactive"><a href="cha.obs.prjconfig.html"><span class="number">4 </span><span class="name">Project Configuration</span></a></li></ol></li><li class="inactive"><a href="par.working.html"><span class="number">III </span><span class="name">Usage</span></a><ol><li class="inactive"><a href="cha.obs.basicworkflow.html"><span class="number">5 </span><span class="name">Basic OBS Workflow</span></a></li><li class="inactive"><a href="bk02pt03ch06.html"><span class="number">6 </span><span class="name">Building Package Formats</span></a></li><li class="inactive"><a href="bk02pt03ch07.html"><span class="number">7 </span><span class="name">Using Source Services</span></a></li><li class="inactive"><a href="cha.obs.signing.html"><span class="number">8 </span><span class="name">Signing</span></a></li></ol></li><li class="inactive"><a href="bk02pt04.html"><span class="number">IV </span><span class="name">Advanced Usage</span></a><ol><li class="inactive"><a href="cha.obs.product_building.html"><span class="number">9 </span><span class="name">Building Products</span></a></li></ol></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 3. osc, the Command Line Tool" href="cha.obs.osc.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Part III. Usage" href="par.working.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="User Guide"><span class="book-icon">User Guide</span></a><span> › </span><a class="crumb" href="bk02pt02.html">Setup</a><span> › </span><a class="crumb" href="cha.obs.prjconfig.html">Project Configuration</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 3. osc, the Command Line Tool" href="cha.obs.osc.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Part III. Usage" href="par.working.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class=""><div class="documentation"><div class="chapter " id="cha.obs.prjconfig"><div class="titlepage"><div><div><h2 class="title"><span class="number">4 </span><span class="name">Project Configuration</span> </h2></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="cha.obs.prjconfig.html#sec.prjconfig.about"><span class="number">4.1 </span><span class="name">About the Project Configuration</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.prjconfig.html#sec.prjconfig.syntax"><span class="number">4.2 </span><span class="name">Configuration File Syntax</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.prjconfig.html#sec.prjconfig.macros"><span class="number">4.3 </span><span class="name">Macro Section</span></a></span></dt></dl></div></div>
+ 
+ 
+
+ <div class="sect1 " id="sec.prjconfig.about"><div class="titlepage"><div><div><h2 class="title" id="sec.prjconfig.about"><span class="number">4.1 </span><span class="name">About the Project Configuration</span> <a title="Permalink" class="permalink" href="cha.obs.prjconfig.html#sec.prjconfig.about">#</a></h2></div></div></div>
+  
+  <p>
+   Each project has a <em class="firstterm ">project configuration</em> which
+   defines the setup of the build system. Usually it is empty and you do
+   not need to change anything. However, when you change it, it can be
+   used for the following reasons:
+  </p>
+  
+  <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
+    <p>
+     Handle compatibility layers. 
+    </p>
+   </li><li class="listitem ">
+    <p>
+     Switch on or off certain features during the build.
+    </p>
+   </li><li class="listitem ">
+    <p>
+     Decide which package is installed during build if there are circular
+     dependencies.
+    </p>
+   </li><li class="listitem ">
+    <p>
+     Handle user decisions like package providing the same or special
+     macros, packages, or flags in the build environment.
+    </p>
+   </li></ul></div>
+  <p>
+   To view the project configuration, use one of the following methods
+  </p>
+  <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
+    <p>
+     <span class="formalpara-title">With <code class="command">osc</code>. </span>
+     Use <code class="command">osc meta prjconf</code> in your working directory
+     of your project.
+    </p>
+    
+   </li><li class="listitem ">
+    <p>
+     <span class="formalpara-title">In the OBS Web UI. </span>
+     Via the <span class="guimenu ">Project Config</span> tab.
+    </p>
+   </li><li class="listitem ">
+    <p>
+     <span class="formalpara-title">From the Local Build System. </span>
+     Open one of the files in <code class="filename">/usr/lib/build/configs/*.conf</code>
+     to see one of the default configurations that is being used.
+    </p>
+    
+   </li><li class="listitem ">
+    <p>
+     <span class="formalpara-title">With the OBS API. </span>
+     Reachable via the <code class="uri">/source/<em class="replaceable ">PROJECT</em>/_config</code> path.
+    </p>
+   </li></ul></div>
+ </div>
+
+ <div class="sect1 " id="sec.prjconfig.syntax"><div class="titlepage"><div><div><h2 class="title" id="sec.prjconfig.syntax"><span class="number">4.2 </span><span class="name">Configuration File Syntax</span> <a title="Permalink" class="permalink" href="cha.obs.prjconfig.html#sec.prjconfig.syntax">#</a></h2></div></div></div>
+  
+  <p>
+   The syntax is basically the same than in RPM spec files.
+   However, it is independent of the used packaging format.
+   The project configuration is parsed by OBS.
+   This means, you can use RPM features like macros or conditions in the
+   configuration. All lines have the form:</p>
+  <div class="verbatim-wrap"><pre class="screen">keyword: arguments</pre></div>
+  <p>
+   In the following list, the placeholder <em class="replaceable ">PACKAGES</em>
+   indicates  a package base name.
+   For example, as a package name you need the base name like
+   <span class="package ">gcc</span> but not the full name as in
+   <span class="package ">gcc-1.2.3.i386.rpm</span>.
+   
+  </p>
+
+  <p>
+   The following list contains a list of allowed keywords in the project
+   configuration:
+  </p>
+  <div class="variablelist " id="vl.prjconfig.keywords"><div class="variablelist-title-wrap"><h6 class="variablelist-title"><span class="name">Available Keywords in Project Configuration </span><a title="Permalink" class="permalink" href="cha.obs.prjconfig.html#vl.prjconfig.keywords">#</a></h6></div><dl class="variablelist"><dt id="id11882"><span class="term "><em class="parameter ">BinaryType: <em class="replaceable ">TYPE</em></em> (OBS 2.4 or later)</span></dt><dd>
+     <p>
+      Binary type. This is the format of the files which will be the
+      result of the build jobs. This gets usually set depending on the build
+      recipe type. In some situations, for example a KIWI build job result
+      gets converted into an rpm, it can be used to overwrite it. Possible
+      values are: rpm, deb or none.
+     </p>
+     <p>Sets the binary format used to setup the build
+      environment. For example a package with spec build description may use
+      and generate deb packages instead of rpms. If no binary type is
+      specified, OBS deduces it from the build recipe type. If the recipe type is
+      also not set, OBS looks at the Preinstall package list for a hint.
+     </p>
+    </dd><dt id="id11889"><span class="term "><em class="parameter ">BuildEngine: <em class="replaceable ">ENGINE</em></em></span></dt><dd>
+     <p> Use an alternative build engine. This is still chained inside of
+      the build script for security reasons. Alternatives are mock (for Fedora
+      and Red Hat) and debootstrap (for Debian). This will avoid differences in
+      the build environment setup, but it will also have an effect on speed and
+      reduced features. It should only be used when you want to emulate the
+      distribution build. debbuild engine will build deb files out of a spec
+      file description. It can be used by the following definition inside of
+      the project build config:</p>
+     <div class="verbatim-wrap"><pre class="screen">Repotype: debian
+Type: spec
+Binarytype: deb
+BuildEngine: debbuild
+Support: pax
+Support: debbuild
+Keep: debbuild</pre></div>
+    </dd><dt id="id11896"><span class="term "><em class="parameter ">BuildFlags: <em class="replaceable ">FLAG</em>:<em class="replaceable ">VALUE</em></em></span></dt><dd>
+     <p>
+      The <em class="parameter ">BuildFlags</em> keyword defines flags for the
+      build process. The following values for  FLAG are usable.</p>
+     <div class="variablelist "><dl class="variablelist"><dt id="id11905"><span class="term "><em class="parameter ">vmfstype:</em></span></dt><dd>
+        <p>Defines a specific file system when building inside of a VM. </p>
+       </dd><dt id="id11910"><span class="term "><em class="parameter ">kiwiprofile:</em></span></dt><dd>
+        <p>builds the selected profile in KIWI appliance builds. </p>
+       </dd></dl></div>
+    </dd><dt id="id11915"><span class="term "><em class="parameter ">Constraint: <em class="replaceable ">SELECTOR</em> <em class="replaceable ">STRING</em></em> (OBS 2.4 or later)</span></dt><dd>
+     <p>
+      Define build constraints for build jobs. The selector is a
+      colon-separated list which gets a string assigned. See the build job
+      constraints page for details.
+     </p>
+    </dd><dt id="id11922"><span class="term "><em class="parameter ">ExportFilter: <em class="replaceable ">REGEX</em> <em class="replaceable ">ARCH</em></em></span></dt><dd>
+     <p>
+      The export filter can be used to export build results from one
+      architecture to others. This is required when one architecture needs
+      packages from another architecture for building.
+      The <em class="replaceable ">REGEX</em> placeholder must match
+      the resulting binary name of the package. It will export it to all listed
+      scheduler architectures. Using a single dot will export it to the
+      architecture which was used to build it. So not using a dot there will
+      filter the package.
+     </p>
+    </dd><dt id="id11930"><span class="term "><em class="parameter ">FileProvides: <em class="replaceable ">FILE</em> <em class="replaceable ">PACKAGES</em></em></span></dt><dd>
+     <p> OBS ignores dependencies to files (instead of package names) by
+      default. This is mostly done to reduce the amount of memory needed, as
+      the package file lists take up a considerable amount of repository meta
+      data. As a workaround, FileProvides can be used to tell the systems which
+      packages contain a file. The File needs to have the full path.</p>
+    </dd><dt id="id11937"><span class="term "><em class="parameter ">HostArch: <em class="replaceable ">HOST_ARCH</em></em></span></dt><dd>
+     <p>
+      This is used for cross builds. It defines the host architecture used
+      for building, while the scheduler architecture remains the target
+      architecture.
+     </p>
+    </dd><dt id="id11943"><span class="term "><em class="parameter ">Ignore: <em class="replaceable ">PACKAGES</em></em></span></dt><dd>
+     <p>
+      Ignore can be used to break dependencies. This can be useful to
+      reduce the number of needed packages or to break cyclic dependencies. Be
+      careful with this feature, as breaking dependencies can have surprising
+      results.
+     </p>
+    </dd><dt id="id11949"><span class="term "><em class="parameter ">Ignore: <em class="replaceable ">PACKAGE_A</em>:<em class="replaceable ">PACKAGES</em></em></span></dt><dd>
+     <p>
+      It is possible to define the ignore only for one package. This
+      package must be listed first with a colon.
+     </p>
+    </dd><dt id="id11956"><span class="term "><em class="parameter ">Keep: <em class="replaceable ">PACKAGES</em></em></span></dt><dd>
+     <p>
+      To eliminate build cycles the to-be-built package is not installed
+      by default, even when it is required. Keep can be used to overwrite this
+      behavior. It is usually needed for packages like <code class="systemitem">make</code> that are used to
+      build itself. Preinstalled packages are automatically kept, as the
+      package installation program needs to work all the time.
+     </p>
+    </dd><dt id="id11963"><span class="term "><em class="parameter ">OptFlags: <em class="replaceable ">TARGET_ARCH</em> <em class="replaceable ">FLAGS</em></em> (RPM only)</span></dt><dd>
+     <p>
+      Optflags exports compiler flags to the build. They will only have an
+      effect when the spec file is using $RPM_OPT_FLAGS. The target
+      architecture may be * to affect all architectures.
+     </p>
+    </dd><dt id="id11970"><span class="term "><em class="parameter ">Order: <em class="replaceable ">PACKAG_A</em>:<em class="replaceable ">PACKAGE_B</em></em></span></dt><dd>
+     <p>
+      The build script takes care about the installation order if they
+      are defined via dependencies inside of the packages. However, there
+      might be dependency loops (reported during setup of the build system) or
+      missing dependencies. The <em class="parameter ">Order</em> statement can
+      be used then to give a hint where to break the loop.
+     </p>
+     <p>The package in <em class="replaceable ">PACKAGE_A</em> will get
+      installed before the package in <em class="replaceable ">PACKAGE_B</em>.
+     </p>
+    </dd><dt id="id11981"><span class="term "><em class="parameter ">Patterntype: <em class="replaceable ">TYPES</em></em></span></dt><dd>
+     <p>
+      Defines the pattern format. Valid values are: none (default), ymp, comps.
+     </p>
+    </dd><dt id="id11987"><span class="term "><em class="parameter ">Prefer: <em class="replaceable ">PACKAGES</em></em></span></dt><dd>
+     <p>
+      In case multiple packages satisfy a dependency, the OBS system will
+      complain about that situation. This is unlike like most package managing
+      tools, which just pick one of the package. Because one of OBS' goal is to
+      provide reproducible builds, it reports an error in this case instead of
+      choosing a random package. The Prefer: tag lists packages to be preferred
+      in case a choice exists. When the package name is prefixed with a dash,
+      this is treated as a de-prefer.
+     </p>
+    </dd><dt id="id11993"><span class="term "><em class="parameter ">Prefer: <em class="replaceable ">PACKAGE_A</em>:<em class="replaceable ">PACKAGES</em></em></span></dt><dd>
+     <p>
+      It is possible to define the prefer only when one package is creating
+      the choice error. This package must be listed first with a colon.
+     </p>
+    </dd><dt id="id12000"><span class="term "><em class="parameter ">Preinstall: <em class="replaceable ">PACKAGES</em></em></span></dt><dd>
+     <p>
+      Are needed to run the package installation program. These packages get
+      unpacked before the VM gets started. Included scripts
+      are <span class="emphasis"><em>not</em></span> executed during this phase. However, these
+      packages will get installed again inside of the VM including script
+      execution.
+     </p>
+    </dd><dt id="id12007"><span class="term "><em class="parameter ">PublishFilter: <em class="replaceable ">REGEXP</em> [<em class="replaceable ">REGEXP</em>]</em></span></dt><dd>
+     <p>
+      Limits the published binary packages in public repositories. Packages
+      that match any <em class="replaceable ">REGEXP</em> will not be put into
+      the exported repository. There can be only one line of
+      PublishFilter for historic reasons. However, multiple
+      <em class="replaceable ">REGEXP</em> can be definied.
+     </p>
+    </dd><dt id="id12016"><span class="term "><em class="parameter ">Repotype:  <em class="replaceable ">TYPE[:OPTIONS]</em></em></span></dt><dd>
+     <p> Defines the repository format for published repositories. Valid
+      values are: none, rpm-md, suse, debian, hdlist2, arch, staticlinks. The
+      OPTIONS parameter depends on the repository type, for rpm-md the known
+      options are 'legacy' to create the old rpm-md format, 'deltainfo' or
+      'prestodelta' to create delta rpm packages, 'rsyncable' to use rsyncable
+      gzip compression. To split the debug packages in an own published
+      repository the option
+      <code class="literal">splitdebug:<em class="replaceable ">REPOSITORY_SUFFIX</em></code>
+      can be used. </p>
+    </dd><dt id="id12024"><span class="term "><em class="parameter ">Required: <em class="replaceable ">PACKAGES</em></em></span></dt><dd>
+     <p>
+      Contain one or more packages that always get installed for package
+      builds. A change in one of these packages triggers a new build.
+     </p>
+    </dd><dt id="id12030"><span class="term "><em class="parameter ">Runscripts: <em class="replaceable ">PACKAGES</em></em></span></dt><dd>
+     <p>
+      Defines the scripts of preinstalled packages which needs to be executed
+      directly after the preinstall phase, but before installing the
+      remaining packages.
+     </p>
+    </dd><dt id="id12036"><span class="term "><em class="parameter ">Substitute: <em class="replaceable ">PACKAGE_A</em> <em class="replaceable ">PACKAGES</em></em></span></dt><dd>
+     <p>
+      It is possible to replace to BuildRequires with other packages.
+      This will have only an affect on directly BuildRequired packages, not on
+      indirectly required packages.
+     </p>
+    </dd><dt id="id12043"><span class="term "><em class="parameter ">Support: <em class="replaceable ">PACKAGES</em></em></span></dt><dd>
+     <p>
+      Contain one or more packages which also get installed for package
+      builds, but a change in one of the packages does not trigger
+      an automatic rebuild.
+     </p>
+     <p>
+      This is useful for packages that most likely do not influence the build
+      result, for example <span class="package ">make</span> or <span class="package ">coreutils</span>.
+     </p>
+    </dd><dt id="id12052"><span class="term "><em class="parameter ">Target: <em class="replaceable ">TARGET_ARCH</em></em> (RPM only)</span></dt><dd>
+     <p>Defines the target architecture. This can be used to build for i686
+      on i586 schedulers for example.</p>
+    </dd><dt id="id12058"><span class="term "><em class="parameter ">Type: <em class="replaceable ">TYPE</em></em></span></dt><dd>
+     <p>
+      Build recipe type. This is the format of the file which provides the
+      build description. This gets usually autodetected, but in some rare cases
+      it can be set here to either one of these: spec, dsc, kiwi, livebuild,
+      arch, preinstallimage.
+     </p>
+     <p>Defines the build recipe format. Valid values are currently: none, spec,
+      dsc, arch, kiwi, preinstallimage. If no type is specified, OBS deduces a
+      type from the binary type. </p>
+    </dd><dt id="id12065"><span class="term "><em class="parameter ">VMInstall: <em class="replaceable ">PACKAGES</em></em></span></dt><dd>
+     <p>
+      Like <em class="parameter ">Preinstall</em>, but these packages get only
+      installed when a virtual machine like Xen or KVM is used for building.
+      Usually  packages like <span class="package ">mount</span> are listed here.
+     </p>
+    </dd></dl></div>
+ </div>
+
+ <div class="sect1 " id="sec.prjconfig.macros"><div class="titlepage"><div><div><h2 class="title" id="sec.prjconfig.macros"><span class="number">4.3 </span><span class="name">Macro Section</span> <a title="Permalink" class="permalink" href="cha.obs.prjconfig.html#sec.prjconfig.macros">#</a></h2></div></div></div>
+  
+  
+  <p>
+   Macros are definied at the end of the project configuration.
+   The macro section is only used on RPM builds.
+   
+  </p>
+  <p>
+   The project configuration knows two possible definitions:
+  </p>
+  <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
+    <p>
+     <span class="formalpara-title">%define Macro Definitions. </span>
+     
+      Starting with a <code class="systemitem">%define</code> line and
+      are used in the project configuration only. These definitions are
+      <span class="emphasis"><em>not</em></span> available inside the build root.
+     
+    </p>
+   </li><li class="listitem ">
+    <p>
+     <span class="formalpara-title">Other Macro Definitions. </span>
+     
+      Starting after the <code class="systemitem">Macros:</code> line
+      and are exported into the <code class="filename">.rpmmacros</code> file of the
+      build root. As such, these macro definitions can be used in a spec
+      file.
+     
+    </p>
+   </li></ul></div>
+
+  <div class="sect2 " id="sec.prjconfig.macros.define"><div class="titlepage"><div><div><h3 class="title" id="sec.prjconfig.macros.define"><span class="number">4.3.1 </span><span class="name">Macros Used in Project Configuration Only</span> <a title="Permalink" class="permalink" href="cha.obs.prjconfig.html#sec.prjconfig.macros.define">#</a></h3></div></div></div>
+   
+   <p>
+    Inside the project configuration use <code class="systemitem">%define</code>
+    to define your macros. You can use all the features that RPM supports
+    except you cannot define functions or call external commands.
+   </p>
+   
+   <p>
+    For example, you can define
+   </p>
+   <div class="verbatim-wrap"><pre class="screen">%define _with_pulseaudio 1</pre></div>
+  </div>
+  <div class="sect2 " id="sec.prjconfig.macros.macrosection"><div class="titlepage"><div><div><h3 class="title" id="sec.prjconfig.macros.macrosection"><span class="number">4.3.2 </span><span class="name">Macros Used in Spec Files Only</span> <a title="Permalink" class="permalink" href="cha.obs.prjconfig.html#sec.prjconfig.macros.macrosection">#</a></h3></div></div></div>
+   
+   <p>
+    The macro definition in the project configuration is located at the end
+    and has the following structure:
+   </p>
+   <div class="example" id="id12101"><div class="example-title-wrap"><h6 class="example-title"><span class="number">Example 4.1: </span><span class="name">Structure of a Macro Definition </span><a title="Permalink" class="permalink" href="cha.obs.prjconfig.html#id12101">#</a></h6></div><div class="example-contents">
+    
+    <div class="verbatim-wrap"><pre class="screen">Macros:
+  # add your macro definitions
+:Macros</pre></div>
+   </div></div>
+   <p>
+    Everything that starts with a hash mark (<code class="literal">#</code>) is
+    considered a comment.
+   </p>
+   <p>
+    The macro definition itself are defined without a <code class="literal">%define</code>
+    keyword. Start with <code class="literal">%macroname</code>, for example:
+   </p>
+   
+   <div class="verbatim-wrap"><pre class="screen">%</pre></div>
+  </div>
+ </div>
+</div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="par.working.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Part III </span>Usage</span></a><a class="nav-link" href="cha.obs.osc.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 3 </span>osc, the Command Line Tool</span></a></div><div id="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span id="_share-fb" class="bottom-button">Facebook</span><span class="spacer"> • </span><span id="_share-gp" class="bottom-button">Google+</span><span class="spacer"> • </span><span id="_share-tw" class="bottom-button">Twitter</span><span class="spacer"> • </span><span id="_share-mail" class="bottom-button">E-Mail</span></span></div><div class="print"><span id="_print-button" class="bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2017 
+        SUSE</p><ul><li><a href="http://www.suse.com/company/careers/" target="_top">Careers</a></li><li><a href="http://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="http://www.suse.com/company/" target="_top">About</a></li><li><a href="http://www.suse.com/ContactsOffices/contacts_offices.jsp" target="_top">Contact Us</a></li></ul></div></div></body></html>
