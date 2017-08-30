@@ -1,23 +1,41 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Administration | Open Build Service</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><meta name="generator" content="DocBook XSL Stylesheets V1.78.1" /><meta name="book-title" content="Open Build Service" /><meta name="chapter-title" content="Chapter 3. Administration" /><link rel="home" href="index.html" title="Open Build Service" /><link rel="up" href="index.html" title="Open Build Service" /><link rel="prev" href="obs.cha.overview_filesystem.html" title="Chapter 2. Overview filesystem" /><link rel="next" href="obs.cha.troubleshooting.html" title="Chapter 4. Troubleshooting" /><script type="text/javascript">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Administration | Administrator Guide</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DocBook XSL Stylesheets V1.79.0" /><meta name="book-title" content="Administrator Guide" /><meta name="chapter-title" content="Chapter 3. Administration" /><link rel="home" href="index.html" title="OBS Documentation" /><link rel="up" href="book.obs-admin.html" title="Administrator Guide" /><link rel="prev" href="obs.cha.overview_filesystem.html" title="Chapter 2. File System Overview" /><link rel="next" href="obs.cha.troubleshooting.html" title="Chapter 4. Troubleshooting" /><script type="text/javascript">
 
 var protocol = window.location.protocol.toLowerCase();
 if ( protocol != 'file:' ) {
   var agent = navigator.userAgent.toLowerCase();
   var wanted = ( protocol == 'https:') ? 'https' : 'http';
   var file = 'fonts.css';
-  if (agent.indexOf('android') != -1 && agent.indexOf('chrom') != -1 ) {
-      file = 'fonts-nolocal.css';
-  }
   document.write('<link rel="stylesheet" type="text/css" href="' + wanted + '://static.opensuse.org/fonts/'+ file +'"></link>');
 }
 else {
    document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
 }
 
-</script><noscript><link rel="stylesheet" type="text/css" href="http://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script></head><body class="offline js-off"><div id="_outer-wrap"><div id="_white-bg"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Open Build Service"><span class="book-icon">Open Build Service</span></a><span> › </span><a class="crumb" href="obs.cha.administration.html">Administration</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Open Build Service</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="pr01.html"><span class="number"> </span><span class="name">About this Guide</span></a></li><li class="inactive"><a href="obs.cha.installation_and_configuration.html"><span class="number">1 </span><span class="name">Installation and configuration</span></a></li><li class="inactive"><a href="obs.cha.overview_filesystem.html"><span class="number">2 </span><span class="name">Overview filesystem</span></a></li><li class="inactive"><a href="obs.cha.administration.html"><span class="number">3 </span><span class="name">Administration</span></a></li><li class="inactive"><a href="obs.cha.troubleshooting.html"><span class="number">4 </span><span class="name">Troubleshooting</span></a></li><li class="inactive"><a href="apa.html"><span class="number">A </span><span class="name">GNU Licenses</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 2. Overview filesystem" href="obs.cha.overview_filesystem.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 4. Troubleshooting" href="obs.cha.troubleshooting.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Open Build Service"><span class="book-icon">Open Build Service</span></a><span> › </span><a class="crumb" href="obs.cha.administration.html">Administration</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 2. Overview filesystem" href="obs.cha.overview_filesystem.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 4. Troubleshooting" href="obs.cha.troubleshooting.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class=""><div class="documentation"><div class="chapter " id="obs.cha.administration"><div class="titlepage"><div><div><h1 class="title"><span class="number">3 </span><span class="name">Administration</span> </h1></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="obs.cha.administration.html#_tools"><span class="number">3.1 </span><span class="name">Tools</span></a></span></dt><dt><span class="section"><a href="obs.cha.administration.html#_managing_build_targets"><span class="number">3.2 </span><span class="name">Managing build targets</span></a></span></dt><dt><span class="section"><a href="obs.cha.administration.html#cha.obs.source_service"><span class="number">3.3 </span><span class="name">Source Services</span></a></span></dt><dt><span class="section"><a href="obs.cha.administration.html#_dispatch_priorities"><span class="number">3.4 </span><span class="name">Dispatch Priorities</span></a></span></dt><dt><span class="section"><a href="obs.cha.administration.html#_publisher_hooks"><span class="number">3.5 </span><span class="name">Publisher Hooks</span></a></span></dt><dt><span class="section"><a href="obs.cha.administration.html#_unpublisher_hooks"><span class="number">3.6 </span><span class="name">Unpublisher Hooks</span></a></span></dt><dt><span class="section"><a href="obs.cha.administration.html#_user_and_group_management"><span class="number">3.7 </span><span class="name">User and group management</span></a></span></dt><dt><span class="section"><a href="obs.cha.administration.html#_backup"><span class="number">3.8 </span><span class="name">Backup</span></a></span></dt><dt><span class="section"><a href="obs.cha.administration.html#_obs_spider_identification"><span class="number">3.9 </span><span class="name">Spider Identification</span></a></span></dt></dl></div></div><p></p><div class="section " id="_tools"><div class="titlepage"><div><div><h2 class="title" id="_tools"><span class="number">3.1 </span><span class="name">Tools</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_tools">#</a></h2></div></div></div><div class="section " id="_obs_admin"><div class="titlepage"><div><div><h3 class="title" id="_obs_admin"><span class="number">3.1.1 </span><span class="name">obs_admin</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_obs_admin">#</a></h3></div></div></div><p>obs_admin is a command-line tool used on the backend server(s) to manage
+</script><noscript><link rel="stylesheet" type="text/css" href="http://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="offline js-off"><div id="_outer-wrap"><div id="_white-bg"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Administrator Guide"><span class="book-icon">Administrator Guide</span></a><span> › </span><a class="crumb" href="obs.cha.administration.html">Administration</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.htmlindex.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Administrator Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="bk03pr01.html"><span class="number"> </span><span class="name">About this Guide</span></a></li><li class="inactive"><a href="obs.cha.installation_and_configuration.html"><span class="number">1 </span><span class="name">Installation and Configuration</span></a></li><li class="inactive"><a href="obs.cha.overview_filesystem.html"><span class="number">2 </span><span class="name">File System Overview</span></a></li><li class="inactive"><a href="obs.cha.administration.html"><span class="number">3 </span><span class="name">Administration</span></a></li><li class="inactive"><a href="obs.cha.troubleshooting.html"><span class="number">4 </span><span class="name">Troubleshooting</span></a></li><li class="inactive"><a href="bk03apa.html"><span class="number">A </span><span class="name">GNU Licenses</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 2. File System Overview" href="obs.cha.overview_filesystem.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 4. Troubleshooting" href="obs.cha.troubleshooting.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Administrator Guide"><span class="book-icon">Administrator Guide</span></a><span> › </span><a class="crumb" href="obs.cha.administration.html">Administration</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 2. File System Overview" href="obs.cha.overview_filesystem.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 4. Troubleshooting" href="obs.cha.troubleshooting.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class=""><div class="documentation"><div class="chapter " id="obs.cha.administration"><div class="titlepage"><div><div><h1 class="title"><span class="number">3 </span><span class="name">Administration</span> </h1></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="obs.cha.administration.html#_tools"><span class="number">3.1 </span><span class="name">Tools</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_managing_build_targets"><span class="number">3.2 </span><span class="name">Managing Build Targets</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#sec.obs.source_service"><span class="number">3.3 </span><span class="name">Source Services</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_dispatch_priorities"><span class="number">3.4 </span><span class="name">Dispatch Priorities</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_publisher_hooks"><span class="number">3.5 </span><span class="name">Publisher Hooks</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_unpublisher_hooks"><span class="number">3.6 </span><span class="name">Unpublisher Hooks</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_user_and_group_management"><span class="number">3.7 </span><span class="name">Managing Users and Groups</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_backup"><span class="number">3.8 </span><span class="name">Backup</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_obs_spider_identification"><span class="number">3.9 </span><span class="name">Spider Identification</span></a></span></dt></dl></div></div>
+ 
+ 
+ <div class="sect1 " id="_tools"><div class="titlepage"><div><div><h2 class="title" id="_tools"><span class="number">3.1 </span><span class="name">Tools</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_tools">#</a></h2></div></div></div>
+ 
+ <div class="sect2 " id="_obs_admin"><div class="titlepage"><div><div><h3 class="title" id="_obs_admin"><span class="number">3.1.1 </span><span class="name"><code class="command">obs_admin</code></span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_obs_admin">#</a></h3></div></div></div>
+  
+  <p>obs_admin is a command-line tool used on the back-end server(s) to manage
 running services, submit maintenance tasks, and debug problems.
-It should be only used by experienced admins.</p><p>It has built-in help which you can display with <span class="emphasis"><em>obs_admin --help</em></span>.</p><p>Options to control the running services:</p><div class="verbatim-wrap"><pre class="screen">Job Controlling
+It should be only used by experienced admins.</p>
+  <p>It has built-in help which you can display with <span class="emphasis"><em>obs_admin --help</em></span>.</p>
+  <p>Options to control the running services:</p>
+<div class="verbatim-wrap"><pre class="screen">Job Controlling
 ===============
 
  --shutdown-scheduler &lt;architecture&gt;
@@ -71,7 +89,9 @@ It should be only used by experienced admins.</p><p>It has built-in help which y
    calculating time.
 
  --create-patchinfo-from-updateinfo
-   creates a patchinfo submission based on an updateinfo information.</pre></div><p>Options for maintenance are:</p><div class="verbatim-wrap"><pre class="screen">Maintenance Tasks
+   creates a patchinfo submission based on an updateinfo information.</pre></div>
+  <p>Options for maintenance are:</p>
+<div class="verbatim-wrap"><pre class="screen">Maintenance Tasks
 =================
 
 Note: the --update-*-db calls are usually only needed when corrupt data has been created, for
@@ -87,7 +107,9 @@ Note: the --update-*-db calls are usually only needed when corrupt data has been
    WARNING: this is an experimental feature atm. It may trash your data, but you have anyway
             a backup, right?
    remove sources older than &lt;x&gt; days, but keep &lt;y&gt; number of revisions
-   --debug for debug output</pre></div><p>Options for debugging:</p><div class="verbatim-wrap"><pre class="screen">Debug Options
+   --debug for debug output</pre></div>
+  <p>Options for debugging:</p>
+<div class="verbatim-wrap"><pre class="screen">Debug Options
 =============
 
  --dump-cache &lt;project&gt; &lt;repository&gt; &lt;architecture&gt;
@@ -119,7 +141,7 @@ Note: the --update-*-db calls are usually only needed when corrupt data has been
 
  --check-kiwi-xml &lt;file&gt;
  --check-kiwi-xml &lt;project&gt; &lt;package&gt;
-   Is parsing a kiwi xml file and puts out error messages, in case of errors.
+   Is parsing a KIWI xml file and puts out error messages, in case of errors.
 
  --check-constraints &lt;file&gt;
  --check-constraints &lt;project&gt; &lt;package&gt;
@@ -132,7 +154,7 @@ Note: the --update-*-db calls are usually only needed when corrupt data has been
    Is parsing a request xml file and puts out error messages, in case of errors.
 
  --parse-build-desc &lt;file&gt; [&lt;arch&gt; [&lt;buildconfigfile&gt;]]
-   Parse a spec, dsc or kiwi file with the Build script parser.
+   Parse a spec, dsc or KIWI file with the Build script parser.
 
  --show-scheduler-architectures
    Show all architectures which are configured in configuration.xml to be supported by this instance.
@@ -141,21 +163,40 @@ Note: the --update-*-db calls are usually only needed when corrupt data has been
    Show all instructions of a OBS delta file
 
  --show-delta-store &lt;file&gt;
-   Show delta store statistics</pre></div></div><div class="section " id="_osc"><div class="titlepage"><div><div><h3 class="title" id="_osc"><span class="number">3.1.2 </span><span class="name">osc</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_osc">#</a></h3></div></div></div><p>The <span class="strong"><strong><span class="emphasis"><em>osc</em></span></strong></span> commandline client is mainly used by developers and packagers. But
+   Show delta store statistics</pre></div>
+ </div>
+ <div class="sect2 " id="_osc"><div class="titlepage"><div><div><h3 class="title" id="_osc"><span class="number">3.1.2 </span><span class="name"><code class="command">osc</code></span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_osc">#</a></h3></div></div></div>
+  
+  <p>The <span class="strong"><strong><span class="emphasis"><em>osc</em></span></strong></span> command-line client is mainly used by developers and packagers. But
 for some tasks, admin people also need this tool. It too has builtin help:
 use <span class="emphasis"><em>osc --help</em></span>. The tool needs to be configured first to know the
-OBS API URL and your user details.</p><p>To configure the <span class="strong"><strong><span class="emphasis"><em>osc</em></span></strong></span> tool the first time you need to call it with</p><div class="verbatim-wrap"><pre class="screen">osc -A &lt;URL to the OBS API&gt;
+OBS API URL and your user details.</p>
+  <p>To configure the <span class="strong"><strong><span class="emphasis"><em>osc</em></span></strong></span> tool the first time you need to call it with</p>
+<div class="verbatim-wrap"><pre class="screen">osc -A &lt;URL to the OBS API&gt;
 For example:
-osc -A https://api.testobs.org</pre></div><p>Follow the instructions on the terminal.</p><div id="idm139862295714816" class="admonition warning"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning</h6><p>The password is stored in clear text in the .oscrc file by default, so you need to
+osc -A https://api.testobs.org</pre></div>
+  <p>Follow the instructions on the terminal.</p>
+  <div id="id14889" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning</h6>
+   <p>The password is stored in clear text in the .oscrc file by default, so you need to
 give this file restrictive access rights, only read/write access for your user
 should be allowed. <span class="strong"><strong>osc</strong></span> allows to store the password in other ways (in keyrings
 for example) and may use different methods for authentication like
-kerberos see <a class="xref" href="obs.cha.administration.html#_kerberos" title="3.7.5.2. Kerberos">Section 3.7.5.2, “Kerberos”</a>
-   </p></div><p>For the admins the most important <span class="strong"><strong><span class="emphasis"><em>osc</em></span></strong></span> subcommands are:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
+Kerberos see <a class="xref" href="obs.cha.administration.html#_kerberos" title="3.7.5.2. Kerberos">Section 3.7.5.2, “Kerberos”</a>
+   </p>
+  </div>
+  <p>For the admins the most important <span class="strong"><strong><span class="emphasis"><em>osc</em></span></strong></span> subcommands are:</p>
+  <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
+    <p>
 meta  - to create or update projects or package data
-</li><li class="listitem ">
-api - to read and write online configuration data
-</li></ul></div><div class="section " id="_osc_meta_subcommand"><div class="titlepage"><div><div><h4 class="title" id="_osc_meta_subcommand"><span class="number">3.1.2.1 </span><span class="name">osc meta subcommand</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_osc_meta_subcommand">#</a></h4></div></div></div><div class="verbatim-wrap"><pre class="screen">meta: Show meta information, or edit it
+</p>
+   </li><li class="listitem ">
+    <p>
+API - to read and write online configuration data
+</p>
+   </li></ul></div>
+  <div class="sect3 " id="_osc_meta_subcommand"><div class="titlepage"><div><div><h4 class="title" id="_osc_meta_subcommand"><span class="number">3.1.2.1 </span><span class="name"><code class="command">osc meta</code> Subcommand</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_osc_meta_subcommand">#</a></h4></div></div></div>
+   
+<div class="verbatim-wrap"><pre class="screen">meta: Show meta information, or edit it
 
 Show or edit build service metadata of type &lt;prj|pkg|prjconf|user|pattern&gt;.
 
@@ -228,7 +269,11 @@ Options:
     --attribute-defaults
                         include defined attribute defaults
     -a ATTRIBUTE, --attribute=ATTRIBUTE
-                        affect only a given attribute</pre></div></div><div class="section " id="_osc_api_subcommand"><div class="titlepage"><div><div><h4 class="title" id="_osc_api_subcommand"><span class="number">3.1.2.2 </span><span class="name">osc api subcommand</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_osc_api_subcommand">#</a></h4></div></div></div><div class="verbatim-wrap"><pre class="screen">api: Issue an arbitrary request to the API
+                        affect only a given attribute</pre></div>
+  </div>
+  <div class="sect3 " id="_osc_api_subcommand"><div class="titlepage"><div><div><h4 class="title" id="_osc_api_subcommand"><span class="number">3.1.2.2 </span><span class="name"><code class="command">osc api</code> Subcommand</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_osc_api_subcommand">#</a></h4></div></div></div>
+   
+<div class="verbatim-wrap"><pre class="screen">api: Issue an arbitrary request to the API
 
 Useful for testing.
 
@@ -255,9 +300,12 @@ Options:
                         specify string data for e.g. POST
     -e, --edit          GET, edit and PUT the location
     -X HTTP_METHOD, -m HTTP_METHOD, --method=HTTP_METHOD
-                        specify HTTP method to use (GET|PUT|DELETE|POST)</pre></div><p>The online API documentation is available at
+                        specify HTTP method to use (GET|PUT|DELETE|POST)</pre></div>
+   <p>The online API documentation is available at
 <a class="ulink" href="https://build.opensuse.org/apidocs" target="_blank"><span class="emphasis"><em>https://build.opensuse.org/apidocs</em></span><span class="ulink-url"> (https://build.opensuse.org/apidocs)</span></a>
-   </p><p>Some examples for admin stuff:</p><div class="verbatim-wrap"><pre class="screen"># Read the global configuration file
+   </p>
+   <p>Some examples for admin stuff:</p>
+<div class="verbatim-wrap"><pre class="screen"># Read the global configuration file
   osc api /configuration
 # Update the global configuration
   osc api /configuration -T /tmp/configuration.xml
@@ -268,39 +316,71 @@ Options:
   osc api /distributions -T /tmp/distributions.xml
 
 # retrieve statistics
-  osc api /statistics/latest_added</pre></div></div></div></div><div class="section " id="_managing_build_targets"><div class="titlepage"><div><div><h2 class="title" id="_managing_build_targets"><span class="number">3.2 </span><span class="name">Managing build targets</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_managing_build_targets">#</a></h2></div></div></div><div class="section " id="_interconnect"><div class="titlepage"><div><div><h3 class="title" id="_interconnect"><span class="number">3.2.1 </span><span class="name">Interconnect</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_interconnect">#</a></h3></div></div></div><p>Using another Open Build Service as source for build targets is the easiest way
-to start. The advantage is, that you save local resources and you do not
-need to build everything from scratch. The disadvantage is that you depend
-on the remote instance, if it has a downtime your instance cannot do any
-builds for these targets, if the remote admins decide to remove some
-targets you cannot use them anymore.</p><p>The easiest way to interconnect with some of the public OBS instances is to
-use the Web UI. You need to login on an adminstrator account of your instance
-to do this. On the start page of an administrator account you will find
-a <span class="strong"><strong>Configuration</strong></span> link. On the Configuration page you find a Interconnect
-tab on the top, use this and select the public side you want.</p><p>If you want to connect to a not listed instance, you can simple create a
-remote project using the <span class="emphasis"><em>osc meta prj</em></span> command. A remote project differs
-from a local project the it has a <span class="strong"><strong>remoteurl</strong></span> tag (see <a class="xref" href="obs.cha.overview_filesystem.html#_project_meta_data" title="2.4.2. Project meta data">Section 2.4.2, “Project meta data”</a>).</p><p>Example:</p><div class="verbatim-wrap"><pre class="screen">&lt;project name="openSUSE.org"&gt;
+  osc api /statistics/latest_added</pre></div>
+  </div>
+ </div>
+</div>
+ <div class="sect1 " id="_managing_build_targets"><div class="titlepage"><div><div><h2 class="title" id="_managing_build_targets"><span class="number">3.2 </span><span class="name">Managing Build Targets</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_managing_build_targets">#</a></h2></div></div></div>
+ 
+ <div class="sect2 " id="_interconnect"><div class="titlepage"><div><div><h3 class="title" id="_interconnect"><span class="number">3.2.1 </span><span class="name">Interconnect</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_interconnect">#</a></h3></div></div></div>
+  
+  <p>Using another Open Build Service as source for build targets is the
+   easiest way to start. The advantage is, that you save local resources and
+   you do not need to build everything from scratch. The disadvantage is that
+   you depend on the remote instance, if it has a downtime your instance cannot
+   do any builds for these targets, if the remote admins decide to remove some
+   targets you cannot use them anymore.</p>
+  <p>The easiest way to interconnect with some of the public OBS
+   instances is to use the Web UI. You need to log in with an administrator
+   account of your instance to do this. On the start page of an administrator
+   account you will find a <span class="strong"><strong>Configuration</strong></span>
+   link. On the Configuration page you find an Interconnect tab on the top, use
+   this and select the public side you want.</p>
+  <p>If you want to connect to a not listed instance, you can simple
+   create a remote project using the <span class="emphasis"><em>osc meta prj</em></span> command.
+   A remote project differs from a local project the it has a <span class="strong"><strong>remoteurl</strong></span> tag (see <a class="xref" href="obs.cha.overview_filesystem.html#_project_meta_data" title="2.4.2. Project Metadata">Section 2.4.2, “Project Metadata”</a>).</p>
+  <p>Example:</p>
+  <div class="verbatim-wrap"><pre class="screen">&lt;project name="openSUSE.org"&gt;
   &lt;title&gt;openSUSE.org Project Link&lt;/title&gt;
   &lt;description&gt;
 This project refers to projects hosted on the openSUSE Build Service
 &lt;/description&gt;
   &lt;remoteurl&gt;https://api.opensuse.org/public&lt;/remoteurl&gt;
-&lt;/project&gt;</pre></div><p>Sending this via osc to the server:</p><div class="verbatim-wrap"><pre class="screen">osc meta prj -m "add openSUSE.org remote" -F /tmp/openSUSE.org.prj</pre></div></div><div class="section " id="_importing_distributions"><div class="titlepage"><div><div><h3 class="title" id="_importing_distributions"><span class="number">3.2.2 </span><span class="name">Importing distributions</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_importing_distributions">#</a></h3></div></div></div><p>With local hosted distributions packages you are independent from other parties.
-On sides with no or bad internet connections, this is the only way to go.
-You do not need to build the distribution packages on your instance, you can use binary
-pakages for this. Here are different ways to get a local build repository:</p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem ">
-mirror a distribution from another OBS instance
-</li><li class="listitem ">
-mirror a binary distribution from a public mirror and import the binaries
-</li><li class="listitem ">
-use already existing local install repositories (e.g. from an SMT)
-</li><li class="listitem ">
-use the install media to import the binaries
-</li></ol></div><p>These tasks need to be run on the obs backend. In a partition setup you need to run it on the partition
-which would the owner for the project.</p><div class="section " id="_mirror_from_a_remote_obs_instance"><div class="titlepage"><div><div><h4 class="title" id="_mirror_from_a_remote_obs_instance"><span class="number">3.2.2.1 </span><span class="name">Mirror from a remote OBS instance</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_mirror_from_a_remote_obs_instance">#</a></h4></div></div></div><p>Mirroring a project from a remote OBS instance can be done with the <span class="strong"><strong>obs_mirror_project</strong></span>  script which is
-supplied with the obs sources and via the obs-utils package.
-You can get the latest version from GitHub:
-<a class="ulink" href="https://raw.githubusercontent.com/openSUSE/open-build-service/master/dist/obs_mirror_project" target="_blank"><span class="emphasis"><em>https://raw.githubusercontent.com/openSUSE/open-build-service/master/dist/obs_mirror_project</em></span><span class="ulink-url"> (https://raw.githubusercontent.com/openSUSE/open-build-service/master/dist/obs_mirror_project)</span></a>.</p><p>The usage:</p><div class="verbatim-wrap"><pre class="screen">____________________________________________________________________________________
+&lt;/project&gt;</pre></div>
+  <p>Sending this via osc to the server:</p>
+  <div class="verbatim-wrap"><pre class="screen">osc meta prj -m "add openSUSE.org remote" -F /tmp/openSUSE.org.prj</pre></div>
+ </div>
+ <div class="sect2 " id="_importing_distributions"><div class="titlepage"><div><div><h3 class="title" id="_importing_distributions"><span class="number">3.2.2 </span><span class="name">Importing Distributions</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_importing_distributions">#</a></h3></div></div></div>
+  
+  <p>With local hosted distributions packages you are independent from
+   other parties. On sides with no or bad internet connections, this is the
+   only way to go. You do not need to build the distribution packages on your
+   instance, you can use binary packages for this. Here are different ways to
+   get a local build repository:</p>
+  <div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem ">
+    <p> mirror a distribution from another OBS instance </p>
+   </li><li class="listitem ">
+    <p> mirror a binary distribution from a public mirror and import the
+     binaries </p>
+   </li><li class="listitem ">
+    <p>
+     use already existing local install repositories (for example, from an
+     SMT instance)
+    </p>
+   </li><li class="listitem ">
+    <p> use the install media to import the binaries </p>
+   </li></ol></div>
+  <p>These tasks need to be run on the obs back-end. In a partition setup
+   you need to run it on the partition which would the owner for the
+   project.</p>
+  <div class="sect3 " id="_mirror_from_a_remote_obs_instance"><div class="titlepage"><div><div><h4 class="title" id="_mirror_from_a_remote_obs_instance"><span class="number">3.2.2.1 </span><span class="name">Mirroring from a Remote OBS Instance</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_mirror_from_a_remote_obs_instance">#</a></h4></div></div></div>
+   
+   <p>Mirroring a project from a remote OBS instance can be done with the
+     <span class="strong"><strong>obs_mirror_project</strong></span> script which is
+    supplied with the obs sources and via the obs-utils package. You can get
+    the latest version from GitHub: <a class="ulink" href="https://raw.githubusercontent.com/openSUSE/open-build-service/master/dist/obs_mirror_project" target="_blank">https://raw.githubusercontent.com/openSUSE/open-build-service/master/dist/obs_mirror_project</a>.</p>
+   <p>The usage:</p>
+   <div class="verbatim-wrap"><pre class="screen">____________________________________________________________________________________
 Usage: obs_mirror_project.rb -p PROJECT -r REPOSITORY
                             [-a ARCHITECTURE] [-d DESTINATION] [-A APIURL] [-t] [-v]
 
@@ -316,14 +396,20 @@ Options help:
     -A, --api APIURL           OSC API URL :Default: https://api.opensuse.org
     -t, --trialrun             Trial run: not executing actions
     -v, --verbose              Verbose
-    -h, --help                 Display this screen</pre></div></div><div class="section " id="_import_binary_packages"><div class="titlepage"><div><div><h4 class="title" id="_import_binary_packages"><span class="number">3.2.2.2 </span><span class="name">Import binary packages</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_import_binary_packages">#</a></h4></div></div></div><p>This is the same procedure for all local sources.
-If you have a local copy of a distribution, you can either use symbolic links to
-the binary packages or copy them in a directory on the backend repo server under the
-<span class="emphasis"><em>'/srv/obs/build'</em></span> directory. You should follow the common name schema for build repository here.
-As first step you should create a empty project for the distribution, you can use the WebUI or the <span class="strong"><strong>osc</strong></span>
-commandline tool.
-Then you add a repository with name <span class="emphasis"><em>standard</em></span> and the build architectures you want.
-Here a example project meta file:</p><div class="verbatim-wrap"><pre class="screen">&lt;project name="SUSE:13.2"&gt;
+    -h, --help                 Display this screen</pre></div>
+  </div>
+  <div class="sect3 " id="_import_binary_packages"><div class="titlepage"><div><div><h4 class="title" id="_import_binary_packages"><span class="number">3.2.2.2 </span><span class="name">Importing Binary Packages</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_import_binary_packages">#</a></h4></div></div></div>
+   
+   <p>This is the same procedure for all local sources. If you have a
+    local copy of a distribution, you can either use symbolic links to the
+    binary packages or copy them in a directory on the back-end repo server
+    under the <code class="filename">/srv/obs/build</code> directory. You should
+    follow the common name schema for build repository here. As first step you
+    should create an empty project for the distribution, you can use the Web UI
+    or the <code class="command">osc</code> command-line tool. Then you
+    add a repository with the name <code class="literal">standard</code> and the build
+    architectures you want. Here an example project meta file:</p>
+   <div class="verbatim-wrap"><pre class="screen">&lt;project name="SUSE:13.2"&gt;
   &lt;title&gt;openSUSE 13.2 build repositories&lt;/title&gt;
   &lt;description&gt;openSUSE 13.2 build repositories&lt;/description&gt;
   &lt;person userid="Admin" role="maintainer"/&gt;
@@ -337,119 +423,171 @@ Here a example project meta file:</p><div class="verbatim-wrap"><pre class="scre
     &lt;arch&gt;x86_64&lt;/arch&gt;
     &lt;arch&gt;i586&lt;/arch&gt;
   &lt;/repository&gt;
-&lt;/project&gt;</pre></div><p>After you have created the project with these settings, the /srv/obs/build directory should have a tree for
-SUSE:13.2:</p><div class="verbatim-wrap"><pre class="screen">/srv/obs/
+&lt;/project&gt;</pre></div>
+   <p>After you have created the project with these settings, the
+    /srv/obs/build directory should have a tree for SUSE:13.2:</p>
+   <div class="verbatim-wrap"><pre class="screen">/srv/obs/
 ├── build
-│   └── SUSE:13.2
-│       └── standard
-│           ├── i586
-│           │   ├── :bininfo
-│           │   └── :schedulerstate
-│           └── x86_64
-│               ├── :bininfo
-│               └── :schedulerstate</pre></div><div id="idm139862295774128" class="admonition warning"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning</h6><p>All the directories under /srv/obs/build have to be owned by the <span class="strong"><strong>obsrun</strong></span> user and
-group. The <span class="strong"><strong>obsrun</strong></span> user need write access to them.
- <span class="strong"><strong>If not the scheduler process will crash on your instance.</strong></span>
-    </p></div><p>You need to import the project configuration as well, you can get them for example from the openSUSE buildserver.</p><div class="verbatim-wrap"><pre class="screen">osc -A https://api.opensuse.org meta prjconf openSUSE:13.2 &gt;/tmp/13.2.prjconf
-osc meta prjconf -m 'Original version from openSUSE' SUSE:13.2 -F /tmp/13.2.prjconf</pre></div><p>Now you need to create the directory <span class="emphasis"><em>':full'</em></span> for the binary sources under each architecture, this should be owned by
-<span class="strong"><strong>obsrun</strong></span> too.</p><div class="verbatim-wrap"><pre class="screen">testobs:/srv/www/obs/api # mkdir /srv/obs/build/SUSE\:13.2/standard/i586/:full
+│   └── SUSE:13.2
+│       └── standard
+│           ├── i586
+│           │   ├── :bininfo
+│           │   └── :schedulerstate
+│           └── x86_64
+│               ├── :bininfo
+│               └── :schedulerstate</pre></div>
+   <div id="id14958" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning</h6>
+    <p>All the directories under /srv/obs/build have to be owned by the
+      <span class="strong"><strong>obsrun</strong></span> user and group. The <span class="strong"><strong>obsrun</strong></span> user need write access to them. <span class="strong"><strong>If not the scheduler process will crash on your
+      instance.</strong></span>
+    </p>
+   </div>
+   <p>You need to import the project configuration as well, you can get
+    them for example from the openSUSE Build Service.</p>
+   <div class="verbatim-wrap"><pre class="screen">osc -A https://api.opensuse.org meta prjconf openSUSE:13.2 &gt;/tmp/13.2.prjconf
+osc meta prjconf -m 'Original version from openSUSE' SUSE:13.2 -F /tmp/13.2.prjconf</pre></div>
+   <p>Now you need to create the directory <span class="emphasis"><em>':full'</em></span>
+    for the binary sources under each architecture, this should be owned by
+     <span class="strong"><strong>obsrun</strong></span> too.</p>
+   <div class="verbatim-wrap"><pre class="screen">testobs:/srv/www/obs/api # mkdir /srv/obs/build/SUSE\:13.2/standard/i586/:full
 testobs:/srv/www/obs/api # mkdir /srv/obs/build/SUSE\:13.2/standard/x86_64/:full
 testobs:/srv/www/obs/api # chown obsrun:obsrun \
                                  /srv/obs/build/SUSE\:13.2/standard/i586/:full
 testobs:/srv/www/obs/api # chown obsrun:obsrun \
-                                 /srv/obs/build/SUSE\:13.2/standard/x86_64/:full</pre></div><p>Now you can copy (or link) all binary packages for the architecture in the <span class="emphasis"><em>:full</em></span> directory.
-You need the architecture specific package and the <span class="emphasis"><em>noarch</em></span> packages as well.</p><div id="idm139862293374400" class="admonition important"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>If you import packages for enterprise distributions like SLES12 you also need the packages
-from the SDK. Maybe you need packages from addon products as well, depending what software you want build.</p></div><p>Finally you should trigger a rescan for the project on the backend server using <span class="strong"><strong>obs_admin</strong></span>:</p><div class="verbatim-wrap"><pre class="screen">testobs # obs_admin --rescan-repository SUSE:13.2 standard i586
-testobs # obs_admin --rescan-repository SUSE:13.2 standard x86_64</pre></div><p>This reads all packages and creates the dependency tree.</p></div></div></div><div class="section " id="cha.obs.source_service"><div class="titlepage"><div><div><h2 class="title" id="cha.obs.source_service"><span class="number">3.3 </span><span class="name">Source Services</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#cha.obs.source_service">#</a></h2></div></div></div><p>
-  Source Services are tools to validate, generate or modify sources in a
+                                 /srv/obs/build/SUSE\:13.2/standard/x86_64/:full</pre></div>
+   <p>Now you can copy (or link) all binary packages for the architecture
+    in the <span class="emphasis"><em>:full</em></span> directory. You need the architecture
+    specific package and the <span class="emphasis"><em>noarch</em></span> packages as
+    well.</p>
+   <div id="id14972" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6>
+    <p>If you import packages for enterprise distributions like SLES12
+     you also need the packages from the SDK. Maybe you need packages from
+     add-on products as well, depending what software you want build.</p>
+   </div>
+   <p>Finally you should trigger a rescan for the project on the back-end
+    server using <span class="strong"><strong>obs_admin</strong></span>:</p>
+   <div class="verbatim-wrap"><pre class="screen">testobs # obs_admin --rescan-repository SUSE:13.2 standard i586
+testobs # obs_admin --rescan-repository SUSE:13.2 standard x86_64</pre></div>
+   <p>This reads all packages and creates the dependency tree.</p>
+  </div>
+ </div>
+</div>
+ <div class="sect1 " id="sec.obs.source_service"><div class="titlepage"><div><div><h2 class="title" id="sec.obs.source_service"><span class="number">3.3 </span><span class="name">Source Services</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#sec.obs.source_service">#</a></h2></div></div></div>
+ 
+ <p> Source Services are tools to validate, generate or modify sources in a
   trustable way. They are designed as smallest possible tools and can be
-  combined following the powerful idea of the classic UNIX design.
- </p><p>
-  Design goals of source services were:
- </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
-     server side generated files must be easy to identify and must not be modifiable by the user. 
-     This way others user can trust them to be generated in the documented way without modifications.
-    </li><li class="listitem ">
-     generated files must never create merge conflicts
-    </li><li class="listitem ">
-     generated files must be a separate commit to the user change
-    </li><li class="listitem ">
-     services must be runnable at any time without user commit
-    </li><li class="listitem ">
-     services must be runnable on server and client side in the same way
-    </li><li class="listitem ">
-     services must be designed in a safe way. A source checkout and service run must never harm the system of a user.
-    </li><li class="listitem ">
-     services shall be designed in a way to avoid unnecessary commits. This means there shall be no time-dependent
-     changes. In case the package already contains the same file, the newly generated file must be dropped.
-    </li><li class="listitem ">
-     local services can be added and used by everybody.
-    </li><li class="listitem ">
-     server side services must be installed by the admin of the OBS server.
-    </li><li class="listitem ">
-     service can be defined per package or project wide.
-    </li></ul></div><div class="section " id="idm139862293173952"><div class="titlepage"><div><div><h3 class="title" id="idm139862293173952"><span class="number">3.3.1 </span><span class="name">Using services for validation</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#idm139862293173952">#</a></h3></div></div></div><p>
-   Source Services may be used to validate sources. This can happen per
+  combined following the powerful idea of the classic UNIX design. </p>
+ <p> Design goals of source services were: </p>
+ <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
+   <p> server side generated files must be easy to identify and must not
+    be modifiable by the user. This way other users can trust them to be
+    generated in the documented way without modifications. </p>
+  </li><li class="listitem ">
+   <p> generated files must never create merge conflicts </p>
+  </li><li class="listitem ">
+   <p> generated files must be a separate commit to the user change
+   </p>
+  </li><li class="listitem ">
+   <p> services must be runnable at any time without user commit
+   </p>
+  </li><li class="listitem ">
+   <p> services must be runnable on server and client side in the same
+    way </p>
+  </li><li class="listitem ">
+   <p> services must be designed in a safe way. A source checkout and
+    service run must never harm the system of a user. </p>
+  </li><li class="listitem ">
+   <p> services shall be designed in a way to avoid unnecessary commits.
+    This means there shall be no time-dependent changes. In case the package
+    already contains the same file, the newly generated file must be dropped.
+   </p>
+  </li><li class="listitem ">
+   <p> local services can be added and used by everybody. </p>
+  </li><li class="listitem ">
+   <p> server side services must be installed by the admin of the OBS
+    server. </p>
+  </li><li class="listitem ">
+   <p> services can be defined per package or project wide. </p>
+  </li></ul></div>
+ <div class="sect2 " id="id15003"><div class="titlepage"><div><div><h3 class="title" id="id15003"><span class="number">3.3.1 </span><span class="name">Using Services for Validation</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id15003">#</a></h3></div></div></div>
+  
+  <p> Source Services may be used to validate sources. This can happen per
    package, which is useful when the packager wants to validate that downloaded
    sources are really from the original maintainer. Or validation can happen
-   for an entire project to apply general policies. These services can't get
-   skipped in any package
-  </p><p>
-   Validation can happen by validating files (for example using the
-   <code class="command">verify_file</code> or <code class="command">source_validator</code>
+   for an entire project to apply general policies. These services cannot get
+   skipped in any package </p>
+  <p> Validation can happen by validating files (for example using the
+    <code class="command">verify_file</code> or <code class="command">source_validator</code>
    service. These services just fail in the error case which leads to the build
    state "broken". Or validation can happen by redoing a certain action and
    store the result as new file as <code class="command">download_files</code> is doing.
    In this case the newly generated file will be used instead of the committed
-   one during build.
-  </p></div><div class="section " id="idm139862285902288"><div class="titlepage"><div><div><h3 class="title" id="idm139862285902288"><span class="number">3.3.2 </span><span class="name">Different Modes when using services</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#idm139862285902288">#</a></h3></div></div></div><p>
-   Each service can be used in a special mode defining when it should run and
-   how to use the result. This can be done per package or globally for an
-   entire project.
-  </p><div class="section " id="idm139862286180320"><div class="titlepage"><div><div><h4 class="title" id="idm139862286180320"><span class="number">3.3.2.1 </span><span class="name">Default Mode</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#idm139862286180320">#</a></h4></div></div></div><p>
-    The default mode of a service is to always run after each commit on the
-    server side and locally before every local build.
-   </p></div><div class="section " id="idm139862294996800"><div class="titlepage"><div><div><h4 class="title" id="idm139862294996800"><span class="number">3.3.2.2 </span><span class="name">trylocal Mode</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#idm139862294996800">#</a></h4></div></div></div><p>
-    The trylocal mode is running the service locally when using current osc
-    versions. The result gets committed as standard files and not named with
-    _service: prefix. Additionally the service runs on the server by default,
-    but usually the service should detect that the result is the same and skip
-    the generated files. In case they differ for any reason (because the webui
-    or api was used for example) they get generated and added on the server.
-   </p></div><div class="section " id="idm139862283494192"><div class="titlepage"><div><div><h4 class="title" id="idm139862283494192"><span class="number">3.3.2.3 </span><span class="name">localonly Mode</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#idm139862283494192">#</a></h4></div></div></div><p>
-    The localonly mode is running the service locally when using current osc
-    versions. The result gets committed as standard files and not named with
-    _service: prefix. The service is never running on the server side. It is
-    also not possible to trigger it manually.
-   </p></div><div class="section " id="idm139862284845008"><div class="titlepage"><div><div><h4 class="title" id="idm139862284845008"><span class="number">3.3.2.4 </span><span class="name">serveronly Mode</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#idm139862284845008">#</a></h4></div></div></div><p>
-    The serviceonly mode is running the service on the service only. This can
-    be usefull, when the service is not available or can not work on developer
-    workstations.
-   </p></div><div class="section " id="idm139862284966896"><div class="titlepage"><div><div><h4 class="title" id="idm139862284966896"><span class="number">3.3.2.5 </span><span class="name">buildtime Mode</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#idm139862284966896">#</a></h4></div></div></div><p>
-    The service is running inside of the build job, for local and server side
-    builds. A side effect is that the service package is becoming a build
+   one during build. </p>
+ </div>
+ <div class="sect2 " id="id15010"><div class="titlepage"><div><div><h3 class="title" id="id15010"><span class="number">3.3.2 </span><span class="name">Different Modes When Using Services</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id15010">#</a></h3></div></div></div>
+  
+  <p> Each service can be used in a special mode defining when it should run
+   and how to use the result. This can be done per package or globally for an
+   entire project. </p>
+  <div class="sect3 " id="id15013"><div class="titlepage"><div><div><h4 class="title" id="id15013"><span class="number">3.3.2.1 </span><span class="name">Default Mode</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id15013">#</a></h4></div></div></div>
+   
+   <p> The default mode of a service is to always run after each commit on
+    the server side and locally before every local build. </p>
+  </div>
+  <div class="sect3 " id="id15016"><div class="titlepage"><div><div><h4 class="title" id="id15016"><span class="number">3.3.2.2 </span><span class="name"><code class="literal">trylocal</code> Mode</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id15016">#</a></h4></div></div></div>
+   
+   <p> The trylocal mode is running the service locally when using current
+    osc versions. The result gets committed as standard files and not named
+    with _service: prefix. Additionally the service runs on the server by
+    default, but usually the service should detect that the result is the same
+    and skip the generated files. In case they differ for any reason (because
+    the webui or API was used for example) they get generated and added on the
+    server. </p>
+  </div>
+  <div class="sect3 " id="id15020"><div class="titlepage"><div><div><h4 class="title" id="id15020"><span class="number">3.3.2.3 </span><span class="name"><code class="literal">localonly</code> Mode</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id15020">#</a></h4></div></div></div>
+   
+   <p> The localonly mode is running the service locally when using current
+    osc versions. The result gets committed as standard files and not named
+    with _service: prefix. The service is never running on the server side. It
+    is also not possible to trigger it manually. </p>
+  </div>
+  <div class="sect3 " id="id15024"><div class="titlepage"><div><div><h4 class="title" id="id15024"><span class="number">3.3.2.4 </span><span class="name"><code class="literal">serveronly</code> Mode</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id15024">#</a></h4></div></div></div>
+   
+   <p> The serviceonly mode is running the service on the service only. This
+    can be useful, when the service is not available or can not work on
+    developer workstations. </p>
+  </div>
+  <div class="sect3 " id="id15028"><div class="titlepage"><div><div><h4 class="title" id="id15028"><span class="number">3.3.2.5 </span><span class="name"><code class="literal">buildtime</code> Mode</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id15028">#</a></h4></div></div></div>
+   
+   <p> The service is running inside of the build job, for local and server
+    side builds. A side effect is that the service package is becoming a build
     dependency and must be available. Every user can provide and use a service
     this way in their projects. The generated sources are not part of the
     source repository, but part of the generated source packages. Network
     access is not be available when the workers are running in a secure mode.
-   </p></div><div class="section " id="idm139862287849152"><div class="titlepage"><div><div><h4 class="title" id="idm139862287849152"><span class="number">3.3.2.6 </span><span class="name">disabled Mode</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#idm139862287849152">#</a></h4></div></div></div><p>
-    The disabled mode is neither running the service locally or on the server
-    side. It can be used to temporarily disable the service but keeping the
-    definition as part of the service definition. Or it can be used to define
-    the way how to generate the sources and doing so by manually calling
-</p><div class="verbatim-wrap"><pre class="screen"><code class="command">osc service disabledrun</code></pre></div><p>
-    The result will get committed as standard files again.
-   </p></div></div><div class="section " id="idm139862285313184"><div class="titlepage"><div><div><h3 class="title" id="idm139862285313184"><span class="number">3.3.3 </span><span class="name">How are source service definitions stored</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#idm139862285313184">#</a></h3></div></div></div><p>
-   The called services are always defined in a <code class="command">_service</code>
-   file. It is either part of the package sources or used project-wide when
-   stored inside the <code class="command">_project</code> package.
-  </p><p>
-   The _service file contains a list of services which get called in this
+   </p>
+  </div>
+  <div class="sect3 " id="id15032"><div class="titlepage"><div><div><h4 class="title" id="id15032"><span class="number">3.3.2.6 </span><span class="name"><code class="literal">disabled</code> Mode</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id15032">#</a></h4></div></div></div>
+   
+   <p> The disabled mode is neither running the service locally or on the
+    server side. It can be used to temporarily disable the service but keeping
+    the definition as part of the service definition. Or it can be used to
+    define the way how to generate the sources and doing so by manually calling
+    <code class="command">osc service disabledrun</code> The result will
+    get committed as standard files again. </p>
+  </div>
+ </div>
+ <div class="sect2 " id="id15037"><div class="titlepage"><div><div><h3 class="title" id="id15037"><span class="number">3.3.3 </span><span class="name">Storage of Source Service Definitions</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id15037">#</a></h3></div></div></div>
+  
+  <p> The called services are always defined in a
+    <code class="command">_service</code> file. It is either part of the package sources
+   or used project-wide when stored inside the <code class="command">_project</code>
+   package. </p>
+  <p> The _service file contains a list of services which get called in this
    order. Each service may define a list of parameters and a mode. The project
    wide services get called after the per package defined services. The
-   _service file is an xml file like this example:
-</p><div class="verbatim-wrap"><pre class="screen"><code class="command">
-&lt;services&gt;
+   _service file is an xml file like this example:</p>
+   <div class="verbatim-wrap"><pre class="screen">&lt;services&gt;
   &lt;service name="download_files" mode="trylocal" /&gt;
   &lt;service name="verify_file"&gt;
     &lt;param name="file"&gt;krabber-1.0.tar.gz&lt;/param&gt;
@@ -457,51 +595,77 @@ testobs # obs_admin --rescan-repository SUSE:13.2 standard x86_64</pre></div><p>
     &lt;param name="checksum"&gt;7f535a96a834b31ba2201a90c4d365990785dead92be02d4cf846713be938b78&lt;/param&gt;
   &lt;/service&gt;
   &lt;service name="update_source" mode="disabled" /&gt;
-&lt;/services&gt;
-        </code></pre></div><p>
+&lt;/services&gt;</pre></div>
+   <p>
    This example downloads the files via download_files service via the given
    URLs from the spec file. When using osc this file gets committed as part of
    the commit. Afterwards the krabber-1.0.tar.gz file will always be compared
    with the sha256 checksum. And last but not least there is the
-   <code class="command">update_source</code> service mentioned, which is usually not
+    <code class="command">update_source</code> service mentioned, which is usually not
    executed. Except when <code class="command">osc service disabledrun</code> is called,
    which will try to upgrade the package to a newer source version available
-   online.
-  </p></div><div class="section " id="idm139862287166144"><div class="titlepage"><div><div><h3 class="title" id="idm139862287166144"><span class="number">3.3.4 </span><span class="name">Dropping a source service again</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#idm139862287166144">#</a></h3></div></div></div><p>
-   Sometimes it is useful to continued to work on generated files manualy. In
-   this situation the _service file needs to be dropped, but all generated
-   files need to be commited as standard files. The OBS provides the
+   online. </p>
+ </div>
+ <div class="sect2 " id="id15047"><div class="titlepage"><div><div><h3 class="title" id="id15047"><span class="number">3.3.4 </span><span class="name">Dropping a Source Service Again</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id15047">#</a></h3></div></div></div>
+  
+  <p> Sometimes it is useful to continue work on generated files
+   manually. In this situation the _service file needs to be dropped, but all
+   generated files need to be committed as standard files. The OBS provides the
    "mergeservice" command for this. It can also be used via osc by calling
-   <code class="command">osc service merge</code>.
-  </p></div></div><div class="section " id="_dispatch_priorities"><div class="titlepage"><div><div><h2 class="title" id="_dispatch_priorities"><span class="number">3.4 </span><span class="name">Dispatch Priorities</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_dispatch_priorities">#</a></h2></div></div></div><p>The dispatcher takes a job from the  scheduler and assign it
-to a free worker. It tries to share the available build time fair between
-all the project repositories with pending jobs. To achieve this the dispatcher
-calculates a <span class="strong"><strong><span class="emphasis"><em>load</em></span></strong></span>  per project repository of the used build time (similar to the system load in Unix
-operating systems). The dispatcher assigned jobs to build clients from the
-repository with the lowest load (thereby increasing the its load).
-It is possible to tweak this mechanism via dispatching priorities assigned
-to the repositories via the <span class="strong"><strong><span class="emphasis"><em>/build/_dispatchprios</em></span></strong></span><span class="strong"><strong>API</strong></span> call or via the
-<span class="strong"><strong><span class="emphasis"><em>dispatch_adjust</em></span></strong></span> array in the <span class="emphasis"><em>BSConfig.pm</em></span><a class="xref" href="obs.cha.overview_filesystem.html#_bsconfig_pm" title="2.1.2.2. BSConfig.pm">Section 2.1.2.2, “BSConfig.pm”</a> configuration file.</p><div class="section " id="_build__dispatchprios_api_call"><div class="titlepage"><div><div><h3 class="title" id="_build__dispatchprios_api_call"><span class="number">3.4.1 </span><span class="name">/build/_dispatchprios API call</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_build__dispatchprios_api_call">#</a></h3></div></div></div><p>The <span class="emphasis"><em>/build/_dispatchprios</em></span> API call allows an Admin to set a priority for defined
-projects and repositories using the HTML put method. With the HTML get method
-the current XML priority file can be read.</p><div class="verbatim-wrap"><pre class="screen">&lt;dispatchprios&gt;
+    <code class="command">osc service merge</code>. </p>
+ </div>
+</div>
+ <div class="sect1 " id="_dispatch_priorities"><div class="titlepage"><div><div><h2 class="title" id="_dispatch_priorities"><span class="number">3.4 </span><span class="name">Dispatch Priorities</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_dispatch_priorities">#</a></h2></div></div></div>
+ 
+ <p>The dispatcher takes a job from the scheduler and assign it to a free
+  worker. It tries to share the available build time fair between all the
+  project repositories with pending jobs. To achieve this the dispatcher
+  calculates a <span class="strong"><strong><span class="emphasis"><em>load</em></span></strong></span> per
+  project repository of the used build time (similar to the system load in Unix
+  operating systems). The dispatcher assigned jobs to build clients from the
+  repository with the lowest load (thereby increasing the its load). It is
+  possible to tweak this mechanism via dispatching priorities assigned to the
+  repositories via the <span class="strong"><strong><span class="emphasis"><em>/build/_dispatchprios</em></span></strong></span><span class="strong"><strong>API</strong></span> call or via the <span class="strong"><strong><span class="emphasis"><em>dispatch_adjust</em></span></strong></span> array in the
+   <span class="emphasis"><em>BSConfig.pm</em></span><a class="xref" href="obs.cha.overview_filesystem.html#_bsconfig_pm" title="2.1.2.2. BSConfig.pm">Section 2.1.2.2, “BSConfig.pm”</a> configuration
+  file.</p>
+ <div class="sect2 " id="_build__dispatchprios_api_call"><div class="titlepage"><div><div><h3 class="title" id="_build__dispatchprios_api_call"><span class="number">3.4.1 </span><span class="name">The <code class="literal">/build/_dispatchprios</code> API Call</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_build__dispatchprios_api_call">#</a></h3></div></div></div>
+  
+  <p>The <span class="emphasis"><em>/build/_dispatchprios</em></span> API call allows an
+   Admin to set a priority for defined projects and repositories using the HTML
+   put method. With the HTML get method the current XML priority file can be
+   read.</p>
+  <div class="verbatim-wrap"><pre class="screen">&lt;dispatchprios&gt;
   &lt;prio project="ProjectName" repository="RepoName" arch="Architecture" adjust="Number" /&gt;
-&lt;/dispatchprios&gt;</pre></div><p>The attributes <span class="emphasis"><em>project</em></span>, <span class="emphasis"><em>repository</em></span> and <span class="emphasis"><em>arch</em></span> are all optional, if for
-example <span class="emphasis"><em>arch</em></span> and <span class="emphasis"><em>repository</em></span> are missing the entry is used for all
-repositories and architectures for the given project. It is not suported to
-use regular expressions for the names.
-The adjust value is taken as logarithmic scale factor to the current load of the
-repositories during the compare.
-Projects without any entry get a default priority of 0, higher values cause the matching projects to get more
-build time.</p><p>Example dispatchprios XML file</p><div class="verbatim-wrap"><pre class="screen">&lt;dispatchprios&gt;
+&lt;/dispatchprios&gt;</pre></div>
+  <p>The attributes <span class="emphasis"><em>project</em></span>,
+    <span class="emphasis"><em>repository</em></span> and <span class="emphasis"><em>arch</em></span> are all
+   optional, if for example <span class="emphasis"><em>arch</em></span> and
+    <span class="emphasis"><em>repository</em></span> are missing the entry is used for all
+   repositories and architectures for the given project. It is not supported to
+   use regular expressions for the names. The adjust value is taken as
+   logarithmic scale factor to the current load of the repositories during the
+   compare. Projects without any entry get a default priority of 0, higher
+   values cause the matching projects to get more build time.</p>
+  <p>Example dispatchprios XML file</p>
+  <div class="verbatim-wrap"><pre class="screen">&lt;dispatchprios&gt;
    &lt;prio project="DemoProject1" repository="openSUSE_Leap_42.1" adjust="10" /&gt;
    &lt;prio project="Test1" adjust="5" /&gt;
    &lt;prio project="Test11" repository="openSUSE_13.2" arch="i586" adjust="-10"/&gt;
-&lt;/dispatchprios&gt;</pre></div><div class="table" id="idm139862288565888"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 3.1: </span><span class="name">Rounded scale factors resulting from a priority </span><a title="Permalink" class="permalink" href="obs.cha.administration.html#idm139862288565888">#</a></h6></div><div class="table-contents"><table summary="Rounded scale factors resulting from a priority" border="1" width="70%"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /><col class="col_4" /><col class="col_5" /></colgroup><thead><tr><th align="left" valign="top"> priority </th><th align="left" valign="top"> scale factor </th><th align="left" valign="top"> </th><th align="left" valign="top"> priority </th><th align="left" valign="top"> scale factor</th></tr></thead><tbody><tr><td align="left" valign="top">
+&lt;/dispatchprios&gt;</pre></div>
+  <div class="table" id="id15077"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 3.1: </span><span class="name">Rounded Scale Factors Resulting from a Priority </span><a title="Permalink" class="permalink" href="obs.cha.administration.html#id15077">#</a></h6></div><div class="table-contents">
+   
+   
+
+   
+
+   
+
+   <table class="table" summary="Rounded Scale Factors Resulting from a Priority" border="1" width="70%"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /><col class="col_4" /><col class="col_5" /></colgroup><thead><tr><th align="left" valign="top"> priority </th><th align="left" valign="top"> scale factor </th><th align="left" valign="top"> </th><th align="left" valign="top"> priority </th><th align="left" valign="top"> scale factor</th></tr></thead><tbody><tr><td align="left" valign="top">
        <p>-50</p>
       </td><td align="left" valign="top">
        <p>100000</p>
       </td><td align="left" valign="top">
-       <p></p>
+       
       </td><td align="left" valign="top">
        <p>3</p>
       </td><td align="left" valign="top">
@@ -511,7 +675,7 @@ build time.</p><p>Example dispatchprios XML file</p><div class="verbatim-wrap"><
       </td><td align="left" valign="top">
        <p>1000</p>
       </td><td align="left" valign="top">
-       <p></p>
+       
       </td><td align="left" valign="top">
        <p>5</p>
       </td><td align="left" valign="top">
@@ -521,7 +685,7 @@ build time.</p><p>Example dispatchprios XML file</p><div class="verbatim-wrap"><
       </td><td align="left" valign="top">
        <p>100</p>
       </td><td align="left" valign="top">
-       <p></p>
+       
       </td><td align="left" valign="top">
        <p>7</p>
       </td><td align="left" valign="top">
@@ -531,7 +695,7 @@ build time.</p><p>Example dispatchprios XML file</p><div class="verbatim-wrap"><
       </td><td align="left" valign="top">
        <p>30</p>
       </td><td align="left" valign="top">
-       <p></p>
+       
       </td><td align="left" valign="top">
        <p>10</p>
       </td><td align="left" valign="top">
@@ -541,7 +705,7 @@ build time.</p><p>Example dispatchprios XML file</p><div class="verbatim-wrap"><
       </td><td align="left" valign="top">
        <p>10</p>
       </td><td align="left" valign="top">
-       <p></p>
+       
       </td><td align="left" valign="top">
        <p>15</p>
       </td><td align="left" valign="top">
@@ -551,7 +715,7 @@ build time.</p><p>Example dispatchprios XML file</p><div class="verbatim-wrap"><
       </td><td align="left" valign="top">
        <p>5</p>
       </td><td align="left" valign="top">
-       <p></p>
+       
       </td><td align="left" valign="top">
        <p>20</p>
       </td><td align="left" valign="top">
@@ -561,7 +725,7 @@ build time.</p><p>Example dispatchprios XML file</p><div class="verbatim-wrap"><
       </td><td align="left" valign="top">
        <p>3</p>
       </td><td align="left" valign="top">
-       <p></p>
+       
       </td><td align="left" valign="top">
        <p>30</p>
       </td><td align="left" valign="top">
@@ -571,7 +735,7 @@ build time.</p><p>Example dispatchprios XML file</p><div class="verbatim-wrap"><
       </td><td align="left" valign="top">
        <p>2</p>
       </td><td align="left" valign="top">
-       <p></p>
+       
       </td><td align="left" valign="top">
        <p>40</p>
       </td><td align="left" valign="top">
@@ -581,81 +745,155 @@ build time.</p><p>Example dispatchprios XML file</p><div class="verbatim-wrap"><
       </td><td align="left" valign="top">
        <p>1</p>
       </td><td align="left" valign="top">
-       <p></p>
+       
       </td><td align="left" valign="top">
        <p>50</p>
       </td><td align="left" valign="top">
        <p>0.00001</p>
-      </td></tr></tbody></table></div></div></div><div class="section " id="_dispatch_adjust_array"><div class="titlepage"><div><div><h3 class="title" id="_dispatch_adjust_array"><span class="number">3.4.2 </span><span class="name">dispatch_adjust array</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_dispatch_adjust_array">#</a></h3></div></div></div><p>With the <span class="strong"><strong><span class="emphasis"><em>dispatch_adjust</em></span></strong></span> array in the <span class="emphasis"><em>BSConfig.pm</em></span> file the dispatch
-priorities of project repositories based on regular expressions for the
-project, repository name and maybe architecture.
-Each match will add or subtract a value to the priotity of the repository.
-The default priority is 0, higher values cause the matching
-projects to get more build time.</p><p>Each entry in the dispatch_adjust array has the format</p><div class="verbatim-wrap"><pre class="screen">      'regex string'  =&gt; priority adjustment</pre></div><p>The full name of a build repository looks like</p><div class="verbatim-wrap"><pre class="screen">      Project:Subproject/Repository/Architecture
+      </td></tr></tbody></table>
+  </div></div>
+ </div>
+ <div class="sect2 " id="_dispatch_adjust_array"><div class="titlepage"><div><div><h3 class="title" id="_dispatch_adjust_array"><span class="number">3.4.2 </span><span class="name"><code class="literal">dispatch_adjust</code> Array</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_dispatch_adjust_array">#</a></h3></div></div></div>
+  
+  <p>With the <span class="strong"><strong><span class="emphasis"><em>dispatch_adjust</em></span></strong></span> array in the
+    <span class="emphasis"><em>BSConfig.pm</em></span> file the dispatch priorities of project
+   repositories based on regular expressions for the project, repository name
+   and maybe architecture. Each match will add or subtract a value to the
+   priority of the repository. The default priority is 0, higher values cause
+   the matching projects to get more build time.</p>
+  <p>Each entry in the dispatch_adjust array has the format</p>
+  <div class="verbatim-wrap"><pre class="screen">'regex string'  =&gt; priority adjustment</pre></div>
+  <p>The full name of a build repository looks like</p>
+  <div class="verbatim-wrap"><pre class="screen">Project:Subproject/Repository/Architecture
 
 Examples:
    Devel:Science/SLES-11/i586
-   home:king:test/Leap42/x86_64</pre></div><p>If a repopsitory match a string the adjustment is added to the current
-value. The final value is the sum of the adjustments of all matched entries.
-This sum is the same logarithmic scale factor as described in
-the previous section.</p><p>Example dispatch_adjust definition in the BSConfig.pm</p><div class="verbatim-wrap"><pre class="screen">our $dispatch_adjust = [
+   home:king:test/Leap42/x86_64</pre></div>
+  <p>If a repository matches a string the adjustment is added to the
+   current value. The final value is the sum of the adjustments of all matched
+   entries. This sum is the same logarithmic scale factor as described in the
+   previous section.</p>
+  <p>Example dispatch_adjust definition in the BSConfig.pm</p>
+  <div class="verbatim-wrap"><pre class="screen">our $dispatch_adjust = [
     'Devel:' =&gt; 7,
     'HotFix:' =&gt; +20,
     '.+:test.*' =&gt; -10,
     'home:' =&gt; -3,
     'home:king' =&gt; +30,
     '.+/SLE12-SP2' =&gt; -40,
-];</pre></div><p>The above example could have the following background:
-All Devel projects should get some higher priority so the developer jobs
-getting more build time. The projects under HotFix are very important fixes for
-customers and so they should get a worker as soon as possible. All projects
-with test in the name get some penalty, also home projects are getting only
-about half of the build time as a normal project, with the exception of the
-home project from king, the user account of the boss.
-The SLES12-SP2 repository is not in real use yet, but if here is nothing
-else to do build for it as well.</p><div id="idm139862285317392" class="admonition important"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6><p>The dispatcher calculates the values form the <span class="strong"><strong><span class="emphasis"><em>'dispatch_adjust'</em></span></strong></span> array
-first, if the same project and repository also has an entry in the
-dispatchprios XML file, the XML file entry will overwrite the calculated
-priority. The best practice is to only use one of the methods.</p></div></div></div><div class="section " id="_publisher_hooks"><div class="titlepage"><div><div><h2 class="title" id="_publisher_hooks"><span class="number">3.5 </span><span class="name">Publisher Hooks</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_publisher_hooks">#</a></h2></div></div></div><p>The job of the publisher service is to publish the build packages and/or images
-by creating repositories that are made available through a web server.</p><p>It can be configured to use custom scripts to copy the build results to
-different servers or do anything with them that comes to mind.  These
-scripts are called <span class="strong"><strong><span class="emphasis"><em>publisher hooks</em></span></strong></span>.</p><div class="section " id="_publisher_hooks_configuration"><div class="titlepage"><div><div><h3 class="title" id="_publisher_hooks_configuration"><span class="number">3.5.1 </span><span class="name">Publisher Hooks configuration</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_publisher_hooks_configuration">#</a></h3></div></div></div><p>Hooks are configured via the configuration file
-<span class="emphasis"><em>/usr/lib/obs/server/BSConfig.pm</em></span>, where one script per project is linked
-to the repository that should be run if the project/repository combination is
-published. It is possible to use regular expressions here.</p><p>The script is called by the <span class="strong"><strong>obsrun</strong></span> user with the following parameters:</p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem ">
-information about the project and its repository (e.g. <span class="emphasis"><em>training/SLE11-SP1</em></span>)
-</li><li class="listitem ">
-path to published repository (e.g. <span class="emphasis"><em>/srv/obs/repos/training/SLE11-SP1</em></span>)
-</li><li class="listitem ">
-changed packages (e.g. <span class="emphasis"><em>x86 64/test.rpm x86 64/utils.rpm</em></span>)
-</li></ol></div><p>The hooks are configured by adding a hash reference named <span class="emphasis"><em>$publishedhook</em></span> to
-the <span class="emphasis"><em>BSConfig.pm</em></span> configuration file. The key contains the project, and the
-value references the accompanying script.  If the value is written as an array
-reference it is possible to call the hook with self-defined parameters.</p><p>The publisher will add the 3 listed parameters at the end (after the self
-defined parameters).</p><div class="verbatim-wrap"><pre class="screen">/usr/lib/obs/server/BSConfig.pm
-
-    our $publishedhook = {
-     "Product/SLES12"     =&gt; "/usr/local/bin/script2run_sles12",
-     "Product/SLES11-SP3" =&gt; "/usr/local/bin/script2run_sles11",
-     "Product/SLES11-SP4" =&gt; "/usr/local/bin/script2run_sles11",
-    };</pre></div><p>Regular expressions or substrings can be used to define a script for more than one repository in one project.
-The use of regular expressions has to be activated by defining <span class="emphasis"><em>$publishedhook use regex = 1;</em></span> as follows:</p><div class="verbatim-wrap"><pre class="screen">/usr/lib/obs/server/BSConfig.pm
-
-    our $publishedhook_use_regex = 1;
-    our $publishedhook = {
-        "Product\/SLES12"     =&gt; "/usr/local/bin/script2run_sles12",
-        "Product\/SLES11.*"   =&gt; "/usr/local/bin/script2run_sles11",
-    };</pre></div><p>With self defined parameters:</p><div class="verbatim-wrap"><pre class="screen">    our $publishedhook_use_regex = 1;
-    our $publishedhook = {
-        "Product\/SLES11.*" =&gt; ["/usr/local/bin/script2run", "sles11", "/srv/www/public_mirror"],
-    };</pre></div><p>The configuration is read by the publisher at startup only, so it has to be restarted after cofiguration changes have been made.
-The hook script’s output is not logged by the publisher and should be written to a logfile by the script itself. In case of a broken script,this is logged in the publisher’s logfile (/srv/obs/log/publisher.log by default):</p><div class="verbatim-wrap"><pre class="screen">Mon Mar  7 14:34:17 2016 publishing Product/SLES12
+];</pre></div>
+  <p>The above example could have the following background: All Devel
+   projects should get some higher priority so the developer jobs getting more
+   build time. The projects under HotFix are very important fixes for customers
+   and so they should get a worker as soon as possible. All projects with test
+   in the name get some penalty, also home projects are getting only about half
+   of the build time as a normal project, with the exception of the home
+   project from king, the user account of the boss. The SLES12-SP2 repository
+   is not in real use yet, but if here is nothing else to do build for it as
+   well.</p>
+  <div id="id15207" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6>
+   <p>The dispatcher calculates the values form the <span class="strong"><strong><span class="emphasis"><em>'dispatch_adjust'</em></span></strong></span> array
+    first, if the same project and repository also has an entry in the
+    dispatchprios XML file, the XML file entry will overwrite the calculated
+    priority. The best practice is to only use one of the methods.</p>
+  </div>
+ </div>
+</div>
+ <div class="sect1 " id="_publisher_hooks"><div class="titlepage"><div><div><h2 class="title" id="_publisher_hooks"><span class="number">3.5 </span><span class="name">Publisher Hooks</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_publisher_hooks">#</a></h2></div></div></div>
+ 
+ <p>The job of the publisher service is to publish the build packages
+  and/or images by creating repositories that are made available through a web
+  server.</p>
+ <p>It can be configured to use custom scripts to copy the build results
+  to different servers or do anything with them that comes to mind. These
+  scripts are called <span class="strong"><strong><span class="emphasis"><em>publisher
+    hooks</em></span></strong></span>.</p>
+ <div class="sect2 " id="_publisher_hooks_configuration"><div class="titlepage"><div><div><h3 class="title" id="_publisher_hooks_configuration"><span class="number">3.5.1 </span><span class="name">Configuring Publisher Hooks</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_publisher_hooks_configuration">#</a></h3></div></div></div>
+  
+  <p>Hooks are configured via the configuration file
+    <span class="emphasis"><em>/usr/lib/obs/server/BSConfig.pm</em></span>, where one script per
+   project is linked to the repository that should be run if the
+   project/repository combination is published. It is possible to use regular
+   expressions here.</p>
+  <p>
+   The script is called by the user
+   <code class="systemitem">obsrun</code> with the following
+   parameters:
+  </p>
+  <div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem ">
+    <p>
+     information about the project and its repository (for example,
+     <code class="literal">training/SLE11-SP1</code>)
+    </p>
+   </li><li class="listitem ">
+    <p>
+     path to published repository (for example,
+     <code class="filename">/srv/obs/repos/training/SLE11-SP1</code>)
+    </p>
+   </li><li class="listitem ">
+    <p>
+     changed packages (for example, <code class="literal">x86 64/test.rpm x86
+     64/utils.rpm</code>)
+    </p>
+    
+   </li></ol></div>
+  <p>The hooks are configured by adding a hash reference named
+    <span class="emphasis"><em>$publishedhook</em></span> to the <span class="emphasis"><em>BSConfig.pm</em></span>
+   configuration file. The key contains the project, and the value references
+   the accompanying script. If the value is written as an array reference it is
+   possible to call the hook with self-defined parameters.</p>
+  <p>The publisher will add the 3 listed parameters at the end, after the
+   self-defined parameters
+   (in <code class="filename">/usr/lib/obs/server/BSConfig.pm</code>):
+  </p>
+  <div class="verbatim-wrap highlight perl"><pre class="screen">our $publishedhook = {
+ "Product/SLES12"     =&gt; "/usr/local/bin/script2run_sles12",
+ "Product/SLES11-SP3" =&gt; "/usr/local/bin/script2run_sles11",
+ "Product/SLES11-SP4" =&gt; "/usr/local/bin/script2run_sles11",
+};</pre></div>
+  <p>Regular expressions or substrings can be used to define a script for
+   more than one repository in one project. The use of regular expressions has
+   to be activated by defining
+   <code class="literal">$publishedhook use regex = 1;</code> as follows
+   (in <code class="filename">/usr/lib/obs/server/BSConfig.pm</code>):
+  </p>
+  <div class="verbatim-wrap highlight perl"><pre class="screen">our $publishedhook_use_regex = 1;
+our $publishedhook = {
+    "Product\/SLES12"     =&gt; "/usr/local/bin/script2run_sles12",
+    "Product\/SLES11.*"   =&gt; "/usr/local/bin/script2run_sles11",
+};</pre></div>
+  <p>With self defined parameters:</p>
+  <div class="verbatim-wrap highlight perl"><pre class="screen">our $publishedhook_use_regex = 1;
+our $publishedhook = {
+    "Product\/SLES11.*" =&gt; ["/usr/local/bin/script2run", "sles11", "/srv/www/public_mirror"],
+};</pre></div>
+  <p>The configuration is read by the publisher at startup only, so it
+   has to be restarted after configuration changes have been made. The hook
+   script’s output is not logged by the publisher and should be written to a
+   log file by the script itself. In case of a broken script,this is logged in
+   the publisher’s log file (/srv/obs/log/publisher.log by default):</p>
+  <div class="verbatim-wrap"><pre class="screen">Mon Mar  7 14:34:17 2016 publishing Product/SLES12
     fetched 0 patterns
     running createrepo
     calling published hook /usr/local/bin/script2run_sles12
     /usr/local/bin/script2run_sles12 failed: 65280
-    syncing database (6 ops)</pre></div><p>Interactive scripts are not working and will fail immediately.</p><p>If you need to do a lot of work in the hook script and dont want to block the publisher all the time, you should consider using a separate daemon that does all the work and just gets triggered by the configured hook script.</p><p>The scripts are called without a timeout.</p></div><div class="section " id="_example_publisher_scripts"><div class="titlepage"><div><div><h3 class="title" id="_example_publisher_scripts"><span class="number">3.5.2 </span><span class="name">Example Publisher Scripts</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_example_publisher_scripts">#</a></h3></div></div></div><div class="section " id="_simple_publisher_hook"><div class="titlepage"><div><div><h4 class="title" id="_simple_publisher_hook"><span class="number">3.5.2.1 </span><span class="name">Simple Publisher Hook</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_simple_publisher_hook">#</a></h4></div></div></div><p>The following example script ignores the packages that have changed and copies all
-RPMs from the repository directory to a target directory:</p><div class="verbatim-wrap"><pre class="screen">#!/bin/bash
+    syncing database (6 ops)</pre></div>
+  <p>Interactive scripts are not working and will fail
+   immediately.</p>
+  <p>If you need to do a lot of work in the hook script and do not want to
+   block the publisher all the time, you should consider using a separate
+   daemon that does all the work and just gets triggered by the configured hook
+   script.</p>
+  <p>The scripts are called without a timeout.</p>
+ </div>
+ <div class="sect2 " id="_example_publisher_scripts"><div class="titlepage"><div><div><h3 class="title" id="_example_publisher_scripts"><span class="number">3.5.2 </span><span class="name">Example Publisher Scripts</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_example_publisher_scripts">#</a></h3></div></div></div>
+  
+  <div class="sect3 " id="_simple_publisher_hook"><div class="titlepage"><div><div><h4 class="title" id="_simple_publisher_hook"><span class="number">3.5.2.1 </span><span class="name">Simple Publisher Hook</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_simple_publisher_hook">#</a></h4></div></div></div>
+   
+   <p>The following example script ignores the packages that have changed
+    and copies all RPMs from the repository directory to a target
+    directory:</p>
+   <div class="verbatim-wrap highlight bash"><pre class="screen">#!/bin/bash
 OBSHOME="/srv/obs"
 SRC_REPO_DIR="$OBSHOME/repos"
 LOGFILE="$OBSHOME/log/reposync.log"
@@ -664,9 +902,16 @@ $DST_REPO_DIR="/srv/repo-mirror"
 #+double-colons!
 PRJ_PATH=${1//:/:\/}
 PATH_TO_REPO=$2
-rsync -a --log-file=$LOGFILE $PATH_TO_REPO/ $DST_REPO_DIR/$PRJ_PATH/</pre></div><p>For testing purposes, it can be invoked as follows:</p><div class="verbatim-wrap"><pre class="screen">$ sudo -u obsrun /usr/local/bin/publish-hook.sh Product/SLES11-SP1 \
-    /srv/obs/repos/Product/SLE11-SP1</pre></div></div><div class="section " id="_advanced_publisher_hook"><div class="titlepage"><div><div><h4 class="title" id="_advanced_publisher_hook"><span class="number">3.5.2.2 </span><span class="name">Advanced Publisher Hook</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_advanced_publisher_hook">#</a></h4></div></div></div><p>The following example script reads the destination path from a parameter that is configured with
-the hook script:</p><div class="verbatim-wrap"><pre class="screen">#!/bin/bash
+rsync -a --log-file=$LOGFILE $PATH_TO_REPO/ $DST_REPO_DIR/$PRJ_PATH/</pre></div>
+   <p>For testing purposes, it can be invoked as follows:</p>
+   <div class="verbatim-wrap"><pre class="screen">$ sudo -u obsrun /usr/local/bin/publish-hook.sh Product/SLES11-SP1 \
+    /srv/obs/repos/Product/SLE11-SP1</pre></div>
+  </div>
+  <div class="sect3 " id="_advanced_publisher_hook"><div class="titlepage"><div><div><h4 class="title" id="_advanced_publisher_hook"><span class="number">3.5.2.2 </span><span class="name">Advanced Publisher Hook</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_advanced_publisher_hook">#</a></h4></div></div></div>
+   
+   <p>The following example script reads the destination path from a
+    parameter that is configured with the hook script:</p>
+   <div class="verbatim-wrap highlight bash"><pre class="screen">#!/bin/bash
 LOGFILE="/srv/obs/log/reposync.log"
 DST_REPO_DIR=$1
 # Global substion! To handle strings like Foo:Bar:testing - two
@@ -674,9 +919,14 @@ DST_REPO_DIR=$1
 PRJ_PATH=${2//:/:\/}
 PATH_TO_REPO=$3
 mkdir -p $DST_REPO_DIR/$PRJ_PATH
-rsync -a --log-file=$LOGFILE $PATH_TO_REPO/ $DST_REPO_DIR/$PRJ_PATH/</pre></div><p>For testing purposes, it can be invoked as follows:</p><div class="verbatim-wrap"><pre class="screen">$ sudo -u obsrun /usr/local/bin/publish-hook.sh \
+rsync -a --log-file=$LOGFILE $PATH_TO_REPO/ $DST_REPO_DIR/$PRJ_PATH/</pre></div>
+   <p>For testing purposes, it can be invoked as follows:</p>
+   <div class="verbatim-wrap"><pre class="screen">$ sudo -u obsrun /usr/local/bin/publish-hook.sh \
     /srv/www/public_mirror/Product/SLES11-SP1 \
-    /srv/obs/repos/Product/SLE11SP1</pre></div><p>The following example script only copies packages that have changed, but does not delete packages that have been removed:</p><div class="verbatim-wrap"><pre class="screen">#!/bin/bash
+    /srv/obs/repos/Product/SLE11SP1</pre></div>
+   <p>The following example script only copies packages that have
+    changed, but does not delete packages that have been removed:</p>
+   <div class="verbatim-wrap highlight bash"><pre class="screen">#!/bin/bash
 
 DST_REPO_DIR=$1
 PRJ_PATH=${2//:/:\/}
@@ -695,52 +945,116 @@ do
   shift
 done
 
-createrepo $DST_REPO_DIR/$PRJ_PATH/.</pre></div><p>For testing purposes, it can be invoked as follows:</p><div class="verbatim-wrap"><pre class="screen">$ sudo -o obsrun /usr/local/bin/publish-hook.sh  /srv/www/public_mirror \
+createrepo $DST_REPO_DIR/$PRJ_PATH/.</pre></div>
+   <p>For testing purposes, it can be invoked as follows:</p>
+   <div class="verbatim-wrap"><pre class="screen">$ sudo -o obsrun /usr/local/bin/publish-hook.sh  /srv/www/public_mirror \
    Product/SLES11-SP1 /srv/obs/repos/Product/SLE11-SP1 \
    src/icinga-1.13.3-1.3.src.rpm x86_64/icinga-1.13.3-1.3.x86_64.rpm \
-   x86_64/icinga-devel-1.13.3-1.3.x86_64.rpm</pre></div></div></div></div><div class="section " id="_unpublisher_hooks"><div class="titlepage"><div><div><h2 class="title" id="_unpublisher_hooks"><span class="number">3.6 </span><span class="name">Unpublisher Hooks</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_unpublisher_hooks">#</a></h2></div></div></div><p>The job of the publisher service is to publish the build packages and/or images
-by creating repositories that are made available through a web server.</p><p>The OBS Publisher can be configured to use custom scripts to be called whenever already
-published packages get removed. These scripts are called <span class="strong"><strong>unpublisher hooks</strong></span>.
-<span class="strong"><strong>Unpublisher hooks</strong></span> are run before the <span class="strong"><strong>publisher hooks</strong></span>.</p><div class="section " id="_unpublisher_hooks_configuration"><div class="titlepage"><div><div><h3 class="title" id="_unpublisher_hooks_configuration"><span class="number">3.6.1 </span><span class="name">Unpublisher Hooks configuration</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_unpublisher_hooks_configuration">#</a></h3></div></div></div><p>Hooks are configured via the configuration file
-<span class="emphasis"><em>/usr/lib/obs/server/BSConfig.pm</em></span>, where one script per project is linked
-to the repository that should be run if the project/repository combination is
-removed. It is possible to use regular expressions here.</p><p>The script is called by the <span class="strong"><strong>obsrun</strong></span> user with the following parameters:</p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem ">
-information about the project and its repository (e.g. <span class="emphasis"><em>training/SLE11-SP1</em></span>)
-</li><li class="listitem ">
-repository path (e.g. <span class="emphasis"><em>/srv/obs/repos/training/SLE11-SP1</em></span>)
-</li><li class="listitem ">
-removed packages (e.g. <span class="emphasis"><em>x86 64/test.rpm x86 64/utils.rpm</em></span>)
-</li></ol></div><p>The hooks are configured by adding a hash reference named <span class="emphasis"><em>$unpublishedhook</em></span> to
-the <span class="emphasis"><em>BSConfig.pm</em></span> configuration file. The key contains the project and the
-value references the accompanying script.  If the value is written as an array
-reference, it is possible to call the hook with custom parameters.</p><p>The publisher adds the three listed parameters at the end, right behind the custom parameters.</p><div class="verbatim-wrap"><pre class="screen">/usr/lib/obs/server/BSConfig.pm
-
-    our $unpublishedhook = {
-        "Product/SLES12"     =&gt; "/usr/local/bin/script2run_sles12",
-        "Product/SLES11-SP3" =&gt; "/usr/local/bin/script2run_sles11",
-        "Product/SLES11-SP4" =&gt; "/usr/local/bin/script2run_sles11",
-    };</pre></div><p>Regular expressions or substrings can be used to define a script for more than one repository in one project.
-The use of regular expressions needs to be activated by defining <span class="emphasis"><em>$unpublishedhook use regex = 1;</em></span>:</p><div class="verbatim-wrap"><pre class="screen">/usr/lib/obs/server/BSConfig.pm
-
-    our $unpublishedhook_use_regex = 1;
-    our $unpublishedhook = {
-        "Product\/SLES12"     =&gt; "/usr/local/bin/script2run_sles12",
-        "Product\/SLES11.*"   =&gt; "/usr/local/bin/script2run_sles11",
-    };</pre></div><p>With custom parameters:</p><div class="verbatim-wrap"><pre class="screen">    our $unpublishedhook_use_regex = 1;
-    our $unpublishedhook = {
-        "Product\/SLES11.*" =&gt; [
-          "/usr/local/bin/script2run", "sles11", "/srv/www/public_mirror"
-        ],
-    };</pre></div><p>The configuration is read by the publisher at startup only, so it has to be restarted after configuration changes have been made.
-The hook script’s output is not logged by the publisher and should be written to a logfile by the script itself. In case of a broken script, this is logged in the publisher’s logfile (/srv/obs/log/publisher.log by default):</p><div class="verbatim-wrap"><pre class="screen">Mon Mar  7 14:34:17 2016 publishing Product/SLES12
+   x86_64/icinga-devel-1.13.3-1.3.x86_64.rpm</pre></div>
+  </div>
+ </div>
+</div>
+ <div class="sect1 " id="_unpublisher_hooks"><div class="titlepage"><div><div><h2 class="title" id="_unpublisher_hooks"><span class="number">3.6 </span><span class="name">Unpublisher Hooks</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_unpublisher_hooks">#</a></h2></div></div></div>
+ 
+ <p>The job of the publisher service is to publish the build packages
+  and/or images by creating repositories that are made available through a web
+  server.</p>
+ <p>The OBS Publisher can be configured to use custom scripts to be
+  called whenever already published packages get removed. These scripts are
+  called <span class="strong"><strong>unpublisher hooks</strong></span>. <span class="strong"><strong>Unpublisher hooks</strong></span> are run before the <span class="strong"><strong>publisher hooks</strong></span>.</p>
+ <div class="sect2 " id="_unpublisher_hooks_configuration"><div class="titlepage"><div><div><h3 class="title" id="_unpublisher_hooks_configuration"><span class="number">3.6.1 </span><span class="name">Configuring Unpublisher Hooks</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_unpublisher_hooks_configuration">#</a></h3></div></div></div>
+  
+  <p>Hooks are configured via the configuration file
+    <span class="emphasis"><em>/usr/lib/obs/server/BSConfig.pm</em></span>, where one script per
+   project is linked to the repository that should be run if the
+   project/repository combination is removed. It is possible to use regular
+   expressions here.</p>
+  <p>
+   The script is called by the user
+   <code class="systemitem">obsrun</code> with the following
+   parameters:
+  </p>
+  <div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem ">
+    <p>
+     information about the project and its repository (for example,
+     <span class="emphasis"><em>training/SLE11-SP1</em></span>)
+     </p>
+   </li><li class="listitem ">
+    <p>
+     repository path (for example,
+     <code class="filename">/srv/obs/repos/training/SLE11-SP1</code>)
+     </p>
+   </li><li class="listitem ">
+    <p>
+     removed packages (for example, <code class="literal">x86 64/test.rpm x86
+     64/utils.rpm</code>)
+    </p>
+   </li></ol></div>
+  <p>The hooks are configured by adding a hash reference named
+    <span class="emphasis"><em>$unpublishedhook</em></span> to the
+    <span class="emphasis"><em>BSConfig.pm</em></span> configuration file. The key contains the
+   project and the value references the accompanying script. If the value is
+   written as an array reference, it is possible to call the hook with custom
+   parameters.</p>
+  <p>The publisher adds the three listed parameters at the end, directly after
+   the custom parameters
+   (in <code class="filename">/usr/lib/obs/server/BSConfig.pm</code>):
+  </p>
+  <div class="verbatim-wrap highlight perl"><pre class="screen">our $unpublishedhook = {
+    "Product/SLES12"     =&gt; "/usr/local/bin/script2run_sles12",
+    "Product/SLES11-SP3" =&gt; "/usr/local/bin/script2run_sles11",
+    "Product/SLES11-SP4" =&gt; "/usr/local/bin/script2run_sles11",
+};</pre></div>
+  <p>Regular expressions or substrings can be used to define a script for
+   more than one repository in one project. The use of regular expressions
+   needs to be activated by defining
+   <code class="literal">$unpublishedhook use regex = 1;</code>
+   (in <code class="filename">/usr/lib/obs/server/BSConfig.pm</code>):
+   </p>
+  <div class="verbatim-wrap highlight perl"><pre class="screen">our $unpublishedhook_use_regex = 1;
+our $unpublishedhook = {
+    "Product\/SLES12"     =&gt; "/usr/local/bin/script2run_sles12",
+    "Product\/SLES11.*"   =&gt; "/usr/local/bin/script2run_sles11",
+};</pre></div>
+  <p>With custom parameters:</p>
+  <div class="verbatim-wrap highlight perl"><pre class="screen">our $unpublishedhook_use_regex = 1;
+our $unpublishedhook = {
+    "Product\/SLES11.*" =&gt; [
+      "/usr/local/bin/script2run", "sles11", "/srv/www/public_mirror"
+    ],
+};</pre></div>
+  <p>The configuration is read by the publisher at startup only, so it
+   has to be restarted after configuration changes have been made. The hook
+   script’s output is not logged by the publisher and should be written to a
+   log file by the script itself. In case of a broken script, this is logged in
+   the publisher’s log file (/srv/obs/log/publisher.log by default):</p>
+  <div class="verbatim-wrap"><pre class="screen">Mon Mar  7 14:34:17 2016 publishing Product/SLES12
     fetched 0 patterns
     running createrepo
     calling unpublished hook /usr/local/bin/script2run_sles12
     /usr/local/bin/script2run_sles12 failed: 65280
-    syncing database (6 ops)</pre></div><p>Interactive scripts are not working and will fail immediately.</p><p>If you need to do a lot of work in the hook script and don’t want to block the publisher all the time, consider using a separate daemon that does all the work and just
-gets triggered by the configured hook script.</p><p>The scripts are called without a timeout.</p><div id="idm139862288641376" class="admonition note"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p><span class="strong"><strong>Reminder:</strong></span> If <span class="emphasis"><em>unpublish hooks</em></span> and <span class="emphasis"><em>publish hooks</em></span> are defined, the
-<span class="emphasis"><em>unpublish hook</em></span> runs before the <span class="emphasis"><em>publish hook</em></span>.</p></div></div><div class="section " id="_example_unpublisher_scripts"><div class="titlepage"><div><div><h3 class="title" id="_example_unpublisher_scripts"><span class="number">3.6.2 </span><span class="name">Example Unpublisher Scripts</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_example_unpublisher_scripts">#</a></h3></div></div></div><div class="section " id="_simple_unpublisher_hook"><div class="titlepage"><div><div><h4 class="title" id="_simple_unpublisher_hook"><span class="number">3.6.2.1 </span><span class="name">Simple Unpublisher Hook</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_simple_unpublisher_hook">#</a></h4></div></div></div><p>The following example script deletes all packages from the target directory
-that have been removed from the repository.</p><div class="verbatim-wrap"><pre class="screen">#!/bin/bash
+    syncing database (6 ops)</pre></div>
+  <p>Interactive scripts are not working and will fail
+   immediately.</p>
+  <p>If you need to do a lot of work in the hook script and do not want
+   to block the publisher all the time, consider using a separate daemon that
+   does all the work and just gets triggered by the configured hook
+   script.</p>
+  <p>The scripts are called without a timeout.</p>
+  <div id="id15309" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6>
+   <p><span class="strong"><strong>Reminder:</strong></span> If <span class="emphasis"><em>unpublish
+     hooks</em></span> and <span class="emphasis"><em>publish hooks</em></span> are defined, the
+     <span class="emphasis"><em>unpublish hook</em></span> runs before the <span class="emphasis"><em>publish
+     hook</em></span>.</p>
+  </div>
+ </div>
+ <div class="sect2 " id="_example_unpublisher_scripts"><div class="titlepage"><div><div><h3 class="title" id="_example_unpublisher_scripts"><span class="number">3.6.2 </span><span class="name">Example Unpublisher Scripts</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_example_unpublisher_scripts">#</a></h3></div></div></div>
+  
+  <div class="sect3 " id="_simple_unpublisher_hook"><div class="titlepage"><div><div><h4 class="title" id="_simple_unpublisher_hook"><span class="number">3.6.2.1 </span><span class="name">Simple Unpublisher Hook</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_simple_unpublisher_hook">#</a></h4></div></div></div>
+   
+   <p>The following example script deletes all packages from the target
+    directory that have been removed from the repository.</p>
+   <div class="verbatim-wrap highlight bash"><pre class="screen">#!/bin/bash
 OBSHOME="/srv/obs"
 LOGFILE="$OBSHOME/log/reposync.log"
 DST_REPO_DIR="/srv/repo-mirror"
@@ -755,13 +1069,20 @@ while [ $# -gt 0 ]
 do
   rm -v $DST_REPO_DIR/$PRJ_PATH/$1 &gt;&gt;$LOGFILE 2&gt;&amp;1
   shift
-done</pre></div><p>For testing purposes, it can be invoked as follows:</p><div class="verbatim-wrap"><pre class="screen">$ sudo -u obsrun /usr/local/bin/unpublish-hook.sh \
+done</pre></div>
+   <p>For testing purposes, it can be invoked as follows:</p>
+   <div class="verbatim-wrap"><pre class="screen">$ sudo -u obsrun /usr/local/bin/unpublish-hook.sh \
     Product/SLES11-SP1                            \
     /srv/obs/repos/Product/SLE11-SP1              \
     src/icinga-1.13.3-1.3.src.rpm                 \
     x86_64/icinga-1.13.3-1.3.x86_64.rpm           \
-    x86_64/icinga-devel-1.13.3-1.3.x86_64.rpm</pre></div></div><div class="section " id="_advanced_unpublisher_hook"><div class="titlepage"><div><div><h4 class="title" id="_advanced_unpublisher_hook"><span class="number">3.6.2.2 </span><span class="name">Advanced Unpublisher Hook</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_advanced_unpublisher_hook">#</a></h4></div></div></div><p>The following example script reads the destination path from a parameter that is configured via
-the hook script:</p><div class="verbatim-wrap"><pre class="screen">#!/bin/bash
+    x86_64/icinga-devel-1.13.3-1.3.x86_64.rpm</pre></div>
+  </div>
+  <div class="sect3 " id="_advanced_unpublisher_hook"><div class="titlepage"><div><div><h4 class="title" id="_advanced_unpublisher_hook"><span class="number">3.6.2.2 </span><span class="name">Advanced Unpublisher Hook</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_advanced_unpublisher_hook">#</a></h4></div></div></div>
+   
+   <p>The following example script reads the destination path from a
+    parameter that is configured via the hook script:</p>
+   <div class="verbatim-wrap highlight bash"><pre class="screen">#!/bin/bash
 OBSHOME="/srv/obs"
 LOGFILE="$OBSHOME/log/reposync.log"
 DST_REPO_DIR=$1
@@ -776,29 +1097,42 @@ while [ $# -gt 0 ]
 do
   rm -v $DST_REPO_DIR/$PRJ_PATH/$1 &gt;&gt;$LOGFILE 2&gt;&amp;1
   shift
-done</pre></div><p>For testing purposes, it can be invoked as follows:</p><div class="verbatim-wrap"><pre class="screen">$ sudo -u obsrun /usr/local/bin/unpublish-hook.sh \
+done</pre></div>
+   <p>For testing purposes, it can be invoked as follows:</p>
+   <div class="verbatim-wrap"><pre class="screen">$ sudo -u obsrun /usr/local/bin/unpublish-hook.sh \
     /srv/www/public_mirror/Product/SLES11-SP1     \
     /srv/obs/repos/Product/SLE11SP1               \
     src/icinga-1.13.3-1.3.src.rpm                 \
     x86_64/icinga-1.13.3-1.3.x86_64.rpm           \
-    x86_64/icinga-devel-1.13.3-1.3.x86_64.rpm</pre></div></div></div></div><div class="section " id="_user_and_group_management"><div class="titlepage"><div><div><h2 class="title" id="_user_and_group_management"><span class="number">3.7 </span><span class="name">User and group management</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_user_and_group_management">#</a></h2></div></div></div><p>The OBS has an integrated user and group management with a role based
-access rights model. In every OBS instance at least one user need to
-exist an have the global Admin role assigned. Groups can be defined by the
-Admin and and istead of adding a list of users to a project/package role
-usercan be added to a group and the group will be added to a project or
-package role.</p><div class="section " id="_user_and_group_roles"><div class="titlepage"><div><div><h3 class="title" id="_user_and_group_roles"><span class="number">3.7.1 </span><span class="name">User and group roles</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_user_and_group_roles">#</a></h3></div></div></div><p>The OBS role model has one global role: Admin, which can be granted to users.
-Am OBS admin has access to all projects and packages via the API interface
-and the web user interface. Some menues in the web ui do not allow changes
-by an Admin (e.g. the Repository Menu) as long the Admin is not a Maintainer
-for the project as well. But the same change can be done via editing the
-meta data directely.
-The other roles are specific to projects and packages and can be assigned
-to an user or a group.</p><div class="table" id="idm139862285061472"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 3.2: </span><span class="name">OBS roles </span><a title="Permalink" class="permalink" href="obs.cha.administration.html#idm139862285061472">#</a></h6></div><div class="table-contents"><table summary="OBS roles" border="1"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /></colgroup><thead><tr><th align="left" valign="top"> Role </th><th align="left" valign="top"> Description </th><th align="left" valign="top"> Remarks</th></tr></thead><tbody><tr><td align="left" valign="top">
+    x86_64/icinga-devel-1.13.3-1.3.x86_64.rpm</pre></div>
+  </div>
+ </div>
+</div>
+ <div class="sect1 " id="_user_and_group_management"><div class="titlepage"><div><div><h2 class="title" id="_user_and_group_management"><span class="number">3.7 </span><span class="name">Managing Users and Groups</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_user_and_group_management">#</a></h2></div></div></div>
+ 
+ <p>The OBS has an integrated user and group management with a role based
+  access rights model. In every OBS instance, at least one user need to exist
+  and have the global Admin role assigned. Groups can be defined by the Admin
+  and instead of adding a list of users to a project/package role user can
+  be added to a group and the group will be added to a project or package
+  role.</p>
+ <div class="sect2 " id="_user_and_group_roles"><div class="titlepage"><div><div><h3 class="title" id="_user_and_group_roles"><span class="number">3.7.1 </span><span class="name">User and Group Roles</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_user_and_group_roles">#</a></h3></div></div></div>
+  
+  <p>The OBS role model has one global role: Admin, which can be granted
+   to users. Am OBS admin has access to all projects and packages via the API
+   interface and the web user interface. Some menus in the Web UI do not allow
+   changes by an Admin (for example, the Repository menu) as long the Admin is not a
+   Maintainer for the project as well. But the same change can be done via
+   editing the meta data directly. The other roles are specific to projects and
+   packages and can be assigned to a user or a group.</p>
+  <div class="table" id="id15336"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 3.2: </span><span class="name">Roles in OBS </span><a title="Permalink" class="permalink" href="obs.cha.administration.html#id15336">#</a></h6></div><div class="table-contents">
+   
+   <table class="table" summary="Roles in OBS" border="1"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /></colgroup><thead><tr><th align="left" valign="top"> Role </th><th align="left" valign="top"> Description </th><th align="left" valign="top"> Remarks</th></tr></thead><tbody><tr><td align="left" valign="top">
        <p>Maintainer</p>
       </td><td align="left" valign="top">
        <p>Read and write access to projects or packages</p>
       </td><td align="left" valign="top">
-       <p></p>
+       
       </td></tr><tr><td align="left" valign="top">
        <p>Bugowner</p>
       </td><td align="left" valign="top">
@@ -810,35 +1144,59 @@ to an user or a group.</p><div class="table" id="idm139862285061472"><div class=
       </td><td align="left" valign="top">
        <p>Read access to sources</p>
       </td><td align="left" valign="top">
-       <p></p>
+       
       </td></tr><tr><td align="left" valign="top">
        <p>Downloader</p>
       </td><td align="left" valign="top">
        <p>Read access to the binaries</p>
       </td><td align="left" valign="top">
-       <p></p>
+       
       </td></tr><tr><td align="left" valign="top">
        <p>Reviewer</p>
       </td><td align="left" valign="top">
        <p>Default reviewer for a package or project</p>
       </td><td align="left" valign="top">
-       <p></p>
-      </td></tr></tbody></table></div></div></div><div class="section " id="_standalone_user_and_group_database"><div class="titlepage"><div><div><h3 class="title" id="_standalone_user_and_group_database"><span class="number">3.7.2 </span><span class="name">Standalone user and group database</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_standalone_user_and_group_database">#</a></h3></div></div></div><p>OBS provides it’s own user database which can also store a password. The
-authentication to the api happens via HTTP BASIC AUTH. Please see the
-api documentation to find out how to create, modify or delete user data.
-Also a call for changing the password exists.</p><p>Users can be added by the maintainer or if registration is allowed via the
-registration menu on the Web UI. It can be configured that a confirmation is
-needed after registration before the user may login.</p></div><div class="section " id="_proxy_mode"><div class="titlepage"><div><div><h3 class="title" id="_proxy_mode"><span class="number">3.7.3 </span><span class="name">Proxy mode</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_proxy_mode">#</a></h3></div></div></div><p>The proxy mode can be used for esp. secured instances, where the OBS web
-server shall not get connected to the network directly. There are authentication proxy products
-out there which do the authentication and send the user name via an HTTP header to OBS.
-Original this was developed for IChain - a legacy single login authentication method from Novell.
-This has also the advantage that the user password never reaches OBS.</p><p>The proxy mode can also be used for LDAP or Active Directory, but only for
-authentication.</p><div id="idm139862288563552" class="admonition caution"><img class="symbol" alt="Caution" title="Caution" src="static/images/icon-caution.png" /><h6>Caution</h6><p>With enabled proxy mode the OBS trust the username in the http header.
-Since this was verified by the Web server and the the Web server only forward requests
-for a verified and authentificated session, this is safe, as long you make
-sure that the direct web/API interface of the OBS is not reachable from the
-outside.</p></div><p>With the proxy mode the user still need to be registered in the OBS and all OBS
-roles and user properties are managed inside the OBS.</p><div class="section " id="_obs_proxy_mode_configuration"><div class="titlepage"><div><div><h4 class="title" id="_obs_proxy_mode_configuration"><span class="number">3.7.3.1 </span><span class="name">OBS proxy mode configuration</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_obs_proxy_mode_configuration">#</a></h4></div></div></div><p>Currently the LDAP configuration is in the <span class="emphasis"><em>options.yml</em></span> file.</p><div class="table" id="idm139862285330048"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 3.3: </span><span class="name">Proxy mode configuration option </span><a title="Permalink" class="permalink" href="obs.cha.administration.html#idm139862285330048">#</a></h6></div><div class="table-contents"><table summary="Proxy mode configuration option" border="1"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /><col class="col_4" /></colgroup><thead><tr><th align="left" valign="top"> Config item </th><th align="left" valign="top"> Description </th><th align="left" valign="top"> Values <code class="literal">default</code>
+       
+      </td></tr></tbody></table>
+  </div></div>
+ </div>
+ <div class="sect2 " id="_standalone_user_and_group_database"><div class="titlepage"><div><div><h3 class="title" id="_standalone_user_and_group_database"><span class="number">3.7.2 </span><span class="name">Standalone User and Group Database</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_standalone_user_and_group_database">#</a></h3></div></div></div>
+  
+  <p>OBS provides its own user database which can also store a password.
+   The authentication to the API happens via HTTP BASIC AUTH. See the API
+   documentation to find out how to create, modify or delete user data. Also a
+   call for changing the password exists.</p>
+  <p>Users can be added by the maintainer or if registration is allowed
+   via the registration menu on the Web UI. It can be configured that a
+   confirmation is needed after registration before the user may
+   login.</p>
+ </div>
+ <div class="sect2 " id="_proxy_mode"><div class="titlepage"><div><div><h3 class="title" id="_proxy_mode"><span class="number">3.7.3 </span><span class="name">Proxy Mode</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_proxy_mode">#</a></h3></div></div></div>
+  
+  <p>The proxy mode can be used for specially secured instances, where
+   the OBS web server shall not get connected to the network directly. There
+   are authentication proxy products out there which do the authentication and
+   send the user name via an HTTP header to OBS. Originally, this was developed
+   for IChain - a legacy single login authentication method from Novell. This
+   also has the advantage that the user password never reaches OBS.</p>
+  <p>The proxy mode can also be used for LDAP or Active Directory, but
+   only for authentication.</p>
+  <div id="id15391" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6>
+   <p>With enabled proxy mode the OBS trust the username in the http
+    header. Since this was verified by the Web server and the Web server
+    only forward requests for a verified and authenticated session, this is
+    safe, as long you make sure that the direct web/API interface of the OBS is
+    not reachable from the outside.</p>
+  </div>
+  <p>With the proxy mode the user still need to be registered in the OBS
+   and all OBS roles and user properties are managed inside the OBS.</p>
+  <div class="sect3 " id="_obs_proxy_mode_configuration"><div class="titlepage"><div><div><h4 class="title" id="_obs_proxy_mode_configuration"><span class="number">3.7.3.1 </span><span class="name">OBS Proxy Mode Configuration</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_obs_proxy_mode_configuration">#</a></h4></div></div></div>
+   
+   <p>Currently the LDAP configuration is in the
+     <span class="emphasis"><em>options.yml</em></span> file.</p>
+   <div class="table" id="id15398"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 3.3: </span><span class="name">Options for Proxy Mode Configuration </span><a title="Permalink" class="permalink" href="obs.cha.administration.html#id15398">#</a></h6></div><div class="table-contents">
+    
+    <table class="table" summary="Options for Proxy Mode Configuration" border="1"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /><col class="col_4" /></colgroup><thead><tr><th align="left" valign="top"> Config item </th><th align="left" valign="top"> Description </th><th align="left" valign="top"> Values <code class="literal">default</code>
        </th><th align="left" valign="top"> Remarks</th></tr></thead><tbody><tr><td align="left" valign="top">
         <p>proxy_auth_mode</p>
        </td><td align="left" valign="top">
@@ -847,46 +1205,84 @@ roles and user properties are managed inside the OBS.</p><div class="section " i
         <p><code class="literal">:off</code> :on</p>
        </td><td align="left" valign="top">
         <p>need to be :off if ldap_mode: is :on</p>
-       </td></tr></tbody></table></div></div></div></div><div class="section " id="_ldap_active_directory"><div class="titlepage"><div><div><h3 class="title" id="_ldap_active_directory"><span class="number">3.7.4 </span><span class="name">LDAP/Active Directory</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_ldap_active_directory">#</a></h3></div></div></div><div id="idm139862285202064" class="admonition note"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
-    Note: The LDAP support is considered experimental and is not official supported.
-   </p></div><p>Using LDAP or Active Directory as source for user and optional group
-information in environments which already have such a server has the
-advantage for the admin people that the user related information only need
-to be maintained in one place. In the following sections we are writing
-LDAP, but this includes Microsofts Active Directory as well. Only in parts
-where differences exists Active Directory (AD) will be explicit mentioned.</p><p>In this mode the OBS  contact the LDAP server directly
-from the OBS API, if the user was found and provides the correct password
-the user is added transparently to the OBS user database. The password or
-password hash is not stored in the OBS database. Because the user database
-password field is mandatory, a random hash is stored instead. The LDAP interface
-allows to restrict the access to users which are in a special LDAP group.
-Optional also groups can be discovered from the LDAP server. This can be
-also filtered.</p><p>Before anybody can add a user to a package or project with a role, the user
-need to had logged in at least one time, since the check for available users
-is local only.
-If the LDAP group mode is enabled, LDAP groups are also added transparently,
-if a existing group on the LDAP server is added to a project or package.</p><p>On bigger installations this mode can result in many search requests to
-the LDAP server and slow down the the access to projects and packages,
-because on every role check a LDAP search operation will contact the LDAP
-server.
-As alternative method group mirroring was implemented. This allows that the
-internal OBS group database is updated with the group membership information
-during the user authentication. All role test are made local against the
-OBS database and do not need additional LDAPoperations.</p><div id="idm139862285338912" class="admonition note"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>The local user group membership in :mirror mode is updated as follows: When the user logins,
-the user <span class="emphasis"><em>memberOf</em></span> attributes are parsed and compared with the global OBS
-grouplist, if a group match the user is added, if he does not longer be a
-group member, he is removed. since this maybe a costly operation, depending
-on the group counts, this is only done on a full login. After a full login
-the user status is cashed for 2 minutes, if the user do a login during this
-time, nothing will be checked or updated. Here is a second mechanism to
-update user membership: If somebody adds a new Group in the OBS, the
-<span class="emphasis"><em>member</em></span> attributes of the group are parsed and all current users which are
-in the local database become members.</p></div><div class="section " id="_obs_ldap_configuration"><div class="titlepage"><div><div><h4 class="title" id="_obs_ldap_configuration"><span class="number">3.7.4.1 </span><span class="name">OBS LDAP configuration</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_obs_ldap_configuration">#</a></h4></div></div></div><p>Currently the main OBS LDAP configuration is in the <span class="emphasis"><em>options.yml</em></span> file.
-Beside the settings here also the openldap config file is evaluated by the
-Ruby LDAP implementation. This configfile is usually located at
-<span class="emphasis"><em>/etc/openldap/ldap.conf</em></span>. You can set here additional TLS/SSL directives
-like <span class="strong"><strong>TLS_CACERT</strong></span>, <span class="strong"><strong>TLS_CACERTDIR</strong></span> and <span class="strong"><strong>TLS_REQCERT</strong></span>. For more information
-refer to the openldap ldap.conf man page.</p><div class="table" id="idm139862288437088"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 3.4: </span><span class="name">LDAP configuration options </span><a title="Permalink" class="permalink" href="obs.cha.administration.html#idm139862288437088">#</a></h6></div><div class="table-contents"><table summary="LDAP configuration options" border="1"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /><col class="col_4" /></colgroup><thead><tr><th align="left" valign="top"> Config item </th><th align="left" valign="top"> Description </th><th align="left" valign="top"> Values <code class="literal">default</code>
+       </td></tr></tbody></table>
+   </div></div>
+  </div>
+ </div>
+ <div class="sect2 " id="_ldap_active_directory"><div class="titlepage"><div><div><h3 class="title" id="_ldap_active_directory"><span class="number">3.7.4 </span><span class="name">LDAP/Active Directory</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_ldap_active_directory">#</a></h3></div></div></div>
+  
+  <div id="id15425" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6>
+   <p> The LDAP support is considered experimental and is not officially
+    supported. </p>
+  </div>
+  <p>Using LDAP or Active Directory as source for user and optional group
+   information in environments which already have such a server has the
+   advantage for the admin people that the user related information only need
+   to be maintained in one place. In the following sections we are writing
+   LDAP, but this includes Microsoft's Active Directory as well. Only in parts
+   where differences exists Active Directory (AD) will be explicit
+   mentioned.</p>
+  <p>In this mode the OBS contact the LDAP server directly from the OBS
+   API, if the user was found and provides the correct password the user is
+   added transparently to the OBS user database. The password or password hash
+   is not stored in the OBS database. Because the user database password field
+   is mandatory, a random hash is stored instead. The LDAP interface allows to
+   restrict the access to users which are in a special LDAP group. Optional
+   also groups can be discovered from the LDAP server. This can be also
+   filtered.</p>
+  <p>Before anybody can add a user to a package or project with a role,
+   the user need to had logged in at least one time, since the check for
+   available users is local only. If the LDAP group mode is enabled, LDAP
+   groups are also added transparently, if an existing group on the LDAP server
+   is added to a project or package.</p>
+  <p>On bigger installations this mode can result in many search requests
+   to the LDAP server and slow down access to projects and packages,
+   because on every role check an LDAP search operation will contact the LDAP
+   server. As alternative method group mirroring was implemented. This allows
+   that the internal OBS group database is updated with the group membership
+   information during the user authentication. All role test are made local
+   against the OBS database and do not need additional
+   LDAPoperations.</p>
+  <div id="id15431" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6>
+   <p>The local user group membership in :mirror mode is updated as
+    follows: When the user logins, the user <span class="emphasis"><em>memberOf</em></span>
+    attributes are parsed and compared with the global OBS grouplist, if a
+    group matches, the user is added, if they are no longer a group member,
+    they are removed. since this maybe a costly operation, depending on the
+    group counts, this is only done on a full login. After a full login the
+    user status is cashed for 2 minutes, if the user do a login during this
+    time, nothing will be checked or updated. Here is a second mechanism to
+    update user membership: If somebody adds a new Group in the OBS, the
+     <span class="emphasis"><em>member</em></span> attributes of the group are parsed and all
+    current users which are in the local database become members.</p>
+  </div>
+  <div class="sect3 " id="_obs_ldap_configuration"><div class="titlepage"><div><div><h4 class="title" id="_obs_ldap_configuration"><span class="number">3.7.4.1 </span><span class="name">OBS LDAP Configuration</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_obs_ldap_configuration">#</a></h4></div></div></div>
+   
+   <p>
+    Currently the main OBS LDAP configuration is in the
+    <span class="emphasis"><em>options.yml</em></span> file. Beside the settings here also the
+    openldap config file is evaluated by the Ruby LDAP implementation. This
+    configfile is usually located at
+    <span class="emphasis"><em>/etc/openldap/ldap.conf</em></span>. You can set here additional
+    TLS/SSL directives like
+    <span class="strong"><strong>TLS_CACERT</strong></span>, <span class="strong"><strong>TLS
+    _CACERTDIR</strong></span> and
+    <span class="strong"><strong>TLS_REQCERT</strong></span>. For more information
+    refer to the openldap ldap.conf man page.
+   </p>
+   <div id="id15443" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6>
+    <p>
+     Once LDAP mode is activated users can only log in via LDAP. This also
+     includes existing admin accounts. To make a LDAP user, for example, user
+     <code class="systemitem">tux</code>, an admin we provided a rake
+     task which can be run on the OBS instance:
+    </p>
+    <div class="verbatim-wrap"><pre class="screen">cd /srv/www/obs/api
+bundle exec rake user:give_admin_rights tux RAILS_ENV=production</pre></div>
+   </div>
+   <div class="table" id="id15447"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 3.4: </span><span class="name">LDAP Configuration Options </span><a title="Permalink" class="permalink" href="obs.cha.administration.html#id15447">#</a></h6></div><div class="table-contents">
+    
+    <table class="table" summary="LDAP Configuration Options" border="1"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /><col class="col_4" /></colgroup><thead><tr><th align="left" valign="top"> Config item </th><th align="left" valign="top"> Description </th><th align="left" valign="top"> Values <code class="literal">default</code>
        </th><th align="left" valign="top"> Remarks</th></tr></thead><tbody><tr><td align="left" valign="top">
         <p>ldap_mode</p>
        </td><td align="left" valign="top">
@@ -894,13 +1290,13 @@ refer to the openldap ldap.conf man page.</p><div class="table" id="idm139862288
        </td><td align="left" valign="top">
         <p><code class="literal">:off</code> :on</p>
        </td><td align="left" valign="top">
-        <p></p>
+        
        </td></tr><tr><td align="left" valign="top">
         <p>ldap_servers</p>
        </td><td align="left" valign="top">
         <p>List of LDAP servers</p>
        </td><td align="left" valign="top">
-        <p></p>
+        
        </td><td align="left" valign="top">
         <p>colon-separated list</p>
        </td></tr><tr><td align="left" valign="top">
@@ -911,11 +1307,11 @@ refer to the openldap ldap.conf man page.</p><div class="table" id="idm139862288
         <p>int <code class="literal">15</code>
         </p>
        </td><td align="left" valign="top">
-        <p></p>
+        
        </td></tr><tr><td align="left" valign="top">
         <p>ldap_search_timeout</p>
        </td><td align="left" valign="top">
-        <p>timeout of a LDAP search</p>
+        <p>timeout of an LDAP search</p>
        </td><td align="left" valign="top">
         <p>int 0…N <code class="literal">5</code>
         </p>
@@ -929,7 +1325,7 @@ refer to the openldap ldap.conf man page.</p><div class="table" id="idm139862288
         <p><code class="literal">memberOf</code>
         </p>
        </td><td align="left" valign="top">
-        <p>case senitive</p>
+        <p>case sensitive</p>
        </td></tr><tr><td align="left" valign="top">
         <p>ldap_group_member_attr</p>
        </td><td align="left" valign="top">
@@ -938,7 +1334,7 @@ refer to the openldap ldap.conf man page.</p><div class="table" id="idm139862288
         <p><code class="literal">member</code>
         </p>
        </td><td align="left" valign="top">
-        <p></p>
+        
        </td></tr><tr><td align="left" valign="top">
         <p>ldap_ssl</p>
        </td><td align="left" valign="top">
@@ -946,24 +1342,24 @@ refer to the openldap ldap.conf man page.</p><div class="table" id="idm139862288
        </td><td align="left" valign="top">
         <p><code class="literal">:off</code> :on</p>
        </td><td align="left" valign="top">
-        <p></p>
+        
        </td></tr><tr><td align="left" valign="top">
         <p>ldap_start_tls</p>
        </td><td align="left" valign="top">
-        <p>usr Start TLS on ldap protocol</p>
+        <p>usr Start TLS on LDAP protocol</p>
        </td><td align="left" valign="top">
         <p>:off <code class="literal">:on</code>
         </p>
        </td><td align="left" valign="top">
-        <p></p>
+        
        </td></tr><tr><td align="left" valign="top">
         <p>ldap_port</p>
        </td><td align="left" valign="top">
         <p>LDAP portnumbers</p>
        </td><td align="left" valign="top">
-        <p></p>
+        
        </td><td align="left" valign="top">
-        <p>if not set 389 for ldap, 636 for ldaps</p>
+        <p>if not set 389 for LDAP, 636 for LDAPS</p>
        </td></tr><tr><td align="left" valign="top">
         <p>ldap_referrals</p>
        </td><td align="left" valign="top">
@@ -971,16 +1367,17 @@ refer to the openldap ldap.conf man page.</p><div class="table" id="idm139862288
        </td><td align="left" valign="top">
         <p><code class="literal">:off</code> :on</p>
        </td><td align="left" valign="top">
-        <p></p>
+        
        </td></tr><tr><td align="left" valign="top">
         <p>ldap_search_base</p>
        </td><td align="left" valign="top">
-        <p>company’s ldap search base for the users who will use OBS</p>
+        <p>company’s LDAP search base for the users who will use
+         OBS</p>
        </td><td align="left" valign="top">
         <p><code class="literal">none</code>
         </p>
        </td><td align="left" valign="top">
-        <p></p>
+        
        </td></tr><tr><td align="left" valign="top">
         <p>ldap_search_attr</p>
        </td><td align="left" valign="top">
@@ -997,7 +1394,7 @@ refer to the openldap ldap.conf man page.</p><div class="table" id="idm139862288
         <p><code class="literal">cn</code>
         </p>
        </td><td align="left" valign="top">
-        <p></p>
+        
        </td></tr><tr><td align="left" valign="top">
         <p>ldap_mail_attr</p>
        </td><td align="left" valign="top">
@@ -1006,31 +1403,31 @@ refer to the openldap ldap.conf man page.</p><div class="table" id="idm139862288
         <p><code class="literal">mail</code>
         </p>
        </td><td align="left" valign="top">
-        <p></p>
+        
        </td></tr><tr><td align="left" valign="top">
         <p>ldap_search_user</p>
        </td><td align="left" valign="top">
         <p>Bind user for LDAP search</p>
        </td><td align="left" valign="top">
-        <p></p>
+        
        </td><td align="left" valign="top">
-        <p>e.g. cn=ldapbind, ou=system, dc=mycompany, dc=com</p>
+        <p>for example, cn=ldapbind, ou=system, dc=mycompany, dc=com</p>
        </td></tr><tr><td align="left" valign="top">
         <p>ldap_search_auth</p>
        </td><td align="left" valign="top">
         <p>Password for the ldap_search_user</p>
        </td><td align="left" valign="top">
-        <p></p>
+        
        </td><td align="left" valign="top">
-        <p></p>
+        
        </td></tr><tr><td align="left" valign="top">
         <p>ldap_user_filter</p>
        </td><td align="left" valign="top">
         <p>Search filter for OBS users</p>
        </td><td align="left" valign="top">
-        <p></p>
+        
        </td><td align="left" valign="top">
-        <p>e.g. a group membership, empty all users allowed</p>
+        <p>for example, a group membership, empty all users allowed</p>
        </td></tr><tr><td align="left" valign="top">
         <p>ldap_authenticate</p>
        </td><td align="left" valign="top">
@@ -1050,47 +1447,12 @@ refer to the openldap ldap.conf man page.</p><div class="table" id="idm139862288
        </td></tr><tr><td align="left" valign="top">
         <p>ldap_auth_attr</p>
        </td><td align="left" valign="top">
-        <p>Used auth atrribute for :local</p>
+        <p>Used auth attribute for :local</p>
        </td><td align="left" valign="top">
         <p><code class="literal">userPassword</code>
         </p>
        </td><td align="left" valign="top">
         <p>do not use</p>
-       </td></tr><tr><td align="left" valign="top">
-        <p>ldap_update_support</p>
-       </td><td align="left" valign="top">
-        <p>Update password or other user setting on the LDAP server</p>
-       </td><td align="left" valign="top">
-        <p>:on <code class="literal">:off</code>
-        </p>
-       </td><td align="left" valign="top">
-        <p>do not use</p>
-       </td></tr><tr><td align="left" valign="top">
-        <p>ldap_object_class</p>
-       </td><td align="left" valign="top">
-        <p>Object class for user</p>
-       </td><td align="left" valign="top">
-        <p><code class="literal">inetOrgPerson</code>
-        </p>
-       </td><td align="left" valign="top">
-        <p>only for ldap_update_support: :on</p>
-       </td></tr><tr><td align="left" valign="top">
-        <p>ldap_entry_base</p>
-       </td><td align="left" valign="top">
-        <p>Base dn for the new added entry</p>
-       </td><td align="left" valign="top">
-        <p></p>
-       </td><td align="left" valign="top">
-        <p>only for ldap_update_support: :on</p>
-       </td></tr><tr><td align="left" valign="top">
-        <p>ldap_sn_attr_required</p>
-       </td><td align="left" valign="top">
-        <p>Does sn attribute required</p>
-       </td><td align="left" valign="top">
-        <p>:off <code class="literal">:on</code>
-        </p>
-       </td><td align="left" valign="top">
-        <p>only for ldap_update_support: :on</p>
        </td></tr><tr><td align="left" valign="top">
         <p>ldap_group_support</p>
        </td><td align="left" valign="top">
@@ -1102,11 +1464,11 @@ refer to the openldap ldap.conf man page.</p><div class="table" id="idm139862288
        </td></tr><tr><td align="left" valign="top">
         <p>ldap_group_search_base</p>
        </td><td align="left" valign="top">
-        <p>company’s ldap search base for groups</p>
+        <p>company’s LDAP search base for groups</p>
        </td><td align="left" valign="top">
-        <p></p>
+        
        </td><td align="left" valign="top">
-        <p></p>
+        
        </td></tr><tr><td align="left" valign="top">
         <p>ldap_group_title_attr</p>
        </td><td align="left" valign="top">
@@ -1115,7 +1477,7 @@ refer to the openldap ldap.conf man page.</p><div class="table" id="idm139862288
         <p><code class="literal">cn</code>
         </p>
        </td><td align="left" valign="top">
-        <p></p>
+        
        </td></tr><tr><td align="left" valign="top">
         <p>ldap_group_objectclass_attr</p>
        </td><td align="left" valign="top">
@@ -1124,16 +1486,20 @@ refer to the openldap ldap.conf man page.</p><div class="table" id="idm139862288
         <p><code class="literal">Group</code>
         </p>
        </td><td align="left" valign="top">
-        <p></p>
+        
        </td></tr><tr><td align="left" valign="top">
         <p>ldap_obs_admin_group</p>
        </td><td align="left" valign="top">
         <p>Group name for OBS Admins</p>
        </td><td align="left" valign="top">
-        <p></p>
+        
        </td><td align="left" valign="top">
         <p>if set, members of that group become OBS admin role</p>
-       </td></tr></tbody></table></div></div><p>Example LDAP section of the <span class="emphasis"><em>options.yml</em></span> file:</p><div class="verbatim-wrap"><pre class="screen">...
+       </td></tr></tbody></table>
+   </div></div>
+   <p>Example LDAP section of the <span class="emphasis"><em>options.yml</em></span>
+    file:</p>
+   <div class="verbatim-wrap"><pre class="screen">[...]
 ##################
 # LDAP options
 ##################
@@ -1147,7 +1513,7 @@ ldap_servers: ldap1.mycompany.com:ldap2.mycompany.com
 # Max number of times to attempt to contact the LDAP servers
 ldap_max_attempts: 15
 
-# timeout of a ldap search requests to avoid infinitely lookups (in seconds, 0 no timeout)
+# timeout of an ldap search requests to avoid infinitely lookups (in seconds, 0 no timeout)
 ldap_search_timeout: 5
 
 # The attribute the user member of is stored in (case sensitive !)
@@ -1208,19 +1574,6 @@ ldap_auth_mech: :md5
 # This is a string
 ldap_auth_attr: userPassword
 
-# Whether to update the user info to LDAP server, it does not take effect
-# when ldap_mode is not set.
-# Since adding new entry operation are more depend on your slapd db define, it might not
-# compatiable with all LDAP server settings, you can use other LDAP client tools for your specific usage
-ldap_update_support: :off
-# ObjectClass, used for adding new entry
-ldap_object_class: inetOrgPerson
-# Base dn for the new added entry
-ldap_entry_base: ou=OBSUSERS,dc=EXAMPLE,dc=COM
-# Does sn attribute required, it is a necessary attribute for most of people objectclass,
-# used for adding new entry
-ldap_sn_attr_required: :on
-
 # Whether to search group info from ldap, it does not take effect it is not set
 # Please also set below ldap_group_* configs correctly to ensure the operation works properly
 # Possible values:
@@ -1241,29 +1594,52 @@ ldap_group_title_attr: cn
 ldap_group_objectclass_attr: group
 
 # The LDAP group for obs admins
-# if this group is set and a user belongs to this group he get the global admin role
+# if this group is set and a user belongs to this group they get the global admin role
 #
-ldap_obs_admin_group: obsadmins</pre></div></div></div><div class="section " id="_authentication_methods"><div class="titlepage"><div><div><h3 class="title" id="_authentication_methods"><span class="number">3.7.5 </span><span class="name">Authentication methods</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_authentication_methods">#</a></h3></div></div></div><div class="section " id="_ldap_methods"><div class="titlepage"><div><div><h4 class="title" id="_ldap_methods"><span class="number">3.7.5.1 </span><span class="name">LDAP methods</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_ldap_methods">#</a></h4></div></div></div><p>The LDAP mode has 2 methods implemented to check authorization:</p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem ">
-LDAP bind method.
-
-   With the provided credentials a LDAP bind request is tried.
-</li><li class="listitem ">
-Local method.
-
-   The provided credentials checked locally against the content of the
-   of the <span class="emphasis"><em>userPassword</em></span> attribute.
-</li></ol></div><div id="idm139862285127792" class="admonition caution"><img class="symbol" alt="Caution" title="Caution" src="static/images/icon-caution.png" /><h6>Caution</h6><p>The local method should be not used, since the <span class="emphasis"><em>userPassword</em></span> attribute in most
-LDAP installations will not be available until you are bind with a
-privilege user.</p></div></div><div class="section " id="_kerberos"><div class="titlepage"><div><div><h4 class="title" id="_kerberos"><span class="number">3.7.5.2 </span><span class="name">Kerberos</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_kerberos">#</a></h4></div></div></div><p>In OBS you can use single sign on via kerberos tickets.</p><p>OBS Kerberos configuration resides in the <span class="emphasis"><em>options.yml</em></span> file.</p><div class="table" id="idm139862285772784"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 3.5: </span><span class="name">Kerberos configuration options </span><a title="Permalink" class="permalink" href="obs.cha.administration.html#idm139862285772784">#</a></h6></div><div class="table-contents"><table summary="Kerberos configuration options" border="1"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /></colgroup><thead><tr><th align="left" valign="top"> Config item </th><th align="left" valign="top"> Description </th><th align="left" valign="top"> Example </th></tr></thead><tbody><tr><td align="left" valign="top">
+ldap_obs_admin_group: obsadmins</pre></div>
+  </div>
+ </div>
+ <div class="sect2 " id="_authentication_methods"><div class="titlepage"><div><div><h3 class="title" id="_authentication_methods"><span class="number">3.7.5 </span><span class="name">Authentication Methods</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_authentication_methods">#</a></h3></div></div></div>
+  
+  <div class="sect3 " id="_ldap_methods"><div class="titlepage"><div><div><h4 class="title" id="_ldap_methods"><span class="number">3.7.5.1 </span><span class="name">LDAP Methods</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_ldap_methods">#</a></h4></div></div></div>
+   
+   <p>The LDAP mode has 2 methods to check
+    authorization:</p>
+   <div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem ">
+     <p> LDAP bind method.
+ With the provided credentials,
+      an LDAP bind request is tried. </p>
+    </li><li class="listitem ">
+     <p> Local method.
+ The provided credentials checked
+      locally against the content of the
+       <span class="emphasis"><em>userPassword</em></span> attribute. </p>
+    </li></ol></div>
+   <div id="id15719" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6>
+    <p>The local method should be not used, since the
+      <span class="emphasis"><em>userPassword</em></span> attribute in most LDAP installations
+     will not be available until you are bind with a privilege user.</p>
+   </div>
+  </div>
+  <div class="sect3 " id="_kerberos"><div class="titlepage"><div><div><h4 class="title" id="_kerberos"><span class="number">3.7.5.2 </span><span class="name">Kerberos</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_kerberos">#</a></h4></div></div></div>
+   
+   <p>In OBS you can use single sign on via Kerberos tickets.</p>
+   <p>OBS Kerberos configuration resides in the
+     <span class="emphasis"><em>options.yml</em></span> file.</p>
+   <div class="table" id="id15727"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 3.5: </span><span class="name">Kerberos Configuration Options </span><a title="Permalink" class="permalink" href="obs.cha.administration.html#id15727">#</a></h6></div><div class="table-contents">
+    
+    <table class="table" summary="Kerberos Configuration Options" border="1"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /></colgroup><thead><tr><th align="left" valign="top"> Config item </th><th align="left" valign="top"> Description </th><th align="left" valign="top"> Example </th></tr></thead><tbody><tr><td align="left" valign="top">
         <p>kerberos_keytab</p>
        </td><td align="left" valign="top">
-        <p>Kerberos key table: file where long-term keys for one or more principals are stored</p>
+        <p>Kerberos key table: file where long-term keys for one or more
+         principals are stored</p>
        </td><td align="left" valign="top">
         <p>"/etc/krb5.keytab"</p>
        </td></tr><tr><td align="left" valign="top">
         <p>kerberos_service_principal</p>
        </td><td align="left" valign="top">
-        <p>Kerberos OBS principal: OBS unique identity to which Kerberos can assign tickets</p>
+        <p>Kerberos OBS principal: OBS unique identity to which Kerberos
+         can assign tickets</p>
        </td><td align="left" valign="top">
         <p>"HTTP/hostname.example.com@EXAMPLE.COM"</p>
        </td></tr><tr><td align="left" valign="top">
@@ -1272,7 +1648,12 @@ privilege user.</p></div></div><div class="section " id="_kerberos"><div class="
         <p>Kerberos realm: authentication administrative domain</p>
        </td><td align="left" valign="top">
         <p>"EXAMPLE.COM"</p>
-       </td></tr></tbody></table></div></div><p>Example LDAP section of the <span class="emphasis"><em>options.yml</em></span> file:</p><div class="verbatim-wrap"><pre class="screen">...
+       </td></tr></tbody></table>
+   </div></div>
+   <p>
+    Example Kerberos section of the <code class="filename">options.yml</code> file:
+   </p>
+   <div class="verbatim-wrap"><pre class="screen">[...]
 
 ##################
 # Kerberos options
@@ -1283,47 +1664,73 @@ kerberos_keytab: "/etc/krb5.keytab"
 kerberos_service_principal: "HTTP/hostname.example.com@EXAMPLE.COM"
 kerberos_realm: "EXAMPLE.COM"
 
-...
-</pre></div><div id="idm139862288513056" class="admonition note"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>
-    Note: Once kerberos is enabled, only users with logins that match users known to
-          kerberos will be able to authenticate to OBS.
-          It is recommended to give admin rights to a matching user before enabling
-          kerberos mode.
-   </p></div></div><div class="section " id="idm139862288511760"><div class="titlepage"><div><div><h4 class="title" id="idm139862288511760"><span class="number">3.7.5.3 </span><span class="name">OBS Token Authorization</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#idm139862288511760">#</a></h4></div></div></div><p>
-    OBS 2.5 provides a mechanism to create tokens for specific operations. This
-    can be used to allow certain operations in the name of a user to others.
-    This is esp. useful when integrating external infrastructure. The create
-    token should be kept secret by default, but it can also be revoked at any
-    time if it became obsolete or leaked.
-   </p><div class="section " id="idm139862287621408"><div class="titlepage"><div><div><h5 class="title" id="idm139862287621408"><span class="number">3.7.5.3.1 </span><span class="name">Manage tokens of a user</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#idm139862287621408">#</a></h5></div></div></div><p>
-     Tokens belong always to a user. A list of active tokens can received via
-    </p><div class="verbatim-wrap"><pre class="screen"><code class="command">osc token</code></pre></div><div class="verbatim-wrap"><pre class="screen"><code class="command">osc token --delete &lt;TOKEN&gt;</code></pre></div></div><div class="section " id="idm139862284859456"><div class="titlepage"><div><div><h5 class="title" id="idm139862284859456"><span class="number">3.7.5.3.2 </span><span class="name">Execute a source service</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#idm139862284859456">#</a></h5></div></div></div><p>
-     A token can be used to execute a source service. The source service has to
-     be setup for the package first, check the source service chapter for this.
-     A typical example is to update sources of a package from git. A source
-     service for that can be setup with
-    </p><div class="verbatim-wrap"><pre class="screen"><code class="command">osc add git://....</code></pre></div><p>
-     A token can be registered as generic token, means allowing to execute all
-     source services in OBS if the user has permissions. You can create such a
-     token and execute operation with
-    </p><div class="verbatim-wrap"><pre class="screen"><code class="command">osc token --create</code></pre></div><div class="verbatim-wrap"><pre class="screen"><code class="command">osc token --trigger &lt;TOKEN&gt; &lt;PROJECT&gt; &lt;PACKAGE&gt;</code></pre></div><div class="verbatim-wrap"><pre class="screen"><code class="command">osc api -X POST /trigger/runservice?token=&lt;TOKEN&gt;&amp;project=&lt;PROJECT&gt;&amp;package=&lt;PACKAGE&gt;</code></pre></div><p>
-     You can also limit the token to a specific package. The advantage is that
-     the operation is limited to that package, so less bad things can happen
-     when the token leaks. Also you do not need to specify the package on
-     execution time. Create and execute it with
-    </p><div class="verbatim-wrap"><pre class="screen"><code class="command">osc token --create &lt;PROJECT&gt; &lt;PACKAGE&gt;</code></pre></div><div class="verbatim-wrap"><pre class="screen"><code class="command">osc token --trigger &lt;TOKEN&gt;</code></pre></div><div class="verbatim-wrap"><pre class="screen"><code class="command">osc api -X POST /trigger/runservice?token=&lt;TOKEN&gt;</code></pre></div></div></div></div></div><div class="section " id="_backup"><div class="titlepage"><div><div><h2 class="title" id="_backup"><span class="number">3.8 </span><span class="name">Backup</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_backup">#</a></h2></div></div></div><p></p></div><div class="section " id="_obs_spider_identification"><div class="titlepage"><div><div><h2 class="title" id="_obs_spider_identification"><span class="number">3.9 </span><span class="name">Spider Identification</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_obs_spider_identification">#</a></h2></div></div></div><p>
-   OBS is hiding specific parts/pages of the application from search crawlers (duckduckgo, google etc.), mostly for
-   performance reasons. Which user-agent strings are identified as crawlers configured in the file
-   <code class="filename">/srv/www/obs/api/config/crawler-user-agents.json</code>.
- </p><p>
-   To update that list, you must run the command <code class="command">bundle exec rake voight_kampf:import_user_agents</code> in the
-   root directory of your OBS instance. This downloads the current crawler list of user agents as a JSON file into the
-   <code class="filename">config/</code> directory of the Rails application.
- </p><p>
-   If you want to extend or edit this list, switch to the <code class="filename">config/</code> directory and open the
-   <code class="filename">crawler-user-agents.json</code> file with the editor of your choice. The content can look like this:
-
-   </p><div class="verbatim-wrap"><pre class="screen">[
+[...]</pre></div>
+   <div id="id15763" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6>
+    <p> Once Kerberos is enabled, only users with logins that match users
+     known to Kerberos will be able to authenticate to OBS. It is recommended
+     to give admin rights to a matching user before enabling Kerberos mode.
+    </p>
+   </div>
+  </div>
+  <div class="sect3 " id="id15765"><div class="titlepage"><div><div><h4 class="title" id="id15765"><span class="number">3.7.5.3 </span><span class="name">OBS Token Authorization</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id15765">#</a></h4></div></div></div>
+   
+   <p> OBS 2.5 provides a mechanism to create tokens for specific
+    operations. This can be used to allow certain operations in the name of a
+    user to others. This is esp. useful when integrating external
+    infrastructure. The create token should be kept secret by default, but it
+    can also be revoked at any time if it became obsolete or leaked. </p>
+   <div class="sect4 " id="id15768"><div class="titlepage"><div><div><h5 class="title" id="id15768"><span class="number">3.7.5.3.1 </span><span class="name">Managing Tokens of a User</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id15768">#</a></h5></div></div></div>
+    
+    <p> Tokens belong always to a user. A list of active tokens can received
+     via </p>
+    <div class="verbatim-wrap"><pre class="screen"><code class="command">osc token</code></pre></div>
+    <div class="verbatim-wrap"><pre class="screen"><code class="command">osc token --delete &lt;TOKEN&gt;</code></pre></div>
+   </div>
+   <div class="sect4 " id="id15775"><div class="titlepage"><div><div><h5 class="title" id="id15775"><span class="number">3.7.5.3.2 </span><span class="name">Executing a Source Service</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id15775">#</a></h5></div></div></div>
+    
+    <p> A token can be used to execute a source service. The source service
+     has to be setup for the package first, check the source service chapter
+     for this. A typical example is to update sources of a package from git. A
+     source service for that can be setup with </p>
+    <div class="verbatim-wrap"><pre class="screen"><code class="command">osc add git://....</code></pre></div>
+    <p> A token can be registered as generic token, means allowing to
+     execute all source services in OBS if the user has permissions. You can
+     create such a token and execute the operation with </p>
+    <div class="verbatim-wrap"><pre class="screen"><code class="command">osc token --create</code></pre></div>
+    <div class="verbatim-wrap"><pre class="screen"><code class="command">osc token --trigger &lt;TOKEN&gt; &lt;PROJECT&gt; &lt;PACKAGE&gt;</code></pre></div>
+    <div class="verbatim-wrap"><pre class="screen"><code class="command">osc api -X POST /trigger/runservice?token=&lt;TOKEN&gt;&amp;project=&lt;PROJECT&gt;&amp;package=&lt;PACKAGE&gt;</code></pre></div>
+    <p> You can also limit the token to a specific package. The advantage is
+     that the operation is limited to that package, so less bad things can
+     happen when the token leaks. Also you do not need to specify the package
+     on execution time. Create and execute it with </p>
+    <div class="verbatim-wrap"><pre class="screen"><code class="command">osc token --create &lt;PROJECT&gt; &lt;PACKAGE&gt;</code></pre></div>
+    <div class="verbatim-wrap"><pre class="screen"><code class="command">osc token --trigger &lt;TOKEN&gt;</code></pre></div>
+    <div class="verbatim-wrap"><pre class="screen"><code class="command">osc api -X POST /trigger/runservice?token=&lt;TOKEN&gt;</code></pre></div>
+   </div>
+  </div>
+ </div>
+</div>
+ <div class="sect1 " id="_backup"><div class="titlepage"><div><div><h2 class="title" id="_backup"><span class="number">3.8 </span><span class="name">Backup</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_backup">#</a></h2></div></div></div>
+  
+  
+ </div>
+ <div class="sect1 " id="_obs_spider_identification"><div class="titlepage"><div><div><h2 class="title" id="_obs_spider_identification"><span class="number">3.9 </span><span class="name">Spider Identification</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_obs_spider_identification">#</a></h2></div></div></div>
+ 
+ <p> OBS is hiding specific parts/pages of the application from search
+  crawlers (duckduckgo, google etc.), mostly for performance reasons. Which
+  user-agent strings are identified as crawlers configured in the file
+   <code class="filename">/srv/www/obs/api/config/crawler-user-agents.json</code>. </p>
+ <p> To update that list, you must run the command <code class="command">bundle exec rake
+   voight_kampf:import_user_agents</code> in the root directory of your OBS
+  instance. This downloads the current crawler list of user agents as a JSON
+  file into the <code class="filename">config/</code> directory of the Rails
+  application. </p>
+ <p> If you want to extend or edit this list, switch to the
+   <code class="filename">config/</code> directory and open the
+   <code class="filename">crawler-user-agents.json</code> file with the editor of your
+  choice. The content can look like this:
+  </p>
+  <div class="verbatim-wrap"><pre class="screen">[
    {
        "pattern": "Googlebot\\/",
        "url": "http://www.google.com/bot.html"
@@ -1335,19 +1742,21 @@ kerberos_realm: "EXAMPLE.COM"
        "pattern": "Googlebot-Image"
    },
    [...]
-]</pre></div><p>
- </p><p>
-  To add a new bot to this list, a pattern must be defined. This is required to identify a bot. Almost all bots have their
-  own user agent that they're sending to a web server to identify them. For example, the user agent of the Googlebot looks
-  like this:
-  </p><div class="verbatim-wrap"><pre class="screen">Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)</pre></div><p>
-  To choose the pattern for the new bot, compare the user agent of the bot you want to identify with others and look for a
-  part that is unique (like in the Googlebot example, the part: Googlebot).
- </p><p>
-  Let's assume we want to add the bot Geekobot to the list of bots and the user agent looks like this:
-  </p><div class="verbatim-wrap"><pre class="screen">Mozilla/5.0 (compatible; Geekobot/2.1; +https://www.opensuse.org)</pre></div><p>
-  Our unique part would be Geekobot. So we add a new entry to the list of bots:
-  </p><div class="verbatim-wrap"><pre class="screen">[
+]</pre></div>
+ 
+ <p> To add a new bot to this list, a pattern must be defined. This is
+  required to identify a bot. Almost all bots have their own user agent that
+  they are sending to a Web server to identify them. For example, the user
+  agent of the Googlebot looks like this:</p>
+  <div class="verbatim-wrap"><pre class="screen">Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)</pre></div>
+  <p>To choose the pattern for the new bot, compare the user agent of the bot you
+  want to identify with others and look for a part that is unique (like in the
+  Googlebot example, the part: Googlebot). </p>
+ <p> Let's assume we want to add the bot Geekobot to the list of bots and
+  the user agent looks like this:</p>
+  <div class="verbatim-wrap"><pre class="screen">Mozilla/5.0 (compatible; Geekobot/2.1; +https://www.opensuse.org)</pre></div>
+  <p>Our unique part would be Geekobot. So we add a new entry to the list of bots:</p>
+  <div class="verbatim-wrap"><pre class="screen">[
    {
        "pattern": "Googlebot\\/",
        "url": "http://www.google.com/bot.html"
@@ -1362,9 +1771,13 @@ kerberos_realm: "EXAMPLE.COM"
    {
        "pattern": "Geekobot"
    }
-]</pre></div><p>
- </p><div id="idm139862285703664" class="admonition note"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6><p>You can also use regular expressions in the pattern element.</p></div><p>
-  Save the file and restart the Rails application and the bot Geekobot should be identified properly.
- </p></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="obs.cha.troubleshooting.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 4 </span>Troubleshooting</span></a><a class="nav-link" href="obs.cha.overview_filesystem.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 2 </span>Overview filesystem</span></a></div><div id="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span id="_share-fb" class="bottom-button">Facebook</span><span class="spacer"> • </span><span id="_share-gp" class="bottom-button">Google+</span><span class="spacer"> • </span><span id="_share-tw" class="bottom-button">Twitter</span><span class="spacer"> • </span><span id="_share-mail" class="bottom-button">E-Mail</span></span></div><div class="print"><span id="_print-button" class="bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+]</pre></div>
+ <div id="id15815" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6>
+  <p>You can also use regular expressions in the pattern element.</p>
+ </div>
+ <p> Save the file and restart the Rails application and the bot Geekobot
+  should be identified properly. </p>
+</div>
+</div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="obs.cha.troubleshooting.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 4 </span>Troubleshooting</span></a><a class="nav-link" href="obs.cha.overview_filesystem.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 2 </span>File System Overview</span></a></div><div id="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span id="_share-fb" class="bottom-button">Facebook</span><span class="spacer"> • </span><span id="_share-gp" class="bottom-button">Google+</span><span class="spacer"> • </span><span id="_share-tw" class="bottom-button">Twitter</span><span class="spacer"> • </span><span id="_share-mail" class="bottom-button">E-Mail</span></span></div><div class="print"><span id="_print-button" class="bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
         2017 
         SUSE</p><ul><li><a href="http://www.suse.com/company/careers/" target="_top">Careers</a></li><li><a href="http://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="http://www.suse.com/company/" target="_top">About</a></li><li><a href="http://www.suse.com/ContactsOffices/contacts_offices.jsp" target="_top">Contact Us</a></li></ul></div></div></body></html>

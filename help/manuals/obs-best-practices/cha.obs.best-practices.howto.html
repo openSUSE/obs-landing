@@ -1,78 +1,98 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>HOW TO -- a list of common questions and solutions | Open Build Service</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><meta name="generator" content="DocBook XSL Stylesheets V1.78.1" /><meta name="book-title" content="Open Build Service" /><meta name="chapter-title" content="Chapter 9. HOW TO -- a list of common questions and solutions" /><link rel="home" href="index.html" title="Open Build Service" /><link rel="up" href="index.html" title="Open Build Service" /><link rel="prev" href="cha.obs.best-practices.kmp.html" title="Chapter 8. Kernel Module Building" /><link rel="next" href="go01.html" title="Glossary" /><script type="text/javascript">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Common Questions and Solutions | Best Practice Guide</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DocBook XSL Stylesheets V1.79.0" /><meta name="book-title" content="Best Practice Guide" /><meta name="chapter-title" content="Chapter 9. Common Questions and Solutions" /><link rel="home" href="index.html" title="OBS Documentation" /><link rel="up" href="book.obs-best-practices.html" title="Best Practice Guide" /><link rel="prev" href="cha.obs.best-practices.kmp.html" title="Chapter 8. Building Kernel Modules" /><link rel="next" href="bk05apa.html" title="Appendix A. GNU Licenses" /><script type="text/javascript">
 
 var protocol = window.location.protocol.toLowerCase();
 if ( protocol != 'file:' ) {
   var agent = navigator.userAgent.toLowerCase();
   var wanted = ( protocol == 'https:') ? 'https' : 'http';
   var file = 'fonts.css';
-  if (agent.indexOf('android') != -1 && agent.indexOf('chrom') != -1 ) {
-      file = 'fonts-nolocal.css';
-  }
   document.write('<link rel="stylesheet" type="text/css" href="' + wanted + '://static.opensuse.org/fonts/'+ file +'"></link>');
 }
 else {
    document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
 }
 
-</script><noscript><link rel="stylesheet" type="text/css" href="http://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script></head><body class="offline js-off"><div id="_outer-wrap"><div id="_white-bg"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Open Build Service"><span class="book-icon">Open Build Service</span></a><span> › </span><a class="crumb" href="cha.obs.best-practices.howto.html">HOW TO -- a list of common questions and solutions</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Open Build Service</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="pr01.html"><span class="number"> </span><span class="name">About this Guide</span></a></li><li class="inactive"><a href="cha.obs.best-practices.webuiusage.html"><span class="number">1 </span><span class="name">How to use OBS web UI</span></a></li><li class="inactive"><a href="cha.obs.best-practices.basics.html"><span class="number">2 </span><span class="name">Basic Concepts and Work Styles</span></a></li><li class="inactive"><a href="cha.obs.best-practices.upstream.html"><span class="number">3 </span><span class="name">Publishing upstream binaries</span></a></li><li class="inactive"><a href="cha.obs.best-practices.localsetup.html"><span class="number">4 </span><span class="name">OBS Local Setup</span></a></li><li class="inactive"><a href="cha.obs.best-practices.bootstrapping.html"><span class="number">5 </span><span class="name">Boot Strapping</span></a></li><li class="inactive"><a href="cha.obs.best-practices.oscexamples.html"><span class="number">6 </span><span class="name">OSC commands examples</span></a></li><li class="inactive"><a href="cha.obs.best-practices.advanced.html"><span class="number">7 </span><span class="name">Advanced Project Setups</span></a></li><li class="inactive"><a href="cha.obs.best-practices.kmp.html"><span class="number">8 </span><span class="name">Kernel Module Building</span></a></li><li class="inactive"><a href="cha.obs.best-practices.howto.html"><span class="number">9 </span><span class="name">HOW TO -- a list of common questions and solutions</span></a></li><li class="inactive"><a href="go01.html"><span class="number"> </span><span class="name">Glossary</span></a></li><li class="inactive"><a href="appendix.work_on_obs_book.html"><span class="number">A </span><span class="name">How to work on this Book</span></a></li><li class="inactive"><a href="apb.html"><span class="number">B </span><span class="name">GNU Licenses</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 8. Kernel Module Building" href="cha.obs.best-practices.kmp.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Glossary" href="go01.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Open Build Service"><span class="book-icon">Open Build Service</span></a><span> › </span><a class="crumb" href="cha.obs.best-practices.howto.html">HOW TO -- a list of common questions and solutions</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 8. Kernel Module Building" href="cha.obs.best-practices.kmp.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Glossary" href="go01.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class=""><div class="documentation"><div class="chapter " id="cha.obs.best-practices.howto"><div class="titlepage"><div><div><h1 class="title"><span class="number">9 </span><span class="name">HOW TO -- a list of common questions and solutions</span> </h1></div></div></div><div class="line"><div class="toc"><dl><dt><span class="section"><a href="cha.obs.best-practices.howto.html#idm140436376515216"><span class="number">9.1 </span><span class="name">How to work best with limited bandwidth</span></a></span></dt></dl></div></div><p>
-  This currently an unsorted list of asked questions.
- </p><div class="section " id="idm140436376515216"><div class="titlepage"><div><div><h2 class="title" id="idm140436376515216"><span class="number">9.1 </span><span class="name">How to work best with limited bandwidth</span> <a title="Permalink" class="permalink" href="cha.obs.best-practices.howto.html#idm140436376515216">#</a></h2></div></div></div><p>
-   Packages can contain large files, esp. some tar balls can become quite
+</script><noscript><link rel="stylesheet" type="text/css" href="http://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="offline js-off"><div id="_outer-wrap"><div id="_white-bg"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Best Practice Guide"><span class="book-icon">Best Practice Guide</span></a><span> › </span><a class="crumb" href="cha.obs.best-practices.howto.html">Common Questions and Solutions</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.htmlindex.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Best Practice Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="bk05pr01.html"><span class="number"> </span><span class="name">About this Guide</span></a></li><li class="inactive"><a href="cha.obs.best-practices.webuiusage.html"><span class="number">1 </span><span class="name">Using the OBS Web UI</span></a></li><li class="inactive"><a href="cha.obs.best-practices.basics.html"><span class="number">2 </span><span class="name">Basic Concepts and Work Styles</span></a></li><li class="inactive"><a href="cha.obs.best-practices.upstream.html"><span class="number">3 </span><span class="name">Publishing Upstream Binaries</span></a></li><li class="inactive"><a href="cha.obs.best-practices.localsetup.html"><span class="number">4 </span><span class="name">Setting Up a Local OBS Instance</span></a></li><li class="inactive"><a href="cha.obs.best-practices.bootstrapping.html"><span class="number">5 </span><span class="name">Bootstrapping</span></a></li><li class="inactive"><a href="cha.obs.best-practices.oscexamples.html"><span class="number">6 </span><span class="name"><code class="command">osc</code> Example Commands</span></a></li><li class="inactive"><a href="cha.obs.best-practices.advanced.html"><span class="number">7 </span><span class="name">Advanced Project Setups</span></a></li><li class="inactive"><a href="cha.obs.best-practices.kmp.html"><span class="number">8 </span><span class="name">Building Kernel Modules</span></a></li><li class="inactive"><a href="cha.obs.best-practices.howto.html"><span class="number">9 </span><span class="name">Common Questions and Solutions</span></a></li><li class="inactive"><a href="bk05apa.html"><span class="number">A </span><span class="name">GNU Licenses</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 8. Building Kernel Modules" href="cha.obs.best-practices.kmp.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Appendix A. GNU Licenses" href="bk05apa.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Best Practice Guide"><span class="book-icon">Best Practice Guide</span></a><span> › </span><a class="crumb" href="cha.obs.best-practices.howto.html">Common Questions and Solutions</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 8. Building Kernel Modules" href="cha.obs.best-practices.kmp.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Appendix A. GNU Licenses" href="bk05apa.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class=""><div class="documentation"><div class="chapter " id="cha.obs.best-practices.howto"><div class="titlepage"><div><div><h1 class="title"><span class="number">9 </span><span class="name">Common Questions and Solutions</span> </h1></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="cha.obs.best-practices.howto.html#id19423"><span class="number">9.1 </span><span class="name">Working with Limited Bandwidth</span></a></span></dt></dl></div></div>
+ 
+ 
+ <p> This currently an unsorted list of asked questions. </p>
+ <div class="sect1 " id="id19423"><div class="titlepage"><div><div><h2 class="title" id="id19423"><span class="number">9.1 </span><span class="name">Working with Limited Bandwidth</span> <a title="Permalink" class="permalink" href="cha.obs.best-practices.howto.html#id19423">#</a></h2></div></div></div>
+  
+  <p> Packages can contain large files, esp. some tar balls can become quite
    large, in some real life examples several hundred mega bytes. This can be a
-   problem when you need to work on the package via a slow connection.
-  </p><div class="section " id="idm140436373841488"><div class="titlepage"><div><div><h3 class="title" id="idm140436373841488"><span class="number">9.1.1 </span><span class="name">Use the web interface</span> <a title="Permalink" class="permalink" href="cha.obs.best-practices.howto.html#idm140436373841488">#</a></h3></div></div></div><p>
-    The web interface is the easiest way to edit simple things without the need
-    of the checkout.
-   </p><p>
-    Disadvantages are
-    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
-           Not the preferred solution for power packagers
-          </li><li class="listitem ">
-           No local build possible
-          </li><li class="listitem ">
-           Still a significant bandwidth is needed compared to the size of the edited file.
-          </li></ul></div><p>
-   </p></div><div class="section " id="idm140436374048656"><div class="titlepage"><div><div><h3 class="title" id="idm140436374048656"><span class="number">9.1.2 </span><span class="name">Use osc with size limit</span> <a title="Permalink" class="permalink" href="cha.obs.best-practices.howto.html#idm140436374048656">#</a></h3></div></div></div><p>
+   problem when you need to work on the package via a slow connection. </p>
+  <div class="sect2 " id="id19426"><div class="titlepage"><div><div><h3 class="title" id="id19426"><span class="number">9.1.1 </span><span class="name">Using the Web Interface</span> <a title="Permalink" class="permalink" href="cha.obs.best-practices.howto.html#id19426">#</a></h3></div></div></div>
+   
+   <p> The web interface is the easiest way to edit simple things without
+    the need of the checkout. </p>
+   <p> Disadvantages are</p>
+   <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
+     <p> Not the preferred solution for power packagers </p>
+    </li><li class="listitem ">
+     <p> No local build possible </p>
+    </li><li class="listitem ">
+     <p> Still a significant bandwidth is needed compared to the size of
+      the edited file. </p>
+    </li></ul></div>
+  </div>
+  <div class="sect2 " id="id19437"><div class="titlepage"><div><div><h3 class="title" id="id19437"><span class="number">9.1.2 </span><span class="name">Using <code class="command">osc</code> with Size Limit</span> <a title="Permalink" class="permalink" href="cha.obs.best-practices.howto.html#id19437">#</a></h3></div></div></div>
+   
+   <p>
     <code class="command">osc</code> offers to skip files with a certain size (specified
     with <code class="command">-l</code> switch) on checkout. The limit is stored locally
     and you can also run an update later without downloading any large files.
-    All other files can be edited, diffed and committed as usual.
-   </p><p>
-    Disadvantages are
-    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
-           The checkout is incomplete
-          </li><li class="listitem ">
-           No local build possible
-          </li></ul></div><p>
-   </p></div><div class="section " id="idm140436376958864"><div class="titlepage"><div><div><h3 class="title" id="idm140436376958864"><span class="number">9.1.3 </span><span class="name">Use <code class="command">download_url</code></span> <a title="Permalink" class="permalink" href="cha.obs.best-practices.howto.html#idm140436376958864">#</a></h3></div></div></div><p>
-    Manage your large files via source services. The easiest way is to use
-</p><div class="verbatim-wrap"><pre class="screen"><code class="command">osc add $URL</code></pre></div><p>
-    which just stores a small <code class="command">_service</code> file. The check will
-    not contain the large files by default, but they get downloaded when needed
-    via the service. However, they will never get committed, so this is the
-    best approach when you have a fast downstream, but slow upstream like with
+    All other files can be edited, diffed and committed as usual. </p>
+   <p> Disadvantages are </p>
+    <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
+      <p> The checkout is incomplete </p>
+     </li><li class="listitem ">
+      <p> No local build possible </p>
+     </li></ul></div>
+  </div>
+  <div class="sect2 " id="id19449"><div class="titlepage"><div><div><h3 class="title" id="id19449"><span class="number">9.1.3 </span><span class="name">Using <code class="command">download_url</code></span> <a title="Permalink" class="permalink" href="cha.obs.best-practices.howto.html#id19449">#</a></h3></div></div></div>
+   
+   <p> Manage your large files via source services. The easiest way is to
+    use <code class="command">osc add $URL</code> which just stores a
+    small <code class="command">_service</code> file. The check will not contain the
+    large files by default, but they get downloaded when needed via the
+    service. However, they will never get committed, so this is the best
+    approach when you have a fast downstream, but slow upstream like with
     standard DSL connections. Also other users can trust your tar ball, esp.
-    important when you do version upgrades on foreign packages.
-   </p><p>
-    Disadvantages are
-    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
-           The generated files have the _service: prefix in check out (but not during build).
-          </li></ul></div><p>
-   </p></div><div class="section " id="idm140436377420608"><div class="titlepage"><div><div><h3 class="title" id="idm140436377420608"><span class="number">9.1.4 </span><span class="name">Use source service in trylocal mode</span> <a title="Permalink" class="permalink" href="cha.obs.best-practices.howto.html#idm140436377420608">#</a></h3></div></div></div><p>
-    Manage your large files via source services in try local mode for example
-    with <code class="command">download_url</code> or <code class="command">download_files</code>
-    service. This means you can be flexible depending on your current
-    connection without changing the setup. The service is generating the file
-    on the server side when you decide not to commit it, but you can also
-    decide to commit it and avoid the _service: prefix on the files. Also other
-    users can trust your tar ball, esp. important when you do version upgrades
-    on foreign packages.
-   </p><p>
-    Disadvantages are
-    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
-            A checkout may still need the size limit switch when last commit contained the large files.
-          </li></ul></div><p>
-   </p></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="go01.html"><span class="next-icon">→</span><span class="nav-label">Glossary</span></a><a class="nav-link" href="cha.obs.best-practices.kmp.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 8 </span>Kernel Module Building</span></a></div><div id="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span id="_share-fb" class="bottom-button">Facebook</span><span class="spacer"> • </span><span id="_share-gp" class="bottom-button">Google+</span><span class="spacer"> • </span><span id="_share-tw" class="bottom-button">Twitter</span><span class="spacer"> • </span><span id="_share-mail" class="bottom-button">E-Mail</span></span></div><div class="print"><span id="_print-button" class="bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+    important when you do version upgrades on foreign packages. </p>
+   <p> Disadvantages are </p>
+    <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
+      <p> The generated files have the _service: prefix in check out (but
+       not during build). </p>
+     </li></ul></div>
+  </div>
+  <div class="sect2 " id="id19459"><div class="titlepage"><div><div><h3 class="title" id="id19459"><span class="number">9.1.4 </span><span class="name">Using Source Services in <code class="literal">trylocal</code> Mode</span> <a title="Permalink" class="permalink" href="cha.obs.best-practices.howto.html#id19459">#</a></h3></div></div></div>
+   
+   <p> Manage your large files via source services in try local mode for
+    example with <code class="command">download_url</code> or
+     <code class="command">download_files</code> service. This means you can be flexible
+    depending on your current connection without changing the setup. The
+    service is generating the file on the server side when you decide not to
+    commit it, but you can also decide to commit it and avoid the _service:
+    prefix on the files. Also other users can trust your tar ball, esp.
+    important when you do version upgrades on foreign packages. </p>
+   <p> Disadvantages are </p>
+    <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
+      <p> A checkout may still need the size limit switch when last
+       commit contained the large files. </p>
+     </li></ul></div>
+  </div>
+ </div>
+</div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="bk05apa.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Appendix A </span>GNU Licenses</span></a><a class="nav-link" href="cha.obs.best-practices.kmp.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 8 </span>Building Kernel Modules</span></a></div><div id="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span id="_share-fb" class="bottom-button">Facebook</span><span class="spacer"> • </span><span id="_share-gp" class="bottom-button">Google+</span><span class="spacer"> • </span><span id="_share-tw" class="bottom-button">Twitter</span><span class="spacer"> • </span><span id="_share-mail" class="bottom-button">E-Mail</span></span></div><div class="print"><span id="_print-button" class="bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
         2017 
         SUSE</p><ul><li><a href="http://www.suse.com/company/careers/" target="_top">Careers</a></li><li><a href="http://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="http://www.suse.com/company/" target="_top">About</a></li><li><a href="http://www.suse.com/ContactsOffices/contacts_offices.jsp" target="_top">Contact Us</a></li></ul></div></div></body></html>
