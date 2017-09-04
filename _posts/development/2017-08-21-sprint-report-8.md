@@ -17,7 +17,7 @@ category: development
   <ul>
     <li><a href='https://github.com/openSUSE/open-build-service/pull/3653'>PR#3653</a></li>
     <li><a href='https://github.com/openSUSE/open-build-service/pull/3661'>PR#3661</a></li>
-    <li><a href='https://github.com/openSUSE/open-build-service/pull/3661'>PR#3671</a></li>
+    <li><a href='https://github.com/openSUSE/open-build-service/pull/3671'>PR#3671</a></li>
   </ul>
 </p>
 
