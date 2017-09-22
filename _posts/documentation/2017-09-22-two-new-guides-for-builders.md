@@ -52,10 +52,10 @@ surrounds OBS. The result is an expanded and improved
 [Glossary](https://openbuildservice.org/help/manuals/obs-reference-guide/obs.glossary.html)
 (part of the Reference Guide).
 
-Lastly, we also made a variety of stylistic and spelling fixes and had a field
+Lastly, we made a variety of stylistic and spelling fixes and had a field
 day converting the guide from the DocBook 4 format to the more modern DocBook 5.
 
-We certainly hope you like the changes we made so far. We would also be happy to
+We certainly hope you like the changes we made so far. We would be happy to
 see you pitch in with feedback and contributions. In particular, rounding out
 the new User Guide is still a good bit work.
 
