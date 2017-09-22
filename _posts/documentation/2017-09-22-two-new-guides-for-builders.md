@@ -59,6 +59,12 @@ We certainly hope you like the changes we made so far. We would be happy to
 see you pitch in with feedback and contributions. In particular, rounding out
 the new User Guide is still a good bit work.
 
+From the documentation team, large contributions for this project came from
+[@tomschr](https://github.com/tomschr), with
+[@sknorr](https://github.com/sknorr) contributing reviews and cosmetics
+fixes. Initial guidance and technical reviews came from
+[@adrianschroeter](https://github.com/adrianschroeter).
+
 As always, the guides can be found at
 [openbuildservice.org/help/manuals/](https://openbuildservice.org/help/manuals/).
 The source of the guides can be found on [GitHub](https://github.com/openSUSE/obs-docu).
