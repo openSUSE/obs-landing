@@ -105,3 +105,8 @@ margin:0 auto;
   color: #999;
 }
 
+/* Override for weird bullet positioning rule in Foundation stylesheet */
+ul, ol {
+  list-style-position: outside;
+  margin-left: 20px;
+}
