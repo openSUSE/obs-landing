@@ -49,7 +49,7 @@ on their target audience.
 
 We've also been working on clarifying the terminology that
 surrounds OBS. The result is an expanded and improved
-[Glossary](https://openbuildservice.org/help/manuals/obs-reference-guide/obs.glossary.html)
+[Glossary](http://openbuildservice.org/help/manuals/obs-reference-guide/obs.glossary.html)
 (part of the Reference Guide).
 
 Lastly, we made a variety of stylistic and spelling fixes and had a field
@@ -66,5 +66,5 @@ fixes. Initial guidance and technical reviews came from
 [@adrianschroeter](https://github.com/adrianschroeter).
 
 As always, the guides can be found at
-[openbuildservice.org/help/manuals/](https://openbuildservice.org/help/manuals/).
+[openbuildservice.org/help/manuals/](http://openbuildservice.org/help/manuals/).
 The source of the guides can be found on [GitHub](https://github.com/openSUSE/obs-docu).
