@@ -111,7 +111,7 @@ accessible for people that don't have that much packaging knowledge.
 
 What do you think about all of this? Do you like the new workflow? Do you think
 something similar for other build descripions makes sense? Let us know in the
-comments below, on our [mailing list](mailto:opensuse-biuldservice@opensuse.org),
+comments below, on our [mailing list](mailto:opensuse-buildservice@opensuse.org),
 or on [twitter (@obsHQ)](https://twitter.com/obshq). We are looking forward to
 your feedback!
 
