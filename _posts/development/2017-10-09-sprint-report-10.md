@@ -85,12 +85,14 @@ To improve this workflow a little bit we now show also the comments of the super
 <img src="/images/posts/sprint_25_supersed_request_comments.png" width="850px" alt="Supersed request comment" />
 </p>
 
- <h2> Bugfixes </h2>
+<h2>Bugfixes</h2>
  
+<h3>Fix deletion of groups</h3>
  <p>
  It was not possible to delete groups with users. This is now fixed. Thanks <a href='https://github.com/lchiquitto'>Ichiquitto</a> for report this bug.
  </p>
 
+<h3>Preserve form data in Kiwi editor</h3>
 <p>We fixed a little bug in the Kiwi Editor, now we preserve the data in the form when something unexpected happens. This was because we redirecting instead of rendering the view, 
 but after fixing it we found another bug. This time was because we were filtering the package groups, so when something was wrong we rendered the form but with the old packages.
 See how it was solved in the PR's <a href='https://github.com/openSUSE/open-build-service/pull/3888'>#3888</a> and <a href='https://github.com/openSUSE/open-build-service/pull/3953'>#3953</a> 
