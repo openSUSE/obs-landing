@@ -1,29 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Administration | Administrator Guide</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DocBook XSL Stylesheets V1.79.0" /><meta name="book-title" content="Administrator Guide" /><meta name="chapter-title" content="Chapter 3. Administration" /><link rel="home" href="index.html" title="OBS Documentation" /><link rel="up" href="book.obs-admin.html" title="Administrator Guide" /><link rel="prev" href="obs.cha.overview_filesystem.html" title="Chapter 2. File System Overview" /><link rel="next" href="obs.cha.troubleshooting.html" title="Chapter 4. Troubleshooting" /><script type="text/javascript">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Administration | Administrator Guide</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><meta name="generator" content="DocBook XSL Stylesheets V1.78.1" /><meta name="book-title" content="Administrator Guide" /><meta name="chapter-title" content="Chapter 3. Administration" /><link rel="home" href="index.html" title="OBS Documentation" /><link rel="up" href="book.obs-admin.html" title="Administrator Guide" /><link rel="prev" href="obs.cha.overview_filesystem.html" title="Chapter 2. File System Overview" /><link rel="next" href="obs.cha.troubleshooting.html" title="Chapter 4. Troubleshooting" /><script type="text/javascript">
 
 var protocol = window.location.protocol.toLowerCase();
 if ( protocol != 'file:' ) {
   var agent = navigator.userAgent.toLowerCase();
   var wanted = ( protocol == 'https:') ? 'https' : 'http';
   var file = 'fonts.css';
+  if (agent.indexOf('android') != -1 && agent.indexOf('chrom') != -1 ) {
+      file = 'fonts-nolocal.css';
+  }
   document.write('<link rel="stylesheet" type="text/css" href="' + wanted + '://static.opensuse.org/fonts/'+ file +'"></link>');
 }
 else {
    document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
 }
 
-</script><noscript><link rel="stylesheet" type="text/css" href="http://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
-
-$(document).ready(function() {
-  $('.verbatim-wrap.highlight').each(function(i, block) {
-    hljs.highlightBlock(block);
-  });
-});
-hljs.configure({
-  useBR: false
-});
-
-</script></head><body class="offline js-off"><div id="_outer-wrap"><div id="_white-bg"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Administrator Guide"><span class="book-icon">Administrator Guide</span></a><span> › </span><a class="crumb" href="obs.cha.administration.html">Administration</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.htmlindex.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Administrator Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="bk03pr01.html"><span class="number"> </span><span class="name">About this Guide</span></a></li><li class="inactive"><a href="obs.cha.installation_and_configuration.html"><span class="number">1 </span><span class="name">Installation and Configuration</span></a></li><li class="inactive"><a href="obs.cha.overview_filesystem.html"><span class="number">2 </span><span class="name">File System Overview</span></a></li><li class="inactive"><a href="obs.cha.administration.html"><span class="number">3 </span><span class="name">Administration</span></a></li><li class="inactive"><a href="obs.cha.troubleshooting.html"><span class="number">4 </span><span class="name">Troubleshooting</span></a></li><li class="inactive"><a href="bk03apa.html"><span class="number">A </span><span class="name">GNU Licenses</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 2. File System Overview" href="obs.cha.overview_filesystem.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 4. Troubleshooting" href="obs.cha.troubleshooting.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Administrator Guide"><span class="book-icon">Administrator Guide</span></a><span> › </span><a class="crumb" href="obs.cha.administration.html">Administration</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 2. File System Overview" href="obs.cha.overview_filesystem.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 4. Troubleshooting" href="obs.cha.troubleshooting.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class=""><div class="documentation"><div class="chapter " id="obs.cha.administration"><div class="titlepage"><div><div><h1 class="title"><span class="number">3 </span><span class="name">Administration</span> </h1></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="obs.cha.administration.html#_tools"><span class="number">3.1 </span><span class="name">Tools</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_managing_build_targets"><span class="number">3.2 </span><span class="name">Managing Build Targets</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#sec.obs.source_service"><span class="number">3.3 </span><span class="name">Source Services</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_dispatch_priorities"><span class="number">3.4 </span><span class="name">Dispatch Priorities</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_publisher_hooks"><span class="number">3.5 </span><span class="name">Publisher Hooks</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_unpublisher_hooks"><span class="number">3.6 </span><span class="name">Unpublisher Hooks</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_user_and_group_management"><span class="number">3.7 </span><span class="name">Managing Users and Groups</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_backup"><span class="number">3.8 </span><span class="name">Backup</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_obs_spider_identification"><span class="number">3.9 </span><span class="name">Spider Identification</span></a></span></dt></dl></div></div>
+</script><noscript><link rel="stylesheet" type="text/css" href="http://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script></head><body class="offline js-off"><div id="_outer-wrap"><div id="_white-bg"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Administrator Guide"><span class="book-icon">Administrator Guide</span></a><span> › </span><a class="crumb" href="obs.cha.administration.html">Administration</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.htmlindex.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Administrator Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="bk03pr01.html"><span class="number"> </span><span class="name">About this Guide</span></a></li><li class="inactive"><a href="obs.cha.installation_and_configuration.html"><span class="number">1 </span><span class="name">Installation and Configuration</span></a></li><li class="inactive"><a href="obs.cha.overview_filesystem.html"><span class="number">2 </span><span class="name">File System Overview</span></a></li><li class="inactive"><a href="obs.cha.administration.html"><span class="number">3 </span><span class="name">Administration</span></a></li><li class="inactive"><a href="obs.cha.troubleshooting.html"><span class="number">4 </span><span class="name">Troubleshooting</span></a></li><li class="inactive"><a href="bk03apa.html"><span class="number">A </span><span class="name">GNU Licenses</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 2. File System Overview" href="obs.cha.overview_filesystem.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 4. Troubleshooting" href="obs.cha.troubleshooting.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Administrator Guide"><span class="book-icon">Administrator Guide</span></a><span> › </span><a class="crumb" href="obs.cha.administration.html">Administration</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 2. File System Overview" href="obs.cha.overview_filesystem.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 4. Troubleshooting" href="obs.cha.troubleshooting.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class=""><div class="documentation"><div class="chapter " id="obs.cha.administration"><div class="titlepage"><div><div><h1 class="title"><span class="number">3 </span><span class="name">Administration</span> </h1></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="obs.cha.administration.html#_tools"><span class="number">3.1 </span><span class="name">Tools</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_managing_build_targets"><span class="number">3.2 </span><span class="name">Managing Build Targets</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#sec.obs.source_service"><span class="number">3.3 </span><span class="name">Source Services</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_dispatch_priorities"><span class="number">3.4 </span><span class="name">Dispatch Priorities</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_publisher_hooks"><span class="number">3.5 </span><span class="name">Publisher Hooks</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_unpublisher_hooks"><span class="number">3.6 </span><span class="name">Unpublisher Hooks</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_user_and_group_management"><span class="number">3.7 </span><span class="name">Managing Users and Groups</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_message_bus"><span class="number">3.8 </span><span class="name">Message Bus for Event Notifications</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_backup"><span class="number">3.9 </span><span class="name">Backup</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_obs_spider_identification"><span class="number">3.10 </span><span class="name">Spider Identification</span></a></span></dt></dl></div></div>
  
  
  <div class="sect1 " id="_tools"><div class="titlepage"><div><div><h2 class="title" id="_tools"><span class="number">3.1 </span><span class="name">Tools</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_tools">#</a></h2></div></div></div>
@@ -50,7 +42,7 @@ It should be only used by experienced admins.</p>
  --deep-check-project &lt;project&gt; &lt;architecture&gt;
  --deep-check-project &lt;project&gt; &lt;repository&gt; &lt;architecture&gt;
    Check status of a project and its repositories again
-   This deep check includes also the sources, in case of lost events.
+   This deep check also includes the sources, in case of lost events.
 
  --check-package &lt;project&gt; &lt;package&gt; &lt;architecture&gt;
    Check status of a package in all repositories
@@ -176,7 +168,7 @@ OBS API URL and your user details.</p>
 For example:
 osc -A https://api.testobs.org</pre></div>
   <p>Follow the instructions on the terminal.</p>
-  <div id="id14889" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning</h6>
+  <div id="idm140361330039824" class="admonition warning"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning</h6>
    <p>The password is stored in clear text in the .oscrc file by default, so you need to
 give this file restrictive access rights, only read/write access for your user
 should be allowed. <span class="strong"><strong>osc</strong></span> allows to store the password in other ways (in keyrings
@@ -436,7 +428,7 @@ Options help:
 │           └── x86_64
 │               ├── :bininfo
 │               └── :schedulerstate</pre></div>
-   <div id="id14958" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning</h6>
+   <div id="idm140361329996928" class="admonition warning"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning</h6>
     <p>All the directories under /srv/obs/build have to be owned by the
       <span class="strong"><strong>obsrun</strong></span> user and group. The <span class="strong"><strong>obsrun</strong></span> user need write access to them. <span class="strong"><strong>If not the scheduler process will crash on your
       instance.</strong></span>
@@ -459,7 +451,7 @@ testobs:/srv/www/obs/api # chown obsrun:obsrun \
     in the <span class="emphasis"><em>:full</em></span> directory. You need the architecture
     specific package and the <span class="emphasis"><em>noarch</em></span> packages as
     well.</p>
-   <div id="id14972" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6>
+   <div id="idm140361329988544" class="admonition important"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6>
     <p>If you import packages for enterprise distributions like SLES12
      you also need the packages from the SDK. Maybe you need packages from
      add-on products as well, depending what software you want build.</p>
@@ -509,7 +501,7 @@ testobs # obs_admin --rescan-repository SUSE:13.2 standard x86_64</pre></div>
   </li><li class="listitem ">
    <p> services can be defined per package or project wide. </p>
   </li></ul></div>
- <div class="sect2 " id="id15003"><div class="titlepage"><div><div><h3 class="title" id="id15003"><span class="number">3.3.1 </span><span class="name">Using Services for Validation</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id15003">#</a></h3></div></div></div>
+ <div class="sect2 " id="idm140361329972208"><div class="titlepage"><div><div><h3 class="title" id="idm140361329972208"><span class="number">3.3.1 </span><span class="name">Using Services for Validation</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#idm140361329972208">#</a></h3></div></div></div>
   
   <p> Source Services may be used to validate sources. This can happen per
    package, which is useful when the packager wants to validate that downloaded
@@ -524,40 +516,40 @@ testobs # obs_admin --rescan-repository SUSE:13.2 standard x86_64</pre></div>
    In this case the newly generated file will be used instead of the committed
    one during build. </p>
  </div>
- <div class="sect2 " id="id15010"><div class="titlepage"><div><div><h3 class="title" id="id15010"><span class="number">3.3.2 </span><span class="name">Different Modes When Using Services</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id15010">#</a></h3></div></div></div>
+ <div class="sect2 " id="idm140361329968416"><div class="titlepage"><div><div><h3 class="title" id="idm140361329968416"><span class="number">3.3.2 </span><span class="name">Different Modes When Using Services</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#idm140361329968416">#</a></h3></div></div></div>
   
   <p> Each service can be used in a special mode defining when it should run
    and how to use the result. This can be done per package or globally for an
    entire project. </p>
-  <div class="sect3 " id="id15013"><div class="titlepage"><div><div><h4 class="title" id="id15013"><span class="number">3.3.2.1 </span><span class="name">Default Mode</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id15013">#</a></h4></div></div></div>
+  <div class="sect3 " id="idm140361329967024"><div class="titlepage"><div><div><h4 class="title" id="idm140361329967024"><span class="number">3.3.2.1 </span><span class="name">Default Mode</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#idm140361329967024">#</a></h4></div></div></div>
    
    <p> The default mode of a service is to always run after each commit on
     the server side and locally before every local build. </p>
   </div>
-  <div class="sect3 " id="id15016"><div class="titlepage"><div><div><h4 class="title" id="id15016"><span class="number">3.3.2.2 </span><span class="name"><code class="literal">trylocal</code> Mode</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id15016">#</a></h4></div></div></div>
+  <div class="sect3 " id="idm140361329965648"><div class="titlepage"><div><div><h4 class="title" id="idm140361329965648"><span class="number">3.3.2.2 </span><span class="name"><code class="literal">trylocal</code> Mode</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#idm140361329965648">#</a></h4></div></div></div>
    
    <p> The trylocal mode is running the service locally when using current
     osc versions. The result gets committed as standard files and not named
     with _service: prefix. Additionally the service runs on the server by
     default, but usually the service should detect that the result is the same
     and skip the generated files. In case they differ for any reason (because
-    the webui or API was used for example) they get generated and added on the
+    the webui or API was used for example) they be generated and added on the
     server. </p>
   </div>
-  <div class="sect3 " id="id15020"><div class="titlepage"><div><div><h4 class="title" id="id15020"><span class="number">3.3.2.3 </span><span class="name"><code class="literal">localonly</code> Mode</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id15020">#</a></h4></div></div></div>
+  <div class="sect3 " id="idm140361329963600"><div class="titlepage"><div><div><h4 class="title" id="idm140361329963600"><span class="number">3.3.2.3 </span><span class="name"><code class="literal">localonly</code> Mode</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#idm140361329963600">#</a></h4></div></div></div>
    
    <p> The localonly mode is running the service locally when using current
     osc versions. The result gets committed as standard files and not named
     with _service: prefix. The service is never running on the server side. It
     is also not possible to trigger it manually. </p>
   </div>
-  <div class="sect3 " id="id15024"><div class="titlepage"><div><div><h4 class="title" id="id15024"><span class="number">3.3.2.4 </span><span class="name"><code class="literal">serveronly</code> Mode</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id15024">#</a></h4></div></div></div>
+  <div class="sect3 " id="idm140361329961552"><div class="titlepage"><div><div><h4 class="title" id="idm140361329961552"><span class="number">3.3.2.4 </span><span class="name"><code class="literal">serveronly</code> Mode</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#idm140361329961552">#</a></h4></div></div></div>
    
    <p> The serviceonly mode is running the service on the service only. This
     can be useful, when the service is not available or can not work on
     developer workstations. </p>
   </div>
-  <div class="sect3 " id="id15028"><div class="titlepage"><div><div><h4 class="title" id="id15028"><span class="number">3.3.2.5 </span><span class="name"><code class="literal">buildtime</code> Mode</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id15028">#</a></h4></div></div></div>
+  <div class="sect3 " id="idm140361329959952"><div class="titlepage"><div><div><h4 class="title" id="idm140361329959952"><span class="number">3.3.2.5 </span><span class="name"><code class="literal">buildtime</code> Mode</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#idm140361329959952">#</a></h4></div></div></div>
    
    <p> The service is running inside of the build job, for local and server
     side builds. A side effect is that the service package is becoming a build
@@ -567,7 +559,7 @@ testobs # obs_admin --rescan-repository SUSE:13.2 standard x86_64</pre></div>
     access is not be available when the workers are running in a secure mode.
    </p>
   </div>
-  <div class="sect3 " id="id15032"><div class="titlepage"><div><div><h4 class="title" id="id15032"><span class="number">3.3.2.6 </span><span class="name"><code class="literal">disabled</code> Mode</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id15032">#</a></h4></div></div></div>
+  <div class="sect3 " id="idm140361329957840"><div class="titlepage"><div><div><h4 class="title" id="idm140361329957840"><span class="number">3.3.2.6 </span><span class="name"><code class="literal">disabled</code> Mode</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#idm140361329957840">#</a></h4></div></div></div>
    
    <p> The disabled mode is neither running the service locally or on the
     server side. It can be used to temporarily disable the service but keeping
@@ -577,7 +569,7 @@ testobs # obs_admin --rescan-repository SUSE:13.2 standard x86_64</pre></div>
     get committed as standard files again. </p>
   </div>
  </div>
- <div class="sect2 " id="id15037"><div class="titlepage"><div><div><h3 class="title" id="id15037"><span class="number">3.3.3 </span><span class="name">Storage of Source Service Definitions</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id15037">#</a></h3></div></div></div>
+ <div class="sect2 " id="idm140361329955376"><div class="titlepage"><div><div><h3 class="title" id="idm140361329955376"><span class="number">3.3.3 </span><span class="name">Storage of Source Service Definitions</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#idm140361329955376">#</a></h3></div></div></div>
   
   <p> The called services are always defined in a
     <code class="command">_service</code> file. It is either part of the package sources
@@ -606,7 +598,7 @@ testobs # obs_admin --rescan-repository SUSE:13.2 standard x86_64</pre></div>
    which will try to upgrade the package to a newer source version available
    online. </p>
  </div>
- <div class="sect2 " id="id15047"><div class="titlepage"><div><div><h3 class="title" id="id15047"><span class="number">3.3.4 </span><span class="name">Dropping a Source Service Again</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id15047">#</a></h3></div></div></div>
+ <div class="sect2 " id="idm140361329949600"><div class="titlepage"><div><div><h3 class="title" id="idm140361329949600"><span class="number">3.3.4 </span><span class="name">Dropping a Source Service Again</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#idm140361329949600">#</a></h3></div></div></div>
   
   <p> Sometimes it is useful to continue work on generated files
    manually. In this situation the _service file needs to be dropped, but all
@@ -652,7 +644,7 @@ testobs # obs_admin --rescan-repository SUSE:13.2 standard x86_64</pre></div>
    &lt;prio project="Test1" adjust="5" /&gt;
    &lt;prio project="Test11" repository="openSUSE_13.2" arch="i586" adjust="-10"/&gt;
 &lt;/dispatchprios&gt;</pre></div>
-  <div class="table" id="id15077"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 3.1: </span><span class="name">Rounded Scale Factors Resulting from a Priority </span><a title="Permalink" class="permalink" href="obs.cha.administration.html#id15077">#</a></h6></div><div class="table-contents">
+  <div class="table" id="idm140361329933392"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 3.1: </span><span class="name">Rounded Scale Factors Resulting from a Priority </span><a title="Permalink" class="permalink" href="obs.cha.administration.html#idm140361329933392">#</a></h6></div><div class="table-contents">
    
    
 
@@ -660,12 +652,12 @@ testobs # obs_admin --rescan-repository SUSE:13.2 standard x86_64</pre></div>
 
    
 
-   <table class="table" summary="Rounded Scale Factors Resulting from a Priority" border="1" width="70%"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /><col class="col_4" /><col class="col_5" /></colgroup><thead><tr><th align="left" valign="top"> priority </th><th align="left" valign="top"> scale factor </th><th align="left" valign="top"> </th><th align="left" valign="top"> priority </th><th align="left" valign="top"> scale factor</th></tr></thead><tbody><tr><td align="left" valign="top">
+   <table summary="Rounded Scale Factors Resulting from a Priority" border="1" width="70%"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /><col class="col_4" /><col class="col_5" /></colgroup><thead><tr><th align="left" valign="top"> priority </th><th align="left" valign="top"> scale factor </th><th align="left" valign="top"> </th><th align="left" valign="top"> priority </th><th align="left" valign="top"> scale factor</th></tr></thead><tbody><tr><td align="left" valign="top">
        <p>-50</p>
       </td><td align="left" valign="top">
        <p>100000</p>
       </td><td align="left" valign="top">
-       
+       <p></p>
       </td><td align="left" valign="top">
        <p>3</p>
       </td><td align="left" valign="top">
@@ -675,7 +667,7 @@ testobs # obs_admin --rescan-repository SUSE:13.2 standard x86_64</pre></div>
       </td><td align="left" valign="top">
        <p>1000</p>
       </td><td align="left" valign="top">
-       
+       <p></p>
       </td><td align="left" valign="top">
        <p>5</p>
       </td><td align="left" valign="top">
@@ -685,7 +677,7 @@ testobs # obs_admin --rescan-repository SUSE:13.2 standard x86_64</pre></div>
       </td><td align="left" valign="top">
        <p>100</p>
       </td><td align="left" valign="top">
-       
+       <p></p>
       </td><td align="left" valign="top">
        <p>7</p>
       </td><td align="left" valign="top">
@@ -695,7 +687,7 @@ testobs # obs_admin --rescan-repository SUSE:13.2 standard x86_64</pre></div>
       </td><td align="left" valign="top">
        <p>30</p>
       </td><td align="left" valign="top">
-       
+       <p></p>
       </td><td align="left" valign="top">
        <p>10</p>
       </td><td align="left" valign="top">
@@ -705,7 +697,7 @@ testobs # obs_admin --rescan-repository SUSE:13.2 standard x86_64</pre></div>
       </td><td align="left" valign="top">
        <p>10</p>
       </td><td align="left" valign="top">
-       
+       <p></p>
       </td><td align="left" valign="top">
        <p>15</p>
       </td><td align="left" valign="top">
@@ -715,7 +707,7 @@ testobs # obs_admin --rescan-repository SUSE:13.2 standard x86_64</pre></div>
       </td><td align="left" valign="top">
        <p>5</p>
       </td><td align="left" valign="top">
-       
+       <p></p>
       </td><td align="left" valign="top">
        <p>20</p>
       </td><td align="left" valign="top">
@@ -725,7 +717,7 @@ testobs # obs_admin --rescan-repository SUSE:13.2 standard x86_64</pre></div>
       </td><td align="left" valign="top">
        <p>3</p>
       </td><td align="left" valign="top">
-       
+       <p></p>
       </td><td align="left" valign="top">
        <p>30</p>
       </td><td align="left" valign="top">
@@ -735,7 +727,7 @@ testobs # obs_admin --rescan-repository SUSE:13.2 standard x86_64</pre></div>
       </td><td align="left" valign="top">
        <p>2</p>
       </td><td align="left" valign="top">
-       
+       <p></p>
       </td><td align="left" valign="top">
        <p>40</p>
       </td><td align="left" valign="top">
@@ -745,7 +737,7 @@ testobs # obs_admin --rescan-repository SUSE:13.2 standard x86_64</pre></div>
       </td><td align="left" valign="top">
        <p>1</p>
       </td><td align="left" valign="top">
-       
+       <p></p>
       </td><td align="left" valign="top">
        <p>50</p>
       </td><td align="left" valign="top">
@@ -791,7 +783,7 @@ Examples:
    project from king, the user account of the boss. The SLES12-SP2 repository
    is not in real use yet, but if here is nothing else to do build for it as
    well.</p>
-  <div id="id15207" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6>
+  <div id="idm140361329843600" class="admonition important"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6>
    <p>The dispatcher calculates the values form the <span class="strong"><strong><span class="emphasis"><em>'dispatch_adjust'</em></span></strong></span> array
     first, if the same project and repository also has an entry in the
     dispatchprios XML file, the XML file entry will overwrite the calculated
@@ -846,7 +838,7 @@ Examples:
    self-defined parameters
    (in <code class="filename">/usr/lib/obs/server/BSConfig.pm</code>):
   </p>
-  <div class="verbatim-wrap highlight perl"><pre class="screen">our $publishedhook = {
+  <div class="verbatim-wrap"><pre class="screen">our $publishedhook = {
  "Product/SLES12"     =&gt; "/usr/local/bin/script2run_sles12",
  "Product/SLES11-SP3" =&gt; "/usr/local/bin/script2run_sles11",
  "Product/SLES11-SP4" =&gt; "/usr/local/bin/script2run_sles11",
@@ -857,13 +849,13 @@ Examples:
    <code class="literal">$publishedhook use regex = 1;</code> as follows
    (in <code class="filename">/usr/lib/obs/server/BSConfig.pm</code>):
   </p>
-  <div class="verbatim-wrap highlight perl"><pre class="screen">our $publishedhook_use_regex = 1;
+  <div class="verbatim-wrap"><pre class="screen">our $publishedhook_use_regex = 1;
 our $publishedhook = {
     "Product\/SLES12"     =&gt; "/usr/local/bin/script2run_sles12",
     "Product\/SLES11.*"   =&gt; "/usr/local/bin/script2run_sles11",
 };</pre></div>
   <p>With self defined parameters:</p>
-  <div class="verbatim-wrap highlight perl"><pre class="screen">our $publishedhook_use_regex = 1;
+  <div class="verbatim-wrap"><pre class="screen">our $publishedhook_use_regex = 1;
 our $publishedhook = {
     "Product\/SLES11.*" =&gt; ["/usr/local/bin/script2run", "sles11", "/srv/www/public_mirror"],
 };</pre></div>
@@ -893,7 +885,7 @@ our $publishedhook = {
    <p>The following example script ignores the packages that have changed
     and copies all RPMs from the repository directory to a target
     directory:</p>
-   <div class="verbatim-wrap highlight bash"><pre class="screen">#!/bin/bash
+   <div class="verbatim-wrap"><pre class="screen">#!/bin/bash
 OBSHOME="/srv/obs"
 SRC_REPO_DIR="$OBSHOME/repos"
 LOGFILE="$OBSHOME/log/reposync.log"
@@ -911,7 +903,7 @@ rsync -a --log-file=$LOGFILE $PATH_TO_REPO/ $DST_REPO_DIR/$PRJ_PATH/</pre></div>
    
    <p>The following example script reads the destination path from a
     parameter that is configured with the hook script:</p>
-   <div class="verbatim-wrap highlight bash"><pre class="screen">#!/bin/bash
+   <div class="verbatim-wrap"><pre class="screen">#!/bin/bash
 LOGFILE="/srv/obs/log/reposync.log"
 DST_REPO_DIR=$1
 # Global substion! To handle strings like Foo:Bar:testing - two
@@ -926,7 +918,7 @@ rsync -a --log-file=$LOGFILE $PATH_TO_REPO/ $DST_REPO_DIR/$PRJ_PATH/</pre></div>
     /srv/obs/repos/Product/SLE11SP1</pre></div>
    <p>The following example script only copies packages that have
     changed, but does not delete packages that have been removed:</p>
-   <div class="verbatim-wrap highlight bash"><pre class="screen">#!/bin/bash
+   <div class="verbatim-wrap"><pre class="screen">#!/bin/bash
 
 DST_REPO_DIR=$1
 PRJ_PATH=${2//:/:\/}
@@ -1000,7 +992,7 @@ createrepo $DST_REPO_DIR/$PRJ_PATH/.</pre></div>
    the custom parameters
    (in <code class="filename">/usr/lib/obs/server/BSConfig.pm</code>):
   </p>
-  <div class="verbatim-wrap highlight perl"><pre class="screen">our $unpublishedhook = {
+  <div class="verbatim-wrap"><pre class="screen">our $unpublishedhook = {
     "Product/SLES12"     =&gt; "/usr/local/bin/script2run_sles12",
     "Product/SLES11-SP3" =&gt; "/usr/local/bin/script2run_sles11",
     "Product/SLES11-SP4" =&gt; "/usr/local/bin/script2run_sles11",
@@ -1011,13 +1003,13 @@ createrepo $DST_REPO_DIR/$PRJ_PATH/.</pre></div>
    <code class="literal">$unpublishedhook use regex = 1;</code>
    (in <code class="filename">/usr/lib/obs/server/BSConfig.pm</code>):
    </p>
-  <div class="verbatim-wrap highlight perl"><pre class="screen">our $unpublishedhook_use_regex = 1;
+  <div class="verbatim-wrap"><pre class="screen">our $unpublishedhook_use_regex = 1;
 our $unpublishedhook = {
     "Product\/SLES12"     =&gt; "/usr/local/bin/script2run_sles12",
     "Product\/SLES11.*"   =&gt; "/usr/local/bin/script2run_sles11",
 };</pre></div>
   <p>With custom parameters:</p>
-  <div class="verbatim-wrap highlight perl"><pre class="screen">our $unpublishedhook_use_regex = 1;
+  <div class="verbatim-wrap"><pre class="screen">our $unpublishedhook_use_regex = 1;
 our $unpublishedhook = {
     "Product\/SLES11.*" =&gt; [
       "/usr/local/bin/script2run", "sles11", "/srv/www/public_mirror"
@@ -1041,7 +1033,7 @@ our $unpublishedhook = {
    does all the work and just gets triggered by the configured hook
    script.</p>
   <p>The scripts are called without a timeout.</p>
-  <div id="id15309" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6>
+  <div id="idm140361329784160" class="admonition note"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6>
    <p><span class="strong"><strong>Reminder:</strong></span> If <span class="emphasis"><em>unpublish
      hooks</em></span> and <span class="emphasis"><em>publish hooks</em></span> are defined, the
      <span class="emphasis"><em>unpublish hook</em></span> runs before the <span class="emphasis"><em>publish
@@ -1054,7 +1046,7 @@ our $unpublishedhook = {
    
    <p>The following example script deletes all packages from the target
     directory that have been removed from the repository.</p>
-   <div class="verbatim-wrap highlight bash"><pre class="screen">#!/bin/bash
+   <div class="verbatim-wrap"><pre class="screen">#!/bin/bash
 OBSHOME="/srv/obs"
 LOGFILE="$OBSHOME/log/reposync.log"
 DST_REPO_DIR="/srv/repo-mirror"
@@ -1082,7 +1074,7 @@ done</pre></div>
    
    <p>The following example script reads the destination path from a
     parameter that is configured via the hook script:</p>
-   <div class="verbatim-wrap highlight bash"><pre class="screen">#!/bin/bash
+   <div class="verbatim-wrap"><pre class="screen">#!/bin/bash
 OBSHOME="/srv/obs"
 LOGFILE="$OBSHOME/log/reposync.log"
 DST_REPO_DIR=$1
@@ -1123,16 +1115,16 @@ done</pre></div>
    interface and the web user interface. Some menus in the Web UI do not allow
    changes by an Admin (for example, the Repository menu) as long the Admin is not a
    Maintainer for the project as well. But the same change can be done via
-   editing the meta data directly. The other roles are specific to projects and
+   editing the metadata directly. The other roles are specific to projects and
    packages and can be assigned to a user or a group.</p>
-  <div class="table" id="id15336"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 3.2: </span><span class="name">Roles in OBS </span><a title="Permalink" class="permalink" href="obs.cha.administration.html#id15336">#</a></h6></div><div class="table-contents">
+  <div class="table" id="idm140361329767568"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 3.2: </span><span class="name">Roles in OBS </span><a title="Permalink" class="permalink" href="obs.cha.administration.html#idm140361329767568">#</a></h6></div><div class="table-contents">
    
-   <table class="table" summary="Roles in OBS" border="1"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /></colgroup><thead><tr><th align="left" valign="top"> Role </th><th align="left" valign="top"> Description </th><th align="left" valign="top"> Remarks</th></tr></thead><tbody><tr><td align="left" valign="top">
+   <table summary="Roles in OBS" border="1"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /></colgroup><thead><tr><th align="left" valign="top"> Role </th><th align="left" valign="top"> Description </th><th align="left" valign="top"> Remarks</th></tr></thead><tbody><tr><td align="left" valign="top">
        <p>Maintainer</p>
       </td><td align="left" valign="top">
        <p>Read and write access to projects or packages</p>
       </td><td align="left" valign="top">
-       
+       <p></p>
       </td></tr><tr><td align="left" valign="top">
        <p>Bugowner</p>
       </td><td align="left" valign="top">
@@ -1144,19 +1136,19 @@ done</pre></div>
       </td><td align="left" valign="top">
        <p>Read access to sources</p>
       </td><td align="left" valign="top">
-       
+       <p></p>
       </td></tr><tr><td align="left" valign="top">
        <p>Downloader</p>
       </td><td align="left" valign="top">
        <p>Read access to the binaries</p>
       </td><td align="left" valign="top">
-       
+       <p></p>
       </td></tr><tr><td align="left" valign="top">
        <p>Reviewer</p>
       </td><td align="left" valign="top">
        <p>Default reviewer for a package or project</p>
       </td><td align="left" valign="top">
-       
+       <p></p>
       </td></tr></tbody></table>
   </div></div>
  </div>
@@ -1181,7 +1173,7 @@ done</pre></div>
    also has the advantage that the user password never reaches OBS.</p>
   <p>The proxy mode can also be used for LDAP or Active Directory, but
    only for authentication.</p>
-  <div id="id15391" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6>
+  <div id="idm140361329729952" class="admonition important"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6>
    <p>With enabled proxy mode the OBS trust the username in the http
     header. Since this was verified by the Web server and the Web server
     only forward requests for a verified and authenticated session, this is
@@ -1194,9 +1186,9 @@ done</pre></div>
    
    <p>Currently the LDAP configuration is in the
      <span class="emphasis"><em>options.yml</em></span> file.</p>
-   <div class="table" id="id15398"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 3.3: </span><span class="name">Options for Proxy Mode Configuration </span><a title="Permalink" class="permalink" href="obs.cha.administration.html#id15398">#</a></h6></div><div class="table-contents">
+   <div class="table" id="idm140361329726208"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 3.3: </span><span class="name">Options for Proxy Mode Configuration </span><a title="Permalink" class="permalink" href="obs.cha.administration.html#idm140361329726208">#</a></h6></div><div class="table-contents">
     
-    <table class="table" summary="Options for Proxy Mode Configuration" border="1"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /><col class="col_4" /></colgroup><thead><tr><th align="left" valign="top"> Config item </th><th align="left" valign="top"> Description </th><th align="left" valign="top"> Values <code class="literal">default</code>
+    <table summary="Options for Proxy Mode Configuration" border="1"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /><col class="col_4" /></colgroup><thead><tr><th align="left" valign="top"> Config item </th><th align="left" valign="top"> Description </th><th align="left" valign="top"> Values <code class="literal">default</code>
        </th><th align="left" valign="top"> Remarks</th></tr></thead><tbody><tr><td align="left" valign="top">
         <p>proxy_auth_mode</p>
        </td><td align="left" valign="top">
@@ -1211,9 +1203,9 @@ done</pre></div>
  </div>
  <div class="sect2 " id="_ldap_active_directory"><div class="titlepage"><div><div><h3 class="title" id="_ldap_active_directory"><span class="number">3.7.4 </span><span class="name">LDAP/Active Directory</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_ldap_active_directory">#</a></h3></div></div></div>
   
-  <div id="id15425" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6>
-   <p> The LDAP support is considered experimental and is not officially
-    supported. </p>
+  <div id="idm140361329706416" class="admonition note"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6>
+   <p>The LDAP support was considered experimental and not officially
+    supported. It is officially supported since 2.8.3 release.</p>
   </div>
   <p>Using LDAP or Active Directory as source for user and optional group
    information in environments which already have such a server has the
@@ -1243,7 +1235,7 @@ done</pre></div>
    information during the user authentication. All role test are made local
    against the OBS database and do not need additional
    LDAPoperations.</p>
-  <div id="id15431" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6>
+  <div id="idm140361329702048" class="admonition note"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6>
    <p>The local user group membership in :mirror mode is updated as
     follows: When the user logins, the user <span class="emphasis"><em>memberOf</em></span>
     attributes are parsed and compared with the global OBS grouplist, if a
@@ -1260,29 +1252,30 @@ done</pre></div>
    
    <p>
     Currently the main OBS LDAP configuration is in the
-    <span class="emphasis"><em>options.yml</em></span> file. Beside the settings here also the
-    openldap config file is evaluated by the Ruby LDAP implementation. This
-    configfile is usually located at
-    <span class="emphasis"><em>/etc/openldap/ldap.conf</em></span>. You can set here additional
+    file <code class="filename">options.yml</code>. Beside the settings in that file, the
+    openLDAP configuration file is also evaluated by the Ruby LDAP
+    implementation. This configuration file is usually located at
+    <code class="filename">/etc/openldap/ldap.conf</code>. You can set here additional
     TLS/SSL directives like
-    <span class="strong"><strong>TLS_CACERT</strong></span>, <span class="strong"><strong>TLS
-    _CACERTDIR</strong></span> and
-    <span class="strong"><strong>TLS_REQCERT</strong></span>. For more information
-    refer to the openldap ldap.conf man page.
+    <code class="literal">TLS_CACERT</code>, <code class="literal">TLS_CACERTDIR</code> and
+    <code class="literal">TLS_REQCERT</code>. For more information
+    refer to the openLDAP man page (<code class="command">man ldap.conf</code>).
    </p>
-   <div id="id15443" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6>
+   <div id="idm140361329694992" class="admonition note"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6>
     <p>
-     Once LDAP mode is activated users can only log in via LDAP. This also
-     includes existing admin accounts. To make a LDAP user, for example, user
-     <code class="systemitem">tux</code>, an admin we provided a rake
-     task which can be run on the OBS instance:
+     When LDAP mode is activated, users can only log in via LDAP. This also
+     includes existing admin accounts. To make a LDAP user an admin,
+     use a rake task which can be run on the OBS instance.
+     For example, to make user <code class="systemitem">tux</code>,
+     use:
     </p>
     <div class="verbatim-wrap"><pre class="screen">cd /srv/www/obs/api
-bundle exec rake user:give_admin_rights tux RAILS_ENV=production</pre></div>
+bundle exec rake user:give_admin_rights tux RAILS_ENV=production
+    </pre></div>
    </div>
-   <div class="table" id="id15447"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 3.4: </span><span class="name">LDAP Configuration Options </span><a title="Permalink" class="permalink" href="obs.cha.administration.html#id15447">#</a></h6></div><div class="table-contents">
+   <div class="table" id="idm140361329694032"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 3.4: </span><span class="name">LDAP Configuration Options </span><a title="Permalink" class="permalink" href="obs.cha.administration.html#idm140361329694032">#</a></h6></div><div class="table-contents">
     
-    <table class="table" summary="LDAP Configuration Options" border="1"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /><col class="col_4" /></colgroup><thead><tr><th align="left" valign="top"> Config item </th><th align="left" valign="top"> Description </th><th align="left" valign="top"> Values <code class="literal">default</code>
+    <table summary="LDAP Configuration Options" border="1"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /><col class="col_4" /></colgroup><thead><tr><th align="left" valign="top"> Config item </th><th align="left" valign="top"> Description </th><th align="left" valign="top"> Values <code class="literal">default</code>
        </th><th align="left" valign="top"> Remarks</th></tr></thead><tbody><tr><td align="left" valign="top">
         <p>ldap_mode</p>
        </td><td align="left" valign="top">
@@ -1290,13 +1283,13 @@ bundle exec rake user:give_admin_rights tux RAILS_ENV=production</pre></div>
        </td><td align="left" valign="top">
         <p><code class="literal">:off</code> :on</p>
        </td><td align="left" valign="top">
-        
+        <p></p>
        </td></tr><tr><td align="left" valign="top">
         <p>ldap_servers</p>
        </td><td align="left" valign="top">
         <p>List of LDAP servers</p>
        </td><td align="left" valign="top">
-        
+        <p></p>
        </td><td align="left" valign="top">
         <p>colon-separated list</p>
        </td></tr><tr><td align="left" valign="top">
@@ -1307,7 +1300,7 @@ bundle exec rake user:give_admin_rights tux RAILS_ENV=production</pre></div>
         <p>int <code class="literal">15</code>
         </p>
        </td><td align="left" valign="top">
-        
+        <p></p>
        </td></tr><tr><td align="left" valign="top">
         <p>ldap_search_timeout</p>
        </td><td align="left" valign="top">
@@ -1334,7 +1327,7 @@ bundle exec rake user:give_admin_rights tux RAILS_ENV=production</pre></div>
         <p><code class="literal">member</code>
         </p>
        </td><td align="left" valign="top">
-        
+        <p></p>
        </td></tr><tr><td align="left" valign="top">
         <p>ldap_ssl</p>
        </td><td align="left" valign="top">
@@ -1342,7 +1335,7 @@ bundle exec rake user:give_admin_rights tux RAILS_ENV=production</pre></div>
        </td><td align="left" valign="top">
         <p><code class="literal">:off</code> :on</p>
        </td><td align="left" valign="top">
-        
+        <p></p>
        </td></tr><tr><td align="left" valign="top">
         <p>ldap_start_tls</p>
        </td><td align="left" valign="top">
@@ -1351,13 +1344,13 @@ bundle exec rake user:give_admin_rights tux RAILS_ENV=production</pre></div>
         <p>:off <code class="literal">:on</code>
         </p>
        </td><td align="left" valign="top">
-        
+        <p></p>
        </td></tr><tr><td align="left" valign="top">
         <p>ldap_port</p>
        </td><td align="left" valign="top">
         <p>LDAP portnumbers</p>
        </td><td align="left" valign="top">
-        
+        <p></p>
        </td><td align="left" valign="top">
         <p>if not set 389 for LDAP, 636 for LDAPS</p>
        </td></tr><tr><td align="left" valign="top">
@@ -1367,7 +1360,7 @@ bundle exec rake user:give_admin_rights tux RAILS_ENV=production</pre></div>
        </td><td align="left" valign="top">
         <p><code class="literal">:off</code> :on</p>
        </td><td align="left" valign="top">
-        
+        <p></p>
        </td></tr><tr><td align="left" valign="top">
         <p>ldap_search_base</p>
        </td><td align="left" valign="top">
@@ -1377,7 +1370,7 @@ bundle exec rake user:give_admin_rights tux RAILS_ENV=production</pre></div>
         <p><code class="literal">none</code>
         </p>
        </td><td align="left" valign="top">
-        
+        <p></p>
        </td></tr><tr><td align="left" valign="top">
         <p>ldap_search_attr</p>
        </td><td align="left" valign="top">
@@ -1394,7 +1387,7 @@ bundle exec rake user:give_admin_rights tux RAILS_ENV=production</pre></div>
         <p><code class="literal">cn</code>
         </p>
        </td><td align="left" valign="top">
-        
+        <p></p>
        </td></tr><tr><td align="left" valign="top">
         <p>ldap_mail_attr</p>
        </td><td align="left" valign="top">
@@ -1403,13 +1396,13 @@ bundle exec rake user:give_admin_rights tux RAILS_ENV=production</pre></div>
         <p><code class="literal">mail</code>
         </p>
        </td><td align="left" valign="top">
-        
+        <p></p>
        </td></tr><tr><td align="left" valign="top">
         <p>ldap_search_user</p>
        </td><td align="left" valign="top">
         <p>Bind user for LDAP search</p>
        </td><td align="left" valign="top">
-        
+        <p></p>
        </td><td align="left" valign="top">
         <p>for example, cn=ldapbind, ou=system, dc=mycompany, dc=com</p>
        </td></tr><tr><td align="left" valign="top">
@@ -1417,15 +1410,15 @@ bundle exec rake user:give_admin_rights tux RAILS_ENV=production</pre></div>
        </td><td align="left" valign="top">
         <p>Password for the ldap_search_user</p>
        </td><td align="left" valign="top">
-        
+        <p></p>
        </td><td align="left" valign="top">
-        
+        <p></p>
        </td></tr><tr><td align="left" valign="top">
         <p>ldap_user_filter</p>
        </td><td align="left" valign="top">
         <p>Search filter for OBS users</p>
        </td><td align="left" valign="top">
-        
+        <p></p>
        </td><td align="left" valign="top">
         <p>for example, a group membership, empty all users allowed</p>
        </td></tr><tr><td align="left" valign="top">
@@ -1466,9 +1459,9 @@ bundle exec rake user:give_admin_rights tux RAILS_ENV=production</pre></div>
        </td><td align="left" valign="top">
         <p>company’s LDAP search base for groups</p>
        </td><td align="left" valign="top">
-        
+        <p></p>
        </td><td align="left" valign="top">
-        
+        <p></p>
        </td></tr><tr><td align="left" valign="top">
         <p>ldap_group_title_attr</p>
        </td><td align="left" valign="top">
@@ -1477,7 +1470,7 @@ bundle exec rake user:give_admin_rights tux RAILS_ENV=production</pre></div>
         <p><code class="literal">cn</code>
         </p>
        </td><td align="left" valign="top">
-        
+        <p></p>
        </td></tr><tr><td align="left" valign="top">
         <p>ldap_group_objectclass_attr</p>
        </td><td align="left" valign="top">
@@ -1486,13 +1479,13 @@ bundle exec rake user:give_admin_rights tux RAILS_ENV=production</pre></div>
         <p><code class="literal">Group</code>
         </p>
        </td><td align="left" valign="top">
-        
+        <p></p>
        </td></tr><tr><td align="left" valign="top">
         <p>ldap_obs_admin_group</p>
        </td><td align="left" valign="top">
         <p>Group name for OBS Admins</p>
        </td><td align="left" valign="top">
-        
+        <p></p>
        </td><td align="left" valign="top">
         <p>if set, members of that group become OBS admin role</p>
        </td></tr></tbody></table>
@@ -1615,7 +1608,7 @@ ldap_obs_admin_group: obsadmins</pre></div>
       locally against the content of the
        <span class="emphasis"><em>userPassword</em></span> attribute. </p>
     </li></ol></div>
-   <div id="id15719" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6>
+   <div id="idm140361329511360" class="admonition important"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6>
     <p>The local method should be not used, since the
       <span class="emphasis"><em>userPassword</em></span> attribute in most LDAP installations
      will not be available until you are bind with a privilege user.</p>
@@ -1626,9 +1619,9 @@ ldap_obs_admin_group: obsadmins</pre></div>
    <p>In OBS you can use single sign on via Kerberos tickets.</p>
    <p>OBS Kerberos configuration resides in the
      <span class="emphasis"><em>options.yml</em></span> file.</p>
-   <div class="table" id="id15727"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 3.5: </span><span class="name">Kerberos Configuration Options </span><a title="Permalink" class="permalink" href="obs.cha.administration.html#id15727">#</a></h6></div><div class="table-contents">
+   <div class="table" id="idm140361329507024"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 3.5: </span><span class="name">Kerberos Configuration Options </span><a title="Permalink" class="permalink" href="obs.cha.administration.html#idm140361329507024">#</a></h6></div><div class="table-contents">
     
-    <table class="table" summary="Kerberos Configuration Options" border="1"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /></colgroup><thead><tr><th align="left" valign="top"> Config item </th><th align="left" valign="top"> Description </th><th align="left" valign="top"> Example </th></tr></thead><tbody><tr><td align="left" valign="top">
+    <table summary="Kerberos Configuration Options" border="1"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /></colgroup><thead><tr><th align="left" valign="top"> Config item </th><th align="left" valign="top"> Description </th><th align="left" valign="top"> Example </th></tr></thead><tbody><tr><td align="left" valign="top">
         <p>kerberos_keytab</p>
        </td><td align="left" valign="top">
         <p>Kerberos key table: file where long-term keys for one or more
@@ -1664,29 +1657,30 @@ kerberos_keytab: "/etc/krb5.keytab"
 kerberos_service_principal: "HTTP/hostname.example.com@EXAMPLE.COM"
 kerberos_realm: "EXAMPLE.COM"
 
-[...]</pre></div>
-   <div id="id15763" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6>
+[...]
+</pre></div>
+   <div id="idm140361329481936" class="admonition note"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6>
     <p> Once Kerberos is enabled, only users with logins that match users
      known to Kerberos will be able to authenticate to OBS. It is recommended
      to give admin rights to a matching user before enabling Kerberos mode.
     </p>
    </div>
   </div>
-  <div class="sect3 " id="id15765"><div class="titlepage"><div><div><h4 class="title" id="id15765"><span class="number">3.7.5.3 </span><span class="name">OBS Token Authorization</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id15765">#</a></h4></div></div></div>
+  <div class="sect3 " id="idm140361329480928"><div class="titlepage"><div><div><h4 class="title" id="idm140361329480928"><span class="number">3.7.5.3 </span><span class="name">OBS Token Authorization</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#idm140361329480928">#</a></h4></div></div></div>
    
    <p> OBS 2.5 provides a mechanism to create tokens for specific
     operations. This can be used to allow certain operations in the name of a
     user to others. This is esp. useful when integrating external
     infrastructure. The create token should be kept secret by default, but it
     can also be revoked at any time if it became obsolete or leaked. </p>
-   <div class="sect4 " id="id15768"><div class="titlepage"><div><div><h5 class="title" id="id15768"><span class="number">3.7.5.3.1 </span><span class="name">Managing Tokens of a User</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id15768">#</a></h5></div></div></div>
+   <div class="sect4 " id="idm140361329479536"><div class="titlepage"><div><div><h5 class="title" id="idm140361329479536"><span class="number">3.7.5.3.1 </span><span class="name">Managing Tokens of a User</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#idm140361329479536">#</a></h5></div></div></div>
     
     <p> Tokens belong always to a user. A list of active tokens can received
      via </p>
     <div class="verbatim-wrap"><pre class="screen"><code class="command">osc token</code></pre></div>
     <div class="verbatim-wrap"><pre class="screen"><code class="command">osc token --delete &lt;TOKEN&gt;</code></pre></div>
    </div>
-   <div class="sect4 " id="id15775"><div class="titlepage"><div><div><h5 class="title" id="id15775"><span class="number">3.7.5.3.2 </span><span class="name">Executing a Source Service</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id15775">#</a></h5></div></div></div>
+   <div class="sect4 " id="idm140361329478128"><div class="titlepage"><div><div><h5 class="title" id="idm140361329478128"><span class="number">3.7.5.3.2 </span><span class="name">Executing a Source Service</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#idm140361329478128">#</a></h5></div></div></div>
     
     <p> A token can be used to execute a source service. The source service
      has to be setup for the package first, check the source service chapter
@@ -1710,11 +1704,495 @@ kerberos_realm: "EXAMPLE.COM"
   </div>
  </div>
 </div>
- <div class="sect1 " id="_backup"><div class="titlepage"><div><div><h2 class="title" id="_backup"><span class="number">3.8 </span><span class="name">Backup</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_backup">#</a></h2></div></div></div>
+ <div class="sect1 " id="_message_bus"><div class="titlepage"><div><div><h2 class="title" id="_message_bus"><span class="number">3.8 </span><span class="name">Message Bus for Event Notifications</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_message_bus">#</a></h2></div></div></div>
+ 
+ <p>The OBS has an integrated notification subsystem for sending events that are happening in our app through a message bus.
+   We have chosen <a class="ulink" href="https://www.rabbitmq.com/" target="_blank">RabbitMQ<span class="ulink-url"> (https://www.rabbitmq.com/)</span></a> as our message bus server technology based on the
+   <a class="ulink" href="https://www.amqp.org/" target="_blank">AMQP<span class="ulink-url"> (https://www.amqp.org/)</span></a> protocol.
+ </p>
+ <div class="sect2 " id="_rabbit_mq"><div class="titlepage"><div><div><h3 class="title" id="_rabbit_mq"><span class="number">3.8.1 </span><span class="name">RabbitMQ</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_rabbit_mq">#</a></h3></div></div></div>
   
-  
+  <p>
+    RabbitMQ claims to be <span class="emphasis"><em>"the most popular open source message broker"</em></span>. Meaning that it can deliver asynchronous messages in many
+    different exchange ways (one to one, broadcasting, based on topics). It also includes a flexible routing system based on queues.
+  </p>
+  <p>
+    RabbitMQ is lightweight and easy to deploy on premises and in the cloud. It supports multiple messaging protocols too.
+    And can be deployed in distributed and federated configurations to meet high-scale, high-availability requirements.
+  </p>
+  <div class="sect3 " id="_rabbit_mq_configuration"><div class="titlepage"><div><div><h4 class="title" id="_rabbit_mq_configuration"><span class="number">3.8.1.1 </span><span class="name">Configuration</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_rabbit_mq_configuration">#</a></h4></div></div></div>
+   
+   <p>
+    Currently the RabbitMQ configuration is in the file <code class="filename">options.yml</code>.
+    All those options there start with the prefix <span class="emphasis"><em>amqp</em></span>. These configuration items match
+    with some of the calls we do using the <a class="ulink" href="http://rubybunny.info/" target="_blank">Bunny<span class="ulink-url"> (http://rubybunny.info/)</span></a> gem.
+   </p>
+   <div class="table" id="idm140361329460064"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 3.6: </span><span class="name">RabbitMQ Configuration Options </span><a title="Permalink" class="permalink" href="obs.cha.administration.html#idm140361329460064">#</a></h6></div><div class="table-contents">
+    
+    <table summary="RabbitMQ Configuration Options" border="1"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /><col class="col_4" /></colgroup><thead><tr><th align="left" valign="top">
+            Config item
+          </th><th align="left" valign="top">
+            Description
+          </th><th align="left" valign="top">
+            Values
+            <code class="literal">default</code>
+          </th><th align="left" valign="top">
+            Remarks</th></tr></thead><tbody><tr><td align="left" valign="top">
+            <p>amqp_namespace</p>
+          </td><td align="left" valign="top">
+            <p>Namespace for the queues of this instance</p>
+          </td><td align="left" valign="top">
+            <p>
+              <code class="literal">'opensuse.obs'</code>
+            </p>
+          </td><td align="left" valign="top">
+            <p>Is a prefix for the queue names</p>
+          </td></tr><tr><td align="left" valign="top">
+            <p>amqp_options</p>
+          </td><td align="left" valign="top">
+            <p>Connection configuration</p>
+          </td><td align="left" valign="top">
+            <p></p>
+          </td><td align="left" valign="top">
+            <p>See
+              <a class="ulink" href="http://rubybunny.info/articles/connecting.html" target="_blank">this guide<span class="ulink-url"> (http://rubybunny.info/articles/connecting.html)</span></a>
+              to know which are the parameters allowed.</p>
+          </td></tr><tr><td align="left" valign="top">
+            <p>amqp_options[host]</p>
+          </td><td align="left" valign="top">
+            <p>Server host</p>
+          </td><td align="left" valign="top">
+            <p></p>
+          </td><td align="left" valign="top">
+            <p>A valid hostname</p>
+          </td></tr><tr><td align="left" valign="top">
+            <p>amqp_options[port]</p>
+          </td><td align="left" valign="top">
+            <p>Server port</p>
+          </td><td align="left" valign="top">
+            <p>
+              <code class="literal">5672</code>
+            </p>
+          </td><td align="left" valign="top">
+            <p></p>
+          </td></tr><tr><td align="left" valign="top">
+            <p>amqp_options[user]</p>
+          </td><td align="left" valign="top">
+            <p>User account</p>
+          </td><td align="left" valign="top">
+            <p></p>
+          </td><td align="left" valign="top">
+            <p></p>
+          </td></tr><tr><td align="left" valign="top">
+            <p>amqp_options[pass]</p>
+          </td><td align="left" valign="top">
+            <p>Account password</p>
+          </td><td align="left" valign="top">
+            <p></p>
+          </td><td align="left" valign="top">
+            <p></p>
+          </td></tr><tr><td align="left" valign="top">
+            <p>amqp_options[vhost]</p>
+          </td><td align="left" valign="top">
+            <p>Virtual host</p>
+          </td><td align="left" valign="top">
+            <p></p>
+          </td><td align="left" valign="top">
+            <p></p>
+          </td></tr><tr><td align="left" valign="top">
+            <p>amqp_exchange_name</p>
+          </td><td align="left" valign="top">
+            <p>Name for the exchange</p>
+          </td><td align="left" valign="top">
+            <p></p>
+          </td><td align="left" valign="top">
+            <p></p>
+          </td></tr><tr><td align="left" valign="top">
+            <p>amqp_exchange_options</p>
+          </td><td align="left" valign="top">
+            <p>Exchange configuration</p>
+          </td><td align="left" valign="top">
+            <p></p>
+          </td><td align="left" valign="top">
+            <p>See
+              <a class="ulink" href="http://rubybunny.info/articles/exchanges.html" target="_blank">this guide<span class="ulink-url"> (http://rubybunny.info/articles/exchanges.html)</span></a>
+              to know more about exchanges.</p>
+          </td></tr><tr><td align="left" valign="top">
+            <p>amqp_exchange_options[type]</p>
+          </td><td align="left" valign="top">
+            <p>Type of comunication for the exchange</p>
+          </td><td align="left" valign="top">
+            <p>
+              <code class="literal">direct</code>
+            </p>
+          </td><td align="left" valign="top">
+            <p></p>
+          </td></tr><tr><td align="left" valign="top">
+            <p>amqp_exchange_options[auto_delete]</p>
+          </td><td align="left" valign="top">
+            <p>If set, the exchange is deleted when all queues have finished using it</p>
+          </td><td align="left" valign="top">
+            <p>
+              <code class="literal">false</code>
+            </p>
+          </td><td align="left" valign="top">
+            <p></p>
+          </td></tr><tr><td align="left" valign="top">
+            <p>amqp_exchange_options[arguments]</p>
+          </td><td align="left" valign="top">
+            <p>More configuration for plugins / extensions</p>
+          </td><td align="left" valign="top">
+            <p></p>
+          </td><td align="left" valign="top">
+            <p></p>
+          </td></tr><tr><td align="left" valign="top">
+            <p>amqp_queue_options</p>
+          </td><td align="left" valign="top">
+            <p>Queues configuration</p>
+          </td><td align="left" valign="top">
+            <p></p>
+          </td><td align="left" valign="top">
+            <p>See
+              <a class="ulink" href="http://rubybunny.info/articles/queues.html" target="_blank">this guide<span class="ulink-url"> (http://rubybunny.info/articles/queues.html)</span></a>
+              to know more about queues.</p>
+          </td></tr><tr><td align="left" valign="top">
+            <p>amqp_queue_options[durable]</p>
+          </td><td align="left" valign="top">
+            <p>Should this queue be durable? </p>
+          </td><td align="left" valign="top">
+            <p>
+              <code class="literal">false</code>
+            </p>
+          </td><td align="left" valign="top">
+            <p></p>
+          </td></tr><tr><td align="left" valign="top">
+            <p>amqp_queue_options[auto_delete]</p>
+          </td><td align="left" valign="top">
+            <p>Should this queue be automatically deleted when the last consumer disconnects?</p>
+          </td><td align="left" valign="top">
+            <p>
+              <code class="literal">false</code>
+            </p>
+          </td><td align="left" valign="top">
+            <p></p>
+          </td></tr><tr><td align="left" valign="top">
+            <p>amqp_queue_options[exclusive]</p>
+          </td><td align="left" valign="top">
+            <p>Should this queue be exclusive (only can be used by this connection, removed when the connection is closed)? </p>
+          </td><td align="left" valign="top">
+            <p>
+              <code class="literal">false</code>
+            </p>
+          </td><td align="left" valign="top">
+            <p></p>
+          </td></tr><tr><td align="left" valign="top">
+            <p>amqp_queue_options[arguments]</p>
+          </td><td align="left" valign="top">
+            <p>Additional optional arguments (typically used by RabbitMQ extensions and plugins)</p>
+          </td><td align="left" valign="top">
+            <p></p>
+          </td><td align="left" valign="top">
+            <p></p>
+          </td></tr></tbody></table>
+  </div></div>
+   <p>Example of the RabbitMQ section of the <span class="emphasis"><em>options.yml</em></span>
+    file:</p>
+   <div class="verbatim-wrap"><pre class="screen">[...]
+# RabbitMQ based message bus
+#
+# Prefix of the message bus rooting key
+
+amqp_namespace: 'opensuse.obs'
+
+# Connection options -&gt; http://rubybunny.info/articles/connecting.html
+
+amqp_options:
+  host: rabbit.example.com
+  port: 5672
+  user: guest
+  pass: guest
+  vhost: /vhost
+
+# Exchange options -&gt; http://rubybunny.info/articles/exchanges.html
+
+amqp_exchange_name: pubsub
+amqp_exchange_options:
+  type: topic
+  auto_delete: false
+  arguments:
+    persistent: true
+    passive: true
+
+# Queue options -&gt; http://rubybunny.info/articles/queues.html
+amqp_queue_options:
+  durable: false
+  auto-delete: false
+  exclusive: false
+  arguments:
+    extension_1: blah
+   </pre></div>
+
+   <div class="table" id="idm140361329337840"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 3.7: </span><span class="name">List of event messages / queues for the message bus </span><a title="Permalink" class="permalink" href="obs.cha.administration.html#idm140361329337840">#</a></h6></div><div class="table-contents">
+    
+    <table summary="List of event messages / queues for the message bus" border="1"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /></colgroup><thead><tr><th align="left" valign="top">
+            Queue Name
+          </th><th align="left" valign="top">
+            Description
+          </th><th align="left" valign="top">
+            Payload
+          </th></tr></thead><tbody><tr><td align="left" valign="top">
+            <p><span class="emphasis"><em>__prefix__</em></span>.package.build_success</p>
+          </td><td align="left" valign="top">
+            <p>A package build has succeeded</p>
+          </td><td align="left" valign="top">
+            <p>
+              :repository, :arch, :release, :readytime, :srcmd5,
+              :rev, :reason, :bcnt, :verifymd5, :hostarch, :starttime,
+              :endtime, :workerid, :versrel, :previouslyfailed
+            </p>
+          </td></tr><tr><td align="left" valign="top">
+            <p><span class="emphasis"><em>__prefix__</em></span>.package.build_fail</p>
+          </td><td align="left" valign="top">
+            <p>A package build has failed</p>
+          </td><td align="left" valign="top">
+            <p>
+              :repository, :arch, :release, :readytime, :srcmd5,
+              :rev, :reason, :bcnt, :verifymd5, :hostarch, :starttime,
+              :endtime, :workerid, :versrel, :previouslyfailed, :faillog
+            </p>
+          </td></tr><tr><td align="left" valign="top">
+            <p><span class="emphasis"><em>__prefix__</em></span>.package.build_unchanged</p>
+          </td><td align="left" valign="top">
+            <p>A package build has succeeded with unchanged result</p>
+          </td><td align="left" valign="top">
+            <p>
+              :repository, :arch, :release, :readytime, :srcmd5,
+              :rev, :reason, :bcnt, :verifymd5, :hostarch, :starttime,
+              :endtime, :workerid, :versrel, :previouslyfailed
+            </p>
+          </td></tr><tr><td align="left" valign="top">
+            <p><span class="emphasis"><em>__prefix__</em></span>.package.create</p>
+          </td><td align="left" valign="top">
+            <p>A new package was created</p>
+          </td><td align="left" valign="top">
+            <p>
+              :project, :package, :sender
+            </p>
+          </td></tr><tr><td align="left" valign="top">
+            <p><span class="emphasis"><em>__prefix__</em></span>.package.update</p>
+          </td><td align="left" valign="top">
+            <p>The package metada was updated</p>
+          </td><td align="left" valign="top">
+            <p>
+              :project, :package, :sender
+            </p>
+          </td></tr><tr><td align="left" valign="top">
+            <p><span class="emphasis"><em>__prefix__</em></span>.package.delete</p>
+          </td><td align="left" valign="top">
+            <p>A package was deleted</p>
+          </td><td align="left" valign="top">
+            <p>
+              :project, :package, :sender, :comment
+            </p>
+          </td></tr><tr><td align="left" valign="top">
+            <p><span class="emphasis"><em>__prefix__</em></span>.package.undelete</p>
+          </td><td align="left" valign="top">
+            <p>A package was undeleted</p>
+          </td><td align="left" valign="top">
+            <p>
+              :project, :package, :sender, :comment
+            </p>
+          </td></tr><tr><td align="left" valign="top">
+            <p><span class="emphasis"><em>__prefix__</em></span>.package.branch</p>
+          </td><td align="left" valign="top">
+            <p>A package was branched</p>
+          </td><td align="left" valign="top">
+            <p>
+              :project, :package, :sender, :targetproject, :targetpackage, :user
+            </p>
+          </td></tr><tr><td align="left" valign="top">
+            <p><span class="emphasis"><em>__prefix__</em></span>.package.commit</p>
+          </td><td align="left" valign="top">
+            <p>A package has committed changes</p>
+          </td><td align="left" valign="top">
+            <p>
+              :project, :package, :sender, :comment, :user, :files, :rev, :requestid
+            </p>
+          </td></tr><tr><td align="left" valign="top">
+            <p><span class="emphasis"><em>__prefix__</em></span>.package.upload</p>
+          </td><td align="left" valign="top">
+            <p>Sources of a package were uploaded</p>
+          </td><td align="left" valign="top">
+            <p>
+              :project, :package, :sender, :comment, :filename, :requestid, :target, :user
+            </p>
+          </td></tr><tr><td align="left" valign="top">
+            <p><span class="emphasis"><em>__prefix__</em></span>.package.service_success</p>
+          </td><td align="left" valign="top">
+            <p>Source service succeeded for a package</p>
+          </td><td align="left" valign="top">
+            <p>
+              :comment, :project, :package, :sender, :rev, :user, :requestid
+            </p>
+          </td></tr><tr><td align="left" valign="top">
+            <p><span class="emphasis"><em>__prefix__</em></span>.package.service_fail</p>
+          </td><td align="left" valign="top">
+            <p>Source service failed for a package</p>
+          </td><td align="left" valign="top">
+            <p>
+              :comment, :error, :project, :package, :sender, :rev, :user, :requestid
+            </p>
+          </td></tr><tr><td align="left" valign="top">
+            <p><span class="emphasis"><em>__prefix__</em></span>.package.version_change</p>
+          </td><td align="left" valign="top">
+            <p>A package has changed its version</p>
+          </td><td align="left" valign="top">
+            <p>
+              :project, :package, :sender, :comment, :requestid, :files, :rev, :newversion, :user, :oldversion
+            </p>
+          </td></tr><tr><td align="left" valign="top">
+            <p><span class="emphasis"><em>__prefix__</em></span>.package.comment</p>
+          </td><td align="left" valign="top">
+            <p>A new comment for the package was created</p>
+          </td><td align="left" valign="top">
+            <p>
+              :project, :package, :sender, :commenters, :commenter, :comment_body, :comment_title
+            </p>
+          </td></tr><tr><td align="left" valign="top">
+            <p><span class="emphasis"><em>__prefix__</em></span>.project.create</p>
+          </td><td align="left" valign="top">
+            <p>A new project was created</p>
+          </td><td align="left" valign="top">
+            <p>
+              :project, :sender
+            </p>
+          </td></tr><tr><td align="left" valign="top">
+            <p><span class="emphasis"><em>__prefix__</em></span>.project.update_project_conf</p>
+          </td><td align="left" valign="top">
+            <p>The project configuration was updated</p>
+          </td><td align="left" valign="top">
+            <p>
+              :project, :sender, :files, :comment
+            </p>
+          </td></tr><tr><td align="left" valign="top">
+            <p><span class="emphasis"><em>__prefix__</em></span>.project.update</p>
+          </td><td align="left" valign="top">
+            <p>A project was updated</p>
+          </td><td align="left" valign="top">
+            <p>
+              :project, :sender
+            </p>
+          </td></tr><tr><td align="left" valign="top">
+            <p><span class="emphasis"><em>__prefix__</em></span>.project.delete</p>
+          </td><td align="left" valign="top">
+            <p>A project was deleted</p>
+          </td><td align="left" valign="top">
+            <p>
+              :project, :comment, :requestid, :sender
+            </p>
+          </td></tr><tr><td align="left" valign="top">
+            <p><span class="emphasis"><em>__prefix__</em></span>.project.undelete</p>
+          </td><td align="left" valign="top">
+            <p>A project was undeleted</p>
+          </td><td align="left" valign="top">
+            <p>
+              :project, :comment, :sender
+            </p>
+          </td></tr><tr><td align="left" valign="top">
+            <p><span class="emphasis"><em>__prefix__</em></span>.project.comment</p>
+          </td><td align="left" valign="top">
+            <p>A new comment for the project was created</p>
+          </td><td align="left" valign="top">
+            <p>
+              :project, :commenters, :commenter, :comment_body, :comment_title
+            </p>
+          </td></tr><tr><td align="left" valign="top">
+            <p><span class="emphasis"><em>__prefix__</em></span>.repo.packtrack</p>
+          </td><td align="left" valign="top">
+            <p>Binary was published in the repository</p>
+          </td><td align="left" valign="top">
+            <p>
+              :project, :repo, :payload
+            </p>
+          </td></tr><tr><td align="left" valign="top">
+            <p><span class="emphasis"><em>__prefix__</em></span>.repo.publish_state</p>
+          </td><td align="left" valign="top">
+            <p>Publish State of Repository has changed</p>
+          </td><td align="left" valign="top">
+            <p>
+              :project, :repo, :state
+            </p>
+          </td></tr><tr><td align="left" valign="top">
+            <p><span class="emphasis"><em>__prefix__</em></span>.repo.published</p>
+          </td><td align="left" valign="top">
+            <p>A repository was published</p>
+          </td><td align="left" valign="top">
+            <p>
+              :project, :repo
+            </p>
+          </td></tr><tr><td align="left" valign="top">
+            <p><span class="emphasis"><em>__prefix__</em></span>.request.create</p>
+          </td><td align="left" valign="top">
+            <p>A request was created</p>
+          </td><td align="left" valign="top">
+            <p>
+              :author, :comment, :description, :number, :actions, :state, :when, :who,
+              :diff (local projects)
+            </p>
+          </td></tr><tr><td align="left" valign="top">
+            <p><span class="emphasis"><em>__prefix__</em></span>.request.change</p>
+          </td><td align="left" valign="top">
+            <p>A request was changed (admin only)</p>
+          </td><td align="left" valign="top">
+            <p>
+              :author, :comment, :description, :number, :actions, :state, :when, :who
+            </p>
+          </td></tr><tr><td align="left" valign="top">
+            <p><span class="emphasis"><em>__prefix__</em></span>.request.delete</p>
+          </td><td align="left" valign="top">
+            <p>A request was deleted</p>
+          </td><td align="left" valign="top">
+            <p>
+              :author, :comment, :description, :number, :actions, :state, :when, :who
+            </p>
+          </td></tr><tr><td align="left" valign="top">
+            <p><span class="emphasis"><em>__prefix__</em></span>.request.state_change</p>
+          </td><td align="left" valign="top">
+            <p>The state of a request was changed</p>
+          </td><td align="left" valign="top">
+            <p>
+              :author, :comment, :description, :number, :actions, :state, :when, :who, :oldstate
+            </p>
+          </td></tr><tr><td align="left" valign="top">
+            <p><span class="emphasis"><em>__prefix__</em></span>.request.review_wanted</p>
+          </td><td align="left" valign="top">
+            <p>A request requires a review</p>
+          </td><td align="left" valign="top">
+            <p>
+              :author, :comment, :description, :number, :actions, :state, :when, :who,
+              :reviewers, :by_user, :by_group, :by_project, :by_package,
+              :diff (local projects)
+            </p>
+          </td></tr><tr><td align="left" valign="top">
+            <p><span class="emphasis"><em>__prefix__</em></span>.request.comment</p>
+          </td><td align="left" valign="top">
+            <p>A new comment for the request was created</p>
+          </td><td align="left" valign="top">
+            <p>
+              :author, :comment, :description, :number, :actions, :state, :when, :who,
+              :commenters, :commenter, :comment_body, :comment_title,
+              :request_number
+            </p>
+          </td></tr></tbody></table>
+  </div></div>
+  </div>
  </div>
- <div class="sect1 " id="_obs_spider_identification"><div class="titlepage"><div><div><h2 class="title" id="_obs_spider_identification"><span class="number">3.9 </span><span class="name">Spider Identification</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_obs_spider_identification">#</a></h2></div></div></div>
+</div>
+ <div class="sect1 " id="_backup"><div class="titlepage"><div><div><h2 class="title" id="_backup"><span class="number">3.9 </span><span class="name">Backup</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_backup">#</a></h2></div></div></div>
+  
+  <p></p>
+ </div>
+ <div class="sect1 " id="_obs_spider_identification"><div class="titlepage"><div><div><h2 class="title" id="_obs_spider_identification"><span class="number">3.10 </span><span class="name">Spider Identification</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_obs_spider_identification">#</a></h2></div></div></div>
  
  <p> OBS is hiding specific parts/pages of the application from search
   crawlers (duckduckgo, google etc.), mostly for performance reasons. Which
@@ -1772,7 +2250,7 @@ kerberos_realm: "EXAMPLE.COM"
        "pattern": "Geekobot"
    }
 ]</pre></div>
- <div id="id15815" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6>
+ <div id="idm140361329167936" class="admonition note"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6>
   <p>You can also use regular expressions in the pattern element.</p>
  </div>
  <p> Save the file and restart the Rails application and the bot Geekobot
