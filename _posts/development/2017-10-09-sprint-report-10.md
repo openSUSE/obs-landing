@@ -82,7 +82,7 @@ However, in OBS it is not possible to change a request after it got created.
 It is necessary to create a new request and supersede the old one.
 With this workflow, as reviewer it was necessary to go back to the old request, look at which changes where requested and then going back to the new request to review again.
 To improve this workflow a little bit we now show also the comments of the superseded request in the new request.
-<img src="https://user-images.githubusercontent.com/3799140/30970526-aca2417c-a465-11e7-8fcf-ef6e2376ccb8.png" />
+<img src="/images/posts/sprint_25_supersed_request_comments.png" width="850px" alt="Supersed request comment" />
 </p>
 
  <h2> Bugfixes </h2>
