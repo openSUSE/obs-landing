@@ -88,9 +88,9 @@ To improve this workflow a little bit we now show also the comments of the super
 <h2>Bugfixes</h2>
  
 <h3>Fix deletion of groups</h3>
- <p>
- It was not possible to delete groups with users. This is now fixed. Thanks <a href='https://github.com/lchiquitto'>Ichiquitto</a> for report this bug.
- </p>
+<p>
+Deleting groups via the API was resulting in an error, as reported in <a href="https://github.com/openSUSE/open-build-service/issues/3393">Issue#3393</a>. This happened, because Rails only removed the Group instance, but not the associated GroupUser. This then caused an ActiveRecord::NotNullViolation exception. This is now fixed. Thanks <a href='https://github.com/lchiquitto'>Ichiquitto</a> for report this bug.
+</p>
 
 <h3>Preserve form data in Kiwi editor</h3>
 <p>We fixed a little bug in the Kiwi Editor, now we preserve the data in the form when something unexpected happens. This was because we redirecting instead of rendering the view, 
