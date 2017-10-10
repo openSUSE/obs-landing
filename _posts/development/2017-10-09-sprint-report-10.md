@@ -119,7 +119,7 @@ However, the main focus for us was to run the Build Solutions booth in the devel
 <a href="https://www.youtube.com/watch?v=hhb8kWCgnMQ">In this video</a>, Hannes Kühnemund interviews several people including our product manager <a href="https://github.com/adrianschroeter">Adrian</a> in the developer lounge.
 </p>
 <p>
-<a href="https://www.youtube.com/watch?v=jCEAGqNCS1Q&t=45m05s">The last keynote</a> was the famous 'Demopalooza' where they even showed a cover version of 'Killing in the name of' starring OBS.
+One of the highlights was <a href="https://www.youtube.com/watch?v=jCEAGqNCS1Q&t=45m05s">the last keynote</a>, the famous 'Demopalooza', where they even showed a cover version of 'Killing in the name of' starring OBS.
 </p>
 
 <img src="https://pbs.twimg.com/media/DLFEx17WsAAOa8I.jpg" />
