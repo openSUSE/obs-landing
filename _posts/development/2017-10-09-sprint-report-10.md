@@ -13,16 +13,16 @@ category: development
 <p>
 We only allow <strong>apt-deb</strong> and <strong>rpm-md</strong> as repo_type because these repository types are the only ones allowed in the open build service context.
 When you will importing your kiwi file to the Kiwi Editor, this will replace any invalid repo_type value by <strong>rpm-md</strong>.
-Take a look into PR<a href="https://github.com/openSUSE/open-build-service/pull/3826">#3826</a>
+Take a look into PR<a href="https://github.com/openSUSE/open-build-service/pull/3826">#3826</a>.
 </p>
 
-<p>We also made some changes in the view. Before, only a package group with a specific type and pattern type was shown, now we show the first package group with type 'image'</p>
+<p>We also made some changes in the view. Before, only a package group with a specific type and pattern type was shown, now we show the first package group with type 'image'.</p>
 
 <p>In the Kiwi Editor, we also implemented a new feature that autocompletes the name of the packages getting the information the repositories setup in the image.
-Take a look into PR<a href="https://github.com/openSUSE/open-build-service/pull/3884">#3884</a>
+Take a look into PR<a href="https://github.com/openSUSE/open-build-service/pull/3884">#3884</a>.
 </p>
 
-<p> The Kiwi Editor documentation was updated with all the new features until now  and how to use it. <a href="http://openbuildservice.org/help/manuals/obs-best-practices/cha.obs.best-practices.webuiusage.html#kiwi_editor_how_to">See the documentation</a></p>
+<p> The Kiwi Editor documentation was updated with all the new features until now  and how to use it. <a href="http://openbuildservice.org/help/manuals/obs-best-practices/cha.obs.best-practices.webuiusage.html#kiwi_editor_how_to">See the documentation</a>.</p>
 
 <h3>RabbitMQ</h3>
 
