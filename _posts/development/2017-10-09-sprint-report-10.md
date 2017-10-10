@@ -22,7 +22,7 @@ Take a look into PR<a href="https://github.com/openSUSE/open-build-service/pull/
 Take a look into PR<a href="https://github.com/openSUSE/open-build-service/pull/3884">#3884</a>.
 </p>
 
-<p> The Kiwi Editor documentation was updated with all the new features until now  and how to use it. <a href="http://openbuildservice.org/help/manuals/obs-best-practices/cha.obs.best-practices.webuiusage.html#kiwi_editor_how_to">See the documentation</a>.</p>
+<p> The Kiwi Editor documentation was updated with all the new features until now and how to use it. <a href="http://openbuildservice.org/help/manuals/obs-best-practices/cha.obs.best-practices.webuiusage.html#kiwi_editor_how_to">See the documentation</a>.</p>
 
 <h3>RabbitMQ</h3>
 
@@ -54,7 +54,7 @@ While comments made in a requests can be identified as 'opensuse.obs.request.com
 
 <p>
 If you have your own OBS instance and want to distinguish between events sent from build.opensuse.org and your own instance, you can configure
-prefix of the queue namein the options.yml. Setting the 'amqp_namespace' to 'my.obs_instance' would result in messages sent as 'my.obs_instance.package.comment' and 'my.obs_instance.request.comment'.
+prefix of the queue name in the options.yml. Setting the 'amqp_namespace' to 'my.obs_instance' would result in messages sent as 'my.obs_instance.package.comment' and 'my.obs_instance.request.comment'.
 </p>
 
 <p>
@@ -110,11 +110,15 @@ Beside working on several feature requests and bug fixes, the OBS team also atte
 <h3>SUSEcon</h3>
 
 <p>
-The annual SUSEcon takes place every year in fall at different locations in Europe or North America. 
+The annual SUSEcon takes place every year in fall at different locations in Europe and North America. 
 This year it took place in the capitol of Czech, Prague.
 Beside presenting a <a href="https://susecon17.smarteventscloud.com/connect/sessionDetail.ww?SESSION_ID=127282">talk</a>, <a href="https://github.com/mlschroe">Michael</a> and <a href="https://github.com/adrianschroeter">Adrian</a> also organized a <a href="https://susecon17.smarteventscloud.com/connect/sessionDetail.ww?SESSION_ID=127284">container building workshop</a>.
+</p>
+<p>
 However, the main focus for us was to run the Build Solutions booth in the developer lounge.
 <a href="https://www.youtube.com/watch?v=hhb8kWCgnMQ">In this video</a>, Hannes Kühnemund interviews several people including our product manager <a href="https://github.com/adrianschroeter">Adrian</a> in the developer lounge.
+</p>
+<p>
 <a href="https://www.youtube.com/watch?v=jCEAGqNCS1Q&t=45m05s">The last keynote</a> was the famous 'Demopalooza' where they even showed a cover version of 'Killing in the name of' starring OBS.
 </p>
 
@@ -123,7 +127,14 @@ However, the main focus for us was to run the Build Solutions booth in the devel
 <h3>EuRuKo2017</h3>
 
 <p>
-EuRuKo is a Ruby conference that takes place once a year in a European city. This year the EuRuKo Conference was in Budapest, Hungary, and it was the most crowed of all the EuRuKo Conferences, with 690 attendees. As most of as may know, a big part of OBS is written in Ruby, so the team travelled there to hear new things about Ruby and meet people with the same interests. All the talks where great, we specially recommend you to watch the <a href="https://github.com/matz">Yukihiro Matsumoto</a> and <a href='https://github.com/headius'>Charles Nutter</a> keynotes and Ruby 4.0: To Infinity and Beyond talk by <a href='https://github.com/bbatsov'>Bozhidar Batsov</a>. All of them were technical talks about Ruby and we found them really interesting. However, not all of the talks where that tecnical, but we also enjoyed them. For example, we had a lot of fun with Sebastian Sogamoso post-morten: The overnight failure. The videos are not still available, but you will be able to take a look soon!
+EuRuKo is a Ruby conference that takes place once a year in a European city. This year the EuRuKo Conference was in Budapest, Hungary, and it was the most crowed of all the EuRuKo Conferences, with 690 attendees. As most of you may know, a big part of OBS is written in Ruby, so the team travelled there to hear new things about Ruby and meet people with the same interests.
+</p>
+
+<p>
+ All the talks were great, we specially recommend you to watch the <a href="https://github.com/matz">Yukihiro Matsumoto</a> and <a href='https://github.com/headius'>Charles Nutter</a> keynotes and Ruby 4.0: To Infinity and Beyond talk by <a href='https://github.com/bbatsov'>Bozhidar Batsov</a>. All of them were technical talks about Ruby and we found them really interesting.
+</p>
+<p>
+However, not all of the talks where that technical, but we also enjoyed them. For example, we had a lot of fun with Sebastian Sogamoso post-morten: The overnight failure. The videos are not yet available, but you will be able to watch them soon!
 </p>
 
 <img src="https://pbs.twimg.com/media/DK_VaBlXUAA46Gj.jpg:large" />
