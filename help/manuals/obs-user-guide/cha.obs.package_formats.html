@@ -1,48 +1,40 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Supported Build Recipes and Package Formats | User Guide</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DocBook XSL Stylesheets V1.79.0" /><meta name="book-title" content="User Guide" /><meta name="chapter-title" content="Chapter 2. Supported Build Recipes and Package Formats" /><link rel="home" href="index.html" title="OBS Documentation" /><link rel="up" href="par.concepts.html" title="Part I. Concepts" /><link rel="prev" href="cha.obs.usrconcept.html" title="Chapter 1. Open Build Service" /><link rel="next" href="bk02pt02.html" title="Part II. Setup" /><script type="text/javascript">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Supported Build Recipes and Package Formats | User Guide</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><meta name="generator" content="DocBook XSL Stylesheets V1.78.1" /><meta name="book-title" content="User Guide" /><meta name="chapter-title" content="Chapter 1. Supported Build Recipes and Package Formats" /><link rel="home" href="index.html" title="OBS Documentation" /><link rel="up" href="par.concepts.html" title="Part I. Concepts" /><link rel="prev" href="par.concepts.html" title="Part I. Concepts" /><link rel="next" href="bk02pt02.html" title="Part II. Setup" /><script type="text/javascript">
 
 var protocol = window.location.protocol.toLowerCase();
 if ( protocol != 'file:' ) {
   var agent = navigator.userAgent.toLowerCase();
   var wanted = ( protocol == 'https:') ? 'https' : 'http';
   var file = 'fonts.css';
+  if (agent.indexOf('android') != -1 && agent.indexOf('chrom') != -1 ) {
+      file = 'fonts-nolocal.css';
+  }
   document.write('<link rel="stylesheet" type="text/css" href="' + wanted + '://static.opensuse.org/fonts/'+ file +'"></link>');
 }
 else {
    document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
 }
 
-</script><noscript><link rel="stylesheet" type="text/css" href="http://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
-
-$(document).ready(function() {
-  $('.verbatim-wrap.highlight').each(function(i, block) {
-    hljs.highlightBlock(block);
-  });
-});
-hljs.configure({
-  useBR: false
-});
-
-</script></head><body class="offline js-off"><div id="_outer-wrap"><div id="_white-bg"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="User Guide"><span class="book-icon">User Guide</span></a><span> › </span><a class="crumb" href="par.concepts.html">Concepts</a><span> › </span><a class="crumb" href="cha.obs.package_formats.html">Supported Build Recipes and Package Formats</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.htmlindex.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>User Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="bk02pr01.html"><span class="number"> </span><span class="name">About this Guide</span></a></li><li class="inactive"><a href="par.concepts.html"><span class="number">I </span><span class="name">Concepts</span></a><ol><li class="inactive"><a href="cha.obs.usrconcept.html"><span class="number">1 </span><span class="name">Open Build Service</span></a></li><li class="inactive"><a href="cha.obs.package_formats.html"><span class="number">2 </span><span class="name">Supported Build Recipes and Package Formats</span></a></li></ol></li><li class="inactive"><a href="bk02pt02.html"><span class="number">II </span><span class="name">Setup</span></a><ol><li class="inactive"><a href="cha.obs.osc.html"><span class="number">3 </span><span class="name">osc, the Command Line Tool</span></a></li><li class="inactive"><a href="cha.obs.prjconfig.html"><span class="number">4 </span><span class="name">Project Configuration</span></a></li></ol></li><li class="inactive"><a href="par.working.html"><span class="number">III </span><span class="name">Usage</span></a><ol><li class="inactive"><a href="cha.obs.basicworkflow.html"><span class="number">5 </span><span class="name">Basic OBS Workflow</span></a></li><li class="inactive"><a href="bk02pt03ch06.html"><span class="number">6 </span><span class="name">Building Package Formats</span></a></li><li class="inactive"><a href="bk02pt03ch07.html"><span class="number">7 </span><span class="name">Using Source Services</span></a></li><li class="inactive"><a href="cha.obs.signing.html"><span class="number">8 </span><span class="name">Signing</span></a></li></ol></li><li class="inactive"><a href="bk02pt04.html"><span class="number">IV </span><span class="name">Advanced Usage</span></a><ol><li class="inactive"><a href="cha.obs.product_building.html"><span class="number">9 </span><span class="name">Building Products</span></a></li></ol></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 1. Open Build Service" href="cha.obs.usrconcept.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Part II. Setup" href="bk02pt02.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="User Guide"><span class="book-icon">User Guide</span></a><span> › </span><a class="crumb" href="par.concepts.html">Concepts</a><span> › </span><a class="crumb" href="cha.obs.package_formats.html">Supported Build Recipes and Package Formats</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 1. Open Build Service" href="cha.obs.usrconcept.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Part II. Setup" href="bk02pt02.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class=""><div class="documentation"><div class="chapter " id="cha.obs.package_formats"><div class="titlepage"><div><div><h2 class="title"><span class="number">2 </span><span class="name">Supported Build Recipes and Package Formats</span> </h2></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="cha.obs.package_formats.html#id11431"><span class="number">2.1 </span><span class="name">About Formats</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.package_formats.html#id11462"><span class="number">2.2 </span><span class="name">RPM: Spec</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.package_formats.html#id11477"><span class="number">2.3 </span><span class="name">Debian: Dsc</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.package_formats.html#id11499"><span class="number">2.4 </span><span class="name">Arch: pkg</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.package_formats.html#id11515"><span class="number">2.5 </span><span class="name">Snap</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.package_formats.html#_kiwi_appliance"><span class="number">2.6 </span><span class="name">KIWI Appliance</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.package_formats.html#id11549"><span class="number">2.7 </span><span class="name">SimpleImage</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.package_formats.html#id11575"><span class="number">2.8 </span><span class="name">AppImage</span></a></span></dt></dl></div></div>
+</script><noscript><link rel="stylesheet" type="text/css" href="http://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script></head><body class="offline js-off"><div id="_outer-wrap"><div id="_white-bg"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="User Guide"><span class="book-icon">User Guide</span></a><span> › </span><a class="crumb" href="par.concepts.html">Concepts</a><span> › </span><a class="crumb" href="cha.obs.package_formats.html">Supported Build Recipes and Package Formats</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>User Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="bk02pr01.html"><span class="number"> </span><span class="name">About this Guide</span></a></li><li class="inactive"><a href="par.concepts.html"><span class="number">I </span><span class="name">Concepts</span></a><ol><li class="inactive"><a href="cha.obs.package_formats.html"><span class="number">1 </span><span class="name">Supported Build Recipes and Package Formats</span></a></li></ol></li><li class="inactive"><a href="bk02pt02.html"><span class="number">II </span><span class="name">Setup</span></a><ol><li class="inactive"><a href="cha.obs.osc.html"><span class="number">2 </span><span class="name">osc, the Command Line Tool</span></a></li><li class="inactive"><a href="cha.obs.prjconfig.html"><span class="number">3 </span><span class="name">Project Configuration</span></a></li></ol></li><li class="inactive"><a href="par.working.html"><span class="number">III </span><span class="name">Usage</span></a><ol><li class="inactive"><a href="cha.obs.basicworkflow.html"><span class="number">4 </span><span class="name">Basic OBS Workflow</span></a></li><li class="inactive"><a href="cha.obs.building.html"><span class="number">5 </span><span class="name">Building Package Formats</span></a></li><li class="inactive"><a href="cha.obs.source_service.html"><span class="number">6 </span><span class="name">Using Source Services</span></a></li></ol></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Part I. Concepts" href="par.concepts.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Part II. Setup" href="bk02pt02.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="User Guide"><span class="book-icon">User Guide</span></a><span> › </span><a class="crumb" href="par.concepts.html">Concepts</a><span> › </span><a class="crumb" href="cha.obs.package_formats.html">Supported Build Recipes and Package Formats</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Part I. Concepts" href="par.concepts.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Part II. Setup" href="bk02pt02.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class=""><div class="documentation"><div class="chapter " id="cha.obs.package_formats"><div class="titlepage"><div><div><h2 class="title"><span class="number">1 </span><span class="name">Supported Build Recipes and Package Formats</span> </h2></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="cha.obs.package_formats.html#idm140364015379664"><span class="number">1.1 </span><span class="name">About Formats</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.package_formats.html#idm140364015364608"><span class="number">1.2 </span><span class="name">RPM: Spec</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.package_formats.html#idm140364015356912"><span class="number">1.3 </span><span class="name">Debian: Dsc</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.package_formats.html#idm140364015347440"><span class="number">1.4 </span><span class="name">Arch: pkg</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.package_formats.html#_kiwi_appliance"><span class="number">1.5 </span><span class="name">KIWI Appliance</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.package_formats.html#idm140364015326416"><span class="number">1.6 </span><span class="name">SimpleImage</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.package_formats.html#idm140364015314128"><span class="number">1.7 </span><span class="name">AppImage</span></a></span></dt></dl></div></div>
  
  
  
  
 
- <div class="sect1 " id="id11431"><div class="titlepage"><div><div><h2 class="title" id="id11431"><span class="number">2.1 </span><span class="name">About Formats</span> <a title="Permalink" class="permalink" href="cha.obs.package_formats.html#id11431">#</a></h2></div></div></div>
+ <div class="sect1 " id="idm140364015379664"><div class="titlepage"><div><div><h2 class="title" id="idm140364015379664"><span class="number">1.1 </span><span class="name">About Formats</span> <a title="Permalink" class="permalink" href="cha.obs.package_formats.html#idm140364015379664">#</a></h2></div></div></div>
   
   
   <p> OBS differentiates between the format of the build recipes and the
-   format of the installed packages. For example, the spec receipe format is
+   format of the installed packages. For example, the spec recipe format is
    used to build RPM packages by calling <code class="command">rpmbuild</code>. </p>
   <p> In most cases, the build result format is the same as the package
    format used for setting up the build environment, but sometimes the format
    is different. An example is the KIWI build recipe format, which can build
-    ISOs, but uses RPM packages to setup the build process.
+    ISOs, but uses RPM packages to set up the build process.
   </p>
   <p> OBS currently supports the following build recipe formats and packages:
   </p>
-  <div class="itemizedlist "><div class="itemizedlist-title-wrap"><h6 class="itemizedlist-title"><span class="name">Supported Package Formats </span><a title="Permalink" class="permalink" href="cha.obs.package_formats.html#id11438">#</a></h6></div><ul class="itemizedlist"><li class="listitem ">
+  <div class="itemizedlist "><div class="itemizedlist-title-wrap"><h6 class="itemizedlist-title"><span class="name">Supported Package Formats </span><a title="Permalink" class="permalink" href="cha.obs.package_formats.html#idm140364015376096">#</a></h6></div><ul class="itemizedlist"><li class="listitem ">
     <p>RPM package format, used for all RPM-based distributions like
      openSUSE, SUSE Linux Enterprise, Fedora, and others.</p>
    </li><li class="listitem ">
@@ -52,7 +44,7 @@ hljs.configure({
     <p>Arch package format, used by Arch Linux</p>
    </li></ul></div>
 
-  <div class="itemizedlist "><div class="itemizedlist-title-wrap"><h6 class="itemizedlist-title"><span class="name">Supported Build Recipe Formats </span><a title="Permalink" class="permalink" href="cha.obs.package_formats.html#id11446">#</a></h6></div><ul class="itemizedlist"><li class="listitem ">
+  <div class="itemizedlist "><div class="itemizedlist-title-wrap"><h6 class="itemizedlist-title"><span class="name">Supported Build Recipe Formats </span><a title="Permalink" class="permalink" href="cha.obs.package_formats.html#idm140364015372000">#</a></h6></div><ul class="itemizedlist"><li class="listitem ">
     <p>Spec format for RPM packages</p>
    </li><li class="listitem ">
     <p>Dsc format for DEB packages</p>
@@ -73,13 +65,13 @@ hljs.configure({
    adding a <code class="literal">Type</code> line to the project configuration. </p>
  </div>
 
- <div class="sect1 " id="id11462"><div class="titlepage"><div><div><h2 class="title" id="id11462"><span class="number">2.2 </span><span class="name">RPM: Spec</span> <a title="Permalink" class="permalink" href="cha.obs.package_formats.html#id11462">#</a></h2></div></div></div>
+ <div class="sect1 " id="idm140364015364608"><div class="titlepage"><div><div><h2 class="title" id="idm140364015364608"><span class="number">1.2 </span><span class="name">RPM: Spec</span> <a title="Permalink" class="permalink" href="cha.obs.package_formats.html#idm140364015364608">#</a></h2></div></div></div>
   
   <p>
-   RPM (RPM Package Manager) is used on openSUSE, SUSE Linux Enterprise, RedHat, Fedora,
+   RPM (RPM Package Manager) is used on openSUSE, SUSE Linux Enterprise, Red Hat, Fedora,
    and other distributions. For building RPMs you need:
   </p>
-  <div class="variablelist "><dl class="variablelist"><dt id="id11466"><span class="term "><code class="filename">.spec</code></span></dt><dd>
+  <div class="variablelist "><dl class="variablelist"><dt id="idm140364015362880"><span class="term "><code class="filename">.spec</code></span></dt><dd>
      <p>
       the <em class="firstterm ">spec file</em> for each package containing
       metadata and build instructions. OBS parses the spec file's
@@ -89,25 +81,25 @@ hljs.configure({
       macro handling, so it is possible to use architecture specific
       BuildRequires, conditional builds and other advanced RPM features.
      </p>
-    </dd><dt id="id11472"><span class="term "><code class="filename">.changes</code></span></dt><dd>
+    </dd><dt id="idm140364015359536"><span class="term "><code class="filename">.changes</code></span></dt><dd>
      <p>the file which contains the changelog.</p>
     </dd></dl></div>
  </div>
 
- <div class="sect1 " id="id11477"><div class="titlepage"><div><div><h2 class="title" id="id11477"><span class="number">2.3 </span><span class="name">Debian: Dsc</span> <a title="Permalink" class="permalink" href="cha.obs.package_formats.html#id11477">#</a></h2></div></div></div>
+ <div class="sect1 " id="idm140364015356912"><div class="titlepage"><div><div><h2 class="title" id="idm140364015356912"><span class="number">1.3 </span><span class="name">Debian: Dsc</span> <a title="Permalink" class="permalink" href="cha.obs.package_formats.html#idm140364015356912">#</a></h2></div></div></div>
   
   <p>
    DEB packages are used on all Debian or Ubuntu based distributions.
    For building <code class="filename">.deb</code> files, you need:
   </p>
-  <div class="variablelist "><dl class="variablelist"><dt id="id11482"><span class="term "><code class="filename">debian.control</code></span></dt><dd>
+  <div class="variablelist "><dl class="variablelist"><dt id="idm140364015354672"><span class="term "><code class="filename">debian.control</code></span></dt><dd>
      <p>The file contains the meta information for the package like the
       build dependencies or some description. </p>
-    </dd><dt id="id11487"><span class="term "><code class="filename">debian.rules</code></span></dt><dd>
+    </dd><dt id="idm140364015352624"><span class="term "><code class="filename">debian.rules</code></span></dt><dd>
      <p>This file describes the build section of the DEB building process.
       There are the configure and make compile commands including other DEB
       building sections.</p>
-    </dd><dt id="id11492"><span class="term "><code class="filename"><em class="replaceable ">PACKAGE</em>.dsc</code></span></dt><dd>
+    </dd><dt id="idm140364015350512"><span class="term "><code class="filename"><em class="replaceable ">PACKAGE</em>.dsc</code></span></dt><dd>
      <p>In this file you describe the package names of each subpackage and
       their dependency level. Unlike RPM, the release numbers are not increased
       automatically during build unless the keyword
@@ -115,13 +107,13 @@ hljs.configure({
     </dd></dl></div>
  </div>
 
- <div class="sect1 " id="id11499"><div class="titlepage"><div><div><h2 class="title" id="id11499"><span class="number">2.4 </span><span class="name">Arch: pkg</span> <a title="Permalink" class="permalink" href="cha.obs.package_formats.html#id11499">#</a></h2></div></div></div>
+ <div class="sect1 " id="idm140364015347440"><div class="titlepage"><div><div><h2 class="title" id="idm140364015347440"><span class="number">1.4 </span><span class="name">Arch: pkg</span> <a title="Permalink" class="permalink" href="cha.obs.package_formats.html#idm140364015347440">#</a></h2></div></div></div>
   
   <p>
-   Pkg files is used on Arch Linux and its derivates. For building
+   Pkg files is used on Arch Linux and its derivatives. For building
    Pkg you need:
   </p>
-  <div class="variablelist "><dl class="variablelist"><dt id="id11503"><span class="term "><code class="filename">PKGBUILD</code></span></dt><dd>
+  <div class="variablelist "><dl class="variablelist"><dt id="idm140364015346048"><span class="term "><code class="filename">PKGBUILD</code></span></dt><dd>
      <p>
       It contains the build description and the source tarball. The file
        <code class="filename">PKGBUILD</code> does not have macros like
@@ -129,22 +121,17 @@ hljs.configure({
         <code class="literal">makedepends=(<em class="replaceable ">PACKAGE1</em>,
         <em class="replaceable ">PACKAGE2</em>)</code>. These variables are
       parsed by OBS and uses them as dependencies. On Arch Linux you typically
-      build packages without subpackage. They are no <span class="package ">*-dev</span>
-      or <span class="package ">*-devel</span> packages.
+      build packages without subpackage. They are no <span class="package">*-dev</span>
+      or <span class="package">*-devel</span> packages.
      </p>
     </dd></dl></div>
  </div>
 
- <div class="sect1 " id="id11515"><div class="titlepage"><div><div><h2 class="title" id="id11515"><span class="number">2.5 </span><span class="name">Snap</span> <a title="Permalink" class="permalink" href="cha.obs.package_formats.html#id11515">#</a></h2></div></div></div>
-  
-  
-  
-  
- </div>
+ 
 
 
 
- <div class="sect1 " id="_kiwi_appliance"><div class="titlepage"><div><div><h2 class="title" id="_kiwi_appliance"><span class="number">2.6 </span><span class="name">KIWI Appliance</span> <a title="Permalink" class="permalink" href="cha.obs.package_formats.html#_kiwi_appliance">#</a></h2></div></div></div>
+ <div class="sect1 " id="_kiwi_appliance"><div class="titlepage"><div><div><h2 class="title" id="_kiwi_appliance"><span class="number">1.5 </span><span class="name">KIWI Appliance</span> <a title="Permalink" class="permalink" href="cha.obs.package_formats.html#_kiwi_appliance">#</a></h2></div></div></div>
   
   <p>
    <a class="ulink" href="https://suse.github.io/kiwi/" target="_blank">KIWI<span class="ulink-url"> (https://suse.github.io/kiwi/)</span></a> is an OS
@@ -154,15 +141,15 @@ hljs.configure({
    s390 and ppc. </p>
   <p> For building an image in KIWI you need:</p>
 
-  <div class="variablelist "><dl class="variablelist"><dt id="id11526"><span class="term "><code class="filename">my_image.kiwi</code></span></dt><dd>
+  <div class="variablelist "><dl class="variablelist"><dt id="idm140364015337008"><span class="term "><code class="filename">my_image.kiwi</code></span></dt><dd>
      <p>
       Contains the image configuration in XML format. Full XML schema
       documentation can be found <a class="ulink" href="https://suse.github.io/kiwi/development/schema.html" target="_blank">https://suse.github.io/kiwi/development/schema.html</a>.
      </p>
-    </dd><dt id="id11532"><span class="term "><code class="filename">config.sh</code> (optional)</span></dt><dd>
+    </dd><dt id="idm140364015334240"><span class="term "><code class="filename">config.sh</code> (optional)</span></dt><dd>
      <p>configuration script that runs
      at the end of the installation, but before package scripts have run.</p>
-    </dd><dt id="id11537"><span class="term "><code class="filename">root/</code></span></dt><dd>
+    </dd><dt id="idm140364015332192"><span class="term "><code class="filename">root/</code></span></dt><dd>
      <p>
       directory that contains files that will be applied to the built
       image after package installation. This can also be an archived and
@@ -170,7 +157,7 @@ hljs.configure({
      </p>
     </dd></dl></div>
 
-  <div id="id11543" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6>
+  <div id="idm140364015329456" class="admonition note"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6>
    <p> OBS only accepts KIWI configuration files with a <code class="filename">.kiwi</code> suffix. Other naming schemes KIWI
     supports like <code class="filename">config.xml</code>, are ignored in OBS.
    </p>
@@ -179,12 +166,12 @@ hljs.configure({
   </p>
  </div>
 
- <div class="sect1 " id="id11549"><div class="titlepage"><div><div><h2 class="title" id="id11549"><span class="number">2.7 </span><span class="name">SimpleImage</span> <a title="Permalink" class="permalink" href="cha.obs.package_formats.html#id11549">#</a></h2></div></div></div>
+ <div class="sect1 " id="idm140364015326416"><div class="titlepage"><div><div><h2 class="title" id="idm140364015326416"><span class="number">1.6 </span><span class="name">SimpleImage</span> <a title="Permalink" class="permalink" href="cha.obs.package_formats.html#idm140364015326416">#</a></h2></div></div></div>
   
   <p>
    
    This format can be used to get simple rootfs tarball or squashfs
-   image. It does not neither contain a bootloader nor a kernel.
+   image. It does not contain a bootloader or a kernel.
    For advanced features, use KIWI.
    Use SimpleImage for simple rootfs tarball/squashfs image of any
    distribution that is supported by OBS but does not have anything
@@ -209,7 +196,7 @@ hljs.configure({
      variable is available.</p>
    </li></ul></div>
   
-  <div class="example" id="id11571"><div class="example-title-wrap"><h6 class="example-title"><span class="number">Example 2.1: </span><span class="name">SimpleImage File (<code class="filename">simpleimage</code>) </span><a title="Permalink" class="permalink" href="cha.obs.package_formats.html#id11571">#</a></h6></div><div class="example-contents">
+  <div class="example" id="idm140364015316096"><div class="example-title-wrap"><h6 class="example-title"><span class="number">Example 1.1: </span><span class="name">SimpleImage File (<code class="filename">simpleimage</code>) </span><a title="Permalink" class="permalink" href="cha.obs.package_formats.html#idm140364015316096">#</a></h6></div><div class="example-contents">
    
    <div class="verbatim-wrap"><pre class="screen">Name:           example-image
 Version:        1.0
@@ -228,10 +215,10 @@ systemctl enable sshd</pre></div>
   </div></div>
  </div>
 
- <div class="sect1 " id="id11575"><div class="titlepage"><div><div><h2 class="title" id="id11575"><span class="number">2.8 </span><span class="name">AppImage</span> <a title="Permalink" class="permalink" href="cha.obs.package_formats.html#id11575">#</a></h2></div></div></div>
+ <div class="sect1 " id="idm140364015314128"><div class="titlepage"><div><div><h2 class="title" id="idm140364015314128"><span class="number">1.7 </span><span class="name">AppImage</span> <a title="Permalink" class="permalink" href="cha.obs.package_formats.html#idm140364015314128">#</a></h2></div></div></div>
   
   
  </div>
-</div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="bk02pt02.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Part II </span>Setup</span></a><a class="nav-link" href="cha.obs.usrconcept.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 1 </span>Open Build Service</span></a></div><div id="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span id="_share-fb" class="bottom-button">Facebook</span><span class="spacer"> • </span><span id="_share-gp" class="bottom-button">Google+</span><span class="spacer"> • </span><span id="_share-tw" class="bottom-button">Twitter</span><span class="spacer"> • </span><span id="_share-mail" class="bottom-button">E-Mail</span></span></div><div class="print"><span id="_print-button" class="bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+</div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="bk02pt02.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Part II </span>Setup</span></a><a class="nav-link" href="par.concepts.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Part I </span>Concepts</span></a></div><div id="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span id="_share-fb" class="bottom-button">Facebook</span><span class="spacer"> • </span><span id="_share-gp" class="bottom-button">Google+</span><span class="spacer"> • </span><span id="_share-tw" class="bottom-button">Twitter</span><span class="spacer"> • </span><span id="_share-mail" class="bottom-button">E-Mail</span></span></div><div class="print"><span id="_print-button" class="bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
         2017 
         SUSE</p><ul><li><a href="http://www.suse.com/company/careers/" target="_top">Careers</a></li><li><a href="http://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="http://www.suse.com/company/" target="_top">About</a></li><li><a href="http://www.suse.com/ContactsOffices/contacts_offices.jsp" target="_top">Contact Us</a></li></ul></div></div></body></html>

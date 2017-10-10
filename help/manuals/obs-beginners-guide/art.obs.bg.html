@@ -1,33 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Beginnerʼs Guide | Open Build Service</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DocBook XSL Stylesheets V1.79.0" /><meta name="product-name" content="Open Build Service" /><meta name="book-title" content="Beginnerʼs Guide" /><meta name="description" content="This guide describes basic workflows for working with packages on Open Build Service. This includes checking out a package from an upstream project, creating patches, branching a repository, and more." /><link rel="home" href="index.html" title="OBS Documentation" /><link rel="up" href="book.obs.techpaper.html" title="Technical Papers" /><link rel="prev" href="book.obs.techpaper.html" title="Technical Papers" /><link rel="next" href="book.obs.user.html" title="User Guide" /><script type="text/javascript">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Beginnerʼs Guide | Open Build Service</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><meta name="generator" content="DocBook XSL Stylesheets V1.78.1" /><meta name="product-name" content="Open Build Service" /><meta name="book-title" content="Beginnerʼs Guide" /><meta name="description" content="This guide describes basic workflows for working with packages on Open Build Service. This includes checking out a package from an upstream project, creating patches, branching a repository, and more." /><link rel="home" href="index.html" title="OBS Documentation" /><link rel="up" href="book.obs.techpaper.html" title="Technical Papers" /><link rel="prev" href="book.obs.techpaper.html" title="Technical Papers" /><link rel="next" href="book.obs.user.html" title="User Guide" /><script type="text/javascript">
 
 var protocol = window.location.protocol.toLowerCase();
 if ( protocol != 'file:' ) {
   var agent = navigator.userAgent.toLowerCase();
   var wanted = ( protocol == 'https:') ? 'https' : 'http';
   var file = 'fonts.css';
+  if (agent.indexOf('android') != -1 && agent.indexOf('chrom') != -1 ) {
+      file = 'fonts-nolocal.css';
+  }
   document.write('<link rel="stylesheet" type="text/css" href="' + wanted + '://static.opensuse.org/fonts/'+ file +'"></link>');
 }
 else {
    document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
 }
 
-</script><noscript><link rel="stylesheet" type="text/css" href="http://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
-
-$(document).ready(function() {
-  $('.verbatim-wrap.highlight').each(function(i, block) {
-    hljs.highlightBlock(block);
-  });
-});
-hljs.configure({
-  useBR: false
-});
-
-</script></head><body class="offline js-off"><div id="_outer-wrap"><div id="_white-bg"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="single-crumb" href="art.obs.bg.html"><span class="single-contents-icon"></span>Beginnerʼs Guide</a><div class="bubble-corner active-contents"></div></div><div class="clearme"></div></div></div><div id="_fixed-header-wrap" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="single-crumb" href="art.obs.bg.html"><span class="single-contents-icon"></span>Show Contents: Beginnerʼs Guide</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="clearme"></div></div><div class="clearme"></div></div><div class="active-contents bubble"><div class="bubble-container"><div id="_bubble-toc"><ol><li class="inactive"><a href="art.obs.bg.html#sec.obsbg.targetaudience"><span class="number">1 </span><span class="name">Target Audience</span></a></li><li class="inactive"><a href="art.obs.bg.html#sec.obsbg.concept"><span class="number">2 </span><span class="name">Conceptual Overview</span></a></li><li class="inactive"><a href="art.obs.bg.html#sec.obsbg.req"><span class="number">3 </span><span class="name">Requirements for Working with the <code class="command">osc</code> Command-Line Tool</span></a></li><li class="inactive"><a href="art.obs.bg.html#sec.obsbg.obsconfig"><span class="number">4 </span><span class="name">Configuring Your System for OBS</span></a></li><li class="inactive"><a href="art.obs.bg.html#sec.obsbg.usagescenarios"><span class="number">5 </span><span class="name">Covered Scenarios</span></a></li><li class="inactive"><a href="art.obs.bg.html#sec.obsbg.uc.setuphome"><span class="number">6 </span><span class="name">Setting Up Your Home Project for the First Time</span></a></li><li class="inactive"><a href="art.obs.bg.html#sec.obsbg.uc.newprj"><span class="number">7 </span><span class="name">Creating a New Project</span></a></li><li class="inactive"><a href="art.obs.bg.html#sec.obsbg.uc.patching"><span class="number">8 </span><span class="name">Patching Source Code</span></a></li><li class="inactive"><a href="art.obs.bg.html#sec.obsbg.uc.branchprj"><span class="number">9 </span><span class="name">Branching a Package</span></a></li><li class="inactive"><a href="art.obs.bg.html#sec.obsbg.uc.install-from-obs"><span class="number">10 </span><span class="name">Installing Packages from OBS</span></a></li><li class="inactive"><a href="art.obs.bg.html#sec.obsbg.cheatsheet"><span class="number">11 </span><span class="name">Other Useful <code class="command">osc</code> Commands</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_toc-bubble-wrap"></div><div id="_content" class=""><div class="documentation"><div xml:lang="en" class="article " id="art.obs.bg" lang="en"><div class="titlepage"><div><h6 class="version-info"><span class="productname ">Open Build Service</span></h6><div><h1 class="title">Beginnerʼs Guide </h1></div><div><h3 class="subtitle"><em><span class="productname">Open Build Service</span> <span class="productnumber"></span></em></h3></div><div class="abstract "><p>
+</script><noscript><link rel="stylesheet" type="text/css" href="http://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script></head><body class="offline js-off"><div id="_outer-wrap"><div id="_white-bg"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="single-crumb" href="art.obs.bg.html"><span class="single-contents-icon"></span>Beginnerʼs Guide</a><div class="bubble-corner active-contents"></div></div><div class="clearme"></div></div></div><div id="_fixed-header-wrap" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="single-crumb" href="art.obs.bg.html"><span class="single-contents-icon"></span>Show Contents: Beginnerʼs Guide</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="clearme"></div></div><div class="clearme"></div></div><div class="active-contents bubble"><div class="bubble-container"><div id="_bubble-toc"><ol><li class="inactive"><a href="art.obs.bg.html#sec.obsbg.targetaudience"><span class="number">1 </span><span class="name">Target Audience</span></a></li><li class="inactive"><a href="art.obs.bg.html#sec.obsbg.concept"><span class="number">2 </span><span class="name">Conceptual Overview</span></a></li><li class="inactive"><a href="art.obs.bg.html#sec.obsbg.req"><span class="number">3 </span><span class="name">Requirements for Working with the <code class="command">osc</code> Command-Line Tool</span></a></li><li class="inactive"><a href="art.obs.bg.html#sec.obsbg.obsconfig"><span class="number">4 </span><span class="name">Configuring Your System for OBS</span></a></li><li class="inactive"><a href="art.obs.bg.html#sec.obsbg.usagescenarios"><span class="number">5 </span><span class="name">Covered Scenarios</span></a></li><li class="inactive"><a href="art.obs.bg.html#sec.obsbg.uc.setuphome"><span class="number">6 </span><span class="name">Setting Up Your Home Project for the First Time</span></a></li><li class="inactive"><a href="art.obs.bg.html#sec.obsbg.uc.newprj"><span class="number">7 </span><span class="name">Creating a New Project</span></a></li><li class="inactive"><a href="art.obs.bg.html#sec.obsbg.uc.patching"><span class="number">8 </span><span class="name">Patching Source Code</span></a></li><li class="inactive"><a href="art.obs.bg.html#sec.obsbg.uc.branchprj"><span class="number">9 </span><span class="name">Branching a Package</span></a></li><li class="inactive"><a href="art.obs.bg.html#sec.obsbg.uc.install-from-obs"><span class="number">10 </span><span class="name">Installing Packages from OBS</span></a></li><li class="inactive"><a href="art.obs.bg.html#sec.obsbg.cheatsheet"><span class="number">11 </span><span class="name">Other Useful <code class="command">osc</code> Commands</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_toc-bubble-wrap"></div><div id="_content" class=""><div class="documentation"><div xml:lang="en" class="article " id="art.obs.bg" lang="en"><div class="titlepage"><div><h6 class="version-info"><span class="productname">Open Build Service</span></h6><div><h1 class="title">Beginnerʼs Guide </h1></div><div><h3 class="subtitle"><em><span class="productname">Open Build Service</span> <span class="productnumber"></span></em></h3></div><div class="abstract "><p>
     This guide describes basic workflows for working with packages on
     Open Build Service. This includes checking out a package from an upstream project,
     creating patches, branching a repository, and more.
-   </p></div><div class="date"><span class="imprint-label">Publication Date: </span>08/30/2017</div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="art.obs.bg.html#sec.obsbg.targetaudience"><span class="number">1 </span><span class="name">Target Audience</span></a></span></dt><dt><span class="sect1"><a href="art.obs.bg.html#sec.obsbg.concept"><span class="number">2 </span><span class="name">Conceptual Overview</span></a></span></dt><dt><span class="sect1"><a href="art.obs.bg.html#sec.obsbg.req"><span class="number">3 </span><span class="name">Requirements for Working with the <code class="command">osc</code> Command-Line Tool</span></a></span></dt><dt><span class="sect1"><a href="art.obs.bg.html#sec.obsbg.obsconfig"><span class="number">4 </span><span class="name">Configuring Your System for OBS</span></a></span></dt><dt><span class="sect1"><a href="art.obs.bg.html#sec.obsbg.usagescenarios"><span class="number">5 </span><span class="name">Covered Scenarios</span></a></span></dt><dt><span class="sect1"><a href="art.obs.bg.html#sec.obsbg.uc.setuphome"><span class="number">6 </span><span class="name">Setting Up Your Home Project for the First Time</span></a></span></dt><dt><span class="sect1"><a href="art.obs.bg.html#sec.obsbg.uc.newprj"><span class="number">7 </span><span class="name">Creating a New Project</span></a></span></dt><dt><span class="sect1"><a href="art.obs.bg.html#sec.obsbg.uc.patching"><span class="number">8 </span><span class="name">Patching Source Code</span></a></span></dt><dt><span class="sect1"><a href="art.obs.bg.html#sec.obsbg.uc.branchprj"><span class="number">9 </span><span class="name">Branching a Package</span></a></span></dt><dt><span class="sect1"><a href="art.obs.bg.html#sec.obsbg.uc.install-from-obs"><span class="number">10 </span><span class="name">Installing Packages from OBS</span></a></span></dt><dt><span class="sect1"><a href="art.obs.bg.html#sec.obsbg.cheatsheet"><span class="number">11 </span><span class="name">Other Useful <code class="command">osc</code> Commands</span></a></span></dt></dl></div></div><div><div class="legalnotice" id="id10554">
+   </p></div><div class="date"><span class="imprint-label">Publication Date: </span>10/10/2017</div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="art.obs.bg.html#sec.obsbg.targetaudience"><span class="number">1 </span><span class="name">Target Audience</span></a></span></dt><dt><span class="sect1"><a href="art.obs.bg.html#sec.obsbg.concept"><span class="number">2 </span><span class="name">Conceptual Overview</span></a></span></dt><dt><span class="sect1"><a href="art.obs.bg.html#sec.obsbg.req"><span class="number">3 </span><span class="name">Requirements for Working with the <code class="command">osc</code> Command-Line Tool</span></a></span></dt><dt><span class="sect1"><a href="art.obs.bg.html#sec.obsbg.obsconfig"><span class="number">4 </span><span class="name">Configuring Your System for OBS</span></a></span></dt><dt><span class="sect1"><a href="art.obs.bg.html#sec.obsbg.usagescenarios"><span class="number">5 </span><span class="name">Covered Scenarios</span></a></span></dt><dt><span class="sect1"><a href="art.obs.bg.html#sec.obsbg.uc.setuphome"><span class="number">6 </span><span class="name">Setting Up Your Home Project for the First Time</span></a></span></dt><dt><span class="sect1"><a href="art.obs.bg.html#sec.obsbg.uc.newprj"><span class="number">7 </span><span class="name">Creating a New Project</span></a></span></dt><dt><span class="sect1"><a href="art.obs.bg.html#sec.obsbg.uc.patching"><span class="number">8 </span><span class="name">Patching Source Code</span></a></span></dt><dt><span class="sect1"><a href="art.obs.bg.html#sec.obsbg.uc.branchprj"><span class="number">9 </span><span class="name">Branching a Package</span></a></span></dt><dt><span class="sect1"><a href="art.obs.bg.html#sec.obsbg.uc.install-from-obs"><span class="number">10 </span><span class="name">Installing Packages from OBS</span></a></span></dt><dt><span class="sect1"><a href="art.obs.bg.html#sec.obsbg.cheatsheet"><span class="number">11 </span><span class="name">Other Useful <code class="command">osc</code> Commands</span></a></span></dt></dl></div></div><div><div class="legalnotice" id="idm140442865569568">
  
     <p>
   Copyright © 2006–
@@ -40,7 +32,7 @@ hljs.configure({
   under the terms of the GNU Free Documentation License, Version 1.2 or (at
   your option) version 1.3; with the Invariant Section being this copyright
   notice and license. A copy of the license version 1.2 is included in the
-  section entitled <span class="quote">“<span class="quote ">GNU Free Documentation License</span>”</span>.
+  section entitled <span class="quote">“<span class="quote">GNU Free Documentation License</span>”</span>.
  </p>
  <p>
   For SUSE trademarks, see
@@ -79,7 +71,7 @@ hljs.configure({
    and reproducible way.
    OBS can create images and installable packages for a wide range
    of operating systems
-   (SUSE, Debian, Ubuntu, RedHat, Windows, etc.) and hardware architectures
+   (SUSE, Debian, Ubuntu, Red Hat, Windows, etc.) and hardware architectures
    (x86, AMD64, z Systems, POWER etc.).
   </p>
   <div class="sect2 " id="sec.obsbg.concept.pkgspec"><div class="titlepage"><div><div><h3 class="title" id="sec.obsbg.concept.pkgspec"><span class="number">2.1 </span><span class="name">Build Recipe</span> <a title="Permalink" class="permalink" href="art.obs.bg.html#sec.obsbg.concept.pkgspec">#</a></h3></div></div></div>
@@ -159,7 +151,7 @@ hljs.configure({
   </p>
   <p>
    Other OBS-related services (like the notification server, mirror
-   interface, etc.) are perform very specific tasks and therefore beyond the
+   interface, etc.) perform very specific tasks and therefore beyond the
    scope of this guide.
   </p>
   <p>
@@ -225,7 +217,7 @@ hljs.configure({
      </p>
      <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
        <p>
-        For SUSE related systems, install the <span class="package ">osc</span>
+        For SUSE related systems, install the <span class="package">osc</span>
         package with the <code class="command">zypper</code> command (replace
         <em class="replaceable ">DISTRIBUTION</em> with your distribution):
        </p>
@@ -237,13 +229,14 @@ hljs.configure({
        </p>
       </li><li class="listitem ">
        <p>
-        As an alternative, you can use the AppImage file. An AppImage file
+        As an alternative, you can use the AppImage file . An AppImage file
         is a packaged application which can run on many distributions.
-        Download the file, save it in your <code class="filename">~/bin</code> directory,
+        Download the file from <a class="ulink" href="https://download.opensuse.org/repositories/openSUSE:/Tools/AppImage/" target="_blank">https://download.opensuse.org/repositories/openSUSE:/Tools/AppImage/</a>,
+        save it in your <code class="filename">~/bin</code> directory,
         and make the file executable.
        </p>
       </li></ul></div>
-    </dd><dt id="id10661"><span class="term ">Hardware Requirements</span></dt><dd>
+    </dd><dt id="idm140442865512080"><span class="term ">Hardware Requirements</span></dt><dd>
      <p>
       Make sure you have a minimum of 1 GB of free disk space. The
       <code class="command">osc</code> command builds all packages locally under
@@ -309,7 +302,7 @@ Cmnd_Alias  OSC_CMD = /usr/bin/osc, /usr/bin/build
       </p>
    </li></ol></div></div>
 
-  <div id="id10717" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note: Alternative Directory Structure</h6>
+  <div id="idm140442865483104" class="admonition note"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note: Alternative Directory Structure</h6>
    
   <p>
    If you prefer to separate projects and subprojects in
@@ -323,7 +316,7 @@ Cmnd_Alias  OSC_CMD = /usr/bin/osc, /usr/bin/build
    instead of the single <code class="filename">home:obsgeeko</code> directory. 
   </p>
   <p>
-   However, this this guide uses the default configuration with colons.
+   However, this guide uses the default configuration with colons.
   </p>
   </div>
  </div>
@@ -368,31 +361,31 @@ Cmnd_Alias  OSC_CMD = /usr/bin/osc, /usr/bin/build
     </p>
    </li><li class="listitem ">
     <p>
-     An example upstream open source project available at <a class="ulink" href="https://github.com/openSUSE/example-obs" target="_blank">https://github.com/openSUSE/example-obs</a>. This project contains source code in the C++ programming language.
+     An example upstream open source project available at <a class="ulink" href="https://github.com/obs-example/my-first-obs-package" target="_blank">https://github.com/obs-example/my-first-obs-package</a>. This project contains source code in the C++ programming language.
     </p>
    </li></ul></div>
   <p>
    This guide describes the following common tasks:
   </p>
-  <div class="variablelist "><dl class="variablelist"><dt id="id10761"><span class="term "><a class="xref" href="art.obs.bg.html#sec.obsbg.uc.setuphome" title="6. Setting Up Your Home Project for the First Time">Section 6, “Setting Up Your Home Project for the First Time”</a></span></dt><dd>
+  <div class="variablelist "><dl class="variablelist"><dt id="idm140442865460384"><span class="term "><a class="xref" href="art.obs.bg.html#sec.obsbg.uc.setuphome" title="6. Setting Up Your Home Project for the First Time">Section 6, “Setting Up Your Home Project for the First Time”</a></span></dt><dd>
      <p>
       Setting up a home project using the OBS Web UI.
      </p>
-    </dd><dt id="id10766"><span class="term "><a class="xref" href="art.obs.bg.html#sec.obsbg.uc.newprj" title="7. Creating a New Project">Section 7, “Creating a New Project”</a></span></dt><dd>
+    </dd><dt id="idm140442865458208"><span class="term "><a class="xref" href="art.obs.bg.html#sec.obsbg.uc.newprj" title="7. Creating a New Project">Section 7, “Creating a New Project”</a></span></dt><dd>
      <p>
       Creating packages from a basic project hosted on GitHub.
      </p>
-    </dd><dt id="id10771"><span class="term "><a class="xref" href="art.obs.bg.html#sec.obsbg.uc.patching" title="8. Patching Source Code">Section 8, “Patching Source Code”</a></span></dt><dd>
+    </dd><dt id="idm140442865456032"><span class="term "><a class="xref" href="art.obs.bg.html#sec.obsbg.uc.patching" title="8. Patching Source Code">Section 8, “Patching Source Code”</a></span></dt><dd>
      <p>
       Patching source code without touching the original
       source.
      </p>
-    </dd><dt id="id10776"><span class="term "><a class="xref" href="art.obs.bg.html#sec.obsbg.uc.branchprj" title="9. Branching a Package">Section 9, “Branching a Package”</a></span></dt><dd>
+    </dd><dt id="idm140442865453856"><span class="term "><a class="xref" href="art.obs.bg.html#sec.obsbg.uc.branchprj" title="9. Branching a Package">Section 9, “Branching a Package”</a></span></dt><dd>
      <p>
       Branching a project, making changes, and submitting back
       the changes to the original project.
      </p>
-    </dd><dt id="id10781"><span class="term "><a class="xref" href="art.obs.bg.html#sec.obsbg.uc.install-from-obs" title="10. Installing Packages from OBS">Section 10, “Installing Packages from OBS”</a></span></dt><dd>
+    </dd><dt id="idm140442865451728"><span class="term "><a class="xref" href="art.obs.bg.html#sec.obsbg.uc.install-from-obs" title="10. Installing Packages from OBS">Section 10, “Installing Packages from OBS”</a></span></dt><dd>
      <p>
       Integrating the download repository into your system
       and installing your built package.
@@ -422,13 +415,13 @@ Cmnd_Alias  OSC_CMD = /usr/bin/osc, /usr/bin/build
     </p>
    </li><li class="step ">
     <p>
-     Click the <span class="guimenu ">Home Project</span> link in the upper-right
+     Click the <span class="guimenu">Home Project</span> link in the upper-right
      corner.
     </p>
    </li><li class="step ">
     <p>
-     Click the <span class="guimenu ">Repositories</span> tab, then the 
-     <span class="guimenu ">Add Repositories</span> link.
+     Click the <span class="guimenu">Repositories</span> tab, then the 
+     <span class="guimenu">Add Repositories</span> link.
     </p>
    </li><li class="step ">
     <p>
@@ -437,7 +430,7 @@ Cmnd_Alias  OSC_CMD = /usr/bin/osc, /usr/bin/build
      OBS shows several Linux distributions. For SUSE distributions,
      it is recommended to activate at least openSUSE Tumbleweed
      and the latest openSUSE Leap release.
-     To enable package builds for SUSE Linux Enterprise, mark one of the <span class="guimenu ">openSUSE Backports for SLE 12</span>.
+     To enable package builds for SUSE Linux Enterprise, mark one of the <span class="guimenu">openSUSE Backports for SLE 12</span>.
     </p>
     <p>
      When you select a distribution, OBS shows a message
@@ -445,7 +438,7 @@ Cmnd_Alias  OSC_CMD = /usr/bin/osc, /usr/bin/build
     </p>
    </li><li class="step ">
     <p>
-     Click the <span class="guimenu ">Overview</span> tab to see the available
+     Click the <span class="guimenu">Overview</span> tab to see the available
      build targets on the right side.
     </p>
    </li></ol></div></div>
@@ -454,8 +447,8 @@ Cmnd_Alias  OSC_CMD = /usr/bin/osc, /usr/bin/build
   </p>
   <p>
    To fine tune your build targets, click the
-   <span class="guimenu ">Repositories</span> tab, find the respective build target,
-   and click the <span class="guimenu ">Edit repository</span> link.
+   <span class="guimenu">Repositories</span> tab, find the respective build target,
+   and click the <span class="guimenu">Edit repository</span> link.
    This shows the available architectures and additional package
    repositories you can add.
   </p>
@@ -466,11 +459,11 @@ Cmnd_Alias  OSC_CMD = /usr/bin/osc, /usr/bin/build
   
   <p>
    This section demonstrates how to create packages from a simple C++ project
-   hosted on GitHub (the <span class="quote">“<span class="quote ">upstream project</span>”</span>). We assume that this
+   hosted on GitHub (the <span class="quote">“<span class="quote">upstream project</span>”</span>). We assume that this
    project contains source code which you want to package for different
    SUSE distributions.
   </p>
-  <div id="id10819" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note: Check the License First</h6>
+  <div id="idm140442865432672" class="admonition note"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note: Check the License First</h6>
    
    <p>
     Before building, go to the homepage of the upstream project and check the
@@ -518,7 +511,7 @@ Cmnd_Alias  OSC_CMD = /usr/bin/osc, /usr/bin/build
    </li><li class="step ">
     <p>
      Get the source code of the upstream project and save it in
-     <code class="filename">home:obsgeeko/example-obs</code>.
+     <code class="filename">home:obsgeeko/my-first-obs-package</code>.
     </p>
     <p>
      Download a TAR archive of the sources.
@@ -526,9 +519,9 @@ Cmnd_Alias  OSC_CMD = /usr/bin/osc, /usr/bin/build
     <p>
      In our example, the project is hosted on GitHub and you can use the
      following URL:
-     <a class="ulink" href="https://github.com/openSUSE/example-obs/releases" target="_blank">https://github.com/openSUSE/example-obs/releases</a>.
-     If there is no published release of a project, click the <span class="guimenu ">Clone or
-     download</span> button and download the latest sources using the <span class="guimenu ">Download ZIP</span> link.
+     <a class="ulink" href="https://github.com/obs-example/my-first-obs-package/releases" target="_blank">https://github.com/obs-example/my-first-obs-package/releases</a>.
+     If there is no published release of a project, click the <span class="guimenu">Clone or
+     download</span> button and download the latest sources using the <span class="guimenu">Download ZIP</span> link.
     </p>
    </li><li class="step ">
     <p>
@@ -539,19 +532,21 @@ Cmnd_Alias  OSC_CMD = /usr/bin/osc, /usr/bin/build
      In this example, we are building an RPM for openSUSE. For RPM-based distributions, we create a <em class="firstterm ">spec file</em>. 
      The skeleton of such a spec file looks like this:
     </p>
+    <div class="example" id="ex.obsbg.uc.basicprj.skeletonspec"><div class="example-title-wrap"><h6 class="example-title"><span class="number">Example 1: </span><span class="name">Skeleton of a Spec File </span><a title="Permalink" class="permalink" href="art.obs.bg.html#ex.obsbg.uc.basicprj.skeletonspec">#</a></h6></div><div class="example-contents">
+     
     <div class="verbatim-wrap"><pre class="screen">#
-# spec file for package example-obs
+# spec file for package my-first-obs-package
 #
 # -- Copyright omitted --
 
-Name:           example-obs <span id="co.obsbg.uc.basicprj.metadata"></span><span class="callout">1</span>
+Name:           my-first-obs-package <span id="co.obsbg.uc.basicprj.metadata"></span><span class="callout">1</span>
 Version:        0.1.0 <a class="xref" href="art.obs.bg.html#co.obsbg.uc.basicprj.metadata"><span class="callout">1</span></a>
 Release:        0 <a class="xref" href="art.obs.bg.html#co.obsbg.uc.basicprj.metadata"><span class="callout">1</span></a>
 License:        GPL-3.0 <a class="xref" href="art.obs.bg.html#co.obsbg.uc.basicprj.metadata"><span class="callout">1</span></a>
 Group:          Documentation <a class="xref" href="art.obs.bg.html#co.obsbg.uc.basicprj.metadata"><span class="callout">1</span></a>
 Summary:        Frobnication Tool <a class="xref" href="art.obs.bg.html#co.obsbg.uc.basicprj.metadata"><span class="callout">1</span></a>
-Url:            https://github.com/openSUSE/example-obs <a class="xref" href="art.obs.bg.html#co.obsbg.uc.basicprj.metadata"><span class="callout">1</span></a>
-Source:         example-obs-%{version}.tar.gz <a class="xref" href="art.obs.bg.html#co.obsbg.uc.basicprj.metadata"><span class="callout">1</span></a>
+Url:            https://github.com/obs-example/my-first-obs-package <a class="xref" href="art.obs.bg.html#co.obsbg.uc.basicprj.metadata"><span class="callout">1</span></a>
+Source:         my-first-obs-package-%{version}.tar.gz <a class="xref" href="art.obs.bg.html#co.obsbg.uc.basicprj.metadata"><span class="callout">1</span></a>
 BuildRequires:  gcc <span id="co.obsbg.uc.basicprj.buildreq"></span><span class="callout">2</span>
 BuildRequires:  cmake <a class="xref" href="art.obs.bg.html#co.obsbg.uc.basicprj.buildreq"><span class="callout">2</span></a>
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
@@ -587,7 +582,8 @@ This tool frobnicates the bar with the foo when choosing the baz.
         The listed packages are downloaded and installed before building
         the package.
       </p>
-      
+      <p>
+      </p>
      </td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#co.obsbg.uc.basicprj.description"><span class="callout">3</span></a> </p></td><td valign="top" align="left">
       <p>
        <span class="formalpara-title">The Description Section. </span>
@@ -611,7 +607,8 @@ This tool frobnicates the bar with the foo when choosing the baz.
         Contains commands or RPM macros for building the package.
        
       </p>
-      
+      <p>
+      </p>
      </td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#co.obsbg.uc.basicprj.install"><span class="callout">6</span></a> </p></td><td valign="top" align="left">
       <p>
        <span class="formalpara-title">The Install Section. </span>
@@ -638,9 +635,10 @@ This tool frobnicates the bar with the foo when choosing the baz.
        history of the package.
       </p>
      </td></tr></table></div>
+    </div></div>
     <p>
      
-     For the complete spec file, see <a class="ulink" href="https://github.com/openSUSE/example-obs" target="_blank">https://github.com/openSUSE/example-obs</a>.
+     For the complete spec file, see <a class="ulink" href="https://github.com/obs-example/my-first-obs-package" target="_blank">https://github.com/obs-example/my-first-obs-package</a>.
     </p>
    </li><li class="step ">
     <p>Create a changelog file:</p>
@@ -657,7 +655,7 @@ Fri Aug 23 12:31:41 UTC 2017 - <code class="systemitem">geeko</code>@example.com
     </p>
     <p>
      Save the file and leave the editor. <code class="command">osc</code> then
-     creates the file <code class="filename">example-obs.changes</code>.
+     creates the file <code class="filename">my-first-obs-package.changes</code>.
     </p>
    </li><li class="step ">
     <p>Add all the files to your working directory:</p>
@@ -754,33 +752,33 @@ Fri Aug 23 12:31:41 UTC 2017 - <code class="systemitem">geeko</code>@example.com
    similar to this:
   </p>
   <div class="verbatim-wrap"><pre class="screen"><span class="emphasis"><em>project directory</em></span>
-├── example-obs-0.1.0.tar.gz
-├── example-obs.changes
-└── example-obs.spec</pre></div>
+├── my-first-obs-package-0.1.0.tar.gz
+├── my-first-obs-package.changes
+└── my-first-obs-package.spec</pre></div>
   <p>In our case, we want to modify the source code under
    <code class="filename">src/main.cpp</code> to change the greeting message.
   </p>
-  <div class="procedure " id="id11000"><div class="procedure-title-wrap"><h6 class="procedure-title"><span class="number">Procedure 3: </span><span class="name">Patching </span><a title="Permalink" class="permalink" href="art.obs.bg.html#id11000">#</a></h6></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step ">
+  <div class="procedure " id="idm140442865341200"><div class="procedure-title-wrap"><h6 class="procedure-title"><span class="number">Procedure 3: </span><span class="name">Patching </span><a title="Permalink" class="permalink" href="art.obs.bg.html#idm140442865341200">#</a></h6></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step ">
     <p>In the terminal, switch to your working directory.</p>
    </li><li class="step ">
     <p>Prepare a patch file:</p>
     <ol type="a" class="substeps ">
      <li class="step ">
       <p>Unpack the source code:</p>
-      <div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">tar</code> xvf example-obs-*.tar.gz</pre></div>
+      <div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">tar</code> xvf my-first-obs-package-*.tar.gz</pre></div>
       <p>
        If you have downloaded the archive from GitHub, the archive contains
        a directory in the form <code class="filename"><em class="replaceable ">NAME</em>-<em class="replaceable ">VERSION</em></code>.
        In our case, unpacking the downloaded archive results in the
-       <code class="filename">example-obs-0.1.0/</code> directory.
+       <code class="filename">my-first-obs-package-0.1.0/</code> directory.
       </p>
      </li>
      <li class="step ">
       <p>
-       Switch to the directory <code class="filename">example-obs-0.1.0/</code>
+       Switch to the directory <code class="filename">my-first-obs-package-0.1.0/</code>
        and make a copy of the original C++ source file:
       </p>
-      <div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">cd</code> example-obs-0.1.0/
+      <div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">cd</code> my-first-obs-package-0.1.0/
 <code class="prompt user">geeko &gt; </code><code class="command">cp</code> src/main.cpp src/main.cpp.orig</pre></div>
      </li>
      <li class="step ">
@@ -790,7 +788,7 @@ Fri Aug 23 12:31:41 UTC 2017 - <code class="systemitem">geeko</code>@example.com
       <p>Create a diff and carefully inspect your changes:</p>
       <div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">diff</code> -u src/main.cpp.orig src/main.cpp</pre></div>
       <p>The output should look like this:</p>
-      <div class="verbatim-wrap highlight diff"><pre class="screen">--- src/main.cpp.orig   2017-08-09 16:28:31.407449707 +0200
+      <div class="verbatim-wrap"><pre class="screen">--- src/main.cpp.orig   2017-08-09 16:28:31.407449707 +0200
 +++ src/main.cpp        2017-08-09 16:28:49.131541230 +0200
 @@ -2,7 +2,7 @@
 
@@ -805,7 +803,7 @@ Fri Aug 23 12:31:41 UTC 2017 - <code class="systemitem">geeko</code>@example.com
      <li class="step ">
       <p>Redirect the diff into a file:</p>
       <div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">diff</code> -u src/main.cpp.orig src/main.cpp \
-  &gt; ../example-obs_main.diff</pre></div>
+  &gt; ../my-first-obs-package_main.diff</pre></div>
       <p>
        You can use an arbitrary name for the patch file. However, we
        recommend giving the file a descriptive name and adding the name of the
@@ -816,15 +814,15 @@ Fri Aug 23 12:31:41 UTC 2017 - <code class="systemitem">geeko</code>@example.com
      </li>
      <li class="step ">
       <p>
-       You can now remove the directory <code class="filename">example-obs-0.1.0/</code>, as it is not needed anymore.
+       You can now remove the directory <code class="filename">my-first-obs-package-0.1.0/</code>, as it is not needed anymore.
       </p>
      </li>
     </ol>
    </li><li class="step ">
     <p>Open your spec file and add the following line in the header under
     the <code class="literal">Source</code> line like this:</p>
-    <div class="verbatim-wrap"><pre class="screen">Source:         example-obs-%{version}.tar.gz
-Patch0:         example-obs_main.diff</pre></div>
+    <div class="verbatim-wrap"><pre class="screen">Source:         my-first-obs-package-%{version}.tar.gz
+Patch0:         my-first-obs-package_main.diff</pre></div>
    </li><li class="step ">
     <p>In the <code class="literal">%prep</code> section, add the <code class="literal">%patch</code>
      macro:</p>
@@ -835,7 +833,7 @@ Patch0:         example-obs_main.diff</pre></div>
     <p>
      Add your patch file to the local repository:
     </p>
-    <div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">osc</code> add example-obs_main.diff</pre></div>
+    <div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">osc</code> add my-first-obs-package_main.diff</pre></div>
    </li><li class="step ">
     <p>Rebuild your package:</p>
     <div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">osc</code> build</pre></div>
@@ -886,7 +884,7 @@ Patch0:         example-obs_main.diff</pre></div>
    </li></ul></div>
   <p>
    We assume that you have checked out the project
-   <code class="uri">home:obsgeeko/example-obs</code>
+   <code class="uri">home:obsgeeko/my-first-obs-package</code>
    on OBS and the user <code class="systemitem">obstux</code>
    wants to change the code to change the welcome message. The code should
    then be submitted to the original project.
@@ -902,14 +900,14 @@ Patch0:         example-obs_main.diff</pre></div>
     </p>
    </li><li class="step ">
     <p>Create a branch from geeko's home project:</p>
-    <div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">osc</code> branchco home:obsgeeko example-obs</pre></div>
-    <p>This creates a branched package in OBS at <code class="uri">home:obstux:branches/example-obs</code>
+    <div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">osc</code> branchco home:obsgeeko my-first-obs-package</pre></div>
+    <p>This creates a branched package in OBS at <code class="uri">home:obstux:branches/my-first-obs-package</code>
      and checks out a directory
-     <code class="filename">home:obstux:branches:home:obsgeeko:example-obs</code>.
+     <code class="filename">home:obstux:branches:home:obsgeeko:my-first-obs-package</code>.
     </p>
    </li><li class="step ">
     <p>Change the working directory to your checked-out branch:</p>
-    <div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cd</code> home:obstux/branches/home/obsgeeko/example-obs</pre></div>
+    <div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">cd</code> home:obstux/branches/home/obsgeeko/my-first-obs-package</pre></div>
    </li><li class="step ">
     <p>Make changes as shown in <a class="xref" href="art.obs.bg.html#sec.obsbg.uc.patching" title="8. Patching Source Code">Section 8, “Patching Source Code”</a>.
     </p>
@@ -950,7 +948,7 @@ Patch0:         example-obs_main.diff</pre></div>
      be submitted together. To avoid that, specify the names of the source and
      destination projects and the package name:
     </p>
-    <div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">osc</code> submitreq home:obstux:branches:home:obsgeeko example-obs home:obsgeeko</pre></div>
+    <div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">osc</code> submitreq home:obstux:branches:home:obsgeeko my-first-obs-package home:obsgeeko</pre></div>
    </li></ol></div></div>
   <p>
    User <code class="systemitem">obstux</code> has
@@ -1045,7 +1043,7 @@ Patch0:         example-obs_main.diff</pre></div>
    <code class="uri">https://download.opensuse.org/repositories/home:/obsgeeko/openSUSE_Tumbleweed</code>. This <span class="emphasis"><em>download
    repository</em></span> is used as an installation source for Zypper or YaST.
   </p>
-  <p>To install the <span class="package ">example-obs</span> package from your home project,
+  <p>To install the <span class="package">my-first-obs-package</span> package from your home project,
   use the following steps:</p>
   <div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step " id="st.obsbg.uc.install-from-obs.repourls">
     <p>Inside your working directory, determine the download repository
@@ -1064,7 +1062,7 @@ https://download.opensuse.org/repositories/home:/obsgeeko/openSUSE_42.2/home:obs
      When prompted, accept the GPG key of the download repository.</p>
    </li><li class="step " id="st.obsbg.install">
     <p>Install the package:</p>
-    <div class="verbatim-wrap"><pre class="screen"><code class="prompt root">root # </code><code class="command">zypper</code> install example-obs</pre></div>
+    <div class="verbatim-wrap"><pre class="screen"><code class="prompt root">root # </code><code class="command">zypper</code> install my-first-obs-package</pre></div>
    </li></ol></div></div>
   <p>
    To update the package again, run <a class="xref" href="art.obs.bg.html#st.obsbg.install" title="Step 4">Step 4</a>.
@@ -1082,14 +1080,14 @@ https://download.opensuse.org/repositories/home:/obsgeeko/openSUSE_42.2/home:obs
    overview of their syntax, use
    <code class="command">osc <em class="replaceable ">SUBCOMMAND</em> --help</code>.
   </p>
-  <div class="variablelist "><dl class="variablelist"><dt id="id11237"><span class="term "><code class="command">osc diff</code></span></dt><dd>
+  <div class="variablelist "><dl class="variablelist"><dt id="idm140442865229984"><span class="term "><code class="command">osc diff</code></span></dt><dd>
      <p>Generates a diff, comparing local changes against the remote
       OBS project.</p>
-    </dd><dt id="id11242"><span class="term "><code class="command">osc list</code></span></dt><dd>
+    </dd><dt id="idm140442865227904"><span class="term "><code class="command">osc list</code></span></dt><dd>
      <p>Shows source or binaries on an OBS server.</p>
-    </dd><dt id="id11247"><span class="term "><code class="command">osc prjresults</code></span></dt><dd>
+    </dd><dt id="idm140442865225920"><span class="term "><code class="command">osc prjresults</code></span></dt><dd>
      <p>Shows project-wide build results.</p>
-    </dd><dt id="id11252"><span class="term "><code class="command">osc status</code></span></dt><dd>
+    </dd><dt id="idm140442865224032"><span class="term "><code class="command">osc status</code></span></dt><dd>
      <p>Shows the status of files in your working directory</p>
     </dd></dl></div>
  </div>
