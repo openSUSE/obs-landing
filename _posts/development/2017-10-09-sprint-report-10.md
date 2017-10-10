@@ -63,7 +63,7 @@ There are many other options you can configure. All this is documented in our <a
 
 <h3>Introduced bcrypt as password hash</h3>
 <p>
-We're now using <a="https://en.wikipedia.org/wiki/Bcrypt">bcrypt</a> for hashing user passwords.
+We're now using <a href="https://en.wikipedia.org/wiki/Bcrypt">bcrypt</a> for hashing user passwords.
 Luckily, Ruby on Rails already comes with a <a href="http://api.rubyonrails.org/v5.1/classes/ActiveModel/SecurePassword/ClassMethods.html">has_secure_password</a> function.
 This is great as it was possible to get rid of some legacy code.
 Furthermore, for security important functions it is always better to rely on the framework functionality instead of self implemented code.
