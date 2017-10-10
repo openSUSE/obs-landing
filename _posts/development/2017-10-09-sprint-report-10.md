@@ -16,13 +16,13 @@ When you will importing your kiwi file to the Kiwi Editor, this will replace any
 Take a look into PR<a href="https://github.com/openSUSE/open-build-service/pull/3826">#3826</a>.
 </p>
 
-<p>We also made some changes in the view. Before, only a package group with a specific type and pattern type was shown, now we show the first package group with type 'image'.</p>
+<p>We also made some changes in the view. Before, only a package group with a specific type and pattern type was shown. Now we show the first package group with type 'image'.</p>
 
 <p>In the Kiwi Editor, we also implemented a new feature that autocompletes the name of the packages getting the information the repositories setup in the image.
 Take a look into PR<a href="https://github.com/openSUSE/open-build-service/pull/3884">#3884</a>.
 </p>
 
-<p> The Kiwi Editor documentation was updated with all the new features until now and how to use it. <a href="http://openbuildservice.org/help/manuals/obs-best-practices/cha.obs.best-practices.webuiusage.html#kiwi_editor_how_to">See the documentation</a>.</p>
+<p>The Kiwi Editor documentation was updated with all the new features until now and how to use it. <a href="http://openbuildservice.org/help/manuals/obs-best-practices/cha.obs.best-practices.webuiusage.html#kiwi_editor_how_to">See the documentation</a>.</p>
 
 <h3>RabbitMQ</h3>
 
@@ -92,7 +92,7 @@ To improve this workflow a little bit we now show also the comments of the super
  </p>
 
 <p>We fixed a little bug in the Kiwi Editor, now we preserve the data in the form when something unexpected happens. This was because we redirecting instead of rendering the view, 
-but after fixed it we found another bug and this time was because we were filtering the package groups, so when something was wrong we rendered the form but with the old packages.
+but after fixing it we found another bug. This time was because we were filtering the package groups, so when something was wrong we rendered the form but with the old packages.
 See how it was solved in the PR's <a href='https://github.com/openSUSE/open-build-service/pull/3888'>#3888</a> and <a href='https://github.com/openSUSE/open-build-service/pull/3953'>#3953</a> 
 </p>
 
