@@ -46,61 +46,41 @@
   </noscript>
   <!-- End Piwik Tracking Code -->
 
-  <!-- Included JS Files (Compressed) -->
+  <script src="/javascripts/jquery-3.2.1.min.js"></script>
   <script src="/javascripts/semantic.min.js"></script>
-
-  <!-- Initialize JS Plugins -->
   <script src="/javascripts/app.js"></script>
 </head>
 
 <body>
-  <div class="container">
-    <div class="show-for-small">
-      <ul class="nav-bar" id="mobile-nav">
-        <li class="has-flyout">
-          <a href="#">Menu</a>
-          <a href="#" class="flyout-toggle"><span> </span></a>
-          <ul class="flyout">
-            <li><a href="/about" title="What the heck is this OBS?">About</a></li>
-            <li><a href="/download" title="Get all the OBS components">Download</a></li>
-            <li><a href="/help" title="Read up upon the OBS">Documentation</a></li>
-            <li><a href="/support" title="Talk to human beings about your OBS problems">Support</a></li>
-            <li><a href="/team" title="The People behind OBS">Team</a></li>
-            <li><a href="/blog" title="News about OBS">Blog</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-
-    <div class="row">
-      <div class="four columns header">
-        <a href="/" alt="Home" title="Home"><img src="/images/obs-logo.png" class="displayed"></a>
+  <div></div>
+  <div class="ui borderless main menu">
+    <div class="ui center container">
+      <div href="#" class="item">
+        <a href="/" alt="Home" title="Home"><img class="logo" src="/images/obs-logo.png" width="50%"></a>
       </div>
-      <div class="eight columns hide-for-small">
-        <ul class="nav-bar">
-          <li><a href="/about" title="What the heck is this OBS?">About</a></li>
-          <li><a href="/download" title="Get all the OBS components">Download</a></li>
-          <li class="has-flyout">
-            <a href="#">Documentation</a>
-            <a href="#" class="flyout-toggle"><span> </span></a>
-            <ul class="flyout">
-              <li><a href="/help/manuals" title="Read up upon the OBS">Manuals</a></li>
-              <li><a href="/help/materials" title="Screencasts, Talks, Workshops">Materials</a></li>
-            </ul>
-          </li>
-          <li><a href="/support" title="Talk to human beings about your OBS problems">Support</a></li>
-          <li><a href="/team" title="The People behind OBS">Team</a></li>
-          <li><a href="/blog" title="News about OBS">Blog</a></li>
-        </ul>
+      <a href="/about" title="What the heck is this OBS?" class="item right floated">About</a>
+      <a href="/download" title="Get all the OBS components" class="item">Download</a>
+      <div class="ui dropdown item">
+        Documentation
+        <i class="dropdown icon"></i>
+        <div class="menu">
+          <a href="/help/manuals" title="Read up upon the OBS" class="item">Manuals</a>
+          <a href="/help/materials" title="Screencasts, Talks, Workshops" class="item">Materials</a>
+        </div>
       </div>
+      <a href="/support" title="Talk to human beings about your OBS problems" class="item">Support</a>
+      <a href="/team" title="The People behind OBS" class="item">Team</a>
+      <a href="/blog" title="News about OBS" class="item">Blog</a>
     </div>
+  </div>
 
+  <div class="ui center container">
     {{ content }}
+  </div>
 
-    <div class="row" id="footer">
-      <div class="twelve columns">
-        <strong>The <a href="http://www.open-build-service.org/" title="Open Build Service - Home">Open Build Service</a></strong> is an <strong><a href="http://www.opensuse.org/" title="openSUSE.org">openSUSE project</a></strong>.
-      </div>
+  <div class="ui inverted vertical footer segment">
+    <div class="ui center aligned container">
+      <strong>The <a href="http://www.open-build-service.org/" title="Open Build Service - Home">Open Build Service</a></strong> is an <strong><a href="http://www.opensuse.org/" title="openSUSE.org">openSUSE project</a></strong>.
     </div>
   </div>
 </body>
