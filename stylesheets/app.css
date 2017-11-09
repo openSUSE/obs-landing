@@ -1,29 +1,112 @@
-/* Artfully masterminded by ZURB  */
+html, body {
+  color: #666;
+  background: #F2F3F4 url('/images/bg-paper.png') repeat fixed 0 0;
+}
 
-/* -------------------------------------------------- 
-   Table of Contents
------------------------------------------------------
-:: Shared Styles
-:: Page Name 1
-:: Page Name 2
-*/
+#mobile-nav {
+  margin: 0px;
+}
 
+#hero-slider {
+  border: 5px solid white;
+  box-shadow: 0 1px 2px #999;
+  -moz-box-shadow: 0 1px 2px #999;
+  -webkit-box-shadow: 0 1px 2px #999;
+}
 
-/* -----------------------------------------
-   Shared Styles
------------------------------------------ */
+#hero-slider p {
+  text-align: justify;
+}
 
+#hero-text {
+  text-align: justify;
+}
+#hero-text h3 {
+  text-align: center;
+}
+#hero-buttons a {
+  width: 100%;
+  margin: 0 auto;
+}
 
+#featured {
+  height: 350px;
+}
+#featured img { display: none; }
+#featured.orbit { background: none; }
+#featured.orbit img { display: block; }
 
-/* -----------------------------------------
-   Page Name 1
------------------------------------------ */
+.post-headline {
+  margin-bottom: 0.1em;
+}
 
+.post-meta { 
+  margin-top: 0.1em;
+  margin-bottom: 1em;
+  color: #999;
+  font-size: 0.8em;
+}
 
+.post-nav {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  text-align: center;
+}
 
+.post-more {
+  text-align: right;
+}
 
-/* -----------------------------------------
-   Page Name 2
------------------------------------------ */
+IMG.displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; }
 
+.row {
+  margin-top: 2em;
+}
 
+.presentation {
+background: rgba(0, 0, 0, 0.05);
+-webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 0,rgba(255, 255, 255, 0.8) 0 1px 0;
+-moz-box-shadow: rgba(0,0,0,0.2) 0 -1px 0,rgba(255,255,255,0.8) 0 1px 0;
+box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 0,rgba(255, 255, 255, 0.8) 0 1px 0;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+-ms-border-radius: 5px;
+-o-border-radius: 5px;
+border-radius: 5px;
+width: 350px;
+height: 322px;
+margin:0 auto;
+}
+
+.presentation-meta {
+text-align: justify;
+padding:10px;
+margin:0 auto;
+}
+
+.screencast {
+background: rgba(0, 0, 0, 0.05);
+-webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 0,rgba(255, 255, 255, 0.8) 0 1px 0;
+-moz-box-shadow: rgba(0,0,0,0.2) 0 -1px 0,rgba(255,255,255,0.8) 0 1px 0;
+box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 0,rgba(255, 255, 255, 0.8) 0 1px 0;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+-ms-border-radius: 5px;
+-o-border-radius: 5px;
+border-radius: 5px;
+margin:0 auto;
+}
+
+#footer { 
+  text-align: center;
+  color: #999;
+}
+
+/* Override for weird bullet positioning rule in Foundation stylesheet */
+ul, ol {
+  list-style-position: outside;
+  margin-left: 20px;
+}

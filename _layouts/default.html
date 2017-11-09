@@ -4,129 +4,105 @@
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
 <head>
   <meta charset="utf-8" />
 
   <!-- Set the viewport width to device width for mobile -->
-  <meta name="viewport" content="width=device-width" />
-
-  {% if page.title %}
-    <title>{{ page.title }} - {{ site.title }}</title>
+  <meta name="viewport" content="width=device-width" /> {% if page.title %}
+  <title>{{ page.title }} - {{ site.title }}</title>
   {% else %}
-    <title>{{ site.title }}</title>
+  <title>{{ site.title }}</title>
   {% endif %}
 
   <!-- Included CSS Files -->
-  <link rel="stylesheet" href="/stylesheets/foundation.min.css">
+  <link rel="stylesheet" href="/stylesheets/semantic.min.css">
   <link rel="stylesheet" href="/stylesheets/app.css">
-  <link rel="stylesheet" href="/stylesheets/obs.css">
 
   <link rel="alternate" type="application/rss+xml" href="http://openbuildservice.org/feed.rss" title="Open Build Service Blog" />
-
-  <script src="/javascripts/modernizr.foundation.js"></script>
 
   <!-- IE Fix for HTML5 Tags -->
   <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 
-  <!-- Piwik --> 
+  <!-- Piwik -->
   <script type="text/javascript">
     var pkBaseURL = (("https:" == document.location.protocol) ? "https://beans.opensuse.org/piwik/" : "http://beans.opensuse.org/piwik/");
     document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
   </script>
   <script type="text/javascript">
     try {
-    var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 20);
-    piwikTracker.trackPageView();
-    piwikTracker.enableLinkTracking();
-    } catch( err ) {}
+      var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 20);
+      piwikTracker.trackPageView();
+      piwikTracker.enableLinkTracking();
+    } catch (err) {}
   </script>
   <noscript>
     <p><img src="http://beans.opensuse.org/piwik/piwik.php?idsite=20" style="border:0" alt="" /></p>
   </noscript>
   <!-- End Piwik Tracking Code -->
 
+  <!-- Included JS Files (Compressed) -->
+  <script src="/javascripts/semantic.min.js"></script>
+
+  <!-- Initialize JS Plugins -->
+  <script src="/javascripts/app.js"></script>
 </head>
+
 <body>
-<div class="container">
-  <div class="show-for-small">
-    <ul class="nav-bar" id="mobile-nav">
-      <li class="has-flyout">
-        <a href="#">Menu</a>
-        <a href="#" class="flyout-toggle"><span> </span></a>
-        <ul class="flyout">
+  <div class="container">
+    <div class="show-for-small">
+      <ul class="nav-bar" id="mobile-nav">
+        <li class="has-flyout">
+          <a href="#">Menu</a>
+          <a href="#" class="flyout-toggle"><span> </span></a>
+          <ul class="flyout">
+            <li><a href="/about" title="What the heck is this OBS?">About</a></li>
+            <li><a href="/download" title="Get all the OBS components">Download</a></li>
+            <li><a href="/help" title="Read up upon the OBS">Documentation</a></li>
+            <li><a href="/support" title="Talk to human beings about your OBS problems">Support</a></li>
+            <li><a href="/team" title="The People behind OBS">Team</a></li>
+            <li><a href="/blog" title="News about OBS">Blog</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="row">
+      <div class="four columns header">
+        <a href="/" alt="Home" title="Home"><img src="/images/obs-logo.png" class="displayed"></a>
+      </div>
+      <div class="eight columns hide-for-small">
+        <ul class="nav-bar">
           <li><a href="/about" title="What the heck is this OBS?">About</a></li>
           <li><a href="/download" title="Get all the OBS components">Download</a></li>
-          <li><a href="/help" title="Read up upon the OBS">Documentation</a></li>
-          <li><a href="/support" title="Talk to human beings about your OBS problems">Support</a></li>
-          <li><a href="/team" title="The People behind OBS">Team</a></li>
-          <li><a href="/blog" title="News about OBS">Blog</a></li>
-        </ul>
-      </li>
-    </ul> 
-  </div>
-
-  <div class="row">
-    <div class="four columns header">
-      <a href="/" alt="Home" title="Home"><img src="/images/obs-logo.png" class="displayed"></a>
-    </div>  
-    <div class="eight columns hide-for-small">
-      <ul class="nav-bar">
-        <li><a href="/about" title="What the heck is this OBS?">About</a></li>
-        <li><a href="/download" title="Get all the OBS components">Download</a></li>
-        <li class="has-flyout">
-          <a href="#">Documentation</a>
-          <a href="#" class="flyout-toggle"><span> </span></a>
+          <li class="has-flyout">
+            <a href="#">Documentation</a>
+            <a href="#" class="flyout-toggle"><span> </span></a>
             <ul class="flyout">
               <li><a href="/help/manuals" title="Read up upon the OBS">Manuals</a></li>
               <li><a href="/help/materials" title="Screencasts, Talks, Workshops">Materials</a></li>
             </ul>
-        </li>
-        <li><a href="/support" title="Talk to human beings about your OBS problems">Support</a></li>
-        <li><a href="/team" title="The People behind OBS">Team</a></li>
-        <li><a href="/blog" title="News about OBS">Blog</a></li>
-      </ul> 
+          </li>
+          <li><a href="/support" title="Talk to human beings about your OBS problems">Support</a></li>
+          <li><a href="/team" title="The People behind OBS">Team</a></li>
+          <li><a href="/blog" title="News about OBS">Blog</a></li>
+        </ul>
+      </div>
     </div>
-  </div>
 
     {{ content }}
 
-  <div class="row" id="footer">  
-    <div class="twelve columns">  
-      <strong>The <a href="http://www.open-build-service.org/" title="Open Build Service - Home">Open Build Service</a></strong> is an <strong><a href="http://www.opensuse.org/" title="openSUSE.org">openSUSE project</a></strong>. 
+    <div class="row" id="footer">
+      <div class="twelve columns">
+        <strong>The <a href="http://www.open-build-service.org/" title="Open Build Service - Home">Open Build Service</a></strong> is an <strong><a href="http://www.opensuse.org/" title="openSUSE.org">openSUSE project</a></strong>.
+      </div>
     </div>
   </div>
-</div>
-
-<!-- Included JS Files (Compressed) -->
-<script src="/javascripts/foundation.min.js"></script>
-
-<!-- Initialize JS Plugins -->
-<script src="/javascripts/app.js"></script>
-
-<script type="text/javascript">
- $(window).load(function() {
-     $('#featured').orbit({
-     directionalNav: false,
-     captions: true,
-     });
- });
-</script>
-  
-<script type="text/javascript">
-$(document).ready(function() {
-  $('#Video1ModalButton').click(function() {
-    $('#Video1Modal').reveal();
-  });
-  $('#Video2ModalButton').click(function() {
-    $('#Video2Modal').reveal();
-  });
-  $('#Video3ModalButton').click(function() {
-    $('#Video3Modal').reveal();
-  });
-});
-</script>
 </body>
+
 </html>
