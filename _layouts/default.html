@@ -52,36 +52,68 @@
 </head>
 
 <body>
-  <div></div>
-  <div class="ui borderless main menu">
-    <div class="ui center container">
-      <div href="#" class="item">
-        <a href="/" alt="Home" title="Home"><img class="logo" src="/images/obs-logo.png" width="50%"></a>
-      </div>
-      <a href="/about" title="What the heck is this OBS?" class="item right floated">About</a>
-      <a href="/download" title="Get all the OBS components" class="item">Download</a>
-      <div class="ui dropdown item">
-        Documentation
-        <i class="dropdown icon"></i>
-        <div class="menu">
-          <a href="/help/manuals" title="Read up upon the OBS" class="item">Manuals</a>
-          <a href="/help/materials" title="Screencasts, Talks, Workshops" class="item">Materials</a>
+  <!-- Following Menu -->
+  <div class="ui inverted large top fixed hidden menu">
+    <div class="ui container">
+      <a class="active item">Home</a>
+      <a class="item">Work</a>
+      <a class="item">Company</a>
+      <a class="item">Careers</a>
+      <div class="right menu">
+        <div class="item">
+          <a class="ui button">Log in</a>
+        </div>
+        <div class="item">
+          <a class="ui primary button">Sign Up</a>
         </div>
       </div>
-      <a href="/support" title="Talk to human beings about your OBS problems" class="item">Support</a>
-      <a href="/team" title="The People behind OBS" class="item">Team</a>
-      <a href="/blog" title="News about OBS" class="item">Blog</a>
     </div>
   </div>
 
-  <div class="ui center container">
-    {{ content }}
+  <!-- Sidebar Menu -->
+  <div class="ui vertical inverted sidebar menu">
+    <a class="active item">Home</a>
+    <a class="item">Work</a>
+    <a class="item">Company</a>
+    <a class="item">Careers</a>
+    <a class="item">Login</a>
+    <a class="item">Signup</a>
+  </div>
+
+  <!-- Page Contents -->
+
+  <div class="pusher">
+  {{ content }}
   </div>
 
   <div class="ui inverted vertical footer segment">
-    <div class="ui center aligned container">
-      <strong>The <a href="http://www.open-build-service.org/" title="Open Build Service - Home">Open Build Service</a></strong> is an <strong><a href="http://www.opensuse.org/" title="openSUSE.org">openSUSE project</a></strong>.
+    <div class="ui container">
+      <div class="ui stackable inverted divided equal height stackable grid">
+        <div class="three wide column">
+          <h4 class="ui inverted header">About</h4>
+          <div class="ui inverted link list">
+            <a href="#" class="item">Sitemap</a>
+            <a href="#" class="item">Contact Us</a>
+            <a href="#" class="item">Religious Ceremonies</a>
+            <a href="#" class="item">Gazebo Plans</a>
+          </div>
+        </div>
+        <div class="three wide column">
+          <h4 class="ui inverted header">Services</h4>
+          <div class="ui inverted link list">
+            <a href="#" class="item">Banana Pre-Order</a>
+            <a href="#" class="item">DNA FAQ</a>
+            <a href="#" class="item">How To Access</a>
+            <a href="#" class="item">Favorite X-Men</a>
+          </div>
+        </div>
+        <div class="seven wide column">
+          <h4 class="ui inverted header">Footer Header</h4>
+          <p><strong>The <a href="http://www.open-build-service.org/" title="Open Build Service - Home">Open Build Service</a></strong> is an <strong><a href="http://www.opensuse.org/" title="openSUSE.org">openSUSE project</a></strong>.</p>
+        </div>
+      </div>
     </div>
+  </div>
   </div>
 </body>
 
