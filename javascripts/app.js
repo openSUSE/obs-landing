@@ -23,8 +23,13 @@ $(document)
     });
 
     $("#Glide").glide({
-        type: "slider",
-        autoplay: 10000,
-        animationDuration: 1500
+      type: "slider",
+      autoplay: 10000,
+      animationDuration: 1500
+    });
+
+    $(".video_play").click(function () {
+      var video = $(this).data('video');
+      $('#' + video).modal('show');
     });
   });
