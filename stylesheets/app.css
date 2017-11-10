@@ -84,6 +84,9 @@
   .secondary.pointing.menu .item, .secondary.pointing.menu .menu {
     display: none;
   }
+  #MainMenu .non_mobile {
+    display: none;
+  }
   .secondary.pointing.menu .toc.item {
     display: block;
   }

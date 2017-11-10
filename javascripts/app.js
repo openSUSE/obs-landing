@@ -13,6 +13,8 @@ $(document)
     });
 
     $('#MainMenu a[href="' + window.location.pathname + '"]').addClass('active');
+    $('#FollowingMenu a[href="' + window.location.pathname + '"]').addClass('active');
+    $('#SideMenu a[href="' + window.location.pathname + '"]').addClass('active');
 
     // create sidebar and attach to menu open
     $('.ui.sidebar')
