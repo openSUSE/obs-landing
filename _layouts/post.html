@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: secondary
 ---
 
 <div class="row">
@@ -12,15 +12,15 @@ layout: default
     by the OBS Team
     {% endif %}
     on {{ page.date | date: "%B %d. %Y" }}
-    {% if page.category %} in the category <a href="/categories/{{ page.category | slugize }}">{{ page.category }}</a> {% endif %}  
+    {% if page.category %} in the category <a href="/categories/{{ page.category | slugize }}">{{ page.category }}</a> {% endif %}
     </div>
   {{ content }}
   </div>
-  
+
   <div class="twelve columns">
     <div id="disqus_thread">
     </div>
-  </div> 
+  </div>
   <script type="text/javascript">
       /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
       var disqus_shortname = 'obshq'; // required: replace example with your forum shortname
@@ -32,7 +32,7 @@ layout: default
       })();
   </script>
   <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  
+
    <div class="four columns post-nav">
     {% if page.previous.url %}
       &laquo;&nbsp;<a href="{{ page.previous.url }}" rel="previous" title="Previous Post: {{ page.previous.title }}">{{ page.previous.title }}</a>
@@ -41,7 +41,7 @@ layout: default
   <div class="four columns post-nav">
     <p>|</p>
   </div>
-  <div class="four columns post-nav"> 
+  <div class="four columns post-nav">
     {% if page.next.url %}
       <a href="{{ page.next.url }}" rel="next" title="Next Post: {{ page.next.title }}">{{ page.next.title }}</a>&nbsp;&raquo;
     {% endif %}
