@@ -1,7 +1,11 @@
 ---
 layout: default
 ---
-<div class="ui masthead inverted vertical center aligned segment">
+<link rel="stylesheet" href="/stylesheets/glide.core.min.css">
+<link rel="stylesheet" href="/stylesheets/glide.theme.min.css">
+<script src="/javascripts/glide.min.js"></script>
+
+<div id="Masthead" class="ui masthead inverted vertical center aligned segment">
 
   <div class="ui container">
     <div class="ui large secondary inverted pointing menu clean">
@@ -26,12 +30,50 @@ layout: default
     </div>
   </div>
 
-  <div class="ui text container">
-    <h1 class="ui inverted header">
-      Open Build Service
-    </h1>
-    <h2>Do whatever you want when you want to.</h2>
-    <div class="ui huge teal button">Get Started <i class="right arrow icon"></i></div>
+
+  <div id="Glide" class="glide">
+    <div class="glide__wrapper">
+        <ul class="glide__track">
+          <li class="glide__slide">
+            <div class="ui text container">
+              <h1 class="ui inverted header">
+                Open Build Service
+              </h1>
+              <h2>Create and Distribute Software Packages for all the Major Linux Distributions with all the Tools to Work Together!</h2>
+              <div class="ui huge inverted white button">Get Started <i class="right arrow icon"></i></div>
+            </div>
+          </li>
+          <li class="glide__slide">
+            <div class="ui text container">
+              <h1 class="ui inverted header">
+                Comprehensive
+              </h1>
+              <h3>A generic system to build and distribute packages from sources in an automatic, consistent and reproducible way. Release your software for a wide range of operating systems and hardware architectures.</h3>
+              <div class="ui huge inverted white button">How to use it <i class="right video play icon"></i></div>
+            </div>
+          </li>
+          <li class="glide__slide">
+            <div class="ui text container">
+              <h1 class="ui inverted header">
+                Collaborative
+              </h1>
+              <h3>Provides all the tools to work collaboratively and harness the power of the open source development model. Set fine grained access rights, branch code, send merge requests and review submissions.</h3>
+              <div class="ui huge inverted white button">How to collaborate <i class="right video play icon"></i></div>
+            </div>
+          </li>
+          <li class="glide__slide">
+            <div class="ui text container">
+              <h1 class="ui inverted header">
+                Open Source
+              </h1>
+              <h3>Free software licensed under the GNU General Public License (GPL). It’s available for you as source, packages and as easily deployable appliance. You are free to use, fix, extend and re-use the code.</h3>
+              <div class="ui huge inverted white button">How to contribute <i class="right video play icon"></i></div>
+            </div>
+          </li>
+      </ul>
+    </div>
+
+    <div class="glide__bullets"></div>
   </div>
 
 </div>
@@ -109,27 +151,6 @@ layout: default
     <div class="twelve columns">
       <p>
         Create and Distribute Software Packages. For all the Major Linux Distributions. With all the Tools to Work Together!
-      </p>
-    </div>
-  </div>
-
-  <div class="row" id="hero-text">
-    <div class="four columns">
-      <h3>Comprehensive</h3>
-      <p>
-        A generic system to build and distribute packages from sources in an automatic, consistent and reproducible way. Release your software for a wide range of operating systems and hardware architectures.
-      </p>
-    </div>
-    <div class="four columns">
-      <h3>Collaborative</h3>
-      <p>
-        Provides all the tools to work collaboratively and harness the power of the open source development model. Set fine grained access rights, branch code, send merge requests and review submissions.
-      </p>
-    </div>
-    <div class="four columns">
-      <h3>Open Source</h3>
-      <p>
-        Free software licensed under the GNU General Public License (GPL). It’s available for you as source, packages and as easily deployable appliance. You are free to use, fix, extend and re-use the code.
       </p>
     </div>
   </div>

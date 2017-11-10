@@ -21,4 +21,10 @@ $(document)
     $('.masthead  .ui.dropdown').dropdown({
       on: 'hover'
     });
+
+    $("#Glide").glide({
+        type: "slider",
+        autoplay: 10000,
+        animationDuration: 1500
+    });
   });
