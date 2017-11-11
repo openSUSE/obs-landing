@@ -38,4 +38,11 @@ $(document)
       var video = $(this).data('video');
       $('#' + video).modal('show');
     });
+
+    // lazy load images
+    $('.image').visibility({
+      type: 'image',
+      transition: 'fade in',
+      duration: 500
+    });
   });
