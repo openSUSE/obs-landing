@@ -10,7 +10,7 @@ layout: default
   {% include main_menu.html %}
 
 
-  <div id="Glide" class="glide fadein">
+  <div id="Glide" class="glide">
     <div class="glide__wrapper">
         <ul class="glide__track">
           <li class="glide__slide">
@@ -84,7 +84,7 @@ layout: default
         <p>&nbsp;</p>
       </div>
       <div class="ten wide column">
-        <h3 class="ui header">For Users</h3>
+        <h3 class="ui header"><i class="users icon"></i>For Users</h3>
         <p>
           Your users can always download the latest version of your software as binary packages for their operating system.
           They use the package management tools they are familiar with and will get your software just like they get software from their OS supplier.
@@ -100,7 +100,7 @@ layout: default
         <img src="images/square-image.png" class="ui large bordered rounded image">
       </div>
       <div class="ten wide column">
-        <h3 class="ui header">For Packagers</h3>
+        <h3 class="ui header"><i class="cubes icon"></i>For Packagers</h3>
         <p>
           Your users can always download the latest version of your software as binary packages for their operating system.
           They use the package management tools they are familiar with and will get your software just like they get software from their OS supplier.
@@ -110,7 +110,7 @@ layout: default
         </p>
       </div>
       <div class="ten wide column">
-        <h3 class="ui header">For Free Software Projects and Independent Software Vendors</h3>
+        <h3 class="ui header"><i class="fork icon"></i>For Free Software Projects and Independent Software Vendors</h3>
         <p>
           The OBS, through it's project model, has collaboration build in and will help you to harness the power of the open source development model.
           Your developers get a one-stop-shop experience for all their software packaging and releasing needs.
@@ -124,39 +124,33 @@ layout: default
     </div>
     <div class="row">
       <div class="center aligned column">
-        <a href="/download/" class="ui huge button">Run your own!</a>
+        <a href="/download/" class="ui huge teal button">Run your own! <i class="right inverted download icon"></i></a>
       </div>
     </div>
   </div>
 </div>
 
-<div class="ui vertical stripe quote segment">
-  <div class="ui equal width stackable internally celled grid">
-    <div class="center aligned row">
-      <div class="column">
-        <h3>"What a Company"</h3>
-        <p>That is what they all say about us</p>
-      </div>
-      <div class="column">
-        <h3>"I shouldn't have gone with their competitor."</h3>
+<div id="CustomersSection" class="ui vertical stripe segment pink_gradient">
+  <div class="ui middle aligned stackable grid container">
+    <div class="row">
+      <div class="nine wide column">
+        <h3 class="ui inverted header"><i class="rocket icon"></i>Who is using it?</h3>
         <p>
-          <img src="images/square-image.jpg" class="ui avatar image"> <b>Nan</b> Chief Fun Officer Acme Toys
+          Our reference server for openSUSE, at <a href="https://build.opensuse.org/" target="_blank">build.opensuse.org</a>,
+          currently has almost 30.000 users that are building over 140.000 packages for 21 base distributions on 6 architectures.
+          Besides the openSUSE project, a large number of other Free and Open Source projects like Tizen,
+          VideoLAN, companies like Dell, Cray or Intel, but also universities are running their own instances of the OBS.
         </p>
       </div>
+      <div class="six wide right floated column">
+        <div class="ui grid container">
+          <div class="six wide column"><a href="https://www.tizen.org" target="_blank" title="Tizen" alt="Tizen"><img src="images/tizen_logo.png" class="ui small image"></a></div>
+          <div class="six wide right floated column"><a href="https://www.cray.com" target="_blank" title="Cray Inc" alt="Cray Inc"><img src="images/cray_logo.svg" class="ui small image"></a></div>
+          <div class="six wide column"><a href="https://www.dell.com" target="_blank" title="Dell" alt="Dell"><img src="images/dell_logo.svg" class="ui white small image"></a></div>
+          <div class="six wide right floated column"><a href="https://www.intel.com" target="_blank" title="Intel" alt="Intel"><img src="images/intel_logo.svg" class="ui small image"></a></div>
+          <div class="six wide centered column"><a href="https://www.videolan.org" target="_blank" title="VideoLAN" alt="VideoLAN"><img src="images/vlc_logo.png" class="ui small image"></a></div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-
-<div class="ui vertical stripe segment">
-  <div class="ui text container">
-    <h3 class="ui header">Breaking The Grid, Grabs Your Attention</h3>
-    <p>Instead of focusing on content creation and hard work, we have learned how to master the art of doing nothing by providing massive amounts of whitespace and generic content that can seem massive, monolithic and worth your attention.</p>
-    <a class="ui large button">Read More</a>
-    <h4 class="ui horizontal header divider">
-      <a href="#">Case Studies</a>
-    </h4>
-    <h3 class="ui header">Did We Tell You About Our Basquare-imageas?</h3>
-    <p>Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but its really true. It took years of gene splicing and combinatory DNA research, but our basquare-imageas can really dance.</p>
-    <a class="ui large button">I'm Still Quite Interested</a>
   </div>
 </div>

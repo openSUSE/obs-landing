@@ -32,6 +32,10 @@ $(document)
         autoplay: 10000,
         animationDuration: 1500
       });
+      carousel.transition({
+        animation: 'fade in',
+        duration: 2000
+      });
     }
 
     $(".video_play").click(function () {
