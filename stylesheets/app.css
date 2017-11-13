@@ -270,4 +270,11 @@
   border-color: #620A80;
 }
 
+.ui .post-content {
+  padding: 30px;
+}
+.ui.post-item img {
+  max-width: 100%;
+}
+
 .clearfix { clear: both; }
