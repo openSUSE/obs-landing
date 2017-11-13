@@ -184,3 +184,90 @@
   font-family: monospace,monospace;
   font-size: 1em !important;
 }
+
+.post-title { color: black; }
+.post-title:hover { color: #4183c4; }
+
+.ui.segment p.post-description {
+  margin-top: 1em;
+  font-size: 1.1em;
+}
+
+.ui.ribbon.development {
+  background-color: #4183c4;
+  color: #fff;
+  border-color: #1f5f9e;
+}
+.ui.ribbon.development:hover {
+  background-color: #1f5f9e;
+  color: #fff;
+  border-color: #1f5f9e;
+}
+
+.ui.ribbon.deployments {
+  background-color: #DB2828;
+  color: #fff;
+  border-color: #B21E1E;
+}
+.ui.ribbon.deployments:hover {
+  background-color: #B21E1E;
+  color: #fff;
+  border-color: #B21E1E;
+}
+
+.ui.ribbon.events {
+  background-color: #F2711C;
+  color: #fff;
+  border-color: #CF590C;
+}
+.ui.ribbon.events:hover {
+  background-color: #CF590C;
+  color: #fff;
+  border-color: #CF590C;
+}
+
+.ui.ribbon.in.the.press {
+  background-color: #00B5AD;
+  color: #fff;
+  border-color: #00827C;
+}
+.ui.ribbon.in.the.press:hover {
+  background-color: #00827C;
+  color: #fff;
+  border-color: #00827C;
+}
+
+.ui.ribbon.project {
+  background-color: #1B1C1D;
+  color: #fff;
+  border-color: #777676;
+}
+.ui.ribbon.project:hover {
+  background-color: #777676;
+  color: #fff;
+  border-color: #777676;
+}
+
+.ui.ribbon.releases {
+  background-color: #E03997;
+  color: #fff;
+  border-color: #991D63;
+}
+.ui.ribbon.releases:hover {
+  background-color: #991D63;
+  color: #fff;
+  border-color: #991D63;
+}
+
+.ui.ribbon.documentation {
+  background-color: #A333C8;
+  color: #fff;
+  border-color: #620A80;
+}
+.ui.ribbon.documentation:hover {
+  background-color: #620A80;
+  color: #fff;
+  border-color: #620A80;
+}
+
+.clearfix { clear: both; }
