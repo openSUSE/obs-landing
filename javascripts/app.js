@@ -52,4 +52,8 @@ $(document)
     $('span.popup').popup();
 
     $('#ManualsTabs .item').tab();
+
+    $('.special.cards .image').dimmer({
+      on: 'hover'
+    });
   });

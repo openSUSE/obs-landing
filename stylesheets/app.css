@@ -278,3 +278,9 @@
 }
 
 .clearfix { clear: both; }
+
+.team_description {
+    font-size: 0.8em;
+    text-align: justify;
+    padding: 1.5em;
+}
