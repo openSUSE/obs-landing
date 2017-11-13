@@ -158,3 +158,13 @@
 .bold {
   font-weight: bold;
 }
+
+.full_width {
+  width: 100%;
+}
+
+.code {
+  margin-bottom: 0;
+  font-family: monospace,monospace;
+  font-size: 1em !important;
+}
