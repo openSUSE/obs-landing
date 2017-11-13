@@ -1,60 +1,74 @@
 ---
-layout: default
+layout: secondary
 title: Download
 ---
-<div id="Masthead" class="ui masthead no_frontend inverted vertical center aligned segment">
-  {% include main_menu.html %}
-</div>
-
 <div class="ui vertical stripe segment">
   <div class="ui middle aligned stackable grid container">
 
-<div class="row">
- <div class="twelve columns">
-  <h2>Run Your Own</h2>
-    <p>
-      The easiest way to run your own Open Build Service is to download and install our software appliance.
-      It's the whole package, a recent and stable Linux Operating System
-      (<a href="http://en.opensuse.org/Portal:Leap:42.1">openSUSE Leap 42.1</a>)
-      bundled with all the server and OBS components you need to get going.
-    </p>
-  </div>
+    <div class="sixteen wide column">
+      <h2>Run Your Own!</h2>
+      <p>
+        The easiest way to run your own Open Build Service is to download and install our software appliance.
+        It's the whole package, a recent and stable Linux Operating System
+        (<a href="http://en.opensuse.org/Portal:Leap:42.1" target="_blank">openSUSE Leap 42.1</a>)
+        bundled with all the server and OBS components you need to get going.
+      </p>
+    </div>
 
-  <div class="four columns offset-by-four">
-    <p>
-      <a href="http://download.opensuse.org/repositories/OBS:/Server:/2.8/images/iso/obs-server.x86_64.iso"
-         title="OBS Appliance Installer"
-         class="radius large button piwik_download">
-         Download the<br />
-         OBS Appliance Installer<br />
-         <small>obs-server.x86_64.install.iso</small>
+    <div class="sixteen wide column centered row">
+      <a href="http://download.opensuse.org/repositories/OBS:/Server:/2.8/images/iso/obs-server.x86_64.iso" target="_blank"
+         title="OBS Appliance Installer" class="ui huge animated fade blue button piwik_download" tabindex="0">
+        <div class="visible content">
+          Download the<br />
+          OBS Appliance Installer<br />
+          <small>obs-server.x86_64.install.iso</small>
+        </div>
+        <div class="hidden content">
+          <i class="big download icon"></i>
+        </div>
       </a>
-    </p>
-  </div>
+    </div>
 
-  <div class="twelve columns">
-   <h4>Installation</h4>
-    <p>
-      Burn the installer iso to a blank CD/DVD and boot from it. The installer will ask you about the block device you want
-      to deploy the appliance to.
-    </p>
-   <h4 id="appliance_config">Configuration</h4>
-    {% include appliance_config.inc %}
-    <p>
-      <a href="other/" class="radius small button" style="width: 100%; border-color: #d0d0d0; background: #e9e9e9; color: #505050;">Looking for other deployment methods like installation images for USB sticks or disk images for virtual machines? Click here.</a>
-    </p>
-  </div>
+    <div class="sixteen wide column">
+     <h3>Installation</h3>
+      <p>
+        Burn the installer iso to a blank CD/DVD and boot from it. The installer will ask you about the block device you want
+        to deploy the appliance to.
+      </p>
+     <h3 id="appliance_config">Configuration</h3>
+      {% include appliance_config.inc %}
+    </div>
 
-  <div class="twelve columns">
-    <h2>Access the reference server</h2>
-    {% include reference_server.inc %}
-    <p>
-      Access it via the webfrontend or download the command line client. The commandline client (osc) is a subversion-like
-      tool for the OBS. Use it to edit sources, metadata, trigger builds and gather results.
-    </p>
-    <iframe src='http://software.opensuse.org/download/iframe?project=openSUSE:Tools&amp;package=osc&amp;fcolor=607890&amp;hcolor=607890&amp;acolor=607890' width="100%" height="700" frameborder="0" seamless="seamless">
-    </iframe>
+    <div class="sixteen wide column centered row">
+      <a href="other/" class="ui animated fade button">
+        <div class="visible content">
+          Looking for other deployment methods like installation images for USB sticks or disk images for virtual machines?
+        </div>
+        <div class="hidden content">
+          <i class="right arrow icon"></i>
+        </div>
+      </a>
+    </div>
+
+    <div class="sixteen wide columns">
+      <h2>Access the reference server</h2>
+      {% include reference_server.inc %}
+      <p>
+        Access it via the webfrontend or download the command line client. The commandline client (<a href="https://en.opensuse.org/openSUSE:OSC" target="_blank" title="More info about osc">osc</a>) is a subversion-like
+        tool for the OBS. Use it to edit sources, metadata, trigger builds and gather results.
+      </p>
+    </div>
+
+    <div class="sixteen wide column centered row">
+      <a href="http://download.opensuse.org/repositories/openSUSE:/Tools/" target="_blank" class="ui animated fade blue button">
+        <div class="visible content">
+          Download osc<br />
+          from openSUSE tools repository
+        </div>
+        <div class="hidden content">
+          <i class="big download icon"></i>
+        </div>
+      </a>
+    </div>
   </div>
-</div>
-</div>
 </div>

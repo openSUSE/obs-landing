@@ -36,12 +36,17 @@
   padding: 8em 0em;
 }
 
+.ui.vertical.stripe h2 {
+  font-size: 2.5em;
+}
+
 .ui.vertical.stripe h3 {
+  margin-top: 1em;
   font-size: 2em;
 }
 
-.ui.vertical.stripe .button+h3, .ui.vertical.stripe p+h3 {
-  margin-top: 3em;
+.ui.vertical.stripe .button+h3, .ui.vertical.stripe p+h3  {
+  margin-top: 1em;
 }
 
 .ui.vertical.stripe .floated.image {
@@ -148,4 +153,8 @@
 
 #CustomersSection a:hover{
   color: #dea023;
+}
+
+.bold {
+  font-weight: bold;
 }

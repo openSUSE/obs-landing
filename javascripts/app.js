@@ -49,4 +49,8 @@ $(document)
       transition: 'fade in',
       duration: 500
     });
+
+    $('span.popup')
+      .popup()
+    ;
   });
