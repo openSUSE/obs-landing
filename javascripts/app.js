@@ -43,10 +43,31 @@ $(document)
     });
 
     // lazy load images
-    $('.image').visibility({
-      type: 'image',
-      transition: 'fade in',
-      duration: 500
+    $('.lazy_show').visibility({
+      onTopVisible: function (){
+          $(this).transition({
+            type : 'fade in',
+            duration: 3000
+          });
+      }
+    });
+
+    // lazy load images
+    $('.diagram').visibility({
+      onTopVisible: function (){
+          $('.diagram .circle').transition({
+            animation : 'fade',
+            duration  : 1500,
+            interval  : 800
+          });
+          setTimeout( function () {
+            $('.diagram .image').transition({
+                animation : 'fade',
+                duration  : 1500,
+                interval  : 800
+              });
+            }, 400);
+      }
     });
 
     $('span.popup').popup();

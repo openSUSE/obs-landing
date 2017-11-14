@@ -292,3 +292,35 @@
 .opensuse_logo:hover {
   fill: #73BA25;
 }
+
+.lazy_show, .diagram .circle, .diagram .image {
+  visibility: hidden;
+}
+
+.diagram {
+  text-align: center;
+}
+
+.diagram .circle {
+  border: 0.22em solid black;
+  display: inline-block;
+  border-radius: 50%;
+  padding: 3em;
+  margin: 1.5em;
+}
+
+.diagram .circle.primary {
+  border-color: #22c28a;
+}
+
+.diagram .circle.secondary {
+  border-color: #25aec5;
+}
+
+.diagram .circle.tertiary {
+  border-color: #6d25c5;
+}
+
+.diagram .circle.quaternary {
+  border-color: #c5259c;
+}
