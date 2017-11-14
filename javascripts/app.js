@@ -57,16 +57,16 @@ $(document)
       onTopVisible: function (){
           $('.diagram .circle').transition({
             animation : 'fade',
-            duration  : 1500,
-            interval  : 800
+            duration  : 1200,
+            interval  : 600
           });
           setTimeout( function () {
             $('.diagram .image').transition({
-                animation : 'fade',
-                duration  : 1500,
-                interval  : 800
+                animation : 'scale',
+                duration  : 1200,
+                interval  : 600
               });
-            }, 400);
+            }, 300);
       }
     });
 
