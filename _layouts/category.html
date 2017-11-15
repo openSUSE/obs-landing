@@ -1,9 +1,11 @@
 ---
-layout: default
+layout: secondary
 ---
-
-<div class="row">
-{% assign posts = site.categories[page.category] %}
-{% assign no_category = true %}
-{% include post-listing.html %}
+<div class="ui vertical stripe segment">
+  <div class="ui centered text container">
+    <h2>News about "{{ page.category }}"</h2>
+    {% assign posts = site.categories[page.category] %}
+    {% assign no_category = true %}
+    {% include post-listing.html %}
+  </div>
 </div>

@@ -1,13 +1,75 @@
 ---
-layout: default
-title: Documentation 
+layout: secondary
+title: Documentation
 ---
 
-<div class="row">
- <div class="twelve columns">
-  <ul>
-    <li><a href="manuals/">Manuals</a></li>
-    <li><a href="materials/">Materials</a></li>
-  </ul>
- </div>
+<div class="ui vertical stripe segment">
+  <div class="ui aligned stackable grid container">
+    <div class="sixteen wide column">
+      <h2>Manuals, Screencasts, Talks and Workshops</h2>
+
+      <h3>Guides</h3>
+    </div>
+    {% include manuals_in_tabs.html %}
+    {% include manuals_for_mobile.html %}
+
+<!-- Material -->
+
+    <div class="sixteen wide column">
+      <h3>Screencasts</h3>
+    </div>
+    <div class="eight wide column">
+      <iframe src="http://player.vimeo.com/video/30550722?byline=0&amp;portrait=0" width="100%" height="300" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+      <p class="presentation-meta">
+        A brief introduction to the core fetures of the Open Build Service:
+        Building a package from it's sources for multiple distributions and downloading it.
+      </p>
+    </div>
+    <div class="eight wide column">
+      <iframe src="http://player.vimeo.com/video/30845184?byline=0&amp;portrait=0" width="100%" height="300" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+      <p class="presentation-meta">
+        Learn how to collaborate on packages inside the Open Build Service:
+        Branch a package, fix it and submit your changes back to the original package.
+      </p>
+    </div>
+
+    <div class="sixteen wide column">
+      <h3>Talks</h3>
+    </div>
+    <div class="eight wide column">
+      <script async class="speakerdeck-embed" data-id="50474e62302a0f000202bd22" data-ratio="1.3333333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+      <p>
+        All the facts, features and the future of the Open Build Service<br>
+        <b>Source</b>: <a href="/files/talks/OBS-Facts-Features-Future.odp" target="_blank">OBS-Facts-Features-Future.odp</a>
+      </p>
+    </div>
+    <div class="eight wide column">
+      <script async class="speakerdeck-embed" data-id="50474d130f998f000202c8de" data-ratio="1.3333333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+      <p>
+        Learn more about the cross-architecture capabilities of the Open Build Service.<br>
+        <b>Source</b>: <a href="/files/talks/OBS-Cross-Build.odp" target="_blank">OBS-Cross-Build.odp</a>
+      </p>
+    </div>
+
+    <div class="sixteen wide column">
+      <h3>Workshops</h3>
+    </div>
+    <div class="eight wide column">
+      <script async class="speakerdeck-embed" data-id="50460efbe76a64000200c1a5" data-ratio="1.3333333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+      <p>
+        This workshop is for packagers that want to use the OBS to produce binary packages from sources.
+        Either for personal consumption or as part as a bigger project like a GNU/Linux distribution.<br>
+        <b>Source</b>: <a href="/files/workshops/OBS-Packager-Workshop.odp" target="_blank">OBS-Packager-Workshop.odp</a>
+      </p>
+    </div>
+    <div class="eight wide column">
+      <script async class="speakerdeck-embed" data-id="50472f480f998f00020248b3" data-ratio="1.3333333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+      <p>
+        This workshop is for members of open source projects or employees of software vendors that want to use the
+        Open Build Service to deliver not only single packages but large collections of them, for instance a
+        GNU/Linux distribution.<br>
+        <b>Source</b>: <a href="/files/workshops/OBS-Project-Workshop.odp" target="_blank">OBS-Project-Workshop.odp</a>
+      </p>
+    </div>
+  </div>
 </div>

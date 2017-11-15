@@ -1,114 +1,111 @@
 ---
-layout: default
+layout: secondary
 title: Download
 ---
+<div class="ui vertical stripe segment">
+  <div class="ui centered aligned stackable grid container">
 
-<div class="row">
-  <div class="twelve columns">
-  <h2>Have it your way <br /><span style="color: #999; font-size: 65%;">OBS deployment methods</span></h2>
-    <p>
-      Every company, project and data center is different. Thats why you can deploy the OBS as
-      packages, appliance images or source code to real hardware and different virtualization solutions.
-      Everything is possible.
-    </p>
-  </div>
-</div>
+    <div class="sixteen wide column">
+      <h2>Have it your way</h2>
+      <p>
+        Every company, project and data center is different. Thats why you can deploy the OBS as
+        packages, appliance images or source code to real hardware and different virtualization solutions.
+        Everything is possible.
+      </p>
+    </div>
 
-<div class="row">
-  <div class="four columns">
-    <h5>VMware Image</h5>
-    <p>
-      For VMware there is an <a href="http://download.opensuse.org/repositories/OBS:/Server:/2.8/images/obs-server.x86_64.vmx">configuration file (.vmx)</a> and a disk image (.vmdk).
-      You can load the configuration into VMware workstation/player.
-    </p>
-  </div>
-  <div class="four columns">
-    <h5>VirtualBox Image</h5>
-    <p>
-      For VirtualBox there is an disk image (.vdi).
-    </p>
-  </div>
-  <div class="four columns">
-    <h5>QCow2 Image</h5>
-    <p>
-      For KVM/Qemu there is a QCow2 Image (.qcow2)
-    </p>
-  </div>
-</div>
+    <div class="five wide column">
+      <a href="http://download.opensuse.org/repositories/OBS:/Server:/2.8/images/obs-server.x86_64.vmdk"
+        title="OBS Appliance VMDK Image"
+        class="ui big teal animated fade button piwik_download full_width">
+        <div class="visible content">
+          VMware Disk Image<br />
+          <small>obs-server.x86_64.vmdk</small>
+        </div>
+        <div class="hidden content">
+          <i class="big download icon"></i>
+        </div>
+      </a>
+      <p>
+        For VMware we provide a <a href="http://download.opensuse.org/repositories/OBS:/Server:/2.8/images/obs-server.x86_64.vmx" target="_blank">configuration file (.vmx)</a> and a disk image (.vmdk).
+      </p>
+    </div>
+    <div class="five wide column">
+      <a href="http://download.opensuse.org/repositories/OBS:/Server:/2.8/images/obs-server.x86_64.vdi"
+        title="OBS Appliance VDI Image"
+        class="ui big teal animated fade button piwik_download full_width">
+        <div class="visible content">
+          VirtualBox Disk Image<br />
+          <small>obs-server.x86_64.vdi</small>
+        </div>
+        <div class="hidden content">
+          <i class="big download icon"></i>
+        </div>
+      </a>
+      <p>
+        For VirtualBox we provide a disk image (.vdi).
+      </p>
+    </div>
+    <div class="five wide column">
+      <a href="http://download.opensuse.org/repositories/OBS:/Server:/2.8/images/obs-server.x86_64.qcow2"
+        title="OBS Appliance QCow2 Image"
+        class="ui big teal animated fade button piwik_download full_width">
+        <div class="visible content">
+          KVM/Qemu QCow2 Image<br />
+          <small>obs-server.x86_64.qcow2</small>
+        </div>
+        <div class="hidden content">
+          <i class="big download icon"></i>
+        </div>
+      </a>
+      <p>
+        For KVM/Qemu we provide a QCow2 Image (.qcow2)
+      </p>
+    </div>
 
+    <div class="sixteen wide column">
+      <h3>Appliance Configuration</h3>
+      {% include appliance_config.inc %}
+    </div>
 
+    <div class="sixteen wide column">
+      <h3>Packages</h3>
+      <p>
+        If you already have a Linux server running you can use our binary packages to install OBS and follow our
+        <a href="https://github.com/openSUSE/open-build-service/blob/master/README.md" target="_blank">README</a> to set everything
+        up yourself. Currently we maintain packages for the openSUSE and SUSE Linux Enterprise distributions.
+      </p>
+      <div class="ui raised secondary segment">
+        <h4 class="ui header">SUSE Linux Enterprise</h4>
+        <p class="code">
+          zypper ar -f http://download.opensuse.org/repositories/OBS:/Server:/2.8/SLE_12_SP2/OBS:Server:2.8.repo
+        </p>
+        <p class="code">
+          zypper in -t pattern OBS_Server
+        </p>
+      </div>
+      <div class="ui raised secondary segment">
+        <h4 class="ui header">openSUSE</h4>
+        <p class="code">
+          zypper ar -f http://download.opensuse.org/repositories/OBS:/Server:/2.8/openSUSE_42.1/OBS:Server:2.8.repo
+        </p>
+        <p class="code">
+          zypper in -t pattern OBS_Server
+        </p>
+      </div>
+    </div>
 
-<div class="row">
-  <div class="four columns">
-    <a href="http://download.opensuse.org/repositories/OBS:/Server:/2.8/images/obs-server.x86_64.vmdk"
-       title="OBS Appliance VMDK Image"
-       class="radius large button piwik_download"
-       style="width: 100%">
-       Download<br />
-       VMware Disk Image<br />
-       <small>obs-server.x86_64.vmdk</small>
-    </a>
-  </div>
-  <div class="four columns">
-    <a href="http://download.opensuse.org/repositories/OBS:/Server:/2.8/images/obs-server.x86_64.vdi"
-       title="OBS Appliance VDI Image"
-       class="radius large button piwik_download"
-       style="width: 100%">
-       Download<br />
-       VirtualBox Disk Image<br />
-       <small>obs-server.x86_64.vdi</small>
-    </a>
-  </div>
-  <div class="four columns">
-    <a href="http://download.opensuse.org/repositories/OBS:/Server:/2.8/images/obs-server.x86_64.qcow2"
-       title="OBS Appliance QCow2 Image"
-       class="radius large button piwik_download"
-       style="width: 100%">
-       Download<br />
-       KVM/Qemu QCow2 Image<br />
-       <small>obs-server.x86_64.qcow2</small>
-    </a>
-  </div>
-</div>
+    <div class="sixteen wide column">
+      <h3>Source Code</h3>
+      <p>
+        You can also grab the <a href="https://github.com/openSUSE/open-build-service" target="_blank">source code from github</a> and follow our
+        <a href="https://github.com/openSUSE/open-build-service/blob/master/README.md" target="_blank">README</a> to set everything
+        up yourself.
+      </p>
+      <div class="ui raised secondary segment">
+        <p class="code">git clone git@github.com:openSUSE/open-build-service.git</p>
+      </div>
+    </div>
 
-<div class="row">
-  <div class="twelve columns">
-    <h5>Appliance Configuration</h5>
-    {% include appliance_config.inc %}
-  </div>
-</div>
-
-<div class="row">
-  <div class="twelve columns">
-    <h3>Packages<h3>
-    <p>
-      If you already have a Linux server running you can use our binary packages to install OBS and follow our
-      <a href="https://github.com/openSUSE/open-build-service/blob/master/README.md">README</a> to set everything
-      up yourself. Currently we maintain packages for the openSUSE and SUSE Linux Enterprise distributions.
-    </p>
-    <h5>SUSE Linux Enterprise</h5>
-    <pre>
-      zypper ar -f http://download.opensuse.org/repositories/OBS:/Server:/2.8/SLE_12_SP2/OBS:Server:2.8.repo
-      zypper in -t pattern OBS_Server
-    </pre>
-    <h5>openSUSE</h5>
-    <pre>
-      zypper ar -f http://download.opensuse.org/repositories/OBS:/Server:/2.8/openSUSE_42.1/OBS:Server:2.8.repo
-      zypper in -t pattern OBS_Server
-    </pre>
-  </div>
-</div>
-
-<div class="row">
-  <div class="twelve columns">
-    <h3>Source Code<h3>
-    <p>
-      You can also grab the <a href="https://github.com/openSUSE/open-build-service">source code from github</a> and follow our
-      <a href="https://github.com/openSUSE/open-build-service/blob/master/README.md">README</a> to set everything
-      up yourself.
-    </p>
-    <pre>
-      git clone git@github.com:openSUSE/open-build-service.git
-    </pre>
   </div>
 </div>

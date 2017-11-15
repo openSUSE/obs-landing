@@ -1,88 +1,173 @@
 ---
 layout: default
 ---
+<link rel="stylesheet" href="/stylesheets/glide.core.min.css">
+<link rel="stylesheet" href="/stylesheets/glide.theme.min.css">
+<script src="/javascripts/glide.min.js"></script>
 
-<div class="row hide-for-small" id="hero-slider">
-  <div class="twelve columns" id="slider">
-    <div id="featured">
-      <img src="images/slide1.jpg" alt="HTML Captions" data-caption="#slide1Caption" />
-      <img src="images/slide2.jpg" alt="HTML Captions" data-caption="#slide2Caption" />
-      <img src="images/slide3.jpg" alt="HTML Captions" data-caption="#slide3Caption" />
+<div id="Masthead" class="ui masthead inverted vertical center aligned segment ">
+
+  {% include main_menu.html %}
+
+
+  <div id="Glide" class="glide">
+    <div class="glide__wrapper">
+        <ul class="glide__track">
+          <li class="glide__slide">
+            <div class="ui text container">
+              <h1 class="ui inverted header">
+                Open Build Service
+              </h1>
+              <h2>Create and Distribute Software Packages for all the Major Linux Distributions with all the Tools to Work Together!</h2>
+              <a href="https://build.opensuse.org/" target="_blank" class="ui huge inverted white button">Start using it <i class="right arrow icon"></i></a>
+              <a href="/download/" class="ui huge inverted white button">Run your own <i class="right download icon"></i></a>
+            </div>
+          </li>
+          <li class="glide__slide">
+            <div class="ui text container">
+              <h1 class="ui inverted header">
+                Comprehensive
+              </h1>
+              <h3>A generic system to build and distribute packages from sources in an automatic, consistent and reproducible way. Release your software for a wide range of operating systems and hardware architectures.</h3>
+              <div class="ui huge inverted white button video_play" data-video="video_1">How to use it <i class="right video play icon"></i></div>
+              <div id="video_1" class="ui modal">
+                <div class="content">
+                  <iframe src="http://player.vimeo.com/video/30550722?byline=0&amp;portrait=0" width="100%" height="500" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="glide__slide">
+            <div class="ui text container">
+              <h1 class="ui inverted header">
+                Collaborative
+              </h1>
+              <h3>Provides all the tools to work collaboratively and harness the power of the open source development model. Set fine grained access rights, branch code, send merge requests and review submissions.</h3>
+              <div class="ui huge inverted white button video_play" data-video="video_2">How to collaborate <i class="right video play icon"></i></div>
+              <div id="video_2" class="ui modal">
+                <div class="content">
+                  <iframe src="http://player.vimeo.com/video/30845184?byline=0&amp;portrait=0" width="100%" height="500" frameborder="0" webkitAllowFullScreen allowFullScreen></iframe>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="glide__slide">
+            <div class="ui text container">
+              <h1 class="ui inverted header">
+                Open Source
+              </h1>
+              <h3>Free software licensed under the GNU General Public License (GPL). It’s available for you as source, packages and as easily deployable appliance. You are free to use, fix, extend and re-use the code.</h3>
+              <div class="ui huge inverted white button video_play" data-video="video_3">How to contribute <i class="right video play icon"></i></div>
+              <div id="video_3" class="ui modal">
+                <div class="content">
+                  <iframe src="http://player.vimeo.com/video/30723425?byline=0&amp;portrait=0" width="100%" height="500" frameborder="0" webkitAllowFullScreen allowFullScreen></iframe>
+                </div>
+              </div>
+            </div>
+          </li>
+      </ul>
     </div>
-  </div> 
+
+    <div class="glide__bullets"></div>
+  </div>
+
 </div>
 
-<span class="orbit-caption" id="slide1Caption"><h3>Create and Distribute Software Packages</h3></span>
-<span class="orbit-caption" id="slide2Caption"><h3>For all the Major Linux Distributions</h3></span>
-<span class="orbit-caption" id="slide3Caption"><h3>With all the Tools to Work Together</h3></span>
-
-<div class="row show-for-small" id="hero-slider">
-  <div class="twelve columns" >
-    <p>
-      Create and Distribute Software Packages.
-      For all the Major Linux Distributions.
-      With all the Tools to Work Together!
-    </p>
+<div class="ui vertical stripe segment">
+  <div class="ui middle aligned stackable grid container">
+    <div class="row">
+      <div class="sixteen wide column">
+        <h3 class="ui header">What can the Open Build Service do?</h3>
+        <p>
+          The Open Build Service (OBS) is a generic system to build and distribute binary packages from sources in an automatic, consistent and reproducible way.
+          You can release packages as well as updates, add-ons, appliances and entire distributions for a wide range of operating systems and hardware architectures.
+        </p>
+        <p>&nbsp;</p>
+        <div class="diagram">
+          <div class="circle primary"><img src="/images/icons/sources.svg" class="ui tiny image"/></div>
+          <div class="circle secondary"><img src="/images/icons/server.svg" class="ui tiny image"/></div>
+          <div class="circle tertiary"><img src="/images/icons/package.svg" class="ui tiny image"/></div>
+          <div class="circle quaternary"><img src="/images/icons/delivery.svg" class="ui tiny image"/></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="ForUsersSection" class="ui vertical secondary stripe segment">
+  <div class="ui middle aligned stackable grid container">
+    <div class="row">
+      <div class="ten wide column">
+        <h3 class="ui header">For Users</h3>
+        <p>
+          Your users can always download the latest version of your software as binary packages for their operating system.
+          They use the package management tools they are familiar with and will get your software just like they get software
+          from their OS supplier. They don't have to know about tarballs, make install, package formats or other stuff from the 90's.
+          Once they are connected to your repository, you can serve them with maintenance or security updates and even add-ons
+          for your software. The OBS makes it a breeze for you, to make it super easy for them to enjoy your software!
+        </p>
+      </div>
+      <div class="six wide right floated column">
+      </div>
+    </div>
+  </div>
+</div>
+<div id="ForPackagesSection" class="ui vertical stripe segment">
+  <div class="ui middle aligned stackable grid container">
+    <div class="row">
+      <div class="six wide column">
+      </div>
+      <div class="ten wide column">
+        <h3 class="ui header">For Packagers</h3>
+        <p>
+          The OBS builds your packages in a jailed environment that the OBS setups from scratch each time and once your build succeeds
+          it also rebuilds all the depend packages for you. That way you get an automatic, consistent and reproducible build of
+          your software so you always know what you deliver to your users. There is also no need anymore for you to maintain a lot
+          of different OS installations on a lot of different hardware architectures or to deal with "compiler farms".
+          Let the OBS help you to concentrate on packaging, that's what you are here to do right?
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="FOSSection" class="ui vertical secondary stripe segment">
+  <div class="ui middle aligned stackable grid container">
+    <div class="row">
+      <div class="ten wide column">
+        <h3 class="ui header">For Free Software Projects and Independent Software Vendors</h3>
+        <p>
+          The OBS, through it's project model, has collaboration build in and will help you to harness the power of the open source
+          development model. Your developers get a one-stop-shop experience for all their software packaging and releasing needs.
+          The OBS API allows different clients and external services to interface and to use its resources. Of course OBS is free software,
+          licensed under GPL, and can be installed on your hardware, in your data center so you keep all your data under your control.
+        </p>
+      </div>
+      <div class="six wide right floated column">
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="row" id="hero-text">
-  <div class="four columns">
-    <h3>Comprehensive</h3>
-    <p>
-      A generic system to build and distribute packages from sources in an automatic, consistent and reproducible way.
-      Release your software for a wide range of operating systems and hardware architectures.
-    </p>
-  </div>
-  <div class="four columns">
-    <h3>Collaborative</h3>
-    <p>
-      Provides all the tools to work collaboratively and harness the power of the open source development model.
-      Set fine grained access rights, branch code, send merge requests and review submissions.
-    </p>
-  </div>
-  <div class="four columns">
-    <h3>Open Source</h3>
-    <p>
-      Free software licensed under the GNU General Public License (GPL). It’s available for you as source, packages
-      and as easily deployable appliance. You are free to use, fix, extend and re-use the code.
-    </p>
-  </div>
-</div> 
-
-<div class="row hide-for-small" id="hero-buttons">
-  <div class="four columns">
-      <a href="#" class="button" id="Video1ModalButton">Learn how to use it</a>
-  </div>
-  <div class="four columns">
-      <a href="#" class="button" id="Video2ModalButton">Learn how to collaborate</a>
-  </div>
-  <div class="four columns">    
-      <a href="#" class="button" id="Video3ModalButton">Learn how to contribute</a>
-  </div>
-</div>    
-
-<div class="row show-for-small">
-  <div class="twelve columns" >
-    <img src="/images/obs-screenshot.png" class="displayed">
-  </div>
-</div>
-
-<div id="Video1Modal" class="reveal-modal large">
-  <div class="flex-video vimeo">
-    <iframe src="http://player.vimeo.com/video/30550722?byline=0&amp;portrait=0" width="940" height="528" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-  </div>
-  <a class="close-reveal-modal">&#215;</a>
-</div>
-
-<div id="Video2Modal" class="reveal-modal large">
-  <div class="flex-video vimeo">
-    <iframe src="http://player.vimeo.com/video/30845184?byline=0&amp;portrait=0" width="940" height="360" frameborder="0" webkitAllowFullScreen allowFullScreen></iframe>
-  </div>
-</div>
-
-<div id="Video3Modal" class="reveal-modal large">
-  <div class="flex-video vimeo">
-    <iframe src="http://player.vimeo.com/video/30723425?byline=0&amp;portrait=0" width="940" height="360" frameborder="0" webkitAllowFullScreen allowFullScreen></iframe>
+<div id="CustomersSection" class="ui vertical stripe segment">
+  <div class="ui middle aligned stackable grid container">
+    <div class="row">
+      <div class="nine wide column">
+        <h3 class="ui inverted header"><i class="rocket icon"></i>Who is using it?</h3>
+        <p>
+          Our reference server for openSUSE, at <a href="https://build.opensuse.org/" target="_blank">build.opensuse.org</a>,
+          currently has almost 30.000 users that are building over 140.000 packages for 21 base distributions on 6 architectures.
+          Besides the openSUSE project, a large number of other Free and Open Source projects like Tizen,
+          VideoLAN, companies like Dell, Cray or Intel, but also universities are running their own instances of the OBS.
+        </p>
+      </div>
+      <div class="six wide right floated column">
+        <div class="ui grid container">
+          <div class="six wide column"><a href="https://www.tizen.org" target="_blank" title="Tizen" alt="Tizen"><img src="images/tizen_logo.png" class="ui small image lazy_show"></a></div>
+          <div class="six wide right floated column"><a href="https://www.cray.com" target="_blank" title="Cray Inc" alt="Cray Inc"><img src="images/cray_logo.svg" class="ui small image lazy_show"></a></div>
+          <div class="six wide column"><a href="https://www.dell.com" target="_blank" title="Dell" alt="Dell"><img src="images/dell_logo.svg" class="ui white small image lazy_show"></a></div>
+          <div class="six wide right floated column"><a href="https://www.intel.com" target="_blank" title="Intel" alt="Intel"><img src="images/intel_logo.svg" class="ui small image lazy_show"></a></div>
+          <div class="six wide centered column"><a href="https://www.videolan.org" target="_blank" title="VideoLAN" alt="VideoLAN"><img src="images/vlc_logo.png" class="ui small image lazy_show"></a></div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
