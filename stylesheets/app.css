@@ -90,6 +90,10 @@
   display: none !important;
 }
 
+#FollowingMenu {
+  opacity: 0.85;
+}
+
 #ForUsersSection .row  {
   background-image: url('/images/cloud_of_packages.svg');
   background-position: right;
