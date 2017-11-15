@@ -90,6 +90,24 @@
   display: none !important;
 }
 
+#ForUsersSection .row  {
+  background-image: url('/images/cloud_of_packages.svg');
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+#ForPackagesSection .row  {
+  background-image: url('/images/packagers.svg');
+  background-position: left;
+  background-repeat: no-repeat;
+}
+
+#FOSSection .row  {
+  background-image: url('/images/fork.svg');
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
 @media only screen and (max-width: 700px) {
   .ui.fixed.menu {
     display: none !important;
@@ -122,11 +140,16 @@
   .mobile {
     display: block !important;
   }
+
+  #ForUsersSection .row, #ForPackagesSection .row, #FOSSection .row {
+    background-image: none;
+  }
 }
 
 #Glide .glide__bullets {
   position: initial;
 }
+
 
 #Masthead {
   background: linear-gradient(280deg, #173f4f, #00a489, #6da741);
