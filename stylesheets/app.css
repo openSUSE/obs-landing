@@ -359,3 +359,12 @@
 .post_dates {
   margin-bottom: 3em;
 }
+
+#SideMenu .logo {
+  margin: 1em;
+  height: 3.5em;
+}
+
+#SideMenu .item {
+  font-size: 1.5rem;
+}
