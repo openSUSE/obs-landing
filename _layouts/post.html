@@ -7,7 +7,7 @@ layout: secondary
       {% if page.category %} <a href="/categories/{{ page.category | slugize }}" class="ui {{ page.category }} ribbon label">{{ page.category }}</a>{% endif %}
       <div class="post-content">
         <h2 class="header">{{ page.title }}</h2>
-        <div>
+        <div class="post_dates">
           {% if page.author %}
           by {{ page.author }}
           {% else %}
