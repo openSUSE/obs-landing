@@ -77,4 +77,8 @@ $(document)
     $('.special.cards .image').dimmer({
       on: 'hover'
     });
+
+    $('.card .extra.content .comments.outline').popup({
+      on: 'click'
+    });
   });
