@@ -8,7 +8,7 @@
   on the harddisk you deploy the image to will get overwritten.
 </p>
 <p>
-  All appliances come pre-configured with the right set of repositories and can updated via the system tools YaST or zypper at any time.
-  Another way is to replace the entire image. If you update the image keep in mind that you need to have have your data directory on a
+  All appliances come pre-configured with the right set of repositories and can be updated via the system tools YaST or zypper at any time.
+  Another way is to replace the entire image. If you update the image, keep in mind that you need to have your data directory on a
   separate storage, otherwise it will get deleted.
 </p>
