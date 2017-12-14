@@ -1,0 +1,70 @@
+---
+layout: post
+title: "Post-mortem: Deployment on December 14, 2017"
+category: development
+author: Ana María Martínez Gómez
+
+---
+
+During today's deployment we faced some issues. Although you probably didn't realise,
+as there was not a long downtime on build.opensuse.org, we had to monkey patch some
+fixes and we want to give you some insight in what happened.
+
+## What was deployed
+
+There were some critical PRs deployed this morning:
+
+- ### Refactor of Event module
+  We refactored the whole Event module. We renamed things, created many classes and
+  moved a lot of code.
+
+  https://github.com/openSUSE/open-build-service/pull/4191
+
+- ### Move ProjectLogRotate to 1 event per job
+  Creating one job per event instead of running a job every some minutes which takes
+  care of all of them.
+
+  https://github.com/openSUSE/open-build-service/pull/4197
+
+- ### Fix huge bottleneck in notification emails
+  This had been already monkey patched.
+  
+  https://github.com/openSUSE/open-build-service/pull/4200
+
+- ### Remove kiwi image extra version field
+  A simple migration to remove a column in the kiwi images table.
+
+  https://github.com/openSUSE/open-build-service/pull/4209
+
+## What happened?
+
+After today's deployment everything seemed to work properly. We executed the delayed job
+stats script to see how the delayed jobs were doing and... we found the first problem,
+we accidentally removed a variable when moving `ProjectLogRotate` to 1 event per job.
+As this is a script only we used, it was not such a problem and it was really fast solved:
+
+https://github.com/openSUSE/open-build-service/pull/4225
+
+And everything seemed to work properly again. Deployment done! Or maybe not...
+
+> Does someone know what all these errors are? 😕
+
+We started receiving the same errors in Errbit every some seconds. This error was caused
+by the `UpdateNotificationEvents` job, which is run every 17 seconds to create
+events. It was a really easy problem to solve (once we found out what was failing 😜):
+
+https://github.com/openSUSE/open-build-service/pull/4227
+
+In one of the newly created classes during the refactor of Event module we had removed one
+of the attributes accepted in the creation of this event. To detect this error we would
+have to try to create an instance of this speffic class giving it this attribute.
+
+## Improvements
+
+It is clear that it was a bad idea to deploy so many changes at once. The refactor
+of the Event module contained a lot of changes, which we should have deployed alone.
+
+It would have also been a good idea to have tested all the classes of the Event module for
+all of their attributes. That means that we need to improved out test suite for the classes
+in the Event module.
+ 
