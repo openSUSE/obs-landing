@@ -1,0 +1,78 @@
+---
+layout: post
+title: "Post-mortem: Deployment on December 14, 2017"
+category: development
+author: Ana María Martínez Gómez
+
+---
+
+During yesterday's deployment we faced some issues. We had to monkey patch some
+fixes and we want to give you some insight into what happened.
+
+There were some critical PRs deployed yesterday morning:
+
+- ### Refactor of Event module
+  We refactored the whole Event module. We renamed things, created many classes and
+  moved a lot of code.
+
+  https://github.com/openSUSE/open-build-service/pull/4191
+
+- ### Move ProjectLogRotate to 1 event per job
+  Creating one job per event instead of running a job every some minutes which takes
+  care of all of them.
+
+  https://github.com/openSUSE/open-build-service/pull/4197
+
+- ### Fix huge bottleneck in notification emails
+  This had been already monkey patched.
+
+  https://github.com/openSUSE/open-build-service/pull/4200
+
+- ### Remove kiwi image extra version field
+  A simple migration to remove a column in the kiwi images table.
+
+  https://github.com/openSUSE/open-build-service/pull/4209
+
+## What happened?
+
+Yesterday morning we ran one of our continuous deployments.
+
+At 9:44am the deployment was done and everything seemed to work properly. Directly after the
+deployment we executed the delayed job stats script to see how the delayed jobs were doing
+and... we found the first problem, we accidentally removed a variable when moving
+`ProjectLogRotate` to 1 event per job.
+As this is a script only used by us, it was not such a problem and it was quickly solved:
+
+https://github.com/openSUSE/open-build-service/pull/4225
+
+And everything seemed to work properly again. Deployment done! Or maybe not...
+
+> Does someone know what all these errors are? 😕
+
+Few minutes after that, around 9:52am, we noticed some errors in Errbit, our internal exception tracker.
+These errors were caused by the `UpdateNotificationEvents` job, which is run every 17 seconds to create
+events. It was a really easy problem to solve (once we found out what was failing 😜):
+
+So what happened?
+
+When we refactored the Event module in <a href="https://github.com/openSUSE/open-build-service/pull/4191">PR#4191</a>,
+we created some new classes and restructured the code. As part of that we removed the package and project parent classes
+that many of our OBS events inherit from.
+For that we had to move some of the payload keys to their child classes. In cases of the ServiceSuccess
+event we accidentally dropped one of the payload keys.
+
+Because of the missing key, any creation of a new ServiceSuccess event was failing.
+
+It took us about 15 minutes to debug the error, test our patch and deploy it.
+Once this was done everything was back to normal and Errbit stopped reporting errors.
+
+The pull request fixing the issue can be found here: https://github.com/openSUSE/open-build-service/pull/4227
+
+## How will we do better in the future?
+
+It is clear that it was a bad idea to deploy so many changes at once. The refactor
+of the Event module contained a lot of changes, which we should have deployed alone.
+
+It would have also been a good idea to have tested all the classes of the Event module for
+all of their attributes. That means that we need to improved out test suite for the classes
+in the Event module.
