@@ -61,11 +61,7 @@ fixes and we want to give you some insight into what happened.
 <h2>What happened?</h2>
 
 <p>
-  Yesterday morning we ran one of our continuous deployments.
-</p>
-
-<p>
-  At 9:44am the deployment was done and everything seemed to work properly. Directly after the
+  Yesterday at 9:44am the deployment was done and everything seemed to work properly. Directly after the
 deployment we executed the delayed job stats script to see how the delayed jobs were doing
 and... we found the first problem, we accidentally removed a variable when moving
 `ProjectLogRotate` to 1 event per job.
