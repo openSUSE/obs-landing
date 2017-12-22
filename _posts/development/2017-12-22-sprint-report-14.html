@@ -1,0 +1,81 @@
+---
+layout: post
+title: Highlights of the OBS frontend development - Sprint 29
+category: development
+---
+
+<p>
+  Here are the results the OBS frontend team has achieved in the last two weeks (2017-12-11 to 2017-12-21).
+</p>
+
+<h2>Features</h2>
+<h3>Allow users to show the full diff of large diffs</h3>
+
+<p>
+  The user will see now a message if there are diffs, between versions of a file, which are truncated because they are very large. If this is the case, they have the option to load the full diff. That was done in the pull request <a href="https://github.com/openSUSE/open-build-service/pull/4262">PR#4262</a>.
+</p>
+ 
+<h3>Cloud upload prototype</h3>
+<p>
+In the Open Build Service it is already possible to build appliances for Open Stack, Amazon Web Services or Microsoft Azure. 
+Wouldn't it be awesome to upload your appliances to one of these cloud providers directly from OBS?
+We thought the same and started to research, meeting people and finally implemented a prototype in this sprint.
+</p>
+
+<p>
+For now the prototype only covers Amazon EC2 as there was already some awesome toolbelt like ec2uploadimg existent which made it really easy to implement the prototype.
+To get things rolling, we met with the backend people and started to deploy yet another backend service which will handle the cloud upload jobs.
+In the OBS frontend we started to implement configuration and upload job pages. 
+At the end of this sprint, the "only" missing part is the integration of the frontend and the backend part, both parts already work in isolation.
+If you want to get some impression, have a look at <a href="https://github.com/openSUSE/open-build-service/pull/4260">this PR</a>.
+</p>
+
+<h2>Bug fixes</h2>
+<h3>Group deletion results in error 500</h3>
+<p>
+  When an admin deleted a group this was failing with a server error. The bug got fixed some weeks ago with <a href="https://github.com/openSUSE/open-build-service/pull/3901">PR 3901</a>.
+  But there was still some code to clean up, eg. we were still keeping the table entries around that stored the connection between users and groups after a group got deleted.
+</p>
+<p>
+  This has been cleaned this up now:-)
+</p>
+
+<h3>Attribute sytstem regression</h3>
+<p>
+Additional to our planned work in this sprint, we also fixed a bug from the fast lane.
+As we organize our work in SCRUM, we plan our work at the beginning of a two week sprint.
+However, sometimes there are urgent issues which can not wait till the next sprint starts.
+We handle this issues on a "fast lane"
+</p>
+<p>
+The mentioned bug made it impossible to set new attributes to a project or package.
+After some research, we found out that this bug was already present since a few years but nobody recognized it.
+The fix was basically only one line of code, however, finding the issue was a whole different story.
+Have a look at <a href="https://github.com/openSUSE/open-build-service/pull/4235">this PR</a> if you want to know more.
+</p>
+
+<h2>Maintenance</h2>
+<h3>Cleanup rubocop configuration and apply missing cops</h3>
+<p>
+  <a href="https://github.com/bbatsov/rubocop">Rubocop</a> is a static code analyzer for ruby, based on a community Ruby style guide.
+  We've been using <a href="https://github.com/bbatsov/rubocop">rubocop</a> for some years now. But we never took the effort to decide on and apply all of the existing cops.
+</p>
+<p>
+  Some weeks ago we agreed that it's time to do this. We started this sprint to go through all existing rubocops and apply them. In some cases there were some disagreements
+  about which rule we want to pick. We created a list of these cops and are going to discuss them later on.
+</p>
+<p>
+  By now we applied 56 rubocop rules. There are 6 cops were we are not sure yet which rule want to use.
+</p>
+
+
+<h2>Test suite migration</h2>
+
+<p>
+   We continued migrating tests to Rspec and fixing flickering tests:
+</p>
+
+<ul>
+   <li>Improve testing of Authentication – Kerberos, <a href="https://github.com/openSUSE/open-build-service/pull/4211">PR#4211</a></li>
+</ul>
+
