@@ -68,6 +68,28 @@ Have a look at <a href="https://github.com/openSUSE/open-build-service/pull/4235
   By now we applied 56 rubocop rules. There are 6 cops were we are not sure yet which rule want to use.
 </p>
 
+<h3>Move ProjectLogRotate to 1 event per job</h3>
+<p>
+  This is part of our efforts to restructure the architecure of our event system. In this sprint we have changed how we
+  create ProjectLogEntries. In OBS any project or package related event is causing the creation of a ProjectLogEntry.
+  These entries are tracking activities that are passed to our rss feeds.
+</p>
+
+<p>
+  But before we could start this we had to refactor the event models. This was done in <a href="https://github.com/openSUSE/open-build-service/pull/4191">PR#4191</a>.
+</p>
+
+<p>
+  Once this was done we did the actual change. With the changes made we don't rely any longer on the clock job,
+  which was creating new ProjectLogEntries every 10 minutes. Instead we schedule this task right after the event
+  got created.
+</p>
+
+<p>
+  For scheduling these jobs we now use <a href="https://github.com/collectiveidea/delayed_job">delayed jobs</a>,
+  the database based asynchronous priority queue system. This means that, unless there is realy huge load on our servers,
+  new ProjectLogEntries get created within seconds instead of being queued for up to 10 minutes.
+</p>
 
 <h2>Test suite migration</h2>
 
