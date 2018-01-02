@@ -17,6 +17,12 @@ layout: secondary
         </div>
         {{ content }}
       </div>
+      <div class="share-icon">
+        <a href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}{{ page.url }}&via=obshq&related=obshq" rel="nofollow" target="_blank" title="Share on Twitter" class="ui twitter button">
+          <i class="twitter icon"></i>
+          Share on Twitter
+        </a>
+      </div>
       <div class="ui grid">
         <div class="eight wide column">
           {% if page.previous.url %}
