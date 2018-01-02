@@ -2,3 +2,6 @@ title: Open Build Service
 highlighter: true
 permalink: /:year/:month/:day/:title/
 markdown: kramdown
+
+plugins:
+  - jemoji
