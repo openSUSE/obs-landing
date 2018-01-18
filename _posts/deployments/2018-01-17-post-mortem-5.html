@@ -1,0 +1,117 @@
+---
+layout: post
+title: "Post-mortem: Deployment on January 17th, 2018"
+category: deployments
+author: David Kang, Björn Geuken, Moisés Déniz
+
+---
+<p>
+  During today's deployment we faced some issues. We had to disable rabbitmq
+  support in build.opensuse.org for some hours.
+</p>
+
+<h3>What happened?</h3>
+
+<h4>The deployment</h4>
+
+<p>
+  This morning, at 10:25am, we deployed as usual. Some minutes after the deployment was done we noticed
+  some notifications from errbit, our exception tracking tool.
+</p>
+
+<p>
+  We looked at the tracked exception and the related backlog and started to debug the issue. We recently applied
+  a larger amount of <a href="https://github.com/bbatsov/rubocop">rubocop rules</a>, a style checking tool, which means
+  that we changed a decent amount of code. Because of that we suspected that this might have caused the breakage and started to 
+  review the deployed commits again.
+</p>
+
+<p>
+  Since we didn't find any suspicious commits, we reviewed the
+  <a href="https://github.com/ruby-amqp/bunny/blob/master/ChangeLog.md">bunny changelog</a> and checked the related issues.
+</p>
+
+<h4>Diving into the problem</h4>
+
+<p>
+  Between 11:00am and 11:15am we had our regular standup meeting and we informed the rest of the team about the RabbitMQ issue.
+</p>
+
+<p>
+  Right after the standup we met with the team and discussed the issue. As part of this we briefly went through what we
+  found out so far and as a result we decided to disable RabbitMQ support in OBS for now.
+  This way we prevented any further failures.
+</p>
+
+<p>
+  After disabling RabbitMQ we concluded that the failure could have been caused by two reasons:
+  <ul>
+    <li>A broken SSL certificate configuration</li>
+    <li>A bug in the new version of bunny</li>
+  </ul>
+</p>
+
+<p>
+  We split up for a short moment to investigate both scenarios in parallel. One group testing the RabbitMQ setup locally to verify
+  whether the update of the bunny gem caused the exceptions.
+  The other group got in touch with one of OBS admins and the maintainer of the RabbitMQ server.
+</p>
+
+<p>
+  As a result we discovered that the problem was not caused by the servers, but it was either caused by a bug in the bunny gem or
+  the depending amq-protocol gem.
+  At 12:16pm we decided to downgrade bunny for now and created
+  <a href="https://github.com/openSUSE/open-build-service/pull/4363">a pull request</a>.
+</p>
+
+<h4>Seeing the light</h4>
+
+<p>
+  It took roughly 30 minutes until the test suite passed and we could merge the PR. Afterwards we updated our gem packages and
+  had to wait for the obs-server packages to finish. This usualy takes about an hour.
+  Unfortunately the SLE12 SP3 package build, that we need for deploying new packages on our OBS instance, failed. So we had to
+  trigger a rebuild and wait another hour.
+</p>
+
+<p>
+  While waiting for the packages to finish, a user notified us on <a href="irc://irc.opensuse.org/opensuse-buildservice">IRC</a>,
+  at 1:33pm, that he was receiving duplicated email every minute.
+  We could identify this error in errbit and it seemed to be related to our delayed jobs.
+</p>
+
+<p>
+  Apparently we forgot to restart the delayed jobs service after disabling the RabbitMQ setup. Because of that delayed jobs was
+  still trying to send notifications to the RabbitMQ server and failed while trying to.
+  Once we restarted the delayed jobs service the issue was gone. That was at 1:36pm.
+</p>
+
+<p>
+  At 4:10pm we finally had a built package and could deploy to solve the problem and re-enable the RabbitMQ configuration.
+  By that time we noticed that there already was a new bunny release (v2.9.1), which was fixing this
+  <a href="https://github.com/ruby-amqp/bunny/issues/539">issue</a>.
+  Since we didn't want to delay the enablement of RabbitMQ support any further, we continued with our plan to downgrade the
+  bunny version for now. Don't forget, OBS packages take an hour to build;-)
+</p>
+
+<p>
+  We are going to update the patched gem version within the next days.
+</p>
+
+<h2>How will we do better in the future?</h2>
+
+<p>
+  Once we realized that there was a good chance that bunny was causing the failure, we checked the bunny changelog and issues.
+  However the changelog was not up to date and thus we missed that there was already a patch and a new released version that solved
+  the issue.
+  So we should have checked the closed issues and recently merged commits as well.
+</p>
+
+<p>
+  Obviously we did not test the bunny update with a similar setup to find out the problem earlier. We probably
+  need to test RabbitMQ related changes on an instances with a production-like setup, eg. SSL configuration.
+</p>
+
+<p>
+  When we disabled the RabbitMQ configuration we restarted apache to apply the change, but we forgot to restart the delayed jobs
+  service. We currently think about wrapping all these tasks in one script / task to avoid that neccessary tasks are forgotten.
+</p>
