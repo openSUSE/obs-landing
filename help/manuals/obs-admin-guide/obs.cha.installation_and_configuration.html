@@ -1,21 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Installation and Configuration | Administrator Guide</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><meta name="generator" content="DocBook XSL Stylesheets V1.78.1" /><meta name="book-title" content="Administrator Guide" /><meta name="chapter-title" content="Chapter 1. Installation and Configuration" /><link rel="home" href="index.html" title="OBS Documentation" /><link rel="up" href="book.obs-admin.html" title="Administrator Guide" /><link rel="prev" href="bk03pr01.html" title="About this Guide" /><link rel="next" href="obs.cha.overview_filesystem.html" title="Chapter 2. File System Overview" /><script type="text/javascript">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Installation and Configuration | Administrator Guide</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 2.4.0 using SUSE XSL Stylesheets 2.0.8 (based on DocBook XSL Stylesheets 1.78.1) - chunked" /><meta name="book-title" content="Administrator Guide" /><meta name="chapter-title" content="Chapter 1. Installation and Configuration" /><link rel="home" href="index.html" title="OBS Documentation" /><link rel="up" href="book.obs-admin.html" title="Administrator Guide" /><link rel="prev" href="bk03pr01.html" title="About this Guide" /><link rel="next" href="obs.cha.overview_filesystem.html" title="Chapter 2. File System Overview" /><script type="text/javascript">
 
 var protocol = window.location.protocol.toLowerCase();
 if ( protocol != 'file:' ) {
   var agent = navigator.userAgent.toLowerCase();
   var wanted = ( protocol == 'https:') ? 'https' : 'http';
   var file = 'fonts.css';
-  if (agent.indexOf('android') != -1 && agent.indexOf('chrom') != -1 ) {
-      file = 'fonts-nolocal.css';
-  }
   document.write('<link rel="stylesheet" type="text/css" href="' + wanted + '://static.opensuse.org/fonts/'+ file +'"></link>');
 }
 else {
    document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
 }
 
-</script><noscript><link rel="stylesheet" type="text/css" href="http://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script></head><body class="offline js-off"><div id="_outer-wrap"><div id="_white-bg"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Administrator Guide"><span class="book-icon">Administrator Guide</span></a><span> › </span><a class="crumb" href="obs.cha.installation_and_configuration.html">Installation and Configuration</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.htmlindex.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Administrator Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="bk03pr01.html"><span class="number"> </span><span class="name">About this Guide</span></a></li><li class="inactive"><a href="obs.cha.installation_and_configuration.html"><span class="number">1 </span><span class="name">Installation and Configuration</span></a></li><li class="inactive"><a href="obs.cha.overview_filesystem.html"><span class="number">2 </span><span class="name">File System Overview</span></a></li><li class="inactive"><a href="obs.cha.administration.html"><span class="number">3 </span><span class="name">Administration</span></a></li><li class="inactive"><a href="obs.cha.troubleshooting.html"><span class="number">4 </span><span class="name">Troubleshooting</span></a></li><li class="inactive"><a href="bk03apa.html"><span class="number">A </span><span class="name">GNU Licenses</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="About this Guide" href="bk03pr01.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 2. File System Overview" href="obs.cha.overview_filesystem.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Administrator Guide"><span class="book-icon">Administrator Guide</span></a><span> › </span><a class="crumb" href="obs.cha.installation_and_configuration.html">Installation and Configuration</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="About this Guide" href="bk03pr01.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 2. File System Overview" href="obs.cha.overview_filesystem.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class=""><div class="documentation"><div class="chapter " id="obs.cha.installation_and_configuration"><div class="titlepage"><div><div><h1 class="title"><span class="number">1 </span><span class="name">Installation and Configuration</span> </h1></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="obs.cha.installation_and_configuration.html#_planning"><span class="number">1.1 </span><span class="name">Planning</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.installation_and_configuration.html#_simple_installation"><span class="number">1.2 </span><span class="name">Simple Installation</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.installation_and_configuration.html#_worker_farm"><span class="number">1.3 </span><span class="name">Worker Farm</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.installation_and_configuration.html#_distributed_setup"><span class="number">1.4 </span><span class="name">Distributed Setup</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.installation_and_configuration.html#_monitoring"><span class="number">1.5 </span><span class="name">Monitoring</span></a></span></dt></dl></div></div>
+</script><noscript><link rel="stylesheet" type="text/css" href="http://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="offline js-off"><div id="_outer-wrap"><div id="_white-bg"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Administrator Guide"><span class="book-icon">Administrator Guide</span></a><span> › </span><a class="crumb" href="obs.cha.installation_and_configuration.html">Installation and Configuration</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Administrator Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="bk03pr01.html"><span class="number"> </span><span class="name">About this Guide</span></a></li><li class="inactive"><a href="obs.cha.installation_and_configuration.html"><span class="number">1 </span><span class="name">Installation and Configuration</span></a></li><li class="inactive"><a href="obs.cha.overview_filesystem.html"><span class="number">2 </span><span class="name">File System Overview</span></a></li><li class="inactive"><a href="obs.cha.administration.html"><span class="number">3 </span><span class="name">Administration</span></a></li><li class="inactive"><a href="obs.cha.troubleshooting.html"><span class="number">4 </span><span class="name">Troubleshooting</span></a></li><li class="inactive"><a href="bk03apa.html"><span class="number">A </span><span class="name">GNU Licenses</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="About this Guide" href="bk03pr01.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 2. File System Overview" href="obs.cha.overview_filesystem.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Administrator Guide"><span class="book-icon">Administrator Guide</span></a><span> › </span><a class="crumb" href="obs.cha.installation_and_configuration.html">Installation and Configuration</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="About this Guide" href="bk03pr01.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 2. File System Overview" href="obs.cha.overview_filesystem.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class=""><div class="documentation"><div class="chapter " id="obs.cha.installation_and_configuration"><div class="titlepage"><div><div><h1 class="title"><span class="number">1 </span><span class="name">Installation and Configuration</span> </h1></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="obs.cha.installation_and_configuration.html#_planning"><span class="number">1.1 </span><span class="name">Planning</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.installation_and_configuration.html#_simple_installation"><span class="number">1.2 </span><span class="name">Simple Installation</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.installation_and_configuration.html#_worker_farm"><span class="number">1.3 </span><span class="name">Worker Farm</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.installation_and_configuration.html#_distributed_setup"><span class="number">1.4 </span><span class="name">Distributed Setup</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.installation_and_configuration.html#_monitoring"><span class="number">1.5 </span><span class="name">Monitoring</span></a></span></dt></dl></div></div>
  
  
 
@@ -75,7 +83,7 @@ else {
   
   <p>Simple installation means, all OBS services running on the same
    machine.</p>
-  <div id="idm140361331373376" class="admonition important"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6>
+  <div id="idm139823524408048" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6>
    <p>It is very important that you read the <span class="strong"><strong>README.SETUP</strong></span> file coming with your OBS version and follow the
     instructions there, because here maybe changes to this version.</p>
   </div>
@@ -95,7 +103,7 @@ else {
     For example, to restart the repository
     server use</p>
    <div class="verbatim-wrap"><pre class="screen">systemctl restart obsrepserver.service</pre></div>
-   <div class="table" id="idm140361331366688"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 1.1: </span><span class="name">Service Names </span><a title="Permalink" class="permalink" href="obs.cha.installation_and_configuration.html#idm140361331366688">#</a></h6></div><div class="table-contents">
+   <div class="table" id="idm139823524401344"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 1.1: </span><span class="name">Service Names </span><a title="Permalink" class="permalink" href="obs.cha.installation_and_configuration.html#idm139823524401344">#</a></h6></div><div class="table-contents">
     
     
 
@@ -108,19 +116,19 @@ else {
        </td><td align="left" valign="top">
         <p>obssrcserver.service</p>
        </td><td align="left" valign="top">
-        <p></p>
+        
        </td></tr><tr><td align="left" valign="top">
         <p>Repository</p>
        </td><td align="left" valign="top">
         <p>Server obsrepserver.service</p>
        </td><td align="left" valign="top">
-        <p></p>
+        
        </td></tr><tr><td align="left" valign="top">
         <p>Source</p>
        </td><td align="left" valign="top">
         <p>Services obsservice.service</p>
        </td><td align="left" valign="top">
-        <p></p>
+        
        </td></tr><tr><td align="left" valign="top">
         <p>Download</p>
        </td><td align="left" valign="top">
@@ -138,31 +146,31 @@ else {
        </td><td align="left" valign="top">
         <p>obsscheduler.service</p>
        </td><td align="left" valign="top">
-        <p></p>
+        
        </td></tr><tr><td align="left" valign="top">
         <p>Dispatcher</p>
        </td><td align="left" valign="top">
         <p>obsdispatcher.service</p>
        </td><td align="left" valign="top">
-        <p></p>
+        
        </td></tr><tr><td align="left" valign="top">
         <p>Publisher</p>
        </td><td align="left" valign="top">
         <p>obspublisher.service</p>
        </td><td align="left" valign="top">
-        <p></p>
+        
        </td></tr><tr><td align="left" valign="top">
         <p>Signer</p>
        </td><td align="left" valign="top">
         <p>obssigner.service</p>
        </td><td align="left" valign="top">
-        <p></p>
+        
        </td></tr><tr><td align="left" valign="top">
         <p>Warden</p>
        </td><td align="left" valign="top">
         <p>obswarden.service</p>
        </td><td align="left" valign="top">
-        <p></p>
+        
        </td></tr></tbody></table>
    </div></div>
    <p>The sequence in the table reflects the start sequence, you need to
@@ -179,10 +187,48 @@ systemctl start obsdispatcher.service
 systemctl start obspublisher.service
 systemctl start obssigner.service
 systemctl start obswarden.service</pre></div>
-   <div id="idm140361331307488" class="admonition warning"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning</h6>
+   <div id="idm139823524342352" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning</h6>
     <p>The commands start services which are accessible from the outside. Do
      not do this on a system connected to an untrusted network or make sure to
      block the ports with a firewall.</p>
+   </div>
+   <div class="sect3 " id="_cloud_upload_setup"><div class="titlepage"><div><div><h4 class="title" id="_cloud_upload_setup"><span class="number">1.2.1.1 </span><span class="name">Cloud Upload Setup</span> <a title="Permalink" class="permalink" href="obs.cha.installation_and_configuration.html#_cloud_upload_setup">#</a></h4></div></div></div>
+    
+    <p>In order to setup the Cloud Upload feature you will need to configure the tools required per each cloud provider.
+      Right now we only support the AWS Amazon Cloud (<a class="ulink" href="https://aws.amazon.com" target="_blank">https://aws.amazon.com</a>) as provider.
+    </p>
+    <div class="sect4 " id="_aws_authentication_workflow"><div class="titlepage"><div><div><h5 class="title" id="_aws_authentication_workflow"><span class="number">1.2.1.1.1 </span><span class="name">How does the AWS's authentication work for uploading images?</span> <a title="Permalink" class="permalink" href="obs.cha.installation_and_configuration.html#_aws_authentication_workflow">#</a></h5></div></div></div>
+      
+      <p>
+        We are going to use the role based authentication provided by Amazon to enable the OBS instance to upload images to other user's accounts.
+      </p>
+      <p>
+        The users will obtain an external ID (automatically created and unique) and the OBS account ID to create an Identity and Access Management (IAM) role.
+        After the user created the role, he needs to provide the Amazon Resource Name (ARN) of the role to OBS. OBS will use this ARN to obtain temporary credentials,
+        therefore an uploader account is necessary which we need to configure (see AWS authentication credentials setup).
+        OBS will use the ARN to obtain temporary credentials for the users account to upload the appliance. The ARN and the external ID are not considered as a secret.
+      </p>
+      <div class="figure" id="fig.intallation.aws_authentication_workflow"><div class="figure-contents">
+       
+       <div class="mediaobject"><a xmlns="" href="images/AWS_authentication_workflow.png"><img src="images/AWS_authentication_workflow.png" width="" alt="AWS authentication for role based access" /></a></div>
+      </div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 1.1: </span><span class="name">AWS authentication for role based access </span><a title="Permalink" class="permalink" href="obs.cha.installation_and_configuration.html#fig.intallation.aws_authentication_workflow">#</a></h6></div></div>
+      <p>
+        The whole workflow is described in the <a class="ulink" href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html" target="_blank">AWS documentation<span class="ulink-url"> (https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html)</span></a>.
+      </p>
+    </div>
+    <div class="sect4 " id="_aws_authentication_setup"><div class="titlepage"><div><div><h5 class="title" id="_aws_authentication_setup"><span class="number">1.2.1.1.2 </span><span class="name">AWS authentication credentials setup</span> <a title="Permalink" class="permalink" href="obs.cha.installation_and_configuration.html#_aws_authentication_setup">#</a></h5></div></div></div>
+      
+      <p>
+      For uploading images in AWS two tools are needed internally the <a class="ulink" href="https://aws.amazon.com/cli" target="_blank">aws CLI<span class="ulink-url"> (https://aws.amazon.com/cli)</span></a> and the <a class="ulink" href="https://github.com/SUSE/Enceladus/tree/master/ec2utils/ec2uploadimg" target="_blank">ec2uploadimg<span class="ulink-url"> (https://github.com/SUSE/Enceladus/tree/master/ec2utils/ec2uploadimg)</span></a> (those are installed as dependencies).
+      For setting this up you have to configure both tools in the machine where the cloud upload workers will be running.
+    </p>
+    <p>
+      The configurations are stored in <span class="emphasis"><em>/etc/obs/cloudupload</em></span> (the clouduploader home directory).
+      In this directory there is a <span class="emphasis"><em>.ec2utils.conf</em></span> file which contains e.g. the helper instance AMIs (see this <a class="ulink" href="https://github.com/SUSE/Enceladus/blob/master/ec2utils/ec2utils.conf.example" target="_blank">example<span class="ulink-url"> (https://github.com/SUSE/Enceladus/blob/master/ec2utils/ec2utils.conf.example)</span></a>).
+      In the <span class="emphasis"><em>/.aws/credentials</em></span> file the AWS credentials of the OBS account are stored (see this <a class="ulink" href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html" target="_blank">documentation<span class="ulink-url"> (https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html)</span></a>).
+    </p>
+  </div>
+
    </div>
   </div>
   <div class="sect2 " id="_frontend_installation"><div class="titlepage"><div><div><h3 class="title" id="_frontend_installation"><span class="number">1.2.2 </span><span class="name">Front-end Installation</span> <a title="Permalink" class="permalink" href="obs.cha.installation_and_configuration.html#_frontend_installation">#</a></h3></div></div></div>
@@ -310,7 +356,7 @@ systemctl start memcached.service</pre></div>
     Admin account for more changes. Here an example:</p>
    <div class="verbatim-wrap"><pre class="screen">osc -c ~/.obsadmin_osc.rc -A https://api.testobs.org</pre></div>
    <p>Follow the instructions on the terminal.</p>
-   <div id="idm140361331273808" class="admonition warning"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning</h6>
+   <div id="idm139823524292448" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning</h6>
     <p>The password is stored in clear text in this file by default, so you
      need to give this file restrictive access rights, only read/write access
      for your user should be allowed. <span class="strong"><strong>osc</strong></span>
@@ -365,7 +411,7 @@ cat /tmp/obs.config
     &lt;arch&gt;x86_64&lt;/arch&gt;
   &lt;/schedulers&gt;
 &lt;/configuration&gt;</pre></div>
-   <div id="idm140361331268864" class="admonition important"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6>
+   <div id="idm139823524287232" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6>
     <p>
      <span class="strong"><strong>unlisted_projects_filter</strong></span> only admit
      Regular Expression (see RLIKE specifications of MySQL/MariaDB for more
@@ -423,7 +469,7 @@ openSUSE:12.3 project as specified on the opensuse.org Build Service.
    package builds can produce (think someone builds a monstrous package like
    LibreOffice) you should not run OBS workers on the same host as the rest of
    the back-end daemons.</p>
-  <div id="idm140361331254688" class="admonition important"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6>
+  <div id="idm139823524272928" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6>
    <p>You back-end need to be configured to use the correct hostnames for
     the repo and source server and the ports need to be reachable by the
     workers. Also, the IP addresses of the workers need to be allowed to connect
@@ -447,14 +493,14 @@ systemctl start obsworker</pre></div>
    recommended setup.</p>
   <p>A setup with partitioning is very similar to the steps of the simple
    setup. Here we are only mention the differences to the simple setup.</p>
-  <div id="idm140361331244544" class="admonition note"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6>
+  <div id="idm139823524262736" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6>
    <p>You need to make sure that the different machines can communicate via
     the network, it is very recommended to use a separate network for this to
     isolate it from the public part.</p>
   </div>
   <p>On all back-end hosts you need to install the obs-server package. On
    the front-end host you need to install the obs-api package.</p>
-  <div id="idm140361331242864" class="admonition important"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6>
+  <div id="idm139823524261056" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6>
    <p>Only one source server instance can be exist on a single OBS
     installation.</p>
   </div>
@@ -590,6 +636,8 @@ systemctl start obswarden.service</pre></div>
       <p> Source Repository Server: port 5352 </p>
      </li><li class="listitem ">
       <p> Source Service Server: port 5152 </p>
+     </li><li class="listitem ">
+      <p> Cloud Upload Server: port 5452 </p>
      </li></ol></div>
    </div>
   </div>
@@ -672,5 +720,5 @@ systemctl start obswarden.service</pre></div>
   </div>
  </div>
 </div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="obs.cha.overview_filesystem.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 2 </span>File System Overview</span></a><a class="nav-link" href="bk03pr01.html"><span class="prev-icon">←</span><span class="nav-label">About this Guide</span></a></div><div id="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span id="_share-fb" class="bottom-button">Facebook</span><span class="spacer"> • </span><span id="_share-gp" class="bottom-button">Google+</span><span class="spacer"> • </span><span id="_share-tw" class="bottom-button">Twitter</span><span class="spacer"> • </span><span id="_share-mail" class="bottom-button">E-Mail</span></span></div><div class="print"><span id="_print-button" class="bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
-        2017 
+        2018 
         SUSE</p><ul><li><a href="http://www.suse.com/company/careers/" target="_top">Careers</a></li><li><a href="http://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="http://www.suse.com/company/" target="_top">About</a></li><li><a href="http://www.suse.com/ContactsOffices/contacts_offices.jsp" target="_top">Contact Us</a></li></ul></div></div></body></html>

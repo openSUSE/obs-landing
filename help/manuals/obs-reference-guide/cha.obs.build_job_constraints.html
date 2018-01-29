@@ -1,21 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Build Job Constraints | Reference Guide</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><meta name="generator" content="DocBook XSL Stylesheets V1.78.1" /><meta name="book-title" content="Reference Guide" /><meta name="chapter-title" content="Chapter 11. Build Job Constraints" /><link rel="home" href="index.html" title="OBS Documentation" /><link rel="up" href="book.obs-reference-guide.html" title="Reference Guide" /><link rel="prev" href="cha.obs.build_scheduling_and_dispatching.html" title="Chapter 10. Scheduling and Dispatching" /><link rel="next" href="cha.obs.build_preinstall.html" title="Chapter 12. Building Preinstall Images" /><script type="text/javascript">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Build Job Constraints | Reference Guide</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 2.4.0 using SUSE XSL Stylesheets 2.0.8 (based on DocBook XSL Stylesheets 1.78.1) - chunked" /><meta name="book-title" content="Reference Guide" /><meta name="chapter-title" content="Chapter 12. Build Job Constraints" /><link rel="home" href="index.html" title="OBS Documentation" /><link rel="up" href="book.obs-reference-guide.html" title="Reference Guide" /><link rel="prev" href="cha.obs.build_scheduling_and_dispatching.html" title="Chapter 11. Scheduling and Dispatching" /><link rel="next" href="cha.obs.build_preinstall.html" title="Chapter 13. Building Preinstall Images" /><script type="text/javascript">
 
 var protocol = window.location.protocol.toLowerCase();
 if ( protocol != 'file:' ) {
   var agent = navigator.userAgent.toLowerCase();
   var wanted = ( protocol == 'https:') ? 'https' : 'http';
   var file = 'fonts.css';
-  if (agent.indexOf('android') != -1 && agent.indexOf('chrom') != -1 ) {
-      file = 'fonts-nolocal.css';
-  }
   document.write('<link rel="stylesheet" type="text/css" href="' + wanted + '://static.opensuse.org/fonts/'+ file +'"></link>');
 }
 else {
    document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
 }
 
-</script><noscript><link rel="stylesheet" type="text/css" href="http://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script></head><body class="offline js-off"><div id="_outer-wrap"><div id="_white-bg"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Reference Guide"><span class="book-icon">Reference Guide</span></a><span> › </span><a class="crumb" href="cha.obs.build_job_constraints.html">Build Job Constraints</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Reference Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="bk04pr01.html"><span class="number"> </span><span class="name">About this Guide</span></a></li><li class="inactive"><a href="cha.obs.concepts.html"><span class="number">1 </span><span class="name">OBS Concepts</span></a></li><li class="inactive"><a href="cha.obs.build_process.html"><span class="number">2 </span><span class="name">Build Process</span></a></li><li class="inactive"><a href="cha.obs.source_management.html"><span class="number">3 </span><span class="name">Source Management</span></a></li><li class="inactive"><a href="cha.obs.request_and_review_ystem.html"><span class="number">4 </span><span class="name">Request And Review System</span></a></li><li class="inactive"><a href="cha.obs.image_templates.html"><span class="number">5 </span><span class="name">Image Templates</span></a></li><li class="inactive"><a href="cha.obs.multibuild.html"><span class="number">6 </span><span class="name">Multiple Build Description File Handling</span></a></li><li class="inactive"><a href="cha.obs.maintenance_setup.html"><span class="number">7 </span><span class="name">Maintenance Support</span></a></li><li class="inactive"><a href="cha.obs.binary_tracking.html"><span class="number">8 </span><span class="name">Binary Package Tracking</span></a></li><li class="inactive"><a href="cha.obs.admin.html"><span class="number">9 </span><span class="name">Administration</span></a></li><li class="inactive"><a href="cha.obs.build_scheduling_and_dispatching.html"><span class="number">10 </span><span class="name">Scheduling and Dispatching</span></a></li><li class="inactive"><a href="cha.obs.build_job_constraints.html"><span class="number">11 </span><span class="name">Build Job Constraints</span></a></li><li class="inactive"><a href="cha.obs.build_preinstall.html"><span class="number">12 </span><span class="name">Building Preinstall Images</span></a></li><li class="inactive"><a href="cha.obs.authorization.token.html"><span class="number">13 </span><span class="name">Authorization</span></a></li><li class="inactive"><a href="cha.obs.qa_hooks.html"><span class="number">14 </span><span class="name">Quality Assurance(QA) Hooks</span></a></li><li class="inactive"><a href="cha.obs.factory.html"><span class="number">15 </span><span class="name">openSUSE Factory</span></a></li><li class="inactive"><a href="obs.glossary.html"><span class="number"> </span><span class="name">Glossary</span></a></li><li class="inactive"><a href="bk04apa.html"><span class="number">A </span><span class="name">GNU Licenses</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 10. Scheduling and Dispatching" href="cha.obs.build_scheduling_and_dispatching.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 12. Building Preinstall Images" href="cha.obs.build_preinstall.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Reference Guide"><span class="book-icon">Reference Guide</span></a><span> › </span><a class="crumb" href="cha.obs.build_job_constraints.html">Build Job Constraints</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 10. Scheduling and Dispatching" href="cha.obs.build_scheduling_and_dispatching.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 12. Building Preinstall Images" href="cha.obs.build_preinstall.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class=""><div class="documentation"><div class="chapter " id="cha.obs.build_job_constraints"><div class="titlepage"><div><div><h1 class="title"><span class="number">11 </span><span class="name">Build Job Constraints</span> </h1></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="cha.obs.build_job_constraints.html#idm140050581281840"><span class="number">11.1 </span><span class="name"><code class="literal">hostlabel</code></span></a></span></dt><dt><span class="sect1"><a href="cha.obs.build_job_constraints.html#idm140050581277632"><span class="number">11.2 </span><span class="name"><code class="literal">sandbox</code></span></a></span></dt><dt><span class="sect1"><a href="cha.obs.build_job_constraints.html#idm140050581273056"><span class="number">11.3 </span><span class="name"><code class="literal">linux</code></span></a></span></dt><dt><span class="sect1"><a href="cha.obs.build_job_constraints.html#idm140050581261888"><span class="number">11.4 </span><span class="name"><code class="literal">hardware</code></span></a></span></dt><dt><span class="sect1"><a href="cha.obs.build_job_constraints.html#idm140050581237056"><span class="number">11.5 </span><span class="name">Constraint Handling</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.build_job_constraints.html#idm140050581228912"><span class="number">11.6 </span><span class="name">Checking Constraints with <code class="command">osc</code></span></a></span></dt></dl></div></div>
+</script><noscript><link rel="stylesheet" type="text/css" href="http://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="offline js-off"><div id="_outer-wrap"><div id="_white-bg"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Reference Guide"><span class="book-icon">Reference Guide</span></a><span> › </span><a class="crumb" href="cha.obs.build_job_constraints.html">Build Job Constraints</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.htmlindex.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Reference Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="bk04pr01.html"><span class="number"> </span><span class="name">About this Guide</span></a></li><li class="inactive"><a href="cha.obs.architecture.html"><span class="number">1 </span><span class="name">OBS Architecture</span></a></li><li class="inactive"><a href="cha.obs.concepts.html"><span class="number">2 </span><span class="name">OBS Concepts</span></a></li><li class="inactive"><a href="cha.obs.build_process.html"><span class="number">3 </span><span class="name">Build Process</span></a></li><li class="inactive"><a href="cha.obs.source_management.html"><span class="number">4 </span><span class="name">Source Management</span></a></li><li class="inactive"><a href="cha.obs.request_and_review_ystem.html"><span class="number">5 </span><span class="name">Request And Review System</span></a></li><li class="inactive"><a href="cha.obs.image_templates.html"><span class="number">6 </span><span class="name">Image Templates</span></a></li><li class="inactive"><a href="cha.obs.multibuild.html"><span class="number">7 </span><span class="name">Multiple Build Description File Handling</span></a></li><li class="inactive"><a href="cha.obs.maintenance_setup.html"><span class="number">8 </span><span class="name">Maintenance Support</span></a></li><li class="inactive"><a href="cha.obs.binary_tracking.html"><span class="number">9 </span><span class="name">Binary Package Tracking</span></a></li><li class="inactive"><a href="cha.obs.admin.html"><span class="number">10 </span><span class="name">Administration</span></a></li><li class="inactive"><a href="cha.obs.build_scheduling_and_dispatching.html"><span class="number">11 </span><span class="name">Scheduling and Dispatching</span></a></li><li class="inactive"><a href="cha.obs.build_job_constraints.html"><span class="number">12 </span><span class="name">Build Job Constraints</span></a></li><li class="inactive"><a href="cha.obs.build_preinstall.html"><span class="number">13 </span><span class="name">Building Preinstall Images</span></a></li><li class="inactive"><a href="cha.obs.authorization.token.html"><span class="number">14 </span><span class="name">Authorization</span></a></li><li class="inactive"><a href="cha.obs.qa_hooks.html"><span class="number">15 </span><span class="name">Quality Assurance(QA) Hooks</span></a></li><li class="inactive"><a href="cha.obs.factory.html"><span class="number">16 </span><span class="name">openSUSE Factory</span></a></li><li class="inactive"><a href="obs.glossary.html"><span class="number"> </span><span class="name">Glossary</span></a></li><li class="inactive"><a href="bk04apa.html"><span class="number">A </span><span class="name">GNU Licenses</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 11. Scheduling and Dispatching" href="cha.obs.build_scheduling_and_dispatching.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 13. Building Preinstall Images" href="cha.obs.build_preinstall.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Reference Guide"><span class="book-icon">Reference Guide</span></a><span> › </span><a class="crumb" href="cha.obs.build_job_constraints.html">Build Job Constraints</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 11. Scheduling and Dispatching" href="cha.obs.build_scheduling_and_dispatching.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 13. Building Preinstall Images" href="cha.obs.build_preinstall.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class=""><div class="documentation"><div class="chapter " id="cha.obs.build_job_constraints"><div class="titlepage"><div><div><h1 class="title"><span class="number">12 </span><span class="name">Build Job Constraints</span> </h1></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="cha.obs.build_job_constraints.html#idm140493796533136"><span class="number">12.1 </span><span class="name"><code class="literal">hostlabel</code></span></a></span></dt><dt><span class="sect1"><a href="cha.obs.build_job_constraints.html#idm140493796528896"><span class="number">12.2 </span><span class="name"><code class="literal">sandbox</code></span></a></span></dt><dt><span class="sect1"><a href="cha.obs.build_job_constraints.html#idm140493796524528"><span class="number">12.3 </span><span class="name"><code class="literal">linux</code></span></a></span></dt><dt><span class="sect1"><a href="cha.obs.build_job_constraints.html#idm140493796513264"><span class="number">12.4 </span><span class="name"><code class="literal">hardware</code></span></a></span></dt><dt><span class="sect1"><a href="cha.obs.build_job_constraints.html#idm140493796488560"><span class="number">12.5 </span><span class="name">Constraint Handling</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.build_job_constraints.html#idm140493796480416"><span class="number">12.6 </span><span class="name">Checking Constraints with <code class="command">osc</code></span></a></span></dt></dl></div></div>
  
  
  <p> Build job constraints can define requirements for the hardware or
@@ -30,7 +38,7 @@ else {
   source file can contain the values listed below. </p>
  <p> NOTE: If no build host meets the constraints, the package will stay in
   state "scheduled" and never be dispatched. </p>
- <div class="sect1 " id="idm140050581281840"><div class="titlepage"><div><div><h2 class="title" id="idm140050581281840"><span class="number">11.1 </span><span class="name"><code class="literal">hostlabel</code></span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140050581281840">#</a></h2></div></div></div>
+ <div class="sect1 " id="idm140493796533136"><div class="titlepage"><div><div><h2 class="title" id="idm140493796533136"><span class="number">12.1 </span><span class="name"><code class="literal">hostlabel</code></span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140493796533136">#</a></h2></div></div></div>
   
   <p> The hostlabel is any string which can be assigned to build hosts when
    starting the bs_worker process. It can be used to run on specific hosts,
@@ -48,7 +56,7 @@ else {
    <p>Example for project configuration:  </p>
    <div class="verbatim-wrap"><pre class="screen">Constraint: hostlabel benchmark_runner</pre></div>
  </div>
- <div class="sect1 " id="idm140050581277632"><div class="titlepage"><div><div><h2 class="title" id="idm140050581277632"><span class="number">11.2 </span><span class="name"><code class="literal">sandbox</code></span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140050581277632">#</a></h2></div></div></div>
+ <div class="sect1 " id="idm140493796528896"><div class="titlepage"><div><div><h2 class="title" id="idm140493796528896"><span class="number">12.2 </span><span class="name"><code class="literal">sandbox</code></span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140493796528896">#</a></h2></div></div></div>
   
   <p> Defines the sandbox which is used for the build job. Sandboxes are
    chroot, Xen or KVM environments. There is also the virtual secure sandbox,
@@ -61,10 +69,10 @@ else {
    <p>Example for project configuration:</p>
    <div class="verbatim-wrap"><pre class="screen">Constraint: sandbox secure</pre></div>
  </div>
- <div class="sect1 " id="idm140050581273056"><div class="titlepage"><div><div><h2 class="title" id="idm140050581273056"><span class="number">11.3 </span><span class="name"><code class="literal">linux</code></span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140050581273056">#</a></h2></div></div></div>
+ <div class="sect1 " id="idm140493796524528"><div class="titlepage"><div><div><h2 class="title" id="idm140493796524528"><span class="number">12.3 </span><span class="name"><code class="literal">linux</code></span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140493796524528">#</a></h2></div></div></div>
   
   <p> The Linux kernel specific part. </p>
-  <div class="sect2 " id="idm140050581271616"><div class="titlepage"><div><div><h3 class="title" id="idm140050581271616"><span class="number">11.3.1 </span><span class="name">version</span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140050581271616">#</a></h3></div></div></div>
+  <div class="sect2 " id="idm140493796523152"><div class="titlepage"><div><div><h3 class="title" id="idm140493796523152"><span class="number">12.3.1 </span><span class="name">version</span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140493796523152">#</a></h3></div></div></div>
    
    <p> To require a specific Linux kernel version. </p>
    <p> Example for _constraints file:</p>
@@ -77,16 +85,16 @@ else {
     <p>Example for project configuration:</p>
     <div class="verbatim-wrap"><pre class="screen">Constraint: linux:version:min 3.0
 Constraint: linux:version:max 4.0</pre></div>
-   <div class="sect3 " id="idm140050581268240"><div class="titlepage"><div><div><h4 class="title" id="idm140050581268240"><span class="number">11.3.1.1 </span><span class="name"><code class="literal">min</code></span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140050581268240">#</a></h4></div></div></div>
+   <div class="sect3 " id="idm140493796519840"><div class="titlepage"><div><div><h4 class="title" id="idm140493796519840"><span class="number">12.3.1.1 </span><span class="name"><code class="literal">min</code></span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140493796519840">#</a></h4></div></div></div>
     
     <p> Minimal kernel version. </p>
    </div>
-   <div class="sect3 " id="idm140050581266736"><div class="titlepage"><div><div><h4 class="title" id="idm140050581266736"><span class="number">11.3.1.2 </span><span class="name"><code class="literal">max</code></span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140050581266736">#</a></h4></div></div></div>
+   <div class="sect3 " id="idm140493796518224"><div class="titlepage"><div><div><h4 class="title" id="idm140493796518224"><span class="number">12.3.1.2 </span><span class="name"><code class="literal">max</code></span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140493796518224">#</a></h4></div></div></div>
     
     <p> Maximal kernel version. </p>
    </div>
   </div>
-  <div class="sect2 " id="idm140050581265280"><div class="titlepage"><div><div><h3 class="title" id="idm140050581265280"><span class="number">11.3.2 </span><span class="name"><code class="literal">flavor</code></span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140050581265280">#</a></h3></div></div></div>
+  <div class="sect2 " id="idm140493796516768"><div class="titlepage"><div><div><h3 class="title" id="idm140493796516768"><span class="number">12.3.2 </span><span class="name"><code class="literal">flavor</code></span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140493796516768">#</a></h3></div></div></div>
    
    <p> A specific kernel flavor like default or smp (from kernel packages
     kernel-default or kernel-smp). </p>
@@ -100,13 +108,13 @@ Constraint: linux:version:max 4.0</pre></div>
     <div class="verbatim-wrap"><pre class="screen">Constraint: linux:flavor default</pre></div>
   </div>
  </div>
- <div class="sect1 " id="idm140050581261888"><div class="titlepage"><div><div><h2 class="title" id="idm140050581261888"><span class="number">11.4 </span><span class="name"><code class="literal">hardware</code></span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140050581261888">#</a></h2></div></div></div>
+ <div class="sect1 " id="idm140493796513264"><div class="titlepage"><div><div><h2 class="title" id="idm140493796513264"><span class="number">12.4 </span><span class="name"><code class="literal">hardware</code></span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140493796513264">#</a></h2></div></div></div>
   
   <p> To require hardware or build instance features. </p>
-  <div class="sect2 " id="idm140050581260336"><div class="titlepage"><div><div><h3 class="title" id="idm140050581260336"><span class="number">11.4.1 </span><span class="name"><code class="literal">cpu</code></span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140050581260336">#</a></h3></div></div></div>
+  <div class="sect2 " id="idm140493796511712"><div class="titlepage"><div><div><h3 class="title" id="idm140493796511712"><span class="number">12.4.1 </span><span class="name"><code class="literal">cpu</code></span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140493796511712">#</a></h3></div></div></div>
    
    <p> To require a specific Linux kernel version. </p>
-   <div class="sect3 " id="idm140050581258960"><div class="titlepage"><div><div><h4 class="title" id="idm140050581258960"><span class="number">11.4.1.1 </span><span class="name"><code class="literal">flag</code></span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140050581258960">#</a></h4></div></div></div>
+   <div class="sect3 " id="idm140493796510336"><div class="titlepage"><div><div><h4 class="title" id="idm140493796510336"><span class="number">12.4.1.1 </span><span class="name"><code class="literal">flag</code></span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140493796510336">#</a></h4></div></div></div>
     
     <p> CPU features which are provided by the hardware. On Linux they can
      be found in /proc/cpuinfo. The flag element may be used multiple times to
@@ -123,7 +131,7 @@ Constraint: linux:version:max 4.0</pre></div>
 Constraint: hardware:cpu:flag sse2</pre></div>
    </div>
   </div>
-  <div class="sect2 " id="idm140050581255120"><div class="titlepage"><div><div><h3 class="title" id="idm140050581255120"><span class="number">11.4.2 </span><span class="name"><code class="literal">processors</code></span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140050581255120">#</a></h3></div></div></div>
+  <div class="sect2 " id="idm140493796506624"><div class="titlepage"><div><div><h3 class="title" id="idm140493796506624"><span class="number">12.4.2 </span><span class="name"><code class="literal">processors</code></span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140493796506624">#</a></h3></div></div></div>
    
    <p> To require a minimal number of processors for the build job. </p>
    <p> Example for _constraints file:</p>
@@ -135,10 +143,10 @@ Constraint: hardware:cpu:flag sse2</pre></div>
     <p>Example for project configuration:</p>
     <div class="verbatim-wrap"><pre class="screen">Constraint: hardware:processors 4</pre></div>
   </div>
-  <div class="sect2 " id="idm140050581251904"><div class="titlepage"><div><div><h3 class="title" id="idm140050581251904"><span class="number">11.4.3 </span><span class="name"><code class="literal">disk</code></span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140050581251904">#</a></h3></div></div></div>
+  <div class="sect2 " id="idm140493796506464"><div class="titlepage"><div><div><h3 class="title" id="idm140493796506464"><span class="number">12.4.3 </span><span class="name"><code class="literal">disk</code></span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140493796506464">#</a></h3></div></div></div>
    
    <p> Hard disk specific. </p>
-   <div class="sect3 " id="idm140050581250464"><div class="titlepage"><div><div><h4 class="title" id="idm140050581250464"><span class="number">11.4.3.1 </span><span class="name"><code class="literal">size</code></span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140050581250464">#</a></h4></div></div></div>
+   <div class="sect3 " id="idm140493796502016"><div class="titlepage"><div><div><h4 class="title" id="idm140493796502016"><span class="number">12.4.3.1 </span><span class="name"><code class="literal">size</code></span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140493796502016">#</a></h4></div></div></div>
     
     <p> To require a minimal size of the disk. </p>
     <p> Example for _constraints file:</p>
@@ -153,10 +161,10 @@ Constraint: hardware:cpu:flag sse2</pre></div>
      <div class="verbatim-wrap"><pre class="screen">Constraint: hardware:disk:size unit="G" 4</pre></div>
    </div>
   </div>
-  <div class="sect2 " id="idm140050581246880"><div class="titlepage"><div><div><h3 class="title" id="idm140050581246880"><span class="number">11.4.4 </span><span class="name"><code class="literal">memory</code></span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140050581246880">#</a></h3></div></div></div>
+  <div class="sect2 " id="idm140493796498384"><div class="titlepage"><div><div><h3 class="title" id="idm140493796498384"><span class="number">12.4.4 </span><span class="name"><code class="literal">memory</code></span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140493796498384">#</a></h3></div></div></div>
    
    <p> Memory specific. </p>
-   <div class="sect3 " id="idm140050581245568"><div class="titlepage"><div><div><h4 class="title" id="idm140050581245568"><span class="number">11.4.4.1 </span><span class="name"><code class="literal">size</code></span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140050581245568">#</a></h4></div></div></div>
+   <div class="sect3 " id="idm140493796497072"><div class="titlepage"><div><div><h4 class="title" id="idm140493796497072"><span class="number">12.4.4.1 </span><span class="name"><code class="literal">size</code></span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140493796497072">#</a></h4></div></div></div>
     
     <p> To require a minimal memory size including swap space. </p>
     <p> Example for _constraints file:</p>
@@ -171,10 +179,10 @@ Constraint: hardware:cpu:flag sse2</pre></div>
      <div class="verbatim-wrap"><pre class="screen">Constraint: hardware:memory:size unit="M" 1400</pre></div>
    </div>
   </div>
-  <div class="sect2 " id="idm140050581241936"><div class="titlepage"><div><div><h3 class="title" id="idm140050581241936"><span class="number">11.4.5 </span><span class="name"><code class="literal">physicalmemory</code></span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140050581241936">#</a></h3></div></div></div>
+  <div class="sect2 " id="idm140493796493440"><div class="titlepage"><div><div><h3 class="title" id="idm140493796493440"><span class="number">12.4.5 </span><span class="name"><code class="literal">physicalmemory</code></span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140493796493440">#</a></h3></div></div></div>
    
    <p> Memory specific. </p>
-   <div class="sect3 " id="idm140050581240624"><div class="titlepage"><div><div><h4 class="title" id="idm140050581240624"><span class="number">11.4.5.1 </span><span class="name"><code class="literal">size</code></span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140050581240624">#</a></h4></div></div></div>
+   <div class="sect3 " id="idm140493796492128"><div class="titlepage"><div><div><h4 class="title" id="idm140493796492128"><span class="number">12.4.5.1 </span><span class="name"><code class="literal">size</code></span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140493796492128">#</a></h4></div></div></div>
     
     <p> To require a minimal memory size. Swap space is not taken into
      account here. </p>
@@ -191,16 +199,16 @@ Constraint: hardware:cpu:flag sse2</pre></div>
    </div>
   </div>
  </div>
- <div class="sect1 " id="idm140050581237056"><div class="titlepage"><div><div><h2 class="title" id="idm140050581237056"><span class="number">11.5 </span><span class="name">Constraint Handling</span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140050581237056">#</a></h2></div></div></div>
+ <div class="sect1 " id="idm140493796488560"><div class="titlepage"><div><div><h2 class="title" id="idm140493796488560"><span class="number">12.5 </span><span class="name">Constraint Handling</span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140493796488560">#</a></h2></div></div></div>
   
   <p> The constraint handling depends on what is met by the restrictions.
    The handling starts when there is no worker to fulfill the constraints. </p>
-  <div class="sect2 " id="idm140050581235536"><div class="titlepage"><div><div><h3 class="title" id="idm140050581235536"><span class="number">11.5.1 </span><span class="name">More than half of the workers satisfy the constraints</span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140050581235536">#</a></h3></div></div></div>
+  <div class="sect2 " id="idm140493796487040"><div class="titlepage"><div><div><h3 class="title" id="idm140493796487040"><span class="number">12.5.1 </span><span class="name">More than half of the workers satisfy the constraints</span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140493796487040">#</a></h3></div></div></div>
    
    <p> The job will just stay in state scheduled and no further notification
     is set. </p>
   </div>
-  <div class="sect2 " id="idm140050581234128"><div class="titlepage"><div><div><h3 class="title" id="idm140050581234128"><span class="number">11.5.2 </span><span class="name">Less than Half of the Workers Satisfy the Constraints</span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140050581234128">#</a></h3></div></div></div>
+  <div class="sect2 " id="idm140493796485632"><div class="titlepage"><div><div><h3 class="title" id="idm140493796485632"><span class="number">12.5.2 </span><span class="name">Less than Half of the Workers Satisfy the Constraints</span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140493796485632">#</a></h3></div></div></div>
    
    <p> The job will stay in state scheduled and the dispatch details are set
     to tell the user that this job can take a long time to be built. This will
@@ -211,7 +219,7 @@ Constraint: hardware:cpu:flag sse2</pre></div>
      down)</code> means that 4 of the 4 compliant workers are down and that
     someone should have a look. </p>
   </div>
-  <div class="sect2 " id="idm140050581230912"><div class="titlepage"><div><div><h3 class="title" id="idm140050581230912"><span class="number">11.5.3 </span><span class="name">No Workers Satisfy the Constraints</span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140050581230912">#</a></h3></div></div></div>
+  <div class="sect2 " id="idm140493796482416"><div class="titlepage"><div><div><h3 class="title" id="idm140493796482416"><span class="number">12.5.3 </span><span class="name">No Workers Satisfy the Constraints</span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140493796482416">#</a></h3></div></div></div>
    
    <p> If no worker can handle the constraints defined by the package or
     project the build job fails. There is also a hint in the build log what has
@@ -223,7 +231,7 @@ no compliant workers (constraints mismatch hint: hardware:processors sandbox)
 Please adapt your constraints.</pre></div>
   </div>
  </div>
- <div class="sect1 " id="idm140050581228912"><div class="titlepage"><div><div><h2 class="title" id="idm140050581228912"><span class="number">11.6 </span><span class="name">Checking Constraints with <code class="command">osc</code></span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140050581228912">#</a></h2></div></div></div>
+ <div class="sect1 " id="idm140493796480416"><div class="titlepage"><div><div><h2 class="title" id="idm140493796480416"><span class="number">12.6 </span><span class="name">Checking Constraints with <code class="command">osc</code></span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#idm140493796480416">#</a></h2></div></div></div>
   
   <p> You can check the constraints of a project / package with the osc
    tool. You have to be in an osc working directory.</p>
@@ -267,6 +275,6 @@ x86_64:worker:2</pre></div>
 &lt;/worker&gt;</pre></div>
   <p> It returns the information of the desired worker. </p>
  </div>
-</div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="cha.obs.build_preinstall.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 12 </span>Building Preinstall Images</span></a><a class="nav-link" href="cha.obs.build_scheduling_and_dispatching.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 10 </span>Scheduling and Dispatching</span></a></div><div id="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span id="_share-fb" class="bottom-button">Facebook</span><span class="spacer"> • </span><span id="_share-gp" class="bottom-button">Google+</span><span class="spacer"> • </span><span id="_share-tw" class="bottom-button">Twitter</span><span class="spacer"> • </span><span id="_share-mail" class="bottom-button">E-Mail</span></span></div><div class="print"><span id="_print-button" class="bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
-        2017 
+</div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="cha.obs.build_preinstall.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 13 </span>Building Preinstall Images</span></a><a class="nav-link" href="cha.obs.build_scheduling_and_dispatching.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 11 </span>Scheduling and Dispatching</span></a></div><div id="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span id="_share-fb" class="bottom-button">Facebook</span><span class="spacer"> • </span><span id="_share-gp" class="bottom-button">Google+</span><span class="spacer"> • </span><span id="_share-tw" class="bottom-button">Twitter</span><span class="spacer"> • </span><span id="_share-mail" class="bottom-button">E-Mail</span></span></div><div class="print"><span id="_print-button" class="bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2018 
         SUSE</p><ul><li><a href="http://www.suse.com/company/careers/" target="_top">Careers</a></li><li><a href="http://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="http://www.suse.com/company/" target="_top">About</a></li><li><a href="http://www.suse.com/ContactsOffices/contacts_offices.jsp" target="_top">Contact Us</a></li></ul></div></div></body></html>
