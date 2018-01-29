@@ -1,21 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Publishing Upstream Binaries | Best Practice Guide</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><meta name="generator" content="DocBook XSL Stylesheets V1.78.1" /><meta name="book-title" content="Best Practice Guide" /><meta name="chapter-title" content="Chapter 3. Publishing Upstream Binaries" /><link rel="home" href="index.html" title="OBS Documentation" /><link rel="up" href="book.obs-best-practices.html" title="Best Practice Guide" /><link rel="prev" href="cha.obs.best-practices.basics.html" title="Chapter 2. Basic Concepts and Work Styles" /><link rel="next" href="cha.obs.best-practices.localsetup.html" title="Chapter 4. Setting Up a Local OBS Instance" /><script type="text/javascript">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Publishing Upstream Binaries | Best Practice Guide</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 2.4.0 using SUSE XSL Stylesheets 2.0.8 (based on DocBook XSL Stylesheets 1.78.1) - chunked" /><meta name="book-title" content="Best Practice Guide" /><meta name="chapter-title" content="Chapter 3. Publishing Upstream Binaries" /><link rel="home" href="index.html" title="OBS Documentation" /><link rel="up" href="book.obs-best-practices.html" title="Best Practice Guide" /><link rel="prev" href="cha.obs.best-practices.basics.html" title="Chapter 2. Basic Concepts and Work Styles" /><link rel="next" href="cha.obs.best-practices.localsetup.html" title="Chapter 4. Setting Up a Local OBS Instance" /><script type="text/javascript">
 
 var protocol = window.location.protocol.toLowerCase();
 if ( protocol != 'file:' ) {
   var agent = navigator.userAgent.toLowerCase();
   var wanted = ( protocol == 'https:') ? 'https' : 'http';
   var file = 'fonts.css';
-  if (agent.indexOf('android') != -1 && agent.indexOf('chrom') != -1 ) {
-      file = 'fonts-nolocal.css';
-  }
   document.write('<link rel="stylesheet" type="text/css" href="' + wanted + '://static.opensuse.org/fonts/'+ file +'"></link>');
 }
 else {
    document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
 }
 
-</script><noscript><link rel="stylesheet" type="text/css" href="http://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script></head><body class="offline js-off"><div id="_outer-wrap"><div id="_white-bg"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Best Practice Guide"><span class="book-icon">Best Practice Guide</span></a><span> › </span><a class="crumb" href="cha.obs.best-practices.upstream.html">Publishing Upstream Binaries</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.htmlindex.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Best Practice Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="bk05pr01.html"><span class="number"> </span><span class="name">About this Guide</span></a></li><li class="inactive"><a href="cha.obs.best-practices.webuiusage.html"><span class="number">1 </span><span class="name">Using the OBS Web UI</span></a></li><li class="inactive"><a href="cha.obs.best-practices.basics.html"><span class="number">2 </span><span class="name">Basic Concepts and Work Styles</span></a></li><li class="inactive"><a href="cha.obs.best-practices.upstream.html"><span class="number">3 </span><span class="name">Publishing Upstream Binaries</span></a></li><li class="inactive"><a href="cha.obs.best-practices.localsetup.html"><span class="number">4 </span><span class="name">Setting Up a Local OBS Instance</span></a></li><li class="inactive"><a href="cha.obs.best-practices.bootstrapping.html"><span class="number">5 </span><span class="name">Bootstrapping</span></a></li><li class="inactive"><a href="cha.obs.best-practices.oscexamples.html"><span class="number">6 </span><span class="name"><code class="command">osc</code> Example Commands</span></a></li><li class="inactive"><a href="cha.obs.best-practices.advanced.html"><span class="number">7 </span><span class="name">Advanced Project Setups</span></a></li><li class="inactive"><a href="cha.obs.best-practices.kmp.html"><span class="number">8 </span><span class="name">Building Kernel Modules</span></a></li><li class="inactive"><a href="cha.obs.best-practices.howto.html"><span class="number">9 </span><span class="name">Common Questions and Solutions</span></a></li><li class="inactive"><a href="bk05apa.html"><span class="number">A </span><span class="name">GNU Licenses</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 2. Basic Concepts and Work Styles" href="cha.obs.best-practices.basics.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 4. Setting Up a Local OBS Instance" href="cha.obs.best-practices.localsetup.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Best Practice Guide"><span class="book-icon">Best Practice Guide</span></a><span> › </span><a class="crumb" href="cha.obs.best-practices.upstream.html">Publishing Upstream Binaries</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 2. Basic Concepts and Work Styles" href="cha.obs.best-practices.basics.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 4. Setting Up a Local OBS Instance" href="cha.obs.best-practices.localsetup.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class=""><div class="documentation"><div class="chapter " id="cha.obs.best-practices.upstream"><div class="titlepage"><div><div><h1 class="title"><span class="number">3 </span><span class="name">Publishing Upstream Binaries</span> </h1></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="cha.obs.best-practices.upstream.html#idm140211105040896"><span class="number">3.1 </span><span class="name">Which Instance to Use?</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.best-practices.upstream.html#idm140211105034688"><span class="number">3.2 </span><span class="name">Where to Place Your Project</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.best-practices.upstream.html#idm140211105017328"><span class="number">3.3 </span><span class="name">Creating a Package</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.best-practices.upstream.html#idm140211105015088"><span class="number">3.4 </span><span class="name">Getting Binaries</span></a></span></dt></dl></div></div>
+</script><noscript><link rel="stylesheet" type="text/css" href="http://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="offline js-off"><div id="_outer-wrap"><div id="_white-bg"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Best Practice Guide"><span class="book-icon">Best Practice Guide</span></a><span> › </span><a class="crumb" href="cha.obs.best-practices.upstream.html">Publishing Upstream Binaries</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Best Practice Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="bk05pr01.html"><span class="number"> </span><span class="name">About this Guide</span></a></li><li class="inactive"><a href="cha.obs.best-practices.webuiusage.html"><span class="number">1 </span><span class="name">Using the OBS Web UI</span></a></li><li class="inactive"><a href="cha.obs.best-practices.basics.html"><span class="number">2 </span><span class="name">Basic Concepts and Work Styles</span></a></li><li class="inactive"><a href="cha.obs.best-practices.upstream.html"><span class="number">3 </span><span class="name">Publishing Upstream Binaries</span></a></li><li class="inactive"><a href="cha.obs.best-practices.localsetup.html"><span class="number">4 </span><span class="name">Setting Up a Local OBS Instance</span></a></li><li class="inactive"><a href="cha.obs.best-practices.bootstrapping.html"><span class="number">5 </span><span class="name">Bootstrapping</span></a></li><li class="inactive"><a href="cha.obs.best-practices.oscexamples.html"><span class="number">6 </span><span class="name"><code class="command">osc</code> Example Commands</span></a></li><li class="inactive"><a href="cha.obs.best-practices.advanced.html"><span class="number">7 </span><span class="name">Advanced Project Setups</span></a></li><li class="inactive"><a href="cha.obs.best-practices.kmp.html"><span class="number">8 </span><span class="name">Building Kernel Modules</span></a></li><li class="inactive"><a href="cha.obs.best-practices.howto.html"><span class="number">9 </span><span class="name">Common Questions and Solutions</span></a></li><li class="inactive"><a href="bk05apa.html"><span class="number">A </span><span class="name">GNU Licenses</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 2. Basic Concepts and Work Styles" href="cha.obs.best-practices.basics.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 4. Setting Up a Local OBS Instance" href="cha.obs.best-practices.localsetup.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Best Practice Guide"><span class="book-icon">Best Practice Guide</span></a><span> › </span><a class="crumb" href="cha.obs.best-practices.upstream.html">Publishing Upstream Binaries</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 2. Basic Concepts and Work Styles" href="cha.obs.best-practices.basics.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 4. Setting Up a Local OBS Instance" href="cha.obs.best-practices.localsetup.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class=""><div class="documentation"><div class="chapter " id="cha.obs.best-practices.upstream"><div class="titlepage"><div><div><h1 class="title"><span class="number">3 </span><span class="name">Publishing Upstream Binaries</span> </h1></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="cha.obs.best-practices.upstream.html#idm140090422498496"><span class="number">3.1 </span><span class="name">Which Instance to Use?</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.best-practices.upstream.html#idm140090422492288"><span class="number">3.2 </span><span class="name">Where to Place Your Project</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.best-practices.upstream.html#idm140090422474784"><span class="number">3.3 </span><span class="name">Creating a Package</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.best-practices.upstream.html#idm140090422472544"><span class="number">3.4 </span><span class="name">Getting Binaries</span></a></span></dt></dl></div></div>
  
  
  
@@ -23,9 +31,9 @@ else {
   This chapter covers main step of using OBS to publish binaries of your
   project for multiple distributions.
  </p>
- <div class="sect1 " id="idm140211105040896"><div class="titlepage"><div><div><h2 class="title" id="idm140211105040896"><span class="number">3.1 </span><span class="name">Which Instance to Use?</span> <a title="Permalink" class="permalink" href="cha.obs.best-practices.upstream.html#idm140211105040896">#</a></h2></div></div></div>
+ <div class="sect1 " id="idm140090422498496"><div class="titlepage"><div><div><h2 class="title" id="idm140090422498496"><span class="number">3.1 </span><span class="name">Which Instance to Use?</span> <a title="Permalink" class="permalink" href="cha.obs.best-practices.upstream.html#idm140090422498496">#</a></h2></div></div></div>
   
-  <div class="sect2 " id="idm140211105040256"><div class="titlepage"><div><div><h3 class="title" id="idm140211105040256"><span class="number">3.1.1 </span><span class="name">Private OBS Instance</span> <a title="Permalink" class="permalink" href="cha.obs.best-practices.upstream.html#idm140211105040256">#</a></h3></div></div></div>
+  <div class="sect2 " id="idm140090422497792"><div class="titlepage"><div><div><h3 class="title" id="idm140090422497792"><span class="number">3.1.1 </span><span class="name">Private OBS Instance</span> <a title="Permalink" class="permalink" href="cha.obs.best-practices.upstream.html#idm140090422497792">#</a></h3></div></div></div>
    
    <p>
     OBS is open source project and therefore you can set up your own instance
@@ -41,7 +49,7 @@ else {
     found in <a class="xref" href="cha.obs.best-practices.localsetup.html" title="Chapter 4. Setting Up a Local OBS Instance">Chapter 4, <em>Setting Up a Local OBS Instance</em></a> .
    </p>
   </div>
-  <div class="sect2 " id="idm140211105037232"><div class="titlepage"><div><div><h3 class="title" id="idm140211105037232"><span class="number">3.1.2 </span><span class="name">openSUSE Build Service</span> <a title="Permalink" class="permalink" href="cha.obs.best-practices.upstream.html#idm140211105037232">#</a></h3></div></div></div>
+  <div class="sect2 " id="idm140090422494752"><div class="titlepage"><div><div><h3 class="title" id="idm140090422494752"><span class="number">3.1.2 </span><span class="name">openSUSE Build Service</span> <a title="Permalink" class="permalink" href="cha.obs.best-practices.upstream.html#idm140090422494752">#</a></h3></div></div></div>
    
    <p>
     Other option is to use some publicly available instance of OBS. One good
@@ -55,7 +63,7 @@ else {
    </p>
   </div>
  </div>
- <div class="sect1 " id="idm140211105034688"><div class="titlepage"><div><div><h2 class="title" id="idm140211105034688"><span class="number">3.2 </span><span class="name">Where to Place Your Project</span> <a title="Permalink" class="permalink" href="cha.obs.best-practices.upstream.html#idm140211105034688">#</a></h2></div></div></div>
+ <div class="sect1 " id="idm140090422492288"><div class="titlepage"><div><div><h2 class="title" id="idm140090422492288"><span class="number">3.2 </span><span class="name">Where to Place Your Project</span> <a title="Permalink" class="permalink" href="cha.obs.best-practices.upstream.html#idm140090422492288">#</a></h2></div></div></div>
   
   <p>
    This part helps you to decide on how to name and where to place your project
@@ -63,7 +71,7 @@ else {
    sharing your OBS instance with other people like in
    <a class="ulink" href="http://build.opensuse.org" target="_blank">openSUSE Build Service<span class="ulink-url"> (http://build.opensuse.org)</span></a>.
   </p>
-  <div class="sect2 " id="idm140211105032656"><div class="titlepage"><div><div><h3 class="title" id="idm140211105032656"><span class="number">3.2.1 </span><span class="name">Base Project</span> <a title="Permalink" class="permalink" href="cha.obs.best-practices.upstream.html#idm140211105032656">#</a></h3></div></div></div>
+  <div class="sect2 " id="idm140090422490144"><div class="titlepage"><div><div><h3 class="title" id="idm140090422490144"><span class="number">3.2.1 </span><span class="name">Base Project</span> <a title="Permalink" class="permalink" href="cha.obs.best-practices.upstream.html#idm140090422490144">#</a></h3></div></div></div>
    
    <p>
     If there are more packages in OBS, like for example in
@@ -95,14 +103,14 @@ else {
     package to get included in.
    </p>
   </div>
-  <div class="sect2 " id="idm140211105025680"><div class="titlepage"><div><div><h3 class="title" id="idm140211105025680"><span class="number">3.2.2 </span><span class="name">Supporting Additional Versions</span> <a title="Permalink" class="permalink" href="cha.obs.best-practices.upstream.html#idm140211105025680">#</a></h3></div></div></div>
+  <div class="sect2 " id="idm140090422483136"><div class="titlepage"><div><div><h3 class="title" id="idm140090422483136"><span class="number">3.2.2 </span><span class="name">Supporting Additional Versions</span> <a title="Permalink" class="permalink" href="cha.obs.best-practices.upstream.html#idm140090422483136">#</a></h3></div></div></div>
    
    <p>
     If you want to support more than one version of your program, you
     need to use several projects. The same package cannot be contained in the
     same project multiple times.
    </p>
-   <div class="sect3 " id="idm140211105024272"><div class="titlepage"><div><div><h4 class="title" id="idm140211105024272"><span class="number">3.2.2.1 </span><span class="name">Stable and Development Versions</span> <a title="Permalink" class="permalink" href="cha.obs.best-practices.upstream.html#idm140211105024272">#</a></h4></div></div></div>
+   <div class="sect3 " id="idm140090422481728"><div class="titlepage"><div><div><h4 class="title" id="idm140090422481728"><span class="number">3.2.2.1 </span><span class="name">Stable and Development Versions</span> <a title="Permalink" class="permalink" href="cha.obs.best-practices.upstream.html#idm140090422481728">#</a></h4></div></div></div>
     
     <p>
      Let's assume that you have found project suitable for your program. Some
@@ -115,7 +123,7 @@ else {
      help you in various ways.
     </p>
    </div>
-   <div class="sect3 " id="idm140211105021456"><div class="titlepage"><div><div><h4 class="title" id="idm140211105021456"><span class="number">3.2.2.2 </span><span class="name">Multiple Stable Versions</span> <a title="Permalink" class="permalink" href="cha.obs.best-practices.upstream.html#idm140211105021456">#</a></h4></div></div></div>
+   <div class="sect3 " id="idm140090422478912"><div class="titlepage"><div><div><h4 class="title" id="idm140090422478912"><span class="number">3.2.2.2 </span><span class="name">Multiple Stable Versions</span> <a title="Permalink" class="permalink" href="cha.obs.best-practices.upstream.html#idm140090422478912">#</a></h4></div></div></div>
     
     <p>
      If you want to support multiple version, you would need more projects than
@@ -135,7 +143,7 @@ else {
    </div>
   </div>
  </div>
- <div class="sect1 " id="idm140211105017328"><div class="titlepage"><div><div><h2 class="title" id="idm140211105017328"><span class="number">3.3 </span><span class="name">Creating a Package</span> <a title="Permalink" class="permalink" href="cha.obs.best-practices.upstream.html#idm140211105017328">#</a></h2></div></div></div>
+ <div class="sect1 " id="idm140090422474784"><div class="titlepage"><div><div><h2 class="title" id="idm140090422474784"><span class="number">3.3 </span><span class="name">Creating a Package</span> <a title="Permalink" class="permalink" href="cha.obs.best-practices.upstream.html#idm140090422474784">#</a></h2></div></div></div>
   
   <p>
    Packaging is quite a complex topic. Instead of trying to cover it in this
@@ -146,9 +154,9 @@ else {
    documentation.
   </p>
  </div>
- <div class="sect1 " id="idm140211105015088"><div class="titlepage"><div><div><h2 class="title" id="idm140211105015088"><span class="number">3.4 </span><span class="name">Getting Binaries</span> <a title="Permalink" class="permalink" href="cha.obs.best-practices.upstream.html#idm140211105015088">#</a></h2></div></div></div>
+ <div class="sect1 " id="idm140090422472544"><div class="titlepage"><div><div><h2 class="title" id="idm140090422472544"><span class="number">3.4 </span><span class="name">Getting Binaries</span> <a title="Permalink" class="permalink" href="cha.obs.best-practices.upstream.html#idm140090422472544">#</a></h2></div></div></div>
   
-  <div id="idm140211105014272" class="admonition note"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6>
+  <div id="idm140090422471664" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6>
    <p>
     The following sections discuss feature available only in openSUSE Build Service—a
     freely available instances of OBS.
@@ -207,7 +215,7 @@ else {
        the download page better match your project page
       </td></tr></tbody></table>
   </div></div>
-  <div class="sect2 " id="idm140211104986512"><div class="titlepage"><div><div><h3 class="title" id="idm140211104986512"><span class="number">3.4.1 </span><span class="name">Examples</span> <a title="Permalink" class="permalink" href="cha.obs.best-practices.upstream.html#idm140211104986512">#</a></h3></div></div></div>
+  <div class="sect2 " id="idm140090422444048"><div class="titlepage"><div><div><h3 class="title" id="idm140090422444048"><span class="number">3.4.1 </span><span class="name">Examples</span> <a title="Permalink" class="permalink" href="cha.obs.best-practices.upstream.html#idm140090422444048">#</a></h3></div></div></div>
    
    <p>
     Now we will take a look at how to include the download page into your
@@ -246,17 +254,15 @@ else {
    &lt;a href="' . $url . '"&gt;download page&lt;/a&gt;
 &lt;/object&gt;
 ';
-?&gt;
-</pre></div>
+?&gt;</pre></div>
    <p>
     If you are running some legacy website, you might have to use
     <code class="code">iframe</code>
     :
    </p>
-<div class="verbatim-wrap"><pre class="screen">&lt;iframe src="http://software.opensuse.org/download.html?project=openSUSE:Tools&amp;amp;package=osc&amp;amp;bcolor=004&amp;amp;acolor=ff0&amp;amp;fcolor=fff&amp;amp;hcolor=0ff"/&gt;
-</pre></div>
+<div class="verbatim-wrap"><pre class="screen">&lt;iframe src="http://software.opensuse.org/download.html?project=openSUSE:Tools&amp;amp;package=osc&amp;amp;bcolor=004&amp;amp;acolor=ff0&amp;amp;fcolor=fff&amp;amp;hcolor=0ff"/&gt;</pre></div>
   </div>
  </div>
 </div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="cha.obs.best-practices.localsetup.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 4 </span>Setting Up a Local OBS Instance</span></a><a class="nav-link" href="cha.obs.best-practices.basics.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 2 </span>Basic Concepts and Work Styles</span></a></div><div id="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span id="_share-fb" class="bottom-button">Facebook</span><span class="spacer"> • </span><span id="_share-gp" class="bottom-button">Google+</span><span class="spacer"> • </span><span id="_share-tw" class="bottom-button">Twitter</span><span class="spacer"> • </span><span id="_share-mail" class="bottom-button">E-Mail</span></span></div><div class="print"><span id="_print-button" class="bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
-        2017 
+        2018 
         SUSE</p><ul><li><a href="http://www.suse.com/company/careers/" target="_top">Careers</a></li><li><a href="http://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="http://www.suse.com/company/" target="_top">About</a></li><li><a href="http://www.suse.com/ContactsOffices/contacts_offices.jsp" target="_top">Contact Us</a></li></ul></div></div></body></html>

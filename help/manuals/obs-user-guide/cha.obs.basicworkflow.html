@@ -1,23 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Basic OBS Workflow | User Guide</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><meta name="generator" content="DocBook XSL Stylesheets V1.78.1" /><meta name="book-title" content="User Guide" /><meta name="chapter-title" content="Chapter 4. Basic OBS Workflow" /><link rel="home" href="index.html" title="OBS Documentation" /><link rel="up" href="par.working.html" title="Part III. Usage" /><link rel="prev" href="par.working.html" title="Part III. Usage" /><link rel="next" href="cha.obs.building.html" title="Chapter 5. Building Package Formats" /><script type="text/javascript">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Basic OBS Workflow | User Guide</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 2.4.0 using SUSE XSL Stylesheets 2.0.8 (based on DocBook XSL Stylesheets 1.78.1) - chunked" /><meta name="book-title" content="User Guide" /><meta name="chapter-title" content="Chapter 4. Basic OBS Workflow" /><link rel="home" href="index.html" title="OBS Documentation" /><link rel="up" href="par.working.html" title="Part III. Usage" /><link rel="prev" href="par.working.html" title="Part III. Usage" /><link rel="next" href="cha.obs.building.html" title="Chapter 5. Building Package Formats" /><script type="text/javascript">
 
 var protocol = window.location.protocol.toLowerCase();
 if ( protocol != 'file:' ) {
   var agent = navigator.userAgent.toLowerCase();
   var wanted = ( protocol == 'https:') ? 'https' : 'http';
   var file = 'fonts.css';
-  if (agent.indexOf('android') != -1 && agent.indexOf('chrom') != -1 ) {
-      file = 'fonts-nolocal.css';
-  }
   document.write('<link rel="stylesheet" type="text/css" href="' + wanted + '://static.opensuse.org/fonts/'+ file +'"></link>');
 }
 else {
    document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
 }
 
-</script><noscript><link rel="stylesheet" type="text/css" href="http://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script></head><body class="offline js-off"><div id="_outer-wrap"><div id="_white-bg"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="User Guide"><span class="book-icon">User Guide</span></a><span> › </span><a class="crumb" href="par.working.html">Usage</a><span> › </span><a class="crumb" href="cha.obs.basicworkflow.html">Basic OBS Workflow</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>User Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="bk02pr01.html"><span class="number"> </span><span class="name">About this Guide</span></a></li><li class="inactive"><a href="par.concepts.html"><span class="number">I </span><span class="name">Concepts</span></a><ol><li class="inactive"><a href="cha.obs.package_formats.html"><span class="number">1 </span><span class="name">Supported Build Recipes and Package Formats</span></a></li></ol></li><li class="inactive"><a href="bk02pt02.html"><span class="number">II </span><span class="name">Setup</span></a><ol><li class="inactive"><a href="cha.obs.osc.html"><span class="number">2 </span><span class="name">osc, the Command Line Tool</span></a></li><li class="inactive"><a href="cha.obs.prjconfig.html"><span class="number">3 </span><span class="name">Project Configuration</span></a></li></ol></li><li class="inactive"><a href="par.working.html"><span class="number">III </span><span class="name">Usage</span></a><ol><li class="inactive"><a href="cha.obs.basicworkflow.html"><span class="number">4 </span><span class="name">Basic OBS Workflow</span></a></li><li class="inactive"><a href="cha.obs.building.html"><span class="number">5 </span><span class="name">Building Package Formats</span></a></li><li class="inactive"><a href="cha.obs.source_service.html"><span class="number">6 </span><span class="name">Using Source Services</span></a></li></ol></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Part III. Usage" href="par.working.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 5. Building Package Formats" href="cha.obs.building.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="User Guide"><span class="book-icon">User Guide</span></a><span> › </span><a class="crumb" href="par.working.html">Usage</a><span> › </span><a class="crumb" href="cha.obs.basicworkflow.html">Basic OBS Workflow</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Part III. Usage" href="par.working.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 5. Building Package Formats" href="cha.obs.building.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class=""><div class="documentation"><div class="chapter " id="cha.obs.basicworkflow"><div class="titlepage"><div><div><h2 class="title"><span class="number">4 </span><span class="name">Basic OBS Workflow</span> </h2></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.setuphome"><span class="number">4.1 </span><span class="name">Setting Up Your Home Project</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.create-new"><span class="number">4.2 </span><span class="name">Creating a New Package</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.builderrors"><span class="number">4.3 </span><span class="name">Investigating the Local Build Process</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.add-dependencies"><span class="number">4.4 </span><span class="name">Adding Dependencies to Your Project</span></a></span></dt></dl></div></div>
+</script><noscript><link rel="stylesheet" type="text/css" href="http://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="offline js-off"><div id="_outer-wrap"><div id="_white-bg"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="User Guide"><span class="book-icon">User Guide</span></a><span> › </span><a class="crumb" href="par.working.html">Usage</a><span> › </span><a class="crumb" href="cha.obs.basicworkflow.html">Basic OBS Workflow</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>User Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="bk02pr01.html"><span class="number"> </span><span class="name">About this Guide</span></a></li><li class="inactive"><a href="par.concepts.html"><span class="number">I </span><span class="name">Concepts</span></a><ol><li class="inactive"><a href="cha.obs.package_formats.html"><span class="number">1 </span><span class="name">Supported Build Recipes and Package Formats</span></a></li></ol></li><li class="inactive"><a href="bk02pt02.html"><span class="number">II </span><span class="name">Setup</span></a><ol><li class="inactive"><a href="cha.obs.osc.html"><span class="number">2 </span><span class="name">osc, the Command Line Tool</span></a></li><li class="inactive"><a href="cha.obs.prjconfig.html"><span class="number">3 </span><span class="name">Project Configuration</span></a></li></ol></li><li class="inactive"><a href="par.working.html"><span class="number">III </span><span class="name">Usage</span></a><ol><li class="inactive"><a href="cha.obs.basicworkflow.html"><span class="number">4 </span><span class="name">Basic OBS Workflow</span></a></li><li class="inactive"><a href="cha.obs.building.html"><span class="number">5 </span><span class="name">Building Package Formats</span></a></li><li class="inactive"><a href="cha.obs.source_service.html"><span class="number">6 </span><span class="name">Using Source Services</span></a></li></ol></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Part III. Usage" href="par.working.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 5. Building Package Formats" href="cha.obs.building.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="User Guide"><span class="book-icon">User Guide</span></a><span> › </span><a class="crumb" href="par.working.html">Usage</a><span> › </span><a class="crumb" href="cha.obs.basicworkflow.html">Basic OBS Workflow</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Part III. Usage" href="par.working.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 5. Building Package Formats" href="cha.obs.building.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class=""><div class="documentation"><div class="chapter " id="cha.obs.basicworkflow"><div class="titlepage"><div><div><h2 class="title"><span class="number">4 </span><span class="name">Basic OBS Workflow</span> </h2></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.setuphome"><span class="number">4.1 </span><span class="name">Setting Up Your Home Project</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.create-new"><span class="number">4.2 </span><span class="name">Creating a New Package</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.builderrors"><span class="number">4.3 </span><span class="name">Investigating the Local Build Process</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.add-dependencies"><span class="number">4.4 </span><span class="name">Adding Dependencies to Your Project</span></a></span></dt></dl></div></div>
  
- <p></p>
+ 
  
 
  <div class="sect1 " id="sec.obs.basicworkflow.setuphome"><div class="titlepage"><div><div><h2 class="title" id="sec.obs.basicworkflow.setuphome"><span class="number">4.1 </span><span class="name">Setting Up Your Home Project</span> <a title="Permalink" class="permalink" href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.setuphome">#</a></h2></div></div></div>
@@ -27,7 +35,7 @@ else {
    This section shows how to set up your home project with the command line
    tool <code class="command">osc</code>. For more
    information about setting up your home project with the Web UI, see
-   <span class="intraxref">Article “Beginnerʼs Guide”, Section 6 “Setting Up Your Home Project for the First Time”</span>.
+   <span class="intraxref">Article “Beginnerʼs Guide”, Section 6 “Setting Up Your Home Project for the First Time”</span>.
   </p>
   <p>
    This chapter is based on the following assumptions:
@@ -47,7 +55,7 @@ else {
     </p>
    </li></ul></div>
 
-  <div class="procedure " id="idm140364015058992"><div class="procedure-title-wrap"><h6 class="procedure-title"><span class="number">Procedure 4.1: </span><span class="name">Setting Up Your Home Project </span><a title="Permalink" class="permalink" href="cha.obs.basicworkflow.html#idm140364015058992">#</a></h6></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step " id="st.basicworkflow.setuphome.oscls">
+  <div class="procedure " id="idm139784597500560"><div class="procedure-title-wrap"><h6 class="procedure-title"><span class="number">Procedure 4.1: </span><span class="name">Setting Up Your Home Project </span><a title="Permalink" class="permalink" href="cha.obs.basicworkflow.html#idm139784597500560">#</a></h6></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step " id="st.basicworkflow.setuphome.oscls">
     <p>
      Get a list of all available build targets of your OBS instance:
     </p>
@@ -66,9 +74,9 @@ else {
     <div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">osc</code> meta prj --edit home:obsgeeko</pre></div>
     <p>The previous command shows a XML structure like this:</p>
     
-    <div class="example" id="idm140364015049936"><div class="example-title-wrap"><h6 class="example-title"><span class="number">Example 4.1: </span><span class="name">XML Structure of Build Service Metadata </span><a title="Permalink" class="permalink" href="cha.obs.basicworkflow.html#idm140364015049936">#</a></h6></div><div class="example-contents">
+    <div class="example" id="idm139784597491600"><div class="example-title-wrap"><h6 class="example-title"><span class="number">Example 4.1: </span><span class="name">XML Structure of Build Service Metadata </span><a title="Permalink" class="permalink" href="cha.obs.basicworkflow.html#idm139784597491600">#</a></h6></div><div class="example-contents">
      
-     <div class="verbatim-wrap"><pre class="screen">&lt;project name="home:obsgeeko"&gt;
+     <div class="verbatim-wrap highlight xml"><pre class="screen">&lt;project name="home:obsgeeko"&gt;
   &lt;title&gt;obsgeeko's Home Project&lt;/title&gt;
   &lt;description&gt;A description of the project.&lt;/description&gt;
   &lt;person userid="obsgeeko" role="bugowner"/&gt;
@@ -85,7 +93,7 @@ else {
      example, on openSUSE Build Service, you can add the build targets openSUSE Tumbleweed for x86 and
      x86-64 with:
     </p>
-    <div class="verbatim-wrap"><pre class="screen">&lt;repository name="openSUSE_Tumbleweed"&gt;
+    <div class="verbatim-wrap highlight xml"><pre class="screen">&lt;repository name="openSUSE_Tumbleweed"&gt;
     &lt;path project="openSUSE:Tumbleweed" repository="standard"/&gt;
     &lt;arch&gt;i586&lt;/arch&gt;
     &lt;arch&gt;x86_64&lt;/arch&gt;
@@ -105,7 +113,7 @@ else {
     </p>
     
     
-    <div class="verbatim-wrap"><pre class="screen">&lt;repository name="openSUSE_Leap_42.3"&gt;
+    <div class="verbatim-wrap highlight xml"><pre class="screen">&lt;repository name="openSUSE_Leap_42.3"&gt;
     &lt;path project="openSUSE:Leap:42.3" repository="standard"/&gt;
     &lt;arch&gt;i586&lt;/arch&gt;
     &lt;arch&gt;x86_64&lt;/arch&gt;
@@ -139,7 +147,7 @@ else {
   <p>
    To create a package from an upstream project, do the following:
   </p>
-  <div class="procedure " id="idm140364015030480"><div class="procedure-title-wrap"><h6 class="procedure-title"><span class="number">Procedure 4.2: </span><span class="name">General Procedure to Build a RPM Package </span><a title="Permalink" class="permalink" href="cha.obs.basicworkflow.html#idm140364015030480">#</a></h6></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step ">
+  <div class="procedure " id="idm139784597472128"><div class="procedure-title-wrap"><h6 class="procedure-title"><span class="number">Procedure 4.2: </span><span class="name">General Procedure to Build a RPM Package </span><a title="Permalink" class="permalink" href="cha.obs.basicworkflow.html#idm139784597472128">#</a></h6></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step ">
     <p>
      Open a shell. Choose or create a directory on your system in a partition
      that has enough space to hold the package sources.
@@ -302,14 +310,14 @@ Fri Aug 23 08:42:42 UTC 2017 - <code class="systemitem">geeko</code>@example.com
     Additionally, the <code class="command">osc</code> creates some build log files in the build
     directory <code class="filename">/var/tmp/build-root/</code>:
    </p>
-   <div class="variablelist "><dl class="variablelist"><dt id="idm140364014974992"><span class="term "><code class="filename">.build.log</code></span></dt><dd>
+   <div class="variablelist "><dl class="variablelist"><dt id="idm139784597416352"><span class="term "><code class="filename">.build.log</code></span></dt><dd>
       <p>Contains the log.</p>
-     </dd><dt id="idm140364014972976"><span class="term "><code class="filename">.build.command</code></span></dt><dd>
+     </dd><dt id="idm139784597414336"><span class="term "><code class="filename">.build.command</code></span></dt><dd>
       <p>
        Contains the command which is used to build the package. For RPM-like
        systems it is <code class="command">rpmbuild</code> <code class="option">-ba <em class="replaceable ">PACKAGE</em>.spec</code>.
       </p>
-     </dd><dt id="idm140364014969232"><span class="term "><code class="filename">.build.packages</code></span></dt><dd>
+     </dd><dt id="idm139784597410736"><span class="term "><code class="filename">.build.packages</code></span></dt><dd>
       <p>
        Contains the path to all object files.
       </p>
@@ -488,12 +496,12 @@ Requires:         zool &gt;= 1.5.6</pre></div>
       packages from <code class="uri">devel:languages:python</code> in a
       openSUSE Tumbleweed project, extend the <code class="sgmltag-element">repository</code> element with:
      </p>
-     <div class="verbatim-wrap"><pre class="screen">&lt;repository name="openSUSE_Tumbleweed"&gt;
+     <div class="verbatim-wrap highlight xml"><pre class="screen">&lt;repository name="openSUSE_Tumbleweed"&gt;
     <span class="strong"><strong>&lt;path project="devel:languages:python" repository="openSUSE_Factory"/&gt;</strong></span>
     &lt;path project="openSUSE:Factory" repository="standard"/&gt;
     &lt;arch&gt;x86_64&lt;/arch&gt;
 &lt;/repository&gt;</pre></div>
-     <div id="idm140364014910080" class="admonition note"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note: Order Is Important</h6>
+     <div id="idm139784597351520" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note: Order Is Important</h6>
       
       <p>
        The order of the <code class="sgmltag-element">path</code> elements is important:
@@ -589,5 +597,5 @@ At revision 1.</pre></div>
  </div>
 
 </div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="cha.obs.building.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 5 </span>Building Package Formats</span></a><a class="nav-link" href="par.working.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Part III </span>Usage</span></a></div><div id="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span id="_share-fb" class="bottom-button">Facebook</span><span class="spacer"> • </span><span id="_share-gp" class="bottom-button">Google+</span><span class="spacer"> • </span><span id="_share-tw" class="bottom-button">Twitter</span><span class="spacer"> • </span><span id="_share-mail" class="bottom-button">E-Mail</span></span></div><div class="print"><span id="_print-button" class="bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
-        2017 
+        2018 
         SUSE</p><ul><li><a href="http://www.suse.com/company/careers/" target="_top">Careers</a></li><li><a href="http://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="http://www.suse.com/company/" target="_top">About</a></li><li><a href="http://www.suse.com/ContactsOffices/contacts_offices.jsp" target="_top">Contact Us</a></li></ul></div></div></body></html>
