@@ -10,7 +10,7 @@ Here are the results the OBS frontend team has achieved in the last two weeks (2
 
 ### Cloud uploads
 
-We started to look into how we could provide an image upload functionality that would alllow you to upload your image to a cloud. The cloud platforms we are planning to support are [Amazon AWS](https://aws.amazon.com/de/), [Microsoft Azure](https://azure.microsoft.com/de-de/) and [SUSE OpenStack Cloud](https://www.suse.com/de-de/products/suse-openstack-cloud/). As a first start we have been researching how the authentication and upload of these providers would work.
+We started to look into how we could provide an image upload functionality that would allow you to upload your image to a cloud. The cloud platforms we are planning to support are [Amazon AWS](https://aws.amazon.com/de/), [Microsoft Azure](https://azure.microsoft.com/de-de/) and [SUSE OpenStack Cloud](https://www.suse.com/de-de/products/suse-openstack-cloud/). As a first start we have been researching how the authentication and upload of these providers would work.
 
 ### Improvements in Studio Express workflow
 
