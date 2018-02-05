@@ -1,5 +1,5 @@
 title: Open Build Service
-highlighter: true
+highlighter: rouge
 permalink: /:year/:month/:day/:title/
 markdown: kramdown
 
