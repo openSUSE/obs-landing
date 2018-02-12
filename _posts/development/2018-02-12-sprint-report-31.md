@@ -2,7 +2,7 @@
 layout: post
 title: Highlights of the OBS frontend development - Sprint 31
 category: development
-autor: "OBS frontend team"
+author: "OBS frontend team"
 ---
 
 People of the Builds! Our last Sprint (2018-01-22 to 2018-02-02) report comes a little bit late,
