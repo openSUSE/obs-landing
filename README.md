@@ -26,3 +26,7 @@ and is integrated into the OBS landing page via git submodules.
 To update our documentation simply run the [update_documentation.sh]() script. This
 updates the documentation sub-module, compiles it into html and creates a new commit
 with the changes.
+
+# License
+
+The code in this repository is licensed under a [MIT license](LICENSE).
