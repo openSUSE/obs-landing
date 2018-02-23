@@ -372,3 +372,15 @@
 .share-icon{
   margin-bottom: 40px;
 }
+
+.license {
+  color: #818182 !important;
+}
+
+.ui.text.container > .license {
+  font-size: 0.8em !important;
+}
+
+.license-image {
+  vertical-align: text-top;
+}

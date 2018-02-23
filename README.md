@@ -30,3 +30,7 @@ with the changes.
 # License
 
 The code in this repository is licensed under a [MIT license](LICENSE).
+
+The blog's content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License.
+<img alt="CC" src="/images/icons/cc.png" width="18px"/>
+<img alt="BY" src="/images/icons/by.png" width="18px"/>
