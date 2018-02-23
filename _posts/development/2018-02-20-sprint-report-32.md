@@ -10,29 +10,28 @@ People of the Builds! And another Sprint is over and here is what the OBS fronte
 # Ruby 2.5
 
 As every year, we got a new Ruby release for Christmas! :christmas_tree:
-So, even if it is always Christmas in the OBS team, Christmas is already over and it was time to unwrap the present and move to Ruby 2.5.
-As you can see in the [PR](https://github.com/openSUSE/open-build-service/pull/4464), the update to Ruby 2.5 was quite straight-forward, without need of making many changes in the code.
-However, we had some fun fixing some failing packages.
+So, even if it is always Christmas in the OBS team, the holidays are already over and it was time to unwrap the present and move to Ruby 2.5.
+As you can see in the [PR](https://github.com/openSUSE/open-build-service/pull/4464), the update to Ruby 2.5 was quite straight-forward, without the need of making many changes in the code.
+However, we had some fun fixing some failing packages depending on ruby.
 But everything succeeded, and we enter in the [new year](https://chinesenewyear2018.com/calendar) with a green [monitoring page for OBS:Server:2.9:Staging](https://build.opensuse.org/project/monitor/OBS:Server:2.9:Staging)! :tada:
 
 ![OBS Christmas tree](/images/posts/sprint_32-xmas.jpg)
-
 
 # Releases
 
 ## OBS 2.8 packages & images for openSUSE Leap 42.3
 
-Last sprint we worked on the new openSUSE Leap 42.3 images for OBS 2.8.
-Though we didn't manage to release them because we didn't finish testing them.
+Last sprint we worked on the new openSUSE Leap 42.3 images for OBS 2.8,
+but we did not manage to release them because we didn't finish testing them.
 We did that this sprint and [released](https://lists.opensuse.org/archive/opensuse-buildservice/2018-02/msg00009.html) the [images](https://download.opensuse.org/repositories/OBS:/Server:/2.8/images/) and [packages](https://download.opensuse.org/repositories/OBS:/Server:/2.8/openSUSE_42.3/x86_64/) last week. :smiley:
 
 
-# Cloud
+# Cloud Upload
 
 ## Improve binary download page
 
-We have continued working on the cool cloud feature. :cloud:
-Refactored the view of Binaries that before was just a list of links that pointed to the details page.
+We have continued working on the cool cloud upload feature. :cloud:
+This time we refactored the view of Binaries, that before was just a list of links that pointed to the details page.
 Now you can download the files directly or upload images to the cloud, and you still can go to the details page as before.
 
 ![New binaries view](https://user-images.githubusercontent.com/11314634/35864715-d1ce3664-0b52-11e8-83f8-e7bf56a56d77.png).
@@ -51,32 +50,32 @@ Following the usual OBS team efficiency, this issue has also been solved and now
 <img src="/images/posts/sprint_32-coolo-ruler.jpg" alt="Coolo's present" style="display:inline;width:40%">
 
 
-For the rest of users, that are still affected by this issue we have created an issue, which will be solved sooner rather than later:
-[#4525](https://github.com/openSUSE/open-build-service/issues/4525).
-
+For the rest of users, that are still affected by this we have created an issue ([#4525](https://github.com/openSUSE/open-build-service/issues/4525)), which will be solved sooner rather than later!
 
 # SUSE Studio Express
 
-Last Wednesday, SUSE Studio was shut down, and the Studio users are moving to OBS.
+Last Wednesday, SUSE Studio Online was shut down, and the Studio users are moving to our new Studio Express workflow in OBS.
 Some of them are really excited about it:
 
-[![Happy Studio user Twit](/images/posts/sprint_32-studio-twet.jpg)](https://twitter.com/sshyukriev/status/963152868126707713)
+[![Happy Studio user Tweet](/images/posts/sprint_32-studio-twet.jpg)](https://twitter.com/sshyukriev/status/963152868126707713)
 
-Learn more about SUSE Studio Express in our [new users welcoming blog post](http://openbuildservice.org/2017/09/27/suse-studio-express).
+Learn more about SUSE Studio Express in our [Studio user welcome blog post](http://openbuildservice.org/2017/09/27/suse-studio-express).
 
 
 ## Tests for Relationship class
 
-As most of the Sprints, we have continued improving our Test Suite. :gem:
-We added more tests for the [Relationship class](https://github.com/mdeniz/open-build-service/blob/master/src/api/app/models/relationship.rb) to increase our test coverage.
+As with most of the Sprints, we have continued improving our Test Suite :gem: by
+adding more tests for the [Relationship class](https://github.com/mdeniz/open-build-service/blob/master/src/api/app/models/relationship.rb) to increase our test coverage.
 
 Check the [PR](https://github.com/openSUSE/open-build-service/pull/4485) for more details.
 
 
 ## Fixing MySQL deadlock errors
 
-The way calculated the amount of activity for packages was causing deadlock errors because they were using multiple queries to the database which were conflicting with other queries.
-This was fixed by using only one database query.
+The way we have calculated the frequency of activity for packages was causing
+deadlock errors because it was using multiple queries to the database which
+sometimes were conflicting with each other.  This was fixed by using only one
+database query.
 
 Check the [PR](https://github.com/openSUSE/open-build-service/pull/4452) for more details.
 
@@ -91,18 +90,16 @@ Check the [PR](https://github.com/openSUSE/open-build-service/pull/4434) for mor
 
 ## Update nodejs to a supported version
 
-OBS was using an unsupported version of nodejs.
-We have moved to a supported version for every repository (openSUSE 42.3 and SLE12 SP3) we use on [Unstable](https://build.opensuse.org/project/show/OBS:Server:Unstable) and the soon to be released 2.9 version of OBS.
+As OBS was using an unsupported version of nodejs we have moved to a supported version for every repository (openSUSE 42.3 and SLE12 SP3) we use for [Unstable](https://build.opensuse.org/project/show/OBS:Server:Unstable) and the soon to be released 2.9 version of OBS.
 
 
 # Conferences: FOSDEM
 
 
 As we had already announced in our [last blog post](http://openbuildservice.org/2018/02/12/sprint-report-31), we attended [FOSDEM](https://fosdem.org/2018/), the annual free software conference, in Brussels.
-It was a blast. We had nice belgian :beers:, waffles, :chocolate_bar: and plenty of x talks ranging from packaging, graph processing to observability.
+It was a blast. We had nice belgian :beers:, waffles, :chocolate_bar: and visited plenty of talks ranging from packaging, over graph processing to development observability.
 
-One of the highlights was the [talk](https://fosdem.org/2018/schedule/event/debianopenbuild/) Andrew Lee of Collabora hold. He was showing how [debian](https://www.debian.org) uses OBS to manage packages and distribution,
-which we really recommend you to watch.
+One of the highlights was the [talk](https://fosdem.org/2018/schedule/event/debianopenbuild/) Andrew Lee of Collabora hold. He was showing how [debian](https://www.debian.org) uses OBS to manage packages and distribution, which we really recommend you to watch.
 
 
 ![Picture of OBS talk at FOSDEM](https://pbs.twimg.com/media/DVGx6LRW0AAbq7Z.jpg).
