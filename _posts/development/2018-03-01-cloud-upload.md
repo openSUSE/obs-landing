@@ -5,7 +5,7 @@ category: development
 author: "OBS frontend team"
 ---
 
-We just released the new EC2 cloud upload upload that allows you to upload your EC2 images to [Amazon Web Services (AWS)](https://aws.amazon.com) from OBS. :tada:
+We just released the new EC2 cloud upload feature that allows you to upload your EC2 images to [Amazon Web Services (AWS)](https://aws.amazon.com) from OBS. :tada:
 
 ## How does it work?
 
