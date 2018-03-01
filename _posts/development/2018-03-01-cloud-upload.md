@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Cloud Upload
+title: Release of EC2 Cloud Upload feature
 category: development
 author: "OBS frontend team"
 ---
@@ -50,5 +50,7 @@ Since this might incur costs, we recommend you to read [Amazon's price list](htt
 
 <img src="/images/posts/cloud_upload_configuration.png" alt="Cloud upload configuration" style="max-width: 800px;">
 
+In case you don't want to build an EC2 image from scratch you might want to check out our [image templates page](https://build.opensuse.org/image_templates).
+There you can find base templates, including EC2 images, provided by other users and projects. :two_hearts:
 
 Try it out and enjoy running your images in the :cloud:! :wink:
