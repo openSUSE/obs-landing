@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Cloud Upload
+title: Release of EC2 Cloud Upload feature
 category: development
 author: "OBS frontend team"
 ---
