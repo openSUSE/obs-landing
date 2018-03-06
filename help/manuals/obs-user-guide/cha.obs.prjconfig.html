@@ -107,7 +107,7 @@ hljs.configure({
    The following list contains a list of allowed keywords in the project
    configuration:
   </p>
-  <div class="variablelist " id="vl.prjconfig.keywords"><div class="variablelist-title-wrap"><h6 class="variablelist-title"><span class="name">Available Keywords in Project Configuration </span><a title="Permalink" class="permalink" href="cha.obs.prjconfig.html#vl.prjconfig.keywords">#</a></h6></div><dl class="variablelist"><dt id="idm139784597607072"><span class="term "><em class="parameter ">BinaryType: <em class="replaceable ">TYPE</em></em> (OBS 2.4 or later)</span></dt><dd>
+  <div class="variablelist " id="vl.prjconfig.keywords"><div class="variablelist-title-wrap"><h6 class="variablelist-title"><span class="name">Available Keywords in Project Configuration </span><a title="Permalink" class="permalink" href="cha.obs.prjconfig.html#vl.prjconfig.keywords">#</a></h6></div><dl class="variablelist"><dt id="idm139937490799680"><span class="term "><em class="parameter ">BinaryType: <em class="replaceable ">TYPE</em></em> (OBS 2.4 or later)</span></dt><dd>
      <p>
       Binary type. This is the format of the files which will be the
       result of the build jobs. This gets usually set depending on the build
@@ -122,7 +122,7 @@ hljs.configure({
       specified, OBS deduces it from the build recipe type. If the recipe type is
       also not set, OBS looks at the Preinstall package list for a hint.
      </p>
-    </dd><dt id="idm139784597603904"><span class="term "><em class="parameter ">BuildEngine: <em class="replaceable ">ENGINE</em></em></span></dt><dd>
+    </dd><dt id="idm139937490796288"><span class="term "><em class="parameter ">BuildEngine: <em class="replaceable ">ENGINE</em></em></span></dt><dd>
      <p> Use an alternative build engine. This is still chained inside of
       the build script for security reasons. Alternatives are mock (for Fedora
       and Red Hat) and debootstrap (for Debian). This will avoid differences in
@@ -138,22 +138,22 @@ BuildEngine: debbuild
 Support: pax
 Support: debbuild
 Keep: debbuild</pre></div>
-    </dd><dt id="idm139784597600896"><span class="term "><em class="parameter ">BuildFlags: <em class="replaceable ">FLAG</em>:<em class="replaceable ">VALUE</em></em></span></dt><dd>
+    </dd><dt id="idm139937490793024"><span class="term "><em class="parameter ">BuildFlags: <em class="replaceable ">FLAG</em>:<em class="replaceable ">VALUE</em></em></span></dt><dd>
      <p>
       The <em class="parameter ">BuildFlags</em> keyword defines flags for the
       build process. The following values for  FLAG are usable.</p>
-     <div class="variablelist "><dl class="variablelist"><dt id="idm139784597598096"><span class="term "><em class="parameter ">vmfstype:</em></span></dt><dd>
+     <div class="variablelist "><dl class="variablelist"><dt id="idm139937490789760"><span class="term "><em class="parameter ">vmfstype:</em></span></dt><dd>
         <p>Defines a specific file system when building inside of a VM. </p>
-       </dd><dt id="idm139784597596240"><span class="term "><em class="parameter ">kiwiprofile:</em></span></dt><dd>
+       </dd><dt id="idm139937490787584"><span class="term "><em class="parameter ">kiwiprofile:</em></span></dt><dd>
         <p>builds the selected profile in KIWI appliance builds. </p>
        </dd></dl></div>
-    </dd><dt id="idm139784597594192"><span class="term "><em class="parameter ">Constraint: <em class="replaceable ">SELECTOR</em> <em class="replaceable ">STRING</em></em> (OBS 2.4 or later)</span></dt><dd>
+    </dd><dt id="idm139937490785312"><span class="term "><em class="parameter ">Constraint: <em class="replaceable ">SELECTOR</em> <em class="replaceable ">STRING</em></em> (OBS 2.4 or later)</span></dt><dd>
      <p>
       Define build constraints for build jobs. The selector is a
       colon-separated list which gets a string assigned. See the build job
       constraints page for details.
      </p>
-    </dd><dt id="idm139784597591568"><span class="term "><em class="parameter ">ExportFilter: <em class="replaceable ">REGEX</em> <em class="replaceable ">ARCH</em></em></span></dt><dd>
+    </dd><dt id="idm139937490782336"><span class="term "><em class="parameter ">ExportFilter: <em class="replaceable ">REGEX</em> <em class="replaceable ">ARCH</em></em></span></dt><dd>
      <p>
       The export filter can be used to export build results from one
       architecture to others. This is required when one architecture needs
@@ -164,31 +164,31 @@ Keep: debbuild</pre></div>
       architecture which was used to build it. So not using a dot there will
       filter the package.
      </p>
-    </dd><dt id="idm139784597588352"><span class="term "><em class="parameter ">FileProvides: <em class="replaceable ">FILE</em> <em class="replaceable ">PACKAGES</em></em></span></dt><dd>
+    </dd><dt id="idm139937490778704"><span class="term "><em class="parameter ">FileProvides: <em class="replaceable ">FILE</em> <em class="replaceable ">PACKAGES</em></em></span></dt><dd>
      <p> OBS ignores dependencies to files (instead of package names) by
       default. This is mostly done to reduce the amount of memory needed, as
       the package file lists take up a considerable amount of repository meta
       data. As a workaround, FileProvides can be used to tell the systems which
       packages contain a file. The File needs to have the full path.</p>
-    </dd><dt id="idm139784597585664"><span class="term "><em class="parameter ">HostArch: <em class="replaceable ">HOST_ARCH</em></em></span></dt><dd>
+    </dd><dt id="idm139937490775696"><span class="term "><em class="parameter ">HostArch: <em class="replaceable ">HOST_ARCH</em></em></span></dt><dd>
      <p>
       This is used for cross builds. It defines the host architecture used
       for building, while the scheduler architecture remains the target
       architecture.
      </p>
-    </dd><dt id="idm139784597583552"><span class="term "><em class="parameter ">Ignore: <em class="replaceable ">PACKAGES</em></em></span></dt><dd>
+    </dd><dt id="idm139937490773360"><span class="term "><em class="parameter ">Ignore: <em class="replaceable ">PACKAGES</em></em></span></dt><dd>
      <p>
       Ignore can be used to break dependencies. This can be useful to
       reduce the number of needed packages or to break cyclic dependencies. Be
       careful with this feature, as breaking dependencies can have surprising
       results.
      </p>
-    </dd><dt id="idm139784597581360"><span class="term "><em class="parameter ">Ignore: <em class="replaceable ">PACKAGE_A</em>:<em class="replaceable ">PACKAGES</em></em></span></dt><dd>
+    </dd><dt id="idm139937490770912"><span class="term "><em class="parameter ">Ignore: <em class="replaceable ">PACKAGE_A</em>:<em class="replaceable ">PACKAGES</em></em></span></dt><dd>
      <p>
       It is possible to define the ignore only for one package. This
       package must be listed first with a colon.
      </p>
-    </dd><dt id="idm139784597578912"><span class="term "><em class="parameter ">Keep: <em class="replaceable ">PACKAGES</em></em></span></dt><dd>
+    </dd><dt id="idm139937490768128"><span class="term "><em class="parameter ">Keep: <em class="replaceable ">PACKAGES</em></em></span></dt><dd>
      <p>
       To eliminate build cycles the to-be-built package is not installed
       by default, even when it is required. Keep can be used to overwrite this
@@ -196,13 +196,13 @@ Keep: debbuild</pre></div>
       build itself. Preinstalled packages are automatically kept, as the
       package installation program needs to work all the time.
      </p>
-    </dd><dt id="idm139784597576208"><span class="term "><em class="parameter ">OptFlags: <em class="replaceable ">TARGET_ARCH</em> <em class="replaceable ">FLAGS</em></em> (RPM only)</span></dt><dd>
+    </dd><dt id="idm139937490765136"><span class="term "><em class="parameter ">OptFlags: <em class="replaceable ">TARGET_ARCH</em> <em class="replaceable ">FLAGS</em></em> (RPM only)</span></dt><dd>
      <p>
       Optflags exports compiler flags to the build. They will only have an
       effect when the spec file is using $RPM_OPT_FLAGS. The target
       architecture may be * to affect all architectures.
      </p>
-    </dd><dt id="idm139784597573552"><span class="term "><em class="parameter ">Order: <em class="replaceable ">PACKAG_A</em>:<em class="replaceable ">PACKAGE_B</em></em></span></dt><dd>
+    </dd><dt id="idm139937490762032"><span class="term "><em class="parameter ">Order: <em class="replaceable ">PACKAG_A</em>:<em class="replaceable ">PACKAGE_B</em></em></span></dt><dd>
      <p>
       The build script takes care about the installation order if they
       are defined via dependencies inside of the packages. However, there
@@ -213,11 +213,11 @@ Keep: debbuild</pre></div>
      <p>The package in <em class="replaceable ">PACKAGE_A</em> will get
       installed before the package in <em class="replaceable ">PACKAGE_B</em>.
      </p>
-    </dd><dt id="idm139784597569440"><span class="term "><em class="parameter ">Patterntype: <em class="replaceable ">TYPES</em></em></span></dt><dd>
+    </dd><dt id="idm139937490757376"><span class="term "><em class="parameter ">Patterntype: <em class="replaceable ">TYPES</em></em></span></dt><dd>
      <p>
       Defines the pattern format. Valid values are: none (default), ymp, comps.
      </p>
-    </dd><dt id="idm139784597567232"><span class="term "><em class="parameter ">Prefer: <em class="replaceable ">PACKAGES</em></em></span></dt><dd>
+    </dd><dt id="idm139937490755488"><span class="term "><em class="parameter ">Prefer: <em class="replaceable ">PACKAGES</em></em></span></dt><dd>
      <p>
       In case multiple packages satisfy a dependency, the OBS system will
       complain about that situation. This is unlike like most package managing
@@ -227,12 +227,12 @@ Keep: debbuild</pre></div>
       in case a choice exists. When the package name is prefixed with a dash,
       this is treated as a de-prefer.
      </p>
-    </dd><dt id="idm139784597564496"><span class="term "><em class="parameter ">Prefer: <em class="replaceable ">PACKAGE_A</em>:<em class="replaceable ">PACKAGES</em></em></span></dt><dd>
+    </dd><dt id="idm139937490752784"><span class="term "><em class="parameter ">Prefer: <em class="replaceable ">PACKAGE_A</em>:<em class="replaceable ">PACKAGES</em></em></span></dt><dd>
      <p>
       It is possible to define the prefer only when one package is creating
       the choice error. This package must be listed first with a colon.
      </p>
-    </dd><dt id="idm139784597561792"><span class="term "><em class="parameter ">Preinstall: <em class="replaceable ">PACKAGES</em></em></span></dt><dd>
+    </dd><dt id="idm139937490749920"><span class="term "><em class="parameter ">Preinstall: <em class="replaceable ">PACKAGES</em></em></span></dt><dd>
      <p>
       Are needed to run the package installation program. These packages get
       unpacked before the VM gets started. Included scripts
@@ -240,7 +240,7 @@ Keep: debbuild</pre></div>
       packages will get installed again inside of the VM including script
       execution.
      </p>
-    </dd><dt id="idm139784597558848"><span class="term "><em class="parameter ">PublishFilter: <em class="replaceable ">REGEXP</em> [<em class="replaceable ">REGEXP</em>]</em></span></dt><dd>
+    </dd><dt id="idm139937490747008"><span class="term "><em class="parameter ">PublishFilter: <em class="replaceable ">REGEXP</em> [<em class="replaceable ">REGEXP</em>]</em></span></dt><dd>
      <p>
       Limits the published binary packages in public repositories. Packages
       that match any <em class="replaceable ">REGEXP</em> will not be put into
@@ -248,7 +248,7 @@ Keep: debbuild</pre></div>
       PublishFilter for historic reasons. However, multiple
       <em class="replaceable ">REGEXP</em> can be defined.
      </p>
-    </dd><dt id="idm139784597554928"><span class="term "><em class="parameter ">Repotype:  <em class="replaceable ">TYPE[:OPTIONS]</em></em></span></dt><dd>
+    </dd><dt id="idm139937490743248"><span class="term "><em class="parameter ">Repotype:  <em class="replaceable ">TYPE[:OPTIONS]</em></em></span></dt><dd>
      <p> Defines the repository format for published repositories. Valid
       values are: none, rpm-md, suse, debian, hdlist2, arch, staticlinks. The
       OPTIONS parameter depends on the repository type, for rpm-md the known
@@ -258,24 +258,24 @@ Keep: debbuild</pre></div>
       repository the option
       <code class="literal">splitdebug:<em class="replaceable ">REPOSITORY_SUFFIX</em></code>
       can be used. </p>
-    </dd><dt id="idm139784597551392"><span class="term "><em class="parameter ">Required: <em class="replaceable ">PACKAGES</em></em></span></dt><dd>
+    </dd><dt id="idm139937490739840"><span class="term "><em class="parameter ">Required: <em class="replaceable ">PACKAGES</em></em></span></dt><dd>
      <p>
       Contain one or more packages that always get installed for package
       builds. A change in one of these packages triggers a new build.
      </p>
-    </dd><dt id="idm139784597549088"><span class="term "><em class="parameter ">Runscripts: <em class="replaceable ">PACKAGES</em></em></span></dt><dd>
+    </dd><dt id="idm139937490737504"><span class="term "><em class="parameter ">Runscripts: <em class="replaceable ">PACKAGES</em></em></span></dt><dd>
      <p>
       Defines the scripts of preinstalled packages which needs to be executed
       directly after the preinstall phase, but before installing the
       remaining packages.
      </p>
-    </dd><dt id="idm139784597546720"><span class="term "><em class="parameter ">Substitute: <em class="replaceable ">PACKAGE_A</em> <em class="replaceable ">PACKAGES</em></em></span></dt><dd>
+    </dd><dt id="idm139937490735136"><span class="term "><em class="parameter ">Substitute: <em class="replaceable ">PACKAGE_A</em> <em class="replaceable ">PACKAGES</em></em></span></dt><dd>
      <p>
       It is possible to replace to BuildRequires with other packages.
       This will have only an effect on directly BuildRequired packages, not on
       indirectly required packages.
      </p>
-    </dd><dt id="idm139784597543808"><span class="term "><em class="parameter ">Support: <em class="replaceable ">PACKAGES</em></em></span></dt><dd>
+    </dd><dt id="idm139937490732240"><span class="term "><em class="parameter ">Support: <em class="replaceable ">PACKAGES</em></em></span></dt><dd>
      <p>
       Contain one or more packages which also get installed for package
       builds, but a change in one of the packages does not trigger
@@ -285,10 +285,10 @@ Keep: debbuild</pre></div>
       This is useful for packages that most likely do not influence the build
       result, for example <span class="package">make</span> or <span class="package">coreutils</span>.
      </p>
-    </dd><dt id="idm139784597540032"><span class="term "><em class="parameter ">Target: <em class="replaceable ">TARGET_ARCH</em></em> (RPM only)</span></dt><dd>
+    </dd><dt id="idm139937490728432"><span class="term "><em class="parameter ">Target: <em class="replaceable ">TARGET_ARCH</em></em> (RPM only)</span></dt><dd>
      <p>Defines the target architecture. This can be used to build for i686
       on i586 schedulers for example.</p>
-    </dd><dt id="idm139784597537600"><span class="term "><em class="parameter ">Type: <em class="replaceable ">TYPE</em></em></span></dt><dd>
+    </dd><dt id="idm139937490726128"><span class="term "><em class="parameter ">Type: <em class="replaceable ">TYPE</em></em></span></dt><dd>
      <p>
       Build recipe type. This is the format of the file which provides the
       build description. This gets usually autodetected, but in some rare cases
@@ -298,7 +298,7 @@ Keep: debbuild</pre></div>
      <p>Defines the build recipe format. Valid values are currently: none, spec,
       dsc, arch, kiwi, preinstallimage. If no type is specified, OBS deduces a
       type from the binary type. </p>
-    </dd><dt id="idm139784597534512"><span class="term "><em class="parameter ">VMInstall: <em class="replaceable ">PACKAGES</em></em></span></dt><dd>
+    </dd><dt id="idm139937490722976"><span class="term "><em class="parameter ">VMInstall: <em class="replaceable ">PACKAGES</em></em></span></dt><dd>
      <p>
       Like <em class="parameter ">Preinstall</em>, but these packages get only
       installed when a virtual machine like Xen or KVM is used for building.
@@ -358,7 +358,7 @@ Keep: debbuild</pre></div>
     The macro definition in the project configuration is located at the end
     and has the following structure:
    </p>
-   <div class="example" id="idm139784597516464"><div class="example-title-wrap"><h6 class="example-title"><span class="number">Example 3.1: </span><span class="name">Structure of a Macro Definition </span><a title="Permalink" class="permalink" href="cha.obs.prjconfig.html#idm139784597516464">#</a></h6></div><div class="example-contents">
+   <div class="example" id="idm139937490705072"><div class="example-title-wrap"><h6 class="example-title"><span class="number">Example 3.1: </span><span class="name">Structure of a Macro Definition </span><a title="Permalink" class="permalink" href="cha.obs.prjconfig.html#idm139937490705072">#</a></h6></div><div class="example-contents">
     
     <div class="verbatim-wrap"><pre class="screen">Macros:
   # add your macro definitions

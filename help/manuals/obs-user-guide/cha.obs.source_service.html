@@ -142,12 +142,12 @@ hljs.configure({
    and how to use the result. This can be done per package or globally for an
    entire project. </p>
 
-  <div class="variablelist "><dl class="variablelist"><dt id="idm139784597251152"><span class="term ">Default Mode</span></dt><dd>
+  <div class="variablelist "><dl class="variablelist"><dt id="idm139937490439440"><span class="term ">Default Mode</span></dt><dd>
      <p>
       The default mode of a service is to always run after each commit on
       the server side and locally before every local build.
      </p>
-    </dd><dt id="idm139784597249232"><span class="term "><code class="literal">trylocal</code> Mode</span></dt><dd>
+    </dd><dt id="idm139937490437584"><span class="term "><code class="literal">trylocal</code> Mode</span></dt><dd>
      <p>
       This mode is running the service locally. The result is committed
       as standard files and not named with a <code class="literal">_service:</code>
@@ -156,21 +156,21 @@ hljs.configure({
       and skip the generated files. In case they differ, they are generated
       and added on the server.
      </p>
-    </dd><dt id="idm139784597246336"><span class="term "><code class="literal">localonly</code> Mode</span></dt><dd>
+    </dd><dt id="idm139937490434624"><span class="term "><code class="literal">localonly</code> Mode</span></dt><dd>
      <p>
       This mode is running the service locally. The result gets committed
       as standard files and not named  with <code class="literal">_service:</code> prefix.
       The service is never running on the server side. It is also not
       possible to trigger it manually.
      </p>
-    </dd><dt id="idm139784597243616"><span class="term "><code class="literal">serveronly</code> Mode</span></dt><dd>
+    </dd><dt id="idm139937490431728"><span class="term "><code class="literal">serveronly</code> Mode</span></dt><dd>
      
      <p>
       The serviceonly mode is running the service on the service only. This
       can be useful, when the service is not available or can not work on
       developer workstations.
      </p>
-    </dd><dt id="idm139784597240832"><span class="term "><code class="literal">buildtime</code> Mode</span></dt><dd>
+    </dd><dt id="idm139937490429088"><span class="term "><code class="literal">buildtime</code> Mode</span></dt><dd>
      <p>
       The service is running inside of the build job, both for local and
       server side builds. A side effect is that the service package is
@@ -182,7 +182,7 @@ hljs.configure({
       fail in this mode, because such access is not available if the build
       workers are running in secure mode<span class="phrase"> (as is always the case at <a class="ulink" href="https://build.opensuse.org" target="_blank">https://build.opensuse.org</a>)</span>.
      </p>
-    </dd><dt id="idm139784597236960"><span class="term "><code class="literal">disabled</code> Mode</span></dt><dd>
+    </dd><dt id="idm139937490424896"><span class="term "><code class="literal">disabled</code> Mode</span></dt><dd>
      <p>
       The disabled mode is neither running the service locally nor on the
       server side. It can be used to temporarily disable the service but keeping
