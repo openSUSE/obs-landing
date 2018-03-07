@@ -12,28 +12,31 @@ Another Sprint is over and here is what the OBS frontend team has achieved in th
 ## EC2 Cloud upload
 
 The last few sprint reports we already showed our efforts to implement a cloud upload feature.
-This sprint **a lot** of changes have been made to the EC2 cloud uplod.
+This sprint **a lot** of changes have been made to the EC2 cloud uplod. :fireworks:
 
 First of all, we improved the list of jobs for uploading to the cloud and now we also show the details field.
 The details field for instance shows the created [AMI](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html) id.
 
-Our Amazon EC2 uploader makes use of the fantastic [ Enceladus ec2uploadimg](https://github.com/SUSE/Enceladus) project in the background.
+<img src="/images/posts/cloud_upload_overview.png" width="1000px" style="margin: 10px;">
+
+Our Amazon EC2 uploader makes use of the fantastic [Enceladus ec2uploadimg](https://github.com/SUSE/Enceladus) project in the background.
 While uploading, ec2uploadimg creates several resources like a helper instance or storage volumes.
 In case of a successful upload, all these resources get cleaned up.
 However, we also implemented the possibility to abort an upload.
-In this case, these resources stay and it is necessary to clean them manually up. 
-Not very nice.
-Therefore we implemented an automatic cleanup in case of an aborted upload in this sprint.
+In that case, these resources stay and it is necessary to clean them up manually.
+Not very nice. :unamused:
+
+Therefore, in this sprint, we implemented an automatic cleanup in case of an aborted upload.
 We implemented this directly in Enceladus and sent a [pull request](https://github.com/SUSE/Enceladus/pull/196) back upstream.
 
 Until now all this was hidden behind a [feature flag](https://martinfowler.com/articles/feature-toggles.html).
-This sprint we also tested all different regions in Amazon EC2 and decided to finally release it to the public.
+This sprint we also tested all different regions in Amazon EC2 and decided to finally release it to the public. :tada:
 You can read more about it in our [cloud upload blog article](http://openbuildservice.org/2018/03/01/cloud-upload/).
 
 ## Setup telegraf on the production server
 
-As a long term goal we want to be able monitor :chart_with_upwards_trend: how OBS is used by our users.
-So that we better understand what we need to improve and ensure that we do the right thing when we implement features or change workflows within OBS.
+As a long term goal, we want to be able monitor how OBS is used by our users. :chart_with_upwards_trend:
+So that we better understand what we need to improve and ensure that we do the right things when we implement features or change workflows within OBS.
 For that we needed to install [telegraf](https://github.com/influxdata/telegraf) on [metrics.opensuse.org](https://metrics.opensuse.org).
 During this sprint we packaged and installed telegraf on that instance.
 
@@ -41,7 +44,7 @@ During this sprint we packaged and installed telegraf on that instance.
 
 ## Notifications for "Request state was changed" do not seem to work
 
-Some time ago [Tim](https://github.com/thardeck) [reported](https://github.com/openSUSE/open-build-service/issues/4131) that OBS does not send notifications when the state of a request changes to 'new'.
+Some time ago [thardeck](https://github.com/thardeck) [reported](https://github.com/openSUSE/open-build-service/issues/4131) that OBS does not send notifications when the state of a request changes to 'new'.
 We've investigated :mag: the issue and [tried](https://github.com/openSUSE/open-build-service/commit/723731704d751a6fb893e076db667c6b449604c4) to solve it, but in the end we realized that there is no easy solution for this and have to [revert our patch](https://github.com/openSUSE/open-build-service/pull/4574). :unamused:
 
 Instead we generated a follow up [card](https://trello.com/c/nahnojm5/327-notification-filters) and documented our findings there.
