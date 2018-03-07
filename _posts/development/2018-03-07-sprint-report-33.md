@@ -30,6 +30,34 @@ Until now all this was hidden behind a [feature flag](https://martinfowler.com/a
 This sprint we also tested all different regions in Amazon EC2 and decided to finally release it to the public.
 You can read more about it in our [cloud upload blog article](http://openbuildservice.org/2018/03/01/cloud-upload/).
 
+## Setup telegraf on the production server
+
+As a long term goal we want to be able monitor :chart_with_upwards_trend: how OBS is used by our users.
+So that we better understand what we need to improve and ensure that we do the right thing when we implement features or change workflows within OBS.
+For that we needed to install [telegraf](https://github.com/influxdata/telegraf) on [metrics.opensuse.org](https://metrics.opensuse.org).
+During this sprint we packaged and installed telegraf on that instance.
+
+# Bug fixes
+
+## Notifications for "Request state was changed" do not seem to work
+
+Some time ago [Tim](https://github.com/thardeck) [reported](https://github.com/openSUSE/open-build-service/issues/4131) that OBS does not send notifications when the state of a request changes to 'new'.
+We've investigated :mag: the issue and [tried](https://github.com/openSUSE/open-build-service/commit/723731704d751a6fb893e076db667c6b449604c4) to solve it, but in the end we realized that there is no easy solution for this and have to [revert our patch](https://github.com/openSUSE/open-build-service/pull/4574). :unamused:
+
+Instead we generated a follow up [card](https://trello.com/c/nahnojm5/327-notification-filters) and documented our findings there.
+We look forward to get this solved soon. :smile:
+
+# Documentation
+
+## Document Rubocop process of agreeing on style rules
+
+A project as complex and big as OBS certainly needs good documentation. Not only for end users, but also for developers.
+That's why we started to [document](https://github.com/openSUSE/open-build-service/wiki) :notebook_with_decorative_cover: the subsystems of OBS, how we deploy and release our [stable versions](https://build.opensuse.org/project/show/OBS:Server:2.8:Staging) and many more things.
+
+And since we find coding style quite important we spend some time in this sprint to agree and document on how we want to handle updates of Rubocop.
+All this is based on our [previous](http://openbuildservice.org/2018/01/19/sprint-report-15/) [efforts](http://openbuildservice.org/2018/02/12/sprint-report-31/) of applying Rubocop style rules to OBS.
+The result can of course be found in our [developer wiki](https://github.com/openSUSE/open-build-service/wiki/Code-Style). :wink:
+
 # Tests
 
 Like every sprint we were increasing our test coverage. This time we extended [PackageController#save_meta](https://github.com/openSUSE/open-build-service/blob/master/src/api/app/controllers/webui/package_controller.rb#L988) 
