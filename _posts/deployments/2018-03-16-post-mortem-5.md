@@ -3,7 +3,6 @@ layout: post
 title: "Post-mortem: Deployment on March 15, 2018"
 category: deployments
 author: OBS Team
-
 ---
 
 During yesterday's deployment we faced some issues. We want to give you some insight into what happened.
@@ -23,7 +22,7 @@ We hot fixed the routes in the dashboard on production that running on same serv
 
 ### How are we going to do better in the future?
 
-Shit (Syntax errors) happen, so we want only monkey patch serious issues that block people from working at all and
+Shit :hankey: (Syntax errors) happen, so we want only monkey patch serious issues that block people from working at all and
 only doing monkey patches in pair programming.
 We also have to think again how we can make our deployment cycle faster, it's too slow currently to get to a working package.
 Looking to what happen with factory dashboard, we should figure out how to pull it into our CI cycle, but until that has happened
