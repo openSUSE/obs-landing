@@ -2,8 +2,6 @@
 layout: post
 title: "Post-mortem: Downtime on March 23, 2018"
 category: deployments
-author: OBS Team
-
 ---
 
 After today's deployment we faced a downtime of our reference server. We want to give you some insight into what happened.
