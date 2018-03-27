@@ -29,6 +29,10 @@ This refactoring did some moving and renaming of files to structure them under a
 One of these files used an ActiveRecord namespace outside of the model directory which caused a ``TypeError: superclass mismatch for class BsRequestAction`` because it was not required before.
 This error only occured when the eager load setting was enabled which caused that we neither experienced this error in development nor in our test suite.
 
+## Other side-effects
+The full crash of the application also caused a crash of the delayed jobs workers, which we use for asynchronous jobs.
+This was not discovered until Monday morning which caused e.g. that the notification system was not working over the weekend and delayed job needed to process several thousand jobs.
+
 ## How are we going to do better in the future?
 
 ### Mirror production closer in the CI cycle
@@ -51,5 +55,5 @@ But there wasn't any debug/backtrace output in the apache log files either becau
 
 ### Cleanup of the production machine
 During our hunt for the right log file we noticed a lot of old log files around. Apparently the log location, type of log etc. has been changed a couple of times during the lifetime of this machine.
-We need to clean this up so it's not distracting you while you're already in panic-mode trying to keep downtime to a minumum.
+We need to clean this up so it's not distracting you while you're already in panic-mode trying to keep downtime to a minimum.
 
