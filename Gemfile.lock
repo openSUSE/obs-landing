@@ -71,7 +71,7 @@ PLATFORMS
 DEPENDENCIES
   jekyll (~> 3.6.2)
   jemoji
-  kramdown (= 1.16.2)
+  kramdown (~> 1.16.2)
 
 BUNDLED WITH
    1.16.1
