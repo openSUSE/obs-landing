@@ -14,19 +14,7 @@ layout: secondary
           by the OBS Team
           {% endif %}
           posted on
-
-          {% assign d = page.date | date: "%-d" %}
-          {% case d %}
-          {% when '1' or '21' or '31' %}
-          {{ d }}st
-          {% when '2' or '22' %}
-          {{ d }}nd
-          {% when '3' or '23' %}
-          {{ d }}rd
-          {% else %}{{ d }}th
-          {% endcase %}
-          {{ page.date | date: "%B" }}
-          {{ page.date | date: "%Y" }}
+          {{ page.date | date_to_string: "ordinal" }}
 
         </div>
         {{ content }}

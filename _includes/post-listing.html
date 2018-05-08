@@ -9,7 +9,7 @@
       {% else %}
       by the OBS Team
       {% endif %}
-      posted on {{ post.date | date: "%B %d. %Y" }}
+      posted on {{ post.date | date_to_string: "ordinal" }}
     </div>
     <p class="post-description">
       {{ post.content | strip_html | truncatewords: 75 }}
