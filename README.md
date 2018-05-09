@@ -11,12 +11,13 @@ be found [here](https://kramdown.gettalong.org/quickref.html).
 
 ### Local preview
 
-To preview the page locally, install Jekyll
-(package `ruby*-rubygem-jekyll` on openSUSE). Then run:
+Just run:
 
 ```
-jekyll serve
+bundle exec jekyll serve
 ```
+
+You may need to run `bundle install` before.
 
 ### Updating OBS documentation
 
