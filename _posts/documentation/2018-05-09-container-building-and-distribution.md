@@ -75,7 +75,7 @@ in your repository in `http://download.opensuse.org/repositories/<project>/<repo
 which contains information how to pull your image from https://registry.opensuse.org.
 
 If you want to enable container signature verification simply set the following
-environment variable in you shell:
+environment variable in your shell:
 
 ```
 export DOCKER_CONTENT_TRUST=1
