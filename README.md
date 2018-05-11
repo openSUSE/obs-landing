@@ -19,6 +19,27 @@ bundle exec jekyll serve
 
 You may need to run `bundle install` before.
 
+
+### Add new members to team page
+
+Add the following lines at the end of the YAML front matter block:
+
+- name: Example Name
+  position: Frontend Developer
+  email: example@suse.de
+  github: examplegithub
+  twitter: exampletwitter
+  blog: https://examplename.com
+  irc: exampleirc
+  description: "Write a nice description of yourself.
+  You can use **markdown** in ~~the~~ _description_.
+
+  \nAnd add new paragraphs too."
+
+You don't need to include all the fields, you can just remove the one you don't want to have.
+If you use special characters you may need to sorround your text by `"`.
+
+
 ### Updating OBS documentation
 
 The OBS documentation is stored in a [separate repository](https://github.com/openSUSE/obs-docu)
