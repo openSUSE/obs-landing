@@ -23,7 +23,7 @@ In general you can choose between two bulding flavours:
 * Build with native docker tools (Dockerfile)
 * Build with [kiwi](https://suse.github.io/kiwi/building/build_docker_container.html) (expert level or for those who are already familiar with kiwi)
 
-To start with an exiting image
+To start with an existing image
 
 * Go to the [OBS start page](https://build.opensuse.org/)
 * Click on the link ["New Image"](https://build.opensuse.org/image_templates)
