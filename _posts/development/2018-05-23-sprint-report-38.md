@@ -25,6 +25,8 @@ If this is your first upload to Microsoft Azure, you need to configure the acces
 
 ![Cloud provider selection](/images/posts/sprint_38_cloud_azure.png)
 
+_Please note that the Microsoft Azure uploads are currently disabled on build.opensuse.org. We will let you know as soon as we enable them for general use_
+
 ### bundle_gems source service
 Source Services are tools to validate, generate or modify sources in a trustable way :robot:. We already announced in our [last sprint report](https://openbuildservice.org/2018/05/04/sprint-report-37/) that we were working on a bundle_gems source service.
 The bundle_gems service makes it a breeze to package Ruby application and removes the necessity to package all dependent rubygems.
