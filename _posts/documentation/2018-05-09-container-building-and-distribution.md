@@ -2,7 +2,6 @@
 layout: post
 title: Introduction of the new OBS Container Registry
 category: documentation
-author: OBS Team
 ---
 
 Did you know that OBS can not only build RPM packages and appliances but also container formats like docker?

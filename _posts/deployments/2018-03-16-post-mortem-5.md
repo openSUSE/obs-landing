@@ -2,7 +2,6 @@
 layout: post
 title: "Post-mortem: Deployment on March 15, 2018"
 category: deployments
-author: OBS Team
 ---
 
 During yesterday's deployment we faced some issues. We want to give you some insight into what happened.
