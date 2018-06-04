@@ -2,6 +2,7 @@
 layout: post
 title: Identify constraint problems
 category: releases
+excerpt_separator: ""
 ---
 
 ### Blame the constraints!
