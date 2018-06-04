@@ -2,7 +2,6 @@
 layout: post
 title: Release of the Open Build Service, Version 2.9
 category: releases
-author: OBS Team
 ---
 
 The Build Service Team is happy to announce the release of Open Build Service 2.9! :tada:

@@ -2,7 +2,6 @@
 layout: post
 title: Welcome SUSE Studio Express Users!
 category: documentation
-author: OBS Team
 ---
 
 
