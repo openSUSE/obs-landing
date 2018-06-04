@@ -2,6 +2,7 @@
 layout: post
 title: Download on Demand (DoD)
 category: releases
+excerpt_separator: ""
 ---
 
 ## Using Download on Demand (DoD) Feature
