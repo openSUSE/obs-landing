@@ -6,6 +6,7 @@ category: development
 <p>
    Here are the results the OBS frontend team has achieved in the last two weeks (2017-08-07 to 2017-08-18).
 </p>
+
 <h2>Features</h2>
 <h3>LDAP support for our 2.8 release</h3>
 <p>

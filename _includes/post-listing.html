@@ -11,9 +11,14 @@
       {% endif %}
       posted on {{ post.date | date_to_string: "ordinal" }}
     </div>
-    <p class="post-description">
-      {{ post.content | strip_html | truncatewords: 75 }}
-    </p>
+
+    {{ post.excerpt |
+       replace: '<p>', '__p__' |
+       replace: '</p>', '__/p__' |
+       strip_html |
+       replace: '__p__', '<p class="post-description">' |
+       replace: '__/p__', '</p>' }}
+
     <a href="{{ post.url }}" class="ui right floated teal button">Read more...</a>
     <div class="clearfix"></div>
   </div>

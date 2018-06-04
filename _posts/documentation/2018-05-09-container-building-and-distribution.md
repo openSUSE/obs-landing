@@ -2,6 +2,7 @@
 layout: post
 title: Introduction of the new OBS Container Registry
 category: documentation
+excerpt_separator: <!--more-->
 ---
 
 Did you know that OBS can not only build RPM packages and appliances but also container formats like docker?
@@ -11,6 +12,7 @@ But how can you make use of containers you build with OBS?
 We recently introduced our [https://registry.opensuse.org](https://registry.opensuse.org)!  
 Read on if you want to know more :+1:
 
+<!--more-->
 
 # How can you build containers with OBS?
 
