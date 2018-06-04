@@ -86,4 +86,25 @@ And a screenshot is added right here :wink: :
 Now that we had a peek into all 3 contenders (Bootstrap, Bulma, Semantic-UI) we should be ready to decide in the next few days which one it will be. :grinning:
 
 
+# openSUSE conference
+
+But the OBS team was not only hacking, they were also in the openSUSE conference.
+It is the annual openSUSE community event that brings people from around the world together to meet and collaborate.
+This year it took place in Prag from May 25 to 27.
+There were an [OBS workshop](https://events.opensuse.org/conference/oSC18/program/proposal/1786) and many OBS related talks, such as:
+
+- **[Keep calm and refactor OBS](https://events.opensuse.org/conference/oSC18/program/proposal/1690)** by Ana María Martínez
+- **[osc - What's new and best practices](https://events.opensuse.org/conference/oSC18/program/proposal/1687)** by Marco Strigl
+- **[What's new in OBS?](https://events.opensuse.org/conference/oSC18/program/proposal/1885)** by David Kang, Marco Strigl and Frank Schreiner
+- **[Rethinking openSUSE release tooling and the build service](https://events.opensuse.org/conference/oSC18/program/proposal/1831)** by Jimmy Berry
+- **[kanku - Bridging the gap between OBS and developers](https://events.opensuse.org/conference/oSC18/program/proposal/1756)** by Frank Schreiner
+- **[Behind the scenes of the OBS team](https://events.opensuse.org/conference/oSC18/program/proposal/1840)** by Christian Bruckmayer
+
+All of them were recorded and thanks to the increadbly efficient work of the openSUSE video team, you can watch them in the [openSUSE YouTube](https://www.youtube.com/channel/UCXPcicLBLCOpPEk-hC6yyzQ) channel.
+
+<img src="https://pbs.twimg.com/media/DeM7Y8AX0AArsVB.jpg" alt="Behind the scenes of the OBS team" style="display:inline;width:30%">
+<img src="https://pbs.twimg.com/media/DeMKd8dX0AAY4gf.jpg" alt="What's new in OBS?" style="display:inline;width:30%">
+<img src="https://pbs.twimg.com/media/DeDJt76XcAA8fp9.jpg" alt="osc - What's new and best practices" style="display:inline;width:30%">
+
+
 And that's all! :confetti_ball: See you next sprint! :kissing_heart:
