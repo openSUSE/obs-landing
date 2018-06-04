@@ -3,6 +3,9 @@ layout: post
 title: Highlights of the OBS frontend development – Sprint 23
 category: development
 ---
+<p>
+  Here are the results the OBS frontend team has achieved in the last two weeks (2017-08-21 to 2017-09-01).
+</p>
 
 <h2>OBS 2.8.3 Release</h2>
 
