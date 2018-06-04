@@ -2,7 +2,6 @@
 layout: post
 title: Cheatsheet for branching containers with osc
 category: documentation
-author: OBS Team
 ---
 
 Following [our workshop](https://events.opensuse.org/conference/oSC18/program/proposal/1786) at the great openSUSE Conference 2018, 
