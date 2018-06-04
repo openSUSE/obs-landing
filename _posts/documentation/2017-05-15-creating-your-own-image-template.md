@@ -3,6 +3,7 @@ layout: post
 title: Creating Your Own Image Template
 category: documentation
 author: Björn Geuken
+excerpt_separator: <!--more-->
 ---
 
 Are you considering to write your own image templates, but you don't know
@@ -11,6 +12,7 @@ how to start? You have come to the right place.
 In this short article you will learn to create you own image templates
 and how you can publish them.
 
+<!--more-->
 
 ## The Subproject
 

@@ -2,6 +2,7 @@
 layout: post
 title: Release of the Open Build Service, Version 2.9
 category: releases
+excerpt_separator: <!--more-->
 ---
 
 The Build Service Team is happy to announce the release of Open Build Service 2.9! :tada:
@@ -18,6 +19,8 @@ image from OBS to the Amazon Web Services (AWS). :cloud:
 We revamped our notification system, including RSS Feeds for user's notifications,
 [RabbitMQ support](http://openbuildservice.org/2018/02/12/rabbitmq-integration/),
 a nicer UI for the notifications page and much more.
+
+<!--more-->
 
 A more detailed list of what we ship :ship: in 2.9 can be found in our
 [release notes](https://github.com/openSUSE/open-build-service/blob/2.9/ReleaseNotes-2.9).
