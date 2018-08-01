@@ -1,26 +1,19 @@
 The Open Build Service Landing page
 ===================================
 
-This page is based on [jekyll](https://github.com/mojombo/jekyll) and [foundation](http://foundation.zurb.com/)
-and is served via [github pages](http://pages.github.com/) to [openbuildservice.org](http://www.openbuildservice.org)
+This page is based on [Jekyll](https://github.com/mojombo/jekyll) and [Foundation](http://foundation.zurb.com/)
+and is served via [GitHub Pages](http://pages.github.com/) to [openbuildservice.org](http://www.openbuildservice.org)
 
 ### Markdown
 
-GitHub Pages are written in kramdown. A quickref for the syntax can
+GitHub Pages are written in kramdown. A quick reference for the syntax can
 be found [here](https://kramdown.gettalong.org/quickref.html).
 
-### Local preview
+### Local Preview
 
-Just run:
+Run `docker-compose up` and access http://localhost:4000
 
-```
-bundle exec jekyll serve
-```
-
-You may need to run `bundle install` before.
-
-
-### Add new members to team page
+### Add New Members to Team Page
 
 Add the following lines at the end of the YAML front matter block:
 
@@ -37,10 +30,10 @@ Add the following lines at the end of the YAML front matter block:
   \nAnd add new paragraphs too."
 
 You don't need to include all the fields, you can just remove the one you don't want to have.
-If you use special characters you may need to sorround your text by `"`.
+If you use special characters you may need to surround your text by `"`.
 
 
-### Updating OBS documentation
+### Updating OBS Documentation
 
 The OBS documentation is stored in a [separate repository](https://github.com/openSUSE/obs-docu)
 and is integrated into the OBS landing page via git submodules.
