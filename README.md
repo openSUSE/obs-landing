@@ -13,6 +13,12 @@ Pages are written in kramdown. A quick reference for the syntax can be found
 
 Run `docker-compose up` and access http://localhost:4000
 
+### Deployments
+
+Deployments are automated with a webhook, so whenever commits are pushed to
+`master`, a new version will be published. The deployments are listed
+[here](https://app.netlify.com/sites/openbuildservice/deploys).
+
 ### Add New Members to Team Page
 
 Add the following lines at the end of the YAML front matter block:
