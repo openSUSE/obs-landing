@@ -2,12 +2,12 @@ The Open Build Service Landing page
 ===================================
 
 This page is based on [Jekyll](https://github.com/mojombo/jekyll) and [Foundation](http://foundation.zurb.com/)
-and is served via [GitHub Pages](http://pages.github.com/) to [openbuildservice.org](http://www.openbuildservice.org)
+and is served via [Netlify](https://www.netlify.com/) to [openbuildservice.org](http://www.openbuildservice.org)
 
 ### Markdown
 
-GitHub Pages are written in kramdown. A quick reference for the syntax can
-be found [here](https://kramdown.gettalong.org/quickref.html).
+Pages are written in kramdown. A quick reference for the syntax can be found
+[here](https://kramdown.gettalong.org/quickref.html).
 
 ### Local Preview
 
