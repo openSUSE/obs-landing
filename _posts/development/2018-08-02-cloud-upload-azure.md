@@ -2,7 +2,7 @@
 layout: post
 title: Release of Azure Cloud Upload feature
 category: development
-author: "OBS frontend team"
+author: "OBS Team"
 ---
 
 We are proud to announce that the new Azure cloud upload feature has just been released.
