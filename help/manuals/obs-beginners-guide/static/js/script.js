@@ -183,10 +183,7 @@ function githubUrl(sectionNumber, sectionName, permalink) {
     url += "&amp;milestone=" + encodeURIComponent(ghMilestone);
   }
   if (ghLabels) {
-    var labels = ghLabels.split(",");
-    for(var i = 0; i < labels.length; i++) {
-      url += "&amp;labels[]=" + labels[i];
-    }
+    url += "&amp;labels=" + encodeURIComponent(ghLabels);
   }
   return url;
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>File System Overview | Administrator Guide</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 2.4.0 using SUSE XSL Stylesheets 2.0.8 (based on DocBook XSL Stylesheets 1.78.1) - chunked" /><meta name="book-title" content="Administrator Guide" /><meta name="chapter-title" content="Chapter 2. File System Overview" /><link rel="home" href="index.html" title="OBS Documentation" /><link rel="up" href="book.obs-admin.html" title="Administrator Guide" /><link rel="prev" href="obs.cha.installation_and_configuration.html" title="Chapter 1. Installation and Configuration" /><link rel="next" href="obs.cha.administration.html" title="Chapter 3. Administration" /><script type="text/javascript">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>File System Overview | Administrator Guide</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 2.4.0 using SUSE XSL Stylesheets 2.0.12 (based on DocBook XSL Stylesheets snapshot) - chunked" /><meta name="book-title" content="Administrator Guide" /><meta name="chapter-title" content="Chapter 2. File System Overview" /><link rel="home" href="index.html" title="OBS Documentation" /><link rel="up" href="book.obs-admin.html" title="Administrator Guide" /><link rel="prev" href="obs.cha.installation_and_configuration.html" title="Chapter 1. Installation and Configuration" /><link rel="next" href="obs.cha.administration.html" title="Chapter 3. Administration" /><script type="text/javascript">
 
 var protocol = window.location.protocol.toLowerCase();
 if ( protocol != 'file:' ) {
@@ -23,13 +23,13 @@ hljs.configure({
   useBR: false
 });
 
-</script></head><body class="offline js-off"><div id="_outer-wrap"><div id="_white-bg"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Administrator Guide"><span class="book-icon">Administrator Guide</span></a><span> › </span><a class="crumb" href="obs.cha.overview_filesystem.html">File System Overview</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.htmlindex.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Administrator Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="bk03pr01.html"><span class="number"> </span><span class="name">About this Guide</span></a></li><li class="inactive"><a href="obs.cha.installation_and_configuration.html"><span class="number">1 </span><span class="name">Installation and Configuration</span></a></li><li class="inactive"><a href="obs.cha.overview_filesystem.html"><span class="number">2 </span><span class="name">File System Overview</span></a></li><li class="inactive"><a href="obs.cha.administration.html"><span class="number">3 </span><span class="name">Administration</span></a></li><li class="inactive"><a href="obs.cha.troubleshooting.html"><span class="number">4 </span><span class="name">Troubleshooting</span></a></li><li class="inactive"><a href="bk03apa.html"><span class="number">A </span><span class="name">GNU Licenses</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 1. Installation and Configuration" href="obs.cha.installation_and_configuration.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 3. Administration" href="obs.cha.administration.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Administrator Guide"><span class="book-icon">Administrator Guide</span></a><span> › </span><a class="crumb" href="obs.cha.overview_filesystem.html">File System Overview</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 1. Installation and Configuration" href="obs.cha.installation_and_configuration.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 3. Administration" href="obs.cha.administration.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class=""><div class="documentation"><div class="chapter " id="obs.cha.overview_filesystem"><div class="titlepage"><div><div><h1 class="title"><span class="number">2 </span><span class="name">File System Overview</span> </h1></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="obs.cha.overview_filesystem.html#_configuration_files"><span class="number">2.1 </span><span class="name">Configuration Files</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.overview_filesystem.html#_log_files"><span class="number">2.2 </span><span class="name">Log Files</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.overview_filesystem.html#_src_obs_tree"><span class="number">2.3 </span><span class="name"><code class="filename">/srv/obs</code> Tree</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.overview_filesystem.html#_meta_data"><span class="number">2.4 </span><span class="name">Metadata</span></a></span></dt></dl></div></div>
+</script></head><body class="offline js-off"><div id="_outer-wrap"><div id="_white-bg"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Administrator Guide"><span class="book-icon">Administrator Guide</span></a><span> › </span><a class="crumb" href="obs.cha.overview_filesystem.html">File System Overview</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.htmlindex.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Administrator Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="bk03pr01.html"><span class="number"> </span><span class="name">About this Guide</span></a></li><li class="inactive"><a href="obs.cha.installation_and_configuration.html"><span class="number">1 </span><span class="name">Installation and Configuration</span></a></li><li class="inactive"><a href="obs.cha.overview_filesystem.html"><span class="number">2 </span><span class="name">File System Overview</span></a></li><li class="inactive"><a href="obs.cha.administration.html"><span class="number">3 </span><span class="name">Administration</span></a></li><li class="inactive"><a href="obs.cha.troubleshooting.html"><span class="number">4 </span><span class="name">Troubleshooting</span></a></li><li class="inactive"><a href="bk03apa.html"><span class="number">A </span><span class="name">GNU Licenses</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 1. Installation and Configuration" href="obs.cha.installation_and_configuration.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 3. Administration" href="obs.cha.administration.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Administrator Guide"><span class="book-icon">Administrator Guide</span></a><span> › </span><a class="crumb" href="obs.cha.overview_filesystem.html">File System Overview</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 1. Installation and Configuration" href="obs.cha.installation_and_configuration.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 3. Administration" href="obs.cha.administration.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class=""><div class="documentation"><div class="chapter " id="obs.cha.overview_filesystem"><div class="titlepage"><div><div><h1 class="title"><span class="number">2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">File System Overview</span> </h1></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="obs.cha.overview_filesystem.html#_configuration_files"><span class="number">2.1 </span><span class="name">Configuration Files</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.overview_filesystem.html#_log_files"><span class="number">2.2 </span><span class="name">Log Files</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.overview_filesystem.html#_src_obs_tree"><span class="number">2.3 </span><span class="name"><code class="filename">/srv/obs</code> Tree</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.overview_filesystem.html#_meta_data"><span class="number">2.4 </span><span class="name">Metadata</span></a></span></dt></dl></div></div>
  
  
 
- <div class="sect1 " id="_configuration_files"><div class="titlepage"><div><div><h2 class="title" id="_configuration_files"><span class="number">2.1 </span><span class="name">Configuration Files</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_configuration_files">#</a></h2></div></div></div>
+ <div class="sect1 " id="_configuration_files"><div class="titlepage"><div><div><h2 class="title" id="_configuration_files"><span class="number">2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuration Files</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_configuration_files">#</a></h2></div></div></div>
   
-  <div class="sect2 " id="_frontend_configuration"><div class="titlepage"><div><div><h3 class="title" id="_frontend_configuration"><span class="number">2.1.1 </span><span class="name">Front-end Configuration</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_frontend_configuration">#</a></h3></div></div></div>
+  <div class="sect2 " id="_frontend_configuration"><div class="titlepage"><div><div><h3 class="title" id="_frontend_configuration"><span class="number">2.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Front-end Configuration</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_frontend_configuration">#</a></h3></div></div></div>
    
    <p>The front-end is configured with 4 files:</p>
    <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
@@ -41,7 +41,7 @@ hljs.configure({
     </li><li class="listitem ">
      <p>/etc/apache2/vhosts.d/obs.conf</p>
     </li></ul></div>
-   <div class="sect3 " id="_database_yml"><div class="titlepage"><div><div><h4 class="title" id="_database_yml"><span class="number">2.1.1.1 </span><span class="name"><code class="filename">database.yml</code></span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_database_yml">#</a></h4></div></div></div>
+   <div class="sect3 " id="_database_yml"><div class="titlepage"><div><div><h4 class="title" id="_database_yml"><span class="number">2.1.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><code class="filename">database.yml</code></span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_database_yml">#</a></h4></div></div></div>
     
     <p>This file has the information needed to access the database. It
      contain credentials for the database access and should be only readable by
@@ -58,9 +58,9 @@ hljs.configure({
   encoding: utf8
   timeout: 15
   pool: 30</pre></div>
-    <div class="table" id="idm140378288314688"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 2.1: </span><span class="name">Database Configuration Keywords </span><a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#idm140378288314688">#</a></h6></div><div class="table-contents">
+    <div class="table" id="id14007"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 2.1: </span><span class="name">Database Configuration Keywords </span><a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#id14007">#</a></h6></div><div class="table-contents">
      
-     <table summary="Database Configuration Keywords" border="1"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /></colgroup><thead><tr><th align="left" valign="top"> keyword </th><th align="left" valign="top"> Description </th><th align="left" valign="top">Remarks</th></tr></thead><tbody><tr><td align="left" valign="top">
+     <table class="table" summary="Database Configuration Keywords" border="1"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /></colgroup><thead><tr><th align="left" valign="top"> keyword </th><th align="left" valign="top"> Description </th><th align="left" valign="top">Remarks</th></tr></thead><tbody><tr><td align="left" valign="top">
          <p>adapter</p>
         </td><td align="left" valign="top">
          <p>Database driver</p>
@@ -123,22 +123,34 @@ hljs.configure({
         </td></tr></tbody></table>
     </div></div>
    </div>
-   <div class="sect3 " id="_options_yml"><div class="titlepage"><div><div><h4 class="title" id="_options_yml"><span class="number">2.1.1.2 </span><span class="name"><code class="filename">options.yml</code></span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_options_yml">#</a></h4></div></div></div>
+   <div class="sect3 " id="_options_yml"><div class="titlepage"><div><div><h4 class="title" id="_options_yml"><span class="number">2.1.1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><code class="filename">options.yml</code></span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_options_yml">#</a></h4></div></div></div>
     
     <p>The configuration file /srv/www/obs/api/config/options.yml is the
      default configuration file for the Open Build Service Web UI and API. It
      contains configuration parameters for example for back-end connections and
      connection to the API. Important are the configurations for source and
-     front-end hosts The configuration for LDAP authentication is also located
+     front-end hosts. The configuration for LDAP authentication is also located
      in this file.</p>
-    <div id="idm140378288256096" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6>
+      <p>
+        Configuration options can be set per
+        <a class="ulink" href="https://guides.rubyonrails.org/configuring.html#rails-environment-settings" target="_blank">Rails environment<span class="ulink-url"> (https://guides.rubyonrails.org/configuring.html#rails-environment-settings)</span></a>
+        or as generic configuration option defined in <span class="emphasis"><em>default</em></span>.
+      </p>
+    <div id="id14096" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6>
+      <p>
+        We've updated the format of the <span class="emphasis"><em>options.yml</em></span> after
+        the release of OBS 2.9. Old configuration files can be converted via
+        </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">(cd /srv/www/obs/api/; rake migrate_options_yml)</code></pre></div><p>
+      </p>
+    </div>
+    <div id="id14101" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6>
      <p>More and more configurations will be moved to the database and do
       not longer exist in this file. The database configuration can be accessed
       via the API <span class="emphasis"><em>/configuration</em></span> path.</p>
     </div>
-    <div class="table" id="idm140378288254768"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 2.2: </span><span class="name"><code class="filename">options.yml</code> Configuration Items </span><a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#idm140378288254768">#</a></h6></div><div class="table-contents">
+    <div class="table" id="id14104"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 2.2: </span><span class="name"><code class="filename">options.yml</code> Configuration Items </span><a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#id14104">#</a></h6></div><div class="table-contents">
      
-     <table summary="options.yml Configuration Items" border="1"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /><col class="col_4" /></colgroup><thead><tr><th align="left" valign="top"> Config item </th><th align="left" valign="top"> Description </th><th align="left" valign="top"> Values <code class="literal">default</code>
+     <table class="table" summary="options.yml Configuration Items" border="1"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /><col class="col_4" /></colgroup><thead><tr><th align="left" valign="top"> Config item </th><th align="left" valign="top"> Description </th><th align="left" valign="top"> Values <code class="literal">default</code>
         </th><th align="left" valign="top"> Remarks</th></tr></thead><tbody><tr><td align="left" valign="top">
          <p>use_xforward</p>
         </td><td align="left" valign="top">
@@ -347,74 +359,87 @@ hljs.configure({
 # API.
 #
 
+default: &amp;default
+  # Make use of mod_xforward module in apache
+  use_xforward: true
 
-# Make use of mod_xforward module in apache
-use_xforward: true
+  # Make use of X-Accel-Redirect for Nginx.
+  # http://kovyrin.net/2010/07/24/nginx-fu-x-accel-redirect-remote
+  #use_nginx_redirect: /internal_redirect
 
-# Make use of X-Accel-Redirect for Nginx.
-# http://kovyrin.net/2010/07/24/nginx-fu-x-accel-redirect-remote
-#use_nginx_redirect: /internal_redirect
+  # Minimum count of rating votes a project/package needs to # be taken in
+  # account
+  # for global statistics:
+  min_votes_for_rating: 3
 
-# Minimum count of rating votes a project/package needs to # be taken in
-# account
-# for global statistics:
-min_votes_for_rating: 3
+  # Set to true to verify XML reponses comply to the schema
+  response_schema_validation: false
 
-# Set to true to verify XML reponses comply to the schema
-response_schema_validation: false
+  # backend source server
+  source_host: localhost
+  source_port: 5352
+  #source_protocol: https
 
-# backend source server
-source_host: localhost
-source_port: 5352
-#source_protocol: https
-
-# api access to this instance
-frontend_host: localhost
-frontend_port: 443
-frontend_protocol: https
-# if your users access the hosts through a proxy (or just a different name,
-# use this to
-# overwrite the settings for users)
-#external_frontend_host: api.opensuse.org
-#external_frontend_port: 443
-#external_frontend_protocol: https
+  # api access to this instance
+  frontend_host: localhost
+  frontend_port: 443
+  frontend_protocol: https
+  # if your users access the hosts through a proxy (or just a different name,
+  # use this to
+  # overwrite the settings for users)
+  #external_frontend_host: api.opensuse.org
+  #external_frontend_port: 443
+  #external_frontend_protocol: https
 
 
-extended_backend_log: true
+  extended_backend_log: true
 
-# proxy_auth_mode can be :off, :on or :simulate
-proxy_auth_mode: :off
+  # proxy_auth_mode can be :off, :on or :simulate
+  proxy_auth_mode: :off
 
-# ATTENTION: If proxy_auth_mode'is :on, the frontend takes the user
-# name that is coming as headervalue X-username as a
-# valid user does no further authentication. So take care...
-proxy_auth_test_user: coolguy
-proxy_auth_test_email: coolguy@example.com
+  # ATTENTION: If proxy_auth_mode'is :on, the frontend takes the user
+  # name that is coming as headervalue X-username as a
+  # valid user does no further authentication. So take care...
+  proxy_auth_test_user: coolguy
+  proxy_auth_test_email: coolguy@example.com
 
-# set this to enable auto cleanup requests after the given days
-auto_cleanup_after_days: 30
+  # set this to enable auto cleanup requests after the given days
+  auto_cleanup_after_days: 30
 
-#schema_location
+  #schema_location
 
-#version
+  #version
 
-# if set to false, the API will only fake writes to backend (useful in
-# testing)
-# global_write_through: true
+  # if set to false, the API will only fake writes to backend (useful in
+  # testing)
+  # global_write_through: true
 
-# see
-# http://colszowka.heroku.com/2011/02/22/setting-up-your-custom-hoptoad-notifier-endpoint-for-free-using-errbit-on-heroku
-#errbit_api_key: api_key_of_your_app
-#errbit_host: installation.of.errbit.com</pre></div>
+  # see
+  # http://colszowka.heroku.com/2011/02/22/setting-up-your-custom-hoptoad-notifier-endpoint-for-free-using-errbit-on-heroku
+  #errbit_api_key: api_key_of_your_app
+  #errbit_host: installation.of.errbit.com
+
+production:
+  &lt;&lt;: *default
+
+test:
+  &lt;&lt;: *default
+  source_host: backend
+  memcached_host: cache
+
+development:
+  &lt;&lt;: *default
+  source_host: backend
+  memcached_host: cache</pre></div>
    </div>
-   <div class="sect3 " id="_feature_yml"><div class="titlepage"><div><div><h4 class="title" id="_feature_yml"><span class="number">2.1.1.3 </span><span class="name"><code class="filename">feature.yml</code></span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_feature_yml">#</a></h4></div></div></div>
+   <div class="sect3 " id="_feature_yml"><div class="titlepage"><div><div><h4 class="title" id="_feature_yml"><span class="number">2.1.1.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><code class="filename">feature.yml</code></span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_feature_yml">#</a></h4></div></div></div>
     
     <p>The configuration file /srv/www/obs/api/config/feature.yml
      contains the default configuration about features that can be enabled or
      disabled in Open Build Service.</p>
-    <div class="table" id="idm140378288090224"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 2.3: </span><span class="name"><code class="filename">feature.yml</code> Configuration Items </span><a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#idm140378288090224">#</a></h6></div><div class="table-contents">
+    <div class="table" id="id14352"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 2.3: </span><span class="name"><code class="filename">feature.yml</code> Configuration Items </span><a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#id14352">#</a></h6></div><div class="table-contents">
      
-     <table summary="feature.yml Configuration Items" border="1"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /><col class="col_4" /></colgroup><thead><tr><th align="left" valign="top"> Config item </th><th align="left" valign="top"> Description </th><th align="left" valign="top"> Values <code class="literal">default</code>
+     <table class="table" summary="feature.yml Configuration Items" border="1"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /><col class="col_4" /></colgroup><thead><tr><th align="left" valign="top"> Config item </th><th align="left" valign="top"> Description </th><th align="left" valign="top"> Values <code class="literal">default</code>
         </th><th align="left" valign="top"> Remarks</th></tr></thead><tbody><tr><td align="left" valign="top">
          <p>image_templates</p>
         </td><td align="left" valign="top">
@@ -460,7 +485,7 @@ test:
     kiwi_image_editor: true
     cloud_upload: true</pre></div>
    </div>
-   <div class="sect3 " id="_apache_vhost_obs_conf"><div class="titlepage"><div><div><h4 class="title" id="_apache_vhost_obs_conf"><span class="number">2.1.1.4 </span><span class="name">Apache Virtual Host <code class="filename">obs.conf</code></span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_apache_vhost_obs_conf">#</a></h4></div></div></div>
+   <div class="sect3 " id="_apache_vhost_obs_conf"><div class="titlepage"><div><div><h4 class="title" id="_apache_vhost_obs_conf"><span class="number">2.1.1.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Apache Virtual Host <code class="filename">obs.conf</code></span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_apache_vhost_obs_conf">#</a></h4></div></div></div>
     
     <p>The Apache configuration depends on the Apache version and which
      extra options are used, so use the documentation of the Apache version you
@@ -570,7 +595,7 @@ LimitRequestFieldsize 20000
 &lt;/VirtualHost&gt;</pre></div>
    </div>
   </div>
-  <div class="sect2 " id="_backend_configuration"><div class="titlepage"><div><div><h3 class="title" id="_backend_configuration"><span class="number">2.1.2 </span><span class="name">Back-end Configuration</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_backend_configuration">#</a></h3></div></div></div>
+  <div class="sect2 " id="_backend_configuration"><div class="titlepage"><div><div><h3 class="title" id="_backend_configuration"><span class="number">2.1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Back-end Configuration</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_backend_configuration">#</a></h3></div></div></div>
    
    <p>The Back-end is configured with 2 files:</p>
    <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
@@ -580,13 +605,13 @@ LimitRequestFieldsize 20000
      <p> /usr/lib/obs/server/BSConfig.pm - a perl script defining some
       global variables </p>
     </li></ul></div>
-   <div class="sect3 " id="_etc_sysconfig_obs_server"><div class="titlepage"><div><div><h4 class="title" id="_etc_sysconfig_obs_server"><span class="number">2.1.2.1 </span><span class="name"><code class="filename">/etc/sysconfig/obs-server</code></span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_etc_sysconfig_obs_server">#</a></h4></div></div></div>
+   <div class="sect3 " id="_etc_sysconfig_obs_server"><div class="titlepage"><div><div><h4 class="title" id="_etc_sysconfig_obs_server"><span class="number">2.1.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><code class="filename">/etc/sysconfig/obs-server</code></span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_etc_sysconfig_obs_server">#</a></h4></div></div></div>
     
     <p>This script is used to set up the basic paths and the worker. the
      most important settings are the <span class="strong"><strong>OBS_SRC_SERVER</strong></span> and <span class="strong"><strong>OBS_REPO_SERVERS</strong></span> and the <span class="strong"><strong>OBS_WORKER_INSTANCES</strong></span>.</p>
-    <div class="table" id="idm140378288044096"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 2.4: </span><span class="name"><code class="filename">obs-server</code> Variables </span><a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#idm140378288044096">#</a></h6></div><div class="table-contents">
+    <div class="table" id="id14421"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 2.4: </span><span class="name"><code class="filename">obs-server</code> Variables </span><a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#id14421">#</a></h6></div><div class="table-contents">
      
-     <table summary="obs-server Variables" border="1"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /><col class="col_4" /></colgroup><thead><tr><th align="left" valign="top"> Variable </th><th align="left" valign="top"> Description </th><th align="left" valign="top"> Values <code class="literal">default</code>
+     <table class="table" summary="obs-server Variables" border="1"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /><col class="col_4" /></colgroup><thead><tr><th align="left" valign="top"> Variable </th><th align="left" valign="top"> Description </th><th align="left" valign="top"> Values <code class="literal">default</code>
         </th><th align="left" valign="top"> Remarks</th></tr></thead><tbody><tr><td align="left" valign="top">
          <p>OBS_BACKENDCODE_DIR</p>
         </td><td align="left" valign="top">
@@ -1247,20 +1272,20 @@ OBS_ROOT_SSHD_KEY_URL=""
 #
 OBS_WORKER_SCRIPT_URL=""</pre></div>
    </div>
-   <div class="sect3 " id="_bsconfig_pm"><div class="titlepage"><div><div><h4 class="title" id="_bsconfig_pm"><span class="number">2.1.2.2 </span><span class="name">BSConfig.pm</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_bsconfig_pm">#</a></h4></div></div></div>
+   <div class="sect3 " id="_bsconfig_pm"><div class="titlepage"><div><div><h4 class="title" id="_bsconfig_pm"><span class="number">2.1.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">BSConfig.pm</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_bsconfig_pm">#</a></h4></div></div></div>
     
     <p>This file is a perl module used by most back-end scripts, it
      mainly defines global variables. Since it is a perl module, after changes
      the back-end servers need to be restarted to become aware of the
      changes.</p>
-    <div id="idm140378287800128" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning</h6>
+    <div id="id14775" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning</h6>
      <p>If there is a Perl syntax error in this file, the services will
       not start. Most likely you forgot the semicolon on the end of a
       statement.</p>
     </div>
-    <div class="table" id="idm140378287799104"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 2.5: </span><span class="name"><code class="filename">BSConfig.pm</code> Variables </span><a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#idm140378287799104">#</a></h6></div><div class="table-contents">
+    <div class="table" id="id14777"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 2.5: </span><span class="name"><code class="filename">BSConfig.pm</code> Variables </span><a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#id14777">#</a></h6></div><div class="table-contents">
      
-     <table summary="BSConfig.pm Variables" border="1"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /><col class="col_4" /></colgroup><thead><tr><th align="left" valign="top"> Variable </th><th align="left" valign="top"> Description </th><th align="left" valign="top"> Values <code class="literal">default</code>
+     <table class="table" summary="BSConfig.pm Variables" border="1"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /><col class="col_4" /></colgroup><thead><tr><th align="left" valign="top"> Variable </th><th align="left" valign="top"> Description </th><th align="left" valign="top"> Values <code class="literal">default</code>
         </th><th align="left" valign="top"> Remarks</th></tr></thead><tbody><tr><td align="left" valign="top">
          <p>$hostname</p>
         </td><td align="left" valign="top">
@@ -1955,9 +1980,9 @@ if (-r $hostconfig) {
    </div>
   </div>
  </div>
- <div class="sect1 " id="_log_files"><div class="titlepage"><div><div><h2 class="title" id="_log_files"><span class="number">2.2 </span><span class="name">Log Files</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_log_files">#</a></h2></div></div></div>
+ <div class="sect1 " id="_log_files"><div class="titlepage"><div><div><h2 class="title" id="_log_files"><span class="number">2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Log Files</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_log_files">#</a></h2></div></div></div>
   
-  <div class="sect2 " id="_frontend"><div class="titlepage"><div><div><h3 class="title" id="_frontend"><span class="number">2.2.1 </span><span class="name">Front-end</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_frontend">#</a></h3></div></div></div>
+  <div class="sect2 " id="_frontend"><div class="titlepage"><div><div><h3 class="title" id="_frontend"><span class="number">2.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Front-end</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_frontend">#</a></h3></div></div></div>
    
    <p>The front-end log files are found under
      <span class="emphasis"><em>/srv/www/obs/api/log</em></span>.</p>
@@ -1980,7 +2005,7 @@ if (-r $hostconfig) {
      <p> production.searchd.query.log - search request logs </p>
     </li></ul></div>
   </div>
-  <div class="sect2 " id="_backend"><div class="titlepage"><div><div><h3 class="title" id="_backend"><span class="number">2.2.2 </span><span class="name">Back-end</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_backend">#</a></h3></div></div></div>
+  <div class="sect2 " id="_backend"><div class="titlepage"><div><div><h3 class="title" id="_backend"><span class="number">2.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Back-end</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_backend">#</a></h3></div></div></div>
    
    <p>The back-end log files are found by default under
      <span class="emphasis"><em>/srv/obs/log/</em></span>.</p>
@@ -2017,7 +2042,7 @@ if (-r $hostconfig) {
     </li></ul></div>
   </div>
  </div>
- <div class="sect1 " id="_src_obs_tree"><div class="titlepage"><div><div><h2 class="title" id="_src_obs_tree"><span class="number">2.3 </span><span class="name"><code class="filename">/srv/obs</code> Tree</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_src_obs_tree">#</a></h2></div></div></div>
+ <div class="sect1 " id="_src_obs_tree"><div class="titlepage"><div><div><h2 class="title" id="_src_obs_tree"><span class="number">2.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><code class="filename">/srv/obs</code> Tree</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_src_obs_tree">#</a></h2></div></div></div>
   
   <p>The default back-end data directory is located under
     <span class="emphasis"><em>/srv/obs/</em></span>. Here are a bunch of subdirectories used for
@@ -2026,7 +2051,7 @@ if (-r $hostconfig) {
    which stores the global OBS configuration for the back-end. You should not
    modify this file directly, but use the API /configuration interface instead,
    since this information needs to kept in sync with the front-end.</p>
-  <div class="sect2 " id="_build_directory"><div class="titlepage"><div><div><h3 class="title" id="_build_directory"><span class="number">2.3.1 </span><span class="name"><code class="filename">build</code> Directory</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_build_directory">#</a></h3></div></div></div>
+  <div class="sect2 " id="_build_directory"><div class="titlepage"><div><div><h3 class="title" id="_build_directory"><span class="number">2.3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><code class="filename">build</code> Directory</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_build_directory">#</a></h3></div></div></div>
    
    <p>In this subdirectory managed by the repo server daemon, all
     repository data, metadata and build results are stored in a hierarchical
@@ -2060,29 +2085,29 @@ if (-r $hostconfig) {
 │           ├── srtp
 │           └── wget</pre></div>
   </div>
-  <div class="sect2 " id="_cloudupload_directory"><div class="titlepage"><div><div><h3 class="title" id="_cloudupload_directory"><span class="number">2.3.2 </span><span class="name"><code class="filename">cloudupload</code> Directory</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_cloudupload_directory">#</a></h3></div></div></div>
+  <div class="sect2 " id="_cloudupload_directory"><div class="titlepage"><div><div><h3 class="title" id="_cloudupload_directory"><span class="number">2.3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><code class="filename">cloudupload</code> Directory</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_cloudupload_directory">#</a></h3></div></div></div>
    
    <p>Info for cloud upload jobs is stored here, it has a subdir named <span class="emphasis"><em>done</em></span> for storing the already finished jobs.</p>
   </div>
-  <div class="sect2 " id="_db_directory"><div class="titlepage"><div><div><h3 class="title" id="_db_directory"><span class="number">2.3.3 </span><span class="name"><code class="filename">db</code> Directory</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_db_directory">#</a></h3></div></div></div>
+  <div class="sect2 " id="_db_directory"><div class="titlepage"><div><div><h3 class="title" id="_db_directory"><span class="number">2.3.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><code class="filename">db</code> Directory</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_db_directory">#</a></h3></div></div></div>
    
    <p>Back-end database root directory use by the source server, repo
     server scheduler and publisher. Nobody should touch this.</p>
   </div>
-  <div class="sect2 " id="_diffcache_directory"><div class="titlepage"><div><div><h3 class="title" id="_diffcache_directory"><span class="number">2.3.4 </span><span class="name"><code class="filename">diffcache</code> Directory</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_diffcache_directory">#</a></h3></div></div></div>
+  <div class="sect2 " id="_diffcache_directory"><div class="titlepage"><div><div><h3 class="title" id="_diffcache_directory"><span class="number">2.3.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><code class="filename">diffcache</code> Directory</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_diffcache_directory">#</a></h3></div></div></div>
    
    <p>Cache for source server compare operations.</p>
   </div>
-  <div class="sect2 " id="_events_directory"><div class="titlepage"><div><div><h3 class="title" id="_events_directory"><span class="number">2.3.5 </span><span class="name"><code class="filename">events</code> Directory</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_events_directory">#</a></h3></div></div></div>
+  <div class="sect2 " id="_events_directory"><div class="titlepage"><div><div><h3 class="title" id="_events_directory"><span class="number">2.3.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><code class="filename">events</code> Directory</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_events_directory">#</a></h3></div></div></div>
    
    <p>Communication between services.</p>
   </div>
-  <div class="sect2 " id="_info_directory"><div class="titlepage"><div><div><h3 class="title" id="_info_directory"><span class="number">2.3.6 </span><span class="name"><code class="filename">info</code> Directory</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_info_directory">#</a></h3></div></div></div>
+  <div class="sect2 " id="_info_directory"><div class="titlepage"><div><div><h3 class="title" id="_info_directory"><span class="number">2.3.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><code class="filename">info</code> Directory</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_info_directory">#</a></h3></div></div></div>
    
    <p>Scheduler information managed by the scheduler and used by the repo
     server.</p>
   </div>
-  <div class="sect2 " id="_jobs_directory"><div class="titlepage"><div><div><h3 class="title" id="_jobs_directory"><span class="number">2.3.7 </span><span class="name"><code class="filename">jobs</code> Directory</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_jobs_directory">#</a></h3></div></div></div>
+  <div class="sect2 " id="_jobs_directory"><div class="titlepage"><div><div><h3 class="title" id="_jobs_directory"><span class="number">2.3.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><code class="filename">jobs</code> Directory</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_jobs_directory">#</a></h3></div></div></div>
    
    <p>The build jobs are stored in the /srv/obs/jobs directory. They are
     organized bybuild architecture:</p>
@@ -2095,34 +2120,34 @@ if (-r $hostconfig) {
    <p>The jobs/load file contains statistical data about the build
     jobs.</p>
   </div>
-  <div class="sect2 " id="_log_directory"><div class="titlepage"><div><div><h3 class="title" id="_log_directory"><span class="number">2.3.8 </span><span class="name"><code class="filename">log</code> Directory</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_log_directory">#</a></h3></div></div></div>
+  <div class="sect2 " id="_log_directory"><div class="titlepage"><div><div><h3 class="title" id="_log_directory"><span class="number">2.3.8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><code class="filename">log</code> Directory</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_log_directory">#</a></h3></div></div></div>
    
    <p>Contains the log files of the back-end daemons.</p>
   </div>
-  <div class="sect2 " id="_projects_directory"><div class="titlepage"><div><div><h3 class="title" id="_projects_directory"><span class="number">2.3.9 </span><span class="name"><code class="filename">projects</code> Directory</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_projects_directory">#</a></h3></div></div></div>
+  <div class="sect2 " id="_projects_directory"><div class="titlepage"><div><div><h3 class="title" id="_projects_directory"><span class="number">2.3.9 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><code class="filename">projects</code> Directory</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_projects_directory">#</a></h3></div></div></div>
    
    <p>Contains the project hierarchy and metadata under revision
     control.</p>
   </div>
-  <div class="sect2 " id="_remotecache_directory"><div class="titlepage"><div><div><h3 class="title" id="_remotecache_directory"><span class="number">2.3.10 </span><span class="name"><code class="filename">remotecache</code> Directory</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_remotecache_directory">#</a></h3></div></div></div>
+  <div class="sect2 " id="_remotecache_directory"><div class="titlepage"><div><div><h3 class="title" id="_remotecache_directory"><span class="number">2.3.10 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><code class="filename">remotecache</code> Directory</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_remotecache_directory">#</a></h3></div></div></div>
    
    <p>Cache for remote repository information.</p>
   </div>
-  <div class="sect2 " id="_repos_directory"><div class="titlepage"><div><div><h3 class="title" id="_repos_directory"><span class="number">2.3.11 </span><span class="name"><code class="filename">repos</code> Directory</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_repos_directory">#</a></h3></div></div></div>
+  <div class="sect2 " id="_repos_directory"><div class="titlepage"><div><div><h3 class="title" id="_repos_directory"><span class="number">2.3.11 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><code class="filename">repos</code> Directory</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_repos_directory">#</a></h3></div></div></div>
    
    <p>Directory managed by the publisher to collect build results, also
     used by the repo server and scheduler to find build results.</p>
   </div>
-  <div class="sect2 " id="_repos_sync_directory"><div class="titlepage"><div><div><h3 class="title" id="_repos_sync_directory"><span class="number">2.3.12 </span><span class="name"><code class="filename">repos_sync</code> Directory</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_repos_sync_directory">#</a></h3></div></div></div>
+  <div class="sect2 " id="_repos_sync_directory"><div class="titlepage"><div><div><h3 class="title" id="_repos_sync_directory"><span class="number">2.3.12 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><code class="filename">repos_sync</code> Directory</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_repos_sync_directory">#</a></h3></div></div></div>
    
    <p>Directory with files pointing to the project root directories,
     helper for publisher rsync.</p>
   </div>
-  <div class="sect2 " id="_run_directory"><div class="titlepage"><div><div><h3 class="title" id="_run_directory"><span class="number">2.3.13 </span><span class="name"><code class="filename">run</code> Directory</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_run_directory">#</a></h3></div></div></div>
+  <div class="sect2 " id="_run_directory"><div class="titlepage"><div><div><h3 class="title" id="_run_directory"><span class="number">2.3.13 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><code class="filename">run</code> Directory</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_run_directory">#</a></h3></div></div></div>
    
    <p>State and lock information for the back-end daemons</p>
   </div>
-  <div class="sect2 " id="_sources_directory"><div class="titlepage"><div><div><h3 class="title" id="_sources_directory"><span class="number">2.3.14 </span><span class="name"><code class="filename">sources</code> Directory</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_sources_directory">#</a></h3></div></div></div>
+  <div class="sect2 " id="_sources_directory"><div class="titlepage"><div><div><h3 class="title" id="_sources_directory"><span class="number">2.3.14 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><code class="filename">sources</code> Directory</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_sources_directory">#</a></h3></div></div></div>
    
    <p>All package sources under revision control in one directory per
     package, managed by the source server. Package sources are by default
@@ -2140,24 +2165,24 @@ if (-r $hostconfig) {
 ├── :service
 └── :upload</pre></div>
   </div>
-  <div class="sect2 " id="_trees_directory"><div class="titlepage"><div><div><h3 class="title" id="_trees_directory"><span class="number">2.3.15 </span><span class="name"><code class="filename">trees</code> Directory</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_trees_directory">#</a></h3></div></div></div>
+  <div class="sect2 " id="_trees_directory"><div class="titlepage"><div><div><h3 class="title" id="_trees_directory"><span class="number">2.3.15 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><code class="filename">trees</code> Directory</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_trees_directory">#</a></h3></div></div></div>
    
    <p>Revision control data for project and packages, managed by the
     source server.</p>
   </div>
-  <div class="sect2 " id="_upload_directory"><div class="titlepage"><div><div><h3 class="title" id="_upload_directory"><span class="number">2.3.16 </span><span class="name"><code class="filename">upload</code> Directory</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_upload_directory">#</a></h3></div></div></div>
+  <div class="sect2 " id="_upload_directory"><div class="titlepage"><div><div><h3 class="title" id="_upload_directory"><span class="number">2.3.16 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><code class="filename">upload</code> Directory</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_upload_directory">#</a></h3></div></div></div>
    
    <p>Temporary directory for uploading files for other back-end
     components.</p>
   </div>
-  <div class="sect2 " id="_workers_directory"><div class="titlepage"><div><div><h3 class="title" id="_workers_directory"><span class="number">2.3.17 </span><span class="name"><code class="filename">workers</code> Directory</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_workers_directory">#</a></h3></div></div></div>
+  <div class="sect2 " id="_workers_directory"><div class="titlepage"><div><div><h3 class="title" id="_workers_directory"><span class="number">2.3.17 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><code class="filename">workers</code> Directory</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_workers_directory">#</a></h3></div></div></div>
    
    <p>Worker information</p>
   </div>
  </div>
- <div class="sect1 " id="_meta_data"><div class="titlepage"><div><div><h2 class="title" id="_meta_data"><span class="number">2.4 </span><span class="name">Metadata</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_meta_data">#</a></h2></div></div></div>
+ <div class="sect1 " id="_meta_data"><div class="titlepage"><div><div><h2 class="title" id="_meta_data"><span class="number">2.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Metadata</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_meta_data">#</a></h2></div></div></div>
   
-  <div class="sect2 " id="_obs_revision_control"><div class="titlepage"><div><div><h3 class="title" id="_obs_revision_control"><span class="number">2.4.1 </span><span class="name">OBS Revision Control</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_obs_revision_control">#</a></h3></div></div></div>
+  <div class="sect2 " id="_obs_revision_control"><div class="titlepage"><div><div><h3 class="title" id="_obs_revision_control"><span class="number">2.4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">OBS Revision Control</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_obs_revision_control">#</a></h3></div></div></div>
    
    <p>This section gives a short generic overview how the revision
     information are stored in the OBS back-end for packages and projects. The
@@ -2167,7 +2192,7 @@ if (-r $hostconfig) {
      <span class="emphasis"><em>/srv/obs/sources</em></span> directories. The revision
     information is stored in separate files by the Source Server in the
      <span class="emphasis"><em>/srv/obs/projects directory</em></span>.</p>
-   <div class="sect3 " id="_obs_revision_control_files"><div class="titlepage"><div><div><h4 class="title" id="_obs_revision_control_files"><span class="number">2.4.1.1 </span><span class="name">OBS revision control files</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_obs_revision_control_files">#</a></h4></div></div></div>
+   <div class="sect3 " id="_obs_revision_control_files"><div class="titlepage"><div><div><h4 class="title" id="_obs_revision_control_files"><span class="number">2.4.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">OBS revision control files</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_obs_revision_control_files">#</a></h4></div></div></div>
     
     <p>The revision information is stored in simple CSV like file format
      with a bar (|) as delimiter between the 8 columns. The files do have the
@@ -2183,7 +2208,7 @@ if (-r $hostconfig) {
 3|1|72c7986e694f45ab1a62779e64e92a8f|1.0|1464005339|user4|new version|
 4|2|699e9931e6f167d78e65bbe5853f592f|1.0|1464006221|user4|add patch file|
 5|1|0cfc3a2297f38d2aa9d8d0e98fc22a38|1.1|1464007797|user4|new version|</pre></div>
-    <div class="table" id="idm140378287350272"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 2.6: </span><span class="name">The 8 Columns </span><a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#idm140378287350272">#</a></h6></div><div class="table-contents">
+    <div class="table" id="id15487"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 2.6: </span><span class="name">The 8 Columns </span><a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#id15487">#</a></h6></div><div class="table-contents">
      
      
 
@@ -2191,7 +2216,7 @@ if (-r $hostconfig) {
 
      
 
-     <table summary="The 8 Columns" border="1" width="80%"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /><col class="col_4" /></colgroup><thead><tr><th align="center" valign="middle"> Column </th><th align="center" valign="middle"> Content </th><th align="center" valign="middle"> XML tag </th><th align="center" valign="middle"> may empty</th></tr></thead><tbody><tr><td align="center" valign="middle">
+     <table class="table" summary="The 8 Columns" border="1" width="80%"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /><col class="col_4" /></colgroup><thead><tr><th align="center" valign="middle"> Column </th><th align="center" valign="middle"> Content </th><th align="center" valign="middle"> XML tag </th><th align="center" valign="middle"> may empty</th></tr></thead><tbody><tr><td align="center" valign="middle">
          <p>1</p>
         </td><td align="center" valign="middle">
          <p>revision number</p>
@@ -2267,7 +2292,7 @@ if (-r $hostconfig) {
 0a17daaa913df9e50ee65e83a1898363  package1.spec
 1f810b3521242a98333b7bbf6b2b7ef7  test1.sh</pre></div>
    </div>
-   <div class="sect3 " id="_obs_revision_api"><div class="titlepage"><div><div><h4 class="title" id="_obs_revision_api"><span class="number">2.4.1.2 </span><span class="name">OBS Revision API</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_obs_revision_api">#</a></h4></div></div></div>
+   <div class="sect3 " id="_obs_revision_api"><div class="titlepage"><div><div><h4 class="title" id="_obs_revision_api"><span class="number">2.4.1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">OBS Revision API</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_obs_revision_api">#</a></h4></div></div></div>
     
     <p>The revision info can be retrieved via API calls for the specific
      package, for example, using
@@ -2279,15 +2304,15 @@ if (-r $hostconfig) {
      "comment=some+comment" can be used to set a commit message.</p>
    </div>
   </div>
-  <div class="sect2 " id="_project_meta_data"><div class="titlepage"><div><div><h3 class="title" id="_project_meta_data"><span class="number">2.4.2 </span><span class="name">Project Metadata</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_project_meta_data">#</a></h3></div></div></div>
+  <div class="sect2 " id="_project_meta_data"><div class="titlepage"><div><div><h3 class="title" id="_project_meta_data"><span class="number">2.4.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Project Metadata</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_project_meta_data">#</a></h3></div></div></div>
    
    <p>Project metadata are XML files containing the meta project
     information, such as title, description, related user and groups with
     roles, build settings, repository settings, publish settings, debug
     settings and more.</p>
-   <div class="table" id="idm140378287279984"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 2.7: </span><span class="name">Project Meta XML </span><a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#idm140378287279984">#</a></h6></div><div class="table-contents">
+   <div class="table" id="id15587"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 2.7: </span><span class="name">Project Meta XML </span><a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#id15587">#</a></h6></div><div class="table-contents">
     
-    <table summary="Project Meta XML" border="1"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /></colgroup><thead><tr><th align="left" valign="top"> XML tag </th><th align="left" valign="top"> Attributes</th><th align="left" valign="top"> Content</th></tr></thead><tbody><tr><td align="left" valign="top">
+    <table class="table" summary="Project Meta XML" border="1"><colgroup><col class="col_1" /><col class="col_2" /><col class="col_3" /></colgroup><thead><tr><th align="left" valign="top"> XML tag </th><th align="left" valign="top"> Attributes</th><th align="left" valign="top"> Content</th></tr></thead><tbody><tr><td align="left" valign="top">
         <p>project</p>
        </td><td align="left" valign="top">
         <p>name</p>
@@ -2411,7 +2436,7 @@ if (-r $hostconfig) {
   &lt;/repository&gt;
 &lt;/project&gt;</pre></div>
   </div>
-  <div class="sect2 " id="_package_meta_data"><div class="titlepage"><div><div><h3 class="title" id="_package_meta_data"><span class="number">2.4.3 </span><span class="name">Package Metadata</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_package_meta_data">#</a></h3></div></div></div>
+  <div class="sect2 " id="_package_meta_data"><div class="titlepage"><div><div><h3 class="title" id="_package_meta_data"><span class="number">2.4.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Package Metadata</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_package_meta_data">#</a></h3></div></div></div>
    
    <p>XML file about package meta information, like Title, description,
     related user and groups with roles, build settings, publish settings, debug
@@ -2434,7 +2459,7 @@ if (-r $hostconfig) {
   &lt;/debuginfo&gt;
 &lt;/package&gt;</pre></div>
   </div>
-  <div class="sect2 " id="_attribute_meta_data"><div class="titlepage"><div><div><h3 class="title" id="_attribute_meta_data"><span class="number">2.4.4 </span><span class="name">Attribute Metadata</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_attribute_meta_data">#</a></h3></div></div></div>
+  <div class="sect2 " id="_attribute_meta_data"><div class="titlepage"><div><div><h3 class="title" id="_attribute_meta_data"><span class="number">2.4.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Attribute Metadata</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_attribute_meta_data">#</a></h3></div></div></div>
    
    <p>Attributes can be used to add special information to packages.
     Attributes can be used to trigger special actions.</p>
@@ -2449,7 +2474,7 @@ if (-r $hostconfig) {
   &lt;/attribute&gt;
 &lt;/attributes&gt;</pre></div>
   </div>
-  <div class="sect2 " id="_job_files"><div class="titlepage"><div><div><h3 class="title" id="_job_files"><span class="number">2.4.5 </span><span class="name">Job Files</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_job_files">#</a></h3></div></div></div>
+  <div class="sect2 " id="_job_files"><div class="titlepage"><div><div><h3 class="title" id="_job_files"><span class="number">2.4.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Job Files</span> <a title="Permalink" class="permalink" href="obs.cha.overview_filesystem.html#_job_files">#</a></h3></div></div></div>
    
    <p>Jobs are stored by the scheduler in the
      <code class="filename">/srv/obs/jobs</code> directory and contain the build setup

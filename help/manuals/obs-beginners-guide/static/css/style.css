@@ -106,7 +106,7 @@ html, body {
 }
 
 #_content {
-    background: #FFF url(../images/dots-gray.png) repeat-x scroll 0px 0px;
+    background: transparent url(../images/dots-gray.png) repeat-x scroll 0px 0px;
     min-height: 139px;
     clear: both;
     min-width: 150px;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Using Source Services | User Guide</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 2.4.0 using SUSE XSL Stylesheets 2.0.8 (based on DocBook XSL Stylesheets 1.78.1) - chunked" /><meta name="book-title" content="User Guide" /><meta name="chapter-title" content="Chapter 6. Using Source Services" /><link rel="home" href="index.html" title="OBS Documentation" /><link rel="up" href="par.working.html" title="Part III. Usage" /><link rel="prev" href="cha.obs.building.html" title="Chapter 5. Building Package Formats" /><link rel="next" href="book.obs-admin.html" title="Administrator Guide" /><script type="text/javascript">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Using Source Services | User Guide</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 2.4.0 using SUSE XSL Stylesheets 2.0.12 (based on DocBook XSL Stylesheets snapshot) - chunked" /><meta name="book-title" content="User Guide" /><meta name="chapter-title" content="Chapter 6. Using Source Services" /><link rel="home" href="index.html" title="OBS Documentation" /><link rel="up" href="par.working.html" title="Part III. Usage" /><link rel="prev" href="cha.obs.building.html" title="Chapter 5. Building Package Formats" /><link rel="next" href="book.obs-admin.html" title="Administrator Guide" /><script type="text/javascript">
 
 var protocol = window.location.protocol.toLowerCase();
 if ( protocol != 'file:' ) {
@@ -23,11 +23,11 @@ hljs.configure({
   useBR: false
 });
 
-</script></head><body class="offline js-off"><div id="_outer-wrap"><div id="_white-bg"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="User Guide"><span class="book-icon">User Guide</span></a><span> › </span><a class="crumb" href="par.working.html">Usage</a><span> › </span><a class="crumb" href="cha.obs.source_service.html">Using Source Services</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>User Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="bk02pr01.html"><span class="number"> </span><span class="name">About this Guide</span></a></li><li class="inactive"><a href="par.concepts.html"><span class="number">I </span><span class="name">Concepts</span></a><ol><li class="inactive"><a href="cha.obs.package_formats.html"><span class="number">1 </span><span class="name">Supported Build Recipes and Package Formats</span></a></li></ol></li><li class="inactive"><a href="bk02pt02.html"><span class="number">II </span><span class="name">Setup</span></a><ol><li class="inactive"><a href="cha.obs.osc.html"><span class="number">2 </span><span class="name">osc, the Command Line Tool</span></a></li><li class="inactive"><a href="cha.obs.prjconfig.html"><span class="number">3 </span><span class="name">Project Configuration</span></a></li></ol></li><li class="inactive"><a href="par.working.html"><span class="number">III </span><span class="name">Usage</span></a><ol><li class="inactive"><a href="cha.obs.basicworkflow.html"><span class="number">4 </span><span class="name">Basic OBS Workflow</span></a></li><li class="inactive"><a href="cha.obs.building.html"><span class="number">5 </span><span class="name">Building Package Formats</span></a></li><li class="inactive"><a href="cha.obs.source_service.html"><span class="number">6 </span><span class="name">Using Source Services</span></a></li></ol></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 5. Building Package Formats" href="cha.obs.building.html"><span class="prev-icon">←</span></a><span class="tool-spacer"><span class="next-icon">→</span></span></span></div></div></div></div><div id="_fixed-header-wrap" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="User Guide"><span class="book-icon">User Guide</span></a><span> › </span><a class="crumb" href="par.working.html">Usage</a><span> › </span><a class="crumb" href="cha.obs.source_service.html">Using Source Services</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 5. Building Package Formats" href="cha.obs.building.html"><span class="prev-icon">←</span></a><span class="tool-spacer"><span class="next-icon">→</span></span></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class=""><div class="documentation"><div class="chapter " id="cha.obs.source_service"><div class="titlepage"><div><div><h2 class="title"><span class="number">6 </span><span class="name">Using Source Services</span> </h2></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="cha.obs.source_service.html#sec.obs.sserv.about"><span class="number">6.1 </span><span class="name">About Source Service</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.source_service.html#sec.obs.sserv.mode"><span class="number">6.2 </span><span class="name">Modes of Services</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.source_service.html#sec.obs.sserv.validate"><span class="number">6.3 </span><span class="name">Defining Services for Validation</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.source_service.html#sec.obs.sserv.create"><span class="number">6.4 </span><span class="name">Creating Source Service Definitions</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.source_service.html#sec.obs.sserv.remove"><span class="number">6.5 </span><span class="name">Removing a Source Service</span></a></span></dt></dl></div></div>
+</script></head><body class="offline js-off"><div id="_outer-wrap"><div id="_white-bg"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="User Guide"><span class="book-icon">User Guide</span></a><span> › </span><a class="crumb" href="par.working.html">Usage</a><span> › </span><a class="crumb" href="cha.obs.source_service.html">Using Source Services</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>User Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="bk02pr01.html"><span class="number"> </span><span class="name">About this Guide</span></a></li><li class="inactive"><a href="par.concepts.html"><span class="number">I </span><span class="name">Concepts</span></a><ol><li class="inactive"><a href="cha.obs.package_formats.html"><span class="number">1 </span><span class="name">Supported Build Recipes and Package Formats</span></a></li></ol></li><li class="inactive"><a href="bk02pt02.html"><span class="number">II </span><span class="name">Setup</span></a><ol><li class="inactive"><a href="cha.obs.osc.html"><span class="number">2 </span><span class="name">osc, the Command Line Tool</span></a></li><li class="inactive"><a href="cha.obs.prjconfig.html"><span class="number">3 </span><span class="name">Project Configuration</span></a></li></ol></li><li class="inactive"><a href="par.working.html"><span class="number">III </span><span class="name">Usage</span></a><ol><li class="inactive"><a href="cha.obs.basicworkflow.html"><span class="number">4 </span><span class="name">Basic OBS Workflow</span></a></li><li class="inactive"><a href="cha.obs.building.html"><span class="number">5 </span><span class="name">Building Package Formats</span></a></li><li class="inactive"><a href="cha.obs.source_service.html"><span class="number">6 </span><span class="name">Using Source Services</span></a></li></ol></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 5. Building Package Formats" href="cha.obs.building.html"><span class="prev-icon">←</span></a><span class="tool-spacer"><span class="next-icon">→</span></span></span></div></div></div></div><div id="_fixed-header-wrap" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="User Guide"><span class="book-icon">User Guide</span></a><span> › </span><a class="crumb" href="par.working.html">Usage</a><span> › </span><a class="crumb" href="cha.obs.source_service.html">Using Source Services</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 5. Building Package Formats" href="cha.obs.building.html"><span class="prev-icon">←</span></a><span class="tool-spacer"><span class="next-icon">→</span></span></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class=""><div class="documentation"><div class="chapter " id="cha.obs.source_service"><div class="titlepage"><div><div><h2 class="title"><span class="number">6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Using Source Services</span> </h2></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="cha.obs.source_service.html#sec.obs.sserv.about"><span class="number">6.1 </span><span class="name">About Source Service</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.source_service.html#sec.obs.sserv.mode"><span class="number">6.2 </span><span class="name">Modes of Services</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.source_service.html#sec.obs.sserv.validate"><span class="number">6.3 </span><span class="name">Defining Services for Validation</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.source_service.html#sec.obs.sserv.create"><span class="number">6.4 </span><span class="name">Creating Source Service Definitions</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.source_service.html#sec.obs.sserv.remove"><span class="number">6.5 </span><span class="name">Removing a Source Service</span></a></span></dt></dl></div></div>
  
  
 
- <div class="sect1 " id="sec.obs.sserv.about"><div class="titlepage"><div><div><h2 class="title" id="sec.obs.sserv.about"><span class="number">6.1 </span><span class="name">About Source Service</span> <a title="Permalink" class="permalink" href="cha.obs.source_service.html#sec.obs.sserv.about">#</a></h2></div></div></div>
+ <div class="sect1 " id="sec.obs.sserv.about"><div class="titlepage"><div><div><h2 class="title" id="sec.obs.sserv.about"><span class="number">6.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">About Source Service</span> <a title="Permalink" class="permalink" href="cha.obs.source_service.html#sec.obs.sserv.about">#</a></h2></div></div></div>
   
   <p>
    Source Services are tools to validate, generate or modify sources in a
@@ -136,18 +136,18 @@ hljs.configure({
   
  </div>
 
- <div class="sect1 " id="sec.obs.sserv.mode"><div class="titlepage"><div><div><h2 class="title" id="sec.obs.sserv.mode"><span class="number">6.2 </span><span class="name">Modes of Services</span> <a title="Permalink" class="permalink" href="cha.obs.source_service.html#sec.obs.sserv.mode">#</a></h2></div></div></div>
+ <div class="sect1 " id="sec.obs.sserv.mode"><div class="titlepage"><div><div><h2 class="title" id="sec.obs.sserv.mode"><span class="number">6.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Modes of Services</span> <a title="Permalink" class="permalink" href="cha.obs.source_service.html#sec.obs.sserv.mode">#</a></h2></div></div></div>
   
   <p> Each service can be used in a mode defining when it should run
    and how to use the result. This can be done per package or globally for an
    entire project. </p>
 
-  <div class="variablelist "><dl class="variablelist"><dt id="idm139751784617808"><span class="term ">Default Mode</span></dt><dd>
+  <div class="variablelist "><dl class="variablelist"><dt id="id13302"><span class="term ">Default Mode</span></dt><dd>
      <p>
       The default mode of a service is to always run after each commit on
       the server side and locally before every local build.
      </p>
-    </dd><dt id="idm139751784615952"><span class="term "><code class="literal">trylocal</code> Mode</span></dt><dd>
+    </dd><dt id="id13306"><span class="term "><code class="literal">trylocal</code> Mode</span></dt><dd>
      <p>
       This mode is running the service locally. The result is committed
       as standard files and not named with a <code class="literal">_service:</code>
@@ -156,21 +156,20 @@ hljs.configure({
       and skip the generated files. In case they differ, they are generated
       and added on the server.
      </p>
-    </dd><dt id="idm139751784612992"><span class="term "><code class="literal">localonly</code> Mode</span></dt><dd>
+    </dd><dt id="id13312"><span class="term "><code class="literal">localonly</code> Mode</span></dt><dd>
      <p>
       This mode is running the service locally. The result gets committed
       as standard files and not named  with <code class="literal">_service:</code> prefix.
       The service is never running on the server side. It is also not
       possible to trigger it manually.
      </p>
-    </dd><dt id="idm139751784610096"><span class="term "><code class="literal">serveronly</code> Mode</span></dt><dd>
-     
+    </dd><dt id="id13318"><span class="term "><code class="literal">serveronly</code> Mode</span></dt><dd>
      <p>
-      The serviceonly mode is running the service on the server only. This
+      The serveronly mode is running the service on the server only. This
       can be useful, when the service is not available or can not work on
       developer workstations.
      </p>
-    </dd><dt id="idm139751784607456"><span class="term "><code class="literal">buildtime</code> Mode</span></dt><dd>
+    </dd><dt id="id13323"><span class="term "><code class="literal">buildtime</code> Mode</span></dt><dd>
      <p>
       The service is running inside of the build job, both for local and
       server side builds. A side effect is that the service package is
@@ -182,7 +181,7 @@ hljs.configure({
       fail in this mode, because such access is not available if the build
       workers are running in secure mode<span class="phrase"> (as is always the case at <a class="ulink" href="https://build.opensuse.org" target="_blank">https://build.opensuse.org</a>)</span>.
      </p>
-    </dd><dt id="idm139751784603312"><span class="term "><code class="literal">disabled</code> Mode</span></dt><dd>
+    </dd><dt id="id13330"><span class="term "><code class="literal">disabled</code> Mode</span></dt><dd>
      <p>
       The disabled mode is neither running the service locally nor on the
       server side. It can be used to temporarily disable the service but keeping
@@ -194,7 +193,7 @@ hljs.configure({
     </dd></dl></div>
  </div>
 
- <div class="sect1 " id="sec.obs.sserv.validate"><div class="titlepage"><div><div><h2 class="title" id="sec.obs.sserv.validate"><span class="number">6.3 </span><span class="name">Defining Services for Validation</span> <a title="Permalink" class="permalink" href="cha.obs.source_service.html#sec.obs.sserv.validate">#</a></h2></div></div></div>
+ <div class="sect1 " id="sec.obs.sserv.validate"><div class="titlepage"><div><div><h2 class="title" id="sec.obs.sserv.validate"><span class="number">6.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Defining Services for Validation</span> <a title="Permalink" class="permalink" href="cha.obs.source_service.html#sec.obs.sserv.validate">#</a></h2></div></div></div>
   
   <p>
    Source Services can be used to validate sources. This can be defined
@@ -235,7 +234,7 @@ hljs.configure({
    </li></ul></div>
  </div>
 
- <div class="sect1 " id="sec.obs.sserv.create"><div class="titlepage"><div><div><h2 class="title" id="sec.obs.sserv.create"><span class="number">6.4 </span><span class="name">Creating Source Service Definitions</span> <a title="Permalink" class="permalink" href="cha.obs.source_service.html#sec.obs.sserv.create">#</a></h2></div></div></div>
+ <div class="sect1 " id="sec.obs.sserv.create"><div class="titlepage"><div><div><h2 class="title" id="sec.obs.sserv.create"><span class="number">6.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Creating Source Service Definitions</span> <a title="Permalink" class="permalink" href="cha.obs.source_service.html#sec.obs.sserv.create">#</a></h2></div></div></div>
   
   <p>
    Source services are defined in the <code class="filename">_service</code> file
@@ -286,9 +285,9 @@ hljs.configure({
    </li></ol></div>
  </div>
 
- <div class="sect1 " id="sec.obs.sserv.remove"><div class="titlepage"><div><div><h2 class="title" id="sec.obs.sserv.remove"><span class="number">6.5 </span><span class="name">Removing a Source Service</span> <a title="Permalink" class="permalink" href="cha.obs.source_service.html#sec.obs.sserv.remove">#</a></h2></div></div></div>
+ <div class="sect1 " id="sec.obs.sserv.remove"><div class="titlepage"><div><div><h2 class="title" id="sec.obs.sserv.remove"><span class="number">6.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Removing a Source Service</span> <a title="Permalink" class="permalink" href="cha.obs.source_service.html#sec.obs.sserv.remove">#</a></h2></div></div></div>
   
-  <p> Sometimes it is useful to continued to work on generated files
+  <p> Sometimes it is useful to continue working on generated files
    manually. In this situation the <code class="filename">_service</code> file needs
    to be dropped, but all
    generated files need to be committed as standard files. The OBS
