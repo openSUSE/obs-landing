@@ -23,6 +23,7 @@ Deployments are automated with a webhook, so whenever commits are pushed to
 
 Add the following lines at the end of the YAML front matter block:
 
+```
 - name: Example Name
   position: Frontend Developer
   email: example@suse.de
@@ -34,6 +35,7 @@ Add the following lines at the end of the YAML front matter block:
   You can use **markdown** in ~~the~~ _description_.
 
   \nAnd add new paragraphs too."
+```
 
 You don't need to include all the fields, you can just remove the one you don't want to have.
 If you use special characters you may need to surround your text by `"`.
