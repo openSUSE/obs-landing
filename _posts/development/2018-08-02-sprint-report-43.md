@@ -29,7 +29,9 @@ You may have already read in [the last sprint report](/2018/07/17/sprint-report-
 
 Finally, we started working on updating our frontend technology. We choose Bootstrap 4 and we started using [@hellcp](https://github.com/hellcp)'s [pull request](https://github.com/openSUSE/open-build-service/pull/5347) as base. This pull request was superseeded by an [smaller one](https://github.com/openSUSE/open-build-service/pull/5415) and you can already see how wonderful it looks like:
 
-<blockquote class="imgur-embed-pub" lang="en" data-id="PdcLqcV"><a href="//imgur.com/PdcLqcV"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+<video controls="controls">
+  <source src="/images/posts/sprint_43_frontend_migration.mp4" type="video/mp4">
+</video>
 
 But this is only the beginning :smile:, as we continue improving the initial code. There were already some [esthetic changes](https://github.com/openSUSE/open-build-service/pull/5476) and we are already working in the [package#revisions](https://github.com/openSUSE/open-build-service/pull/5473) page.
 
@@ -44,4 +46,3 @@ Thanks to [@coolo](https://github.com/coolo)'s help, we now support emojis in co
 # Next Sprint More
 
 That was everything! Remember you can follow the work of the OBS team live in our [Trello Board](https://trello.com/b/Fs7boVwI/bs-sprint). Do not miss our next blog post! :wink:
-
