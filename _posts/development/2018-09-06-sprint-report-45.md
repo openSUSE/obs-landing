@@ -22,7 +22,7 @@ In addition, we continued converting the package views to Bootstrap. This time, 
 
 <img src="/images/posts/sprint-report-45/2.png" alt="Package requests tab in Bootstrap">
 
-This is currently only enabled by default to a subset of the users. But for curious people, it is now possible for everybody to join the beta. If you want to do so you can join/leave our beta program on your user page at <https://build.opensuse.org/home>: 
+This is currently only enabled by default to a subset of the users. But for curious people, it is now possible for everybody to join the beta. If you want to do so you can join/leave our beta program on your user page at <https://build.opensuse.org/home>:
 
 <img src="/images/posts/sprint-report-45/3.png" alt="Page for the link 'Join public beta program'">
 
@@ -46,7 +46,7 @@ Each time code is pushed to one of the three current branches of OBS (master, 2.
 
 Admins of an OBS instance can now define Terms of Service for their instance. Managing Terms of Services is currently an API only feature.
 
-For example this is how an admin would get a distinged ToS. And as you can see ToS support markdown:laughing:
+For example this is how an admin would get a distinct ToS. And as you can see ToS support markdown:laughing:
 ```bash
 osc api /announcements/1
 
@@ -78,12 +78,12 @@ Apart from being busy hacking, the OBS team travelled to some conferences as wel
 
 ## EuRuKo
 
-[EuRuKo](https://euruko2018.org) is the biggest Ruby conference in Europe and the OBS team couldn't miss it! :gem: Every year the conference takes place in a different European city. This time it was in Vienna and arround 600 people (including 3 from OBS) travelled there for the 2 days conference. There was a single track and [13 speakers](https://euruko2018.org/speakers) from all around the world with talks about Ruby, but also other topics like diversity and accesibility.
+[EuRuKo](https://euruko2018.org) is the biggest Ruby conference in Europe and the OBS team couldn't miss it! :gem: Every year the conference takes place in a different European city. This time it was in Vienna and around 600 people (including 3 from OBS) travelled there for the 2 days conference. There was a single track and [13 speakers](https://euruko2018.org/speakers) from all around the world with talks about Ruby, but also other topics like diversity and accessibility.
 
-From all the talks our favourite is of course the one from [Ana](https://github.com/Ana06), who spoke about refactoring in Ruby showing examples taken from OBS. She did not only focus on the code, but also on what she learnt while working on OBS. The example that most catched people attention was the one about the `union` method she wants to add to the Ruby Array class because she found some concerns while discussing some OBS code with one of her collagues. Ana wanted to know the audience opinion about her proposal and she made a standing voting, which result is in the [PR](https://github.com/ruby/ruby/pull/1747#issuecomment-417241624) and the [issue](https://bugs.ruby-lang.org/issues/14097) in the Ruby core. It was a really fun talk where we learnt a lot about refactoring, Ruby code and working on open source. The talk was streamed life with subtitles written life by real people and you can watch the recording in Youtube: [https://youtu.be/jUc8InwoA-E](https://youtu.be/jUc8InwoA-E?t=2m54s)
+From all the talks our favourite is of course the one from [Ana](https://github.com/Ana06), who spoke about refactoring in Ruby showing examples taken from OBS. She did not only focus on the code, but also on what she learnt while working on OBS. The example which caught the most people's attention was the one about the `union` method she wants to add to the Ruby Array class because she found some concerns while discussing some OBS code with one of her colleagues. Ana wanted to know the audience opinion about her proposal and she made a standing voting, which result is in the [PR](https://github.com/ruby/ruby/pull/1747#issuecomment-417241624) and the [issue](https://bugs.ruby-lang.org/issues/14097) in the Ruby core. It was a really fun talk where we learnt a lot about refactoring, Ruby code and working on open source. The talk was streamed with subtitles written live by people and you can watch the recording in Youtube: [https://youtu.be/jUc8InwoA-E](https://youtu.be/jUc8InwoA-E?t=2m54s)
 
 <img src="/images/posts/sprint-report-45/6.jpg" alt="Ana's talk standing voting" style="width:45%">
-<img src="/images/posts/sprint-report-45/7.jpg" alt="Ana enouraging the audience to get involved" style="width:45%">
+<img src="/images/posts/sprint-report-45/7.jpg" alt="Ana encouraging the audience to get involved" style="width:45%">
 
 There were two other talks we specially like:
 
