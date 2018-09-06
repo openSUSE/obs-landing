@@ -11,7 +11,7 @@ People of the Builds! :building_construction: Another Sprint is over and here is
 
 We are currently working on an API for reporting a status **into** the OBS. Let's say you have a script/tool/continuous integration job that installs the three packages, that you build in your OBS project, and tests their functionality together. So you can be sure that if you change one, all three of them still play nice together. Depending on if that test has worked or not, you would decide if you release those changes to your users. Wouldn't it be nice if the OBS could show you if that test was successful or not? That will be possible with the new OBS Status Report API. For certain events (a repository got published, a submit request got created, etc.) we will enable you to upload data so we can show it and base decisions on it. For instance, block merging of a submit request. Our first target is the staging workflow used in  the [openSUSE development process](https://en.opensuse.org/openSUSE:Leap_development_process) that integrates [openQA](http://open.qa). In this sprint we have build an API to create checks for repositories and show these repositories on the factory dashboard. We'll let you know as soon as you can really make use of this.
 
-<img src="https://user-images.githubusercontent.com/3799140/45145920-17733c80-b1c2-11e8-83b3-3f47b309cc8f.png" alt="Factory dashboard with checks">
+<img src="/images/posts/sprint-report-45/1.png" alt="Factory dashboard with checks">
 
 
 # Still moving forward on the Bootstrap front
@@ -20,11 +20,11 @@ Breadcrumbs are a navigational aid in OBS and they are a crucial part of the UI.
 
 In addition, we continued converting the package views to Bootstrap. This time, we finished converting the package requests tab. Here is how it looks like:
 
-<img src="https://w3.suse.de/~bgeuken/bs_request_tab.png" alt="Package requests tab in Bootstrap">
+<img src="/images/posts/sprint-report-45/2.png" alt="Package requests tab in Bootstrap">
 
 This is currently only enabled by default to a subset of the users. But for curious people, it is now possible for everybody to join the beta. If you want to do so you can join/leave our beta program on your user page at <https://build.opensuse.org/home>: 
 
-<img src="http://paste.opensuse.org/images/24892446.png" alt="Page for the link 'Join public beta program'">
+<img src="/images/posts/sprint-report-45/3.png" alt="Page for the link 'Join public beta program'">
 
 
 # Do not allow _accepted_ requests to change back to _review_
@@ -65,11 +65,11 @@ osc api /announcements/1
 
 Once there are new Terms of Services a dialog is shown in a WebUI to any user that has not acknowledged them yet.
 
-<img src="https://w3.suse.de/~bgeuken/terms_of_service_dialog.png" alt="Terms of Service notification">
+<img src="/images/posts/sprint-report-45/4.png" alt="Terms of Service notification">
 
 The Terms of Service itself can be viewed on the overview page:
 
-<img src="https://w3.suse.de/~bgeuken/terms_of_service_page.png" alt="Terms of Service overview">
+<img src="/images/posts/sprint-report-45/5.png" alt="Terms of Service overview">
 
 
 # Conferences
@@ -82,8 +82,8 @@ Apart from being busy hacking, the OBS team travelled to some conferences as wel
 
 From all the talks our favourite is of course the one from [Ana](https://github.com/Ana06), who spoke about refactoring in Ruby showing examples taken from OBS. She did not only focus on the code, but also on what she learnt while working on OBS. The example that most catched people attention was the one about the `union` method she wants to add to the Ruby Array class because she found some concerns while discussing some OBS code with one of her collagues. Ana wanted to know the audience opinion about her proposal and she made a standing voting, which result is in the [PR](https://github.com/ruby/ruby/pull/1747#issuecomment-417241624) and the [issue](https://bugs.ruby-lang.org/issues/14097) in the Ruby core. It was a really fun talk where we learnt a lot about refactoring, Ruby code and working on open source. The talk was streamed life with subtitles written life by real people and you can watch the recording in Youtube: [https://youtu.be/jUc8InwoA-E](https://youtu.be/jUc8InwoA-E?t=2m54s)
 
-<img src="https://pbs.twimg.com/media/DlczR_BWwAUUSpl.jpg" alt="Ana's talk standing voting" style="width:45%">
-<img src="https://pbs.twimg.com/media/DlcdcUkXsAAY2Cg.jpg" alt="Ana enouraging the audience to get involved" style="width:45%">
+<img src="/images/posts/sprint-report-45/6.jpg" alt="Ana's talk standing voting" style="width:45%">
+<img src="/images/posts/sprint-report-45/7.jpg" alt="Ana enouraging the audience to get involved" style="width:45%">
 
 There were two other talks we specially like:
 
