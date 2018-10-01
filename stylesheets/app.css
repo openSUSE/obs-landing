@@ -57,7 +57,7 @@
   clear: both;
 }
 
-.ui.vertical.stripe p {
+.ui.vertical.stripe p, .ui.vertical.stripe ul {
   font-size: 1.33em;
 }
 
