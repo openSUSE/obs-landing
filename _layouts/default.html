@@ -30,10 +30,9 @@
   <![endif]-->
 
   <!-- Piwik -->
-  <script type="text/javascript">
-    var pkBaseURL = (("https:" == document.location.protocol) ? "https://beans.opensuse.org/piwik/" : "http://beans.opensuse.org/piwik/");
-    document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+  <script type="text/javascript" src="//beans.opensuse.org/piwik/piwik.js">
   </script>
+
   <script type="text/javascript">
     try {
       var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 20);
@@ -42,7 +41,7 @@
     } catch (err) {}
   </script>
   <noscript>
-    <p><img src="http://beans.opensuse.org/piwik/piwik.php?idsite=20" style="border:0" alt="" /></p>
+    <p><img src="//beans.opensuse.org/piwik/piwik.php?idsite=20" style="border:0" alt="" /></p>
   </noscript>
   <!-- End Piwik Tracking Code -->
 
