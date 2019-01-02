@@ -174,7 +174,8 @@ function tracker() {
 
 function githubUrl(sectionNumber, sectionName, permalink) {
   var body = sectionNumber + " " + sectionName + "\n\n" + permalink;
-  var url = trackerUrl + "?title=" + encodeURIComponent(sectionName)
+  var url = trackerUrl
+     + "?title=" + encodeURIComponent('[doc] ' + sectionNumber + ' ' + sectionName)
      + "&amp;body=" + encodeURIComponent(body);
   if (ghAssignee) {
     url += "&amp;assignee=" + encodeURIComponent(ghAssignee);
@@ -192,7 +193,8 @@ function bugzillaUrl(sectionNumber, sectionName, permalink) {
   var body = sectionNumber + " " + sectionName + "\n\n" + permalink;
   var url = trackerUrl + "?&amp;product=" + encodeURIComponent(bscProduct)
     + '&amp;component=' + encodeURIComponent(bscComponent)
-    + "&amp;short_desc=[doc]+&amp;comment=" + encodeURIComponent(body);
+    + "&amp;short_desc=" + encodeURIComponent('[doc] ' + sectionNumber + ' ' + sectionName)
+    + "&amp;comment=" + encodeURIComponent(body);
   if (bscAssignee) {
     url += "&amp;assigned_to=" + encodeURIComponent(bscAssignee);
   }
