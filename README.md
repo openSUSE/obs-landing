@@ -46,9 +46,10 @@ If you use special characters you may need to surround your text by `"`.
 The OBS documentation is stored in a [separate repository](https://github.com/openSUSE/obs-docu)
 and is integrated into the OBS landing page via git submodules.
 
-To update our documentation simply run the [update_documentation.sh]() script. This
-updates the documentation sub-module, compiles it into html and creates a new commit
-with the changes.
+To update our documentation, simply run the
+[update_documentation.sh](update_documentation.sh) script. This updates the
+documentation sub-module, compiles it into html and creates a new commit with
+the changes.
 
 # License
 
