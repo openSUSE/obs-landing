@@ -46,10 +46,15 @@ If you use special characters you may need to surround your text by `"`.
 The OBS documentation is stored in a [separate repository](https://github.com/openSUSE/obs-docu)
 and is integrated into the OBS landing page via git submodules.
 
-To update our documentation, simply run the
-[update_documentation.sh](update_documentation.sh) script. This updates the
-documentation sub-module, compiles it into html and creates a new commit with
-the changes.
+After doing some changes in _obs-docu_ (see how [here](https://github.com/openSUSE/obs-docu#update-documentation)) you should wait until they are
+merged and then move to your local directory of _obs-landing_. Update it and run the [update_documentation.sh](update_documentation.sh) script that
+you can find inside the _obs-landing_ project. This updates the documentation sub-module, compiles it into html and creates a new commit with the
+changes. The new commit's message is _"Update books to current state"_.
+
+Make sure that your working tree is clean. If it, on the contrary, shows some untracked changes in
+`open-build-service-documentation`, simply run `git submodule init` and `git submodule update` manually. This will update the submodule and will clean the working tree.
+
+Once the last _"Update books to current state"_ commit in _obs-landing_ gets merged, you'll see your changes in https://openbuildservice.org/help.
 
 # License
 
