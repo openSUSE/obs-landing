@@ -4,11 +4,9 @@ title: Another Milestone for the Revamped User Interface, Now for the Request Pa
 category: development
 ---
 
+{% include partials/_revamping-ui-releases-history.md index="3" %}
+
 New year, new milestone!
-We have migrated the request pages to the new user interface and addressed issues regarding the previous releases (thanks to your feedback!).
-These changes are already available for all users in the [beta program](/2018/10/04/the-beta-program).
-This is following up on our [previous announcement](/2018/12/10/revamping-project-ui) from December 2018,
-where we presented the revamped user interface for Project, Package, User and Group pages.
 
 Here is a comparison of the old and new user interface of the request overview page:
 
@@ -57,18 +55,6 @@ This is a performance improvement for datatables with large amounts of data.
 One concrete example of this is _openSUSE:Tools_ with 74 packages.
 There is a difference of approximately 2 seconds in the page loading time (from ~ 5.3 to ~3.2 seconds).
 
-# How to Give Us Feedback
+{% include partials/_revamping-ui-how-to-give-us-feedback.md %}
 
-As always, we need your feedback to make this even better.
-Don't forget to join the [beta program](/2018/10/04/the-beta-program), try the new user interface and tell us what you think about it.
-Please read the *How Give Us Feedback* section in this [previous announcement](/2018/10/05/revamping-ui/). We are looking for:
-
-- Bugs, so anything breaking workflows.
-- Design feedback, so anything related to the user experience and interface.
-- How it works on your device / browser.
-
-# What Is Coming Next?
-
-We will be working next on the maintenance and configuration pages. Stay tuned, we will inform you as soon as it is available in the beta program.
-
-We are looking forward to hearing from you on [GitHub](https://github.com/openSUSE/open-build-service/issues/new/choose) and in the `#opensuse-buildservice` IRC channel on *Freenode*!
+{% include partials/_revamping-ui-what-is-coming-next.md pages="Admin and Search" %}
