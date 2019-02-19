@@ -4,11 +4,9 @@ title: Revamped User Interface for Project, User and Group Pages
 category: development
 ---
 
+{% include partials/_revamping-ui-releases-history.md index="2" %}
+
 We are moving forward in the user interface revamp! :tada:
-In the past weeks, we have migrated the project, user and group pages to the new user interface,
-which are already available for all users in the [beta program](/2018/10/04/the-beta-program).
-This is following up on our [previous announcement](/2018/10/05/revamping-ui) from October,
-where we explained why we are revamping the UI and how to provide us feedback.
 
 Here is a comparison of the old and new user interface of the project overview page:
 
@@ -87,21 +85,6 @@ The overview of a group:
 <img src="/images/posts/revamping-project-ui/group_overview.png" alt="Group overview in the new UI" />
 <img src="/images/posts/revamping-project-ui/group_members_overview.png" alt="Group members in the new UI" />
 
+{% include partials/_revamping-ui-how-to-give-us-feedback.md %}
 
-# How to Give Us Feedback
-
-As always, we need your feedback to make this even better.
-Don't forget to join the [beta program](/2018/10/04/the-beta-program), try the new user interface and tell us what you think about it. :pray:
-Please read the *How Give Us Feedback* section in our [previous announcement](/2018/10/05/revamping-ui/). We are looking for:
-
-- Bugs, so anything breaking workflows.
-- Design feedback, so anything related to the user experience and interface.
-- How it works on your device / browser.
-
-
-# What Is Coming Next?
-
-We will be working next on the request pages. Stay tuned, we will inform you as soon as it is available in the beta program.
-
-We are looking forward to hearing from you on [GitHub](https://github.com/openSUSE/open-build-service/issues/new/choose) and in the `#opensuse-buildservice` IRC channel on *Freenode*! :kissing_heart:
-
+{% include partials/_revamping-ui-what-is-coming-next.md pages="Request" %}

@@ -388,3 +388,8 @@
 .highlight {
   background-color: #f6f8fa;
 }
+
+.center {
+  margin: 0 auto;
+  display: block;
+}

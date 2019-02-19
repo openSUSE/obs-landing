@@ -4,8 +4,10 @@ title: OBS Is Revamping Its User Interface, Help Us to Make It Awesome
 category: development
 ---
 
-In the past weeks, we have kicked off the migration to a new user interface for
-OBS. We started with the homepage and the package pages.
+{% include partials/_revamping-ui-releases-history.md index="1" %}
+
+We have kicked off the migration to a new user interface for OBS.
+We started with the homepage and the package pages.
 
 Here is a comparison of the new and old user interface of the package overview page:
 
@@ -95,12 +97,4 @@ The meta configuration of a package:
 
 <img src="/images/posts/revamping-ui/package-meta.png" alt="Package meta configuration in new UI">
 
-# What Is Coming Next?
-
-We will be working next on the project pages. Stay tuned, we will inform you as
-soon as it is available in the beta program.
-
-Until then, don't forget to give us feedback! Join the [beta program on
-OBS](/2018/10/04/the-beta-program/), we are looking forward to hearing from you
-on [GitHub](https://github.com/openSUSE/open-build-service/issues/new/choose)
-and IRC in the channel `#opensuse-buildservice` on *Freenode*! :cupid:
+{% include partials/_revamping-ui-what-is-coming-next.md pages="Project, User and Group" %}
