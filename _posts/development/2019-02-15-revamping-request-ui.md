@@ -26,12 +26,14 @@ The comments from a superseded request are now under a tab, next to the request'
 
 ## Improvements for the Project Monitor Page
 
-We improved the usability of the filters.
-They previously closed whenever checking/unchecking one of their checkboxes.
-This is fixed.
+We fixed a performance regression which caused this page to be really slow for some projects.
+We realised though that there is still place for improvements and we plan to continue working on the performance of this page.
 
-The datatable had rendering errors when used in combination with the `table-sm` _Boostrap_ class due to a bug in the JavaScript library we use.
-As good open-source users, we reported it [upstream](https://github.com/mkhairi/jquery-datatables/issues/17).
+We made some styling and usability improvements in the monitor page as well.
+The filters dropdowns used to close whenever checking/unchecking one of their checkboxes, thus selecting several options quickly became a nightmare.
+We fixed this and also added an option to select all options at once.
+Last, the table had rendering errors when used in combination with the `table-sm` _Boostrap_ class due to a bug in the JavaScript library we use.
+Thanks to the help we got from [upstream](https://github.com/mkhairi/jquery-datatables/issues/17), this is now fixed.
 
 ## And Much More
 
