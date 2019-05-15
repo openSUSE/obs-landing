@@ -1,0 +1,47 @@
+<div class="ui centered container">
+  <div class="ui four stackable special cards">
+
+    {% for team_member in page.team_members %}
+
+    {% assign short_name = team_member.name | truncatewords: 1, "" %}
+
+    <div class="card">
+      <div class="blurring dimmable image">
+        <div class="ui dimmer">
+          <div class="content">
+            <div class="team_description">
+              {{ team_member.description | blocks | markdownify}}
+            </div>
+          </div>
+        </div>
+        <img src="/images/team/{{ short_name | downcase }}.jpg">
+      </div>
+      <div class="content">
+        <span class="header">{{ team_member.name }}</span>
+        <div class="meta">
+          <span class="date">{{ team_member.position }}</span>
+        </div>
+      </div>
+      <div class="extra content">
+        {% if team_member.email %}
+        <a href="mailto:{{ team_member.email }}" target="_blank" title="Email {{ short_name }}"><i class="big mail icon"></i></a>
+        {% endif %}
+        {% if team_member.github %}
+        <a href="http://github.com/{{ team_member.github }}" target="_blank" title="{{ team_member.github }} on Github"><i class="big github icon"></i></a>
+        {% endif %}
+        {% if team_member.twitter %}
+        <a href="http://twitter.com/{{ team_member.twitter }}" target="_blank" title="{{ team_member.twitter }} on Twitter"><i class="big twitter icon"></i></a>
+        {% endif %}
+        {% if team_member.blog %}
+        <a href="{{ team_member.blog }}" target="_blank" title="{{ short_name }}'s Blog"><i class="big rss icon"></i></a>
+        {% endif %}
+        {% if team_member.irc %}
+        <i class="big comments outline icon link" title="{{ team_member.irc }} at IRC (Freenode)" data-content="{{ team_member.irc }} at IRC (Freenode)"></i>
+        {% endif %}
+      </div>
+    </div>
+
+    {% endfor %}
+
+  </div>
+</div>
