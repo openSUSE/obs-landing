@@ -16,7 +16,7 @@ Thank you for all the reports, please keep them coming!
 
 # Search
 
-The Search page was splitted in two.
+The Search page was split in two.
 This aims to improve the usability by clearly having a search for projects and packages on one page while on a new page, a search based on issues which is under the Issues tab.
 Some filters were moved from the Advanced section to outside.
 
