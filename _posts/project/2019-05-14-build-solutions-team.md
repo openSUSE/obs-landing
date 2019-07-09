@@ -5,36 +5,13 @@ category: project
 author: OBS Team
 
 team_members:
-  - name: Henne Vogelsang
-    email: hvogel@opensuse.org
-    github: hennevogel
-    twitter: henne
-    blog: http://www.hennevogel.de
-    irc: henne
+  - name: Dani Donisa Quevedo
+    email: daniel.donisa@suse.com
+    github: danidoni
 
-  - name: Björn Geuken
-    email: bgeuken@suse.de
-    github: bgeuken
-    irc: bjoern|G
-
-  - name: Ana María Martínez Gómez
-    email: ammartinez@suse.de
-    github: Ana06
-    twitter: anamma_06
-    blog: http://anamaria.martinezgomez.name
-    irc: Ana06
-
-  - name: Eduardo Navarro
-    email: enavarro@suse.de
-    github: eduardoj
-    twitter: eduardoj
-    irc: enavarro
-
-  - name: David Kang
-    email: dkang@suse.com
-    github: DavidKang
-    twitter: D4vid_Kang
-    irc: dkang
+  - name: Lukas Krause
+    email: lkrause@suse.com
+    github: krauselukas
 
   - name: Victor Pereira
     email: vpereira@suse.com
@@ -50,6 +27,25 @@ team_members:
     email: scabrerapadron@suse.com
     github: saraycp
     irc: saraycp
+
+  - name: Eduardo Navarro
+    email: enavarro@suse.de
+    github: eduardoj
+    twitter: eduardoj
+    irc: enavarro
+
+  - name: David Kang
+    email: dkang@suse.com
+    github: DavidKang
+    twitter: D4vid_Kang
+    irc: dkang
+
+  - name: Henne Vogelsang
+    email: hvogel@opensuse.org
+    github: hennevogel
+    twitter: henne
+    blog: http://www.hennevogel.de
+    irc: henne
 ---
 
 This is the first post in a series about teams inside different companies that work to bring the
