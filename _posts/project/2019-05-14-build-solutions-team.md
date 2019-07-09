@@ -88,6 +88,48 @@ and practice the DevOPS culture. Their responsibilities for SUSE include:
  - Market the product and the team to SUSE, the community and industry
  - Organizing/Presenting at/Participating in technology conferences all over the world
 
+## Values
+We have asked the team what they would identify as their culture and how
+their values translate into daily practices. Here is what they told us:
+
+**Customers**. By understanding peoples' goals, needs and their
+limitations. Everything we build and change, _everything we do_, we do for the
+people using our product.
+
+**Quality**. By taking due time, avoiding shortcuts, pacing ourselves. By
+being critical of what we do and by welcoming critique from others. We always
+leave our code base, processes and team _"better than we have found it"_.
+
+**Responsibility**. By taking charge of our objectives and priorities. By
+speaking our minds, by being honest and frank with each other. _We are the
+change we want to see_.
+
+**Ownership**. Instead of hiding behind processes, or driving relentlessly
+towards individual goals, we take _ownership of the entire thing_. We do that
+when things go right but also when things go wrong. No matter if they were in,
+or out of our control. No matter if that hurts and bruises our ego. It was
+never anyone else's fault, it was ours. We believe _ownership is respect_.
+
+**Collaboration**. By working together toward goals, in a horizontal
+structure with flexible leadership. We do not only share results with each
+other, but how we get there. We constantly reflect our thoughts, communication
+and behaviour and how they bring everyone else forward. "We win together, we
+lose together".
+
+**Community**. By curiously exploring what other people inside and outside
+this industry think, do and produce. We expose ourselves to all kinds of ideas
+and openly share our own views with others.
+
+**Diversity**, pluralism and freedom of choice. We think differences, not
+uniformity, in origin, circumstance and experience make people, the practice of
+software development and in the end, our product interesting. We believe it
+takes a diverse set of people to produce a product truly useful for everyone.
+
+**Teaching & Learning**. We strive for personal growth by continuously
+learning about other people, technology, development methodologies and efforts.
+We are open minded, always evolving adventurers.
+
+
 ## Where Does the Team Work?
 
 As the Build Solution team works as part of our community, most contributions happen directly on GitHub,
