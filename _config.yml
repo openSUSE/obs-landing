@@ -2,6 +2,7 @@ title: Open Build Service
 highlighter: rouge
 permalink: /:year/:month/:day/:title/
 markdown: kramdown
+include: '_redirects'
 
 plugins:
   - jemoji
