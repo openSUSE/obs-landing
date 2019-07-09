@@ -5,36 +5,13 @@ category: project
 author: OBS Team
 
 team_members:
-  - name: Henne Vogelsang
-    email: hvogel@opensuse.org
-    github: hennevogel
-    twitter: henne
-    blog: http://www.hennevogel.de
-    irc: henne
+  - name: Dani Donisa Quevedo
+    email: daniel.donisa@suse.com
+    github: danidoni
 
-  - name: Björn Geuken
-    email: bgeuken@suse.de
-    github: bgeuken
-    irc: bjoern|G
-
-  - name: Ana María Martínez Gómez
-    email: ammartinez@suse.de
-    github: Ana06
-    twitter: anamma_06
-    blog: http://anamaria.martinezgomez.name
-    irc: Ana06
-
-  - name: Eduardo Navarro
-    email: enavarro@suse.de
-    github: eduardoj
-    twitter: eduardoj
-    irc: enavarro
-
-  - name: David Kang
-    email: dkang@suse.com
-    github: DavidKang
-    twitter: D4vid_Kang
-    irc: dkang
+  - name: Lukas Krause
+    email: lkrause@suse.com
+    github: krauselukas
 
   - name: Victor Pereira
     email: vpereira@suse.com
@@ -50,6 +27,25 @@ team_members:
     email: scabrerapadron@suse.com
     github: saraycp
     irc: saraycp
+
+  - name: Eduardo Navarro
+    email: enavarro@suse.de
+    github: eduardoj
+    twitter: eduardoj
+    irc: enavarro
+
+  - name: David Kang
+    email: dkang@suse.com
+    github: DavidKang
+    twitter: D4vid_Kang
+    irc: dkang
+
+  - name: Henne Vogelsang
+    email: hvogel@opensuse.org
+    github: hennevogel
+    twitter: henne
+    blog: http://www.hennevogel.de
+    irc: henne
 ---
 
 This is the first post in a series about teams inside different companies that work to bring the
@@ -91,6 +87,48 @@ and practice the DevOPS culture. Their responsibilities for SUSE include:
  - Document features, workflows and concepts
  - Market the product and the team to SUSE, the community and industry
  - Organizing/Presenting at/Participating in technology conferences all over the world
+
+## Values
+We have asked the team what they would identify as their culture and how
+their values translate into daily practices. Here is what they told us:
+
+**Customers**. By understanding peoples' goals, needs and their
+limitations. Everything we build and change, _everything we do_, we do for the
+people using our product.
+
+**Quality**. By taking due time, avoiding shortcuts, pacing ourselves. By
+being critical of what we do and by welcoming critique from others. We always
+leave our code base, processes and team _"better than we have found it"_.
+
+**Responsibility**. By taking charge of our objectives and priorities. By
+speaking our minds, by being honest and frank with each other. _We are the
+change we want to see_.
+
+**Ownership**. Instead of hiding behind processes, or driving relentlessly
+towards individual goals, we take _ownership of the entire thing_. We do that
+when things go right but also when things go wrong. No matter if they were in,
+or out of our control. No matter if that hurts and bruises our ego. It was
+never anyone else's fault, it was ours. We believe _ownership is respect_.
+
+**Collaboration**. By working together toward goals, in a horizontal
+structure with flexible leadership. We do not only share results with each
+other, but how we get there. We constantly reflect our thoughts, communication
+and behaviour and how they bring everyone else forward. "We win together, we
+lose together".
+
+**Community**. By curiously exploring what other people inside and outside
+this industry think, do and produce. We expose ourselves to all kinds of ideas
+and openly share our own views with others.
+
+**Diversity**, pluralism and freedom of choice. We think differences, not
+uniformity, in origin, circumstance and experience make people, the practice of
+software development and in the end, our product interesting. We believe it
+takes a diverse set of people to produce a product truly useful for everyone.
+
+**Teaching & Learning**. We strive for personal growth by continuously
+learning about other people, technology, development methodologies and efforts.
+We are open minded, always evolving adventurers.
+
 
 ## Where Does the Team Work?
 
