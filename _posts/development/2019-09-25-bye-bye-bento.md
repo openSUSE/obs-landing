@@ -12,7 +12,9 @@ It was a lot of code and moving pieces, but done in a way that few breakage happ
 
 ### Well Done!
 
-We would like to thank the team (actual and old colleagues) and community for the hard work, sweat and tears. Every single line of code (especially tests!) counted towards the success of this mission!
+We would like to thank everyone who contribtued to this for the hard work, sweat and tears! Every single line of code (especially tests!) counted towards the success of this mission.
+
+![Thank You](https://media.giphy.com/media/WnIu6vAWt5ul3EVcUE/giphy.gif)
 
 ### What Comes Next:
 
