@@ -6,7 +6,7 @@ category: development
 
 This is probably the last post related to [revamping our user interface (UI)](https://openbuildservice.org/2018/10/05/revamping-ui/). After almost one year of work, we systematically updated to a new technology stack, simplified a lot of code and brought the interface over from 2006 to 2019.
 
-To accomplish that, we needed more than 900 commits (`git rev-list --no-merges --count HEAD --since="Aug 1 2018" src/api/app/views/`) packed into something around [200 pull requests]( https://github.com/openSUSE/open-build-service/issues?q=created%3A%3E%3D2018-09-01+is%3Amerged+label%3AFrontend ).
+To accomplish that, we needed more than 900 commits (`git rev-list --no-merges --count HEAD --since="Aug 1 2018" --until "Sep 23 2019" src/api/app/views`) packed into something around [200 pull requests]( https://github.com/openSUSE/open-build-service/issues?q=created%3A%3E%3D2018-09-01+is%3Amerged+label%3AFrontend ).
 
 It was a lot of code and moving pieces! But we managed to keep breakages in production down to minimum (please check the [post-mortem reports](https://openbuildservice.org/categories/deployments/) for details).
 
