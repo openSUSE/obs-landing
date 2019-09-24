@@ -10,16 +10,26 @@ This is probably the last post related to revamping our user interface (UI).
 
 After almost one year of work, we systematically updated to a new technology stack, simplified a lot of code and brought the interface over from 2006 to 2019.
 
-
 To accomplish that, we needed more than 900 commits (`git rev-list --no-merges --count HEAD --since="Aug 1 2018" --until "Sep 23 2019" src/api/app/views`) packed into round about [200 pull requests]( https://github.com/openSUSE/open-build-service/issues?q=created%3A%3E%3D2018-09-01+is%3Amerged+label%3AFrontend ).
 
 It was a lot of code and moving pieces! But we managed to keep breakages in production down to minimum (check the [post-mortem reports](https://openbuildservice.org/categories/deployments/) for details).
 
 ### Well Done
 
-We would like to thank everyone who contributed to this for the hard work, sweat and tears. Every single line of code (especially tests!) counted towards the success of this mission!
+Every single contribution counted towards the success of this mission! Everyone who contributed hard work, sweat and tears.
+So thanks for all the feedback you gave us, for the interesting conversations on IRC and on github. We are especially grateful to the people who got their hands dirty in our code base, thank you
 
-![Thank You](https://media.giphy.com/media/WnIu6vAWt5ul3EVcUE/giphy.gif)
+- Andreas Schwab
+- Bernhard M. Wiedemann
+- Gabriel Bustamante
+- Guo Yunhe
+- Neal Gompa
+- Ralf Habacker
+- Stephen Bowen
+
+And out of those who contributed tests and code [we](https://openbuildservice.org/2019/05/14/build-solutions-team) have to mention Stasiek Michalski for pushing a lot of the ground work on the layouts and Stephan Kulow for tirelessly following each and every commit and voicing your opinion. Without you two, this would have been only half as enjoyable as it was!
+
+![Thank You All](https://media.giphy.com/media/WnIu6vAWt5ul3EVcUE/giphy.gif)
 
 ### What Comes Next
 
