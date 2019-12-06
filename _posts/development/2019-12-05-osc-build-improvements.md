@@ -64,6 +64,12 @@ will run the build local. You can of cause also a shell via
 
 >  # osc shell
 
+To get some more packages installed for debugging you can run
+
+>  # osc shell -x valgrind -x sysprof
+
+for example.
+
 Lot's of smaller stuff
 ----------------------
 
