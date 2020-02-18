@@ -16,7 +16,7 @@ So in the last couple of weeks, we have focused on improving the user experience
 <p>
   <img src="/images/posts/mobile-first.png" class="ui centered huge image">
   <small>
-    Figure: Progressive Enhancement vs. Graceful Degradation - Author: <a href="https://www.seobility.net/en/wiki/Progressive_Enhancement">Seobility</a> - License: CC BY-SA 4.0
+    Figure: Mobile First Design - Author: <a href="https://www.seobility.net/en/wiki/Progressive_Enhancement">Seobility</a> - License: CC BY-SA 4.0
   </small>
 </p>
 
