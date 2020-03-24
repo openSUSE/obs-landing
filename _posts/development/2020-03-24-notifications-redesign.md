@@ -64,6 +64,14 @@ Of course, it also works fine in small screens, this time with the options colla
 
 <img src="/images/posts/responsive_ux/notifications_small.png" alt="New version of Tasks page for small devices" width="300"/>
 
+## Keep on scrolling
+
+We all know it, we all using it. Scrollable tabs are nothing new on mobile devices.
+So why not taking advantage of them, and use such an widely and established control
+element in our own webui? After some research, we got convinced to do so.
+
+<img src="/images/posts/responsive_ux/scrollable_tabs.gif" alt="Scrollable tabs on a mobile device" width="400"/>
+
 ## Try It out and Give Us Some Feedback
 
 If you haven't done it already, please join [the beta program](https://openbuildservice.org/2018/10/04/the-beta-program/), try the new features and tell us what you think about them.
