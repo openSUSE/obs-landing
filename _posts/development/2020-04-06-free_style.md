@@ -8,9 +8,8 @@ It often happens that, while we are immersed in our daily work, we discover even
 
 We are sure we all keep a parallel list which includes ideas like starting to use a new technology, upgrading certain components to a new software version, automating a repetitive part of a proccess...
 
-Two weeks ago, we decided it was time to cross some of those tasks off our _TODO_ list. It has been very comforting! :smile:
-
-We invite you discover all the cool things we managed to tackle in just a few days.
+We did it! We managed to cross some items off our _TODO_ list in the last two weeks.
+We invite you to discover all the cool things we fulfilled, including the migration of the whole project to Rails 6! Keep reading to know more. 
 
 ## Migration to Rails 6
 
