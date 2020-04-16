@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Publishing Upstream Binaries | User Guide</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.0.15 (based on DocBook XSL Stylesheets snapshot) - chunked" /><meta name="book-title" content="User Guide" /><meta name="chapter-title" content="Chapter 12. Publishing Upstream Binaries" /><link rel="home" href="index.html" title="OBS Documentation" /><link rel="up" href="par.best_practices.html" title="Part V. Best Practices" /><link rel="prev" href="cha.obs.best-practices.scm_integration.html" title="Chapter 11. How to integrate external SCM sources" /><link rel="next" href="cha.obs.best-practices.localsetup.html" title="Chapter 13. Setting Up a Local OBS Instance" />
+
+<script type="text/javascript">
+
+var protocol = window.location.protocol.toLowerCase();
+if ( protocol != 'file:' ) {
+  var agent = navigator.userAgent.toLowerCase();
+  var wanted = ( protocol == 'https:') ? 'https' : 'http';
+  var file = 'fonts.css';
+  document.write('<link rel="stylesheet" type="text/css" href="' + wanted + '://static.opensuse.org/fonts/'+ file +'"></link>');
+}
+else {
+   document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+}
+
+</script><noscript><link rel="stylesheet" type="text/css" href="http://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="offline js-off"><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="User Guide"><span class="book-icon">User Guide</span></a><span> › </span><a class="crumb" href="par.best_practices.html">Best Practices</a><span> › </span><a class="crumb" href="cha.obs.best-practices.upstream.html">Publishing Upstream Binaries</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>User Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="bk02pr01.html"><span class="number"> </span><span class="name">About this Guide</span></a></li><li class="inactive"><a href="par.first_steps.html"><span class="number">I </span><span class="name">First Steps</span></a><ol><li class="inactive"><a href="art.obs.bg.html"><span class="number">1 </span><span class="name">Beginnerʼs Guide</span></a></li></ol></li><li class="inactive"><a href="par.concepts.html"><span class="number">II </span><span class="name">Concepts</span></a><ol><li class="inactive"><a href="cha.obs.package_formats.html"><span class="number">2 </span><span class="name">Supported Build Recipes and Package Formats</span></a></li></ol></li><li class="inactive"><a href="bk02pt03.html"><span class="number">III </span><span class="name">Setup</span></a><ol><li class="inactive"><a href="cha.obs.osc.html"><span class="number">3 </span><span class="name">osc, the Command Line Tool</span></a></li><li class="inactive"><a href="cha.obs.prjconfig.html"><span class="number">4 </span><span class="name">Project Configuration</span></a></li></ol></li><li class="inactive"><a href="par.working.html"><span class="number">IV </span><span class="name">Usage</span></a><ol><li class="inactive"><a href="cha.obs.basicworkflow.html"><span class="number">5 </span><span class="name">Basic OBS Workflow</span></a></li><li class="inactive"><a href="cha.obs.building.html"><span class="number">6 </span><span class="name">Local Building</span></a></li><li class="inactive"><a href="cha.obs.source_service.html"><span class="number">7 </span><span class="name">Using Source Services</span></a></li><li class="inactive"><a href="cha.obs.stagingworkflow.html"><span class="number">8 </span><span class="name">Staging Workflow</span></a></li></ol></li><li class="inactive"><a href="par.best_practices.html"><span class="number">V </span><span class="name">Best Practices</span></a><ol><li class="inactive"><a href="cha.obs.best-practices.webuiusage.html"><span class="number">9 </span><span class="name">Using the OBS Web UI</span></a></li><li class="inactive"><a href="cha.obs.best-practices.basics.html"><span class="number">10 </span><span class="name">Basic Concepts and Work Styles</span></a></li><li class="inactive"><a href="cha.obs.best-practices.scm_integration.html"><span class="number">11 </span><span class="name">How to integrate external SCM sources</span></a></li><li class="inactive"><a href="cha.obs.best-practices.upstream.html"><span class="number">12 </span><span class="name">Publishing Upstream Binaries</span></a></li><li class="inactive"><a href="cha.obs.best-practices.localsetup.html"><span class="number">13 </span><span class="name">Setting Up a Local OBS Instance</span></a></li><li class="inactive"><a href="cha.obs.best-practices.bootstrapping.html"><span class="number">14 </span><span class="name">Bootstrapping</span></a></li><li class="inactive"><a href="cha.obs.best-practices.oscexamples.html"><span class="number">15 </span><span class="name"><code class="command">osc</code> Example Commands</span></a></li><li class="inactive"><a href="cha.obs.best-practices.advanced.html"><span class="number">16 </span><span class="name">Advanced Project Setups</span></a></li><li class="inactive"><a href="cha.obs.best-practices.kmp.html"><span class="number">17 </span><span class="name">Building Kernel Modules</span></a></li><li class="inactive"><a href="cha.obs.best-practices.howto.html"><span class="number">18 </span><span class="name">Common Questions and Solutions</span></a></li></ol></li><li class="inactive"><a href="par.reference.html"><span class="number">VI </span><span class="name">Reference</span></a><ol><li class="inactive"><a href="cha.obs.architecture.html"><span class="number">19 </span><span class="name">OBS Architecture</span></a></li><li class="inactive"><a href="cha.obs.concepts.html"><span class="number">20 </span><span class="name">OBS Concepts</span></a></li><li class="inactive"><a href="cha.obs.build_process.html"><span class="number">21 </span><span class="name">Build Process</span></a></li><li class="inactive"><a href="cha.obs.source_management.html"><span class="number">22 </span><span class="name">Source Management</span></a></li><li class="inactive"><a href="cha.obs.request_and_review_ystem.html"><span class="number">23 </span><span class="name">Request And Review System</span></a></li><li class="inactive"><a href="cha.obs.image_templates.html"><span class="number">24 </span><span class="name">Image Templates</span></a></li><li class="inactive"><a href="cha.obs.multibuild.html"><span class="number">25 </span><span class="name">Multiple Build Description File Handling</span></a></li><li class="inactive"><a href="cha.obs.maintenance_setup.html"><span class="number">26 </span><span class="name">Maintenance Support</span></a></li><li class="inactive"><a href="cha.obs.binary_tracking.html"><span class="number">27 </span><span class="name">Binary Package Tracking</span></a></li><li class="inactive"><a href="cha.obs.admin.html"><span class="number">28 </span><span class="name">Administration</span></a></li><li class="inactive"><a href="cha.obs.build_scheduling_and_dispatching.html"><span class="number">29 </span><span class="name">Scheduling and Dispatching</span></a></li><li class="inactive"><a href="cha.obs.build_job_constraints.html"><span class="number">30 </span><span class="name">Build Job Constraints</span></a></li><li class="inactive"><a href="cha.obs.build_preinstall.html"><span class="number">31 </span><span class="name">Building Preinstall Images</span></a></li><li class="inactive"><a href="cha.obs.authorization.token.html"><span class="number">32 </span><span class="name">Authorization</span></a></li><li class="inactive"><a href="cha.obs.qa_hooks.html"><span class="number">33 </span><span class="name">Quality Assurance(QA) Hooks</span></a></li><li class="inactive"><a href="cha.obs.factory.html"><span class="number">34 </span><span class="name">openSUSE Factory</span></a></li></ol></li><li class="inactive"><a href="obs.glossary.html"><span class="number"> </span><span class="name">Glossary</span></a></li><li class="inactive"><a href="bk02apa.html"><span class="number">A </span><span class="name">GNU Licenses</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 11. How to integrate external SCM sources" href="cha.obs.best-practices.scm_integration.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 13. Setting Up a Local OBS Instance" href="cha.obs.best-practices.localsetup.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="User Guide"><span class="book-icon">User Guide</span></a><span> › </span><a class="crumb" href="par.best_practices.html">Best Practices</a><span> › </span><a class="crumb" href="cha.obs.best-practices.upstream.html">Publishing Upstream Binaries</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 11. How to integrate external SCM sources" href="cha.obs.best-practices.scm_integration.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 13. Setting Up a Local OBS Instance" href="cha.obs.best-practices.localsetup.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class=""><div class="documentation"><div class="chapter " id="cha.obs.best-practices.upstream"><div class="titlepage"><div><div><h2 class="title"><span class="number">12 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Publishing Upstream Binaries</span> </h2></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="cha.obs.best-practices.upstream.html#id-1.5.9.5.4"><span class="number">12.1 </span><span class="name">Which Instance to Use?</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.best-practices.upstream.html#id-1.5.9.5.5"><span class="number">12.2 </span><span class="name">Where to Place Your Project</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.best-practices.upstream.html#id-1.5.9.5.6"><span class="number">12.3 </span><span class="name">Creating a Package</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.best-practices.upstream.html#id-1.5.9.5.7"><span class="number">12.4 </span><span class="name">Getting Binaries</span></a></span></dt></dl></div></div>
+ 
+ 
+ 
+ <p>
+  This chapter covers main step of using OBS to publish binaries of your
+  project for multiple distributions.
+ </p>
+ <div class="sect1 " id="id-1.5.9.5.4"><div class="titlepage"><div><div><h2 class="title" id="id-1.5.9.5.4"><span class="number">12.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Which Instance to Use?</span> <a title="Permalink" class="permalink" href="cha.obs.best-practices.upstream.html#id-1.5.9.5.4">#</a></h2></div></div></div>
+  
+  <div class="sect2 " id="id-1.5.9.5.4.2"><div class="titlepage"><div><div><h3 class="title" id="id-1.5.9.5.4.2"><span class="number">12.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Private OBS Instance</span> <a title="Permalink" class="permalink" href="cha.obs.best-practices.upstream.html#id-1.5.9.5.4.2">#</a></h3></div></div></div>
+   
+   <p>
+    OBS is open source project and therefore you can set up your own instance
+    and run it by your own. The main advantage of this approach is that you can
+    keep all your sources and build recipes unpublished if you need to (for example
+    because of NDA). Obvious downside of this approach is that you need to
+    maintain your own server/servers for running builds, publishing and
+    mirroring. Also making your project public may attract some potential
+    contributors.
+   </p>
+   <p>
+    More information about setting up your own private OBS instance can be
+    found in <a class="xref" href="cha.obs.best-practices.localsetup.html" title="Chapter 13. Setting Up a Local OBS Instance">Chapter 13, <em>Setting Up a Local OBS Instance</em></a> .
+   </p>
+  </div>
+  <div class="sect2 " id="id-1.5.9.5.4.3"><div class="titlepage"><div><div><h3 class="title" id="id-1.5.9.5.4.3"><span class="number">12.1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">openSUSE Build Service</span> <a title="Permalink" class="permalink" href="cha.obs.best-practices.upstream.html#id-1.5.9.5.4.3">#</a></h3></div></div></div>
+   
+   <p>
+    Other option is to use some publicly available instance of OBS. One good
+    example is openSUSE Build Service at
+    <a class="ulink" href="http://build.opensuse.org" target="_blank">http://build.opensuse.org</a>. This OBS instance can be
+    used by anybody to freely create binaries for any of the supported
+    distributions. Big advantage is that somebody is already taking care of
+    all the infrastructure. You can store your sources there, build your
+    packages and got them mirrored around the world. You do not need to get your
+    own server and configure it, you can start using it right away.
+   </p>
+  </div>
+ </div>
+ <div class="sect1 " id="id-1.5.9.5.5"><div class="titlepage"><div><div><h2 class="title" id="id-1.5.9.5.5"><span class="number">12.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Where to Place Your Project</span> <a title="Permalink" class="permalink" href="cha.obs.best-practices.upstream.html#id-1.5.9.5.5">#</a></h2></div></div></div>
+  
+  <p>
+   This part helps you to decide on how to name and where to place your project
+   and what project structure to create. This is more important if you are
+   sharing your OBS instance with other people like in
+   <a class="ulink" href="http://build.opensuse.org" target="_blank">openSUSE Build Service<span class="ulink-url"> (http://build.opensuse.org)</span></a>.
+  </p>
+  <div class="sect2 " id="id-1.5.9.5.5.3"><div class="titlepage"><div><div><h3 class="title" id="id-1.5.9.5.5.3"><span class="number">12.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Base Project</span> <a title="Permalink" class="permalink" href="cha.obs.best-practices.upstream.html#id-1.5.9.5.5.3">#</a></h3></div></div></div>
+   
+   <p>
+    If there are more packages in OBS, like for example in
+    <a class="ulink" href="http://build.opensuse.org" target="_blank">openSUSE Build
+    Service<span class="ulink-url"> (http://build.opensuse.org)</span></a>, these packages needs to be somehow divided into projects
+    so it is easier to find what people are looking for and it is not all just
+    one big mess.
+   </p>
+   <p>
+    In openSUSE Build Service, packages are divided into categories regarding
+    their function. MySQL is in <span class="emphasis"><em>server:database</em></span>
+    repository, lighttpd in <span class="emphasis"><em>server:http</em></span> and for example
+    KMyMoney has its own subproject in <span class="emphasis"><em>KDE:Apps</em></span>. So it is
+    a good idea to think about in what category available on the OBS your
+    application will fit the best.
+   </p>
+   <p>
+    If you need whole project for yourself - for example some of your
+    dependencies is being built in the same project, you need to request
+    creating subproject. In openSUSE Build Service, this is done through asking
+    OBS admins for it on
+    <a class="ulink" href="mailto:opensuse-buildservice+subscribe@opensuse.org" target="_blank">opensuse-buildservice
+    mailing list <span class="ulink-url"> (mailto:opensuse-buildservice+subscribe@opensuse.org)</span></a>. Its archive and link for subscribing can be found
+    at <a class="ulink" href="http://lists.opensuse.org/opensuse-buildservice/" target="_blank">http://lists.opensuse.org/opensuse-buildservice/</a> .
+   </p>
+   <p>
+    If you need to just put your package somewhere, you can create it in your
+    home project and then send submitrequest to the project you want your
+    package to get included in.
+   </p>
+  </div>
+  <div class="sect2 " id="id-1.5.9.5.5.4"><div class="titlepage"><div><div><h3 class="title" id="id-1.5.9.5.5.4"><span class="number">12.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Supporting Additional Versions</span> <a title="Permalink" class="permalink" href="cha.obs.best-practices.upstream.html#id-1.5.9.5.5.4">#</a></h3></div></div></div>
+   
+   <p>
+    If you want to support more than one version of your program, you
+    need to use several projects. The same package cannot be contained in the
+    same project multiple times.
+   </p>
+   <div class="sect3 " id="id-1.5.9.5.5.4.3"><div class="titlepage"><div><div><h4 class="title" id="id-1.5.9.5.5.4.3"><span class="number">12.2.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Stable and Development Versions</span> <a title="Permalink" class="permalink" href="cha.obs.best-practices.upstream.html#id-1.5.9.5.5.4.3">#</a></h4></div></div></div>
+    
+    <p>
+     Let's assume that you have found project suitable for your program. Some
+     projects already have something like <span class="emphasis"><em>STABLE</em></span> and
+     <span class="emphasis"><em>UNSTABLE</em></span> subprojects. So you can use these, if you
+     discuss it with maintainers of these project. Other way is to ask somebody
+     from the maintainers of the project to create either these subprojects (if
+     they do not exist) or something similar. Always try to discuss it with the
+     maintainers of the project. They might have good ideas, suggestions and may
+     help you in various ways.
+    </p>
+   </div>
+   <div class="sect3 " id="id-1.5.9.5.5.4.4"><div class="titlepage"><div><div><h4 class="title" id="id-1.5.9.5.5.4.4"><span class="number">12.2.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Multiple Stable Versions</span> <a title="Permalink" class="permalink" href="cha.obs.best-practices.upstream.html#id-1.5.9.5.5.4.4">#</a></h4></div></div></div>
+    
+    <p>
+     If you want to support multiple version, you would need more projects than
+     just two as suggested in previous section. These special projects should
+     contain versions they are supposed to support in their name. If you are
+     creating them under some project you are sharing with other packages,
+     having you package name in the name of projects is a good idea as well.
+    </p>
+    <p>
+     GNOME is a good example: There is the <span class="emphasis"><em>GNOME</em></span> project and
+     many subprojects. Among them are, for example,
+     <span class="emphasis"><em>GNOME:STABLE:2.30</em></span>,
+     <span class="emphasis"><em>GNOME:STABLE:2.32</em></span>, and
+     <span class="emphasis"><em>GNOME:STABLE:3.0</em></span>. These projects hold different
+     stable versions of GNOME with latest fixes.
+    </p>
+   </div>
+  </div>
+ </div>
+ <div class="sect1 " id="id-1.5.9.5.6"><div class="titlepage"><div><div><h2 class="title" id="id-1.5.9.5.6"><span class="number">12.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Creating a Package</span> <a title="Permalink" class="permalink" href="cha.obs.best-practices.upstream.html#id-1.5.9.5.6">#</a></h2></div></div></div>
+  
+  <p>
+   Packaging is quite a complex topic. Instead of trying to cover it in this
+   book, it is a good idea to start with available internet documentation. One
+   of the recommended online resource is Portal:Packaging on openSUSE wiki. You
+   can find it at <a class="ulink" href="http://en.opensuse.org/Portal:Packaging" target="_blank">http://en.opensuse.org/Portal:Packaging</a>. It
+   contains links to several packaging tutorials and other packaging related
+   documentation.
+  </p>
+ </div>
+ <div class="sect1 " id="id-1.5.9.5.7"><div class="titlepage"><div><div><h2 class="title" id="id-1.5.9.5.7"><span class="number">12.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Getting Binaries</span> <a title="Permalink" class="permalink" href="cha.obs.best-practices.upstream.html#id-1.5.9.5.7">#</a></h2></div></div></div>
+  
+  <div id="id-1.5.9.5.7.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6>
+   <p>
+    The following sections discuss feature available only in openSUSE Build Service—a
+    freely available instances of OBS.
+   </p>
+  </div>
+  <p>
+   For a nice download page for your software published on openSUSE Build Service,
+   use the openSUSE download page. You can include it for
+   example using either
+   <code class="code">iframe</code>
+   or
+   <code class="code">object</code>
+   on newer websites. An example of download page can be following one
+   <a class="ulink" href="http://software.opensuse.org/download.html?project=openSUSE:Tools&amp;package=osc" target="_blank">http://software.opensuse.org/download.html?project=openSUSE:Tools&amp;package=osc</a>.
+   You can see how it looks like in
+   <a class="xref" href="cha.obs.best-practices.upstream.html#cha.obs.best-practices.upstream.download.screenshot" title="openSUSE download page for package from OBS">Figure 12.1, “openSUSE download page for package from OBS”</a>. It
+   contains links to the packages and instructions how to install them.
+  </p>
+  <div class="figure" id="cha.obs.best-practices.upstream.download.screenshot"><div class="figure-contents">
+   
+   <div class="mediaobject"><a xmlns="" href="images/download_page_screenshot.png"><img src="images/download_page_screenshot.png" width="" alt="openSUSE download page for package from OBS" /></a></div>
+  </div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 12.1: </span><span class="name">openSUSE download page for package from OBS </span><a title="Permalink" class="permalink" href="cha.obs.best-practices.upstream.html#cha.obs.best-practices.upstream.download.screenshot">#</a></h6></div></div>
+  <p>
+   URL always has to start with
+   <a class="ulink" href="http://software.opensuse.org/download.html?" target="_blank">http://software.opensuse.org/download.html?</a>.You can attach
+   any number of <code class="literal">&amp;</code>-separated parameters. But at least two of them -
+   <span class="emphasis"><em>project</em></span> and <span class="emphasis"><em>package</em></span> - are
+   required. All parameters with descriptions can be found in
+   <a class="xref" href="cha.obs.best-practices.upstream.html#cha.obs.best-practices.upstream.download.params" title="Parameters for Download Page">Table 12.1, “Parameters for Download Page”</a>.
+  </p>
+  <div class="table" id="cha.obs.best-practices.upstream.download.params"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 12.1: </span><span class="name">Parameters for Download Page </span><a title="Permalink" class="permalink" href="cha.obs.best-practices.upstream.html#cha.obs.best-practices.upstream.download.params">#</a></h6></div><div class="table-contents">
+   
+   <table class="table" summary="Parameters for Download Page" border="1"><colgroup><col /><col /></colgroup><thead><tr><th align="left">parameter</th><th align="left">description</th></tr></thead><tbody><tr><td align="left">
+       <code class="code">project</code>
+      </td><td align="left">Project in which your package is located</td></tr><tr><td align="left">
+       <code class="code">package</code>
+      </td><td align="left">Name of your package as it is specified in OBS</td></tr><tr><td align="left">
+       <code class="code">bcolor</code>
+      </td><td align="left">
+       Background color in hexa (for example <code class="code">bcolor=004</code>) to make
+       the download page better match your project page
+      </td></tr><tr><td align="left">
+       <code class="code">fcolor</code>
+      </td><td align="left">
+       Text color in hexa (for example <code class="code">fcolor=fff</code>) to make the
+       download page better match your project page
+      </td></tr><tr><td align="left">
+       <code class="code">acolor</code>
+      </td><td align="left">
+       Link color in hexa (for example <code class="code">acolor=ff0</code>) to make the
+       download page better match your project page
+      </td></tr><tr><td align="left">
+       <code class="code">hcolor</code>
+      </td><td align="left">
+       Highlight color in hexa (for example <code class="code">hcolor=0ff</code>) to make
+       the download page better match your project page
+      </td></tr></tbody></table>
+  </div></div>
+  <div class="sect2 " id="id-1.5.9.5.7.7"><div class="titlepage"><div><div><h3 class="title" id="id-1.5.9.5.7.7"><span class="number">12.4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Examples</span> <a title="Permalink" class="permalink" href="cha.obs.best-practices.upstream.html#id-1.5.9.5.7.7">#</a></h3></div></div></div>
+   
+   <p>
+    Now we will take a look at how to include the download page into your
+    project pages. As an example, we will use the <code class="command">osc</code> client from the
+    <span class="emphasis"><em>openSUSE:Tools</em></span> project. To demonstrate the colors
+    change, we will use theme that would match Midnight Commander.
+   </p>
+   <p>
+    First we will start with recent web page supporting new standards. On such
+    a website, we would use
+    <code class="code">object</code>
+    to include download code:
+   </p>
+<div class="verbatim-wrap"><pre class="screen">&lt;object type="text/html" 
+   data="http://software.opensuse.org/download.html?project=openSUSE:Tools&amp;amp;package=osc&amp;amp;bcolor=004&amp;amp;acolor=ff0&amp;amp;fcolor=fff&amp;amp;hcolor=0ff"
+   width="100%" height="100%"&gt;
+   &lt;param name="src" 
+      value="http://software.opensuse.org/download.html?project=openSUSE:Tools&amp;amp;package=osc&amp;amp;bcolor=004&amp;amp;acolor=ff0&amp;amp;fcolor=fff&amp;amp;hcolor=0ff" /&gt;
+   Your browser doesn't support objects, please continue to the
+   &lt;a href="http://software.opensuse.org/download.html?project=openSUSE:Tools&amp;amp;package=osc&amp;amp;bcolor=004&amp;amp;acolor=ff0&amp;amp;fcolor=fff&amp;amp;hcolor=0ff"&gt;
+   download page&lt;/a&gt;
+&lt;/object&gt;</pre></div>
+   <p>
+    If you are using php on your server, you can make it easier by using
+    following code:
+   </p>
+<div class="verbatim-wrap"><pre class="screen">&lt;?php
+   $url = "http://software.opensuse.org/download.html?project=openSUSE:Tools&amp;amp;package=osc&amp;amp;bcolor=004&amp;amp;acolor=ff0&amp;amp;fcolor=fff&amp;amp;hcolor=0ff";
+   echo '
+&lt;object type="text/html" 
+   data="' . $url . '"
+   width="100%" height="100%"&gt;
+   &lt;param name="src" 
+      value="' . $url . '" /&gt;
+   Your browser doesn't support objects, please continue to the
+   &lt;a href="' . $url . '"&gt;download page&lt;/a&gt;
+&lt;/object&gt;
+';
+?&gt;</pre></div>
+   <p>
+    If you are running some legacy website, you might have to use
+    <code class="code">iframe</code>
+    :
+   </p>
+<div class="verbatim-wrap"><pre class="screen">&lt;iframe src="http://software.opensuse.org/download.html?project=openSUSE:Tools&amp;amp;package=osc&amp;amp;bcolor=004&amp;amp;acolor=ff0&amp;amp;fcolor=fff&amp;amp;hcolor=0ff"/&gt;</pre></div>
+  </div>
+ </div>
+</div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="cha.obs.best-practices.localsetup.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 13 </span>Setting Up a Local OBS Instance</span></a><a class="nav-link" href="cha.obs.best-practices.scm_integration.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 11 </span>How to integrate external SCM sources</span></a></div><div id="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span id="_share-fb" class="bottom-button">Facebook</span><span class="spacer"> • </span><span id="_share-gp" class="bottom-button">Google+</span><span class="spacer"> • </span><span id="_share-tw" class="bottom-button">Twitter</span><span class="spacer"> • </span><span id="_share-mail" class="bottom-button">E-Mail</span></span></div><div class="print"><span id="_print-button" class="bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2020 
+        SUSE</p><ul><li><a href="http://www.suse.com/company/careers/" target="_top">Careers</a></li><li><a href="http://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="http://www.suse.com/company/" target="_top">About</a></li><li><a href="http://www.suse.com/ContactsOffices/contacts_offices.jsp" target="_top">Contact Us</a></li></ul></div></div></body></html>

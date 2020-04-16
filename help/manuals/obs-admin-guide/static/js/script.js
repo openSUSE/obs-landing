@@ -6,7 +6,7 @@ Authors:
 
 License: GPL 2+
 
-(c) 2012-2016 SUSE LLC
+(c) 2012-2019 SUSE LLC
 */
 
 var active = false;
@@ -163,7 +163,7 @@ function tracker() {
 
       $(this).before("<a class=\"report-bug\" target=\"_blank\" href=\""
         + url
-        + "\" title=\"Report a bug against this section\">Report Bug</a> ");
+        + "\" title=\"Report a bug against this section of the documentation\">Report Documentation Bug</a> ");
       return true;
     });
   }

@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Administration | User Guide</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.0.15 (based on DocBook XSL Stylesheets snapshot) - chunked" /><meta name="book-title" content="User Guide" /><meta name="chapter-title" content="Chapter 28. Administration" /><link rel="home" href="index.html" title="OBS Documentation" /><link rel="up" href="par.reference.html" title="Part VI. Reference" /><link rel="prev" href="cha.obs.binary_tracking.html" title="Chapter 27. Binary Package Tracking" /><link rel="next" href="cha.obs.build_scheduling_and_dispatching.html" title="Chapter 29. Scheduling and Dispatching" />
+
+<script type="text/javascript">
+
+var protocol = window.location.protocol.toLowerCase();
+if ( protocol != 'file:' ) {
+  var agent = navigator.userAgent.toLowerCase();
+  var wanted = ( protocol == 'https:') ? 'https' : 'http';
+  var file = 'fonts.css';
+  document.write('<link rel="stylesheet" type="text/css" href="' + wanted + '://static.opensuse.org/fonts/'+ file +'"></link>');
+}
+else {
+   document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+}
+
+</script><noscript><link rel="stylesheet" type="text/css" href="http://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="offline js-off"><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="User Guide"><span class="book-icon">User Guide</span></a><span> › </span><a class="crumb" href="par.reference.html">Reference</a><span> › </span><a class="crumb" href="cha.obs.admin.html">Administration</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>User Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="bk02pr01.html"><span class="number"> </span><span class="name">About this Guide</span></a></li><li class="inactive"><a href="par.first_steps.html"><span class="number">I </span><span class="name">First Steps</span></a><ol><li class="inactive"><a href="art.obs.bg.html"><span class="number">1 </span><span class="name">Beginnerʼs Guide</span></a></li></ol></li><li class="inactive"><a href="par.concepts.html"><span class="number">II </span><span class="name">Concepts</span></a><ol><li class="inactive"><a href="cha.obs.package_formats.html"><span class="number">2 </span><span class="name">Supported Build Recipes and Package Formats</span></a></li></ol></li><li class="inactive"><a href="bk02pt03.html"><span class="number">III </span><span class="name">Setup</span></a><ol><li class="inactive"><a href="cha.obs.osc.html"><span class="number">3 </span><span class="name">osc, the Command Line Tool</span></a></li><li class="inactive"><a href="cha.obs.prjconfig.html"><span class="number">4 </span><span class="name">Project Configuration</span></a></li></ol></li><li class="inactive"><a href="par.working.html"><span class="number">IV </span><span class="name">Usage</span></a><ol><li class="inactive"><a href="cha.obs.basicworkflow.html"><span class="number">5 </span><span class="name">Basic OBS Workflow</span></a></li><li class="inactive"><a href="cha.obs.building.html"><span class="number">6 </span><span class="name">Local Building</span></a></li><li class="inactive"><a href="cha.obs.source_service.html"><span class="number">7 </span><span class="name">Using Source Services</span></a></li><li class="inactive"><a href="cha.obs.stagingworkflow.html"><span class="number">8 </span><span class="name">Staging Workflow</span></a></li></ol></li><li class="inactive"><a href="par.best_practices.html"><span class="number">V </span><span class="name">Best Practices</span></a><ol><li class="inactive"><a href="cha.obs.best-practices.webuiusage.html"><span class="number">9 </span><span class="name">Using the OBS Web UI</span></a></li><li class="inactive"><a href="cha.obs.best-practices.basics.html"><span class="number">10 </span><span class="name">Basic Concepts and Work Styles</span></a></li><li class="inactive"><a href="cha.obs.best-practices.scm_integration.html"><span class="number">11 </span><span class="name">How to integrate external SCM sources</span></a></li><li class="inactive"><a href="cha.obs.best-practices.upstream.html"><span class="number">12 </span><span class="name">Publishing Upstream Binaries</span></a></li><li class="inactive"><a href="cha.obs.best-practices.localsetup.html"><span class="number">13 </span><span class="name">Setting Up a Local OBS Instance</span></a></li><li class="inactive"><a href="cha.obs.best-practices.bootstrapping.html"><span class="number">14 </span><span class="name">Bootstrapping</span></a></li><li class="inactive"><a href="cha.obs.best-practices.oscexamples.html"><span class="number">15 </span><span class="name"><code class="command">osc</code> Example Commands</span></a></li><li class="inactive"><a href="cha.obs.best-practices.advanced.html"><span class="number">16 </span><span class="name">Advanced Project Setups</span></a></li><li class="inactive"><a href="cha.obs.best-practices.kmp.html"><span class="number">17 </span><span class="name">Building Kernel Modules</span></a></li><li class="inactive"><a href="cha.obs.best-practices.howto.html"><span class="number">18 </span><span class="name">Common Questions and Solutions</span></a></li></ol></li><li class="inactive"><a href="par.reference.html"><span class="number">VI </span><span class="name">Reference</span></a><ol><li class="inactive"><a href="cha.obs.architecture.html"><span class="number">19 </span><span class="name">OBS Architecture</span></a></li><li class="inactive"><a href="cha.obs.concepts.html"><span class="number">20 </span><span class="name">OBS Concepts</span></a></li><li class="inactive"><a href="cha.obs.build_process.html"><span class="number">21 </span><span class="name">Build Process</span></a></li><li class="inactive"><a href="cha.obs.source_management.html"><span class="number">22 </span><span class="name">Source Management</span></a></li><li class="inactive"><a href="cha.obs.request_and_review_ystem.html"><span class="number">23 </span><span class="name">Request And Review System</span></a></li><li class="inactive"><a href="cha.obs.image_templates.html"><span class="number">24 </span><span class="name">Image Templates</span></a></li><li class="inactive"><a href="cha.obs.multibuild.html"><span class="number">25 </span><span class="name">Multiple Build Description File Handling</span></a></li><li class="inactive"><a href="cha.obs.maintenance_setup.html"><span class="number">26 </span><span class="name">Maintenance Support</span></a></li><li class="inactive"><a href="cha.obs.binary_tracking.html"><span class="number">27 </span><span class="name">Binary Package Tracking</span></a></li><li class="inactive"><a href="cha.obs.admin.html"><span class="number">28 </span><span class="name">Administration</span></a></li><li class="inactive"><a href="cha.obs.build_scheduling_and_dispatching.html"><span class="number">29 </span><span class="name">Scheduling and Dispatching</span></a></li><li class="inactive"><a href="cha.obs.build_job_constraints.html"><span class="number">30 </span><span class="name">Build Job Constraints</span></a></li><li class="inactive"><a href="cha.obs.build_preinstall.html"><span class="number">31 </span><span class="name">Building Preinstall Images</span></a></li><li class="inactive"><a href="cha.obs.authorization.token.html"><span class="number">32 </span><span class="name">Authorization</span></a></li><li class="inactive"><a href="cha.obs.qa_hooks.html"><span class="number">33 </span><span class="name">Quality Assurance(QA) Hooks</span></a></li><li class="inactive"><a href="cha.obs.factory.html"><span class="number">34 </span><span class="name">openSUSE Factory</span></a></li></ol></li><li class="inactive"><a href="obs.glossary.html"><span class="number"> </span><span class="name">Glossary</span></a></li><li class="inactive"><a href="bk02apa.html"><span class="number">A </span><span class="name">GNU Licenses</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 27. Binary Package Tracking" href="cha.obs.binary_tracking.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 29. Scheduling and Dispatching" href="cha.obs.build_scheduling_and_dispatching.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="User Guide"><span class="book-icon">User Guide</span></a><span> › </span><a class="crumb" href="par.reference.html">Reference</a><span> › </span><a class="crumb" href="cha.obs.admin.html">Administration</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 27. Binary Package Tracking" href="cha.obs.binary_tracking.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 29. Scheduling and Dispatching" href="cha.obs.build_scheduling_and_dispatching.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class=""><div class="documentation"><div class="chapter " id="cha.obs.admin"><div class="titlepage"><div><div><h2 class="title"><span class="number">28 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Administration</span> </h2></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="cha.obs.admin.html#cha.obs.admin.components"><span class="number">28.1 </span><span class="name">OBS Components</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.admin.html#cha.obs.admin.appliance"><span class="number">28.2 </span><span class="name">OBS Appliances</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.admin.html#cha.obs.admin.backend"><span class="number">28.3 </span><span class="name">Back-end Administration</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.admin.html#cha.obs.admin.frontend"><span class="number">28.4 </span><span class="name">Front-end Administration</span></a></span></dt></dl></div></div>
+ 
+ 
+ <p> This chapter describes the components of an OBS installation and the
+  typical administration tasks for an OBS administrator. </p>
+ <p> This chapter is not intended to describe special installation hints for
+  a certain OBS version. Refer to the <a class="ulink" href="http://openbuildservice.org/download/" target="_blank">OBS download page<span class="ulink-url"> (http://openbuildservice.org/download/)</span></a>
+  for that. </p>
+ <div class="sect1 " id="cha.obs.admin.components"><div class="titlepage"><div><div><h2 class="title" id="cha.obs.admin.components"><span class="number">28.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">OBS Components</span> <a title="Permalink" class="permalink" href="cha.obs.admin.html#cha.obs.admin.components">#</a></h2></div></div></div>
+ 
+ <p> The OBS is not a monolithic server: it consists of multiple daemons
+  that perform different tasks. </p>
+ <div class="figure" id="id-1.5.10.11.5.3"><div class="figure-contents">
+  
+  <div class="mediaobject"><a xmlns="" href="images/obs_components.png"><img src="images/obs_components.png" width="" alt="Simplified OBS Component Overview" /></a></div>
+ </div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 28.1: </span><span class="name">Simplified OBS Component Overview </span><a title="Permalink" class="permalink" href="cha.obs.admin.html#id-1.5.10.11.5.3">#</a></h6></div></div>
+ <div class="sect2 " id="id-1.5.10.11.5.4"><div class="titlepage"><div><div><h3 class="title" id="id-1.5.10.11.5.4"><span class="number">28.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Front-end</span> <a title="Permalink" class="permalink" href="cha.obs.admin.html#id-1.5.10.11.5.4">#</a></h3></div></div></div>
+  
+  <p> The OBS Front-end is a Ruby on Rails application that manages the
+   access and manipulation of OBS data. It provides a web user interface and an
+   application programming interface to do so. Both can be used to create,
+   read, update and delete users, projects, packages, requests and other
+   objects. It also implements additional sub-systems like authentication,
+   search, and email notifications. </p>
+ </div>
+ <div class="sect2 " id="id-1.5.10.11.5.5"><div class="titlepage"><div><div><h3 class="title" id="id-1.5.10.11.5.5"><span class="number">28.1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Back-end</span> <a title="Permalink" class="permalink" href="cha.obs.admin.html#id-1.5.10.11.5.5">#</a></h3></div></div></div>
+  
+  <p> The OBS Back-end is a collection of Perl applications that manage the
+   source files and build jobs of the OBS. </p>
+  <div class="sect3 " id="id-1.5.10.11.5.5.3"><div class="titlepage"><div><div><h4 class="title" id="id-1.5.10.11.5.5.3"><span class="number">28.1.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Source Server</span> <a title="Permalink" class="permalink" href="cha.obs.admin.html#id-1.5.10.11.5.5.3">#</a></h4></div></div></div>
+   
+   <p> Maintains the source repository and project/package configurations.
+    It provides an HTTP interface, which is the only interface to the
+    Front-end. It may forward requests to other back-end services. Each OBS
+    installation has exactly one Source Server. It maintains the "sources",
+    "trees" and "projects" directories. </p>
+  </div>
+  <div class="sect3 " id="id-1.5.10.11.5.5.4"><div class="titlepage"><div><div><h4 class="title" id="id-1.5.10.11.5.5.4"><span class="number">28.1.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Repository Server</span> <a title="Permalink" class="permalink" href="cha.obs.admin.html#id-1.5.10.11.5.5.4">#</a></h4></div></div></div>
+   
+   <p> A repository server provides access to the binaries via an HTTP
+    interface. It is used by the front-end via the source server only. Workers
+    use the server to register, request the binaries needed for build jobs, and
+    store the results. Notifications for schedulers are also created by
+    repository servers. Each OBS installation has at least one repository
+    server. A larger installation using partitioning has one on each partition.
+   </p>
+  </div>
+  <div class="sect3 " id="id-1.5.10.11.5.5.5"><div class="titlepage"><div><div><h4 class="title" id="id-1.5.10.11.5.5.5"><span class="number">28.1.2.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Scheduler</span> <a title="Permalink" class="permalink" href="cha.obs.admin.html#id-1.5.10.11.5.5.5">#</a></h4></div></div></div>
+   
+   <p> A scheduler calculates the need for build jobs. It detects changes in
+    sources, project configurations or in binaries used in the build
+    environment. It is responsible for starting jobs in the right order and
+    integrating the built binary packages. Each OBS installation has one
+    scheduler per available architecture and partition. It maintains the
+    "build" directory. </p>
+  </div>
+  <div class="sect3 " id="id-1.5.10.11.5.5.6"><div class="titlepage"><div><div><h4 class="title" id="id-1.5.10.11.5.5.6"><span class="number">28.1.2.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Dispatcher</span> <a title="Permalink" class="permalink" href="cha.obs.admin.html#id-1.5.10.11.5.5.6">#</a></h4></div></div></div>
+   
+   <p> The dispatcher takes a job (created by the scheduler) and assigns it
+    to a free worker. It also checks possible build constraints to verify that
+    the worker qualifies for the job. It only notifies a worker about a job;
+    the worker itself downloads the required resources. Each OBS installation
+    has one dispatcher per partition (one of which is the master dispatcher).
+   </p>
+  </div>
+  <div class="sect3 " id="id-1.5.10.11.5.5.7"><div class="titlepage"><div><div><h4 class="title" id="id-1.5.10.11.5.5.7"><span class="number">28.1.2.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Publisher</span> <a title="Permalink" class="permalink" href="cha.obs.admin.html#id-1.5.10.11.5.5.7">#</a></h4></div></div></div>
+   
+   <p> The publisher processes "publish" events from the scheduler for
+    finished repositories. It merges the build result of all architectures into
+    a defined directory structure, creates the required metadata, and
+    optionally syncs it to a download server. It maintains the "repos"
+    directory on the back-end. Each OBS installation has one publisher per
+    partition. </p>
+  </div>
+  <div class="sect3 " id="id-1.5.10.11.5.5.8"><div class="titlepage"><div><div><h4 class="title" id="id-1.5.10.11.5.5.8"><span class="number">28.1.2.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Worker</span> <a title="Permalink" class="permalink" href="cha.obs.admin.html#id-1.5.10.11.5.5.8">#</a></h4></div></div></div>
+   
+   <p> The workers register with the repository servers. They receive build
+    jobs from the dispatcher. Afterwards they download sources from source
+    server and the required binaries from the repository server(s). They build
+    the package using the build script and send the results back to the
+    repository server. A worker can run on the same host as other services, but
+    most OBS installations have dedicated hardware for the workers. </p>
+  </div>
+  <div class="sect3 " id="id-1.5.10.11.5.5.9"><div class="titlepage"><div><div><h4 class="title" id="id-1.5.10.11.5.5.9"><span class="number">28.1.2.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Signer</span> <a title="Permalink" class="permalink" href="cha.obs.admin.html#id-1.5.10.11.5.5.9">#</a></h4></div></div></div>
+   
+   <p> The signer handles signing events and calls an external tool to
+    execute the signing. Each OBS installation usually has one signer per
+    partition and one on the source server installation. </p>
+  </div>
+  <div class="sect3 " id="id-1.5.10.11.5.5.10"><div class="titlepage"><div><div><h4 class="title" id="id-1.5.10.11.5.5.10"><span class="number">28.1.2.8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Warden</span> <a title="Permalink" class="permalink" href="cha.obs.admin.html#id-1.5.10.11.5.5.10">#</a></h4></div></div></div>
+   
+   <p> The warden monitors the workers and detects crashed or hanging
+    workers. Their build jobs will be canceled and restarted on another host.
+    Each OBS installation can have one Warden service running on each
+    partition. </p>
+  </div>
+  <div class="sect3 " id="id-1.5.10.11.5.5.11"><div class="titlepage"><div><div><h4 class="title" id="id-1.5.10.11.5.5.11"><span class="number">28.1.2.9 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Download on Demand Updater (dodup)</span> <a title="Permalink" class="permalink" href="cha.obs.admin.html#id-1.5.10.11.5.5.11">#</a></h4></div></div></div>
+   
+   <p> The download on demand updater monitors all external repositories
+    which are defined as "download on demand" resources. It polls for changes
+    in the metadata and re-downloads the metadata as needed. The scheduler will
+    be notified to recalculate the build jobs depending on these repositories
+    afterwards. Each OBS installation can have one dodup service running on
+    each partition. </p>
+  </div>
+  <div class="sect3 " id="id-1.5.10.11.5.5.12"><div class="titlepage"><div><div><h4 class="title" id="id-1.5.10.11.5.5.12"><span class="number">28.1.2.10 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Delta Store</span> <a title="Permalink" class="permalink" href="cha.obs.admin.html#id-1.5.10.11.5.5.12">#</a></h4></div></div></div>
+   
+   <p> The delta store daemon maintains the deltas in the source storage.
+    Multiple obscpio archives can be stored in one deltastore to avoid
+    duplication on disk. This service calculates the delta and maintains the
+    delta store. Each OBS installation can have one delta store process running
+    next to the source server. </p>
+  </div>
+ </div>
+ <div class="sect2 " id="id-1.5.10.11.5.6"><div class="titlepage"><div><div><h3 class="title" id="id-1.5.10.11.5.6"><span class="number">28.1.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Command Line Client</span> <a title="Permalink" class="permalink" href="cha.obs.admin.html#id-1.5.10.11.5.6">#</a></h3></div></div></div>
+  
+  <p> The Open Build Service Commander (osc) is a Python application with a
+   Subversion-style command-line interface. It can be used to manipulate or
+   query data from the OBS through its application programming interface.
+  </p>
+ </div>
+ <div class="sect2 " id="id-1.5.10.11.5.7"><div class="titlepage"><div><div><h3 class="title" id="id-1.5.10.11.5.7"><span class="number">28.1.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Content Delivery Server</span> <a title="Permalink" class="permalink" href="cha.obs.admin.html#id-1.5.10.11.5.7">#</a></h3></div></div></div>
+  
+  <p> The OBS is agnostic about how you serve build results to your users.
+   It will just write repositories to disk. But many people sync these
+   repositories to some content delivery system like <a class="ulink" href="http://mirrorbrain.org/" target="_blank">MirrorBrain<span class="ulink-url"> (http://mirrorbrain.org/)</span></a>. </p>
+ </div>
+ <div class="sect2 " id="id-1.5.10.11.5.8"><div class="titlepage"><div><div><h3 class="title" id="id-1.5.10.11.5.8"><span class="number">28.1.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Requirements</span> <a title="Permalink" class="permalink" href="cha.obs.admin.html#id-1.5.10.11.5.8">#</a></h3></div></div></div>
+  
+  <p> We highly recommend, and in fact only test, installations on the <a class="ulink" href="https://www.suse.com/products/server/" target="_blank">SUSE Linux Enterprise
+    Server<span class="ulink-url"> (https://www.suse.com/products/server/)</span></a> and <a class="ulink" href="http://www.opensuse.org" target="_blank">openSUSE<span class="ulink-url"> (http://www.opensuse.org)</span></a> operating systems. However, there also are installations
+   on Debian and Fedora systems. </p>
+  <p> The OBS also needs a SQL database (MySQL or MariaDB) for persistent
+   and a memcache daemon for volatile data. </p>
+ </div>
+</div>
+ <div class="sect1 " id="cha.obs.admin.appliance"><div class="titlepage"><div><div><h2 class="title" id="cha.obs.admin.appliance"><span class="number">28.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">OBS Appliances</span> <a title="Permalink" class="permalink" href="cha.obs.admin.html#cha.obs.admin.appliance">#</a></h2></div></div></div>
+ 
+ <p> This chapter gives an overview over the different OBS appliances and
+  how to deploy them for production use. </p>
+ <div class="sect2 " id="id-1.5.10.11.6.3"><div class="titlepage"><div><div><h3 class="title" id="id-1.5.10.11.6.3"><span class="number">28.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Server Appliance</span> <a title="Permalink" class="permalink" href="cha.obs.admin.html#id-1.5.10.11.6.3">#</a></h3></div></div></div>
+  
+  <p> The OBS server appliance contains a recent openSUSE distribution with
+   a pre-installed and pre-configured OBS front-end, back-end and worker. The
+   operating system on this appliance adapts to the hardware on first boot and
+   defaults to automatic IP and DNS configuration via DHCP. </p>
+ </div>
+ <div class="sect2 " id="id-1.5.10.11.6.4"><div class="titlepage"><div><div><h3 class="title" id="id-1.5.10.11.6.4"><span class="number">28.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Worker Appliance</span> <a title="Permalink" class="permalink" href="cha.obs.admin.html#id-1.5.10.11.6.4">#</a></h3></div></div></div>
+  
+  <p> The OBS worker appliance includes a recent openSUSE distribution and
+   the OBS worker component. The operating system on this appliance adapts to
+   the hardware on first boot, defaults to automatic IP and DNS configuration
+   via DHCP and OBS server discovery via SLP. </p>
+ </div>
+ <div class="sect2 " id="id-1.5.10.11.6.5"><div class="titlepage"><div><div><h3 class="title" id="id-1.5.10.11.6.5"><span class="number">28.2.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Image Types</span> <a title="Permalink" class="permalink" href="cha.obs.admin.html#id-1.5.10.11.6.5">#</a></h3></div></div></div>
+  
+  <p> There are different types of OBS appliance images.</p>
+   <div class="table" id="cha.obs.best-practices.appliance_types"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 28.1: </span><span class="name">Appliance Types </span><a title="Permalink" class="permalink" href="cha.obs.admin.html#cha.obs.best-practices.appliance_types">#</a></h6></div><div class="table-contents">
+    
+    <table class="table" summary="Appliance Types" border="1"><colgroup><col /><col /></colgroup><thead><tr><th align="left">File Name Suffix</th><th align="left">Appliance for</th></tr></thead><tbody><tr><td align="left"> .vdi </td><td align="left"><a class="ulink" href="https://www.virtualbox.org/" target="_blank">VirtualBox<span class="ulink-url"> (https://www.virtualbox.org/)</span></a>.
+       </td></tr><tr><td align="left"> .vmdk </td><td align="left">
+        <p><a class="ulink" href="http://www.vmware.com/" target="_blank">VMware<span class="ulink-url"> (http://www.vmware.com/)</span></a>
+         Workstation and Player.</p>
+        <div id="id-1.5.10.11.6.5.3.2.2.2.2.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6>
+         <p> Our VirtualBox images are usually better tested. </p>
+        </div>
+       </td></tr><tr><td align="left"> .qcow2 </td><td align="left"><a class="ulink" href="http://qemu.org" target="_blank">QEMU/KVM<span class="ulink-url"> (http://qemu.org)</span></a>. </td></tr><tr><td align="left"> .raw </td><td align="left"> Direct writing to a block device </td></tr><tr><td align="left"> .tgz </td><td align="left"> Deploying via PXE from a central server </td></tr></tbody></table>
+   </div></div>
+  
+ </div>
+ <div class="sect2 " id="id-1.5.10.11.6.6"><div class="titlepage"><div><div><h3 class="title" id="id-1.5.10.11.6.6"><span class="number">28.2.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Deployment</span> <a title="Permalink" class="permalink" href="cha.obs.admin.html#id-1.5.10.11.6.6">#</a></h3></div></div></div>
+  
+  <p> To help you deploy the OBS server appliance to a hard disk there is a
+   basic installer that you can boot from a USB stick. The installer can be
+   found on the <a class="ulink" href="http://openbuildservice.org/download/" target="_blank">OBS
+    Download page<span class="ulink-url"> (http://openbuildservice.org/download/)</span></a>. </p>
+  <p> The image can be written to a USB stick to boot from it:</p>
+  <div class="verbatim-wrap"><pre class="screen"><code class="command">xzcat obs-server-install.x86_64.raw.xz &gt; /dev/sdX</code></pre></div>
+  <div id="id-1.5.10.11.6.6.5" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning</h6>
+   <p> /dev/sdX is the main device of your USB stick. Do NOT put it into a
+    partition like /dev/sda1. If you use the wrong device, you will destroy all
+    data on it! </p>
+  </div>
+  <p> How to deploy the other image types deeply depends on your
+   virtualization setup. Describing this is out of scope for this guide, sorry.
+  </p>
+ </div>
+ <div class="sect2 " id="id-1.5.10.11.6.7"><div class="titlepage"><div><div><h3 class="title" id="id-1.5.10.11.6.7"><span class="number">28.2.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Separating Data from the System</span> <a title="Permalink" class="permalink" href="cha.obs.admin.html#id-1.5.10.11.6.7">#</a></h3></div></div></div>
+  
+  <p> For production use you want to separate the OBS data from operating
+   system of the appliance so you can re-deploy the appliance without touching
+   your OBS data. This can be achieved by creating an LVM volume group with the
+   name "OBS". This volume group should be as large as possible because it is
+   getting used by the OBS back-end for data storage and the OBS workers for
+   root/swap/cache file systems. To create an LVM volume prepare a partition of
+   type "8e" and create the LVM via</p>
+   <div class="verbatim-wrap"><pre class="screen"><code class="command">pvcreate /dev/sdX1</code>
+<code class="command">vgcreate "OBS" /dev/sdX1</code></pre></div>
+  <p>
+   Additionally, if the OBS volume group contains a logical volume named
+   <span class="quote">“<span class="quote ">server</span>”</span>, it will be used as the data partition for the server.
+  </p>
+  <div class="verbatim-wrap"><pre class="screen"><code class="command">lvcreate "OBS" -n "server"</code>
+<code class="command">mkfs.xfs /dev/OBS/server</code></pre></div>
+ </div>
+ <div class="sect2 " id="id-1.5.10.11.6.8"><div class="titlepage"><div><div><h3 class="title" id="id-1.5.10.11.6.8"><span class="number">28.2.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Updating the Appliance</span> <a title="Permalink" class="permalink" href="cha.obs.admin.html#id-1.5.10.11.6.8">#</a></h3></div></div></div>
+  
+  <p> All images come pre-configured with the right set of repositories and
+   can be updated via the system tools YaST or <code class="command">zypper</code> at any
+   time. Another way to update is to re-deploy the entire image. </p>
+  <div id="id-1.5.10.11.6.8.3" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning</h6>
+   <p> If you re-deploy the entire image, keep in mind that you need to have
+    your data directory (<code class="filename">/srv/obs</code>) on a separate storage
+    (LVM volume, partition etc.) otherwise it will be deleted! </p>
+  </div>
+ </div>
+</div>
+ <div class="sect1 " id="cha.obs.admin.backend"><div class="titlepage"><div><div><h2 class="title" id="cha.obs.admin.backend"><span class="number">28.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Back-end Administration</span> <a title="Permalink" class="permalink" href="cha.obs.admin.html#cha.obs.admin.backend">#</a></h2></div></div></div>
+ 
+ 
+ <div class="sect2 " id="id-1.5.10.11.7.3"><div class="titlepage"><div><div><h3 class="title" id="id-1.5.10.11.7.3"><span class="number">28.3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Services</span> <a title="Permalink" class="permalink" href="cha.obs.admin.html#id-1.5.10.11.7.3">#</a></h3></div></div></div>
+  
+  <p> You can control the different back-end components via
+    <code class="command">systemctl</code>. You can enable/disable the service
+   during booting the system and start/stop/restart it in a running system.
+   For more information, see <a class="ulink" href="https://www.freedesktop.org/software/systemd/man/systemctl.html#Commands" target="_blank">man page<span class="ulink-url"> (https://www.freedesktop.org/software/systemd/man/systemctl.html#Commands)</span></a>. For example, to restart the
+   repository server, use:</p>
+   <div class="verbatim-wrap"><pre class="screen"><code class="command">systemctl restart obsrepserver.service</code></pre></div>
+  <div class="table" id="tab.obs.service-names"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 28.2: </span><span class="name">Service Names </span><a title="Permalink" class="permalink" href="cha.obs.admin.html#tab.obs.service-names">#</a></h6></div><div class="table-contents">
+   
+   <table class="table" summary="Service Names" border="1"><colgroup><col /><col /></colgroup><thead><tr><th align="left">Component</th><th align="left">Service Name</th></tr></thead><tbody><tr><td align="left"> Repository Server </td><td align="left"> obsrepserver.service </td></tr><tr><td align="left"> Source Server </td><td align="left"> obssrcserver.service </td></tr><tr><td align="left"> Scheduler </td><td align="left"> obsscheduler.service </td></tr><tr><td align="left"> Dispatcher </td><td align="left"> obsdispatcher.service </td></tr><tr><td align="left"> Publisher </td><td align="left"> obspublisher.service </td></tr><tr><td align="left"> Worker </td><td align="left"> obsworker.service </td></tr><tr><td align="left"> Source Services </td><td align="left"> obsservice.service </td></tr><tr><td align="left"> Download On Demand Updates </td><td align="left"> obsdodup.service </td></tr><tr><td align="left"> Delta Storage </td><td align="left"> obsdeltastore.service </td></tr><tr><td align="left"> Signer </td><td align="left"> obssigner.service </td></tr><tr><td align="left"> Warden </td><td align="left"> obswarden.service </td></tr></tbody></table>
+  </div></div>
+ </div>
+ <div class="sect2 " id="id-1.5.10.11.7.4"><div class="titlepage"><div><div><h3 class="title" id="id-1.5.10.11.7.4"><span class="number">28.3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Advanced Setups</span> <a title="Permalink" class="permalink" href="cha.obs.admin.html#id-1.5.10.11.7.4">#</a></h3></div></div></div>
+  
+  <p> It makes sense to run some of the different components of the OBS
+   back-end on isolated hosts. </p>
+  <div class="sect3 " id="id-1.5.10.11.7.4.3"><div class="titlepage"><div><div><h4 class="title" id="id-1.5.10.11.7.4.3"><span class="number">28.3.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Distributed Workers</span> <a title="Permalink" class="permalink" href="cha.obs.admin.html#id-1.5.10.11.7.4.3">#</a></h4></div></div></div>
+   
+   <p> OBS workers can be very resource hungry. It all depends on the
+    software that is being built, and how. Single builds deep down in the
+    dependency chain can also trigger a sea of jobs. It makes sense to split
+    off workers from all the other services so they do not have to fight for
+    the same operating system/hardware resources. Here is an example on how to
+    setup a remote OBS worker. </p>
+   <div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem ">
+     <p> Install the worker package called obs-worker </p>
+    </li><li class="listitem ">
+     <p> Configure the OBS repository server address in the file
+      /etc/sysconfig/obs-server. Change the variable OBS_REPO_SERVERS to the
+      host name of the machine on which the repository server is running:
+      OBS_REPO_SERVERS="myreposerver.example:5252" </p>
+    </li><li class="listitem ">
+     <p> Start the worker </p>
+    </li></ol></div>
+  </div>
+  
+  
+  
+ </div>
+</div>
+ <div class="sect1 " id="cha.obs.admin.frontend"><div class="titlepage"><div><div><h2 class="title" id="cha.obs.admin.frontend"><span class="number">28.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Front-end Administration</span> <a title="Permalink" class="permalink" href="cha.obs.admin.html#cha.obs.admin.frontend">#</a></h2></div></div></div>
+ 
+ <p> The Ruby on Rails application is run through the Apache web server with
+   <a class="ulink" href="https://www.phusionpassenger.com/" target="_blank">mod_passenger<span class="ulink-url"> (https://www.phusionpassenger.com/)</span></a>.
+  You can control it via <code class="command">systemctl</code></p>
+  <div class="verbatim-wrap"><pre class="screen"><code class="command">systemctl {start, stop, restart} apache2</code></pre></div>
+ <div class="sect2 " id="id-1.5.10.11.8.4"><div class="titlepage"><div><div><h3 class="title" id="id-1.5.10.11.8.4"><span class="number">28.4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Delayed Jobs</span> <a title="Permalink" class="permalink" href="cha.obs.admin.html#id-1.5.10.11.8.4">#</a></h3></div></div></div>
+  
+  <p> Another component of the OBS front-end are delayed jobs for
+   asynchronously executing longer tasks in the background. You can control
+   this service also via <code class="command">systemctl</code>.</p>
+   <div class="verbatim-wrap"><pre class="screen"><code class="command">systemctl {start, stop, restart} obsapidelayed</code></pre></div>
+ </div>
+ <div class="sect2 " id="id-1.5.10.11.8.5"><div class="titlepage"><div><div><h3 class="title" id="id-1.5.10.11.8.5"><span class="number">28.4.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Full Text Search</span> <a title="Permalink" class="permalink" href="cha.obs.admin.html#id-1.5.10.11.8.5">#</a></h3></div></div></div>
+  
+  <p> The full-text search for packages and projects is handled by <a class="ulink" href="http://freelancing-gods.com/thinking-sphinx/" target="_blank">Thinking
+    Sphinx<span class="ulink-url"> (http://freelancing-gods.com/thinking-sphinx/)</span></a>. The delayed job daemon will take care of starting this
+    service. To control it after boot, use the
+    <code class="command">rake</code> tasks it provides.</p>
+   <div class="verbatim-wrap"><pre class="screen"><code class="command">rake ts:{start, stop, rebuild, index}</code></pre></div>
+ </div>
+</div>
+ 
+ 
+</div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="cha.obs.build_scheduling_and_dispatching.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 29 </span>Scheduling and Dispatching</span></a><a class="nav-link" href="cha.obs.binary_tracking.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 27 </span>Binary Package Tracking</span></a></div><div id="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span id="_share-fb" class="bottom-button">Facebook</span><span class="spacer"> • </span><span id="_share-gp" class="bottom-button">Google+</span><span class="spacer"> • </span><span id="_share-tw" class="bottom-button">Twitter</span><span class="spacer"> • </span><span id="_share-mail" class="bottom-button">E-Mail</span></span></div><div class="print"><span id="_print-button" class="bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2020 
+        SUSE</p><ul><li><a href="http://www.suse.com/company/careers/" target="_top">Careers</a></li><li><a href="http://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="http://www.suse.com/company/" target="_top">About</a></li><li><a href="http://www.suse.com/ContactsOffices/contacts_offices.jsp" target="_top">Contact Us</a></li></ul></div></div></body></html>
