@@ -7,9 +7,7 @@ category: development
 Previously we started to introduce a new notification area in the Open Build Service webui.
 The goal of this is to enable the users, to stay on one medium in order to get the work done.
 No need to continuously switch between the browser and their email-clients in order to see
-where an action is needed. This is about a full-fledged notification system in the UI that
-not just shows raw requests in a table.
-To reach our aim, we worked out new feature to bring all of this to the next level...
+where an action is needed. In the end we want this to be a full-fledged notification system in the user interface that helps you to keep track of all the things that might require your action. Like answering the comments another packager has left on your project. Or keeping track of the state and reviews of the submit requests you've sent/received.
 
 ## Notifications page improvements
 
@@ -19,11 +17,9 @@ Users can mark notifications done and undone again, and they'll be sent to the r
 
 ## Notifications configuration overhaul
 
-We've added new ways of keep users in the loop of their requests. Users can now receive notifications via email, RSS feeds and in the OBS web page Notifications area.
+We've added new ways of keeping you in the loop of your requests. You can now receive notifications via email, RSS feeds and on the notifications page.
 
-This is configurable, to do it, the Actions menu that appears when you are on the Notifications page has a link to the Notifications configuration page.
-
-There, for each event type, and for each role (Maintainer, Bug owneer and so on) the user can change how is getting those notifications. He or she can, for example get them through all available channels, or just only one, whatever works better.
+You can configure under which conditions you receive notifications on the configuration page.
 
 <img src="/images/posts/notifications_round_two/notifications_configuration.png" alt="Notifications configuration" width="500"/>
 
@@ -31,8 +27,7 @@ There, for each event type, and for each role (Maintainer, Bug owneer and so on)
 
 You can't make an omelette without breaking eggs. Users that are involved in a lot of
 projects will receive a lot of notifications. Therefore we started to paginate
-the list of notifications. This prevents slow page loads and leads to a neatly arranged
-list.
+the list of notifications.
 
 <img src="/images/posts/notifications_round_two/notifications_pagination_01.png" alt="Notifications pagination navigation" width="500"/>
 <img src="/images/posts/notifications_round_two/notifications_pagination_02.png" alt="Notifications pagination page details" width="500"/>
