@@ -3,7 +3,7 @@ layout: post
 title: Making Project and Package Pages User-Friendlier and Improving Announcements.
 category: development
 ---
-One of the goals we pursue currently is to make you more productive on the go, while away from the computer. So we have spend some time to make it easier for you to change projects and packages in all screen sizes in the OBS user interface. 
+One of the goals we pursue currently is to make you more productive on the go, while away from the computer. So we have spent some time to make it easier for you to change projects and packages in all screen sizes in the OBS user interface. 
 
 Additionally, we identified that we often need to communicate with only some of you inside the OBS. For instance, when we want to announce changes to those of you who participate in our beta program. To be able to do this better in the future, we have worked on the Announcements feature.
 
@@ -30,7 +30,7 @@ When admins had to share some news with OBS users, they had the possibility to a
 
 Both ways to display messages have been merged and improved.
 
-From now on, announcements can be created as regular news (status messages) but with a certain severity that makes them be visible on the top, all over the application. They also require acknowledgement from the user.
+From now on, announcements can be created as regular news (status messages) but with a certain severity that makes them be visible at the top, all over the application. They also require acknowledgement from the user.
 
 However, the most important improvement is related to the communication scope. Sometimes, admins want to announce something only to a specific group of users. For example, they want to announce a new beta feature only to users of the beta program.
 Now this is possible for both announcements and the regular news section.
