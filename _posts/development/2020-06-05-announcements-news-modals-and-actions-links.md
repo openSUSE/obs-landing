@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Improving Project and Package Pages User Experience and Announcements.
+title: Improving Project and Package Pages User Experience and Polishing Announcements Workflow
 category: development
 ---
 One of the goals we pursue currently is to make you more productive on the go, while away from the computer. So we have spent some time to make it easier for you to change projects and packages in all screen sizes in the OBS user interface. 
