@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Setting Up a Local OBS Instance | Administrator Guide</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.0.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.0.15 (based on DocBook XSL Stylesheets snapshot) - chunked" /><meta name="book-title" content="Administrator Guide" /><meta name="chapter-title" content="Chapter 6. Setting Up a Local OBS Instance" /><link rel="home" href="index.html" title="OBS Documentation" /><link rel="up" href="book.obs-admin.html" title="Administrator Guide" /><link rel="prev" href="obs.cha.troubleshooting.html" title="Chapter 5. Troubleshooting" /><link rel="next" href="bk03apa.html" title="Appendix A. GNU Licenses" />
+
+<script type="text/javascript">
+
+var protocol = window.location.protocol.toLowerCase();
+if ( protocol != 'file:' ) {
+  var agent = navigator.userAgent.toLowerCase();
+  var wanted = ( protocol == 'https:') ? 'https' : 'http';
+  var file = 'fonts.css';
+  document.write('<link rel="stylesheet" type="text/css" href="' + wanted + '://static.opensuse.org/fonts/'+ file +'"></link>');
+}
+else {
+   document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+}
+
+</script><noscript><link rel="stylesheet" type="text/css" href="http://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="offline js-off"><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Administrator Guide"><span class="book-icon">Administrator Guide</span></a><span> › </span><a class="crumb" href="cha.obs.best-practices.localsetup.html">Setting Up a Local OBS Instance</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.htmlindex.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Administrator Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="bk03pr01.html"><span class="number"> </span><span class="name">About this Guide</span></a></li><li class="inactive"><a href="obs.cha.installation_and_configuration.html"><span class="number">1 </span><span class="name">Installation and Configuration</span></a></li><li class="inactive"><a href="obs.cha.overview_filesystem.html"><span class="number">2 </span><span class="name">File System Overview</span></a></li><li class="inactive"><a href="obs.cha.security_concepts.html"><span class="number">3 </span><span class="name">Security Concepts</span></a></li><li class="inactive"><a href="obs.cha.administration.html"><span class="number">4 </span><span class="name">Administration</span></a></li><li class="inactive"><a href="obs.cha.troubleshooting.html"><span class="number">5 </span><span class="name">Troubleshooting</span></a></li><li class="inactive"><a href="cha.obs.best-practices.localsetup.html"><span class="number">6 </span><span class="name">Setting Up a Local OBS Instance</span></a></li><li class="inactive"><a href="bk03apa.html"><span class="number">A </span><span class="name">GNU Licenses</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 5. Troubleshooting" href="obs.cha.troubleshooting.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Appendix A. GNU Licenses" href="bk03apa.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Administrator Guide"><span class="book-icon">Administrator Guide</span></a><span> › </span><a class="crumb" href="cha.obs.best-practices.localsetup.html">Setting Up a Local OBS Instance</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 5. Troubleshooting" href="obs.cha.troubleshooting.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Appendix A. GNU Licenses" href="bk03apa.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class=""><div class="documentation"><div class="chapter " id="cha.obs.best-practices.localsetup"><div class="titlepage"><div><div><h1 class="title"><span class="number">6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Setting Up a Local OBS Instance</span> </h1></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="cha.obs.best-practices.localsetup.html#id-1.6.10.8"><span class="number">6.1 </span><span class="name">Testing OBS on Microsoft Windows Using VMware Player</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.best-practices.localsetup.html#id-1.6.10.9"><span class="number">6.2 </span><span class="name">Installing a Readymade OBS Appliance in a VirtualBox</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.best-practices.localsetup.html#id-1.6.10.10"><span class="number">6.3 </span><span class="name">First Steps with Your New OBS Server</span></a></span></dt></dl></div></div>
+ 
+ 
+
+ <p> This chapter explains how you could setup/Install/test OBS in your
+  system. This chapter is written for those who are not so familiar with Linux
+  and OBS. So in case you are confident to set up OBS, skip this chapter.
+  Following would be explained in this chapter.</p>
+ <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
+   <p> OBS 1 click install, then manual setup in openSUSE 13.1; </p>
+  </li><li class="listitem ">
+   <p> OBS 1 click install, then manual setup in SLES11; </p>
+  </li><li class="listitem ">
+   <p> OBS test run on Microsoft Windows using VMware player; </p>
+  </li><li class="listitem ">
+   <p> OBS appliance installed manually in a VirtualBox. </p>
+  </li></ul></div>
+ <p>Unfortunately, didn't have a chance to install OBS in other Linux
+  distribution yet. The last section will explain your first steps with the new
+  OBS server. </p>
+ <p> How you could install and purchase openSUSE 13.1 and SLES12 will not be
+  explained in this chapter. VMware player install and purchase also will not
+  be explained. For these topics, you could visit for help:</p> 
+  <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
+    <p>
+     <a class="ulink" href="http://software.opensuse.org/131/en" target="_blank">http://software.opensuse.org/131/en<span class="ulink-url"> (http://software.opensuse.org/131/en)</span></a>
+    </p>
+   </li><li class="listitem ">
+    <p>
+     <a class="ulink" href="http://www.suse.com/products/server/" target="_blank">http://www.suse.com/products/server/<span class="ulink-url"> (http://www.suse.com/products/server/)</span></a>
+    </p>
+   </li><li class="listitem ">
+    <p>
+     <a class="ulink" href="http://my.vmware.com/web/vmware/free#desktop_end_user_computing/vmware_player/6_0" target="_blank">http://my.vmware.com/web/vmware/free#desktop_end_user_computing/vmware_player/6_0<span class="ulink-url"> (http://my.vmware.com/web/vmware/free#desktop_end_user_computing/vmware_player/6_0)</span></a>
+    </p>
+   </li></ul></div>
+
+ <div class="sect1 " id="id-1.6.10.8"><div class="titlepage"><div><div><h2 class="title" id="id-1.6.10.8"><span class="number">6.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Testing OBS on Microsoft Windows Using VMware Player</span> <a title="Permalink" class="permalink" href="cha.obs.best-practices.localsetup.html#id-1.6.10.8">#</a></h2></div></div></div>
+  
+  <p> Those who are not familiar with Linux can run and test OBS. To run and
+   test OBS in Windows, you could use a virtual machine program such as VMware
+   or VirtualBox, etc. This chapter explains, how you can run OBS using VMware
+   player. To check and test with VirtualBox or another virtual machine, check
+   in below. </p>
+  <p> After you are done installing VMware player on Windows, you need to
+   download the OBS appliance program. You could get OBS appliance file by
+   visiting <a class="ulink" href="http://openbuildservice.org/download/other/" target="_blank">http://openbuildservice.org/download/other/</a> and clicking on
+    <span class="guimenu ">VirtualBox/VMware Image</span>. After downloading,
+   uncompress with some Windows archiving program that understands the
+    <code class="filename">.tar.bz2</code> file format. </p>
+  <p> Now, open VMware Player application and
+   select <span class="guimenu ">File</span> › <span class="guimenu ">Open a Virtual Machine</span>, or you could press <span class="keycap">Ctrl</span><span class="key-connector">–</span><span class="keycap">O</span> directly. Open the decompressed virtual machine in
+    <span class="guimenu ">Open Virtual Machine</span> dialog box. Click on
+    <span class="guimenu ">Play virtual machine</span> icon or hyper link in VMware
+   player. </p>
+  <p> At the Linux prompt, you can login using "root" as a login name and
+   "opensuse" as a password. Now, OBS local instance should be already loaded
+   and running in your system. To make sure that the OBS Web UI is successfully
+   up and running, open the OBS Web UI. </p>
+  <p> To access OBS Web user interface, open your web browser and try the
+   address <code class="uri">http://vm.ip.address</code>. You can check the virtual
+   machine's IP address by using <code class="command">ifconfig</code> Linux command.
+   Now, you probably could see a screen like the one below in your window: </p>
+  
+  <p> To login your local OBS instance, you could use default login name as
+   "Admin" and password as "opensuse". Check if you could login properly by
+   clicking <span class="guimenu ">Login</span> on your local OBS instance Web UI.
+  </p>
+ </div>
+ <div class="sect1 " id="id-1.6.10.9"><div class="titlepage"><div><div><h2 class="title" id="id-1.6.10.9"><span class="number">6.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Installing a Readymade OBS Appliance in a VirtualBox</span> <a title="Permalink" class="permalink" href="cha.obs.best-practices.localsetup.html#id-1.6.10.9">#</a></h2></div></div></div>
+  
+  <p> This method is slightly less easy than the method using the readymade
+   vmdk VMware disk, but it enables you to determine the size of your virtual
+   disks to your convenience. It could also work with a real computer with two
+   disks. It requires some knowledge of command line and partitioning. </p>
+  <div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step ">
+    <p> Download the OBS appliance installer. Visit: <a class="ulink" href="http://www.openbuildservice.org/download" target="_blank">http://www.openbuildservice.org/download<span class="ulink-url"> (http://www.openbuildservice.org/download)</span></a> and press the
+      <span class="guimenu ">Download the OBS Appliance Installer</span> button. It
+     will start downloading an ISO image. </p>
+   </li><li class="step ">
+    <p> In VirtualBox, create a virtual machine with:</p> 
+     <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
+       <p> 4 GB memory </p>
+      </li><li class="listitem ">
+       <p> 1 virtual hard disk of 20 G for <code class="filename">/</code> and
+         <code class="filename">/var/cache/obs</code>
+       </p>
+      </li><li class="listitem ">
+       <p> 1 virtual hard disk of 50 G for <code class="filename">/srv/obs</code>
+       </p>
+      </li><li class="listitem ">
+       <p> a virtual CD-ROM driver pointing to the downloaded ISO image
+       </p>
+      </li><li class="listitem ">
+       <p> network bridging with real Ethernet card </p>
+      </li></ul></div>
+   </li><li class="step ">
+    <p> Boot the virtual machine and choose to install the OBS server on the
+     smaller virtual hard disk. </p>
+   </li><li class="step ">
+    <p> Log into the virtual machine with Login: root and Password:
+     opensuse. If needed, switch to German/French/whatever keyboard: <code class="command">#
+      loadkeys de</code>. Inspect partitioning: <code class="command"># df -h</code>.
+     It shows you that the root partition is small and already almost full (1.6
+     GB used out of 1.8). Let's prepare the other partitions to get a bit more
+     working space. First, <code class="command"># fdisk /dev/sda</code> and prepare
+      <code class="filename">/dev/sda2</code> to use the remaining space. Second,
+      <code class="command"># fdisk /dev/sdb</code> and prepare
+      <code class="filename">/dev/sdb1</code> to use all the space, with type 8e (Linux
+     LVM): </p>
+     <div class="verbatim-wrap"><pre class="screen"> # pvcreate /dev/sdb1
+ # vgcreate OBS /dev/sdb1
+ # lvcreate -n server -L 48G OBS
+ # mkfs.ext4 /dev/OBS/server</pre></div>
+   </li><li class="step ">
+    <p> Reboot, this time onto the hard disk. The CD-ROM might be
+     disconnected, we will not need it anymore. Log in as root user, change
+     keyboard if needed, and format <code class="filename">/dev/sda2</code>: <code class="command">#
+      mkfs.ext4 /dev/sda2</code>. Add following entry to /etc/fstab:</p>
+     <div class="verbatim-wrap"><pre class="screen">/dev/sda2  /var/cache/obs  ext4  defaults  2 1</pre></div> 
+     <p>Mount the new partition: <code class="command"># mount /dev/sda2</code>. Get your IP
+     address: <code class="command"># ifconfig</code>. </p>
+   </li></ol></div></div>
+ </div>
+ <div class="sect1 " id="id-1.6.10.10"><div class="titlepage"><div><div><h2 class="title" id="id-1.6.10.10"><span class="number">6.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">First Steps with Your New OBS Server</span> <a title="Permalink" class="permalink" href="cha.obs.best-practices.localsetup.html#id-1.6.10.10">#</a></h2></div></div></div>
+  
+  <p> At this point, one of the methods above should have provided you with
+   a running OBS instance. Let us get our first package building. </p>
+  <div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step ">
+    <p> From a web browser, access the web interface:
+     https://vm.ip.address/. Accept the self-signed certificate. </p>
+   </li><li class="step ">
+    <p> In the top right corner of the web interface, there is a
+      <span class="guimenu ">Log In</span> option. Use it to log in as: Admin
+     opensuse. </p>
+   </li><li class="step ">
+    <p> Click on the <span class="guimenu ">Configuration</span> button to give
+     your server a name and a description. Click on the
+      <span class="guimenu ">Interconnect</span> option. Choose
+      <span class="guimenu ">openSUSE</span> as the remote repository where we will pick
+     up the packages of the build environment. Log out of the web interface.
+    </p>
+   </li><li class="step ">
+    <p> Use <span class="guimenu ">Sign Up</span> option to create a regular user
+     account (for example: hmustermann). </p>
+   </li><li class="step ">
+    <p> As this normal user, click on the <span class="guimenu ">Home
+      Project</span> option and create your home project (that would be:
+     "home:hmustermann"). </p>
+   </li><li class="step ">
+    <p> Go to this home project, and click on <span class="guimenu ">Create
+      package</span> to create your first package (let's say:
+     "mypackage"). </p>
+   </li><li class="step ">
+    <p> Go back to your home project, and click the
+      <span class="guimenu ">Repositories</span> button. Choose to add a new
+     repository and pick <span class="guimenu ">openSUSE 13.1</span> (for example).
+    </p>
+   </li><li class="step ">
+    <p> Reboot the virtual machine to ensure all projects are rescanned.
+    </p>
+   </li><li class="step ">
+    <p> From outside the virtual machine and as a normal user, declare in
+      <code class="filename">~/.oscrc</code> your new OBS user:</p>
+     <div class="verbatim-wrap"><pre class="screen">[https://vm.ip.address]
+user=hmustermann
+pass=bond007</pre></div>
+     <p>then checkout your new package: <code class="command">$ osc -A https://vm.ip.address co
+      home:hmustermann</code>. go to your first package: <code class="command">$ cd
+      home:hmustermann/mypackage</code>. and add some sources there
+     (tarball, spec file, changelog, patches). Check them in, then trigger a
+     remote build:</p>
+     <div class="verbatim-wrap"><pre class="screen">$ osc add *
+$ osc commit
+$ osc rebuild</pre></div>
+   </li><li class="step ">
+    <p> The built packages can be seen at: http://vm.ip.address:82/ </p>
+   </li></ol></div></div>
+ </div>
+</div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="bk03apa.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Appendix A </span>GNU Licenses</span></a><a class="nav-link" href="obs.cha.troubleshooting.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 5 </span>Troubleshooting</span></a></div><div id="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span id="_share-fb" class="bottom-button">Facebook</span><span class="spacer"> • </span><span id="_share-gp" class="bottom-button">Google+</span><span class="spacer"> • </span><span id="_share-tw" class="bottom-button">Twitter</span><span class="spacer"> • </span><span id="_share-mail" class="bottom-button">E-Mail</span></span></div><div class="print"><span id="_print-button" class="bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+        2020 
+        SUSE</p><ul><li><a href="http://www.suse.com/company/careers/" target="_top">Careers</a></li><li><a href="http://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="http://www.suse.com/company/" target="_top">About</a></li><li><a href="http://www.suse.com/ContactsOffices/contacts_offices.jsp" target="_top">Contact Us</a></li></ul></div></div></body></html>
