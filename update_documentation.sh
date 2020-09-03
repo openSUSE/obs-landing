@@ -1,5 +1,12 @@
 #!/bin/bash
 
+if ! rpm -q daps2docker > /dev/null; then
+   echo "daps2docker is not installed. get it via:"
+   echo "  zypper ar https://download.opensuse.org/repositories/Documentation:/Tools/.... "
+   echo "  zypper in daps2docker"
+   exit 1
+fi
+
 git submodule init
 git submodule update
 
