@@ -2,49 +2,32 @@
 layout: post
 title: "Post-Mortem: Search Unavailable on September 3, 2020"
 category: deployments
+author: Dany and Henne
 ---
 
-The search of the <https://build.opensuse.org> OBS instance was unavailable for
-13 minutes, outside of our maintenance window.  We want to give you some insight
-into what happened.
+There was a severe service degradation of our [reference server](https://build.opensuse.org). We want to give you some insight into what happened.
 
-- **Date**: 2020-09-03
-- **Authors**: Dany and Henne
-
-## Summary
-
-After a deployment, the searchd process running on our server crashed after
-we've attempted to fix an issue in how this process is tracked and monitored.
-The search was unavailable for 13 minutes. Errors also happened whenever
-updating projects and packages due to a tight integration with the search
-engine.
+End of August we fixed an issue with our search indexes that required us to rebuild them. We did so and everything was running fine. Then on September 3rd we noticed after a deployment that the search service did not start successfully. During our attempt to mitigate this, we destroyed the search indexes, which lead to this service degradation.
 
 ## Impact
 
-Nobody could search. Any code updating the search indices through callbacks
-caused errors (500) while the search was down. Project and package pages were
-affected by this. Once it was back, we had partial search results while we
-reindexed the search.
+The search was unavailable for 13 minutes. User visible errors also happened whenever projects and packages where created/updated due to a tight integration of those object with the search engine. Once the search service was back, we only provided partial search results for some hours.
 
 ## Root Causes
 
-We rebuilt the search indices as root on August 27th, 2020 at 8:09 (CEST).
+To fix issue [#9436](https://github.com/openSUSE/open-build-service/issues/9436) we rebuilt our search indices at the end of August. Unfortunately we ran this command not as the usual user we run our `searchd` service with so it created
+a process and files belonging to another user.
 
 ## Trigger
 
-After deploying on September 3, 2020 at 13:57 (CEST), we noticed that the
-systemd service for the search couldn't restart. We found out that the search
-indices were created as root. This created files as root and the searchd process
-couldn't be managed by its systemd service. We created a PID file for the
-systemd service in an attempt to have the systemd service manage the process,
-but it made the searchd process crash.
+After deploying on September 3, 2020 at 13:57 (CEST), we noticed that the `searchd` `systemd` unit couldn't restart.
+Restarting the unit always failed to bind to localhost. While trying to mitigate this, we removed the search indices because they had wrong ownership and we wanted to start fresh. This caused the `searchd` service to fail, which took Project/Package writes with it.
 
 ## Resolution
 
-We had to restart the searchd process as root, then gracefully stop it to have
-all remnants from the previous process removed. We then started the systemd
-service for the search. We had to rebuilt the search indices, but this time, as
-the right user in the context of our application.
+After a while we noticed that there was a `searchd` process running that was not controlled by `systemd`. It was running as the user we re-indexed with in August. We stopped the `searchd` gracefully to have all remnants from the previous process removed. And then used the `systemd` unit to start the `searchd` properly.
+
+Afterward we had to rebuilt the search indices, but this time, as the right user in the context of our application.
 
 ## Detection
 
@@ -52,10 +35,8 @@ We got errors about the search being down in our errors tracker.
 
 ## Action Items
 
-- Running `bundle`, `rails` and `rake` as root does nothing now, beside emitting
-  a warning on how to run those commands as the right user in the context of our
-  application.
-- Prevent errors from callbacks when Sphinx's daemon is down: https://trello.com/c/AXOe6AGO/2022-prevent-errors-when-sphinxs-daemon-is-down
+- Running `bundle`, `rails` and `rake` should do nothing besides emitting a warning on how to run those commands as the right user in the context of our application. We already implemented that now.
+- [Prevent errors from ActiveRecord callbacks when Sphinx's daemon is down](https://trello.com/c/AXOe6AGO/2022-prevent-errors-when-sphinxs-daemon-is-down)
 
 ## Lessons Learned
 
@@ -65,9 +46,7 @@ We were quickly aware of the issue with the help of our errors tracker.
 
 ### What Went Wrong
 
-We weren't notified about the failure of systemd service for the search. This
-prevented us from knowing that we made a mistake by indexing the search as root.
-We also had to rebuild the search indices.
+We don't guard ourselves against running "standard" Ruby on Rails commands in production as the wrong user. Our monitoring for the `searchd` service is not sophisticated enough. And the integration of the ActiveRecord callbacks and `searchd` is too fragile.
 
 ### Where We Got Lucky
 
@@ -75,19 +54,16 @@ The issue was quite severe, but not the whole application went down with it.
 
 ## Timeline (times in CEST)
 
-- **2020-08-27 08:09**: We rebuild the search indices as root, which created files for search indices as root
-- Everything was working
-- **2020-09-03 13:57**: Deployment
-- **13:59**: We notice that the systemd service of the search failed to start
-- **14:00**: We notice a dangling searchd process
-- **14:25**: We create a PID file in an attempt to have the systemd service
-    manage the dangling process
-- **14:34**: We notice wrong file permissions on the search indices. The searchd
-    process crashes. **The search is down**
-- **14:40**: We remove the files for the search indices
-- **14:47**: We start the searchd process as root again, **the search is no longer down**
-- **14:57**: We stop the searchd process gracefully
-- **14:57**: We start the systemd service for the search. It can now start
-    without any issue
-- **15:06**: We start reindexing the search
+- **2020-08-27 08:09**: We rebuild the search indices as the wrong user
+- **2020-08-27** to **2020-09-03** Everything was seemingly working fine. However, the `searchd` `systemd` unit was failing. Which we don't monitor, we only monitor for the existence of a process named `searchd`
+- **2020-09-03 13:57**: We ran a deployment
+- **13:59**: We notice that the `systemd` service of the search failed to start
+- **14:00**: We notice a dangling `searchd` process
+- **14:25**: We create a PID file in an attempt to have the `systemd` service manage the dangling process
+- **14:34**: We notice wrong file permissions on the search indices and a message about this in the `searchd` logs
+- **14:40**: In an desperate attempt, we remove the indices. **The search is down**
+- **14:47**: We start the `searchd` process as user root, **the search is no longer down**
+- **14:57**: We stop the `searchd` process gracefully, which briefly degrades the service again
+- **14:57**: We start the `searchd` using `systemd` again. It can now start without any issue
+- **15:06**: We start re-indexing the search
 - **20:30**: The search indices are up-to-date
