@@ -459,7 +459,7 @@ testobs:/srv/www/obs/api # chown obsrun:obsrun \
    <div id="id-1.6.8.4.3.6.12" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6>
     <p>If you import packages for enterprise distributions like SLES12
      you also need the packages from the SDK. Maybe you need packages from
-     add-on products as well, depending what software you want build.</p>
+     add-on products as well, depending what software you want to build.</p>
    </div>
    <p>Finally you should trigger a rescan for the project on the back-end
     server using <span class="strong"><strong>obs_admin</strong></span>:</p>
@@ -537,8 +537,8 @@ testobs # obs_admin --rescan-repository SUSE:13.2 standard x86_64</pre></div>
     osc versions. The result gets committed as standard files and not named
     with _service: prefix. Additionally the service runs on the server by
     default, but usually the service should detect that the result is the same
-    and skip the generated files. In case they differ for any reason (because
-    the webui or API was used for example) they be generated and added on the
+    and skip the generated files. If they differ (for example, because
+    the Web UI or API was used), they are generated and added on the
     server. </p>
   </div>
   <div class="sect3 " id="id-1.6.8.5.6.5"><div class="titlepage"><div><div><h4 class="title"><span class="number">4.3.2.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><code class="literal">localonly</code> Mode</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id-1.6.8.5.6.5">#</a></h4></div></div></div>
@@ -616,7 +616,7 @@ testobs # obs_admin --rescan-repository SUSE:13.2 standard x86_64</pre></div>
  
  <p>The job of the source publish service is to publish all sources for 
 directly before published binaries. This will include the sources of repackaged
-binaries. For example the sources of rpms which are used inside of product, 
+binaries. For example, the sources of RPMs which are used inside of product, 
 appliance or container images. A prerequisite for this is that OBS has enabled
 content tracking for the used projects.</p>
 
@@ -636,8 +636,8 @@ content tracking for the used projects.</p>
   
   <p>The source publishing service is publishing the sources as they are hosted in Open Build Service. This
         means these are the unprocessed sources and the content is not identical to the
-        content of source rpms for example. Instead these are the sources which are the
-        base for source rpms.</p>
+        content of source RPMs for example. Instead these are the sources which are the
+        base for source RPMs.</p>
   <p>As a consequence hints like NoSource: tags in spec files are ignored. The only
         way to disable publishing for the user is to disable access or sourceaccess via
         the flags.</p>
@@ -820,7 +820,7 @@ Examples:
    in the name get some penalty, also home projects are getting only about half
    of the build time as a normal project, with the exception of the home
    project from king, the user account of the boss. The SLES12-SP2 repository
-   is not in real use yet, but if here is nothing else to do build for it as
+   is not in real use yet, but if here is nothing else to do, build for it as
    well.</p>
   <div id="id-1.6.8.7.4.11" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.png" /><h6>Important</h6>
    <p>The dispatcher calculates the values form the <span class="strong"><strong><span class="emphasis"><em>'dispatch_adjust'</em></span></strong></span> array
@@ -1875,7 +1875,7 @@ kerberos_realm: "EXAMPLE.COM"
           </td></tr><tr><td align="left" valign="top">
             <p>amqp_exchange_options[type]</p>
           </td><td align="left" valign="top">
-            <p>Type of comunication for the exchange</p>
+            <p>Type of communication for the exchange</p>
           </td><td align="left" valign="top">
             <p>
               <code class="literal">direct</code>
@@ -2035,7 +2035,7 @@ amqp_queue_options:
           </td></tr><tr><td align="left" valign="top">
             <p><span class="emphasis"><em>__prefix__</em></span>.package.update</p>
           </td><td align="left" valign="top">
-            <p>The package metada was updated</p>
+            <p>The package metadata was updated</p>
           </td><td align="left" valign="top">
             <p>
               :project, :package, :sender
@@ -2249,7 +2249,7 @@ amqp_queue_options:
  <div class="sect1 " id="_obs_spider_identification"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.11 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Spider Identification</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_obs_spider_identification">#</a></h2></div></div></div>
  
  <p> OBS is hiding specific parts/pages of the application from search
-  crawlers (duckduckgo, google etc.), mostly for performance reasons. Which
+  crawlers (DuckDuckGo, Google, etc.), mostly for performance reasons. Which
   user-agent strings are identified as crawlers configured in the file
    <code class="filename">/srv/www/obs/api/config/crawler-user-agents.json</code>. </p>
  <p> To update that list, you must run the command <code class="command">bundle exec rake
@@ -2315,14 +2315,14 @@ amqp_queue_options:
         <div id="id-1.6.8.14.2" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning: Alpha Implementation</h6>
             
             <p>This is Alpha implementation and not recommended for production.</p>
-            <p>The kubernetes device plugin deployed here makes serveral assumptions about which and how many containers will have access to KVM device.</p>
-            <p>Also the plugin assums avialability of /dev/kvm on every node where the device-plugin-container is running</p>
+            <p>The kubernetes device plugin deployed here makes several assumptions about which and how many containers will have access to KVM device.</p>
+            <p>The plugin also assumes availability of /dev/kvm on every node where the device-plugin-container is running</p>
         </div>
         <p>The build service worker itself has many backends to run its jobs. One of the preferred backends is KVM.</p>
         <p>This backend allows building inside a VM. This has many advantages from security and isolation perspective.</p>
-        <p>When a build worker is running inside the containarized environment (for example using Kubernetes) access to KVM is not available.</p>
-        <p>For such situations Kubernetes provides access to host devices (eg: KVM, GPU…​) through device plugins.</p>
-        <p>So, <code class="literal">/dev/kvm</code> can be made available to containers via Kubernetes using device plugin api (<a class="ulink" href="https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/" target="_blank">https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/</a>).</p>
+        <p>When a build worker is running inside the containerized environment (for example, using Kubernetes) access to KVM is not available.</p>
+        <p>For such situations Kubernetes provides access to host devices (for example: KVM, GPU…​) through device plugins.</p>
+        <p>So, <code class="literal">/dev/kvm</code> can be made available to containers via Kubernetes using device plugin API (<a class="ulink" href="https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/" target="_blank">https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/</a>).</p>
         <p>One of the implementations of K8s devices plugin for KVM is available here : <a class="ulink" href="https://github.com/kubevirt/kubernetes-device-plugins" target="_blank">https://github.com/kubevirt/kubernetes-device-plugins</a></p>
     <div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step " id="k8s.worker.getkvm">
         <p>Use the following manifest to deploy the KVM device plugin in a container.</p>
@@ -2364,13 +2364,13 @@ spec:
            hostPath:
            path: /var/lib/kubelet/device-plugins</pre></div>
     </li><li class="step " id="k8s.worker.buildworker">
-        <p>Build container image of the build service localy and load it to all worker nodes. There is sample project file here:
+        <p>Build container image of the build service locally and load it to all worker nodes. There is sample project file here:
             <a class="ulink" href="https://build.opensuse.org/package/show/home:sjamgade:branches:OBS:Server:Unstable/OBS-Appliance" target="_blank">https://build.opensuse.org/package/show/home:sjamgade:branches:OBS:Server:Unstable/OBS-Appliance</a> 
             <code class="literal">docker load &lt; "/path/to/docker.archive.tar.gz" </code>
          </p>
     </li><li class="step " id="k8s.worker.loadworker">
         <p>Use the following manifest to deploy the build service worker.</p>
-        <p>Here ports are hard-coded to allow easy integration with local kubelet without requiring a seperate ingress-controller</p>
+        <p>Here ports are hard-coded to allow easy integration with local kubelet without requiring a separate ingress-controller</p>
         <div class="verbatim-wrap"><pre class="screen">apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -2441,7 +2441,7 @@ spec:
       targetPort: 32516
       nodePort: 32516</pre></div>
     </li><li class="step " id="k8s.worker.createworkerconfig">
-        <p>Save the following into a file <code class="literal">launchworker.sh</code>. Later use this file to launch the worker. Make sure you uncomment the OBS_REPO_SERVERS line and change the ip adddress to your build servers address</p>
+        <p>Save the following into a file <code class="literal">launchworker.sh</code>. Later use this file to launch the worker. Make sure you uncomment the OBS_REPO_SERVERS line and change the IP address to your build servers address</p>
         <div class="verbatim-wrap"><pre class="screen">cat &lt;&lt; EOH &gt; /etc/buildhost.config
 OBS_WORKER_DIRECTORY=/var/cache/obs/worker
 OBS_CACHE_DIR=/var/cache/obs/worker/cache
