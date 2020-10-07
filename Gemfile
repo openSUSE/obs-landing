@@ -1,4 +1,4 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-gem "kramdown", "~> 2.1"
-gem "jemoji"
+gem 'jemoji'
+gem 'kramdown', '~> 2.1'
