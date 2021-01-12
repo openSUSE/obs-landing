@@ -46,17 +46,15 @@ for doc in obs-admin-guide obs-user-guide; do
     rm -rf /tmp/daps2docker-*
 
     /usr/bin/daps2docker DC-$doc || exit 1  # html and pdf
-    /usr/bin/daps2docker DC-$doc epub || exit 1
-
     # update html
     rm -rf ../help/manuals/${doc} || exit 1
     cp -aL /tmp/daps2docker-*/$doc/html/book.$ROOTID ../help/manuals/${doc} || exit 1
-
-    # update epub
-    mv /tmp/daps2docker-*/$doc/book.${ROOTID}_en.epub ../files/manuals/${doc}.epub || exit 1
-
     # update pdf
     mv /tmp/daps2docker-*/$doc/book.${ROOTID}_color_en.pdf ../files/manuals/${doc}.pdf || exit 1
+
+    # update epub
+    /usr/bin/daps2docker DC-$doc epub || exit 1
+    mv /tmp/daps2docker-*/$doc/book.${ROOTID}_en.epub ../files/manuals/${doc}.epub || exit 1
 
     #cleanup
     rm -rf /tmp/daps2docker-*
