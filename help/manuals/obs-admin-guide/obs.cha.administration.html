@@ -20,7 +20,7 @@ hljs.configure({
   useBR: false
 });
 
-</script></head><body class="offline js-off"><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Administrator Guide"><span class="book-icon">Administrator Guide</span></a><span> › </span><a class="crumb" href="obs.cha.administration.html">Administration</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Administrator Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="bk03pr01.html"><span class="number"> </span><span class="name">About this Guide</span></a></li><li class="inactive"><a href="obs.cha.installation_and_configuration.html"><span class="number">1 </span><span class="name">Installation and Configuration</span></a></li><li class="inactive"><a href="obs.cha.overview_filesystem.html"><span class="number">2 </span><span class="name">File System Overview</span></a></li><li class="inactive"><a href="obs.cha.security_concepts.html"><span class="number">3 </span><span class="name">Security Concepts</span></a></li><li class="inactive"><a href="obs.cha.administration.html"><span class="number">4 </span><span class="name">Administration</span></a></li><li class="inactive"><a href="obs.cha.troubleshooting.html"><span class="number">5 </span><span class="name">Troubleshooting</span></a></li><li class="inactive"><a href="cha.obs.best-practices.localsetup.html"><span class="number">6 </span><span class="name">Setting Up a Local OBS Instance</span></a></li><li class="inactive"><a href="bk03apa.html"><span class="number">A </span><span class="name">GNU Licenses</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 3. Security Concepts" href="obs.cha.security_concepts.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 5. Troubleshooting" href="obs.cha.troubleshooting.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Administrator Guide"><span class="book-icon">Administrator Guide</span></a><span> › </span><a class="crumb" href="obs.cha.administration.html">Administration</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 3. Security Concepts" href="obs.cha.security_concepts.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 5. Troubleshooting" href="obs.cha.troubleshooting.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class=""><div class="documentation"><div class="chapter " id="obs.cha.administration"><div class="titlepage"><div><div><h1 class="title"><span class="number">4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Administration</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#">#</a></h1></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="obs.cha.administration.html#_tools"><span class="number">4.1 </span><span class="name">Tools</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_managing_build_targets"><span class="number">4.2 </span><span class="name">Managing Build Targets</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#sec.obs.source_service"><span class="number">4.3 </span><span class="name">Source Services</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#source_publish"><span class="number">4.4 </span><span class="name">Source Publisher</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_dispatch_priorities"><span class="number">4.5 </span><span class="name">Dispatch Priorities</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_publisher_hooks"><span class="number">4.6 </span><span class="name">Publisher Hooks</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_unpublisher_hooks"><span class="number">4.7 </span><span class="name">Unpublisher Hooks</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_user_and_group_management"><span class="number">4.8 </span><span class="name">Managing Users and Groups</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_message_bus"><span class="number">4.9 </span><span class="name">Message Bus for Event Notifications</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_backup"><span class="number">4.10 </span><span class="name">Backup</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_obs_spider_identification"><span class="number">4.11 </span><span class="name">Spider Identification</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_worker_in_kubernetes_"><span class="number">4.12 </span><span class="name">Worker in Kubernetes</span></a></span></dt></dl></div></div>
+</script></head><body class="offline js-off"><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Administrator Guide"><span class="book-icon">Administrator Guide</span></a><span> › </span><a class="crumb" href="obs.cha.administration.html">Administration</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Administrator Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="bk03pr01.html"><span class="number"> </span><span class="name">About this Guide</span></a></li><li class="inactive"><a href="obs.cha.installation_and_configuration.html"><span class="number">1 </span><span class="name">Installation and Configuration</span></a></li><li class="inactive"><a href="obs.cha.overview_filesystem.html"><span class="number">2 </span><span class="name">File System Overview</span></a></li><li class="inactive"><a href="obs.cha.security_concepts.html"><span class="number">3 </span><span class="name">Security Concepts</span></a></li><li class="inactive"><a href="obs.cha.administration.html"><span class="number">4 </span><span class="name">Administration</span></a></li><li class="inactive"><a href="obs.cha.troubleshooting.html"><span class="number">5 </span><span class="name">Troubleshooting</span></a></li><li class="inactive"><a href="cha.obs.best-practices.localsetup.html"><span class="number">6 </span><span class="name">Setting Up a Local OBS Instance</span></a></li><li class="inactive"><a href="bk03apa.html"><span class="number">A </span><span class="name">GNU Licenses</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 3. Security Concepts" href="obs.cha.security_concepts.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 5. Troubleshooting" href="obs.cha.troubleshooting.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Administrator Guide"><span class="book-icon">Administrator Guide</span></a><span> › </span><a class="crumb" href="obs.cha.administration.html">Administration</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 3. Security Concepts" href="obs.cha.security_concepts.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 5. Troubleshooting" href="obs.cha.troubleshooting.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class=""><div class="documentation"><div class="chapter " id="obs.cha.administration"><div class="titlepage"><div><div><h1 class="title"><span class="number">4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Administration</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#">#</a></h1></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="obs.cha.administration.html#_tools"><span class="number">4.1 </span><span class="name">Tools</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_managing_build_targets"><span class="number">4.2 </span><span class="name">Managing Build Targets</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#sec.obs.source_service"><span class="number">4.3 </span><span class="name">Source Services</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#source_publish"><span class="number">4.4 </span><span class="name">Source Publisher</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_dispatch_priorities"><span class="number">4.5 </span><span class="name">Dispatch Priorities</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_publisher_hooks"><span class="number">4.6 </span><span class="name">Publisher Hooks</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_unpublisher_hooks"><span class="number">4.7 </span><span class="name">Unpublisher Hooks</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_user_and_group_management"><span class="number">4.8 </span><span class="name">Managing Users and Groups</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_message_bus"><span class="number">4.9 </span><span class="name">Message Bus for Event Notifications</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_backup"><span class="number">4.10 </span><span class="name">Backup</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_restore"><span class="number">4.11 </span><span class="name">Restore</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_handle_data_corruption"><span class="number">4.12 </span><span class="name">Repair Data Corruption</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_obs_spider_identification"><span class="number">4.13 </span><span class="name">Spider Identification</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_worker_in_kubernetes_"><span class="number">4.14 </span><span class="name">Worker in Kubernetes</span></a></span></dt></dl></div></div>
  
  
  <div class="sect1 " id="_tools"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Tools</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_tools">#</a></h2></div></div></div>
@@ -2185,6 +2185,30 @@ amqp_queue_options:
               :project, :repo
             </p>
           </td></tr><tr><td align="left" valign="top">
+            <p><span class="emphasis"><em>__prefix__</em></span>.repo.build_started</p>
+          </td><td align="left" valign="top">
+            <p>Repository (re)started building</p>
+          </td><td align="left" valign="top">
+            <p>
+              :project, :repo, :arch, :buildid
+            </p>
+          </td></tr><tr><td align="left" valign="top">
+            <p><span class="emphasis"><em>__prefix__</em></span>.repo.build_finished</p>
+          </td><td align="left" valign="top">
+            <p>Repository finished building</p>
+          </td><td align="left" valign="top">
+            <p>
+              :project, :repo, :arch, :buildid
+            </p>
+          </td></tr><tr><td align="left" valign="top">
+            <p><span class="emphasis"><em>__prefix__</em></span>.repo.status_report</p>
+          </td><td align="left" valign="top">
+            <p>Status Check for Finished Repository Created</p>
+          </td><td align="left" valign="top">
+            <p>
+              :project, :repo, :arch, :buildid
+            </p>
+          </td></tr><tr><td align="left" valign="top">
             <p><span class="emphasis"><em>__prefix__</em></span>.request.create</p>
           </td><td align="left" valign="top">
             <p>A request was created</p>
@@ -2228,6 +2252,24 @@ amqp_queue_options:
               :diff (local projects)
             </p>
           </td></tr><tr><td align="left" valign="top">
+            <p><span class="emphasis"><em>__prefix__</em></span>.request.review_changed</p>
+          </td><td align="left" valign="top">
+            <p>Request was reviewed</p>
+          </td><td align="left" valign="top">
+            <p>
+              :reviewers, :by_user, :by_group, :by_project, :by_package
+            </p>
+          </td></tr><tr><td align="left" valign="top">
+            <p><span class="emphasis"><em>__prefix__</em></span>.request.reviews_done</p>
+          </td><td align="left" valign="top">
+            <p>All reviews of request have been completed</p>
+          </td><td align="left" valign="top">
+            <p>
+              :author, :comment, :description, :number, :actions, :state, :when, :who,
+              :reviewers, :by_user, :by_group, :by_project, :by_package,
+              :diff (local projects)
+            </p>
+          </td></tr><tr><td align="left" valign="top">
             <p><span class="emphasis"><em>__prefix__</em></span>.request.comment</p>
           </td><td align="left" valign="top">
             <p>A new comment for the request was created</p>
@@ -2237,6 +2279,22 @@ amqp_queue_options:
               :commenters, :commenter, :comment_body, :comment_title,
               :request_number
             </p>
+          </td></tr><tr><td align="left" valign="top">
+            <p><span class="emphasis"><em>__prefix__</em></span>.request.status_report</p>
+          </td><td align="left" valign="top">
+            
+          </td><td align="left" valign="top">
+            <p>
+              :number
+            </p>
+          </td></tr><tr><td align="left" valign="top">
+            <p><span class="emphasis"><em>__prefix__</em></span>.published.status_report</p>
+          </td><td align="left" valign="top">
+            <p>Status Check for Published Repository Created</p>
+          </td><td align="left" valign="top">
+            <p>
+              :project, :repo, :buildid
+            </p>
           </td></tr></tbody></table>
   </div></div>
   </div>
@@ -2244,9 +2302,136 @@ amqp_queue_options:
 </div>
  <div class="sect1 " id="_backup"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.10 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Backup</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_backup">#</a></h2></div></div></div>
   
-  
+  <p>
+    Open Build Service configuration and content needs usually a backup. The following explains
+    suggested strategies and places considered for a backup. 
+  </p>
+
+  <div class="sect2 " id="_backup_places"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.10.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Places to consider</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_backup_places">#</a></h3></div></div></div>
+   
+   <p>The following is pointing to the places with admin configurations or user content.
+	 The default location places are considered here.
+   </p>
+   <div class="sect3 " id="_backup_configuration_frontend"><div class="titlepage"><div><div><h4 class="title"><span class="number">4.10.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Frontend Configuration</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_backup_configuration_frontend">#</a></h4></div></div></div>
+     
+     <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
+	      <p>/srv/www/obs/api/config</p>
+      </li><li class="listitem ">
+	      <p>/srv/www/obs/api/log (optional)</p>
+      </li></ul></div>
+    <p>The configuration is not changing usually. It is enough to backup it after config changes.
+    </p>
+   </div>
+   <div class="sect3 " id="_backup_database_frontend"><div class="titlepage"><div><div><h4 class="title"><span class="number">4.10.1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Frontend Database</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_backup_database_frontend">#</a></h4></div></div></div>
+     
+     <p>The MySQL/MariaDB database backup can be done in different ways. Please consider the database
+	   manual for details. One possible way is to create dumps via mysqldump tool. The backup should be
+	   done at the same point of time as the source server. Inconsistencies can be resolved
+           using the check_consistency tool.</p>
+   </div>
+   <div class="sect3 " id="_backup_backend_configuration"><div class="titlepage"><div><div><h4 class="title"><span class="number">4.10.1.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Backend Configuration</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_backup_backend_configuration">#</a></h4></div></div></div>
+     
+     <p>The backend has a single configuration file which may got altered. This is by default
+	     /usr/lib/obs/server/BSConfig.pm . The file is not supposed to be changed usually and
+	     it can only be done by the system root user. A backup after a change is sufficient.
+     </p>
+   </div>
+   <div class="sect3 " id="_backup_backend_content"><div class="titlepage"><div><div><h4 class="title"><span class="number">4.10.1.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Backend Content</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_backup_backend_content">#</a></h4></div></div></div>
+     
+     <p>All backend content is below /srv/obs directory. This include the sources, build results and
+	   also all configuration changes done by the OBS admin users.
+     </p>
+   </div>
+  </div>
+  <div class="sect2 " id="_backup_strategies"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.10.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Backup startegies</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_backup_strategies">#</a></h3></div></div></div>
+   
+   <p>
+     A backup is ideally taken only from a not running service. In real live this is 
+     usually not possbile, so it is important to run a backup on a production system.
+   </p>
+   <div class="sect3 " id="_backup_strategy_database"><div class="titlepage"><div><div><h4 class="title"><span class="number">4.10.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Database</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_backup_strategy_database">#</a></h4></div></div></div>
+    
+    <p>mysql backup either directly from a non-primary node in the galera
+    cluster (table dump locks the database during operation) or from a mysql slave
+    attached to the cluster.
+    </p>
+   </div>
+   <div class="sect3 " id="_backup_strategy_backend_sources"><div class="titlepage"><div><div><h4 class="title"><span class="number">4.10.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Sources</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_backup_strategy_backend_sources">#</a></h4></div></div></div>
+    
+     <p>The sources are supposed to be backup at the same time as the database. This
+           can get achieved by either having a dedicated instance for the source server
+           or by having a backup of the following directories.
+     </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
+	      <p>/srv/obs/projects</p>
+      </li><li class="listitem ">
+	      <p>/srv/obs/sources</p>
+      </li></ul></div><p>
+    </p>
+   </div>
+   <div class="sect3 " id="_backup_strategy_backend_binaries"><div class="titlepage"><div><div><h4 class="title"><span class="number">4.10.2.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Build Results</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_backup_strategy_backend_binaries">#</a></h4></div></div></div>
+    
+    <p>Full backups via snapshots, either offered by the SAN storage or
+    via LVM snapshot methods. Consistency is normally on repository level. Any inconsistency
+    will be found by the scheduler and content will be retriggered. This is not true
+    for disabled builds like released builds.
+    </p>
+   </div>
+  </div>
  </div>
- <div class="sect1 " id="_obs_spider_identification"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.11 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Spider Identification</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_obs_spider_identification">#</a></h2></div></div></div>
+
+ <div class="sect1 " id="_restore"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.11 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Restore</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_restore">#</a></h2></div></div></div>
+  
+  <p>
+    A restored system might contain inconsistencies if it was taken from a running service.
+    These can be resolved as follows.
+  </p>
+  <div class="sect2 " id="_restore_database_inconsistencies"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.11.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Check and repair database inconsistencies</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_restore_database_inconsistencies">#</a></h3></div></div></div>
+   
+   <p>If either database portions or sources got restored there are chances for inconsistencies.
+	   These can be found via
+	   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">cd /srv/www/obs/api/</code> 
+	           <code class="prompt user">geeko &gt; </code><code class="command">./bin/rails c</code> 
+	           <code class="prompt user">geeko &gt; </code><code class="command">ConsistencyCheckJob.new.perform</code></pre></div><p>
+	   Single projects can be either checked with
+	   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">cd /srv/www/obs/api/</code> 
+	           <code class="prompt user">geeko &gt; </code><code class="command">./bin/rake check_project project="YOUR_PROJECT"</code></pre></div><p>
+	   or inconsistencies fixed via
+	   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">cd /srv/www/obs/api/</code> 
+	           <code class="prompt user">geeko &gt; </code><code class="command">./bin/rake fix_project project="YOUR_PROJECT"</code></pre></div><p>
+   </p>
+  </div>
+  <div class="sect2 " id="_restore_binaries"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.11.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Binaries</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_restore_binaries">#</a></h3></div></div></div>
+   
+   <p>All build results are evaluated by the scheduler. Therefore any inconsisency can be
+	   detected by the scheduler. One way is to enforce a cold start, which means that the
+	   scheduler would rescan all sources and binaries and trigger builds where needed.
+	   This can be achieved by
+	   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">rcobsscheduler stop     # ensure no scheduler is running</code> 
+	           <code class="prompt user">geeko &gt; </code><code class="command">rm /srv/obs/run/*.state # remove all state files</code> 
+	           <code class="prompt user">geeko &gt; </code><code class="command">rcobsscheduler start</code></pre></div><p>
+	   The scheduler state will be visible as in cold start. It may take a longer time, so it
+	   might be more efficent to check only certain projects or architectures if needed.
+	   This can be triggered in a running system by executing
+	   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">obs_admin --check-project PROJECT ARCHITERCTURE</code></pre></div><p>
+	   A deep check is necessary in case sources have been restored:
+	   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">obs_admin --deep-check-project PROJECT ARCHITERCTURE</code></pre></div><p>
+   </p>
+  </div>
+ </div>
+
+ <div class="sect1 " id="_handle_data_corruption"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.12 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Repair Data Corruption</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_handle_data_corruption">#</a></h2></div></div></div>
+  
+  <p>
+	  On-disk data might be corrupted indepdent of a restore. For example due to power outage, filesystem
+	  or disk errors. A MySQL/Maria database in a cluster should repair itself in that case. Data
+	  on disk in the backend parts can be checked and fixed using an dedicated tool. See the help
+	  of the tool for further details or run
+	  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">/usr/lib/obs/server/bs_check_consistency --check-all</code></pre></div><p>
+	  Data can be repaired using the fix options.
+  </p>
+ </div>
+
+ <div class="sect1 " id="_obs_spider_identification"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.13 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Spider Identification</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_obs_spider_identification">#</a></h2></div></div></div>
  
  <p> OBS is hiding specific parts/pages of the application from search
   crawlers (DuckDuckGo, Google, etc.), mostly for performance reasons. Which
@@ -2304,15 +2489,15 @@ amqp_queue_options:
        "pattern": "Geekobot"
    }
 ]</pre></div>
- <div id="id-1.6.8.13.13" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6>
+ <div id="id-1.6.8.15.13" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6>
   <p>You can also use regular expressions in the pattern element.</p>
  </div>
  <p> Save the file and restart the Rails application and the bot Geekobot
   should be identified properly. </p>
 </div>
- <div xml:lang="en" class="sect1 " id="_worker_in_kubernetes_" lang="en"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.12 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Worker in Kubernetes</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_worker_in_kubernetes_">#</a></h2></div></div></div>
+ <div xml:lang="en" class="sect1 " id="_worker_in_kubernetes_" lang="en"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.14 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Worker in Kubernetes</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_worker_in_kubernetes_">#</a></h2></div></div></div>
         
-        <div id="id-1.6.8.14.2" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning: Alpha Implementation</h6>
+        <div id="id-1.6.8.16.2" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning: Alpha Implementation</h6>
             
             <p>This is Alpha implementation and not recommended for production.</p>
             <p>The kubernetes device plugin deployed here makes several assumptions about which and how many containers will have access to KVM device.</p>
@@ -2463,5 +2648,5 @@ obsworker restart</pre></div>
     </li></ol></div></div>
 </div>
 </div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="obs.cha.troubleshooting.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 5 </span>Troubleshooting</span></a><a class="nav-link" href="obs.cha.security_concepts.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 3 </span>Security Concepts</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
-        2020 
+        2021 
         SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>
