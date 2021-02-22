@@ -81,7 +81,7 @@ runtime-version: '3.36'
 # etc.
 ~~~
 
-## How does the build work?
+## How Does the Build Work?
 
 OBS is not a replacement for Flathub, so we had to find a solution for
 providing the basic dependencies.
