@@ -6,12 +6,12 @@ category: development
 
 Those of you enrolled in the [beta program](https://openbuildservice.org/2018/10/04/the-beta-program)
 already know the Notifications page we introduced a while ago.
-Recently we introduced two new filters: _Incoming Requests_ and _Outgoing Requests_.
+Recently, we introduced two new filters: _Incoming Requests_ and _Outgoing Requests_.
 
 ## Filters Overview
 
 During a normal day, you may receive a big amount of web notifications. The notifications filters are there
-to the rescue, by narrowing down the result' to the notifications you are looking for.
+to the rescue, by narrowing down the result to the notifications you are looking for.
 
 <figure>
   <img src="/images/posts/notifications_incoming_outgoing_filters.png" alt="Notifications filter area" />
