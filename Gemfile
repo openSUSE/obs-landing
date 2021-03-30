@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
 
 gem 'jemoji'
-gem 'kramdown', '~> 2.1'
+gem 'kramdown', '~> 2.3'
