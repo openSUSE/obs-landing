@@ -7,11 +7,11 @@ author: Henne
 
 There was a severe service degradation of our [reference server](https://build.opensuse.org). We want to give you some insight into what happened.
 
-On May 6 we deployed a database migration that lead to corrupted indexes which lead to this service degradation for 1 hour and 47 minutes.
+On May 6 we deployed a database migration that lead to corrupted indexes, which also lead to this service degradation for 1 hour and 47 minutes.
 
 ## Impact
 
-The corruption made it impossible to to delete repositories from the database. As deleting repositories is also done in various other OBS workflows we have seen problems with:
+The corruption made it impossible to delete repositories from the database. As deleting repositories is also done in various other OBS workflows we have seen problems with:
 
 - Deleting a project
 - Deleting a repository
@@ -35,7 +35,7 @@ that have a foreign key constraint. Rather delete/re-create it. [PR#11112](https
 
 ## Detection
 
-We got errors about the database problems our errors tracker.
+We got errors about the database problems on our errors tracker.
 
 ## Action Items
 
@@ -49,10 +49,10 @@ Collaboration among the team to resolve this.
 
 ### What Went Wrong
 
-- We did not extensively test the migration up front
+- We did not extensively test the migration up front.
 - As the error was happening in various workflows we were not immediately aware of this
   being a general problem. No alert went off.
-- We spend too much time getting the service into working state again. Maybe we should have tried a rolled back,
+- We spent too much time getting the service into working state again. Maybe we should have tried a rollback,
   but that would also have not helped in this case. Still, 1 hour 47 minutes is a long time.
 
 ### Where We Got Lucky
