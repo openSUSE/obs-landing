@@ -12,7 +12,7 @@ OBS will trigger the workflow again when new changes are detected in an opened P
 
 ## Build Results for Repository and Architecture
 
-You maybe had an integration set for a package built against several distributions and architectures. OBS was reporting all build results, but we were showing only the last one on the checks section of a PR/MR. Now OBS shows the build results for each repository and architecture combination of any package.
+Maybe you had a workflow set for a package built against several distributions and architectures. OBS was reporting all build results, but we were showing only the last one on the checks section of a PR/MR. Now OBS shows the build results for each repository and architecture combination of any package.
 
 It will appear in the PR/MR checks section as another check, with the build status reported like this:
 
