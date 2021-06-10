@@ -5,7 +5,7 @@ category: development
 ---
 ## Introduction
 
-Today we have some improvements over our [first attempt at Continuous Integration](https://openbuildservice.org/2021/05/31/scm-integration/).
+Today, we have some improvements for our [first iteration at continuous integration](https://openbuildservice.org/2021/05/31/scm-integration/).
 
 ## Updates on a PR/MR
 
