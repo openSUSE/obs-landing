@@ -28,3 +28,5 @@ TODO: Add a screenshot of an actual checks section
 ## Major SCM Vendors Support
 
 Right now, we only act on events coming from webhooks configured on [GitHub.com](https://github.com) or [GitLab.com](https://gitlab.com).
+
+{% include partials/_how-to-give-us-feedback.md %}
