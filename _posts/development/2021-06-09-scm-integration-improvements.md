@@ -4,7 +4,7 @@ title: Improvements for the Continuous Integration with OBS and GitHub/GitLab
 category: development
 ---
 
-Today, we have some improvements in the Continuous Integration we unveiled in our [last blog post.](https://openbuildservice.org/2021/05/31/scm-integration/).
+Today, we have some improvements for the continuous integration we unveiled in our [previous blog post](https://openbuildservice.org/2021/05/31/scm-integration/).
 
 ## Updates on a PR/MR
 
