@@ -20,7 +20,11 @@ It will appear in the PR/MR checks section as another check, with the build stat
 
 	✓ OBS: ctris - openSUSE_Tumbleweed/x86_64
 	
-TODO: Add a screenshot of an actual checks section
+If your package build several flavours, the check will have the flavour name appended to the package name:
+
+	✓ OBS: ctris:hans - openSUSE_Tumbleweed/x86_64
+	
+TODO: Add screenshots of an actual checks section
 
 ## Major SCM Vendors Support
 
