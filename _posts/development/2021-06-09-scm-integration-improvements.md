@@ -1,18 +1,26 @@
-* We now detect updates on a PR/MR. That retriggers the workflow.
-* Until now we reported the latest build result of a package. we now report build results for each package + repository + architecture combination. We also report about multibuild flavours.
-* The format of the workflows file is:
-* We only support triggering workflows from the public instances of github.com and gitlab.com.
+---
+layout: post
+title: Improvements Over Continuous Integration with OBS and GitHub/GitLab
+category: development
+---
+## Introduction
+
+Last post showed the first attempt at integrating OBS and GitHub/GitLab. Today we show some improvements.
 
 ## Updates on a PR/MR
-The workflow only triggered when you opened a new PR/MR. Now we trigger the workflow again when detecting new commits in an opened PR/MR.
-OBS will rebuild your packages when new changes are detected in an opened PR/MR.
 
-## Build results for repository and architecture and multibuilds
-OBS will report back to your PR/MR the build results for each repository and architecture combination for a package.
-It also supports multibuilds so it will show the build status of all the flavours of a package.
-This will show up in a commit as a check with the build status reported like this:
+OBS will trigger the workflow again when new changes are detected in an opened PR/MR.
 
-	✓ OBS Workflow: games/ctris - openSUSE_Tumbleweed/x86_64
+This will allow you to rebuild branched packages if you push new changes to a PR/MR.
+
+## Build results for repository and architecture
+
+Until now, we were showing only one build result. Now OBS reports the build results back to your PR/MR for each repository and architecture combination of any package.
+
+It will appear in the PR/MR checks section as another check, with the build status reported like this:
+
+	✓ OBS: ctris - openSUSE_Tumbleweed/x86_64
 	
-## SCM Instance support
-Right now we only support react to events coming from github.com or gitlab.com.
+## Major SCM Vendors support
+
+Right now we only act on events coming from [GitHub.com](https://github.com) or [GitLab.com](https://gitlab.com).
