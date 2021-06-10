@@ -3,7 +3,6 @@ layout: post
 title: Improvements for the Continuous Integration with OBS and GitHub/GitLab
 category: development
 ---
-## Introduction
 
 Today, we have some improvements for our [first iteration at continuous integration](https://openbuildservice.org/2021/05/31/scm-integration/).
 
