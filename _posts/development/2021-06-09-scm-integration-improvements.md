@@ -17,16 +17,17 @@ Maybe you had a workflow set for a package. That package built against several d
 Now, OBS shows the build results for each repository and architecture combination. Each one is displayed as a single commit status like this (showing GitHub in this example):
 
 <figure>
-	<img src="/images/posts/blog-post-about-reporting-repositories-architectures-and-reacting-to-updates-in-a-pr/2021-06-10_15-29.png" alt="Build results for a package" />
+	<img src="/images/posts/blog-post-about-reporting-repositories-architectures-and-reacting-to-updates-in-a-pr/commit_status.png" alt="Build results for a package" width="1000px" />
 	<figcaption>Build results for a package</figcaption>
 </figure>
 	
 If your package builds several flavours, the status will have the flavour name appended to the package name:
 
-	✓ OBS: ctris:hans - openSUSE_Tumbleweed/x86_64
+<figure>
+	<img src="/images/posts/blog-post-about-reporting-repositories-architectures-and-reacting-to-updates-in-a-pr/commit_status_multibuild.png" alt="Build results for a package with multibuild configuration" width="1000px" />
+	<figcaption>Build results for a package</figcaption>
+</figure>
 	
-TODO: Add screenshots of an actual checks section
-
 ## Current Limitations
 
 Right now, we only act on events coming from webhooks configured on [GitHub.com](https://github.com) or [GitLab.com](https://gitlab.com).
