@@ -25,7 +25,7 @@ If your package builds several flavours, the status will have the flavour name a
 
 <figure>
 	<img src="/images/posts/blog-post-about-reporting-repositories-architectures-and-reacting-to-updates-in-a-pr/commit_status_multibuild.png" alt="Build results for a package with multibuild configuration" width="1000px" />
-	<figcaption>Build results for a package</figcaption>
+	<figcaption>Build results for a package configured with multibuild</figcaption>
 </figure>
 	
 ## Current Limitations
