@@ -38,7 +38,7 @@ There are two ways to reach us:
   and / or [commenting on an already opened
   issue](https://github.com/openSUSE/open-build-service/issues).
 - On IRC, by talking directly to us. We are in the channel
-  `#opensuse-buildservice` on *Freenode*.
+  `#opensuse-buildservice` on *Libera.Chat*.
 
 Please note that we favor GitHub to gather feedback as it allows us to easily
 keep track of the discussions.

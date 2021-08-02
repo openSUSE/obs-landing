@@ -85,6 +85,6 @@ If you haven't done it already, please join [the beta program](https://openbuild
 
 There are two ways to reach us:
 - On GitHub, by opening an issue and / or commenting on an already opened issue.
-- On IRC, by talking directly to us. We are in the channel #opensuse-buildservice on Freenode.
+- On IRC, by talking directly to us. We are in the channel #opensuse-buildservice on Libera.Chat.
 
 Please note that we favor GitHub to gather feedback as it allows us to easily keep track of the discussions.
