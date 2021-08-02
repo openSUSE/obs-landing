@@ -169,7 +169,7 @@ People assigned to this card are responsible for deployments, tool maintenance,
 OBS:Server:Unstable maintenance, etc.
 
 ## Where Does the Team Meet?
-The Build Solutions team hangs out on the IRC channel #opensuse-buildservice on the Freenode network.
+The Build Solutions team hangs out on the IRC channel #opensuse-buildservice on the Libera.Chat network.
 They read and write to the [opensuse-buildservice@opensuse.org mailing list](https://lists.opensuse.org/opensuse-buildservice/).
 Additionally, as contributing is their full time job, they have some meetings where they talk to
 each other to coordinate their work. If you want to participate in any of those meetings, join

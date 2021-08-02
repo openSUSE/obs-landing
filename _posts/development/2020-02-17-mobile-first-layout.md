@@ -78,6 +78,6 @@ Try the new features and tell us what you think about it.
 There are two ways to reach us:
 
 - On GitHub, by opening an issue and / or commenting on an already opened issue.
-- On IRC, by talking directly to us. We are in the channel #opensuse-buildservice on Freenode.
+- On IRC, by talking directly to us. We are in the channel #opensuse-buildservice on Libera.Chat.
 
 Please note that we favor GitHub to gather feedback as it allows us to easily keep track of the discussions.
