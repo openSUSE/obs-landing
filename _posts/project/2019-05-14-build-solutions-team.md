@@ -22,6 +22,7 @@ team_members:
     email: dmarcoux@suse.de
     github: dmarcoux
     irc: dmarcoux
+    blog: https://blog.dmarcoux.com/
 
   - name: Saray Cabrera Padron
     email: scabrerapadron@suse.com
