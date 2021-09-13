@@ -47,6 +47,10 @@ team_members:
     twitter: henne
     blog: http://www.hennevogel.de
     irc: henne
+
+  - name: Rubhan Azeem
+    email: rubhan.azeem@suse.com
+    github: rubhanazeem
 ---
 
 This is the first post in a series about teams inside different companies that work to bring the
