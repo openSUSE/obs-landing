@@ -21,7 +21,10 @@ Read our recent blog posts to stay up to date on this matter.
 Joining the beta program is really easy!
 Be sure to be logged in, then go on [your profile page](https://build.opensuse.org/home) and click on the _Public beta program_ switch under your avatar.
 
-<img src="/images/posts/the-beta-program/public-beta-program.png" alt="Profile page with the 'Public beta program' switch">
+<figure>
+  <img src="/images/posts/the-beta-program/public-beta-program.png" alt="Profile page with the 'Public beta program' switch" width="1000px">
+  <figcaption>Profile page with the 'Public beta program' switch</figcaption>
+</figure>
 
 And of course, you can leave the beta program at any time by clicking again on the _Public beta program_ switch.
 
