@@ -1,11 +1,9 @@
 title: Open Build Service
-site: https://openbuildservice.org
 highlighter: rouge
+url: https://openbuildservice.org
 permalink: /:year/:month/:day/:title/
 markdown: kramdown
 include: [ '_redirects' ]
-# Do not publish posts with a future date
-future: false
 
 plugins:
   - jemoji
