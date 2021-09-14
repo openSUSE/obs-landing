@@ -3,6 +3,8 @@ highlighter: rouge
 permalink: /:year/:month/:day/:title/
 markdown: kramdown
 include: [ '_redirects' ]
+# Do not publish posts with a future date
+future: false
 
 plugins:
   - jemoji
