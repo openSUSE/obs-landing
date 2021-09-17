@@ -81,7 +81,7 @@ workflow:
       source_project: games
       source_package: ctris
     - configure_repositories:
-        source_project: games
+        project: games
         repositories:
           - name: openSUSE_Tumbleweed
             target_project: openSUSE:Factory
@@ -96,14 +96,14 @@ workflow:
               - x86_64
 ```
 
-Providing the source project `games` and a list of repositories, OBS will configure the target project,`home:$OBS_USER:$SOURCE_PROJECT_NAME:PR-$PR_NUMBER`,
+Providing the project `games` and a list of repositories, OBS will configure the target project,`home:$OBS_USER:$PROJECT_NAME:PR-$PR_NUMBER`,
 with the provided repositories and architectures.
 
 A name, a target project, a target repository and the architectures are required to define each repository.
 
 **NOTE:**  
-**The source project** has to be a project which was a source project from a previous step like `link_package` or `branch_package`.  
-The project where OBS is going to set the repositories, will be named after the source project, `home:$OBS_USER:$SOURCE_PROJECT_NAME:PR-$PR_NUMBER`, i.e. `home:Iggy:games:PR-14`.
+**The project** has to be a project which was a source project from a previous step like `link_package` or `branch_package`.  
+The project where OBS is going to set the repositories, will be named after the project, `home:$OBS_USER:$PROJECT_NAME:PR-$PR_NUMBER`, i.e. `home:Iggy:games:PR-14`.
 
 ## More to Come!
 
