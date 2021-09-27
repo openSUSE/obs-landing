@@ -3,4 +3,5 @@ then [made some improvements](/2021/06/14/scm-integration-improvements/) in June
 We introduced advanced features like [reporting filters and support for self-hosted SCM](/2021/07/12/scm-integration-more-improvements)
 together with a list of [common pitfalls](/2021/07/12/scm-integration-pitfalls) in July 2021
 and in August 2021, we continued with [two new steps and a UI for tokens](/2021/08/02/link-package-configure-repositories-and-ui).
-We now [support more actions for pull/merge requests and improved the UI for tokens](/2021/09/14/scm-more-pull-request-actions-and-ui)._
+After starting to [support more actions for pull/merge requests and improving the UI for tokens](/2021/09/14/scm-more-pull-request-actions-and-ui) in mid-September,
+we are now [adding support for push events and a rebuild step](/2021/09/28/support-for-push-events)._
