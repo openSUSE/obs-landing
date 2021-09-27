@@ -125,7 +125,13 @@ $(function() {
   }
 
   addBugLinks();
-  addClipboardButtons();
+  // hljs likes to unset click handlers, so run after it
+  var hljsInterval = window.setInterval(function() {
+    if (typeof(hljs) !== 'undefined') {
+      addClipboardButtons();
+      window.clearInterval(hljsInterval);
+    };
+  }, 500);
 });
 
 
