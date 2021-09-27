@@ -129,15 +129,22 @@ The content of the file should be:
 workflow:
   steps:
     - branch_package:
-        source_project: home:hennevogel:myfirstproject
+        source_project: home:hennevogel
         source_package: ctris
+        target_project: releases
 ```
 
-- **source_project**: Configure the name of the project that contains the package you want to test build
-- **source_package**: Configure the name of the package you want to test build
+- **source_project**: The name of the project that contains the package you want to branch and test build
+- **source_package**: The name of the package you want to test build
+- **target_project**: The name of the project that will contain the branched package
 
-Now every time this workflow is triggered by a webhook, OBS will branch the package `ctris` from
-the project `home:hennevogel:myfirstproject` and build it. OBS will report back the build results to GitHub or GitLab.
+Now every time this workflow is triggered by a webhook, OBS will branch the
+package `ctris` from the project `home:hennevogel` and build it. Depending on
+the webhook event, the package will be branched differently. In the case of a
+pull request event, `home:hennevogel/ctris` will be branched to
+`releases:$SCM_ORGANIZATION:$SCM_PROJECT:PR-$PR_NUMBER/ctris`. For a push event,
+`home:hennevogel/ctris` will be branched to `releases/ctris-$COMMIT_SHA`.
+Finally, OBS will report back the build results to GitHub or GitLab.
 
 <figure>
   <img src="/images/posts/sprint_95_checks_github.png" alt="Checks GitHub" />

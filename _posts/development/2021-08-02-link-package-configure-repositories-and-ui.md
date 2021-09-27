@@ -52,18 +52,17 @@ workflow:
     - link_package:
         source_project: games
         source_package: ctris
+        target_project: games:devel
 ```
 
-Providing the source project `games` and the source package `ctris`, OBS will link the package `home:$OBS_USER:games:PR-$PR_NUMBER/ctris` to `games/ctris`.
+Depending on the webhook event, OBS will link the package `games/ctris` to a
+different project or package. In the case of a pull request event, `games/ctris` will
+be linked to `games:devel:$SCM_ORGANIZATION:$SCM_PROJECT:PR-$PR_NUMBER/ctris`. For a
+push event, `games/ctris` will be linked to `games:devel/ctris-$COMMIT_SHA`.
 
 This step is equivalent to **osc linkpac**.
 Unlike the `branch_package` step, the `link_package` step creates a new package
 but does not copy the files nor the repositories from the source package.
-
-**NOTE:**
-The target project is going to be named after the source project, `home:$OBS_USER:$SOURCE_PROJECT_NAME:PR-$PR_NUMBER`,
-and will contain the linked package, i.e. `home:Iggy:games:PR-14/ctris`.
-
 
 ## The `configure_repositories` Step
 
