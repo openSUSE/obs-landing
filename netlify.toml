@@ -7,6 +7,6 @@
 # Deploy Preview context:
 # All deploys generated from a pull/merge request
 # will inherit these settings.
-[context.deploy-preview.environment]
+[context.deploy-preview]
   command = "bundle exec jekyll build --future"
 
