@@ -46,15 +46,38 @@ If you use special characters you may need to surround your text by `"`.
 The OBS documentation is stored in a [separate repository](https://github.com/openSUSE/obs-docu)
 and is integrated into the OBS landing page via git submodules.
 
-After doing some changes in _obs-docu_ (see how [here](https://github.com/openSUSE/obs-docu#update-documentation)) you should wait until they are
-merged and then move to your local directory of _obs-landing_. Update it and run the [update_documentation.sh](update_documentation.sh) script that
-you can find inside the _obs-landing_ project. This updates the documentation sub-module, compiles it into html and creates a new commit with the
-changes. The new commit's message is _"Update books to current state"_.
+As soon as your changes get merged in _obs-docu_ (see how [here](https://github.com/openSUSE/obs-docu#update-documentation)), you have to move to _obs-landing_ repository and follow these steps to deploy them:
 
-Make sure that your working tree is clean. If it, on the contrary, shows some untracked changes in
-`open-build-service-documentation`, simply run `git submodule init` and `git submodule update` manually. This will update the submodule and will clean the working tree.
+- Make sure _obs-landing_'s _master_ branch is up-to-date.
+- Run the [update_documentation.sh](update_documentation.sh) script placed in the root directory which will:
+  - update the documentation sub-module;
+  - generate the documentation in html, pdf and epub formats;
+  - create a commit with the message _"Update books to current state"_.
+- Push to master the newly created commit.
 
-Once the last _"Update books to current state"_ commit in _obs-landing_ gets merged, you'll see your changes in https://openbuildservice.org/help.
+Then, you'll see your changes in https://openbuildservice.org/help.
+
+#### OBS Documentation Troubleshooting
+
+##### Untracked Changes
+
+If, after following the steps, your working tree is not clean and shows some untracked changes related to
+`open-build-service-documentation`, simply run `git submodule init` and `git submodule update` manually.
+
+##### Validation Errors When Running the Script
+
+When running the script, you might get validation errors that you didn't get when you ran `daps` independenly.
+This usually happens when the document contains references to online resources like this:
+
+```
+  <imagedata fileref="https://example.com/my-image.png"/>
+```
+
+Better add the resource to the corresponding directory inside `images/src/`. This is an example of how to reference it:
+
+```
+  <imagedata fileref="my-image.png"/>
+```
 
 # License
 
