@@ -66,7 +66,7 @@ If, after following the steps, your working tree is not clean and shows some unt
 
 ##### Validation Errors When Running the Script
 
-When running the script, you might get validation errors that you didn't get when you ran `daps` independenly.
+When running the script, you might get validation errors that you didn't get when you ran `daps` independently.
 This usually happens when the document contains references to online resources like this:
 
 ```
