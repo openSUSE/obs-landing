@@ -347,13 +347,13 @@ rebuild_master:
 
           <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
               <p>With a pull request event, it will go to e.g.:
-              <span class="emphasis"><em>home:jane:github:jane:ctris:PR-1/ctris</em></span>. Being <span class="emphasis"><em>PR-1</em></span> the pull request number.</p>
+              <span class="emphasis"><em>home:jane:github:jane:ctris:PR-1/ctris</em></span>. <span class="emphasis"><em>PR-1</em></span> being the pull request number.</p>
             </li><li class="listitem ">
               <p>With a push event for commits, it will go to e.g.:<span class="emphasis"><em>
-              home:jane/ctris-66f2acfbded89a19935ee6d481b7cf2ab95427f6</em></span>. Being <span class="emphasis"><em>66f2acfbded89a19935ee6d481b7cf2ab95427f6</em></span> the SHA of the latest commit that triggered the event.</p>
+              home:jane/ctris-66f2acfbded89a19935ee6d481b7cf2ab95427f6</em></span>. <span class="emphasis"><em>66f2acfbded89a19935ee6d481b7cf2ab95427f6</em></span> being the SHA of the latest commit that triggered the event.</p>
             </li><li class="listitem ">
               <p>With a push event for tags, it will go to e.g.:<span class="emphasis"><em>
-              home:jane/ctris-release_1</em></span>. Being <span class="emphasis"><em>release_1</em></span> the name of the tag that triggered the event.</p>
+              home:jane/ctris-release_1</em></span>. <span class="emphasis"><em>release_1</em></span> being the name of the tag that triggered the event.</p>
             </li></ul></div>
 
           <p>This is an example of a configuration file with a branch
@@ -381,15 +381,15 @@ rebuild_master:
 
           <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
               <p><span class="emphasis"><em>home:jane:github:jane:gcc:PR-1/gcc</em></span>
-              for a pull request event. Being <span class="emphasis"><em>PR-1</em></span> the pull request number.</p>
+              for a pull request event. <span class="emphasis"><em>PR-1</em></span> being the pull request number.</p>
             </li><li class="listitem ">
               <p><span class="emphasis"><em>home:jane/gcc-fae00a0ac0e5687343a60ae02bf60352002ab9aa</em></span>
-              with a push event for commits. Being <span class="emphasis"><em>fae00a0ac0e5687343a60ae02bf60352002ab9aa</em></span>
-              the SHA of the latest commit that triggered the event.</p>
+              with a push event for commits. <span class="emphasis"><em>fae00a0ac0e5687343a60ae02bf60352002ab9aa</em></span>
+              being the SHA of the latest commit that triggered the event.</p>
             </li><li class="listitem ">
               <p><span class="emphasis"><em>home:jane/gcc-release_1</em></span>
-              with a push event for tags. Being <span class="emphasis"><em>release_1</em></span>
-              the name of the tag that triggered the event.</p>
+              with a push event for tags. <span class="emphasis"><em>release_1</em></span>
+              being the name of the tag that triggered the event.</p>
             </li></ul></div>
 
           <p>This is an example of a configuration file with a link package
@@ -705,6 +705,20 @@ rebuild_master:
         
         <div class="mediaobject"><a xmlns="" href="images/workflow_run.png" target="_blank"><img src="images/workflow_run.png" width="" alt="Workflow Runs" /></a></div>
       </div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 8.5: </span><span class="name">Workflow Runs </span><a title="Permalink" class="permalink" href="cha.obs.scm_ci_workflow_integration.html#id-1.5.8.5.2.10.3">#</a></h6></div></div>
+
+      <p>Workflow runs can be found under the list of tokens.</p>
+
+      <div class="figure" id="id-1.5.8.5.2.10.5"><div class="figure-contents">
+        
+        <div class="mediaobject"><a xmlns="" href="images/tokens_ui_index_with_workflow_run.png" target="_blank"><img src="images/tokens_ui_index_with_workflow_run.png" width="" alt="Tokens list" /></a></div>
+      </div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 8.6: </span><span class="name">Tokens list </span><a title="Permalink" class="permalink" href="cha.obs.scm_ci_workflow_integration.html#id-1.5.8.5.2.10.5">#</a></h6></div></div>
+
+      <p>You can check the status of the workflow run (running/fail/success) represented by icons.</p>
+
+      <div class="figure" id="id-1.5.8.5.2.10.7"><div class="figure-contents">
+        
+        <div class="mediaobject"><a xmlns="" href="images/workflow_runs_list.png" target="_blank"><img src="images/workflow_runs_list.png" width="" alt="Workflow runs list" /></a></div>
+      </div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 8.7: </span><span class="name">Workflow runs list </span><a title="Permalink" class="permalink" href="cha.obs.scm_ci_workflow_integration.html#id-1.5.8.5.2.10.7">#</a></h6></div></div>
     </div>
 
     <div class="sect2 " id="sec.obs.obs_scm_ci_workflow_integration.setup.errors"><div class="titlepage"><div><div><h3 class="title"><span class="number">8.1.9 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Errors</span> <a title="Permalink" class="permalink" href="cha.obs.scm_ci_workflow_integration.html#sec.obs.obs_scm_ci_workflow_integration.setup.errors">#</a></h3></div></div></div>
