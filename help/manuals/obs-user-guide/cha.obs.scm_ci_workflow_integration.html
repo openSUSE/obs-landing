@@ -53,7 +53,7 @@ hljs.configure({
       <p>This chapter talks in GitHub jargon to simplify the text. As
       constantly mentioning all the names for the same things, e.g. <span class="emphasis"><em>Pull Requests/Merge Requests</em></span>,
       is tiresome and confusing. However, every aspect has its
-      correspondence in GitLab. Refer to <a class="xref" href="cha.obs.scm_ci_workflow_integration.html#sec.obs.obs_scm_ci_workflow_integration.setup.equivalence_table" title="8.1.9. Equivalence Table">Section 8.1.9, “Equivalence Table”</a>
+      correspondence in GitLab. Refer to <a class="xref" href="cha.obs.scm_ci_workflow_integration.html#sec.obs.obs_scm_ci_workflow_integration.setup.equivalence_table" title="8.1.10. Equivalence Table">Section 8.1.10, “Equivalence Table”</a>
       for clarification of terminology.</p>
     </div>
 
@@ -192,7 +192,7 @@ hljs.configure({
           </li></ul></div>
 
         <p>Other SCMs like GitLab have similar behaviour; the main
-        difference is how they name the events. Refer to the <a class="link" href="cha.obs.scm_ci_workflow_integration.html#sec.obs.obs_scm_ci_workflow_integration.setup.equivalence_table" title="8.1.9. Equivalence Table">Equivalence
+        difference is how they name the events. Refer to the <a class="link" href="cha.obs.scm_ci_workflow_integration.html#sec.obs.obs_scm_ci_workflow_integration.setup.equivalence_table" title="8.1.10. Equivalence Table">Equivalence
         Table</a> for more details or read more about <a class="ulink" href="https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads" target="_blank">GitHub
         events<span class="ulink-url"> (https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads)</span></a> and <a class="ulink" href="https://docs.gitlab.com/ce/user/project/integrations/webhooks.html#events" target="_blank">GitLab
         events<span class="ulink-url"> (https://docs.gitlab.com/ce/user/project/integrations/webhooks.html#events)</span></a>.</p>
@@ -258,7 +258,7 @@ hljs.configure({
           </li><li class="listitem ">
             <p><span class="bold"><strong>Trigger:</strong></span> <span class="emphasis"><em>Merge
             request events</em></span>, <span class="emphasis"><em>Push
-            events</em></span>.</p>
+              events</em></span>, <span class="emphasis"><em>Tag push events</em></span>.</p>
           </li></ul></div>
       </div>
     </div>
@@ -346,11 +346,14 @@ rebuild_master:
           onto the target project, keeping in mind that:</p>
 
           <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
-              <p>For a pull request event, it will go to e.g.:
+              <p>With a pull request event, it will go to e.g.:
               <span class="emphasis"><em>home:jane:github:jane:ctris:PR-1/ctris</em></span>. Being <span class="emphasis"><em>PR-1</em></span> the pull request number.</p>
             </li><li class="listitem ">
-              <p>For a push event, it will go to e.g.:<span class="emphasis"><em>
+              <p>With a push event for commits, it will go to e.g.:<span class="emphasis"><em>
               home:jane/ctris-66f2acfbded89a19935ee6d481b7cf2ab95427f6</em></span>. Being <span class="emphasis"><em>66f2acfbded89a19935ee6d481b7cf2ab95427f6</em></span> the SHA of the latest commit that triggered the event.</p>
+            </li><li class="listitem ">
+              <p>With a push event for tags, it will go to e.g.:<span class="emphasis"><em>
+              home:jane/ctris-release_1</em></span>. Being <span class="emphasis"><em>release_1</em></span> the name of the tag that triggered the event.</p>
             </li></ul></div>
 
           <p>This is an example of a configuration file with a branch
@@ -381,8 +384,12 @@ rebuild_master:
               for a pull request event. Being <span class="emphasis"><em>PR-1</em></span> the pull request number.</p>
             </li><li class="listitem ">
               <p><span class="emphasis"><em>home:jane/gcc-fae00a0ac0e5687343a60ae02bf60352002ab9aa</em></span>
-              for a push event. Being <span class="emphasis"><em>fae00a0ac0e5687343a60ae02bf60352002ab9aa</em></span>
+              with a push event for commits. Being <span class="emphasis"><em>fae00a0ac0e5687343a60ae02bf60352002ab9aa</em></span>
               the SHA of the latest commit that triggered the event.</p>
+            </li><li class="listitem ">
+              <p><span class="emphasis"><em>home:jane/gcc-release_1</em></span>
+              with a push event for tags. Being <span class="emphasis"><em>release_1</em></span>
+              the name of the tag that triggered the event.</p>
             </li></ul></div>
 
           <p>This is an example of a configuration file with a link package
@@ -564,7 +571,10 @@ rebuild_master:
               request events.</p>
             </li><li class="listitem ">
               <p><span class="bold"><strong>push</strong></span> is for push
-              events.</p>
+              events related to commits.</p>
+            </li><li class="listitem ">
+              <p><span class="bold"><strong>tag_push</strong></span> is for push
+              events related to tags.</p>
             </li></ul></div>
 
           <p>The following is an example to run a workflow only for a pull
@@ -684,10 +694,23 @@ rebuild_master:
       </div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 8.4: </span><span class="name">Build Status for Several Multibuild Flavours </span><a title="Permalink" class="permalink" href="cha.obs.scm_ci_workflow_integration.html#id-1.5.8.5.2.9.6">#</a></h6></div></div>
     </div>
 
-    <div class="sect2 " id="sec.obs.obs_scm_ci_workflow_integration.setup.errors"><div class="titlepage"><div><div><h3 class="title"><span class="number">8.1.8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Errors</span> <a title="Permalink" class="permalink" href="cha.obs.scm_ci_workflow_integration.html#sec.obs.obs_scm_ci_workflow_integration.setup.errors">#</a></h3></div></div></div>
+    <div class="sect2 " id="sec.obs.obs_scm_ci_workflow_integration.setup.workflow_runs"><div class="titlepage"><div><div><h3 class="title"><span class="number">8.1.8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Workflow Runs</span> <a title="Permalink" class="permalink" href="cha.obs.scm_ci_workflow_integration.html#sec.obs.obs_scm_ci_workflow_integration.setup.workflow_runs">#</a></h3></div></div></div>
       
 
-      <div class="table" id="id-1.5.8.5.2.10.2"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 8.1: </span><span class="name">Common Errors </span><a title="Permalink" class="permalink" href="cha.obs.scm_ci_workflow_integration.html#id-1.5.8.5.2.10.2">#</a></h6></div><div class="table-contents">
+      <p>For every SCM event, OBS records the request and the response sent back to the SCM.
+      These records are stored in OBS in the form of workflow runs. This helps with debugging workflows. If an error occurs in any of
+      the workflow steps, the workflow run will record error messages.</p>
+
+      <div class="figure" id="id-1.5.8.5.2.10.3"><div class="figure-contents">
+        
+        <div class="mediaobject"><a xmlns="" href="images/workflow_run.png" target="_blank"><img src="images/workflow_run.png" width="" alt="Workflow Runs" /></a></div>
+      </div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 8.5: </span><span class="name">Workflow Runs </span><a title="Permalink" class="permalink" href="cha.obs.scm_ci_workflow_integration.html#id-1.5.8.5.2.10.3">#</a></h6></div></div>
+    </div>
+
+    <div class="sect2 " id="sec.obs.obs_scm_ci_workflow_integration.setup.errors"><div class="titlepage"><div><div><h3 class="title"><span class="number">8.1.9 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Errors</span> <a title="Permalink" class="permalink" href="cha.obs.scm_ci_workflow_integration.html#sec.obs.obs_scm_ci_workflow_integration.setup.errors">#</a></h3></div></div></div>
+      
+
+      <div class="table" id="id-1.5.8.5.2.11.2"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 8.1: </span><span class="name">Common Errors </span><a title="Permalink" class="permalink" href="cha.obs.scm_ci_workflow_integration.html#id-1.5.8.5.2.11.2">#</a></h6></div><div class="table-contents">
         
 
         <table class="table" summary="Common Errors" border="1"><colgroup><col /><col /></colgroup><thead><tr><th align="left">Error</th><th align="left">Reason</th></tr></thead><tbody><tr><td align="left"><span class="emphasis"><em>".obs/workflows.yml could not be downloaded on
@@ -714,10 +737,10 @@ rebuild_master:
       </div></div>
     </div>
 
-    <div class="sect2 " id="sec.obs.obs_scm_ci_workflow_integration.setup.equivalence_table"><div class="titlepage"><div><div><h3 class="title"><span class="number">8.1.9 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Equivalence Table</span> <a title="Permalink" class="permalink" href="cha.obs.scm_ci_workflow_integration.html#sec.obs.obs_scm_ci_workflow_integration.setup.equivalence_table">#</a></h3></div></div></div>
+    <div class="sect2 " id="sec.obs.obs_scm_ci_workflow_integration.setup.equivalence_table"><div class="titlepage"><div><div><h3 class="title"><span class="number">8.1.10 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Equivalence Table</span> <a title="Permalink" class="permalink" href="cha.obs.scm_ci_workflow_integration.html#sec.obs.obs_scm_ci_workflow_integration.setup.equivalence_table">#</a></h3></div></div></div>
       
 
-      <div class="table" id="id-1.5.8.5.2.11.2"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 8.2: </span><span class="name">Equivalence table </span><a title="Permalink" class="permalink" href="cha.obs.scm_ci_workflow_integration.html#id-1.5.8.5.2.11.2">#</a></h6></div><div class="table-contents">
+      <div class="table" id="id-1.5.8.5.2.12.2"><div class="table-title-wrap"><h6 class="table-title"><span class="number">Table 8.2: </span><span class="name">Equivalence table </span><a title="Permalink" class="permalink" href="cha.obs.scm_ci_workflow_integration.html#id-1.5.8.5.2.12.2">#</a></h6></div><div class="table-contents">
         
 
         <table class="table" summary="Equivalence table" border="1"><colgroup><col /><col /></colgroup><thead><tr><th align="left">GitHub</th><th align="left">GitLab</th></tr></thead><tbody><tr><td align="left">Repository</td><td align="left">Project</td></tr><tr><td align="left">Pull request</td><td align="left">Merge request</td></tr><tr><td align="left">PR</td><td align="left">MR</td></tr><tr><td align="left">Push</td><td align="left">Push Hook</td></tr><tr><td align="left">Pull requests (in webhook configuration)</td><td align="left">Merge request events (in webhook configuration)</td></tr><tr><td align="left">Pushes (in webhook configuration)</td><td align="left">Push events (in webhook configuration)</td></tr></tbody></table>
