@@ -73,9 +73,11 @@ workflow:
     event: tag_push
 ```
 
-These kinds of events will affect the branch package and the link package steps only. Read the [documentation about the steps](https://openbuildservice.org/help/manuals/obs-user-guide/cha.obs.scm_ci_workflow_integration.html#sec.obs.obs_scm_ci_workflow_integration.setup.obs_workflows.steps) for more details.
+For the branch package and link package steps, the package created by those steps will contain the name of the tag which triggered the webhook event.
 
-You might need to modify your webhook on GitLab to trigger _"Tag push events"_. For GitHub you need nothing apart from _"Pushes"_.
+Refer to the [documentation about the steps](https://openbuildservice.org/help/manuals/obs-user-guide/cha.obs.scm_ci_workflow_integration.html#sec.obs.obs_scm_ci_workflow_integration.setup.obs_workflows.steps) for details on this.
+
+To ensure this is correctly working, you need to modify your webhook on GitLab to trigger _"Tag push events"_ if this isn't already done. For GitHub, you need nothing apart from _"Pushes"_.
 
 # And Much More
 
