@@ -1,6 +1,6 @@
 ---
 layout: post
-title: API Documentation Remake
+title: New Documentation for Build and Workers API Endpoints
 category: development
 ---
 
