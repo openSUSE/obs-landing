@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if ! rpm -q daps2docker > /dev/null; then
    echo "daps2docker is not installed. get it via:"
