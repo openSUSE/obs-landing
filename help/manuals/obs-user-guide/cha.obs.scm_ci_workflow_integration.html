@@ -281,7 +281,7 @@ hljs.configure({
       <p>The content of <span class="emphasis"><em>.obs/workflows.yml</em></span> could look
       like this:</p><div class="verbatim-wrap"><pre class="screen">rebuild_master:
   steps:
-    - rebuild_package
+    - rebuild_package:
         project: home:Admin
         package: ctris
   filters:
@@ -294,7 +294,7 @@ hljs.configure({
 
       <div class="verbatim-wrap"><pre class="screen">main_workflow:
   steps:
-    - branch_package
+    - branch_package:
         source_project: OBS:Server:Unstable
         source_package: obs-server
         target_project: OBS:Server:Unstable:CI
@@ -302,7 +302,7 @@ hljs.configure({
     event: pull_request
 rebuild_master:
   steps:
-    - rebuild_package
+    - rebuild_package:
         project: home:Admin
         package: ctris
   filters:
@@ -535,8 +535,8 @@ rebuild_master:
           <div class="verbatim-wrap"><pre class="screen">workflow:
   steps:
     - rebuild_package:
-      project: games
-      package: ctris
+        project: games
+        package: ctris
   filters:
     branches:
       only:
@@ -549,9 +549,9 @@ rebuild_master:
           <div class="verbatim-wrap"><pre class="screen">workflow:
   steps:
     - branch_package:
-      source_project: games
-      source_package: ctris
-      target_project: home:jane_doe
+        source_project: games
+        source_package: ctris
+        target_project: home:jane_doe
   filters:
     repositories:
       ignore:
@@ -603,9 +603,9 @@ rebuild_master:
           <div class="verbatim-wrap"><pre class="screen">workflow:
   steps:
     - branch_package:
-      source_project: home:jane_doe
-      source_package: ctris
-      target_project: games
+        source_project: home:jane_doe
+        source_package: ctris
+        target_project: games
   filters:
     branches:
       ignore:
@@ -629,9 +629,9 @@ rebuild_master:
           <div class="verbatim-wrap"><pre class="screen">workflow:
   steps:
     - branch_package:
-      source_project: home:jane_doe
-      source_package: ctris
-      target_project: games
+        source_project: home:jane_doe
+        source_package: ctris
+        target_project: games
   filters:
     architectures:
       only:
@@ -655,9 +655,9 @@ rebuild_master:
           <div class="verbatim-wrap"><pre class="screen">workflow:
   steps:
     - branch_package:
-      source_project: home:jane_doe
-      source_package: ctris
-      target_project: games
+        source_project: home:jane_doe
+        source_package: ctris
+        target_project: games
   filters:
     repositories:
       only:

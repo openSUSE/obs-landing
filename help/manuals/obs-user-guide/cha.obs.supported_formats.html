@@ -179,6 +179,12 @@ hljs.configure({
      <p><code class="command">#!BuildVersion: VERSION</code> Report back a defined VERSION. By default it is set to zero. The version is used by OBS for tracking.
      </p>
    </li><li class="listitem ">
+     <p><code class="command">#!ExclusiveArch: ARCH_LIST</code> An exclusive architecture list to build for. The architecture list is separated by spaces.
+     </p>
+   </li><li class="listitem ">
+     <p><code class="command">#!OBS-ExcludeArch: ARCH_LIST</code> An excluded architecture list to skip builds. The architecture list is separated by spaces.
+     </p>
+   </li><li class="listitem ">
      <p>
       <code class="command">#!Milestone: MILESTONE</code>
       This defines a milestone name (for example, <code class="literal">Beta1</code>)
