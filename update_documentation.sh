@@ -1,7 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-if ! rpm -q daps2docker > /dev/null; then
-   echo "daps2docker is not installed. get it via:"
+if ! which daps2docker > /dev/null 2>&1; then
+   echo "daps2docker is not installed. For OpenSUSE systems, get it via:"
    echo "  zypper ar https://download.opensuse.org/repositories/Documentation:/Tools/.... "
    echo "  zypper in daps2docker"
    exit 1
