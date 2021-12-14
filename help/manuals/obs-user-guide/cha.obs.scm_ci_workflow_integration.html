@@ -684,14 +684,21 @@ rebuild_master:
         <div class="mediaobject"><a xmlns="" href="images/commit_status.png" target="_blank"><img src="images/commit_status.png" width="" alt="Build Status" /></a></div>
       </div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 8.3: </span><span class="name">Build Status </span><a title="Permalink" class="permalink" href="cha.obs.scm_ci_workflow_integration.html#id-1.5.8.5.2.9.4">#</a></h6></div></div>
 
-      <p>Moreover, if your package builds several multibuild flavours, the status will
+      <p>Moreover, if your package builds several multibuild flavors, the status will
       have the <a class="ulink" href="https://openbuildservice.org/help/manuals/obs-user-guide/cha.obs.multibuild.html" target="_blank">flavor<span class="ulink-url"> (https://openbuildservice.org/help/manuals/obs-user-guide/cha.obs.multibuild.html)</span></a>
       name appended to the package name:</p>
 
       <div class="figure" id="id-1.5.8.5.2.9.6"><div class="figure-contents">
         
-        <div class="mediaobject"><a xmlns="" href="images/commit_status_multibuild.png" target="_blank"><img src="images/commit_status_multibuild.png" width="" alt="Build Status for Several Multibuild Flavours" /></a></div>
-      </div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 8.4: </span><span class="name">Build Status for Several Multibuild Flavours </span><a title="Permalink" class="permalink" href="cha.obs.scm_ci_workflow_integration.html#id-1.5.8.5.2.9.6">#</a></h6></div></div>
+        <div class="mediaobject"><a xmlns="" href="images/commit_status_multibuild.png" target="_blank"><img src="images/commit_status_multibuild.png" width="" alt="Build Status for Several Multibuild Flavors" /></a></div>
+      </div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 8.4: </span><span class="name">Build Status for Several Multibuild Flavors </span><a title="Permalink" class="permalink" href="cha.obs.scm_ci_workflow_integration.html#id-1.5.8.5.2.9.6">#</a></h6></div></div>
+
+      <div id="id-1.5.8.5.2.9.7" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6>
+        <p>Due to a limitation, the <span class="bold"><strong>initial</strong></span>
+        "pending" build status of packages with multibuild flavors is <span class="bold"><strong>not</strong></span>
+        reported. The build status for those flavors will however still be reported
+        when the build finishes.</p>
+      </div>
     </div>
 
     <div class="sect2 " id="sec.obs.obs_scm_ci_workflow_integration.setup.workflow_runs"><div class="titlepage"><div><div><h3 class="title"><span class="number">8.1.8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Workflow Runs</span> <a title="Permalink" class="permalink" href="cha.obs.scm_ci_workflow_integration.html#sec.obs.obs_scm_ci_workflow_integration.setup.workflow_runs">#</a></h3></div></div></div>
@@ -873,7 +880,7 @@ rebuild_master:
         source_project: GNOME:Factory
         source_package: gnome-shell
         target_project: home:jane:playground
-   - configure_repositories:
+    - configure_repositories:
         project: home:jane:playground
         repositories:
           - name: openSUSE_Tumbleweed
