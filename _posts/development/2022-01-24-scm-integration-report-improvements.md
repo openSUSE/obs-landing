@@ -8,6 +8,8 @@ Today, we have some improvements around UI and reporting and user feedback for t
 
 As you know, this is a beta feature. So, do not forget this feature is under the [the beta program](/2018/10/04/the-beta-program/). Join!
 
+{% include partials/_series-of-posts-about-scm-integration.md %}
+
 ## Token UI
 (TODO those changes aren't visible to the user, so I'm not sure we should
 discuss about it)
