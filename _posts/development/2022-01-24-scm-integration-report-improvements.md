@@ -4,9 +4,11 @@ title: UI and Reporting Improvements for the Continuous Integration with OBS and
 category: development
 ---
 
-Today, we have some improvements around UI and reporting and user feedback for the continuous integration we unveiled in our [previous blog post](https://openbuildservice.org/2021/05/31/scm-integration/).
+Today, we have some improvements around UI and reporting and user feedback for the continuous integration we unveiled in ours [previous blog post](https://openbuildservice.org/2021/05/31/scm-integration/).
 
-## Token Creation UI
+As you know, this is a beta feature. So, do not forget this feature is under the [the beta program](/2018/10/04/the-beta-program/). Join!
+
+## Token UI
 (TODO those changes aren't visible to the user, so I'm not sure we should
 discuss about it)
 
