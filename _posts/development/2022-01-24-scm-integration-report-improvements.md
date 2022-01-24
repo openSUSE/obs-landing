@@ -10,31 +10,24 @@ As you know, this is a beta feature. So, do not forget this feature is under the
 
 {% include partials/_series-of-posts-about-scm-integration.md %}
 
-## Token UI
-(TODO those changes aren't visible to the user, so I'm not sure we should
-discuss about it)
-
-
 ## Improvement for WorkflowRuns UI
-To make easier to debug and troubleshoot broken SCM integrations, now we are
-correlating the log displayed on the `WorkflowRuns UI` with specific steps on
-the SCM integration
+WorkflowRuns is one of the most important places to debug your workflows. It helps you to fix the problems like the wrong configurations in `workflows.yml`. 
+To make easier to debug and troubleshoot broken SCM integrations we have updated the `WorkflowRuns UI`. 
 
-TODO: Add screenshot 
+You will get details like:
 
-## Multibuild reporting
+- A new show view for individual workflows has been added to help you share WorkflowRuns across your team.
+<figure>
+  <img src="/images/posts/sprint_110_workflow_runs_show.png" alt="Workflow runs show view" />
+  <figcaption>Workflow runs show view</figcaption>
+</figure>
 
-There were some issues with OBS reporting back to the SCM when building
-multibuild packages. Now the issue is solved and you will be able track the
-build process from all multibuild flavors on the PR/MR as it should. (TODO: Add
-screenshots)
+- New filter options to help filter WorkflowRuns based on `status` and `event type`
 
-## Track artifacts of OBS workflow runs
-
-To make easier to give you a better feedback of what happened on OBS while
-running your defined steps, we are generating a report per each step. This
-information is available under the WorkflowRun UI (TODO: be more precise where
-it is located)
+<figure>
+  <img src="/images/posts/sprint_110_workflow_runs_filters.png" alt="Workflow runs filters" />
+  <figcaption>Workflow runs filters</figcaption>
+</figure>
 
 
 {% include partials/_how-to-give-us-feedback.md %}
