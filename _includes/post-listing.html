@@ -1,5 +1,5 @@
 
-  {% for post in posts limit: listing_limit %}
+  {% for post in posts %}
   <div class="ui segment">
     {% if post.category %} <a href="/categories/{{ post.category | slugize }}" class="ui {{ post.category }} ribbon label">{{ post.category }}</a>{% endif %}
     <h4 class="header"><a href="{{ post.url }}" class="post-title">{{ post.title }}</a></h4>
