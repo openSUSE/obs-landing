@@ -4,6 +4,7 @@ if ! which daps2docker > /dev/null 2>&1; then
    echo "daps2docker is not installed. For OpenSUSE systems, get it via:"
    echo "  zypper ar https://download.opensuse.org/repositories/Documentation:/Tools/.... "
    echo "  zypper in daps2docker"
+   echo "For other systems, refer to https://github.com/opensuse/daps2docker."
    exit 1
 fi
 
@@ -45,7 +46,7 @@ for doc in obs-admin-guide obs-user-guide; do
     # urgs cleanup
     rm -rf /tmp/daps2docker-*
 
-    /usr/bin/daps2docker DC-$doc || exit 1  # html and pdf
+    daps2docker DC-$doc || exit 1  # html and pdf
     # update html
     rm -rf ../help/manuals/${doc} || exit 1
     cp -aL /tmp/daps2docker-*/$doc/html/book.$ROOTID ../help/manuals/${doc} || exit 1
@@ -53,7 +54,7 @@ for doc in obs-admin-guide obs-user-guide; do
     mv /tmp/daps2docker-*/$doc/book.${ROOTID}_color_en.pdf ../files/manuals/${doc}.pdf || exit 1
 
     # update epub
-    /usr/bin/daps2docker DC-$doc epub || exit 1
+    daps2docker DC-$doc epub || exit 1
     mv /tmp/daps2docker-*/$doc/book.${ROOTID}_en.epub ../files/manuals/${doc}.epub || exit 1
 
     #cleanup
