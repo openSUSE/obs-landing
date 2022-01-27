@@ -4,6 +4,11 @@ url: https://openbuildservice.org
 permalink: /:year/:month/:day/:title/
 markdown: kramdown
 include: [ '_redirects' ]
+# Number of posts per page
+paginate: 20
+# First page is blog/, second is blog/page2/, and so on...
+paginate_path: "/blog/page:num/"
 
 plugins:
   - jemoji
+  - jekyll-paginate

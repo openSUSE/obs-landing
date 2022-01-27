@@ -393,3 +393,8 @@
   margin: 0 auto;
   display: block;
 }
+
+.pagination > em, a {
+  margin-left: 2px;
+  margin-right: 2px;
+}
