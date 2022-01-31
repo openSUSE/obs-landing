@@ -64,7 +64,7 @@ for doc in obs-admin-guide obs-user-guide; do
   popd
 
   # add to git 
-  git add help/manuals/$doc files/manuals/$doc.epub files/manuals/$doc.pdf || exit 1
+  git add open-build-service-documentation help/manuals/$doc files/manuals/$doc.epub files/manuals/$doc.pdf || exit 1
 done
 
 git commit -m "Update books to current state" || exit 1
