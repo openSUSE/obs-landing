@@ -71,38 +71,8 @@ You can not imagine how versatile workflows could be with this new step!
 Inside the SCM configuration file, simply indicate which repositories you want for a project in which you'll build your packages for. Easy peasy!
 
 - Set up the integration between GitHub/GitLab and OBS. If you have not yet, please refer to this [blog post](/2021/05/31/scm-integration/).
-- Add the new step to `.obs/workflows.yml`
-
-```
-workflow:
-  steps:
-    - link_package:
-      source_project: games
-      source_package: ctris
-    - configure_repositories:
-        project: games
-        repositories:
-          - name: openSUSE_Tumbleweed
-            target_project: openSUSE:Factory
-            target_repository: snapshot
-            architectures:
-              - x86_64
-              - i586
-          - name: openSUSE_Leap_15.2
-            target_project: openSUSE:Leap:15.2
-            target_repository: standard
-            architectures:
-              - x86_64
-```
-
-Providing the project `games` and a list of repositories, OBS will configure the target project,`home:$OBS_USER:$PROJECT_NAME:PR-$PR_NUMBER`,
-with the provided repositories and architectures.
-
-A name, a target project, a target repository and the architectures are required to define each repository.
-
-**NOTE:**  
-**The project** has to be a project which was a source project from a previous step like `link_package` or `branch_package`.  
-The project where OBS is going to set the repositories, will be named after the project, `home:$OBS_USER:$PROJECT_NAME:PR-$PR_NUMBER`, i.e. `home:Iggy:games:PR-14`.
+- Add the new step to `.obs/workflows.yml` as explained in the [user
+  documentation](https://openbuildservice.org/help/manuals/obs-user-guide/cha.obs.scm_ci_workflow_integration.html#sec.obs.obs_scm_ci_workflow_integration.obs_workflows.steps.configure_repositories_architectures_for_a_project).
 
 ## More to Come!
 
