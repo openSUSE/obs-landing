@@ -19,14 +19,26 @@ Read our recent blog posts to stay up to date on this matter.
 # How to Join the Beta Program?
 
 Joining the beta program is really easy!
-Be sure to be logged in, then go on [your profile page](https://build.opensuse.org/home) and click on the _Public beta program_ switch under your avatar.
+Be sure to be logged in, then go on [your profile page](https://build.opensuse.org/home) and click on the _Manage Beta Features_ link under _Actions on this page_.
+On mobile, the link is under the _Actions_ menu.
 
 <figure>
-  <img src="/images/posts/the-beta-program/public-beta-program.png" alt="Profile page with the 'Public beta program' switch" width="1000px">
-  <figcaption>Profile page with the 'Public beta program' switch</figcaption>
+  <img src="/images/posts/the-beta-program/manage-beta-features-link.png" alt="Profile page with the 'Manage Beta Features' link" width="1000px">
+  <figcaption>Profile page with the <i>Manage Beta Features</i> link</figcaption>
 </figure>
 
-And of course, you can leave the beta program at any time by clicking again on the _Public beta program_ switch.
+On the _Manage Beta Features_ page, join the beta program by clicking on the _Beta program_ switch.
+
+<figure>
+  <img src="/images/posts/the-beta-program/manage-beta-features-page.png" alt="'Manage Beta Features' page with the 'Beta program' switch" width="1000px">
+  <figcaption><i>Manage Beta Features</i> page with the <i>Beta program</i> switch</figcaption>
+</figure>
+
+That's it! You're now part of the beta program. By default, all beta features are enabled as soon as you join the beta program.
+You can disable a specific beta feature if you want, simply click on its switch.
+Enabling back a beta feature is always possible if you change your mind later.
+
+And of course, you can leave the beta program at any time by clicking again on the _Beta program_ switch on the _Manage Beta Features_ page.
 
 # How to Provide Feedback?
 
