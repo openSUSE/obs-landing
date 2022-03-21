@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Administration | Administrator Guide</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.2.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.81.0 (based on DocBook XSL Stylesheets snapshot) - chunked" /><meta name="book-title" content="Administrator Guide" /><meta name="chapter-title" content="Chapter 4. Administration" /><meta name="description" content="obs_admin is a command-line tool used on the back-end server(s) to manage running services, submit maintenance tasks, and debug problems. It should be only used by experienced admins." /><link rel="home" href="index.html" title="OBS Documentation" /><link rel="up" href="book.obs-admin.html" title="Administrator Guide" /><link rel="prev" href="obs.cha.security_concepts.html" title="Chapter 3. Security Concepts" /><link rel="next" href="obs.cha.troubleshooting.html" title="Chapter 5. Troubleshooting" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Administration | Administrator Guide</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 2.4.0 using SUSE XSL Stylesheets 2.0.15 (based on DocBook XSL Stylesheets snapshot) - chunked" /><meta name="book-title" content="Administrator Guide" /><meta name="chapter-title" content="Chapter 4. Administration" /><link rel="home" href="index.html" title="OBS Documentation" /><link rel="up" href="book.obs-admin.html" title="Administrator Guide" /><link rel="prev" href="obs.cha.security_concepts.html" title="Chapter 3. Security Concepts" /><link rel="next" href="obs.cha.troubleshooting.html" title="Chapter 5. Troubleshooting" />
+
 <script type="text/javascript">
 
-if ( window.location.protocol.toLowerCase() != 'file:' ) {
-  document.write('<link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css"></link>');
+var protocol = window.location.protocol.toLowerCase();
+if ( protocol != 'file:' ) {
+  var agent = navigator.userAgent.toLowerCase();
+  var wanted = ( protocol == 'https:') ? 'https' : 'http';
+  var file = 'fonts.css';
+  document.write('<link rel="stylesheet" type="text/css" href="' + wanted + '://static.opensuse.org/fonts/'+ file +'"></link>');
 }
 else {
-  document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
+   document.write('<link rel="stylesheet" type="text/css" href="static/css/fonts-onlylocal.css"></link>');
 }
 
-</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+</script><noscript><link rel="stylesheet" type="text/css" href="http://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
 
 $(document).ready(function() {
   $('.verbatim-wrap.highlight').each(function(i, block) {
@@ -20,12 +25,12 @@ hljs.configure({
   useBR: false
 });
 
-</script></head><body class="offline js-off"><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Administrator Guide"><span class="book-icon">Administrator Guide</span></a><span> › </span><a class="crumb" href="obs.cha.administration.html">Administration</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Administrator Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="bk03pr01.html"><span class="number"> </span><span class="name">About this Guide</span></a></li><li class="inactive"><a href="obs.cha.installation_and_configuration.html"><span class="number">1 </span><span class="name">Installation and Configuration</span></a></li><li class="inactive"><a href="obs.cha.overview_filesystem.html"><span class="number">2 </span><span class="name">File System Overview</span></a></li><li class="inactive"><a href="obs.cha.security_concepts.html"><span class="number">3 </span><span class="name">Security Concepts</span></a></li><li class="inactive"><a href="obs.cha.administration.html"><span class="number">4 </span><span class="name">Administration</span></a></li><li class="inactive"><a href="obs.cha.troubleshooting.html"><span class="number">5 </span><span class="name">Troubleshooting</span></a></li><li class="inactive"><a href="cha.obs.best-practices.localsetup.html"><span class="number">6 </span><span class="name">Setting Up a Local OBS Instance</span></a></li><li class="inactive"><a href="bk03apa.html"><span class="number">A </span><span class="name">GNU Licenses</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 3. Security Concepts" href="obs.cha.security_concepts.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 5. Troubleshooting" href="obs.cha.troubleshooting.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Administrator Guide"><span class="book-icon">Administrator Guide</span></a><span> › </span><a class="crumb" href="obs.cha.administration.html">Administration</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 3. Security Concepts" href="obs.cha.security_concepts.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 5. Troubleshooting" href="obs.cha.troubleshooting.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class=""><div class="documentation"><div class="chapter " id="obs.cha.administration"><div class="titlepage"><div><div><h1 class="title"><span class="number">4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Administration</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#">#</a></h1></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="obs.cha.administration.html#_tools"><span class="number">4.1 </span><span class="name">Tools</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_managing_build_targets"><span class="number">4.2 </span><span class="name">Managing Build Targets</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#sec.obs.source_service"><span class="number">4.3 </span><span class="name">Source Services</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#source_publish"><span class="number">4.4 </span><span class="name">Source Publisher</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_dispatch_priorities"><span class="number">4.5 </span><span class="name">Dispatch Priorities</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_publisher_hooks"><span class="number">4.6 </span><span class="name">Publisher Hooks</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_unpublisher_hooks"><span class="number">4.7 </span><span class="name">Unpublisher Hooks</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_user_and_group_management"><span class="number">4.8 </span><span class="name">Managing Users and Groups</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_message_bus"><span class="number">4.9 </span><span class="name">Message Bus for Event Notifications</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_backup"><span class="number">4.10 </span><span class="name">Backup</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_restore"><span class="number">4.11 </span><span class="name">Restore</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_handle_data_corruption"><span class="number">4.12 </span><span class="name">Repair Data Corruption</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_obs_spider_identification"><span class="number">4.13 </span><span class="name">Spider Identification</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_worker_in_kubernetes_"><span class="number">4.14 </span><span class="name">Worker in Kubernetes</span></a></span></dt></dl></div></div>
+</script></head><body class="offline js-off"><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg"><div id="_header"><div id="_logo"><img src="static/images/logo.png" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Administrator Guide"><span class="book-icon">Administrator Guide</span></a><span> › </span><a class="crumb" href="obs.cha.administration.html">Administration</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.htmlindex.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Administrator Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="bk03pr01.html"><span class="number"> </span><span class="name">About this Guide</span></a></li><li class="inactive"><a href="obs.cha.installation_and_configuration.html"><span class="number">1 </span><span class="name">Installation and Configuration</span></a></li><li class="inactive"><a href="obs.cha.overview_filesystem.html"><span class="number">2 </span><span class="name">File System Overview</span></a></li><li class="inactive"><a href="obs.cha.security_concepts.html"><span class="number">3 </span><span class="name">Security Concepts</span></a></li><li class="inactive"><a href="obs.cha.administration.html"><span class="number">4 </span><span class="name">Administration</span></a></li><li class="inactive"><a href="obs.cha.troubleshooting.html"><span class="number">5 </span><span class="name">Troubleshooting</span></a></li><li class="inactive"><a href="cha.obs.best-practices.localsetup.html"><span class="number">6 </span><span class="name">Setting Up a Local OBS Instance</span></a></li><li class="inactive"><a href="bk03apa.html"><span class="number">A </span><span class="name">GNU Licenses</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 3. Security Concepts" href="obs.cha.security_concepts.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 5. Troubleshooting" href="obs.cha.troubleshooting.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Administrator Guide"><span class="book-icon">Administrator Guide</span></a><span> › </span><a class="crumb" href="obs.cha.administration.html">Administration</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 3. Security Concepts" href="obs.cha.security_concepts.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 5. Troubleshooting" href="obs.cha.troubleshooting.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class=""><div class="documentation"><div class="chapter " id="obs.cha.administration"><div class="titlepage"><div><div><h1 class="title"><span class="number">4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Administration</span> </h1></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="obs.cha.administration.html#_tools"><span class="number">4.1 </span><span class="name">Tools</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_managing_build_targets"><span class="number">4.2 </span><span class="name">Managing Build Targets</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#sec.obs.source_service"><span class="number">4.3 </span><span class="name">Source Services</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#source_publish"><span class="number">4.4 </span><span class="name">Source Publisher</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_dispatch_priorities"><span class="number">4.5 </span><span class="name">Dispatch Priorities</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_publisher_hooks"><span class="number">4.6 </span><span class="name">Publisher Hooks</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_unpublisher_hooks"><span class="number">4.7 </span><span class="name">Unpublisher Hooks</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_user_and_group_management"><span class="number">4.8 </span><span class="name">Managing Users and Groups</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_message_bus"><span class="number">4.9 </span><span class="name">Message Bus for Event Notifications</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_backup"><span class="number">4.10 </span><span class="name">Backup</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_restore"><span class="number">4.11 </span><span class="name">Restore</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_handle_data_corruption"><span class="number">4.12 </span><span class="name">Repair Data Corruption</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_obs_spider_identification"><span class="number">4.13 </span><span class="name">Spider Identification</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.administration.html#_worker_in_kubernetes_"><span class="number">4.14 </span><span class="name">Worker in Kubernetes</span></a></span></dt></dl></div></div>
  
  
- <div class="sect1 " id="_tools"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Tools</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_tools">#</a></h2></div></div></div>
+ <div class="sect1 " id="_tools"><div class="titlepage"><div><div><h2 class="title" id="_tools"><span class="number">4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Tools</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_tools">#</a></h2></div></div></div>
  
- <div class="sect2 " id="_obs_admin"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><code class="command">obs_admin</code></span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_obs_admin">#</a></h3></div></div></div>
+ <div class="sect2 " id="_obs_admin"><div class="titlepage"><div><div><h3 class="title" id="_obs_admin"><span class="number">4.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><code class="command">obs_admin</code></span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_obs_admin">#</a></h3></div></div></div>
   
   <p>obs_admin is a command-line tool used on the back-end server(s) to manage
 running services, submit maintenance tasks, and debug problems.
@@ -162,7 +167,7 @@ Note: the --update-*-db calls are usually only needed when corrupt data has been
  --show-delta-store &lt;file&gt;
    Show delta store statistics</pre></div>
  </div>
- <div class="sect2 " id="_osc"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><code class="command">osc</code></span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_osc">#</a></h3></div></div></div>
+ <div class="sect2 " id="_osc"><div class="titlepage"><div><div><h3 class="title" id="_osc"><span class="number">4.1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><code class="command">osc</code></span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_osc">#</a></h3></div></div></div>
   
   <p>The <span class="strong"><strong><span class="emphasis"><em>osc</em></span></strong></span> command-line client is mainly used by developers and packagers. But
 for some tasks, admin people also need this tool. It too has builtin help:
@@ -191,7 +196,7 @@ meta  - to create or update projects or package data
 API - to read and write online configuration data
 </p>
    </li></ul></div>
-  <div class="sect3 " id="_osc_meta_subcommand"><div class="titlepage"><div><div><h4 class="title"><span class="number">4.1.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><code class="command">osc meta</code> Subcommand</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_osc_meta_subcommand">#</a></h4></div></div></div>
+  <div class="sect3 " id="_osc_meta_subcommand"><div class="titlepage"><div><div><h4 class="title" id="_osc_meta_subcommand"><span class="number">4.1.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><code class="command">osc meta</code> Subcommand</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_osc_meta_subcommand">#</a></h4></div></div></div>
    
 <div class="verbatim-wrap"><pre class="screen">meta: Show meta information, or edit it
 
@@ -268,7 +273,7 @@ Options:
     -a ATTRIBUTE, --attribute=ATTRIBUTE
                         affect only a given attribute</pre></div>
   </div>
-  <div class="sect3 " id="_osc_api_subcommand"><div class="titlepage"><div><div><h4 class="title"><span class="number">4.1.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><code class="command">osc api</code> Subcommand</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_osc_api_subcommand">#</a></h4></div></div></div>
+  <div class="sect3 " id="_osc_api_subcommand"><div class="titlepage"><div><div><h4 class="title" id="_osc_api_subcommand"><span class="number">4.1.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><code class="command">osc api</code> Subcommand</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_osc_api_subcommand">#</a></h4></div></div></div>
    
 <div class="verbatim-wrap"><pre class="screen">api: Issue an arbitrary request to the API
 
@@ -317,9 +322,9 @@ Options:
   </div>
  </div>
 </div>
- <div class="sect1 " id="_managing_build_targets"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Managing Build Targets</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_managing_build_targets">#</a></h2></div></div></div>
+ <div class="sect1 " id="_managing_build_targets"><div class="titlepage"><div><div><h2 class="title" id="_managing_build_targets"><span class="number">4.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Managing Build Targets</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_managing_build_targets">#</a></h2></div></div></div>
  
- <div class="sect2 " id="_interconnect"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Interconnect</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_interconnect">#</a></h3></div></div></div>
+ <div class="sect2 " id="_interconnect"><div class="titlepage"><div><div><h3 class="title" id="_interconnect"><span class="number">4.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Interconnect</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_interconnect">#</a></h3></div></div></div>
   
   <p>Using another Open Build Service as source for build targets is the
    easiest way to start. The advantage is, that you save local resources and
@@ -347,13 +352,13 @@ This project refers to projects hosted on the openSUSE Build Service
   <p>Sending this via osc to the server:</p>
   <div class="verbatim-wrap"><pre class="screen">osc meta prj -m "add openSUSE.org remote" -F /tmp/openSUSE.org.prj</pre></div>
  </div>
- <div class="sect2 " id="_importing_distributions"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Importing Distributions</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_importing_distributions">#</a></h3></div></div></div>
+ <div class="sect2 " id="_importing_distributions"><div class="titlepage"><div><div><h3 class="title" id="_importing_distributions"><span class="number">4.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Importing Distributions</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_importing_distributions">#</a></h3></div></div></div>
  
  
   <p>FIXME: describe how to do it using DoD</p>
  </div>
 </div>
- <div class="sect1 " id="sec.obs.source_service"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Source Services</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#sec.obs.source_service">#</a></h2></div></div></div>
+ <div class="sect1 " id="sec.obs.source_service"><div class="titlepage"><div><div><h2 class="title" id="sec.obs.source_service"><span class="number">4.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Source Services</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#sec.obs.source_service">#</a></h2></div></div></div>
  
  <p> Source Services are tools to validate, generate or modify sources in a
   trustable way. They are designed as smallest possible tools and can be
@@ -390,7 +395,7 @@ This project refers to projects hosted on the openSUSE Build Service
   </li><li class="listitem ">
    <p> services can be defined per package or project wide. </p>
   </li></ul></div>
- <div class="sect2 " id="id-1.6.8.5.5"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Using Services for Validation</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id-1.6.8.5.5">#</a></h3></div></div></div>
+ <div class="sect2 " id="id-1.6.8.5.5"><div class="titlepage"><div><div><h3 class="title" id="id-1.6.8.5.5"><span class="number">4.3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Using Services for Validation</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id-1.6.8.5.5">#</a></h3></div></div></div>
   
   <p> Source Services may be used to validate sources. This can happen per
    package, which is useful when the packager wants to validate that downloaded
@@ -405,17 +410,17 @@ This project refers to projects hosted on the openSUSE Build Service
    In this case the newly generated file will be used instead of the committed
    one during build. </p>
  </div>
- <div class="sect2 " id="id-1.6.8.5.6"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Different Modes When Using Services</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id-1.6.8.5.6">#</a></h3></div></div></div>
+ <div class="sect2 " id="id-1.6.8.5.6"><div class="titlepage"><div><div><h3 class="title" id="id-1.6.8.5.6"><span class="number">4.3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Different Modes When Using Services</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id-1.6.8.5.6">#</a></h3></div></div></div>
   
   <p> Each service can be used in a special mode defining when it should run
    and how to use the result. This can be done per package or globally for an
    entire project. </p>
-  <div class="sect3 " id="id-1.6.8.5.6.3"><div class="titlepage"><div><div><h4 class="title"><span class="number">4.3.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Default Mode</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id-1.6.8.5.6.3">#</a></h4></div></div></div>
+  <div class="sect3 " id="id-1.6.8.5.6.3"><div class="titlepage"><div><div><h4 class="title" id="id-1.6.8.5.6.3"><span class="number">4.3.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Default Mode</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id-1.6.8.5.6.3">#</a></h4></div></div></div>
    
    <p> The default mode of a service is to always run after each commit on
     the server side and locally before every local build. </p>
   </div>
-  <div class="sect3 " id="id-1.6.8.5.6.4"><div class="titlepage"><div><div><h4 class="title"><span class="number">4.3.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><code class="literal">trylocal</code> Mode</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id-1.6.8.5.6.4">#</a></h4></div></div></div>
+  <div class="sect3 " id="id-1.6.8.5.6.4"><div class="titlepage"><div><div><h4 class="title" id="id-1.6.8.5.6.4"><span class="number">4.3.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><code class="literal">trylocal</code> Mode</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id-1.6.8.5.6.4">#</a></h4></div></div></div>
    
    <p> The trylocal mode is running the service locally when using current
     osc versions. The result gets committed as standard files and not named
@@ -425,20 +430,20 @@ This project refers to projects hosted on the openSUSE Build Service
     the Web UI or API was used), they are generated and added on the
     server. </p>
   </div>
-  <div class="sect3 " id="id-1.6.8.5.6.5"><div class="titlepage"><div><div><h4 class="title"><span class="number">4.3.2.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><code class="literal">localonly</code> Mode</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id-1.6.8.5.6.5">#</a></h4></div></div></div>
+  <div class="sect3 " id="id-1.6.8.5.6.5"><div class="titlepage"><div><div><h4 class="title" id="id-1.6.8.5.6.5"><span class="number">4.3.2.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><code class="literal">localonly</code> Mode</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id-1.6.8.5.6.5">#</a></h4></div></div></div>
    
    <p> The localonly mode is running the service locally when using current
     osc versions. The result gets committed as standard files and not named
     with _service: prefix. The service is never running on the server side. It
     is also not possible to trigger it manually. </p>
   </div>
-  <div class="sect3 " id="id-1.6.8.5.6.6"><div class="titlepage"><div><div><h4 class="title"><span class="number">4.3.2.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><code class="literal">serveronly</code> Mode</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id-1.6.8.5.6.6">#</a></h4></div></div></div>
+  <div class="sect3 " id="id-1.6.8.5.6.6"><div class="titlepage"><div><div><h4 class="title" id="id-1.6.8.5.6.6"><span class="number">4.3.2.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><code class="literal">serveronly</code> Mode</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id-1.6.8.5.6.6">#</a></h4></div></div></div>
    
    <p> The serviceonly mode is running the service on the server only. This
     can be useful, when the service is not available or can not work on
     developer workstations. </p>
   </div>
-  <div class="sect3 " id="id-1.6.8.5.6.7"><div class="titlepage"><div><div><h4 class="title"><span class="number">4.3.2.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><code class="literal">buildtime</code> Mode</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id-1.6.8.5.6.7">#</a></h4></div></div></div>
+  <div class="sect3 " id="id-1.6.8.5.6.7"><div class="titlepage"><div><div><h4 class="title" id="id-1.6.8.5.6.7"><span class="number">4.3.2.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><code class="literal">buildtime</code> Mode</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id-1.6.8.5.6.7">#</a></h4></div></div></div>
    
    <p> The service is running inside of the build job, for local and server
     side builds. A side effect is that the service package is becoming a build
@@ -448,7 +453,7 @@ This project refers to projects hosted on the openSUSE Build Service
     access is not be available when the workers are running in a secure mode.
    </p>
   </div>
-  <div class="sect3 " id="id-1.6.8.5.6.8"><div class="titlepage"><div><div><h4 class="title"><span class="number">4.3.2.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><code class="literal">disabled</code> Mode</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id-1.6.8.5.6.8">#</a></h4></div></div></div>
+  <div class="sect3 " id="id-1.6.8.5.6.8"><div class="titlepage"><div><div><h4 class="title" id="id-1.6.8.5.6.8"><span class="number">4.3.2.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><code class="literal">disabled</code> Mode</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id-1.6.8.5.6.8">#</a></h4></div></div></div>
    
    <p> The disabled mode is neither running the service locally or on the
     server side. It can be used to temporarily disable the service but keeping
@@ -458,7 +463,7 @@ This project refers to projects hosted on the openSUSE Build Service
     get committed as standard files again. </p>
   </div>
  </div>
- <div class="sect2 " id="id-1.6.8.5.7"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.3.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Storage of Source Service Definitions</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id-1.6.8.5.7">#</a></h3></div></div></div>
+ <div class="sect2 " id="id-1.6.8.5.7"><div class="titlepage"><div><div><h3 class="title" id="id-1.6.8.5.7"><span class="number">4.3.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Storage of Source Service Definitions</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id-1.6.8.5.7">#</a></h3></div></div></div>
   
   <p> The called services are always defined in a
     <code class="command">_service</code> file. It is either part of the package sources
@@ -487,7 +492,7 @@ This project refers to projects hosted on the openSUSE Build Service
    which will try to upgrade the package to a newer source version available
    online. </p>
  </div>
- <div class="sect2 " id="id-1.6.8.5.8"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.3.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Dropping a Source Service Again</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id-1.6.8.5.8">#</a></h3></div></div></div>
+ <div class="sect2 " id="id-1.6.8.5.8"><div class="titlepage"><div><div><h3 class="title" id="id-1.6.8.5.8"><span class="number">4.3.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Dropping a Source Service Again</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id-1.6.8.5.8">#</a></h3></div></div></div>
   
   <p> Sometimes it is useful to continue working on generated files
    manually. In this situation the _service file needs to be dropped, but all
@@ -496,7 +501,7 @@ This project refers to projects hosted on the openSUSE Build Service
     <code class="command">osc service merge</code>. </p>
  </div>
 </div>
- <div class="sect1 " id="source_publish"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Source Publisher</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#source_publish">#</a></h2></div></div></div>
+ <div class="sect1 " id="source_publish"><div class="titlepage"><div><div><h2 class="title" id="source_publish"><span class="number">4.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Source Publisher</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#source_publish">#</a></h2></div></div></div>
  
  <p>The job of the source publish service is to publish all sources for 
 directly before published binaries. This will include the sources of repackaged
@@ -504,7 +509,7 @@ binaries. For example, the sources of RPMs which are used inside of product,
 appliance or container images. A prerequisite for this is that OBS has enabled
 content tracking for the used projects.</p>
 
- <div class="sect2 " id="source_publish_configuration"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuring Source Publisher</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#source_publish_configuration">#</a></h3></div></div></div>
+ <div class="sect2 " id="source_publish_configuration"><div class="titlepage"><div><div><h3 class="title" id="source_publish_configuration"><span class="number">4.4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuring Source Publisher</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#source_publish_configuration">#</a></h3></div></div></div>
   
   <p>The source publishing can be configured via the file
     <span class="emphasis"><em>/usr/lib/obs/server/BSConfig.pm</em></span>, where it can be 
@@ -516,7 +521,7 @@ content tracking for the used projects.</p>
   <div class="verbatim-wrap highlight perl"><pre class="screen">our $sourcepublish_filter = [ "openSUSE:.*", "SUSE:.*" ];</pre></div>
  </div>
 
- <div class="sect2 " id="source_publish_considerations"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.4.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Considerations</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#source_publish_considerations">#</a></h3></div></div></div>
+ <div class="sect2 " id="source_publish_considerations"><div class="titlepage"><div><div><h3 class="title" id="source_publish_considerations"><span class="number">4.4.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Considerations</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#source_publish_considerations">#</a></h3></div></div></div>
   
   <p>The source publishing service is publishing the sources as they are hosted in Open Build Service. This
         means these are the unprocessed sources and the content is not identical to the
@@ -530,7 +535,7 @@ content tracking for the used projects.</p>
   <p>Open Build Service will care for de-duplication on the rsync server. This must get implemented there.</p>
  </div>
 </div>
- <div class="sect1 " id="_dispatch_priorities"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Dispatch Priorities</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_dispatch_priorities">#</a></h2></div></div></div>
+ <div class="sect1 " id="_dispatch_priorities"><div class="titlepage"><div><div><h2 class="title" id="_dispatch_priorities"><span class="number">4.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Dispatch Priorities</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_dispatch_priorities">#</a></h2></div></div></div>
  
  <p>The dispatcher takes a job from the scheduler and assign it to a free
   worker. It tries to share the available build time fair between all the
@@ -543,7 +548,7 @@ content tracking for the used projects.</p>
   repositories via the <span class="strong"><strong><span class="emphasis"><em>/build/_dispatchprios</em></span></strong></span><span class="strong"><strong>API</strong></span> call or via the <span class="strong"><strong><span class="emphasis"><em>dispatch_adjust</em></span></strong></span> array in the
    <span class="emphasis"><em>BSConfig.pm</em></span><a class="xref" href="obs.cha.overview_filesystem.html#_bsconfig_pm" title="2.1.2.2. BSConfig.pm">Section 2.1.2.2, “BSConfig.pm”</a> configuration
   file.</p>
- <div class="sect2 " id="_build__dispatchprios_api_call"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.5.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">The <code class="literal">/build/_dispatchprios</code> API Call</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_build__dispatchprios_api_call">#</a></h3></div></div></div>
+ <div class="sect2 " id="_build__dispatchprios_api_call"><div class="titlepage"><div><div><h3 class="title" id="_build__dispatchprios_api_call"><span class="number">4.5.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">The <code class="literal">/build/_dispatchprios</code> API Call</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_build__dispatchprios_api_call">#</a></h3></div></div></div>
   
   <p>The <span class="emphasis"><em>/build/_dispatchprios</em></span> API call allows an
    Admin to set a priority for defined projects and repositories using the HTML
@@ -668,7 +673,7 @@ content tracking for the used projects.</p>
       </td></tr></tbody></table>
   </div></div>
  </div>
- <div class="sect2 " id="_dispatch_adjust_array"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.5.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><code class="literal">dispatch_adjust</code> Array</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_dispatch_adjust_array">#</a></h3></div></div></div>
+ <div class="sect2 " id="_dispatch_adjust_array"><div class="titlepage"><div><div><h3 class="title" id="_dispatch_adjust_array"><span class="number">4.5.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><code class="literal">dispatch_adjust</code> Array</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_dispatch_adjust_array">#</a></h3></div></div></div>
   
   <p>With the <span class="strong"><strong><span class="emphasis"><em>dispatch_adjust</em></span></strong></span> array in the
     <span class="emphasis"><em>BSConfig.pm</em></span> file the dispatch priorities of project
@@ -714,7 +719,7 @@ Examples:
   </div>
  </div>
 </div>
- <div class="sect1 " id="_publisher_hooks"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Publisher Hooks</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_publisher_hooks">#</a></h2></div></div></div>
+ <div class="sect1 " id="_publisher_hooks"><div class="titlepage"><div><div><h2 class="title" id="_publisher_hooks"><span class="number">4.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Publisher Hooks</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_publisher_hooks">#</a></h2></div></div></div>
  
  <p>The job of the publisher service is to publish the built packages
   and/or images by creating repositories that are made available through a web
@@ -723,7 +728,7 @@ Examples:
   to different servers or do anything with them that comes to mind. These
   scripts are called <span class="strong"><strong><span class="emphasis"><em>publisher
     hooks</em></span></strong></span>.</p>
- <div class="sect2 " id="_publisher_hooks_configuration"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.6.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuring Publisher Hooks</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_publisher_hooks_configuration">#</a></h3></div></div></div>
+ <div class="sect2 " id="_publisher_hooks_configuration"><div class="titlepage"><div><div><h3 class="title" id="_publisher_hooks_configuration"><span class="number">4.6.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuring Publisher Hooks</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_publisher_hooks_configuration">#</a></h3></div></div></div>
   
   <p>Hooks are configured via the configuration file
     <span class="emphasis"><em>/usr/lib/obs/server/BSConfig.pm</em></span>, where one script per
@@ -801,9 +806,9 @@ our $publishedhook = {
    script.</p>
   <p>The scripts are called without a timeout.</p>
  </div>
- <div class="sect2 " id="_example_publisher_scripts"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.6.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Example Publisher Scripts</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_example_publisher_scripts">#</a></h3></div></div></div>
+ <div class="sect2 " id="_example_publisher_scripts"><div class="titlepage"><div><div><h3 class="title" id="_example_publisher_scripts"><span class="number">4.6.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Example Publisher Scripts</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_example_publisher_scripts">#</a></h3></div></div></div>
   
-  <div class="sect3 " id="_simple_publisher_hook"><div class="titlepage"><div><div><h4 class="title"><span class="number">4.6.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Simple Publisher Hook</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_simple_publisher_hook">#</a></h4></div></div></div>
+  <div class="sect3 " id="_simple_publisher_hook"><div class="titlepage"><div><div><h4 class="title" id="_simple_publisher_hook"><span class="number">4.6.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Simple Publisher Hook</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_simple_publisher_hook">#</a></h4></div></div></div>
    
    <p>The following example script ignores the packages that have changed
     and copies all RPMs from the repository directory to a target
@@ -822,7 +827,7 @@ rsync -a --log-file=$LOGFILE $PATH_TO_REPO/ $DST_REPO_DIR/$PRJ_PATH/</pre></div>
    <div class="verbatim-wrap"><pre class="screen">$ sudo -u obsrun /usr/local/bin/publish-hook.sh Product/SLES11-SP1 \
     /srv/obs/repos/Product/SLE11-SP1</pre></div>
   </div>
-  <div class="sect3 " id="_advanced_publisher_hook"><div class="titlepage"><div><div><h4 class="title"><span class="number">4.6.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Advanced Publisher Hook</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_advanced_publisher_hook">#</a></h4></div></div></div>
+  <div class="sect3 " id="_advanced_publisher_hook"><div class="titlepage"><div><div><h4 class="title" id="_advanced_publisher_hook"><span class="number">4.6.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Advanced Publisher Hook</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_advanced_publisher_hook">#</a></h4></div></div></div>
    
    <p>The following example script reads the destination path from a
     parameter that is configured with the hook script:</p>
@@ -869,7 +874,7 @@ createrepo $DST_REPO_DIR/$PRJ_PATH/.</pre></div>
   </div>
  </div>
 </div>
- <div class="sect1 " id="_unpublisher_hooks"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Unpublisher Hooks</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_unpublisher_hooks">#</a></h2></div></div></div>
+ <div class="sect1 " id="_unpublisher_hooks"><div class="titlepage"><div><div><h2 class="title" id="_unpublisher_hooks"><span class="number">4.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Unpublisher Hooks</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_unpublisher_hooks">#</a></h2></div></div></div>
  
  <p>The job of the publisher service is to publish the built packages
   and/or images by creating repositories that are made available through a web
@@ -877,7 +882,7 @@ createrepo $DST_REPO_DIR/$PRJ_PATH/.</pre></div>
  <p>The OBS Publisher can be configured to use custom scripts to be
   called whenever already published packages get removed. These scripts are
   called <span class="strong"><strong>unpublisher hooks</strong></span>. <span class="strong"><strong>Unpublisher hooks</strong></span> are run before the <span class="strong"><strong>publisher hooks</strong></span>.</p>
- <div class="sect2 " id="_unpublisher_hooks_configuration"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.7.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuring Unpublisher Hooks</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_unpublisher_hooks_configuration">#</a></h3></div></div></div>
+ <div class="sect2 " id="_unpublisher_hooks_configuration"><div class="titlepage"><div><div><h3 class="title" id="_unpublisher_hooks_configuration"><span class="number">4.7.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuring Unpublisher Hooks</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_unpublisher_hooks_configuration">#</a></h3></div></div></div>
   
   <p>Hooks are configured via the configuration file
     <span class="emphasis"><em>/usr/lib/obs/server/BSConfig.pm</em></span>, where one script per
@@ -963,9 +968,9 @@ our $unpublishedhook = {
      hook</em></span>.</p>
   </div>
  </div>
- <div class="sect2 " id="_example_unpublisher_scripts"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.7.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Example Unpublisher Scripts</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_example_unpublisher_scripts">#</a></h3></div></div></div>
+ <div class="sect2 " id="_example_unpublisher_scripts"><div class="titlepage"><div><div><h3 class="title" id="_example_unpublisher_scripts"><span class="number">4.7.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Example Unpublisher Scripts</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_example_unpublisher_scripts">#</a></h3></div></div></div>
   
-  <div class="sect3 " id="_simple_unpublisher_hook"><div class="titlepage"><div><div><h4 class="title"><span class="number">4.7.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Simple Unpublisher Hook</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_simple_unpublisher_hook">#</a></h4></div></div></div>
+  <div class="sect3 " id="_simple_unpublisher_hook"><div class="titlepage"><div><div><h4 class="title" id="_simple_unpublisher_hook"><span class="number">4.7.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Simple Unpublisher Hook</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_simple_unpublisher_hook">#</a></h4></div></div></div>
    
    <p>The following example script deletes all packages from the target
     directory that have been removed from the repository.</p>
@@ -993,7 +998,7 @@ done</pre></div>
     x86_64/icinga-1.13.3-1.3.x86_64.rpm           \
     x86_64/icinga-devel-1.13.3-1.3.x86_64.rpm</pre></div>
   </div>
-  <div class="sect3 " id="_advanced_unpublisher_hook"><div class="titlepage"><div><div><h4 class="title"><span class="number">4.7.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Advanced Unpublisher Hook</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_advanced_unpublisher_hook">#</a></h4></div></div></div>
+  <div class="sect3 " id="_advanced_unpublisher_hook"><div class="titlepage"><div><div><h4 class="title" id="_advanced_unpublisher_hook"><span class="number">4.7.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Advanced Unpublisher Hook</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_advanced_unpublisher_hook">#</a></h4></div></div></div>
    
    <p>The following example script reads the destination path from a
     parameter that is configured via the hook script:</p>
@@ -1023,7 +1028,7 @@ done</pre></div>
   </div>
  </div>
 </div>
- <div class="sect1 " id="_user_and_group_management"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Managing Users and Groups</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_user_and_group_management">#</a></h2></div></div></div>
+ <div class="sect1 " id="_user_and_group_management"><div class="titlepage"><div><div><h2 class="title" id="_user_and_group_management"><span class="number">4.8 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Managing Users and Groups</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_user_and_group_management">#</a></h2></div></div></div>
  
  <p>The OBS has an integrated user and group management with a role based
   access rights model. In every OBS instance, at least one user need to exist
@@ -1031,7 +1036,7 @@ done</pre></div>
   and instead of adding a list of users to a project/package role user can
   be added to a group and the group will be added to a project or package
   role.</p>
- <div class="sect2 " id="_user_and_group_roles"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.8.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">User and Group Roles</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_user_and_group_roles">#</a></h3></div></div></div>
+ <div class="sect2 " id="_user_and_group_roles"><div class="titlepage"><div><div><h3 class="title" id="_user_and_group_roles"><span class="number">4.8.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">User and Group Roles</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_user_and_group_roles">#</a></h3></div></div></div>
   
   <p>The OBS role model has one global role: Admin, which can be granted
    to users. An OBS admin has access to all projects and packages via the API
@@ -1075,7 +1080,7 @@ done</pre></div>
       </td></tr></tbody></table>
   </div></div>
  </div>
- <div class="sect2 " id="_standalone_user_and_group_database"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.8.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Standalone User and Group Database</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_standalone_user_and_group_database">#</a></h3></div></div></div>
+ <div class="sect2 " id="_standalone_user_and_group_database"><div class="titlepage"><div><div><h3 class="title" id="_standalone_user_and_group_database"><span class="number">4.8.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Standalone User and Group Database</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_standalone_user_and_group_database">#</a></h3></div></div></div>
   
   <p>OBS provides its own user database which can also store a password.
    The authentication to the API happens via HTTP BASIC AUTH. See the API
@@ -1086,7 +1091,7 @@ done</pre></div>
    confirmation is needed after registration before the user may
    login.</p>
  </div>
- <div class="sect2 " id="_users_and_group_maintainers"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.8.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Users and Group Maintainers</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_users_and_group_maintainers">#</a></h3></div></div></div>
+ <div class="sect2 " id="_users_and_group_maintainers"><div class="titlepage"><div><div><h3 class="title" id="_users_and_group_maintainers"><span class="number">4.8.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Users and Group Maintainers</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_users_and_group_maintainers">#</a></h3></div></div></div>
   
   <p>
     Administrators can create groups, add users to them, remove users from them and
@@ -1095,7 +1100,7 @@ done</pre></div>
   </p>
   <div class="verbatim-wrap"><pre class="screen"><code class="command">osc api -d "&lt;group&gt;&lt;title&gt;&lt;group-title&gt;&lt;/title&gt;&lt;email&gt;&lt;group-email&gt;&lt;/email&gt;&lt;maintainer userid="&lt;user-name&gt;"/&gt;&lt;person&gt;&lt;person userid="&lt;user_name&gt;"/&gt;&lt;/person&gt;&lt;/group&gt;' -X PUT "/group/&lt;group-title&gt;" </code></pre></div>
  </div>
- <div class="sect2 " id="_gravatar_for_groups"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.8.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Gravatar for Groups</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_gravatar_for_groups">#</a></h3></div></div></div>
+ <div class="sect2 " id="_gravatar_for_groups"><div class="titlepage"><div><div><h3 class="title" id="_gravatar_for_groups"><span class="number">4.8.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Gravatar for Groups</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_gravatar_for_groups">#</a></h3></div></div></div>
   
   <p>In certain cases, it might be desirable to show a Gravatar for a group,
     similar to the users. In order to show a Gravatar, an email address is needed.
@@ -1104,7 +1109,7 @@ done</pre></div>
   </p>
   <div class="verbatim-wrap"><pre class="screen"><code class="command">osc api -X POST "/group/&lt;group-title&gt;?cmd=set_email&amp;email=&lt;groups-email-address&gt;"</code></pre></div>
  </div>
- <div class="sect2 " id="_proxy_mode"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.8.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Proxy Mode</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_proxy_mode">#</a></h3></div></div></div>
+ <div class="sect2 " id="_proxy_mode"><div class="titlepage"><div><div><h3 class="title" id="_proxy_mode"><span class="number">4.8.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Proxy Mode</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_proxy_mode">#</a></h3></div></div></div>
   
   <p>The proxy mode can be used for specially secured instances, where
    the OBS web server shall not get connected to the network directly. There
@@ -1123,7 +1128,7 @@ done</pre></div>
   </div>
   <p>With the proxy mode the user still need to be registered in the OBS
    and all OBS roles and user properties are managed inside the OBS.</p>
-  <div class="sect3 " id="_obs_proxy_mode_configuration"><div class="titlepage"><div><div><h4 class="title"><span class="number">4.8.5.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">OBS Proxy Mode Configuration</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_obs_proxy_mode_configuration">#</a></h4></div></div></div>
+  <div class="sect3 " id="_obs_proxy_mode_configuration"><div class="titlepage"><div><div><h4 class="title" id="_obs_proxy_mode_configuration"><span class="number">4.8.5.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">OBS Proxy Mode Configuration</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_obs_proxy_mode_configuration">#</a></h4></div></div></div>
    
    <p>Currently the LDAP configuration is in the
      <span class="emphasis"><em>options.yml</em></span> file.</p>
@@ -1142,7 +1147,7 @@ done</pre></div>
    </div></div>
   </div>
  </div>
- <div class="sect2 " id="_ldap_active_directory"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.8.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">LDAP/Active Directory</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_ldap_active_directory">#</a></h3></div></div></div>
+ <div class="sect2 " id="_ldap_active_directory"><div class="titlepage"><div><div><h3 class="title" id="_ldap_active_directory"><span class="number">4.8.6 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">LDAP/Active Directory</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_ldap_active_directory">#</a></h3></div></div></div>
   
   <div id="id-1.6.8.10.8.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.png" /><h6>Note</h6>
    <p>The LDAP support was considered experimental and not officially
@@ -1189,7 +1194,7 @@ done</pre></div>
      <span class="emphasis"><em>member</em></span> attributes of the group are parsed and all
     current users which are in the local database become members.</p>
   </div>
-  <div class="sect3 " id="_obs_ldap_configuration"><div class="titlepage"><div><div><h4 class="title"><span class="number">4.8.6.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">OBS LDAP Configuration</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_obs_ldap_configuration">#</a></h4></div></div></div>
+  <div class="sect3 " id="_obs_ldap_configuration"><div class="titlepage"><div><div><h4 class="title" id="_obs_ldap_configuration"><span class="number">4.8.6.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">OBS LDAP Configuration</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_obs_ldap_configuration">#</a></h4></div></div></div>
    
    <p>
     Currently the main OBS LDAP configuration is in the
@@ -1532,9 +1537,9 @@ ldap_group_objectclass_attr: group
 ldap_obs_admin_group: obsadmins</pre></div>
   </div>
  </div>
- <div class="sect2 " id="_authentication_methods"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.8.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Authentication Methods</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_authentication_methods">#</a></h3></div></div></div>
+ <div class="sect2 " id="_authentication_methods"><div class="titlepage"><div><div><h3 class="title" id="_authentication_methods"><span class="number">4.8.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Authentication Methods</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_authentication_methods">#</a></h3></div></div></div>
   
-  <div class="sect3 " id="_ldap_methods"><div class="titlepage"><div><div><h4 class="title"><span class="number">4.8.7.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">LDAP Methods</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_ldap_methods">#</a></h4></div></div></div>
+  <div class="sect3 " id="_ldap_methods"><div class="titlepage"><div><div><h4 class="title" id="_ldap_methods"><span class="number">4.8.7.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">LDAP Methods</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_ldap_methods">#</a></h4></div></div></div>
    
    <p>The LDAP mode has 2 methods to check
     authorization:</p>
@@ -1554,7 +1559,7 @@ ldap_obs_admin_group: obsadmins</pre></div>
      will not be available until you are bind with a privilege user.</p>
    </div>
   </div>
-  <div class="sect3 " id="_kerberos"><div class="titlepage"><div><div><h4 class="title"><span class="number">4.8.7.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Kerberos</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_kerberos">#</a></h4></div></div></div>
+  <div class="sect3 " id="_kerberos"><div class="titlepage"><div><div><h4 class="title" id="_kerberos"><span class="number">4.8.7.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Kerberos</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_kerberos">#</a></h4></div></div></div>
    
    <p>In OBS you can use single sign on via Kerberos tickets.</p>
    <p>OBS Kerberos configuration resides in the
@@ -1605,21 +1610,21 @@ kerberos_realm: "EXAMPLE.COM"
     </p>
    </div>
   </div>
-  <div class="sect3 " id="id-1.6.8.10.9.4"><div class="titlepage"><div><div><h4 class="title"><span class="number">4.8.7.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">OBS Token Authorization</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id-1.6.8.10.9.4">#</a></h4></div></div></div>
+  <div class="sect3 " id="id-1.6.8.10.9.4"><div class="titlepage"><div><div><h4 class="title" id="id-1.6.8.10.9.4"><span class="number">4.8.7.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">OBS Token Authorization</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id-1.6.8.10.9.4">#</a></h4></div></div></div>
    
    <p> OBS 2.5 provides a mechanism to create tokens for specific
     operations. This can be used to allow certain operations in the name of a
     user to others. This is esp. useful when integrating external
     infrastructure. The create token should be kept secret by default, but it
     can also be revoked at any time if it became obsolete or leaked. </p>
-   <div class="sect4 " id="id-1.6.8.10.9.4.3"><div class="titlepage"><div><div><h5 class="title"><span class="number">4.8.7.3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Managing Tokens of a User</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id-1.6.8.10.9.4.3">#</a></h5></div></div></div>
+   <div class="sect4 " id="id-1.6.8.10.9.4.3"><div class="titlepage"><div><div><h5 class="title" id="id-1.6.8.10.9.4.3"><span class="number">4.8.7.3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Managing Tokens of a User</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id-1.6.8.10.9.4.3">#</a></h5></div></div></div>
     
     <p> Tokens belong always to a user. A list of active tokens can received
      via </p>
     <div class="verbatim-wrap"><pre class="screen"><code class="command">osc token</code></pre></div>
     <div class="verbatim-wrap"><pre class="screen"><code class="command">osc token --delete &lt;TOKEN&gt;</code></pre></div>
    </div>
-   <div class="sect4 " id="id-1.6.8.10.9.4.4"><div class="titlepage"><div><div><h5 class="title"><span class="number">4.8.7.3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Executing a Source Service</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id-1.6.8.10.9.4.4">#</a></h5></div></div></div>
+   <div class="sect4 " id="id-1.6.8.10.9.4.4"><div class="titlepage"><div><div><h5 class="title" id="id-1.6.8.10.9.4.4"><span class="number">4.8.7.3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Executing a Source Service</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#id-1.6.8.10.9.4.4">#</a></h5></div></div></div>
     
     <p> A token can be used to execute a source service. The source service
      has to be setup for the package first, check the source service chapter
@@ -1643,13 +1648,13 @@ kerberos_realm: "EXAMPLE.COM"
   </div>
  </div>
 </div>
- <div class="sect1 " id="_message_bus"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.9 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Message Bus for Event Notifications</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_message_bus">#</a></h2></div></div></div>
+ <div class="sect1 " id="_message_bus"><div class="titlepage"><div><div><h2 class="title" id="_message_bus"><span class="number">4.9 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Message Bus for Event Notifications</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_message_bus">#</a></h2></div></div></div>
  
  <p>The OBS has an integrated notification subsystem for sending events that are happening in our app through a message bus.
    We have chosen <a class="ulink" href="https://www.rabbitmq.com/" target="_blank">RabbitMQ<span class="ulink-url"> (https://www.rabbitmq.com/)</span></a> as our message bus server technology based on the
    <a class="ulink" href="https://www.amqp.org/" target="_blank">AMQP<span class="ulink-url"> (https://www.amqp.org/)</span></a> protocol.
  </p>
- <div class="sect2 " id="_rabbit_mq"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.9.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">RabbitMQ</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_rabbit_mq">#</a></h3></div></div></div>
+ <div class="sect2 " id="_rabbit_mq"><div class="titlepage"><div><div><h3 class="title" id="_rabbit_mq"><span class="number">4.9.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">RabbitMQ</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_rabbit_mq">#</a></h3></div></div></div>
   
   <p>
     RabbitMQ claims to be <span class="emphasis"><em>"the most popular open source message broker"</em></span>. Meaning that it can deliver asynchronous messages in many
@@ -1659,7 +1664,7 @@ kerberos_realm: "EXAMPLE.COM"
     RabbitMQ is lightweight and easy to deploy on premises and in the cloud. It supports multiple messaging protocols too.
     And can be deployed in distributed and federated configurations to meet high-scale, high-availability requirements.
   </p>
-  <div class="sect3 " id="_rabbit_mq_configuration"><div class="titlepage"><div><div><h4 class="title"><span class="number">4.9.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuration</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_rabbit_mq_configuration">#</a></h4></div></div></div>
+  <div class="sect3 " id="_rabbit_mq_configuration"><div class="titlepage"><div><div><h4 class="title" id="_rabbit_mq_configuration"><span class="number">4.9.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuration</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_rabbit_mq_configuration">#</a></h4></div></div></div>
    
    <p>
     Currently the RabbitMQ configuration is in the file <code class="filename">options.yml</code>.
@@ -2184,19 +2189,19 @@ amqp_queue_options:
   </div>
  </div>
 </div>
- <div class="sect1 " id="_backup"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.10 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Backup</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_backup">#</a></h2></div></div></div>
+ <div class="sect1 " id="_backup"><div class="titlepage"><div><div><h2 class="title" id="_backup"><span class="number">4.10 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Backup</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_backup">#</a></h2></div></div></div>
   
   <p>
     Open Build Service configuration and content needs usually a backup. The following explains
     suggested strategies and places considered for a backup. 
   </p>
 
-  <div class="sect2 " id="_backup_places"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.10.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Places to consider</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_backup_places">#</a></h3></div></div></div>
+  <div class="sect2 " id="_backup_places"><div class="titlepage"><div><div><h3 class="title" id="_backup_places"><span class="number">4.10.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Places to consider</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_backup_places">#</a></h3></div></div></div>
    
    <p>The following is pointing to the places with admin configurations or user content.
 	 The default location places are considered here.
    </p>
-   <div class="sect3 " id="_backup_configuration_frontend"><div class="titlepage"><div><div><h4 class="title"><span class="number">4.10.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Frontend Configuration</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_backup_configuration_frontend">#</a></h4></div></div></div>
+   <div class="sect3 " id="_backup_configuration_frontend"><div class="titlepage"><div><div><h4 class="title" id="_backup_configuration_frontend"><span class="number">4.10.1.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Frontend Configuration</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_backup_configuration_frontend">#</a></h4></div></div></div>
      
      <div class="itemizedlist "><ul class="itemizedlist"><li class="listitem ">
 	      <p>/srv/www/obs/api/config</p>
@@ -2206,41 +2211,41 @@ amqp_queue_options:
     <p>The configuration is not changing usually. It is enough to backup it after config changes.
     </p>
    </div>
-   <div class="sect3 " id="_backup_database_frontend"><div class="titlepage"><div><div><h4 class="title"><span class="number">4.10.1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Frontend Database</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_backup_database_frontend">#</a></h4></div></div></div>
+   <div class="sect3 " id="_backup_database_frontend"><div class="titlepage"><div><div><h4 class="title" id="_backup_database_frontend"><span class="number">4.10.1.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Frontend Database</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_backup_database_frontend">#</a></h4></div></div></div>
      
      <p>The MySQL/MariaDB database backup can be done in different ways. Please consider the database
 	   manual for details. One possible way is to create dumps via mysqldump tool. The backup should be
 	   done at the same point of time as the source server. Inconsistencies can be resolved
            using the check_consistency tool.</p>
    </div>
-   <div class="sect3 " id="_backup_backend_configuration"><div class="titlepage"><div><div><h4 class="title"><span class="number">4.10.1.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Backend Configuration</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_backup_backend_configuration">#</a></h4></div></div></div>
+   <div class="sect3 " id="_backup_backend_configuration"><div class="titlepage"><div><div><h4 class="title" id="_backup_backend_configuration"><span class="number">4.10.1.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Backend Configuration</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_backup_backend_configuration">#</a></h4></div></div></div>
      
      <p>The backend has a single configuration file which may got altered. This is by default
 	     /usr/lib/obs/server/BSConfig.pm . The file is not supposed to be changed usually and
 	     it can only be done by the system root user. A backup after a change is sufficient.
      </p>
    </div>
-   <div class="sect3 " id="_backup_backend_content"><div class="titlepage"><div><div><h4 class="title"><span class="number">4.10.1.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Backend Content</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_backup_backend_content">#</a></h4></div></div></div>
+   <div class="sect3 " id="_backup_backend_content"><div class="titlepage"><div><div><h4 class="title" id="_backup_backend_content"><span class="number">4.10.1.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Backend Content</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_backup_backend_content">#</a></h4></div></div></div>
      
      <p>All backend content is below /srv/obs directory. This include the sources, build results and
 	   also all configuration changes done by the OBS admin users.
      </p>
    </div>
   </div>
-  <div class="sect2 " id="_backup_strategies"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.10.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Backup strategies</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_backup_strategies">#</a></h3></div></div></div>
+  <div class="sect2 " id="_backup_strategies"><div class="titlepage"><div><div><h3 class="title" id="_backup_strategies"><span class="number">4.10.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Backup strategies</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_backup_strategies">#</a></h3></div></div></div>
    
    <p>
      A backup is ideally taken only from a not running service. In real live this is 
      usually not possible, so it is important to run a backup on a production system.
    </p>
-   <div class="sect3 " id="_backup_strategy_database"><div class="titlepage"><div><div><h4 class="title"><span class="number">4.10.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Database</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_backup_strategy_database">#</a></h4></div></div></div>
+   <div class="sect3 " id="_backup_strategy_database"><div class="titlepage"><div><div><h4 class="title" id="_backup_strategy_database"><span class="number">4.10.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Database</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_backup_strategy_database">#</a></h4></div></div></div>
     
     <p>MySQL backup either directly from a non-primary node in the galera
     cluster (table dump locks the database during operation) or from a mysql slave
     attached to the cluster.
     </p>
    </div>
-   <div class="sect3 " id="_backup_strategy_backend_sources"><div class="titlepage"><div><div><h4 class="title"><span class="number">4.10.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Sources</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_backup_strategy_backend_sources">#</a></h4></div></div></div>
+   <div class="sect3 " id="_backup_strategy_backend_sources"><div class="titlepage"><div><div><h4 class="title" id="_backup_strategy_backend_sources"><span class="number">4.10.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Sources</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_backup_strategy_backend_sources">#</a></h4></div></div></div>
     
      <p>The sources are supposed to be backup at the same time as the database. This
            can get achieved by either having a dedicated instance for the source server
@@ -2252,7 +2257,7 @@ amqp_queue_options:
       </li></ul></div><p>
     </p>
    </div>
-   <div class="sect3 " id="_backup_strategy_backend_binaries"><div class="titlepage"><div><div><h4 class="title"><span class="number">4.10.2.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Build Results</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_backup_strategy_backend_binaries">#</a></h4></div></div></div>
+   <div class="sect3 " id="_backup_strategy_backend_binaries"><div class="titlepage"><div><div><h4 class="title" id="_backup_strategy_backend_binaries"><span class="number">4.10.2.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Build Results</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_backup_strategy_backend_binaries">#</a></h4></div></div></div>
     
     <p>Full backups via snapshots, either offered by the SAN storage or
     via LVM snapshot methods. Consistency is normally on repository level. Any inconsistency
@@ -2263,13 +2268,13 @@ amqp_queue_options:
   </div>
  </div>
 
- <div class="sect1 " id="_restore"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.11 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Restore</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_restore">#</a></h2></div></div></div>
+ <div class="sect1 " id="_restore"><div class="titlepage"><div><div><h2 class="title" id="_restore"><span class="number">4.11 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Restore</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_restore">#</a></h2></div></div></div>
   
   <p>
     A restored system might contain inconsistencies if it was taken from a running service.
     These can be resolved as follows.
   </p>
-  <div class="sect2 " id="_restore_database_inconsistencies"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.11.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Check and repair database inconsistencies</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_restore_database_inconsistencies">#</a></h3></div></div></div>
+  <div class="sect2 " id="_restore_database_inconsistencies"><div class="titlepage"><div><div><h3 class="title" id="_restore_database_inconsistencies"><span class="number">4.11.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Check and repair database inconsistencies</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_restore_database_inconsistencies">#</a></h3></div></div></div>
    
    <p>If either database portions or sources got restored there are chances for inconsistencies.
 	   These can be found via
@@ -2284,7 +2289,7 @@ amqp_queue_options:
 	           <code class="prompt user">geeko &gt; </code><code class="command">./bin/rake fix_project project="YOUR_PROJECT"</code></pre></div><p>
    </p>
   </div>
-  <div class="sect2 " id="_restore_binaries"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.11.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Binaries</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_restore_binaries">#</a></h3></div></div></div>
+  <div class="sect2 " id="_restore_binaries"><div class="titlepage"><div><div><h3 class="title" id="_restore_binaries"><span class="number">4.11.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Binaries</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_restore_binaries">#</a></h3></div></div></div>
    
    <p>All build results are evaluated by the scheduler. Therefore any inconsistency can be
 	   detected by the scheduler. One way is to enforce a cold start, which means that the
@@ -2303,7 +2308,7 @@ amqp_queue_options:
   </div>
  </div>
 
- <div class="sect1 " id="_handle_data_corruption"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.12 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Repair Data Corruption</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_handle_data_corruption">#</a></h2></div></div></div>
+ <div class="sect1 " id="_handle_data_corruption"><div class="titlepage"><div><div><h2 class="title" id="_handle_data_corruption"><span class="number">4.12 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Repair Data Corruption</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_handle_data_corruption">#</a></h2></div></div></div>
   
   <p>
 	  On-disk data might be corrupted independent of a restore. For example due to power outage, filesystem
@@ -2315,7 +2320,7 @@ amqp_queue_options:
   </p>
  </div>
 
- <div class="sect1 " id="_obs_spider_identification"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.13 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Spider Identification</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_obs_spider_identification">#</a></h2></div></div></div>
+ <div class="sect1 " id="_obs_spider_identification"><div class="titlepage"><div><div><h2 class="title" id="_obs_spider_identification"><span class="number">4.13 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Spider Identification</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_obs_spider_identification">#</a></h2></div></div></div>
  
  <p> OBS is hiding specific parts/pages of the application from search
   crawlers (DuckDuckGo, Google, etc.), mostly for performance reasons. Which
@@ -2379,7 +2384,7 @@ amqp_queue_options:
  <p> Save the file and restart the Rails application and the bot Geekobot
   should be identified properly. </p>
 </div>
- <div xml:lang="en" class="sect1 " id="_worker_in_kubernetes_" lang="en"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.14 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Worker in Kubernetes</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_worker_in_kubernetes_">#</a></h2></div></div></div>
+ <div xml:lang="en" class="sect1 " id="_worker_in_kubernetes_" lang="en"><div class="titlepage"><div><div><h2 class="title" id="_worker_in_kubernetes_"><span class="number">4.14 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Worker in Kubernetes</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_worker_in_kubernetes_">#</a></h2></div></div></div>
         
         <div id="id-1.6.8.16.2" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.png" /><h6>Warning: Alpha Implementation</h6>
             
@@ -2531,6 +2536,6 @@ obsworker restart</pre></div>
         <div class="verbatim-wrap"><pre class="screen">cat launchworker.sh | kubectl exec -i -t test-worker-pod bash</pre></div>
     </li></ol></div></div>
 </div>
-</div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="obs.cha.troubleshooting.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 5 </span>Troubleshooting</span></a><a class="nav-link" href="obs.cha.security_concepts.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 3 </span>Security Concepts</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+</div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="obs.cha.troubleshooting.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 5 </span>Troubleshooting</span></a><a class="nav-link" href="obs.cha.security_concepts.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 3 </span>Security Concepts</span></a></div><div id="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span id="_share-fb" class="bottom-button">Facebook</span><span class="spacer"> • </span><span id="_share-gp" class="bottom-button">Google+</span><span class="spacer"> • </span><span id="_share-tw" class="bottom-button">Twitter</span><span class="spacer"> • </span><span id="_share-mail" class="bottom-button">E-Mail</span></span></div><div class="print"><span id="_print-button" class="bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
         2022 
-        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>
+        SUSE</p><ul><li><a href="http://www.suse.com/company/careers/" target="_top">Careers</a></li><li><a href="http://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="http://www.suse.com/company/" target="_top">About</a></li><li><a href="http://www.suse.com/ContactsOffices/contacts_offices.jsp" target="_top">Contact Us</a></li></ul></div></div></body></html>
