@@ -201,7 +201,20 @@ Keep: debbuild</pre></div>
          The repositories will be searched in the order they are configured
          in the meta configuration, starting from the top.
         </p>
-       </dd><dt id="id-1.5.7.3.4.6.4.2.2.9"><span class="term "><em class="parameter ">obsgendiff</em></span></dt><dd>
+        <p>
+         An alternative way to enable caching based on build dependencies is to
+         add "--enable-cache" as dependency, for example via a Substitute rule:
+         <code class="command">
+           Substitute: gcc-c++ gcc-c++ --enable-ccache
+         </code>
+         This will always enable ccache when a direct build depdency to gcc-c++
+         is required.
+        </p>
+       </dd><dt id="id-1.5.7.3.4.6.4.2.2.9"><span class="term "><em class="parameter ">ccachetype:</em></span></dt><dd>
+        <p>
+          Defines the ccache implementation, possible values are: ccache, sccache
+        </p>
+       </dd><dt id="id-1.5.7.3.4.6.4.2.2.10"><span class="term "><em class="parameter ">obsgendiff</em></span></dt><dd>
         <p>
           OBS can run an external program that has access to the current build
           and the previously successful result, e.g. to generate a difference or
@@ -405,8 +418,13 @@ Keep: debbuild</pre></div>
      </p>
     </dd><dt id="id-1.5.7.3.4.6.26"><span class="term "><em class="parameter ">Target: <em class="replaceable ">TARGET_ARCH</em></em> (RPM only)</span></dt><dd>
      <p>Defines the target architecture. This can be used to build for i686
-      on i586 schedulers for example.</p>
-    </dd><dt id="id-1.5.7.3.4.6.27"><span class="term "><em class="parameter ">Type: <em class="replaceable ">TYPE</em></em></span></dt><dd>
+      on i586 schedulers for example. Please note that on rpm based systems just the architecture needs
+      to be specified, but on debian systems the gnu triplet, for example arm-linux-gnueabihf.</p>
+    </dd><dt id="id-1.5.7.3.4.6.27"><span class="term "><em class="parameter ">Target: <em class="replaceable ">GNU_TRIPLET</em></em> (Debian only)</span></dt><dd>
+     <p>Defines the target architecture. This can be used to build for i686
+      on i586 schedulers for example. Please note that on rpm based systems just the architecture needs
+      to be specified, but on debian systems the gnu triplet, for example arm-linux-gnueabihf.</p>
+    </dd><dt id="id-1.5.7.3.4.6.28"><span class="term "><em class="parameter ">Type: <em class="replaceable ">TYPE</em></em></span></dt><dd>
      <p>
       Build recipe type. This is the format of the file which provides the
       build description. This gets usually autodetected, but in some rare cases
@@ -416,7 +434,7 @@ Keep: debbuild</pre></div>
      <p>Defines the build recipe format. Valid values are currently: none, spec,
       dsc, arch, kiwi, preinstallimage. If no type is specified, OBS deduces a
       type from the binary type. </p>
-    </dd><dt id="id-1.5.7.3.4.6.28"><span class="term "><em class="parameter ">VMInstall: <em class="replaceable ">PACKAGES</em></em></span></dt><dd>
+    </dd><dt id="id-1.5.7.3.4.6.29"><span class="term "><em class="parameter ">VMInstall: <em class="replaceable ">PACKAGES</em></em></span></dt><dd>
      <p>
       Like <em class="parameter ">Preinstall</em>, but these packages get only
       installed when a virtual machine like Xen or KVM is used for building.
