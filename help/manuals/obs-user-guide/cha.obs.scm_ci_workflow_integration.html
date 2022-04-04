@@ -446,6 +446,51 @@ rebuild_master:
             status: disable
             project: home:jane_doe:CI
             package: rust
-            architecture: x86_64</pre></div></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="cha.obs.stagingworkflow.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 9 </span>Staging Workflow</span></a><a class="nav-link" href="cha.obs.source_service.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 7 </span>Using Source Services</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+            architecture: x86_64</pre></div></div><div class="sect2 " id="sec.obs.obs_scm_ci_workflow_integration.use_cases.create_package_releases_with_tags"><div class="titlepage"><div><div><h3 class="title"><span class="number">8.2.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Create Package on OBS for Every Software Release With Git Tags</span> <a title="Permalink" class="permalink" href="cha.obs.scm_ci_workflow_integration.html#sec.obs.obs_scm_ci_workflow_integration.use_cases.create_package_releases_with_tags">#</a></h3></div></div></div><p>You have a software project for which you mark releases with Git tags. For every release, you want to create
+      a package on OBS. This can be automated in a workflow with the <span class="emphasis"><em>branch_package</em></span> step and the
+      <span class="emphasis"><em>tag_push</em></span> event filter. Once the workflow is in place, every tag you push to your SCM repository
+      will branch a package on OBS and create, then build a package for the source code associated to the tag's commit.
+      This way, your users can always install a versioned release of your software project. You can also link one of those
+      versioned releases to another project on OBS if you need it as a dependency.</p><p>After the usual <a class="link" href="cha.obs.scm_ci_workflow_integration.html#sec.obs.obs_scm_ci_workflow_integration.setup" title="8.1. SCM/CI Workflow Integration Setup">setup</a> for
+      OBS workflows with tokens and webhooks, you will need:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>A package in OBS that you own, and for which you want to create releases. It will be the
+          <span class="emphasis"><em>source package</em></span> (e.g.: <span class="emphasis"><em>home:jane/my_package</em></span>) and it will
+          contain a <span class="emphasis"><em>_service</em></span> file. When this package is branched by the
+          <span class="emphasis"><em>branch_package</em></span> step, the branched package name will end with the name of the tag which
+          was pushed (e.g.: <span class="emphasis"><em>my_package-1.0</em></span>).</p></li><li class="listitem "><p>A project in OBS that you own, and which will contain all packages created by the <span class="emphasis"><em>branch_package</em></span>
+          step. It will be the <span class="emphasis"><em>target project</em></span> (e.g.: <span class="emphasis"><em>home:jane:releases</em></span>).</p></li><li class="listitem "><p>A SCM repository for your software project with the source code and spec file in which you
+          will create Git tags to mark releases, e.g.: <span class="emphasis"><em>https://github.com/jane/my_package</em></span>.</p></li></ul></div><p>The workflow configuration should be like this one:</p><div class="verbatim-wrap"><pre class="screen">workflow:
+  steps:
+    - branch_package:
+        source_project: home:jane
+        source_package: my_package
+        target_project: home:jane:releases
+  filters:
+    event: tag_push</pre></div><p>The <span class="emphasis"><em>_service</em></span> file in your source package should be like:</p><div class="verbatim-wrap"><pre class="screen">&lt;?xml version="1.0"?&gt;
+  &lt;services&gt;
+    &lt;service name="obs_scm"&gt;
+      &lt;param name="versionformat"&gt;@PARENT_TAG@&lt;/param&gt;
+      &lt;param name="url"&gt;https://github.com/jane/my_package.git&lt;/param&gt;
+      &lt;param name="scm"&gt;git&lt;/param&gt;
+      &lt;param name="revision"&gt;@PARENT_TAG@&lt;/param&gt;
+      &lt;param name="extract"&gt;my_package.spec&lt;/param&gt;
+    &lt;/service&gt;
+    &lt;service name="set_version"/&gt;
+    &lt;service name="tar" mode="buildtime"/&gt;
+  &lt;/services&gt;</pre></div><p>Here's an explanation of the services involved:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>The <a class="link" href="https://github.com/openSUSE/obs-service-tar_scm#obs_scm" target="_blank">obs_scm</a> service fetches
+          the source code from your SCM repository for a specific revision, which in this case, is for the latest tag
+          (<span class="emphasis"><em>@PARENT_TAG@</em></span>). Don't forget to extract the spec file with a <span class="emphasis"><em>extract</em></span> element.</p><p>Set the <span class="emphasis"><em>versionformat</em></span> to match how you want to name your releases. This is typically
+          the Git tag name, so <span class="emphasis"><em>@PARENT_TAG@</em></span> is what you should use. For other options, refer to
+          <a class="link" href="https://git-scm.com/docs/git-log" target="_blank">git log</a> and its <span class="emphasis"><em>format:&lt;format-string&gt;</em></span>
+          documentation.</p></li><li class="listitem "><p>The <a class="link" href="https://github.com/openSUSE/obs-service-set_version" target="_blank">set_version</a> service updates the
+          <span class="emphasis"><em>Version</em></span> directive in the spec file downloaded by the <span class="emphasis"><em>obs_scm</em></span> service. The version
+          format comes from the <span class="emphasis"><em>versionformat</em></span> element under the <span class="emphasis"><em>obs_scm</em></span> service.</p></li><li class="listitem "><p>The <a class="link" href="https://github.com/openSUSE/obs-service-tar_scm#tar" target="_blank">tar</a> service creates a tarball out of
+          the source code fetched by the <span class="emphasis"><em>obs_scm</em></span> service.</p></li></ul></div><p>For the spec file in your SCM repository, pay attention to this:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>The <span class="emphasis"><em>Source0</em></span> directive is based on values you provided to the <span class="emphasis"><em>obs_scm</em></span> service
+          in the <span class="emphasis"><em>_service</em></span> file and it should be like this: <span class="emphasis"><em>my_package-%{version}.tar</em></span>.</p><p>The first part is the SCM repository name (e.g: <span class="emphasis"><em>my_package</em></span>). The second part is the version
+          macro which will be expanded to match what you defined in the <span class="emphasis"><em>versionformat</em></span> of the
+          <span class="emphasis"><em>obs_scm</em></span> service in the <span class="emphasis"><em>_service</em></span> file. The third part is the archive extension
+          (<span class="emphasis"><em>.tar</em></span>) since a tarball was created by the <span class="emphasis"><em>tar</em></span> service.</p></li><li class="listitem "><p>Under the <span class="emphasis"><em>%prep</em></span> directive, you might have to update the <span class="emphasis"><em>%setup</em></span> directive
+          if your source package name doesn't match the name of your SCM repository. Here's how, with <span class="emphasis"><em>my_package</em></span>
+          being the SCM repository name:</p><div class="verbatim-wrap"><pre class="screen">%prep
+  %setup -q -n my_package-%version</pre></div></li></ul></div></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="cha.obs.stagingworkflow.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 9 </span>Staging Workflow</span></a><a class="nav-link" href="cha.obs.source_service.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 7 </span>Using Source Services</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
         2022 
         SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>
