@@ -3,6 +3,9 @@ highlighter: rouge
 url: https://openbuildservice.org
 permalink: /:year/:month/:day/:title/
 markdown: kramdown
+kramdown:
+  syntax_highlighter: rouge
+  input: GFM
 include: [ '_redirects' ]
 # Number of posts per page
 paginate: 20

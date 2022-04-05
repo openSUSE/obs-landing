@@ -17,7 +17,7 @@ Be sure to have a [_service](https://openbuildservice.org/help/manuals/obs-user-
 file in your package if you use this step.
 
 Here's how to define a `trigger_services` step:
-```
+```yaml
 workflow:
   steps:
     - trigger_services:
@@ -27,7 +27,7 @@ workflow:
 
 As an example, this could be used in combination with filters to only trigger services of the package `home:Admin/ctris`
 when a commit is pushed to the target branch `main`:
-```
+```yaml
 workflow:
   steps:
     - trigger_services:
