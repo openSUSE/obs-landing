@@ -89,6 +89,7 @@ DEPENDENCIES
   jekyll-paginate
   jemoji
   kramdown (~> 2.3)
+  rouge
 
 BUNDLED WITH
    2.2.24
