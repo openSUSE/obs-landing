@@ -20,7 +20,7 @@ Here's how to define a `trigger_services` step:
 ```
 workflow:
   steps:
-    - trigger_services
+    - trigger_services:
         project: home:Admin
         package: ctris
 ```
@@ -30,7 +30,7 @@ when a commit is pushed to the target branch `main`:
 ```
 workflow:
   steps:
-    - trigger_services
+    - trigger_services:
         project: home:Admin
         package: ctris
   filters:
