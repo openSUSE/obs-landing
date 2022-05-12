@@ -53,14 +53,12 @@ GEM
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
     liquid (4.0.3)
-    listen (3.2.1)
+    listen (3.7.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     mercenary (0.4.0)
-    mini_portile2 (2.8.0)
-    minitest (5.14.2)
+    minitest (5.15.0)
     nokogiri (1.13.4)
-      mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
@@ -80,6 +78,7 @@ GEM
     tzinfo (1.2.7)
       thread_safe (~> 0.1)
     unicode-display_width (1.7.0)
+    webrick (1.7.0)
     zeitwerk (2.4.0)
 
 PLATFORMS
@@ -90,6 +89,7 @@ DEPENDENCIES
   jemoji
   kramdown (~> 2.3)
   rouge
+  webrick (~> 1.7)
 
 BUNDLED WITH
-   2.2.24
+   2.3.13
