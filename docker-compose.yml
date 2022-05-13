@@ -1,7 +1,14 @@
-jekyll:
+version: "2.4"
+
+services:
+  jekyll:
     image: jekyll/jekyll:4
     command: jekyll serve --watch --incremental --future
     ports:
-        - 4000:4000
+      - 4000:4000
+    environment:
+      # use docker-compose.override.yml if your UID/GID differs...
+      JEKYLL_UID: 1000
+      JEKYLL_GID: 100
     volumes:
-        - .:/srv/jekyll
+      - .:/srv/jekyll
