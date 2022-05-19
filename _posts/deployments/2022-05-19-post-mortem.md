@@ -23,7 +23,7 @@ The events table reached the maximum value possible for the id column. It overfl
 
 ## Trigger
 
-The number of events increased fast lately since we introduced the relationship events.
+The number of events we generate daily is high, so the table reached the maximum value possible for the id column now.
 
 ## Detection
 
