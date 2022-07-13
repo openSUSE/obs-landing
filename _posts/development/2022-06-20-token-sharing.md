@@ -6,6 +6,8 @@ category: development
 
 With the introduction of the workflows, a wide range of integrations became available for individual users. Now those integrations start to get interesting at team level too. But, until now, you could not use the same workflow token with a group of users. We've fixed that for you. 
 
+{% include partials/_series-of-posts-about-scm-integration.md %}
+
 # One Token To Rule Them All
 
 Let's say a group of maintainers automated the rebuild of packages when new commits are pushed into their associated GitLab repositories. To do that, those users needed a Workflow Token, and that token is bound to a single user. The only way to trigger the workflow by more than one user was to share the user credentials.
