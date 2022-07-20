@@ -1,43 +1,38 @@
 ---
 layout: post
-title: SCM Bridge
+title: SCM Bridge support for the SCM/CI integration
 category: development
 ---
 
-We're back with a new change in SCM/CI integration. Setting up projects and packages on OBS and SCM at the same time sounds cumbersome. SCM Bridge allows you to set up a package or an entire project in any trusted SCM repository.
+We're back with a new change in SCM/CI integration. This time with support for a new way of fetching sources from your SCM, the
+OBS Git Bridge.
 
 {% include partials/_series-of-posts-about-scm-integration.md %}
 
-# SCM Bridge in a nutshell
+## Fetching sources for package builds from your SCM
 
-SCM Bridge allows to manage the entire package sources in an external SCM repository.  All you have to do is just add `scmsync` tag in the project/package meta file.
+The usual way to fetch package source from an SCM is the [source service](https://openbuildservice.org/help/manuals/obs-user-guide/cha.obs.source_service.html) `obs-service-tar_scm`. A while ago we have introduces another, more simplified method to do this: [The OBS SCM Bridge](https://openbuildservice.org/help/manuals/obs-user-guide/cha.obs.scm_bridge.html).
 
-## Setup a Package Using the SCM Bridge
+### SCM Bridge in a nutshell
 
-The setup is done in the package meta file by defining the SCM URL inside of the scmsync tag:
+SCM Bridge allows to manage the entire package sources in an external SCM repository.  All you have to do is add a `scmsync` tag in the project/package meta file like this
 
 ```
-  <scmsync>https://gitlab.com/some/repository</scmsync>
+<package name="sensormonitor" project="home:fpersson">
+  <title>Simple golang webservice</title>
+  <description>A Go application to monitor tempsensor</description>
+  <scmsync>https://github.com/fpersson/sensormonitor</scmsync>
+</package>
 ```
 
-## Setup an entire project using the SCM Bridge
+You can also setup an entire project by defining the scmsync tag in project metadata. Every top-level subdirectory of the SCM repository is 
+then considered a package in OBS. There are many more options, check out the [SCM Bridge documentation](https://openbuildservice.org/help/manuals/obs-user-guide/cha.obs.scm_bridge.html) for more information.
 
-You can also setup an entire project by defining the scmsync tag in project metadata. Every top-level subdirectory of the SCM repository is considered a package in OBS.
+## Using the SCM bridge in your CI workflow
 
-## Extensions for Git repositories
+Once you set up the SCM Bridge the SCM CI integration will use it to fetch the correct sources for your SCM events. So workflow runs
+for a Pull/Merge request will fetch sources from the PR/MR sources etc.
 
-You can further tweak the scmsync url for git repositories.
-
-The scmsync url can get extended via a query parameter subdir. OBS will only use the specified subdirectory.
-```
-<scmsync>https://gitlab.com/some/repository?subdir=MY_SUBDIRECTORY</scmsync>
-```
-
-The scmsync url can also define these URL fragments revision, tag, and branch. This will be extended the URL by a hash character and the revision, tag, or branch. It allows to set up multiple projects building for different branches.
-```
-<scmsync>https://gitlab.com/some/repository#MY_REVISION</scmsync>
-```
-
-If you are curious to know more details about SCM Bridge, please refer to our [user documentation](https://openbuildservice.org/help/manuals/obs-user-guide/cha.obs.scm_bridge.html).
+That's it, no further changes required from you. Happy Continuous Integrating! 💚
 
 {% include partials/_how-to-give-us-feedback.md %}
