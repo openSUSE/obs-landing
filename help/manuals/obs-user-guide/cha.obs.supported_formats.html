@@ -96,8 +96,8 @@ hljs.configure({
      </p></li><li class="listitem "><p><code class="command">#!BuildVersion: VERSION</code> Report back a defined VERSION. By default it is set to zero. The version is used by OBS for tracking.
      </p></li><li class="listitem "><p><code class="command">#!ExclusiveArch: ARCH_LIST</code> An exclusive architecture list to build for. The architecture list is separated by spaces.
      </p></li><li class="listitem "><p><code class="command">#!ExcludeArch: ARCH_LIST</code> An excluded architecture list to skip builds. The architecture list is separated by spaces.
-     </p></li><li class="listitem "><p><code class="command">#!ArchExclusiveLine: ARCH_LIST</code> The next line will only get executed on the listed architectures.
-     </p></li><li class="listitem "><p><code class="command">#!ArchExcludedLine: ARCH_LIST</code> The next line will not get executed on the listed architectures.
+     </p></li><li class="listitem "><p><code class="command">#!ArchExclusiveLine: ARCH_LIST</code> The next line will only be considered by the scheduler the listed architectures. The line will still get executed on all architectures during the build.
+     </p></li><li class="listitem "><p><code class="command">#!ArchExcludedLine: ARCH_LIST</code> The next line will not be considered by the scheduler on the listed architectures. The line will still get executed on all architectures during the build.
      </p></li><li class="listitem "><p>
       <code class="command">#!Milestone: MILESTONE</code>
       This defines a milestone name (for example, <code class="literal">Beta1</code>)
