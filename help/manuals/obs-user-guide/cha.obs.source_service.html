@@ -159,7 +159,6 @@ hljs.configure({
     &lt;param name="verifier"&gt;sha256&lt;/param&gt;
     &lt;param name="checksum"&gt;7f535a96a834b31ba2201a90c4d365990785dead92be02d4cf846713be938b78&lt;/param&gt;
   &lt;/service&gt;
-  &lt;service name="update_source" mode="disabled" /&gt;
 &lt;/services&gt;</pre></div><p>
    With the example above, the services above are executed in the
    following order:
@@ -170,10 +169,6 @@ hljs.configure({
     </p></li><li class="listitem "><p>
      Compares the downloaded file (<code class="filename">krabber-1.0.tar.gz</code>)
      against the SHA256 checksum.
-    </p></li><li class="listitem "><p>
-     When <code class="command">osc service runall</code> is run manually, update
-     the source archive from an online source. In all other cases, ignore
-     this part of the <code class="filename">_service</code> file.
     </p></li></ol></div></div><div class="sect1 " id="sec.obs.sserv.remove"><div class="titlepage"><div><div><h2 class="title"><span class="number">7.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Removing a Source Service</span> <a title="Permalink" class="permalink" href="cha.obs.source_service.html#sec.obs.sserv.remove">#</a></h2></div></div></div><p> Sometimes it is useful to continue working on generated files
    manually. In this situation the <code class="filename">_service</code> file needs
    to be dropped, but all
