@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Administration | Administrator Guide</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" /><meta name="generator" content="DAPS 3.2.0 (https://opensuse.github.io/daps) using SUSE XSL Stylesheets 2.81.0 (based on DocBook XSL Stylesheets 1.79.2) - chunked" /><meta name="book-title" content="Administrator Guide" /><meta name="chapter-title" content="Chapter 4. Administration" /><meta name="description" content="obs_admin is a command-line tool used on the back-end server(s) to manage running services, submit maintenance tasks, and debug problems. It should be only used by experienced admins." /><link rel="home" href="index.html" title="OBS Documentation" /><link rel="up" href="book.obs-admin.html" title="Administrator Guide" /><link rel="prev" href="obs.cha.security_concepts.html" title="Chapter 3. Security Concepts" /><link rel="next" href="obs.cha.troubleshooting.html" title="Chapter 5. Troubleshooting" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Administration | Administrator Guide</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" />
+<meta name="title" content="Administration" />
+<meta name="description" content="obs_admin is a command-line tool used on the back-end server(s) to manage running services, submit maintenance tasks, and debug problems. It should be only use…" />
+<meta name="book-title" content="Administrator Guide" />
+<meta name="chapter-title" content="Chapter 4. Administration" />
+<meta property="og:title" content="Administration" />
+<meta property="og:description" content="obs_admin is a command-line tool used on the back-end server(s) to manage running services, submit maintenance tasks, and debug problems. It should be only use…" />
+<meta property="og:type" content="article" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Administration" />
+<meta name="twitter:description" content="obs_admin is a command-line tool used on the back-end server(s) to manage running services, submit maintenance tasks, and debug problems. It should be only use…" />
+<link rel="home" href="index.html" title="OBS Documentation" /><link rel="up" href="book.obs-admin.html" title="Administrator Guide" /><link rel="prev" href="obs.cha.security_concepts.html" title="Chapter 3. Security Concepts" /><link rel="next" href="obs.cha.troubleshooting.html" title="Chapter 5. Troubleshooting" />
 <script type="text/javascript">
 
 if ( window.location.protocol.toLowerCase() != 'file:' ) {
   document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
 };
 
-</script><noscript><link rel="stylesheet" type="text/css" href="https://static.opensuse.org/fonts/fonts.css" /></noscript><script src="static/js/jquery-1.10.2.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css" /></noscript><script src="static/js/jquery-1.12.4.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
 
 $(document).ready(function() {
   $('.verbatim-wrap.highlight').each(function(i, block) {
@@ -1165,9 +1176,9 @@ ldap_group_objectclass_attr: group
 # if this group is set and a user belongs to this group they get the global admin role
 #
 ldap_obs_admin_group: obsadmins</pre></div></div></div><div class="sect2 " id="_authentication_methods"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.8.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Authentication Methods</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_authentication_methods">#</a></h3></div></div></div><div class="sect3 " id="_ldap_methods"><div class="titlepage"><div><div><h4 class="title"><span class="number">4.8.7.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">LDAP Methods</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_ldap_methods">#</a></h4></div></div></div><p>The LDAP mode has 2 methods to check
-    authorization:</p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p> LDAP bind method.
+    authorization:</p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p> LDAP bind method.<br />
  With the provided credentials,
-      an LDAP bind request is tried. </p></li><li class="listitem "><p> Local method.
+      an LDAP bind request is tried. </p></li><li class="listitem "><p> Local method.<br />
  The provided credentials checked
       locally against the content of the
        <span class="emphasis"><em>userPassword</em></span> attribute. </p></li></ol></div><div id="id-1.6.8.10.9.2.4" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg" /><h6>Important</h6><p>The local method should be not used, since the
