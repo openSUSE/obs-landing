@@ -225,13 +225,11 @@ rebuild_master:
   steps:
     - trigger_services:
         project: home:Admin
-        package: ctris</pre></div></div></div><div class="sect3 " id="sec.obs.obs_scm_ci_workflow_integration.setup.obs_workflows.filters"><div class="titlepage"><div><div><h4 class="title"><span class="number">8.1.6.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Filters</span> <a title="Permalink" class="permalink" href="cha.obs.scm_ci_workflow_integration.html#sec.obs.obs_scm_ci_workflow_integration.setup.obs_workflows.filters">#</a></h4></div></div></div><p>You can customize when workflows run and what they report by declaring filters.
-        There are two types:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p><span class="bold"><strong>Architectures and
-            Repositories</strong></span> <span class="bold"><strong>filters</strong></span>
-            affect what we report back to GitHub.</p></li><li class="listitem "><p><span class="bold"><strong>Branch and Event filters</strong></span>
-            will make workflows run or not for specific
-            branches/event.</p></li></ul></div><p>You can define them in the configuration file
-        <span class="emphasis"><em>.obs/workflows.yml</em></span>.</p><p>Here's an example with all filters:</p><div class="verbatim-wrap"><pre class="screen">workflow:
+        package: ctris</pre></div></div></div><div class="sect3 " id="sec.obs.obs_scm_ci_workflow_integration.setup.obs_workflows.filters"><div class="titlepage"><div><div><h4 class="title"><span class="number">8.1.6.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Filters</span> <a title="Permalink" class="permalink" href="cha.obs.scm_ci_workflow_integration.html#sec.obs.obs_scm_ci_workflow_integration.setup.obs_workflows.filters">#</a></h4></div></div></div><p>You can customize when workflows run by declaring
+        <span class="bold"><strong>branch</strong></span> or <span class="bold"><strong>Event</strong></span> filters.
+        They will make workflows run or not for specific branches/events.
+        </p><p>You can define them in the configuration file
+        <span class="emphasis"><em>.obs/workflows.yml</em></span>. Here's an example:</p><div class="verbatim-wrap"><pre class="screen">workflow:
   steps:
     - branch_package:
         source_project: home:jane_doe
@@ -239,21 +237,14 @@ rebuild_master:
         target_project: games
   filters:
     event: pull_request
-    branches: 
+    branches:
       only:
         - master
-        - staging
-    architectures:
-      ignore:
-        - s390x
-        - ia64
-    repositories:
-      only:
-        - openSUSE_Tumbleweed</pre></div><div class="sect4 " id="sec.obs.obs_scm_ci_workflow_integration.setup.obs_workflows.filters.delimiters"><div class="titlepage"><div><div><h5 class="title"><span class="number">8.1.6.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Filters Delimiters: only and ignore</span> <a title="Permalink" class="permalink" href="cha.obs.scm_ci_workflow_integration.html#sec.obs.obs_scm_ci_workflow_integration.setup.obs_workflows.filters.delimiters">#</a></h5></div></div></div><p>Some steps can affect a group of elements (branches,
-          architectures, etc.) You can use filter delimiters like <span class="bold"><strong>only</strong></span> and <span class="bold"><strong>ignore</strong></span> to specify which elements should be
+        - staging</pre></div><div class="sect4 " id="sec.obs.obs_scm_ci_workflow_integration.setup.obs_workflows.filters.delimiters"><div class="titlepage"><div><div><h5 class="title"><span class="number">8.1.6.2.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Filters Delimiters: only and ignore</span> <a title="Permalink" class="permalink" href="cha.obs.scm_ci_workflow_integration.html#sec.obs.obs_scm_ci_workflow_integration.setup.obs_workflows.filters.delimiters">#</a></h5></div></div></div><p>Some steps can affect a group of elements (branches)
+          You can use filter delimiters like <span class="bold"><strong>only</strong></span> and <span class="bold"><strong>ignore</strong></span> to specify which elements should be
           affected, or not, by the step.</p><p>The available filters delimiters are:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p><span class="bold"><strong>only: </strong></span>the step only
               affects the elements in the list.</p></li><li class="listitem "><p><span class="bold"><strong>ignore:</strong></span> the step affects
-              all the elements except those in the list.</p></li></ul></div><div id="id-1.5.8.5.2.8.10.7.5" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p><span class="bold"><strong>only</strong></span> has precedence over
+              all the elements except those in the list.</p></li></ul></div><div id="id-1.5.8.5.2.8.10.5.5" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p><span class="bold"><strong>only</strong></span> has precedence over
             <span class="bold"><strong>ignore</strong></span>, so if both are defined,
             <span class="bold"><strong>ignore</strong></span> is not considered.</p></div><p>This is an example to run a workflow <span class="emphasis"><em>only</em></span> for the target
           branches <span class="emphasis"><em>master</em></span>:</p><div class="verbatim-wrap"><pre class="screen">workflow:
@@ -264,18 +255,16 @@ rebuild_master:
   filters:
     branches:
       only:
-        - master</pre></div><p>This is an example of a workflow reporting back to GitHub for
-          all repositories, <span class="emphasis"><em>except</em></span> the repository named
-          <span class="emphasis"><em>openSUSE_Tumbleweed</em></span>:</p><div class="verbatim-wrap"><pre class="screen">workflow:
+        - master</pre></div><p>This is an example to run a workflow for all the target branches
+          <span class="emphasis"><em>except</em></span> for the branch <span class="emphasis"><em>staging</em></span>:</p><div class="verbatim-wrap"><pre class="screen">workflow:
   steps:
-    - branch_package:
-        source_project: games
-        source_package: ctris
-        target_project: home:jane_doe
+    - rebuild_package:
+        project: games
+        package: ctris
   filters:
-    repositories:
+    branches:
       ignore:
-        - openSUSE_Tumbleweed</pre></div></div><div class="sect4 " id="sec.obs.obs_scm_ci_workflow_integration.obs_workflows.filters.event_filter"><div class="titlepage"><div><div><h5 class="title"><span class="number">8.1.6.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Event Filter</span> <a title="Permalink" class="permalink" href="cha.obs.scm_ci_workflow_integration.html#sec.obs.obs_scm_ci_workflow_integration.obs_workflows.filters.event_filter">#</a></h5></div></div></div><p>Setting an event filter will run the workflow only for this event. The event filter doesn't accept multiple events.
+        - staging</pre></div></div><div class="sect4 " id="sec.obs.obs_scm_ci_workflow_integration.obs_workflows.filters.event_filter"><div class="titlepage"><div><div><h5 class="title"><span class="number">8.1.6.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Event Filter</span> <a title="Permalink" class="permalink" href="cha.obs.scm_ci_workflow_integration.html#sec.obs.obs_scm_ci_workflow_integration.obs_workflows.filters.event_filter">#</a></h5></div></div></div><p>Setting an event filter will run the workflow only for this event. The event filter doesn't accept multiple events.
           Documentation on the SCM events is <a class="link" href="cha.obs.scm_ci_workflow_integration.html#sec.obs.obs_scm_ci_workflow_integration.setup.webhooks.scm_events" title="8.1.5.1. SCM Events">here</a>.</p><p>The available event filters are:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p><span class="bold"><strong>pull_request</strong></span> is for pull
               request events.</p></li><li class="listitem "><p><span class="bold"><strong>push</strong></span> is for push
               events related to commits.</p></li><li class="listitem "><p><span class="bold"><strong>tag_push</strong></span> is for push
@@ -301,34 +290,6 @@ rebuild_master:
       ignore:
         - master
         - final</pre></div><p>Learn more about <a class="link" href="cha.obs.scm_ci_workflow_integration.html#sec.obs.obs_scm_ci_workflow_integration.setup.obs_workflows.filters.delimiters" title="8.1.6.2.1. Filters Delimiters: only and ignore">Filters
-          Delimiters: only and ignore</a>.</p></div><div class="sect4 " id="sec.obs.obs_scm_ci_workflow_integration.obs_workflows.filters.architectures_filter"><div class="titlepage"><div><div><h5 class="title"><span class="number">8.1.6.2.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Architectures Filter</span> <a title="Permalink" class="permalink" href="cha.obs.scm_ci_workflow_integration.html#sec.obs.obs_scm_ci_workflow_integration.obs_workflows.filters.architectures_filter">#</a></h5></div></div></div><p>This filter matches architectures based on their names and
-          report back to GitHub only for those architectures.</p><p>Example of a workflow reporting back to the GitHub only for
-          architectures <span class="emphasis"><em>s390x</em></span> and
-          <span class="emphasis"><em>x86_64</em></span>:</p><div class="verbatim-wrap"><pre class="screen">workflow:
-  steps:
-    - branch_package:
-        source_project: home:jane_doe
-        source_package: ctris
-        target_project: games
-  filters:
-    architectures:
-      only:
-        - s390x
-        - x86_64</pre></div><p>Learn more about <a class="link" href="cha.obs.scm_ci_workflow_integration.html#sec.obs.obs_scm_ci_workflow_integration.setup.obs_workflows.filters.delimiters" title="8.1.6.2.1. Filters Delimiters: only and ignore">Filters
-          Delimiters: only and ignore</a>.</p></div><div class="sect4 " id="sec.obs.obs_scm_ci_workflow_integration.obs_workflows.filters.repositories_filter"><div class="titlepage"><div><div><h5 class="title"><span class="number">8.1.6.2.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Repositories Filter</span> <a title="Permalink" class="permalink" href="cha.obs.scm_ci_workflow_integration.html#sec.obs.obs_scm_ci_workflow_integration.obs_workflows.filters.repositories_filter">#</a></h5></div></div></div><p>Matches repositories based on their names and report back to
-          GitHub only for those repositories.</p><p>Example of a workflow reporting back to GitHub only for
-          repositories <span class="emphasis"><em>openSUSE_Tumbleweed</em></span> and
-          <span class="emphasis"><em>CentOS_8</em></span>:</p><div class="verbatim-wrap"><pre class="screen">workflow:
-  steps:
-    - branch_package:
-        source_project: home:jane_doe
-        source_package: ctris
-        target_project: games
-  filters:
-    repositories:
-      only:
-        - openSUSE_Tumbleweed
-        - CentOS_8</pre></div><p>Learn more about <a class="link" href="cha.obs.scm_ci_workflow_integration.html#sec.obs.obs_scm_ci_workflow_integration.setup.obs_workflows.filters.delimiters" title="8.1.6.2.1. Filters Delimiters: only and ignore">Filters
           Delimiters: only and ignore</a>.</p></div></div></div><div class="sect2 " id="sec.obs.obs_scm_ci_workflow_integration.setup.status_reporting"><div class="titlepage"><div><div><h3 class="title"><span class="number">8.1.7 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Status Reporting</span> <a title="Permalink" class="permalink" href="cha.obs.scm_ci_workflow_integration.html#sec.obs.obs_scm_ci_workflow_integration.setup.status_reporting">#</a></h3></div></div></div><p>Once all the steps in the workflow are done, OBS will report the build results back to GitHub.
       results back to GitHub.</p><p>OBS will show detailed package build status for each distribution
       and architecture you have set up in the configuration file.</p><div class="figure" id="id-1.5.8.5.2.9.4"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/commit_status.png" target="_blank"><img src="images/commit_status.png" width="" alt="Build Status" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 8.3: </span><span class="name">Build Status </span><a title="Permalink" class="permalink" href="cha.obs.scm_ci_workflow_integration.html#id-1.5.8.5.2.9.4">#</a></h6></div></div><p>Moreover, if your package builds several multibuild flavors, the status will
