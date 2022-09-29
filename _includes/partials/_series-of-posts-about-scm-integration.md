@@ -9,7 +9,7 @@ and [added support for push events and a rebuild step](/2021/09/28/support-for-p
 We worked on [UI and reporting improvements](/2022/02/03/scm-integration-report-improvements) in February 2022, followed by a
 [step to trigger services](/2022/04/04/scm-integration-trigger_services) and [the improvement of the error messages](/2022/04/20/scm-integration-better-error-messages) in April 2022.
 Afterwards, we clarified the [separation between incoming webhooks and status reports](/2022/05/31/seperation-of-webhook-and-status-reports) in May 2022, then [sharing tokens](/2022/06/20/token-sharing)
-was made possible in June 2022. Later in July 2022, we added support for the [SCM Bridge](2022/07/18/scm-bridge) feature.
-Around September 2022, the feature was considered stable, so we [enabled it for all the OBS users](2022/09/21/trigger-workflow-rollout), but that wasn't the end; later in September we reached the milestone of [supporting Gitea](2022/09/28/gitea_integration) on top of GitHub and GitLab._
+was made possible in June 2022. Later in July 2022, we added support for the [SCM Bridge](/2022/07/18/scm-bridge) feature.
+Around September 2022, the feature was considered stable, so we [enabled it for all the OBS users](/2022/09/21/trigger-workflow-rollout), but that wasn't the end; later in September we reached the milestone of [supporting Gitea](/2022/09/28/gitea_integration) on top of GitHub and GitLab._
 
 _This feature is documented in the [SCM/CI Workflow Integration chapter](https://openbuildservice.org/help/manuals/obs-user-guide/cha.obs.scm_ci_workflow_integration.html) of the [OBS User Guide](https://openbuildservice.org/help/manuals/obs-user-guide/)._
