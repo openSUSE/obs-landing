@@ -13,11 +13,6 @@ team_members:
     email: lkrause@suse.com
     github: krauselukas
 
-  - name: Victor Pereira
-    email: vpereira@suse.com
-    github: vpereira
-    irc: vpereira
-
   - name: Dany Marcoux
     email: dmarcoux@suse.de
     github: dmarcoux
@@ -35,12 +30,6 @@ team_members:
     twitter: eduardoj
     irc: enavarro
 
-  - name: David Kang
-    email: dkang@suse.com
-    github: DavidKang
-    twitter: D4vid_Kang
-    irc: dkang
-
   - name: Henne Vogelsang
     email: hvogel@opensuse.org
     github: hennevogel
@@ -51,6 +40,16 @@ team_members:
   - name: Rubhan Azeem
     email: rubhan.azeem@suse.com
     github: rubhanazeem
+
+  - name: Dario Leidi
+    email: dleidi@suse.com
+    github: ncounter
+    irc: dario[m]
+
+  - name: Jacob Michalskie
+    email: jacob.michalskie@suse.com
+    github: hellcp-work
+    irc: hellcp
 ---
 
 This is the first post in a series about teams inside different companies that work to bring the
