@@ -1,0 +1,1 @@
+_We started the [redesign of the request workflow](/2022/08/15/request-workflow-redesign) in August 2022. Then, in September 2022, we focused on the [support of multi-action submit requests](/2022/09/14/request-workflow-redesign-round-two) to continue now with [improvements regarding the Build Results tab and superseded conversations](/2022/10/24/request-workflow-redesign)._
