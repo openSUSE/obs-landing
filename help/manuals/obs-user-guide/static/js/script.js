@@ -6,7 +6,7 @@ Authors:
 
 License: GPL 2+
 
-(c) 2012-2019 SUSE LLC
+(c) 2012-2022 SUSE LLC
 */
 
 var active = false;
@@ -35,12 +35,38 @@ var ghLabels = $( 'meta[name="tracker-gh-labels"]' ).attr('content');
 var ghMilestone = $( 'meta[name="tracker-gh-milestone"]' ).attr('content');
 var ghTemplate = $( 'meta[name="tracker-gh-template"]' ).attr('content');
 
+const source_svg = '<svg class="source_svg" xmlns="http://www.w3.org/2000/svg" width="23.067348" height="26.213722" viewBox="0 0 6.1032359 6.9357145" version="1.1"><path fill="none" stroke="#c0c2c4" stroke-width="0.264583px" d="m 0.1327732,0.13229144 5.8381716,1.076e-5 -3.6e-6,4.7625 -3.7041668,1.21e-5 -1.0583335,1.6009044 -1.07e-5,-1.6009045 -1.05833339,5.9e-6 z M 3.9857659,1.7577095 4.8046844,2.5766279 3.985766,3.3955459 M 2.2976362,1.7577096 1.4787181,2.5766278 2.297636,3.3955459 M 3.6535249,1.5529801 2.6298773,3.6002755" /></svg>';
+const bug_svg = '<svg class="bug_svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 6.1 6.94" version="1.1"><path fill="none" stroke="black" stroke-width="0.264581" d="m 3.04305,3.18412 5e-4,0.25999 M 3.04101,2.12253 3.04255,2.92414 M 3.03946,1.32091 4.64727,3.70101 1.46248,3.70713 Z M 0.155698,0.134866 5.98364,0.123661 5.99281,4.89001 2.26639,4.89718 1.18621,6.50249 1.18313,4.89926 0.164862,4.90122 Z" /></svg>';
+
+
+function show_meta() {
+  console.group("Global variables");
+  console.log("bugtrackerUrl: %s", bugtrackerUrl);
+  console.log("bugtrackerType: ", bugtrackerType);
+
+  console.log("----");
+  console.log("bscComponent: %s", bscComponent);
+  console.log("bscProduct: %s", bscProduct);
+  console.log("bscAssignee: %s", bscAssignee);
+  console.log("bscVersion: %s", bscVersion);
+  console.log("bscTemplate: %s", bscTemplate);
+  console.log("----");
+  console.log("ghAssignee: %s", ghAssignee);
+  console.log("ghLabels: %s", ghLabels);
+  console.log("ghMilestone: %s", ghMilestone);
+  console.log("ghTemplate: %s", ghTemplate);
+  // console.log("report bug SVG: %s", bug_svg);
+  console.groupEnd();
+}
+
 
 $(function() {
   /* http://css-tricks.com/snippets/jquery/smooth-scrolling/ */
   var speed = 400;
 
-  $('a.top-button[href=#]').click(function() {
+  show_meta();
+
+  $('a.top-button[href=\\#]').click(function() {
     $('html,body').animate({ scrollTop: 0 }, speed,
       function() { location = location.pathname + '#'; });
     return false;
@@ -138,17 +164,39 @@ $(function() {
 function addBugLinks() {
   // do not create links if there is no URL
   if ( typeof(bugtrackerUrl) == 'string') {
-    $('.permalink:not([href^=#idm])').each(function () {
+
+    $('.permalink:not([href^=\\#idm])').each(function (index) {
       var permalink = this.href;
       var sectionNumber = "";
       var sectionName = "";
       var url = "";
-      if ( $(this).prevAll('span.number')[0] ) {
-        sectionNumber = $(this).prevAll('span.number')[0].innerHTML;
+      var parentnode = $(this).parent()
+
+      function prev(x, node=parentnode) {
+        return node.children(x);
+      };
+
+      if ( prev('.title-number') ) {
+        sectionNumber = prev('.title-number').text();
       }
-      if ( $(this).prevAll('span.number')[0] ) {
-        sectionName = $(this).prevAll('span.name')[0].innerHTML;
+      if ( prev('span.title-number') ) {
+        sectionName = prev('.title-name').text();
       }
+
+      // for the first link and when we have an empty section title,
+      // it's the title
+      if ( sectionName == "" && index == 1) {
+        // we are at the first link
+        sectionName = $("meta[name=book-title]").attr("content");
+      }
+
+      if ( sectionName == "" ) {
+        // usually bridgeheads
+        // console.log("section name is empty. Doing something else.");
+        sectionName = prev('.name').text();
+      }
+
+      console.log("Section[%s]: %s: '%s'", index, sectionNumber, sectionName);
 
       if (bugtrackerType == 'bsc') {
         url = bugzillaUrl(sectionNumber, sectionName, permalink);
@@ -157,9 +205,20 @@ function addBugLinks() {
         url = githubUrl(sectionNumber, sectionName, permalink);
       }
 
-      $(this).before("<a class=\"report-bug\" rel=\"nofollow\" target=\"_blank\" href=\""
-        + url
-        + "\" title=\"Report a bug against this section of the documentation\">Report Documentation Bug</a> ");
+      report_bug_link = "<a class=\"report-bug\" target=\"_blank\" href=\""
+                        + url
+                        + "\" title=\"Report a bug against this section of the documentation\">"
+                        // + "&#9733;"
+                        // + "Report Bug "
+                        // + "<img src=\"bug-report.svg\" height=\"\"/>"
+                        + bug_svg
+                        + "</a> ";
+      console.log("Report bug link: %s", report_bug_link);
+      $(this).after(report_bug_link);
+      source_bug_link = "<a class=\"source-link\" title=\"Hallo\""
+                        + source_svg
+                        + "</a> ";
+      $(this).after(source_bug_link);
       return true;
     });
   }
