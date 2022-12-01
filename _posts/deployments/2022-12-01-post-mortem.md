@@ -10,7 +10,7 @@ We want to share with you a detailed explanation of what happened.
 ## Impact
 
 Our [reference server](https://build.opensuse.org) was offline for 13 minutes starting at 09:50 (CEST).
-Our instance responded to every request with a downtime maintenance message.
+Our instance responded to every request with a maintenance message.
 No one was able to work with the API or user interface during that time.
 
 
@@ -18,7 +18,7 @@ No one was able to work with the API or user interface during that time.
 
 Around **09:49** (CEST), we ran a deployment.
 The script used to run the deployment alerted us that the deployment finished with an error.
-From this time on, our instance responded to every request with a downtime maintenance message.
+From that time on, our instance responded to every request with a maintenance message.
 We noticed that this was caused by an upgrade of our obs-api package without upgrading other required packages, related to the ruby package update.
 At 10:02 (CEST) we installed the missing packages and restarted the services affected.
 Our reference server was back to normal at 10:03 (CEST).
