@@ -300,6 +300,11 @@
 .ui .post-content {
   padding: 30px;
 }
+.ui .post-content pre {
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 10px;
+}
 .ui.post-item img {
   max-width: 100%;
 }
