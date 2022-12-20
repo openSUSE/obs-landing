@@ -310,7 +310,7 @@ rebuild_master:
             which the webhook event originates.</p></li></ul></div><p>Below is an example of a workflow with a placeholder variable:</p><div class="verbatim-wrap"><pre class="screen"># The test_build workflow will branch a package based on the SCM repository name from which the webhook event came from.
 test_build:
   steps:
-    - branch_package
+    - branch_package:
         source_project: games
         source_package: %{SCM_REPOSITORY_NAME}
         target_project: games:CI
