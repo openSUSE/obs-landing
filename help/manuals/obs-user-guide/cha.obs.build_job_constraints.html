@@ -76,7 +76,11 @@ Constraint: hardware:cpu:flag sse2</pre></div><p>
       supported.
       This flag can be used to block builds on such hardware if no 64-bit
       kernel is available for a project.
-     </p><p>Example for project configuration:</p><div class="verbatim-wrap"><pre class="screen">Constraint: hardware:cpu:flag exclude=true EL0</pre></div></div></div><div class="sect2 " id="id-1.5.10.16.12.4"><div class="titlepage"><div><div><h3 class="title"><span class="number">34.4.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><code class="literal">processors</code></span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#id-1.5.10.16.12.4">#</a></h3></div></div></div><p> To require a minimal number of processors for the build job. </p><p> Example for _constraints file:</p><div class="verbatim-wrap"><pre class="screen">&lt;constraints&gt;
+     </p><p>Example for project configuration:</p><div class="verbatim-wrap"><pre class="screen">Constraint: hardware:cpu:flag exclude=true EL0</pre></div><p>
+      Additional flags are also reported for effective architecture level of
+      the cpu. This includes the following flags:
+      </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>power7</p></li><li class="listitem "><p>power8</p></li><li class="listitem "><p>power9</p></li><li class="listitem "><p>x86-64-v2</p></li><li class="listitem "><p>x86-64-v3</p></li><li class="listitem "><p>x86-64-v4</p></li></ul></div><p>
+     </p></div></div><div class="sect2 " id="id-1.5.10.16.12.4"><div class="titlepage"><div><div><h3 class="title"><span class="number">34.4.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name"><code class="literal">processors</code></span> <a title="Permalink" class="permalink" href="cha.obs.build_job_constraints.html#id-1.5.10.16.12.4">#</a></h3></div></div></div><p> To require a minimal number of processors for the build job. </p><p> Example for _constraints file:</p><div class="verbatim-wrap"><pre class="screen">&lt;constraints&gt;
   &lt;hardware&gt;
     &lt;processors&gt;4&lt;/processors&gt;
   &lt;/hardware&gt;
@@ -143,5 +147,5 @@ x86_64:worker:2</pre></div><p>If a repository and an arch is given a list of com
     &lt;jobs&gt;1&lt;/jobs&gt;
   &lt;/hardware&gt;
 &lt;/worker&gt;</pre></div><p> It returns the information of the desired worker. </p></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="cha.obs.build_preinstall.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 35 </span>Building Preinstall Images</span></a><a class="nav-link" href="cha.obs.build_scheduling_and_dispatching.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 33 </span>Scheduling and Dispatching</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
-        2022 
+        2023 
         SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>
