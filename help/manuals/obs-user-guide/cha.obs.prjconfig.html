@@ -155,16 +155,10 @@ Keep: debbuild</pre></div></dd><dt id="id-1.5.7.3.4.6.4"><span class="term "><em
         </p><p>
           A common use case for <code class="literal">obsgendiff</code> is to run <a class="link" href="https://github.com/openSUSE/release-compare" target="_blank">release-compare</a>
           after the build.
-        </p></dd><dt id="id-1.5.7.3.4.6.4.2.2.11"><span class="term "><em class="parameter ">slsaprovenance</em></span></dt><dd><p>
-	  OBS 2.11 can produce and publish additional SLSA provenance attestation 
-          files. This files are currently following the v0.2 Alpha spec, which is
-	  suspect to change. We will change the code to follow the specification,
-	  so the files might change in an incompatible way until a stable version
-	  has been released.
-        </p><p>
-          This flag is usually only useful, when the publishing happens via a
-          maintenance and release workflow for stable distribution, not for
-          constant rebuilding rolling releases.
+        </p></dd><dt id="id-1.5.7.3.4.6.4.2.2.11"><span class="term "><em class="parameter ">spdx</em></span></dt><dd><p>
+	  OBS 2.11 can produce and publish additional SPDX data by enabling this flag.
+          This is currenlty limited to container builds and includes only data from
+          installed rpm packages.
         </p></dd></dl></div></dd><dt id="id-1.5.7.3.4.6.5"><span class="term "><em class="parameter ">Constraint: <em class="replaceable ">SELECTOR</em> <em class="replaceable ">STRING</em></em> (OBS 2.4 or later)</span></dt><dd><p>
       Define build constraints for build jobs. The selector is a
       colon-separated list which gets a string assigned. See the build job
