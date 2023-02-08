@@ -1455,9 +1455,9 @@ amqp_queue_options:
             <p>A package build has succeeded</p>
           </td><td align="left" valign="top">
             <p>
-              :repository, :arch, :release, :readytime, :srcmd5,
-              :rev, :reason, :bcnt, :verifymd5, :hostarch, :starttime,
-              :endtime, :workerid, :versrel, :previouslyfailed
+              :project, :package, :repository, :arch, :release, :readytime,
+              :srcmd5, :rev, :reason, :bcnt, :verifymd5, :starttime, :endtime,
+              :workerid, :versrel, :buildtype
             </p>
           </td></tr><tr><td align="left" valign="top">
             <p><span class="emphasis"><em>__prefix__</em></span>.package.build_fail</p>
@@ -1465,9 +1465,10 @@ amqp_queue_options:
             <p>A package build has failed</p>
           </td><td align="left" valign="top">
             <p>
-              :repository, :arch, :release, :readytime, :srcmd5,
-              :rev, :reason, :bcnt, :verifymd5, :hostarch, :starttime,
-              :endtime, :workerid, :versrel, :previouslyfailed, :faillog
+              :project, :package, :repository, :arch, :release, :readytime,
+              :srcmd5, :rev, :reason, :bcnt, :verifymd5, :starttime, :endtime,
+              :workerid, :versrel, :previouslyfailed, :successive_failcount,
+              :buildtype
             </p>
           </td></tr><tr><td align="left" valign="top">
             <p><span class="emphasis"><em>__prefix__</em></span>.package.build_unchanged</p>
@@ -1475,9 +1476,9 @@ amqp_queue_options:
             <p>A package build has succeeded with unchanged result</p>
           </td><td align="left" valign="top">
             <p>
-              :repository, :arch, :release, :readytime, :srcmd5,
-              :rev, :reason, :bcnt, :verifymd5, :hostarch, :starttime,
-              :endtime, :workerid, :versrel, :previouslyfailed
+              :project, :package, :repository, :arch, :release, :readytime,
+              :srcmd5, :rev, :reason, :bcnt, :verifymd5, :starttime, :endtime,
+              :workerid, :versrel, :buildtype
             </p>
           </td></tr><tr><td align="left" valign="top">
             <p><span class="emphasis"><em>__prefix__</em></span>.package.create</p>
