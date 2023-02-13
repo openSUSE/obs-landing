@@ -1,4 +1,7 @@
 title: Open Build Service
+description: |
+  Create and Distribute Software Packages for all Major Linux
+  Distributions with all the Tools to Work Together!
 highlighter: rouge
 url: https://openbuildservice.org
 permalink: /:year/:month/:day/:title/
