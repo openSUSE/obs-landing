@@ -155,7 +155,11 @@ Keep: debbuild</pre></div></dd><dt id="id-1.5.7.3.4.6.4"><span class="term "><em
         </p><p>
           A common use case for <code class="literal">obsgendiff</code> is to run <a class="link" href="https://github.com/openSUSE/release-compare" target="_blank">release-compare</a>
           after the build.
-        </p></dd><dt id="id-1.5.7.3.4.6.4.2.2.11"><span class="term "><em class="parameter ">spdx</em></span></dt><dd><p>
+        </p></dd><dt id="id-1.5.7.3.4.6.4.2.2.11"><span class="term "><em class="parameter ">setvcs</em></span></dt><dd><p>
+          Add the SCM URL to binary results when the package sources are managed 
+          via the scmsync mechanic. The url is written into the VCS tag of rpms
+          when enabling this functionality.
+        </p></dd><dt id="id-1.5.7.3.4.6.4.2.2.12"><span class="term "><em class="parameter ">spdx</em></span></dt><dd><p>
 	  OBS 2.11 can produce and publish additional SPDX data by enabling this flag.
           This is currenlty limited to container builds and includes only data from
           installed rpm packages.
