@@ -290,7 +290,7 @@ rebuild_master:
         source_project: games
         source_package: ctris
         target_project: home:jane_doe
-  filters: 
+  filters:
     event: pull_request</pre></div></div><div class="sect4 " id="sec.obs.obs_scm_ci_workflow_integration.obs_workflows.filters.branches_filter"><div class="titlepage"><div><div><h5 class="title"><span class="number">8.1.6.3.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Branches Filter</span> <a title="Permalink" class="permalink" href="cha.obs.scm_ci_workflow_integration.html#sec.obs.obs_scm_ci_workflow_integration.obs_workflows.filters.branches_filter">#</a></h5></div></div></div><p>Matches target branches based on their names and runs a
           workflow only for those branches.</p><p>This is an example to run a workflow for all target branches,
           except <span class="emphasis"><em>master</em></span> and
@@ -305,7 +305,10 @@ rebuild_master:
       ignore:
         - master
         - final</pre></div><p>Learn more about <a class="link" href="cha.obs.scm_ci_workflow_integration.html#sec.obs.obs_scm_ci_workflow_integration.setup.obs_workflows.filters.delimiters" title="8.1.6.3.1. Filters Delimiters: only and ignore">Filters
-          Delimiters: only and ignore</a>.</p></div></div><div class="sect3 " id="sec.obs.obs_scm_ci_workflow_integration.setup.obs_workflows.placeholder_variables"><div class="titlepage"><div><div><h4 class="title"><span class="number">8.1.6.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Placeholder Variables</span> <a title="Permalink" class="permalink" href="cha.obs.scm_ci_workflow_integration.html#sec.obs.obs_scm_ci_workflow_integration.setup.obs_workflows.placeholder_variables">#</a></h4></div></div></div><p>With placeholder variables, workflows are now dynamic. Whenever a
+          Delimiters: only and ignore</a>.</p><div id="id-1.5.8.5.2.7.10.7.6" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note</h6><p>
+              <span class="bold"><strong>tag_push</strong></span> events are not supported by the
+              <span class="bold"><strong>branches filter</strong></span>.
+            </p></div></div></div><div class="sect3 " id="sec.obs.obs_scm_ci_workflow_integration.setup.obs_workflows.placeholder_variables"><div class="titlepage"><div><div><h4 class="title"><span class="number">8.1.6.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Placeholder Variables</span> <a title="Permalink" class="permalink" href="cha.obs.scm_ci_workflow_integration.html#sec.obs.obs_scm_ci_workflow_integration.setup.obs_workflows.placeholder_variables">#</a></h4></div></div></div><p>With placeholder variables, workflows are now dynamic. Whenever a
         webhook event comes in, OBS downloads the workflows file and parses it.
         This is when the placeholder variables are replaced by the data they
         refer to in the webhook event payload.</p><p>Here's a list of supported placeholder variables and their mapping:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p><span class="emphasis"><em>%{SCM_ORGANIZATION_NAME}</em></span>: The name of the SCM
@@ -367,7 +370,7 @@ test_build:
         source_project: GNOME:Factory
         source_package: gnome-shell
         target_project: home:jane:playground
-  filters: 
+  filters:
     event: pull_request</pre></div><p>Whenever someone opens a new pull request in the repository, OBS
         will branch the <span class="emphasis"><em>source package</em></span> onto the
         <span class="emphasis"><em>target project</em></span>, trigger the build, and report the
