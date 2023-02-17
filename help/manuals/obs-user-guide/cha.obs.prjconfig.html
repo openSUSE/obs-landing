@@ -159,10 +159,11 @@ Keep: debbuild</pre></div></dd><dt id="id-1.5.7.3.4.6.4"><span class="term "><em
           Add the SCM URL to binary results when the package sources are managed 
           via the scmsync mechanic. The url is written into the VCS tag of rpms
           when enabling this functionality.
-        </p></dd><dt id="id-1.5.7.3.4.6.4.2.2.12"><span class="term "><em class="parameter ">spdx</em></span></dt><dd><p>
-	  OBS 2.11 can produce and publish additional SPDX data by enabling this flag.
-          This is currenlty limited to container builds and includes only data from
-          installed rpm packages.
+        </p></dd><dt id="id-1.5.7.3.4.6.4.2.2.12"><span class="term "><em class="parameter ">sbom:FORMAT</em></span></dt><dd><p>
+	  OBS 2.11 can produce and publish additional SBOM (Software Bill Of Material) 
+	  meta data by enabling this flag.
+	  This is currently supported for container and kiwi images builds and includes
+	  only data from installed rpm packages. Supported formats are spdx and cyclonedx.
         </p></dd></dl></div></dd><dt id="id-1.5.7.3.4.6.5"><span class="term "><em class="parameter ">Constraint: <em class="replaceable ">SELECTOR</em> <em class="replaceable ">STRING</em></em> (OBS 2.4 or later)</span></dt><dd><p>
       Define build constraints for build jobs. The selector is a
       colon-separated list which gets a string assigned. See the build job
@@ -244,7 +245,7 @@ Keep: debbuild</pre></div></dd><dt id="id-1.5.7.3.4.6.4"><span class="term "><em
             This is evaluated individually for each architecture.
             That means, packages can be published for an architecture on which it builds,
             even if a package fails to build on another architecture.
-           </p></dd><dt id="id-1.5.7.3.4.6.19.2.2.4"><span class="term "><em class="parameter ">withreports</em> (OBS 2.11 or later)</span></dt><dd><p>Also publish internal content tracking files (<code class="literal">.report</code> files).</p></dd><dt id="id-1.5.7.3.4.6.19.2.2.5"><span class="term "><em class="parameter ">ympdist:NAME</em> (OBS 2.11 or later)</span></dt><dd><p>Defines the distversion to be used in group element of ymp files.
+           </p></dd><dt id="id-1.5.7.3.4.6.19.2.2.4"><span class="term "><em class="parameter ">withsbom</em> (OBS 2.11 or later)</span></dt><dd><p>Enables publishing of SBOM files (SPDX or CycloneDX format) (<code class="literal">.cdx.json</code> or <code class="literal">.spdx.json</code> files). Please note that the building of SBOM files usually needs to get enabled via a BuildFlags switch as well.</p></dd><dt id="id-1.5.7.3.4.6.19.2.2.5"><span class="term "><em class="parameter ">withreports</em> (OBS 2.11 or later)</span></dt><dd><p>Also publish internal content tracking files (<code class="literal">.report</code> files).</p></dd><dt id="id-1.5.7.3.4.6.19.2.2.6"><span class="term "><em class="parameter ">ympdist:NAME</em> (OBS 2.11 or later)</span></dt><dd><p>Defines the distversion to be used in group element of ymp files.
               This is used by the installer to check if the repository is suitable for the installed distribution.</p></dd></dl></div></dd><dt id="id-1.5.7.3.4.6.20"><span class="term "><em class="parameter ">PublishFilter: <em class="replaceable ">REGEXP</em> [<em class="replaceable ">REGEXP</em>]</em></span></dt><dd><p>
       Limits the published binary packages in public repositories. Packages
       that match any <em class="replaceable ">REGEXP</em> will not be put into
