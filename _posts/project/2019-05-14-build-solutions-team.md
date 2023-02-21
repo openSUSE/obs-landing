@@ -50,6 +50,12 @@ team_members:
     email: jacob.michalskie@suse.com
     github: hellcp-work
     irc: hellcp
+
+  - name: Bernhard M. Wiedemann
+    email: bmwiedemann suse.de
+    github: bmwiedemann
+    irc: bmwiedemann
+    blog: https://bmwiedemann.wordpress.com/
 ---
 
 This is the first post in a series about teams inside different companies that work to bring the
