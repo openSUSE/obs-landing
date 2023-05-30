@@ -4,4 +4,5 @@ We continued in October 2022 with [improvements regarding the Build Results tab 
 we presented [build results with a pinch of salt](/2022/11/28/request-workflow-redesign) in November 2022.
 In January 2023, we worked on [facilitating the review process](/2023/01/25/request-workflow-redesign).
 In February 2023 we [enhanced the review process with comments on changes](/2023/03/07/request-workflow-redesign).
-This time we focused on [improving the comments on changes and supporting new types of actions](/2023/04/04/request-workflow-redesign)._
+Later, in April 2023, we focused on [improving the comments on changes and supporting new types of actions](/2023/04/04/request-workflow-redesign).
+This time we introduce [maintenance action types](/2023/06/01/request-workflow-redesign)._
