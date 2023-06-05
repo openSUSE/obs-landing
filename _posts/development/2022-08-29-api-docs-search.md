@@ -11,7 +11,7 @@ This time we fully documented the search endpoints.
 
 Please just check them out!
 
-* [Search](https://build.opensuse.org/apidocs-new/#/Search)
+* [Search](https://api.opensuse.org/apidocs/#/Search)
 
 As always, we will appreciate your feedback!
 

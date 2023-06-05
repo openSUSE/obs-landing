@@ -19,10 +19,10 @@ In the last days we documented, using OpenAPI, a list of endpoints, which will g
   <figcaption>OBS API New Documentation Page</figcaption>
 </figure>
 
-This documentation page is now available [here](https://build.opensuse.org/apidocs-new/).
+This documentation page is now available [here](https://api.opensuse.org/apidocs/).
 
 Something to notice, is that the new documentation is not defining schemas to be used for XML validations, both for requests and responses.
-It will refer to the existing XML validation schemas, also found in the still usable [API documentation](https://build.opensuse.org/apidocs/).
+It will refer to the existing XML validation schemas, also found in the still usable [API documentation](https://build.opensuse.org/apidocs-old/).
 
 [OpenAPI specification](https://www.openapis.org/) is "a specification for machine-readable interface files for describing,
 producing, consuming, and visualizing RESTful web services" (according to [Wikipedia](https://en.wikipedia.org/wiki/OpenAPI_Specification)).

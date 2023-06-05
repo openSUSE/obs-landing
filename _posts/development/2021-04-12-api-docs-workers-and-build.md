@@ -13,7 +13,7 @@ In the last days we documented Build and Workers related endpoints. Stay tuned, 
   <figcaption>OBS API New Documentation Page</figcaption>
 </figure>
 
-This documentation page is now available [here](https://build.opensuse.org/apidocs-new/).
+This documentation page is now available [here](https://api.opensuse.org/apidocs/).
 
 We still have a lot to do in this area. However, after every sprint where we review the actual documentation, dig into code, play around with the API, and migrate the documentation to the OpenAPI standard, we don't just come up with a better looking documentation, but we learn more about our API itself too.
 
