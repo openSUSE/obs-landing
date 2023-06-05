@@ -164,6 +164,9 @@ Keep: debbuild</pre></div></dd><dt id="id-1.5.7.3.4.6.4"><span class="term "><em
 	  meta data by enabling this flag.
 	  This is currently supported for container and kiwi images builds and includes
 	  only data from installed rpm packages. Supported formats are spdx and cyclonedx.
+        </p></dd><dt id="id-1.5.7.3.4.6.4.2.2.13"><span class="term "><em class="parameter ">container-compression-format:FORMAT</em></span></dt><dd><p>
+          Sets a compression format for container layers. Possible values are gzip, zstd,
+          zstd:chunked. Every value other than gzip is only supported by podman and buildah.
         </p></dd></dl></div></dd><dt id="id-1.5.7.3.4.6.5"><span class="term "><em class="parameter ">Constraint: <em class="replaceable ">SELECTOR</em> <em class="replaceable ">STRING</em></em> (OBS 2.4 or later)</span></dt><dd><p>
       Define build constraints for build jobs. The selector is a
       colon-separated list which gets a string assigned. See the build job
@@ -175,7 +178,16 @@ Keep: debbuild</pre></div></dd><dt id="id-1.5.7.3.4.6.4"><span class="term "><em
                       pick the highest version. This can be achieved by defining this flag</p></dd><dt id="id-1.5.7.3.4.6.6.2.2.2"><span class="term "><em class="parameter ">preinstallexpand</em></span></dt><dd><p>EXPERIMENTAL: Preinstall also all dependencies of a preinstalled package.
                       This may increase the amount of preinstalled packages a lot.</p></dd><dt id="id-1.5.7.3.4.6.6.2.2.3"><span class="term "><em class="parameter ">module:NAME-STREAM</em> (OBS 2.10.7 or later)</span></dt><dd><p>Enable Red Hat-specific module support in repo md repositories. By default, modules are not used, but
                       content can be made available by specifying the module name. To remove a module,
-                      add an exclamation mark (<code class="literal">!</code>) as prefix.</p></dd></dl></div></dd><dt id="id-1.5.7.3.4.6.7"><span class="term "><em class="parameter ">ExportFilter: <em class="replaceable ">REGEX</em> <em class="replaceable ">ARCH</em></em></span></dt><dd><p>
+                      add an exclamation mark (<code class="literal">!</code>) as prefix.</p></dd><dt id="id-1.5.7.3.4.6.6.2.2.4"><span class="term "><em class="parameter ">ignoreconflicts</em></span></dt><dd><p>Ignore defined conflicts of packages. By default these are reported as unresolvable.
+                      This switch may be useful when packages get not installed in the build environment,
+                      but getting processed afterwards. That tool, eg. some image building tool, must be
+                      able to handle the situation (eg. by just using a subset of the packages).
+                      </p></dd><dt id="id-1.5.7.3.4.6.6.2.2.5"><span class="term "><em class="parameter ">keepfilerequires</em></span></dt><dd><p>Dependencies on files are only fulfilled if matching FileProvides are specified
+                      in the project configuration. If those are missing, the dependency results in
+                      an "unresolvable" state for directly required files or in silent breaking of the
+                      dependency for indirectly required files. With this option, all file requires are
+                      honoured by default and lead to "unresolvable" if there are no matching FileProvides defined.
+                 </p></dd></dl></div></dd><dt id="id-1.5.7.3.4.6.7"><span class="term "><em class="parameter ">ExportFilter: <em class="replaceable ">REGEX</em> <em class="replaceable ">ARCH</em></em></span></dt><dd><p>
       The export filter can be used to export build results from one
       architecture to others. This is required when one architecture needs
       packages from another architecture for building.

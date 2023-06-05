@@ -55,7 +55,17 @@ hljs.configure({
      <code class="code">#!BuildRequires: STRING</code> Requires a build dependency. Usually the rpm native BuildRequires
      is the better way to define this. Use this tag only when the dependency should only exist when using
      the build script or OBS.
-    </p></li></ul></div></div><div class="sect1 " id="id-1.5.10.8.4"><div class="titlepage"><div><div><h2 class="title"><span class="number">26.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">OBS Extensions for (KIWI) Appliance Builds</span> <a title="Permalink" class="permalink" href="cha.obs.supported_formats.html#id-1.5.10.8.4">#</a></h2></div></div></div><p>
+    </p></li><li class="listitem "><p>
+	    <code class="code">#!needsrootforbuild</code> The build will be executed by root user. Please note that this must
+    be permitted either by the OBS admin (via the BSConfig.pm configuration) or enabled in via build configuration rule. Also osc requires an additional parameter for local build (--userootforbuild).</p></li><li class="listitem "><p>
+	    <code class="code">#!needsslcertforbuild</code> This will prepare an SSL certification based on the project key. It is
+	    used to create secure boot enabled packages usually. Please note that this will fail, if the project
+	    still has an old DSA key.
+</p></li><li class="listitem "><p>
+	    <code class="code">#!needsappxsslcertforbuild</code> Creates an appx compatible ssl certificate based on the project key.
+            Please note that this will fail, if the project still has an old DSA key.
+</p></li><li class="listitem "><p>
+	    <code class="code">#!needsbinariesforbuild</code> All package files are usually removed before starting the build (after finishing to setup the build environment). This marker keeps them also during build.</p></li></ul></div></div><div class="sect1 " id="id-1.5.10.8.4"><div class="titlepage"><div><div><h2 class="title"><span class="number">26.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">OBS Extensions for (KIWI) Appliance Builds</span> <a title="Permalink" class="permalink" href="cha.obs.supported_formats.html#id-1.5.10.8.4">#</a></h2></div></div></div><p>
 	KIWI appliance builds create images which can be used for direct consumption. Note: builds in non-VM
 	environments do fail often due to the bootloader setup. Use <code class="command">osc build --vm-type=kvm</code> for local building.
 	OBS is evaluating kiwi builds at least two times. One time for the build host dependencies and another
