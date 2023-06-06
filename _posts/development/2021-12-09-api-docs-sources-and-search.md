@@ -11,8 +11,8 @@ This time we documented the project sources and some of the search endpoints.
 
 If you are curious, just check them out!
 
-* [Sources - Project](https://build.opensuse.org/apidocs-new/#/Sources%20-%20Projects)
-* [Search](https://build.opensuse.org/apidocs-new/#/Search)
+* [Sources - Project](https://api.opensuse.org/apidocs/#/Sources%20-%20Projects)
+* [Search](https://api.opensuse.org/apidocs/#/Search)
 
 As always, feedback is really welcome :)
 

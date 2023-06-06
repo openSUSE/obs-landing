@@ -32,6 +32,6 @@ Last but not least, we introduced a new API to help you as a power user in readi
 ```
 osc api '/my/notifications?project=home:Admin'
 ```
-You can find the API documentation [here](https://build.opensuse.org/apidocs-new)
+You can find the API documentation [here](https://api.opensuse.org/apidocs/)
 
 {% include partials/_how-to-give-us-feedback.md %}
