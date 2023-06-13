@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Continuing on API Endpoint Documentation for Package and File Sources
-category: development
+category: documentation
 ---
 
 You might have been already using our [new openAPI Documentation](https://api.opensuse.org/apidocs/).

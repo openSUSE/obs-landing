@@ -1,7 +1,7 @@
 ---
 layout: post
 title: More API Endpoint Documentation for Project and Package Sources
-category: development
+category: documentation
 ---
 
 Remember our [new openAPI Documentation](https://api.opensuse.org/apidocs/)? Of course you do! 
