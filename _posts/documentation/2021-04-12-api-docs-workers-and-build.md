@@ -1,7 +1,7 @@
 ---
 layout: post
 title: New Documentation for Build and Workers API Endpoints
-category: development
+category: documentation
 ---
 
 Following our previous work on the [API Documentation](/2021/01/26/api-documentation-remake), we focused this time on documenting some OBS API endpoints with [Swagger UI](https://swagger.io/tools/swagger-ui/).

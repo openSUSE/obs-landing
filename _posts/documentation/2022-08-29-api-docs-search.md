@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Search API Endpoints, Fully Documented
-category: development
+category: documentation
 ---
 
 Here we come again, with another piece of the API documentation rework.

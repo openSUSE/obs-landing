@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Newly Documented API Endpoints for Comments, Status Messages and Staging
-category: development
+category: documentation
 ---
 
 You hopefully have seen our [new openAPI Documentation](https://api.opensuse.org/apidocs/).

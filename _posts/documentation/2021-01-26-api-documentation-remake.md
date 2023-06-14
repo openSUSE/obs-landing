@@ -1,7 +1,7 @@
 ---
 layout: post
 title: API Documentation Remake
-category: development
+category: documentation
 ---
 
 The OBS API has grown for more than fifteen years, and updating and improving the documentation provided to OBS API users has

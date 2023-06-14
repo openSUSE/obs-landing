@@ -1,7 +1,7 @@
 ---
 layout: post
 title: New Documentation for API Endpoints Search and Sources - Projects
-category: development
+category: documentation
 ---
 
 Close to the end of the year, we gave the rework of the API documentation some more attention.
