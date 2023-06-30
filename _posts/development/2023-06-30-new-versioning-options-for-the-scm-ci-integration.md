@@ -4,8 +4,6 @@ title: SCM/CI Workflow Versions. Making Larger Changes Less Painful For You.
 category: development
 ---
 
-Hello everyone!
-
 Today we're going to explain the versioning system we're using to release new features to the SCM/CI integration.
 
 # Versioning the Workflow Configuration
