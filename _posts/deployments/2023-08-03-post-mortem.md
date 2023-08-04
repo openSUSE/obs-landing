@@ -4,15 +4,15 @@ On 3. August, a few hours after a large migration performed within the maintenan
 
 **Date**: 03.08.2023 
 
-**Impact**: Broken indexes on `project_log_entries`, `binary_releases`, `bs_request_actions` and `tokens` tables
+**Impact**: Broken indexes on `project_log_entries`, `binary_releases`, `bs_request_actions` and `tokens` tables.
 
-**Root Causes**: Database cluster VM run out of available space. Generation of table indexes did not work
+**Root Causes**: Database cluster VM run out of available space. Generation of table indexes did not work.
 
-**Trigger**: Morning deployment and migration from utf8mb3 to utf8mb4
+**Trigger**: Morning deployment and migration from utf8mb3 to utf8mb4.
 
-**Resolution**: The tables were dumped and restored from scratch
+**Resolution**: The tables were dumped and restored from scratch.
 
-**Detection**: We were informed by BuildOPS who got notified via their monitoring
+**Detection**: We were informed by BuildOPS who got notified via their monitoring.
 
 ## Lessons Learned
 **What went well?**
