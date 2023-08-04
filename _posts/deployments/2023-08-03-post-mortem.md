@@ -17,17 +17,17 @@ On 3. August, a few hours after a large migration performed within the maintenan
 ## Lessons Learned
 **What went well?**
 
-The rest of the migration except for those tables
+The rest of the migration except for those tables.
 
 **What went wrong?**
 
-* The current way we deploy with migration does not log the progress of migrations or inform us about things happening in real time
-* We don't know about errors coming from the database if there are any unless somebody tells us
-* We did not communicate this migration with the BuildOPS in advance to warn them of any potential fallout
+* The current way we deploy with migration does not log the progress of migrations or inform us about things happening in real time.
+* We don't know about errors coming from the database if there are any unless somebody tells us.
+* We did not communicate this migration with the BuildOPS in advance to warn them of any potential fallout.
 
 **Where we got lucky?**
 
-Only four tables ended up being affected
+Only four tables ended up being affected.
 
 ## Timeline (CEST)
 - *09:03* Started the deployment with the migration
