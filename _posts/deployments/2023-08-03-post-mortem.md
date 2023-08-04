@@ -1,3 +1,9 @@
+---
+layout: post
+title: "Post-mortem: Database Cluster Crashes"
+category: deployments
+---
+
 ## Downtime on the afternoon of 3rd of August
 
 On 3. August, a few hours after a large migration performed within the maintenance window earlier that day, we got notified about database errors coming from some of the tables.
@@ -27,7 +33,8 @@ The rest of the migration except for those tables.
 
 **Where we got lucky?**
 
-Only four tables ended up being affected.
+* Only four tables ended up being affected.
+* There were people around who helped us in getting the database back to usable state.
 
 ## Timeline (CEST)
 - *09:03* Started the deployment with the migration
