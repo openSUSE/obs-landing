@@ -6,11 +6,11 @@ category: deployments
 
 ## Downtime on the afternoon of 3rd of August
 
-On 3. August, a few hours after a large migration performed within the maintenance window earlier that day, we got notified about database errors coming from some of the tables.
+On 3. August, a few hours after a large migration performed within the maintenance window earlier that day, we experienced multiple downtimes while recovering from database inconsistencies.
 
 **Date**: 03.08.2023 
 
-**Impact**: Broken indexes on `project_log_entries`, `binary_releases`, `bs_request_actions` and `tokens` tables.
+**Impact**: Multiple downtimes throughout the day.
 
 **Root Causes**: Our database cluster ran out of available space during a large schema/data migration ([#14597 - Migrate the remaining database tables and columns to utf8mb4](https://github.com/openSUSE/open-build-service/pull/14597))
 
