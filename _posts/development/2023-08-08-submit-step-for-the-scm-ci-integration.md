@@ -27,6 +27,6 @@ This is useful in many ways. For instance create a Submit Request every time you
 
 For a more extensive look into this, please check the [OBS User Guide](https://openbuildservice.org/help/manuals/obs-user-guide/cha.obs.scm_ci_workflow_integration#sec.obs.obs_scm_ci_workflow_integration.obs_workflows.steps.submit_request).
 
-And don't forge to let us know how you make use of this!
+And don't forget to let us know how you make use of this!
 
 {% include partials/_how-to-give-us-feedback.md %}
