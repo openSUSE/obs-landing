@@ -23,6 +23,6 @@ This step will submit the `ctris` package from project `games` to project `home:
 
 # How Do I Learn More?
 
-For a more extensive look into this, please check the [OBS User Guide](https://openbuildservice.org/help/manuals/obs-user-guide/cha.obs.scm_ci_workflow_integration.html).
+For a more extensive look into this, please check the [OBS User Guide](https://openbuildservice.org/help/manuals/obs-user-guide/cha.obs.scm_ci_workflow_integration#sec.obs.obs_scm_ci_workflow_integration.obs_workflows.steps.submit_request).
 
 {% include partials/_how-to-give-us-feedback.md %}
