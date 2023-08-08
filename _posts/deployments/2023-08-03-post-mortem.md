@@ -27,7 +27,7 @@ On 3. August, a few hours after a large migration performed within the maintenan
 
 **What went wrong?**
 
-* The current way we deploy with migration does not log the progress of migrations or inform us about things happening in real time.
+* The current way we deploy with migration does not log the progress of migrations or inform us about things happening in real time ([improvement card](https://trello.com/c/iQKJUUaS)).
 * We did not communicate this migration with our database admins in advance to make them aware of potential fallout.
 
 **Where we got lucky?**
