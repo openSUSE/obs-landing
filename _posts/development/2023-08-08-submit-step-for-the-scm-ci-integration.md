@@ -4,7 +4,7 @@ title: Submit Your Packages in SCM/CI Workflows
 category: development
 ---
 
-Over the past few weeks we worked hard to add a way to automate submitting packages with an SCM/CI Workflow. Now you can automate this step, making it easier to work with OBS in a more SCM-centric way.
+Over the past few weeks we worked hard to make it possible for you to submit packages from within an OBS SCM/CI Workflow. Now you can automate this step, making it easier to work with OBS in a more SCM-centric way.
 
 # How Does It Work
 
@@ -19,7 +19,7 @@ workflow:
         target_project: home:jane_doe
 ```
 
-This step will submit the `ctris` package from project `games` to project `home:jane_doe`. You can of course select to run this step within a workflow that runs only on commit or only on pull request using filters too.
+This step will submit the `ctris` package from project `games` to project `home:jane_doe`. Of course you can select to run this step only on certain events (push, pull request etc.) or branches too.
 
 # How Do I Learn More?
 
