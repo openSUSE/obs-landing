@@ -23,12 +23,11 @@ On 3. August, a few hours after a large migration performed within the maintenan
 ## Lessons Learned
 **What went well?**
 
-The rest of the migration except for those tables.
+* We learned about the database crash soon after it happened.
 
 **What went wrong?**
 
 * The current way we deploy with migration does not log the progress of migrations or inform us about things happening in real time.
-* We don't know about errors coming from the database if there are any unless somebody tells us.
 * We did not communicate this migration with our database admins in advance to make them aware of potential fallout.
 
 **Where we got lucky?**
