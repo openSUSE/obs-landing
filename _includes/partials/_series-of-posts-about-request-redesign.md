@@ -5,4 +5,6 @@ we presented [build results with a pinch of salt](/2022/11/28/request-workflow-r
 In January 2023, we worked on [facilitating the review process](/2023/01/25/request-workflow-redesign).
 In February 2023 we [enhanced the review process with comments on changes](/2023/03/07/request-workflow-redesign).
 Later, in April 2023, we focused on [improving the comments on changes and supporting new types of actions](/2023/04/04/request-workflow-redesign).
-In June 2023 we worked on [maintenance action types](/2023/06/01/request-workflow-redesign). This time we introduce [Set Bugowner action and diff comments for non-beta users](/2023/07/11/request-workflow-redesign)._
+In June 2023 we worked on [maintenance action types](/2023/06/01/request-workflow-redesign).
+In July 2023 we introduced [Set Bugowner action and diff comments for non-beta users](/2023/07/11/request-workflow-redesign).
+This time we add the [Build Results Summary](/2023/09/08/request-workflow-redesign)._
