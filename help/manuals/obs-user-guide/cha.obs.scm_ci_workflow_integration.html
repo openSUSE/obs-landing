@@ -66,8 +66,11 @@ hljs.configure({
         merged etc. When you set up a webhook on GitHub, you can specify
         which events you are interested in. Only when those events happen, the
         webhook will be sent to OBS.</p><p>This is the list of SCM events supported by the existing
-        workflows in OBS:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>Pull requests</p></li><li class="listitem "><p>Pushes</p></li><li class="listitem "><p>Tag Pushes</p></li></ul></div><p>Other SCMs like GitLab have similar behaviour; the main
-        difference is how they name the events. Refer to the <a class="link" href="cha.obs.scm_ci_workflow_integration.html#sec.obs.obs_scm_ci_workflow_integration.setup.equivalence_table" title="8.1.10. Equivalence Table">Equivalence
+        workflows in OBS:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>Pull requests and Merge requests</p></li><li class="listitem "><p>Pushes</p></li><li class="listitem "><p>Tag Pushes</p></li></ul></div><p>In addition, the Pull request events contain a field called
+        action. OBS supports a different subset of Pull request event actions,
+        depending on the SCM. For GitHub and Gitea, the following set of actions
+        is supported:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>closed</p></li><li class="listitem "><p>opened</p></li><li class="listitem "><p>reopened</p></li><li class="listitem "><p>synchronize</p></li><li class="listitem "><p>synchronized</p></li></ul></div><p>For Gitlab's Merge request events, the following actions are
+        supported:</p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>close</p></li><li class="listitem "><p>merge</p></li><li class="listitem "><p>open</p></li><li class="listitem "><p>reopen</p></li><li class="listitem "><p>update</p></li></ul></div><p>Refer to the <a class="link" href="cha.obs.scm_ci_workflow_integration.html#sec.obs.obs_scm_ci_workflow_integration.setup.equivalence_table" title="8.1.10. Equivalence Table">Equivalence
         Table</a> for more details or read more about <a class="link" href="https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads" target="_blank">GitHub
         events</a>, <a class="link" href="https://docs.gitlab.com/ee/user/project/integrations/webhook_events.html" target="_blank">GitLab
         events</a>
