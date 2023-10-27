@@ -167,6 +167,10 @@ Keep: debbuild</pre></div></dd><dt id="id-1.5.7.3.4.6.4"><span class="term "><em
         </p></dd><dt id="id-1.5.7.3.4.6.4.2.2.13"><span class="term "><em class="parameter ">container-compression-format:FORMAT</em></span></dt><dd><p>
           Sets a compression format for container layers. Possible values are gzip, zstd,
           zstd:chunked. Every value other than gzip is only supported by podman and buildah.
+        </p></dd><dt id="id-1.5.7.3.4.6.4.2.2.14"><span class="term "><em class="parameter ">container-build-format:FORMAT</em></span></dt><dd><p>
+          For podman container builds, it specifies the container config format. Possible values
+          are 'docker' and 'oci'. The default is 'docker'. The 'docker' format allows a few
+          extensions like ONBUILD, SHELL, DOMAINNAME, COMMENT, HEALTHCHECK amongst others.
         </p></dd></dl></div></dd><dt id="id-1.5.7.3.4.6.5"><span class="term "><em class="parameter ">Constraint: <em class="replaceable ">SELECTOR</em> <em class="replaceable ">STRING</em></em> (OBS 2.4 or later)</span></dt><dd><p>
       Define build constraints for build jobs. The selector is a
       colon-separated list which gets a string assigned. See the build job

@@ -79,23 +79,23 @@ hljs.configure({
      KIWI builds inside of OBS need to fulfill following requirements:
    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p><code class="filename">config.xml</code> files need to be renamed to a filename with <code class="filename">.kiwi</code> suffix. </p></li><li class="listitem "><p>repositories which are used must use either a URL which starts with the OBS download prefix or they must
   	   be written in <code class="uri">obs://PROJECT/REPOSITORY</code> syntax. </p></li></ul></div><p>
-     OBS extends kiwi functionality with following options. These covers cases which would need explicit 
+     OBS extends kiwi functionality with following options. These covers cases which would need explicit
      command line commands, so they are covered via the tags to have them in a reproducible way.
    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>A repository defined as <code class="uri">obsrepositories:/</code> will used the expanded list of repositories as defined in the project meta.
-           This is useful when moving kiwi image descriptions between projects, for example for development and release builds. </p></li><li class="listitem "><p>Defining build counter sync tag <code class="command">OBS-BcntSyncTag: STRING</code> 
-     </p></li><li class="listitem "><p>An exclusive architecture list to build for can be defined with an xml comment <code class="command">OBS-ExclusiveArch: ARCH_LIST</code> 
-     </p></li><li class="listitem "><p>An excluded architecture list to skip builds can be defined with an xml comment <code class="command">OBS-ExcludeArch: ARCH_LIST</code> 
-     </p></li><li class="listitem "><p>A list of profiles to build can be defined via an xml comment <code class="command">OBS-Profiles: PROFILE_LIST</code> 
-     </p><p>This can also be handled via _multibuild flavor lists by setting a fixed string of <code class="command">OBS-Profiles: @BUILD_FLAVOR@</code> 
+           This is useful when moving kiwi image descriptions between projects, for example for development and release builds. </p></li><li class="listitem "><p>Defining build counter sync tag <code class="command">OBS-BcntSyncTag: STRING</code>
+     </p></li><li class="listitem "><p>An exclusive architecture list to build for can be defined with an xml comment <code class="command">OBS-ExclusiveArch: ARCH_LIST</code>
+     </p></li><li class="listitem "><p>An excluded architecture list to skip builds can be defined with an xml comment <code class="command">OBS-ExcludeArch: ARCH_LIST</code>
+     </p></li><li class="listitem "><p>A list of profiles to build can be defined via an xml comment <code class="command">OBS-Profiles: PROFILE_LIST</code>
+     </p><p>This can also be handled via _multibuild flavor lists by setting a fixed string of <code class="command">OBS-Profiles: @BUILD_FLAVOR@</code>
      </p></li><li class="listitem "><p>Packages get picked usually in a fixed order from the most important repository in OBS. This happens independently
       of the version number of the packages. Set the xml comment <code class="command">OBS-UnorderedRepos</code> to disable the repository order handling and to have a more similar behavior as with plain package manager builds. Note: this can result into switching
   	 repositories between builds and is therefore less reproducible.
-     </p></li><li class="listitem "><p>Container builds can specify a specific repository which shall be used for searching the base container. 
+     </p></li><li class="listitem "><p>Container builds can specify a specific repository which shall be used for searching the base container.
       Use the XML comment <code class="command">OBS-Imagerepo:$REPOSITORY_URL</code> for this. The repository URL may be
   	   in <code class="uri">obs://$PROJECT/$REPOSITORY</code> style.
      </p></li><li class="listitem "><p>Container builds can specify additional tags via <code class="command">OBS-AddTag:$TAG</code> (KIWI limits it to one tag)
   	   in <code class="uri">obs://$PROJECT/$REPOSITORY</code> style.
-     </p></li><li class="listitem "><p>A predefined milestone <code class="command">OBS-Milestone: milestone</code> 
+     </p></li><li class="listitem "><p>A predefined milestone <code class="command">OBS-Milestone: milestone</code>
      </p><p>
       This defines a milestone name (for example, <code class="literal">Beta1</code>)
       which will be applied during release operations. The candidate will
@@ -120,7 +120,7 @@ hljs.configure({
  </p></li><li class="listitem "><p><code class="command">#!BcntSyncTag: TAG</code> to define the build counter sync tag.
      </p></li><li class="listitem "><p><code class="command">#!BuildTag: TAG</code> to define one or multiple tags to be used for the container.
      </p></li><li class="listitem "><p><code class="command">#!BuildName: NAME</code> Report back a defined NAME. Otherwise it gets derived from the first tag, replacing all / and : with - characters.
-     </p></li><li class="listitem "><p><code class="command">#!BuildVersion: VERSION</code> Report back a defined VERSION. By default it is set to zero. The version is used by OBS for tracking.
+     </p></li><li class="listitem "><p><code class="command">#!BuildVersion: VERSION</code> Report back a defined VERSION. By default it is set to zero. The version is used by OBS for tracking. This needs to be set together with BuildName, otherwise it will be ignored.
      </p></li><li class="listitem "><p><code class="command">#!ExclusiveArch: ARCH_LIST</code> An exclusive architecture list to build for. The architecture list is separated by spaces.
      </p></li><li class="listitem "><p><code class="command">#!ExcludeArch: ARCH_LIST</code> An excluded architecture list to skip builds. The architecture list is separated by spaces.
      </p></li><li class="listitem "><p><code class="command">#!ArchExclusiveLine: ARCH_LIST</code> The next line will only be considered by the scheduler the listed architectures. The line will still get executed on all architectures during the build.
@@ -133,6 +133,11 @@ hljs.configure({
      </p></li><li class="listitem "><p>
       <code class="command">#!NoSquash</code> disables the squashing of all layers created
       during the build to a single layer. Without this, every RUN line is an additional layer.
-     </p></li></ul></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="cha.obs.request_and_review_system.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 27 </span>Request And Review System</span></a><a class="nav-link" href="cha.obs.scm_bridge.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 25 </span>SCM Bridge [EXPERIMENTAL]</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
+     </p></li></ul></div><p>
+    The used filename of the build results are only important inside of OBS. The publishing 
+    happens via the built-in registry interface which is providing all defined tags for an image.
+    The filename itself may be used on aggregates or other binary filters in OBS. It is either 
+    derived by the first defined tag or by the BuildName and BuildVersion tag if both are defined.
+   </p></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="cha.obs.request_and_review_system.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 27 </span>Request And Review System</span></a><a class="nav-link" href="cha.obs.scm_bridge.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 25 </span>SCM Bridge [EXPERIMENTAL]</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
         2023 
         SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>
