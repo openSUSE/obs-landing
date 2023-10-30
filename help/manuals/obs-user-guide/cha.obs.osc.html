@@ -76,6 +76,14 @@ hljs.configure({
       Use the default keyring instead of saving the password in the OBS
       configuration file. For KDE the KWallet is used, for GNOME
       it is Seahorse.
+     </p></dd><dt id="id-1.5.7.2.5.5.7"><span class="term "><code class="option">cafile</code> (string)</span></dt><dd><p>
+     Provide set of trusted CA certificates for HTTPs requests. Expects CAs
+     in a single file containing a bundle of CA certificates in PEM format.
+     More details can be found in <a class="link" href="https://www.openssl.org/docs/manmaster/man3/SSL_CTX_load_verify_locations.html" target="_blank">OpenSSL documentation</a>.
+     </p></dd><dt id="id-1.5.7.2.5.5.8"><span class="term "><code class="option">capath</code> (string)</span></dt><dd><p>
+     Provide set of trusted CA certificates for HTTPs requests. Expects a
+     directory containing CA certificates in PEM format.
+     More details can be found in <a class="link" href="https://www.openssl.org/docs/manmaster/man3/SSL_CTX_load_verify_locations.html" target="_blank">OpenSSL documentation</a>.
      </p></dd></dl></div></div><div class="sect1 " id="sec.osc.usage"><div class="titlepage"><div><div><h2 class="title"><span class="number">3.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Usage</span> <a title="Permalink" class="permalink" href="cha.obs.osc.html#sec.osc.usage">#</a></h2></div></div></div><div class="sect2 " id="sec.osc.help"><div class="titlepage"><div><div><h3 class="title"><span class="number">3.3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Getting Help</span> <a title="Permalink" class="permalink" href="cha.obs.osc.html#sec.osc.help">#</a></h3></div></div></div><p>
     
     To get a general help about this command, use <code class="command">osc --help</code>.
