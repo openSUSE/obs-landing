@@ -11,6 +11,6 @@ We worked on [UI and reporting improvements](/2022/02/03/scm-integration-report-
 Afterwards, we clarified the [separation between incoming webhooks and status reports](/2022/05/31/seperation-of-webhook-and-status-reports) in May 2022, then [sharing tokens](/2022/06/20/token-sharing)
 was made possible in June 2022. Later in July 2022, we added support for the [SCM Bridge](/2022/07/18/scm-bridge) feature.
 Around September 2022, the feature was considered stable, so we [enabled it for all the OBS users](/2022/09/21/trigger-workflow-rollout), but that wasn't the end; later in September we reached the milestone of [supporting Gitea](/2022/09/28/gitea_integration) on top of GitHub and GitLab.
-And now, workflows have [placeholder variables in addition to a customizable configuration file location](/2022/12/20/scm-integration-workflows-file)._
+In December 2022 we introduced [placeholder variables in addition to a customizable configuration file location](/2022/12/20/scm-integration-workflows-file). And now, we bring [notifications for failed workflow runs](/2023/10/30/notifications-failed-workflow-runs)._
 
 _This feature is documented in the [SCM/CI Workflow Integration chapter](https://openbuildservice.org/help/manuals/obs-user-guide/cha.obs.scm_ci_workflow_integration.html) of the [OBS User Guide](https://openbuildservice.org/help/manuals/obs-user-guide/)._
