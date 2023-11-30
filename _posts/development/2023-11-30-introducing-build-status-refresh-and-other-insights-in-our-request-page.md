@@ -27,6 +27,6 @@ We've made the history items added by OBS itself a bit smaller, thus less import
 ￼
 ### Try It Out
 
-Log in now and explore the new refresh button and enhanced patch info page. Your feedback is crucial as we continue refining OBS!
+Join [the beta program](/2018/10/04/the-beta-program/) now and explore the new refresh button and enhanced patch info page. Your feedback is crucial as we continue refining OBS!
 
 {% include partials/_how-to-give-us-feedback.md %}
