@@ -4,8 +4,6 @@ title: Introducing Build Status Refresh and Other Insights on Our Request Page
 category: development
 ---
 
-### Introduction
-
 In our latest iteration towards an even more user-friendly experience, we're excited to share three key enhancements to our Request page. Get ready for a smoother and more informative ride!
 
 ### The Refresh Button
