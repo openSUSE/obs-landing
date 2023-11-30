@@ -12,12 +12,12 @@ Ever wished for a quick way to update build results without reloading the entire
 
 ![Build status refresh button](/images/posts/2023-11-30/build-status-refresh-button.png)
 ￼
-### Patchinfo Page Insights
+### Request Page Insights
 
-We've supercharged the patchinfo page! Alongside the essentials, we've integrated more insightful information like the affected binaries, the affected packages or the issues related to the patch.
+We've supercharged the request page! Alongside the essentials, we've integrated more insightful information in the Conversations tab like the affected binaries, the affected packages or the issues related to the patch (that is, when a pacthinfo is present).
 Now it's easier to read the update details!
 
-![Patchinfo page insights](/images/posts/2023-11-30/patchinfo-page-insights.png)
+![Patchinfo page insights](/images/posts/2023-11-30/request-page-insights.png)
 ￼
 ### Pay Attention to the Conversation Between People 
 
