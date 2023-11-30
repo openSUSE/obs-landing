@@ -23,7 +23,7 @@ Now it's easier to read the update details!
 ￼
 ### Pay Attention to the Conversation Between People 
 
-We've made the conversation items created by OBS itself a bit smaller, thus less important, to signal that it's not really part of the conversation between the people involved. Those item's details are also hidden by default.
+We've made the history items added by OBS itself a bit smaller, thus less important, to signal that it's not really part of the conversation between the people involved. Those item's details are also hidden by default.
 
 ![Comments and history shifts the attention to the conversation between people](/images/posts/2023-11-30/comments-and-history.png)
 ￼
