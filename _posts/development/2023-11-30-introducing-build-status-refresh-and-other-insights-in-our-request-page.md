@@ -6,6 +6,8 @@ category: development
 
 In our latest iteration towards an even more user-friendly experience, we're excited to share three key enhancements to our Request page. Get ready for a smoother and more informative ride!
 
+{% include partials/_series-of-posts-about-request-redesign.md %}
+
 ### The Refresh Button
 
 Ever wished for a quick way to update build results without reloading the entire page? Your wish is granted! We've added a handy refresh button so getting the latest information is just a click away. The chart will auto-refresh itself every minute, so you will get the latest build status anyway!
