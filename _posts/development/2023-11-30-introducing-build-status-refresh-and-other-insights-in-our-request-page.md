@@ -17,7 +17,7 @@ Ever wished for a quick way to update build results without reloading the entire
 ### Request Page Insights
 
 We've supercharged the request page! Alongside the essentials, we've integrated more insightful information in the Conversations tab like the affected binaries, the affected packages or the issues related to the patch (that is, when a pacthinfo is present).
-Now it's easier to read the update details!
+Now it's easier to read the updated details!
 
 ![Patchinfo page insights](/images/posts/2023-11-30/request-page-insights.png)
 
