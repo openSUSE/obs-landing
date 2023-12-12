@@ -1,0 +1,84 @@
+---
+layout: post
+title: "Service degradation of OBS $FEATURE"
+category: deployments
+author: Hans Franz <hans@opensuse.org>
+---
+
+<!--
+  Classify the severity of this problem. We usually say:
+  - service degradation: if only a few customers where impacted
+  - severe service degradation: if nearly every customer was impacted
+  - downtime: if every visit to the OBS ended up on some error page
+-->
+
+There was a service degradation of our reference server.
+
+<!--
+  What happened, for how long and who was impacted by it?
+  For customers to be able to identify if their problem related to this post mortem or not.
+-->
+
+After a deployment of build.opensuse.org on Friday, December 23rd at 17:30 UTC,
+$FEATURE was not accessible for twelve minutes for all users with the name Fred.
+
+We want to give you some insight into what happened and what we are doing to
+avoid similar problems in the future.
+
+## Detection
+<!--
+  How did we get alerted that the problem happened?
+  To demonstrate to customers how we are (hopefully automatically) alerted about problems.
+ -->
+
+We received an automatic alert from our monitoring about $FEATURE throughput.
+
+## Root Cause
+<!--
+  What was it and what triggered it?
+  For customers and community to understand what happened technically.
+-->
+
+The root cause was a data migration that wrongly deleted all $FEATURE for users
+with the name Fred. The data migration was triggered by the the deployment.
+
+## Resolution
+<!--
+  How did you resolve or work around this problem?
+  For customers and community to understand what happened technically.
+-->
+
+We manually re-created the $FEATURE for all users with the name Fred from the backup.
+
+### Action Items
+
+<!--
+  Are there any actions we are going to do that are not done yet?
+  For customers and community to be able to follow up on this.
+-->
+
+Additionally we have created some follow up action items:
+
+| Action Item | Owner |
+|---          |---    |
+| [Follow up Issue #12345 to add a spec for the data migration](https://github.com/openSUSE/open-build-service/issues/12345]) | Developer Team |
+| [Follow up card in our backlog to add automated data migration tests](https://trello.com/c/blahblah) | Developer Team |
+
+## Lessons Learned
+<!--
+  Describe what went well, what went wrong and where we go lucky during the resolution of this problem.
+-->
+
+- Small deployments are easy to debug: As the code delta of the deployment was pretty small so we where able to quickly identify the problem.
+- Incremental backup of the database tables: As the $FEATURE table was not changing often in our database, restoring the backup was easy.
+  On a high traffic table this would have been a nightmare and probably would have lead to data loss.
+- Test your data migrations: Even the simplest data migration should have a corresponding spec.
+- If the data migration is not tested, then code review *has to* include running the migration.
+
+## Timeline (All Time in UTC)
+
+- *17:35* We got an automatic alert about $FEATURE throughput from our monitoring
+- *17:36* We declared the incident
+- *17:40* After reviewing the deployment we noticed an erroneous data migration deleted all $FEATURE from users with the name Fred
+- *17:42* We fetched the $FEATURES table from the database backup and restored it which made $FEATURE available again
+- *17:45* We declared the incident as resolved
