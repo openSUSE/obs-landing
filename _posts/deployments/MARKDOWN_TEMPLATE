@@ -7,7 +7,7 @@ author: Hans Franz <hans@opensuse.org>
 
 <!--
   Classify the severity of this problem. We usually say:
-  - service degradation: if only a few customers where impacted
+  - service degradation: if only a few customers were impacted
   - severe service degradation: if nearly every customer was impacted
   - downtime: if every visit to the OBS ended up on some error page
 -->
@@ -16,7 +16,7 @@ There was a service degradation of our reference server.
 
 <!--
   What happened, for how long and who was impacted by it?
-  For customers to be able to identify if their problem related to this post mortem or not.
+  For customers to be able to identify if their problem is related to this post-mortem or not.
 -->
 
 After a deployment of build.opensuse.org on Friday, December 23rd at 17:30 UTC,
@@ -29,7 +29,7 @@ avoid similar problems in the future.
 <!--
   How did we get alerted that the problem happened?
   To demonstrate to customers how we are (hopefully automatically) alerted about problems.
- -->
+-->
 
 We received an automatic alert from our monitoring about $FEATURE throughput.
 
@@ -40,7 +40,7 @@ We received an automatic alert from our monitoring about $FEATURE throughput.
 -->
 
 The root cause was a data migration that wrongly deleted all $FEATURE for users
-with the name Fred. The data migration was triggered by the the deployment.
+with the name Fred. The data migration was triggered by the deployment.
 
 ## Resolution
 <!--
@@ -57,21 +57,21 @@ We manually re-created the $FEATURE for all users with the name Fred from the ba
   For customers and community to be able to follow up on this.
 -->
 
-Additionally we have created some follow up action items:
+Additionally, we have created some follow-up action items:
 
 | Action Item | Owner |
 |---          |---    |
-| [Follow up Issue #12345 to add a spec for the data migration](https://github.com/openSUSE/open-build-service/issues/12345]) | Developer Team |
-| [Follow up card in our backlog to add automated data migration tests](https://trello.com/c/blahblah) | Developer Team |
+| [Follow-up Issue #12345 to add a spec for the data migration](https://github.com/openSUSE/open-build-service/issues/12345]) | Developer Team |
+| [Follow-up card in our backlog to add automated data migration tests](https://trello.com/c/blahblah) | Developer Team |
 
 ## Lessons Learned
 <!--
   Describe what went well, what went wrong and where we go lucky during the resolution of this problem.
 -->
 
-- Small deployments are easy to debug: As the code delta of the deployment was pretty small so we where able to quickly identify the problem.
+- Small deployments are easy to debug: As the code delta of the deployment was pretty small we were able to quickly identify the problem.
 - Incremental backup of the database tables: As the $FEATURE table was not changing often in our database, restoring the backup was easy.
-  On a high traffic table this would have been a nightmare and probably would have lead to data loss.
+  On a high-traffic table, this would have been a nightmare and probably would have led to data loss.
 - Test your data migrations: Even the simplest data migration should have a corresponding spec.
 - If the data migration is not tested, then code review *has to* include running the migration.
 
