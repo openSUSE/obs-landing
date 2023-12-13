@@ -1,1 +1,1 @@
-_We started with the [content moderation](/2023/10/02/moderation) in October 2023 and now following up on this with [comment locks and report categories](/2023/10/18/comment-locking-and-report-categories)._
+_We started with the [content moderation](/2023/10/02/moderation) in October 2023, we have been following up with [comment locks and report categories](/2023/10/18/comment-locking-and-report-categories) and now we are adding more with [canned responses and moderator decisions](/2023/12/13/canned-responses-and-moderator-decisions)_
