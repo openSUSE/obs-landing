@@ -38,7 +38,7 @@ How to use it:
 
 ### Appeal to Moderator Decisions
 
-What happen after a non-ignore decision is done on a reported object? The author should be able to access the report decision in order to appeal to it. This is now possible from the notification received about an own comment being reported and moderated. See the picture below:
+What happens after a non-ignore decision is done on a reported object? The author should be able to access the report decision in order to appeal to it. This is now possible from the notification received about an own comment being reported and moderated. See the picture below:
 
 <figure>
   <img src="/images/posts/canned_responses_and_moderator_decisions/screenshot_appeal_to_decision.png" alt="Screenshot of appeal to decision" />
