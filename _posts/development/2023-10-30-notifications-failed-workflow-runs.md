@@ -2,6 +2,7 @@
 layout: post
 title: Notifications About Failed SCM/CI Workflows and More
 category: development
+image: images/posts/sprint_152/page_image_workflow_runs_notifications.png
 ---
 
 A lot of things happen behind the scenes whenever OBS runs an SCM/CI workflow. Sometimes, you might want to know which workflow failed or completed successfully and the only way to do this is by visiting the workflow runs UI. This time we tried to improve this and other details in the SCM/CI integration.
