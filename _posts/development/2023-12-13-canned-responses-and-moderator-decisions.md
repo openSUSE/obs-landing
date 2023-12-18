@@ -2,6 +2,7 @@
 layout: post
 title: Canned Responses and Moderator Decisions
 category: development
+image: images/posts/sprint_155/page_image_canned_responses.png
 ---
 
 Many reports can cover the same kind of violation of the rules, and handling it can be redundant. Moderators can customize their own set of canned responses in order to reuse them where they need it.
