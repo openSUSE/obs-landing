@@ -3,6 +3,7 @@ layout: post
 title: Your Most Awesome Title
 category: documentation
 author: The Author
+image: path/to/main/image.extension
 ---
 
 # A First Level Header
