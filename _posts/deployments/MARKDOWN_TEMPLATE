@@ -3,6 +3,7 @@ layout: post
 title: "Service degradation of OBS $FEATURE"
 category: deployments
 author: Hans Franz <hans@opensuse.org>
+image: path/to/main/image.extension
 ---
 
 <!--

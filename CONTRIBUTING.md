@@ -101,3 +101,25 @@ Add the following lines at the end of the YAML front matter block:
 
 You don't need to include all the fields, you can just remove the one you don't want to have.
 If you use special characters you may need to surround your text by `"`.
+
+### Set Page Image for Social Media
+
+When you share a link on social media, it is usually displayed as a box with an image, description, link, etc.
+You can decide upfront which image you want the social media to use by setting `og:image` or `twitter:card` in your HTML.
+In our Jekyll files, those tags are getting the image from the Front Matter. Simply do:
+
+* Select the image which better represents the post.
+* Make sure it fits 800x400 pixels.
+* Add it to the correct subdirectory inside `/images`.
+* Specify the path to that image in the Front Matter of the Jekyll file as in this example:
+
+```
+---
+layout: post
+title: The Title
+category: development
+image: images/posts/whatnot.png
+---
+```
+
+**NOTE**: If you specify the image after the link was shared on social media, first you have to wait until the crawlers catch the changes in your website (hours or even one day). After that, you have to remove the link from the social media post, save it, add it again and save it.
