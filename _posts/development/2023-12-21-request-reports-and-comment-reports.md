@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Request reporting and easier reporting of users from comments
+title: New and Improved Ways to Report
 category: development
 image: images/posts/sprint_156/page_image_user_report.png
 ---
