@@ -46,6 +46,13 @@ team_members:
 
     \nStill a happy programmer, but with better beer."
 
+  - name: Dany Marcoux
+    position: Frontend Developer
+    email: dmarcoux@suse.de
+    github: dmarcoux
+    irc: dmarcoux
+    blog: https://blog.dmarcoux.com/
+
   - name: David Kang
     position: Frontend Developer
     email: dkang@suse.com
@@ -155,6 +162,12 @@ team_members:
 
       {% for team_member in page.team_members %}
 
+	  {% if team_member.image %}
+	    {% assign image_name = team_member.image %}
+	  {% else %}
+	    {% assign image_name = team_member.name | truncatewords: 1, "" %}
+	  {% endif %}
+
       {% assign short_name = team_member.name | truncatewords: 1, "" %}
 
       <div class="card">
@@ -166,7 +179,7 @@ team_members:
               </div>
             </div>
           </div>
-          <img src="/images/team/{{ short_name | downcase }}.jpg">
+          <img src="/images/team/{{ image_name | downcase }}.jpg">
         </div>
         <div class="content">
           <span class="header">{{ team_member.name }}</span>

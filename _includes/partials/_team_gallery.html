@@ -3,6 +3,12 @@
 
     {% for team_member in page.team_members %}
 
+	{% if team_member.image %}
+	  {% assign image_name = team_member.image %}
+	{% else %}
+      {% assign image_name = team_member.name | truncatewords: 1, "" %}
+	{% endif %}
+
     {% assign short_name = team_member.name | truncatewords: 1, "" %}
 
     <div class="card">
@@ -14,7 +20,7 @@
             </div>
           </div>
         </div>
-        <img src="/images/team/{{ short_name | downcase }}.jpg">
+		<img src="/images/team/{{ image_name | downcase }}.jpg">
       </div>
       <div class="content">
         <span class="header">{{ team_member.name }}</span>
