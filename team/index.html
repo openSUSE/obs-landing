@@ -146,6 +146,59 @@ team_members:
     github: bmwiedemann
     irc: bmwiedemann
     blog: https://bmwiedemann.wordpress.com/
+
+  - name: Andrii Nitikin
+    position: MirrorCache Developer
+    email: andrii.nikitin@suse.com
+    github: andrii-suse
+    irc: anikitin
+
+  - name: Daniel Mach
+    position: osc Developer
+    image: dmach
+    email: daniel.mach@suse.com
+    github: dmach
+
+  - name: Elisei Roca
+    position: DevOPS guru
+    email: eroca@suse.com
+    github: eliroca
+
+  - name: Daniel Schmidt
+    position: DevOPS guru
+    image: jdsn
+    email: jdsn@suse.com
+    github: jdsn
+
+  - name: Lars Vogdt
+    position: BuildOPS Team Lead & firefighter
+    email: lars.vogdt@suse.com
+    github: lrupp
+    irc: kl_eisbaer
+    description: "You might know Lars from his former work in the [openSUSE-Heroes](https://en.opensuse.org/openSUSE:Heroes) or [openSUSE-Education](https://en.opensuse.org/openSUSE:Education_team) teams."
+
+  - name: Marcus Rückert
+    position: DevOPS guru
+    image: darix
+    email: mrueckert@suse.com
+    github: darix
+
+  - name: Nathan Cutler
+    position: DevOPS guru
+    email: ncutler@suse.com
+    github: smithfarm
+
+  - name: Ruediger Oertel
+    position: DevOPS guru
+    email: ro@suse.com
+    github: bugfinder
+    irc: bugfinder
+
+  - name: Wolfgang Engel
+    position: Project Manager PackageHub 
+    email: wolfgang.engel@suse.com
+    github: wengel
+
 ---
 
 <div class="ui vertical stripe segment">
@@ -154,6 +207,12 @@ team_members:
     <div class="ui three stackable special cards">
 
       {% for team_member in page.team_members %}
+
+	  {% if team_member.image %}
+	    {% assign image_name = team_member.image %}
+	  {% else %}
+	    {% assign image_name = team_member.name | truncatewords: 1, "" %}
+	  {% endif %}
 
       {% assign short_name = team_member.name | truncatewords: 1, "" %}
 
@@ -166,7 +225,7 @@ team_members:
               </div>
             </div>
           </div>
-          <img src="/images/team/{{ short_name | downcase }}.jpg">
+          <img src="/images/team/{{ image_name | downcase }}.jpg">
         </div>
         <div class="content">
           <span class="header">{{ team_member.name }}</span>
