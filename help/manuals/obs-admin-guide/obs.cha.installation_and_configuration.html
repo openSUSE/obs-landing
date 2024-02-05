@@ -263,16 +263,18 @@ cat /srv/obs/certs/server.key /srv/obs/certs/server.crt \
       &gt; /srv/obs/certs/server.pem</pre></div><p>To allow the usage of https API in Web UI code you need to trust your
      certificate as well:</p><div class="verbatim-wrap"><pre class="screen">cp /srv/obs/certs/server.pem /etc/ssl/certs/
 c_rehash /etc/ssl/certs/</pre></div></div><div class="sect3 " id="_api_configuration"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.2.2.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">API Configuration</span> <a title="Permalink" class="permalink" href="obs.cha.installation_and_configuration.html#_api_configuration">#</a></h4></div></div></div><p>Check and edit <span class="strong"><strong>/srv/www/obs/api/config/options.yml</strong></span>
-    </p><p>If you change the hostnames/ips of the api, you need to adjust
+    </p><p>If you change the hostnames/ips of the API, you need to adjust
       <span class="strong"><strong>frontend_host</strong></span>
      accordingly. If you want to use LDAP, you need to change the LDAP settings
      as well. Look at the <a class="xref" href="obs.cha.administration.html#_user_and_group_management" title="4.8. Managing Users and Groups">Section 4.8, “Managing Users and Groups”</a> for
-     details. You will find examples and more details in the <a class="xref" href="obs.cha.overview_filesystem.html#_configuration_files" title="2.1. Configuration Files">Section 2.1, “Configuration Files”</a>.</p><p>It is recommended to enable</p><div class="verbatim-wrap"><pre class="screen">use_xforward: true</pre></div><p>as well here.</p><p>Afterwards you can start the OBS web api and make it permanent
+     details. You will find examples and more details in the <a class="xref" href="obs.cha.overview_filesystem.html#_configuration_files" title="2.1. Configuration Files">Section 2.1, “Configuration Files”</a>.</p><p>It is strongly recommended to enable</p><div class="verbatim-wrap"><pre class="screen">use_xforward: true</pre></div><p>as well here, to tell Rails to forward requests to the back-end for
+     asynchronous processing. (Without this setting, the front-end will block
+     while the back-end handles each request.)</p><p>Afterwards, you can start the OBS API and make it permanent
      via</p><div class="verbatim-wrap"><pre class="screen">systemctl enable apache2
 systemctl start apache2
 
-systemctl enable obsapidelayed.service
-systemctl start obsapidelayed.service
+systemctl enable obs-api-support.target
+systemctl start obs-api-support.target
 
 systemctl enable memcached.service
 systemctl start memcached.service</pre></div><p>Now you have you own empty instance running and you can do some
