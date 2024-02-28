@@ -591,12 +591,12 @@ our $publishedhook = {
 OBSHOME="/srv/obs"
 SRC_REPO_DIR="$OBSHOME/repos"
 LOGFILE="$OBSHOME/log/reposync.log"
-$DST_REPO_DIR="/srv/repo-mirror"
+DST_REPO_DIR="/srv/repo-mirror"
 # Global substitution! To handle strings like Foo:Bar:testing - two
 #+double-colons!
 PRJ_PATH=${1//:/:\/}
 PATH_TO_REPO=$2
-rsync -a --log-file=$LOGFILE $PATH_TO_REPO/ $DST_REPO_DIR/$PRJ_PATH/</pre></div><p>For testing purposes, it can be invoked as follows:</p><div class="verbatim-wrap"><pre class="screen">$ sudo -u obsrun /usr/local/bin/publish-hook.sh Product/SLES11-SP1 \
+rsync -a --log-file=$LOGFILE --mkpath $PATH_TO_REPO/ $DST_REPO_DIR/$PRJ_PATH/</pre></div><p>For testing purposes, it can be invoked as follows:</p><div class="verbatim-wrap"><pre class="screen">$ sudo -u obsrun /usr/local/bin/publish-hook.sh Product/SLES11-SP1 \
     /srv/obs/repos/Product/SLE11-SP1</pre></div></div><div class="sect3 " id="_advanced_publisher_hook"><div class="titlepage"><div><div><h4 class="title"><span class="number">4.6.2.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Advanced Publisher Hook</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_advanced_publisher_hook">#</a></h4></div></div></div><p>The following example script reads the destination path from a
     parameter that is configured with the hook script:</p><div class="verbatim-wrap highlight bash"><pre class="screen">#!/bin/bash
 LOGFILE="/srv/obs/log/reposync.log"
@@ -606,7 +606,7 @@ DST_REPO_DIR=$1
 PRJ_PATH=${2//:/:\/}
 PATH_TO_REPO=$3
 mkdir -p $DST_REPO_DIR/$PRJ_PATH
-rsync -a --log-file=$LOGFILE $PATH_TO_REPO/ $DST_REPO_DIR/$PRJ_PATH/</pre></div><p>For testing purposes, it can be invoked as follows:</p><div class="verbatim-wrap"><pre class="screen">$ sudo -u obsrun /usr/local/bin/publish-hook.sh \
+rsync -a --log-file=$LOGFILE --mkpath $PATH_TO_REPO/ $DST_REPO_DIR/$PRJ_PATH/</pre></div><p>For testing purposes, it can be invoked as follows:</p><div class="verbatim-wrap"><pre class="screen">$ sudo -u obsrun /usr/local/bin/publish-hook.sh \
     /srv/www/public_mirror/Product/SLES11-SP1 \
     /srv/obs/repos/Product/SLE11SP1</pre></div><p>The following example script only copies packages that have
     changed, but does not delete packages that have been removed:</p><div class="verbatim-wrap highlight bash"><pre class="screen">#!/bin/bash
