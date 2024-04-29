@@ -149,15 +149,19 @@ Support: pax debbuild</pre></div></dd><dt id="id-1.5.7.3.4.9.4"><span class="ter
           Add the SCM URL to binary results when the package sources are managed 
           via the scmsync mechanic. The url is written into the VCS tag of rpms
           when enabling this functionality.
-        </p></dd><dt id="id-1.5.7.3.4.9.4.2.2.12"><span class="term "><em class="parameter ">sbom:FORMAT</em></span></dt><dd><p>
+        </p></dd><dt id="id-1.5.7.3.4.9.4.2.2.12"><span class="term "><em class="parameter ">nodisturl</em></span></dt><dd><p>
+	  Skip the embedding of DISTURL tag into binaries. Please note that this might
+	  also break other features like binary tracking. So never do this for maintained
+	  binaries.
+        </p></dd><dt id="id-1.5.7.3.4.9.4.2.2.13"><span class="term "><em class="parameter ">sbom:FORMAT</em></span></dt><dd><p>
 	  OBS 2.11 can produce and publish additional SBOM (Software Bill Of Material) 
 	  meta data by enabling this flag.
 	  This is currently supported for container and kiwi images builds and includes
 	  only data from installed rpm packages. Supported formats are spdx and cyclonedx.
-        </p></dd><dt id="id-1.5.7.3.4.9.4.2.2.13"><span class="term "><em class="parameter ">container-compression-format:FORMAT</em></span></dt><dd><p>
+        </p></dd><dt id="id-1.5.7.3.4.9.4.2.2.14"><span class="term "><em class="parameter ">container-compression-format:FORMAT</em></span></dt><dd><p>
           Sets a compression format for container layers. Possible values are gzip, zstd,
           zstd:chunked. Every value other than gzip is only supported by podman and buildah.
-        </p></dd><dt id="id-1.5.7.3.4.9.4.2.2.14"><span class="term "><em class="parameter ">container-build-format:FORMAT</em></span></dt><dd><p>
+        </p></dd><dt id="id-1.5.7.3.4.9.4.2.2.15"><span class="term "><em class="parameter ">container-build-format:FORMAT</em></span></dt><dd><p>
           For podman container builds, it specifies the container config format. Possible values
           are 'docker' and 'oci'. The default is 'docker'. The 'docker' format allows a few
           extensions like ONBUILD, SHELL, DOMAINNAME, COMMENT, HEALTHCHECK amongst others.
