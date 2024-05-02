@@ -4,7 +4,7 @@ title: 'Improved communication and decision making in OBS Content Moderation'
 category: development
 ---
 
-Over the past weeks, we've spent some time improving Content Moderation feature within OBS. Users now have the ability to block other users. We focused on making it easier for Moderators to act on reports, by implementing "decision actions", which allow Moderators to perform moderation actions while making decisions. We also created a dedicated comment section for Moderators to be able to discuss the report with the reporter.
+Over the past weeks, we've spent some time improving the Content Moderation feature within OBS. Users now have the ability to block other users. We focused on making it easier for Moderators to act on reports, by implementing "decision actions", which allow Moderators to perform moderation actions while making decisions. We also created a dedicated comment section for Moderators to be able to discuss the report with the reporter.
 
 *Content Moderation* is part of the [beta program](/2018/10/04/the-beta-program/).
 
@@ -24,8 +24,8 @@ Every user now has the ability to block any other user within OBS, making it eas
 Decision Actions reduce the amount of steps needed to take moderation actions, by combining Decisions and moderation actions. Now, instead of just `cleared` and `favored` Decision types, you have multiple `favored` options, that correspond to various moderation actions. This means that for instance whenever there is a Report on a Package or Project, a Moderator can create a Delete Request that removes the offending object. Here's a full list of currently implemented Decision Actions:
 
 * "Applying User Comment Restrictions" available when deciding on a Comment
-* "Moderate Comment" available when deciding on a Comment
-* "Create Delete Request" available when deciding on a Project or a Package
+* "Moderate a Comment" available when deciding on a Comment
+* "Create a Delete Request" available when deciding on a Project or a Package
 * "Delete User" available when deciding on a Request, a Comment or a User
 
 <figure>
