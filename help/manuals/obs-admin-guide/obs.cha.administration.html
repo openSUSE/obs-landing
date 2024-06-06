@@ -391,8 +391,8 @@ content tracking for the used projects.</p><div class="sect2 " id="source_publis
   repositories via the <span class="strong"><strong><span class="emphasis"><em>/build/_dispatchprios</em></span></strong></span><span class="strong"><strong>API</strong></span> call or via the <span class="strong"><strong><span class="emphasis"><em>dispatch_adjust</em></span></strong></span> array in the
    <span class="emphasis"><em>BSConfig.pm</em></span><a class="xref" href="obs.cha.overview_filesystem.html#_bsconfig_pm" title="2.1.2.2. BSConfig.pm">Section 2.1.2.2, “BSConfig.pm”</a> configuration
   file.</p><div class="sect2 " id="_build__dispatchprios_api_call"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.5.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">The <code class="literal">/build/_dispatchprios</code> API Call</span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_build__dispatchprios_api_call">#</a></h3></div></div></div><p>The <span class="emphasis"><em>/build/_dispatchprios</em></span> API call allows an
-   Admin to set a priority for defined projects and repositories using the HTML
-   put method. With the HTML get method the current XML priority file can be
+   Admin to set a priority for defined projects and repositories using the HTTP
+   put method. With the HTTP get method the current XML priority file can be
    read.</p><div class="verbatim-wrap"><pre class="screen">&lt;dispatchprios&gt;
   &lt;prio project="ProjectName" repository="RepoName" arch="Architecture" adjust="Number" /&gt;
 &lt;/dispatchprios&gt;</pre></div><p>The attributes <span class="emphasis"><em>project</em></span>,
