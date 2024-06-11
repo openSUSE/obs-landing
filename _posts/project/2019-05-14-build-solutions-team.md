@@ -50,6 +50,14 @@ team_members:
     github: bmwiedemann
     irc: bmwiedemann
     blog: https://bmwiedemann.wordpress.com/
+
+  - name: Steven R. Baker
+    email: steven.baker suse.de
+    github: srbaker
+    irc: srbaker
+    twitter: srbaker
+    blog: https://stevenrbaker.com/
+
 ---
 
 This is the first post in a series about teams inside different companies that work to bring the
