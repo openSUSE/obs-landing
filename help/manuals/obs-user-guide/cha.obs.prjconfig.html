@@ -286,12 +286,19 @@ Support: pax debbuild</pre></div></dd><dt id="id-1.5.7.3.4.9.4"><span class="ter
 	    This is by default evaluated individually for each architecture. It can be
 	    combined with the archsync flag when publishing should be blocked also when a failure
 	    exists on any architecture.
-           </p></dd><dt id="id-1.5.7.3.4.9.23.2.2.6"><span class="term "><em class="parameter ">singleexport</em> (OBS 2.11 or later)</span></dt><dd><p>
+           </p></dd><dt id="id-1.5.7.3.4.9.23.2.2.6"><span class="term "><em class="parameter ">keepobsolete</em> (OBS 2.11 or later)</span></dt><dd><p>
+             The default behaviour of OBS is to remove binaries when a package object gets removed,
+             even when the project is publish disabled (but the package may have been enabled).
+           </p><p>
+             This flag is changing this behaviour to keep binaries in published repositories
+             even when a package gets removed. As consequence this flag has only an effect on
+             publish disabled projects.
+           </p></dd><dt id="id-1.5.7.3.4.9.23.2.2.7"><span class="term "><em class="parameter ">singleexport</em> (OBS 2.11 or later)</span></dt><dd><p>
              If multiple packages contain different versions of a rpm package, only
              publish the one from the first package. If the project is of the type
              maintenance_release, this will be the package with the highest
              incident number.
-           </p></dd><dt id="id-1.5.7.3.4.9.23.2.2.7"><span class="term "><em class="parameter ">withsbom</em> (OBS 2.11 or later)</span></dt><dd><p>Enables publishing of SBOM files (SPDX or CycloneDX format) (<code class="literal">.cdx.json</code> or <code class="literal">.spdx.json</code> files). Please note that the building of SBOM files usually needs to get enabled via a BuildFlags switch as well.</p></dd><dt id="id-1.5.7.3.4.9.23.2.2.8"><span class="term "><em class="parameter ">withreports</em> (OBS 2.11 or later)</span></dt><dd><p>Also publish internal content tracking files (<code class="literal">.report</code> files).</p></dd><dt id="id-1.5.7.3.4.9.23.2.2.9"><span class="term "><em class="parameter ">ympdist:NAME</em> (OBS 2.11 or later)</span></dt><dd><p>Defines the distversion to be used in group element of ymp files.
+           </p></dd><dt id="id-1.5.7.3.4.9.23.2.2.8"><span class="term "><em class="parameter ">withsbom</em> (OBS 2.11 or later)</span></dt><dd><p>Enables publishing of SBOM files (SPDX or CycloneDX format) (<code class="literal">.cdx.json</code> or <code class="literal">.spdx.json</code> files). Please note that the building of SBOM files usually needs to get enabled via a BuildFlags switch as well.</p></dd><dt id="id-1.5.7.3.4.9.23.2.2.9"><span class="term "><em class="parameter ">withreports</em> (OBS 2.11 or later)</span></dt><dd><p>Also publish internal content tracking files (<code class="literal">.report</code> files).</p></dd><dt id="id-1.5.7.3.4.9.23.2.2.10"><span class="term "><em class="parameter ">ympdist:NAME</em> (OBS 2.11 or later)</span></dt><dd><p>Defines the distversion to be used in group element of ymp files.
               This is used by the installer to check if the repository is suitable for the installed distribution.</p></dd></dl></div></dd><dt id="id-1.5.7.3.4.9.24"><span class="term "><em class="parameter ">RegistryURL: <em class="replaceable ">URL</em></em></span></dt><dd><p>
        Define a url for the downloading of containers.
      </p></dd><dt id="id-1.5.7.3.4.9.25"><span class="term "><em class="parameter ">Repotype:  <em class="replaceable ">TYPE[:OPTIONS]</em></em></span></dt><dd><p> Defines the repository format for published repositories. Valid
