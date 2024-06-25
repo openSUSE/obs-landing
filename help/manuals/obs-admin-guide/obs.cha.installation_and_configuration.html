@@ -254,13 +254,14 @@ sudo chown -R wwwrun.www log tmp</pre></div><p>Now you are done with the databas
     </p><div class="verbatim-wrap"><pre class="screen">APACHE_MODULES="... passenger rewrite proxy proxy_http xforward headers socache_shmcb"</pre></div><p>Enable SSL in /etc/sysconfig/apache2 via</p><div class="verbatim-wrap"><pre class="screen">APACHE_SERVER_FLAGS="SSL"</pre></div><p>For production systems you should order official SSL certificates.
      For testing follow the instructions to create a self signed SSL
      certificate:</p><div class="verbatim-wrap"><pre class="screen">mkdir /srv/obs/certs
-openssl genrsa -out /srv/obs/certs/server.key 1024
+openssl genrsa -out /srv/obs/certs/server.key 4096
 openssl req -new -key /srv/obs/certs/server.key \
         -out /srv/obs/certs/server.csr
 openssl x509 -req -days 365 -in /srv/obs/certs/server.csr \
         -signkey /srv/obs/certs/server.key -out /srv/obs/certs/server.crt
 cat /srv/obs/certs/server.key /srv/obs/certs/server.crt \
-      &gt; /srv/obs/certs/server.pem</pre></div><p>To allow the usage of https API in Web UI code you need to trust your
+      &gt; /srv/obs/certs/server.pem</pre></div><p>If 4096 bits is too small for the RSA key, or if you're wondering why
+     that number of bits, etc., read the output of</p><div class="verbatim-wrap"><pre class="screen"><code class="command">man crypto-policies</code></pre></div><p>and</p><div class="verbatim-wrap"><pre class="screen"><code class="command">man update-crypto-policies</code></pre></div><p>To allow the usage of https API in Web UI code you need to trust your
      certificate as well:</p><div class="verbatim-wrap"><pre class="screen">cp /srv/obs/certs/server.pem /etc/ssl/certs/
 c_rehash /etc/ssl/certs/</pre></div></div><div class="sect3 " id="_api_configuration"><div class="titlepage"><div><div><h4 class="title"><span class="number">1.2.2.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">API Configuration</span> <a title="Permalink" class="permalink" href="obs.cha.installation_and_configuration.html#_api_configuration">#</a></h4></div></div></div><p>Check and edit <span class="strong"><strong>/srv/www/obs/api/config/options.yml</strong></span>
     </p><p>If you change the hostnames/ips of the API, you need to adjust
