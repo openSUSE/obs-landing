@@ -1,23 +1,69 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Basic OBS Workflow | User Guide</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" />
-<meta name="title" content="Basic OBS Workflow" />
-<meta name="description" content="" />
-<meta name="book-title" content="User Guide" />
-<meta name="chapter-title" content="Chapter 5. Basic OBS Workflow" />
-<meta property="og:title" content="Basic OBS Workflow" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="article" />
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Basic OBS Workflow" />
-<meta name="twitter:description" content="" />
-<link rel="home" href="index.html" title="OBS Documentation" /><link rel="up" href="par.working.html" title="Part IV. Usage" /><link rel="prev" href="par.working.html" title="Part IV. Usage" /><link rel="next" href="cha.obs.building.html" title="Chapter 6. Local Building" />
-<script type="text/javascript">
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><title>User Guide | Basic OBS Workflow</title><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"/><link rel="schema.DCTERMS" href="http://purl.org/dc/terms/"/>
+<meta name="title" content="Basic OBS Workflow"/>
+<meta name="description" content=""/>
+<meta name="book-title" content="User Guide"/>
+<meta name="chapter-title" content="Chapter 5. Basic OBS Workflow"/>
+<meta name="publisher" content="SUSE"/><meta property="og:title" content="Basic OBS Workflow"/>
+<meta property="og:description" content=""/>
+<meta property="og:type" content="article"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Basic OBS Workflow"/>
+<meta name="twitter:description" content=""/>
+<script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": ["TechArticle"],
+    "image": "https://www.suse.com/assets/img/suse-white-logo-green.svg",
+    
+     "isPartOf": {
+      "@type": "CreativeWorkSeries",
+      "name": "Product &amp; Solutions"
+    },
+    
+    "inLanguage": "en",
+    
+
+    "headline": "Basic OBS Workflow",
+  
+    "description": "Basic OBS Workflow",
+      
+    "author": [
+      {
+        "@type": "Corporation",
+        "name": "SUSE Product &amp; Solution Documentation Team",
+        "url": "https://www.suse.com/assets/img/suse-white-logo-green.svg"
+      }
+    ],
+      
+
+    "about": [
+      
+    ],
+  
+    "sameAs": [
+          "https://www.facebook.com/SUSEWorldwide/about",
+          "https://www.youtube.com/channel/UCHTfqIzPKz4f_dri36lAQGA",
+          "https://twitter.com/SUSE",
+          "https://www.linkedin.com/company/suse"
+    ],
+    "publisher": {
+      "@type": "Corporation",
+      "name": "SUSE",
+      "url": "https://documentation.suse.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.suse.com/assets/img/suse-white-logo-green.svg"
+      }
+    }
+  }</script>
+<link rel="prev" href="par.working.html" title="Part IV. Usage"/><link rel="next" href="cha.obs.building.html" title="Chapter 6. Local Building"/><script type="text/javascript">
 
 if ( window.location.protocol.toLowerCase() != 'file:' ) {
   document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
 };
 
-</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css" /></noscript><script src="static/js/jquery-1.12.4.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"/></noscript><script src="static/js/script-purejs.js" type="text/javascript"> </script><script src="static/js/highlight.min.js" type="text/javascript"> </script><script>
 
 $(document).ready(function() {
   $('.verbatim-wrap.highlight').each(function(i, block) {
@@ -28,31 +74,31 @@ hljs.configure({
   useBR: false
 });
 
-</script></head><body class="offline js-off"><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg"><div id="_header"><div id="_logo"><img src="static/images/logo.svg" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="User Guide"><span class="book-icon">User Guide</span></a><span> › </span><a class="crumb" href="par.working.html">Usage</a><span> › </span><a class="crumb" href="cha.obs.basicworkflow.html">Basic OBS Workflow</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>User Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="bk02pr01.html"><span class="number"> </span><span class="name">About this Guide</span></a></li><li class="inactive"><a href="par.first_steps.html"><span class="number">I </span><span class="name">First Steps</span></a><ol><li class="inactive"><a href="art.obs.bg.html"><span class="number">1 </span><span class="name">Beginnerʼs Guide</span></a></li></ol></li><li class="inactive"><a href="par.concepts.html"><span class="number">II </span><span class="name">Concepts</span></a><ol><li class="inactive"><a href="cha.obs.package_formats.html"><span class="number">2 </span><span class="name">Supported Build Recipes and Package Formats</span></a></li></ol></li><li class="inactive"><a href="bk02pt03.html"><span class="number">III </span><span class="name">Setup</span></a><ol><li class="inactive"><a href="cha.obs.osc.html"><span class="number">3 </span><span class="name">osc, the Command Line Tool</span></a></li><li class="inactive"><a href="cha.obs.prjconfig.html"><span class="number">4 </span><span class="name">Build Configuration</span></a></li></ol></li><li class="inactive"><a href="par.working.html"><span class="number">IV </span><span class="name">Usage</span></a><ol><li class="inactive"><a href="cha.obs.basicworkflow.html"><span class="number">5 </span><span class="name">Basic OBS Workflow</span></a></li><li class="inactive"><a href="cha.obs.building.html"><span class="number">6 </span><span class="name">Local Building</span></a></li><li class="inactive"><a href="cha.obs.source_service.html"><span class="number">7 </span><span class="name">Using Source Services</span></a></li><li class="inactive"><a href="cha.obs.scm_ci_workflow_integration.html"><span class="number">8 </span><span class="name">SCM/CI Workflow Integration</span></a></li><li class="inactive"><a href="cha.obs.stagingworkflow.html"><span class="number">9 </span><span class="name">Staging Workflow</span></a></li><li class="inactive"><a href="cha.obs.notifications.html"><span class="number">10 </span><span class="name">Notifications</span></a></li><li class="inactive"><a href="cha.obs.moderation.html"><span class="number">11 </span><span class="name">Moderation</span></a></li></ol></li><li class="inactive"><a href="par.best_practices.html"><span class="number">V </span><span class="name">Best Practices</span></a><ol><li class="inactive"><a href="cha.obs.best-practices.webuiusage.html"><span class="number">12 </span><span class="name">Using the OBS Web UI</span></a></li><li class="inactive"><a href="cha.obs.best-practices.basics.html"><span class="number">13 </span><span class="name">Basic Concepts and Work Styles</span></a></li><li class="inactive"><a href="cha.obs.best-practices.scm_integration.html"><span class="number">14 </span><span class="name">How to integrate external SCM sources</span></a></li><li class="inactive"><a href="cha.obs.best-practices.upstream.html"><span class="number">15 </span><span class="name">Publishing Upstream Binaries</span></a></li><li class="inactive"><a href="cha.obs.best-practices.bootstrapping.html"><span class="number">16 </span><span class="name">Bootstrapping</span></a></li><li class="inactive"><a href="cha.obs.best-practices.oscexamples.html"><span class="number">17 </span><span class="name"><code class="command">osc</code> Example Commands</span></a></li><li class="inactive"><a href="cha.obs.best-practices.advanced.html"><span class="number">18 </span><span class="name">Advanced Project Setups</span></a></li><li class="inactive"><a href="cha.obs.best-practices.kmp.html"><span class="number">19 </span><span class="name">Building Kernel Modules</span></a></li><li class="inactive"><a href="cha.obs.best-practices.howto.html"><span class="number">20 </span><span class="name">Common Questions and Solutions</span></a></li></ol></li><li class="inactive"><a href="par.reference.html"><span class="number">VI </span><span class="name">Reference</span></a><ol><li class="inactive"><a href="cha.obs.architecture.html"><span class="number">21 </span><span class="name">OBS Architecture</span></a></li><li class="inactive"><a href="cha.obs.concepts.html"><span class="number">22 </span><span class="name">OBS Concepts</span></a></li><li class="inactive"><a href="cha.obs.build_process.html"><span class="number">23 </span><span class="name">Build Process</span></a></li><li class="inactive"><a href="cha.obs.build_containers.html"><span class="number">24 </span><span class="name">Build Containers</span></a></li><li class="inactive"><a href="cha.obs.source_management.html"><span class="number">25 </span><span class="name">Source Management</span></a></li><li class="inactive"><a href="cha.obs.scm_bridge.html"><span class="number">26 </span><span class="name">SCM Bridge</span></a></li><li class="inactive"><a href="cha.obs.supported_formats.html"><span class="number">27 </span><span class="name">Supported Formats</span></a></li><li class="inactive"><a href="cha.obs.request_and_review_system.html"><span class="number">28 </span><span class="name">Request And Review System</span></a></li><li class="inactive"><a href="cha.obs.image_templates.html"><span class="number">29 </span><span class="name">Image Templates</span></a></li><li class="inactive"><a href="cha.obs.multibuild.html"><span class="number">30 </span><span class="name">Multiple Build Description File Handling</span></a></li><li class="inactive"><a href="cha.obs.maintenance_setup.html"><span class="number">31 </span><span class="name">Maintenance Support</span></a></li><li class="inactive"><a href="cha.obs.binary_tracking.html"><span class="number">32 </span><span class="name">Binary Package Tracking</span></a></li><li class="inactive"><a href="cha.obs.admin.html"><span class="number">33 </span><span class="name">Administration</span></a></li><li class="inactive"><a href="cha.obs.build_scheduling_and_dispatching.html"><span class="number">34 </span><span class="name">Scheduling and Dispatching</span></a></li><li class="inactive"><a href="cha.obs.build_constraints.html"><span class="number">35 </span><span class="name">Build Constraints</span></a></li><li class="inactive"><a href="cha.obs.build_preinstall.html"><span class="number">36 </span><span class="name">Building Preinstall Images</span></a></li><li class="inactive"><a href="cha.obs.authorization.token.html"><span class="number">37 </span><span class="name">Authorization</span></a></li><li class="inactive"><a href="cha.obs.qa_hooks.html"><span class="number">38 </span><span class="name">Quality Assurance(QA) Hooks</span></a></li><li class="inactive"><a href="cha.obs.factory.html"><span class="number">39 </span><span class="name">openSUSE Factory</span></a></li></ol></li><li class="inactive"><a href="obs.glossary.html"><span class="number"> </span><span class="name">Glossary</span></a></li><li class="inactive"><a href="bk02apa.html"><span class="number">A </span><span class="name">GNU Licenses</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Part IV. Usage" href="par.working.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 6. Local Building" href="cha.obs.building.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="User Guide"><span class="book-icon">User Guide</span></a><span> › </span><a class="crumb" href="par.working.html">Usage</a><span> › </span><a class="crumb" href="cha.obs.basicworkflow.html">Basic OBS Workflow</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Part IV. Usage" href="par.working.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 6. Local Building" href="cha.obs.building.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class=""><div class="documentation"><div class="chapter " id="cha.obs.basicworkflow"><div class="titlepage"><div><div><h2 class="title"><span class="number">5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Basic OBS Workflow</span> <a title="Permalink" class="permalink" href="cha.obs.basicworkflow.html#">#</a></h2></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.setuphome"><span class="number">5.1 </span><span class="name">Setting Up Your Home Project</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.create-new"><span class="number">5.2 </span><span class="name">Creating a New Package</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.builderrors"><span class="number">5.3 </span><span class="name">Investigating the Local Build Process</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.add-dependencies"><span class="number">5.4 </span><span class="name">Adding Dependencies to Your Project</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.manage-group"><span class="number">5.5 </span><span class="name">Manage Group</span></a></span></dt></dl></div></div><div class="sect1 " id="sec.obs.basicworkflow.setuphome"><div class="titlepage"><div><div><h2 class="title"><span class="number">5.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Setting Up Your Home Project</span> <a title="Permalink" class="permalink" href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.setuphome">#</a></h2></div></div></div><p>
+</script></head><body class="wide offline js-off"><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-pagination">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><header id="_mainnav"><div class="growth-inhibitor"><img src="static/images/logo.svg" alt="Logo" class="logo"/></div></header><div class="crumbs"><div class="growth-inhibitor"><a class="crumb" href="index.html">User Guide</a><span> / </span><a class="crumb" href="par.working.html">Usage</a><span> / </span><a class="crumb" href="cha.obs.basicworkflow.html">Basic OBS Workflow</a></div></div><main id="_content"><nav id="_side-toc-overall" class="side-toc"><div class="side-title">User Guide</div><ol><li><a href="bk02pr01.html" class=" "><span class="title-number"> </span><span class="title-name">About this Guide</span></a></li><li><a href="par.first_steps.html" class="has-children "><span class="title-number">I </span><span class="title-name">First Steps</span></a><ol><li><a href="art.obs.bg.html" class=" "><span class="title-number">1 </span><span class="title-name">Beginnerʼs Guide</span></a></li></ol></li><li><a href="par.concepts.html" class="has-children "><span class="title-number">II </span><span class="title-name">Concepts</span></a><ol><li><a href="cha.obs.package_formats.html" class=" "><span class="title-number">2 </span><span class="title-name">Supported Build Recipes and Package Formats</span></a></li></ol></li><li><a href="bk02pt03.html" class="has-children "><span class="title-number">III </span><span class="title-name">Setup</span></a><ol><li><a href="cha.obs.osc.html" class=" "><span class="title-number">3 </span><span class="title-name">osc, the Command Line Tool</span></a></li><li><a href="cha.obs.prjconfig.html" class=" "><span class="title-number">4 </span><span class="title-name">Build Configuration</span></a></li></ol></li><li class="active"><a href="par.working.html" class="has-children you-are-here"><span class="title-number">IV </span><span class="title-name">Usage</span></a><ol><li><a href="cha.obs.basicworkflow.html" class=" you-are-here"><span class="title-number">5 </span><span class="title-name">Basic OBS Workflow</span></a></li><li><a href="cha.obs.building.html" class=" "><span class="title-number">6 </span><span class="title-name">Local Building</span></a></li><li><a href="cha.obs.source_service.html" class=" "><span class="title-number">7 </span><span class="title-name">Using Source Services</span></a></li><li><a href="cha.obs.scm_ci_workflow_integration.html" class=" "><span class="title-number">8 </span><span class="title-name">SCM/CI Workflow Integration</span></a></li><li><a href="cha.obs.stagingworkflow.html" class=" "><span class="title-number">9 </span><span class="title-name">Staging Workflow</span></a></li><li><a href="cha.obs.notifications.html" class=" "><span class="title-number">10 </span><span class="title-name">Notifications</span></a></li><li><a href="cha.obs.moderation.html" class=" "><span class="title-number">11 </span><span class="title-name">Moderation</span></a></li></ol></li><li><a href="par.best_practices.html" class="has-children "><span class="title-number">V </span><span class="title-name">Best Practices</span></a><ol><li><a href="cha.obs.best-practices.webuiusage.html" class=" "><span class="title-number">12 </span><span class="title-name">Using the OBS Web UI</span></a></li><li><a href="cha.obs.best-practices.basics.html" class=" "><span class="title-number">13 </span><span class="title-name">Basic Concepts and Work Styles</span></a></li><li><a href="cha.obs.best-practices.scm_integration.html" class=" "><span class="title-number">14 </span><span class="title-name">How to integrate external SCM sources</span></a></li><li><a href="cha.obs.best-practices.upstream.html" class=" "><span class="title-number">15 </span><span class="title-name">Publishing Upstream Binaries</span></a></li><li><a href="cha.obs.best-practices.bootstrapping.html" class=" "><span class="title-number">16 </span><span class="title-name">Bootstrapping</span></a></li><li><a href="cha.obs.best-practices.oscexamples.html" class=" "><span class="title-number">17 </span><span class="title-name"><code class="command">osc</code> Example Commands</span></a></li><li><a href="cha.obs.best-practices.advanced.html" class=" "><span class="title-number">18 </span><span class="title-name">Advanced Project Setups</span></a></li><li><a href="cha.obs.best-practices.kmp.html" class=" "><span class="title-number">19 </span><span class="title-name">Building Kernel Modules</span></a></li><li><a href="cha.obs.best-practices.howto.html" class=" "><span class="title-number">20 </span><span class="title-name">Common Questions and Solutions</span></a></li></ol></li><li><a href="par.reference.html" class="has-children "><span class="title-number">VI </span><span class="title-name">Reference</span></a><ol><li><a href="cha.obs.architecture.html" class=" "><span class="title-number">21 </span><span class="title-name">OBS Architecture</span></a></li><li><a href="cha.obs.concepts.html" class=" "><span class="title-number">22 </span><span class="title-name">OBS Concepts</span></a></li><li><a href="cha.obs.build_process.html" class=" "><span class="title-number">23 </span><span class="title-name">Build Process</span></a></li><li><a href="cha.obs.build_containers.html" class=" "><span class="title-number">24 </span><span class="title-name">Build Containers</span></a></li><li><a href="cha.obs.source_management.html" class=" "><span class="title-number">25 </span><span class="title-name">Source Management</span></a></li><li><a href="cha.obs.scm_bridge.html" class=" "><span class="title-number">26 </span><span class="title-name">SCM Bridge</span></a></li><li><a href="cha.obs.supported_formats.html" class=" "><span class="title-number">27 </span><span class="title-name">Supported Formats</span></a></li><li><a href="cha.obs.request_and_review_system.html" class=" "><span class="title-number">28 </span><span class="title-name">Request And Review System</span></a></li><li><a href="cha.obs.image_templates.html" class=" "><span class="title-number">29 </span><span class="title-name">Image Templates</span></a></li><li><a href="cha.obs.multibuild.html" class=" "><span class="title-number">30 </span><span class="title-name">Multiple Build Description File Handling</span></a></li><li><a href="cha.obs.maintenance_setup.html" class=" "><span class="title-number">31 </span><span class="title-name">Maintenance Support</span></a></li><li><a href="cha.obs.binary_tracking.html" class=" "><span class="title-number">32 </span><span class="title-name">Binary Package Tracking</span></a></li><li><a href="cha.obs.admin.html" class=" "><span class="title-number">33 </span><span class="title-name">Administration</span></a></li><li><a href="cha.obs.build_scheduling_and_dispatching.html" class=" "><span class="title-number">34 </span><span class="title-name">Scheduling and Dispatching</span></a></li><li><a href="cha.obs.build_constraints.html" class=" "><span class="title-number">35 </span><span class="title-name">Build Constraints</span></a></li><li><a href="cha.obs.build_preinstall.html" class=" "><span class="title-number">36 </span><span class="title-name">Building Preinstall Images</span></a></li><li><a href="cha.obs.authorization.token.html" class=" "><span class="title-number">37 </span><span class="title-name">Authorization</span></a></li><li><a href="cha.obs.qa_hooks.html" class=" "><span class="title-number">38 </span><span class="title-name">Quality Assurance(QA) Hooks</span></a></li><li><a href="cha.obs.factory.html" class=" "><span class="title-number">39 </span><span class="title-name">openSUSE Factory</span></a></li></ol></li><li><a href="obs.glossary.html" class=" "><span class="title-number"> </span><span class="title-name">Glossary</span></a></li><li><a href="bk02apa.html" class=" "><span class="title-number">A </span><span class="title-name">GNU Licenses</span></a></li> </ol> </nav><button id="_open-side-toc-overall" title="Contents"> </button><article class="documentation"><button id="_unfold-side-toc-page">On this page</button><section class="chapter" id="cha.obs.basicworkflow" data-id-title="Basic OBS Workflow"><div class="titlepage"><div><div><div class="title-container"><h1 class="title"><span class="title-number-name"><span class="title-number">5 </span><span class="title-name">Basic OBS Workflow</span></span> <a title="Permalink" class="permalink" href="cha.obs.basicworkflow.html#">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><section class="sect1" id="sec.obs.basicworkflow.setuphome" data-id-title="Setting Up Your Home Project"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">5.1 </span><span class="title-name">Setting Up Your Home Project</span></span> <a title="Permalink" class="permalink" href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.setuphome">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
    This section shows how to set up your home project with the command line
    tool <code class="command">osc</code>. For more
    information about setting up your home project with the Web UI, see
    <a class="xref" href="art.obs.bg.html#sec.obsbg.uc.setuphome" title="1.6. Setting Up Your Home Project for the First Time">Section 1.6, “Setting Up Your Home Project for the First Time”</a>.
   </p><p>
    This chapter is based on the following assumptions:
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      You have an account on an Open Build Service instance. To create an account, use the
      Web UI.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      You have installed <code class="command">osc</code> as described in <a class="xref" href="cha.obs.osc.html#sec.obs.osc.install" title="3.1. Installing and Configuring">Section 3.1, “Installing and Configuring”</a>.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      You have configured <code class="command">osc</code> as described in <a class="xref" href="cha.obs.osc.html#sec.osc.firsttime" title="3.3.2. Using osc for the First Time">Section 3.3.2, “Using <code class="command">osc</code> for the First Time”</a>.
-    </p></li></ul></div><div class="procedure " id="id-1.5.8.2.4.6"><div class="procedure-title-wrap"><h6 class="procedure-title"><span class="number">Procedure 5.1: </span><span class="name">Setting Up Your Home Project </span><a title="Permalink" class="permalink" href="cha.obs.basicworkflow.html#id-1.5.8.2.4.6">#</a></h6></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step " id="st.basicworkflow.setuphome.oscls"><p>
+    </p></li></ul></div><div class="procedure" id="id-1.5.8.2.4.6" data-id-title="Setting Up Your Home Project"><div class="title-container"><div class="procedure-title-wrap"><div class="procedure-title"><span class="title-number-name"><span class="title-number">Procedure 5.1: </span><span class="title-name">Setting Up Your Home Project </span></span><a title="Permalink" class="permalink" href="cha.obs.basicworkflow.html#id-1.5.8.2.4.6">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step" id="st.basicworkflow.setuphome.oscls"><p>
      Get a list of all available build targets of your OBS instance:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">osc</code> ls /</pre></div><p>
      For example, on the openSUSE Build Service, build targets will include distributions
      such as
      <code class="uri">openSUSE:Tumbleweed</code>,
-     <code class="uri">openSUSE:Leap:<em class="replaceable ">VERSION</em></code>,
+     <code class="uri">openSUSE:Leap:<em class="replaceable">VERSION</em></code>,
      <code class="uri">openSUSE:Tools</code>, <code class="uri">openSUSE:Templates</code>.
-    </p></li><li class="step " id="st.obs.metaprj"><p>
+    </p></li><li class="step" id="st.obs.metaprj"><p>
      Configure your build targets with:
-    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">osc</code> meta prj --edit home:obsgeeko</pre></div><p>The previous command shows a XML structure like this:</p><div class="example" id="id-1.5.8.2.4.6.3.5"><div class="example-title-wrap"><h6 class="example-title"><span class="number">Example 5.1: </span><span class="name">XML Structure of Build Service Metadata </span><a title="Permalink" class="permalink" href="cha.obs.basicworkflow.html#id-1.5.8.2.4.6.3.5">#</a></h6></div><div class="example-contents"><div class="verbatim-wrap highlight xml"><pre class="screen">&lt;project name="home:obsgeeko"&gt;
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">osc</code> meta prj --edit home:obsgeeko</pre></div><p>The previous command shows a XML structure like this:</p><div class="example" id="id-1.5.8.2.4.6.3.5" data-id-title="XML Structure of Build Service Metadata"><div class="title-container"><div class="example-title-wrap"><div class="example-title"><span class="title-number-name"><span class="title-number">Example 5.1: </span><span class="title-name">XML Structure of Build Service Metadata </span></span><a title="Permalink" class="permalink" href="cha.obs.basicworkflow.html#id-1.5.8.2.4.6.3.5">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div><div class="example-contents"><div class="verbatim-wrap highlight xml"><pre class="screen">&lt;project name="home:obsgeeko"&gt;
   &lt;title&gt;obsgeeko's Home Project&lt;/title&gt;
   &lt;description&gt;A description of the project.&lt;/description&gt;
   &lt;person userid="obsgeeko" role="bugowner"/&gt;
@@ -61,7 +107,7 @@ hljs.configure({
     &lt;enable repository="openSUSE_Factory"/&gt;
   &lt;/debuginfo&gt;
   &lt;!-- add &lt;repository&gt; elements here --&gt;
-&lt;/project&gt;</pre></div></div></div></li><li class="step "><p>
+&lt;/project&gt;</pre></div></div></div></li><li class="step"><p>
      To add build targets, use the <code class="sgmltag-element">repository</code> element. For
      example, on openSUSE Build Service, you can add the build targets openSUSE Tumbleweed for x86 and
      x86-64 with:
@@ -69,7 +115,7 @@ hljs.configure({
     &lt;path project="openSUSE:Tumbleweed" repository="standard"/&gt;
     &lt;arch&gt;i586&lt;/arch&gt;
     &lt;arch&gt;x86_64&lt;/arch&gt;
-&lt;/repository&gt;</pre></div></li><li class="step "><p>
+&lt;/repository&gt;</pre></div></li><li class="step"><p>
      Add more <code class="sgmltag-element">repository</code> elements as needed.  Insert the information
      from <a class="xref" href="cha.obs.basicworkflow.html#st.basicworkflow.setuphome.oscls" title="Step 1">Step 1</a> into the
      <code class="sgmltag-attribute">project</code> attribute.
@@ -82,55 +128,55 @@ hljs.configure({
     &lt;path project="openSUSE:Leap:42.3" repository="standard"/&gt;
     &lt;arch&gt;i586&lt;/arch&gt;
     &lt;arch&gt;x86_64&lt;/arch&gt;
-&lt;/repository&gt;</pre></div></li><li class="step "><p>
+&lt;/repository&gt;</pre></div></li><li class="step"><p>
      Save the file (or leave it untouched).
     </p><p>
      <code class="command">osc</code> will check if the new configuration is valid XML. If the file
      is valid, <code class="command">osc</code> will save it. Otherwise, it will show an error and
-     prompt you whether to <span class="guimenu ">Try again?</span>. In this case, press
+     prompt you whether to <span class="guimenu">Try again?</span>. In this case, press
      <span class="keycap">n</span>. Your changes will be lost and you will need to start
      from <a class="xref" href="cha.obs.basicworkflow.html#st.obs.metaprj" title="Step 2">Step 2</a> again.
     </p></li></ol></div></div><p>
    After a while, the defined build targets show up in your home project.
-  </p></div><div class="sect1 " id="sec.obs.basicworkflow.create-new"><div class="titlepage"><div><div><h2 class="title"><span class="number">5.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Creating a New Package</span> <a title="Permalink" class="permalink" href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.create-new">#</a></h2></div></div></div><p>
+  </p></section><section class="sect1" id="sec.obs.basicworkflow.create-new" data-id-title="Creating a New Package"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">5.2 </span><span class="title-name">Creating a New Package</span></span> <a title="Permalink" class="permalink" href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.create-new">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
    This section covers how to create packages from a project hosted on GitHub
-   (the <span class="quote">“<span class="quote ">upstream project</span>”</span>). We assume that this project contains source code
+   (the <span class="quote">“<span class="quote">upstream project</span>”</span>). We assume that this project contains source code
    which you want to package for different SUSE distributions.
    We assume the setup of your home project in your OBS instance is
    already done. If not, refer to <a class="xref" href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.setuphome" title="5.1. Setting Up Your Home Project">Section 5.1, “Setting Up Your Home Project”</a>.
   </p><p>
    To create a package from an upstream project, do the following:
-  </p><div class="procedure " id="id-1.5.8.2.5.4"><div class="procedure-title-wrap"><h6 class="procedure-title"><span class="number">Procedure 5.2: </span><span class="name">General Procedure to Build a RPM Package </span><a title="Permalink" class="permalink" href="cha.obs.basicworkflow.html#id-1.5.8.2.5.4">#</a></h6></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+  </p><div class="procedure" id="id-1.5.8.2.5.4" data-id-title="General Procedure to Build a RPM Package"><div class="title-container"><div class="procedure-title-wrap"><div class="procedure-title"><span class="title-number-name"><span class="title-number">Procedure 5.2: </span><span class="title-name">General Procedure to Build a RPM Package </span></span><a title="Permalink" class="permalink" href="cha.obs.basicworkflow.html#id-1.5.8.2.5.4">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
      Open a shell. Choose or create a directory on your system in a partition
      that has enough space to hold the package sources.
-    </p></li><li class="step "><p>
-     Prepare your <em class="firstterm ">working directory</em>.
+    </p></li><li class="step"><p>
+     Prepare your <em class="firstterm">working directory</em>.
      These steps only have to be performed once:
-    </p><ol type="a" class="substeps "><li class="step "><p>
+    </p><ol type="a" class="substeps"><li class="step"><p>
      Check out your home project:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">osc</code> checkout home:obsgeeko</pre></div><p>
      This will create <code class="filename">home:obsgeeko</code> in the
      current directory.
-    </p></li><li class="step "><p>Create a new package inside your local working directory:
+    </p></li><li class="step"><p>Create a new package inside your local working directory:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">cd</code> home:obsgeeko
-<code class="prompt user">geeko &gt; </code><code class="command">osc</code> mkpac <em class="replaceable ">YOUR_PROJECT</em></pre></div></li></ol></li><li class="step "><p>
+<code class="prompt user">geeko &gt; </code><code class="command">osc</code> mkpac <em class="replaceable">YOUR_PROJECT</em></pre></div></li></ol></li><li class="step"><p>
      Download the source of the upstream project and save it in
-     <code class="filename">home:obsgeeko/<em class="replaceable ">YOUR_PROJECT</em></code>.
-    </p></li><li class="step "><p>
-     Create a <em class="firstterm ">spec file</em> which
+     <code class="filename">home:obsgeeko/<em class="replaceable">YOUR_PROJECT</em></code>.
+    </p></li><li class="step"><p>
+     Create a <em class="firstterm">spec file</em> which
      contains metadata and build instructions.
      For more information about spec files, see
      <a class="link" href="https://rpm-packaging-guide.github.io" target="_blank">https://rpm-packaging-guide.github.io</a>.
-    </p></li><li class="step "><p>Create a new changelog and add your changes:</p><ol type="a" class="substeps "><li class="step "><p>
+    </p></li><li class="step"><p>Create a new changelog and add your changes:</p><ol type="a" class="substeps"><li class="step"><p>
        To create a new changelog file or to update an existing changelog file
        with <code class="command">osc</code>, use:
       </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">osc</code> vc</pre></div><p>The command will open an editor with the following content:</p><div class="verbatim-wrap"><pre class="screen">-------------------------------------------------------------------
-Fri Aug 23 08:42:42 UTC 2017 - <code class="systemitem">geeko</code>@example.com</pre></div></li><li class="step "><p>Enter your changes in the editor.</p><p>
+Fri Aug 23 08:42:42 UTC 2017 - <code class="systemitem">geeko</code>@example.com</pre></div></li><li class="step"><p>Enter your changes in the editor.</p><p>
        Usually, changelog entries contain a high-level overview like:
-      </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p><span class="formalpara-title">Version Updates. </span>
+      </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p><span class="formalpara-title">Version Updates. </span>
           Provide a general overview of new features or changes in behavior
           of the package.
-         </p></li><li class="listitem "><p><span class="formalpara-title">Bug and Security Fixes. </span>
+         </p></li><li class="listitem"><p><span class="formalpara-title">Bug and Security Fixes. </span>
           If a bug was fixed, mention the bug number.
           Most projects have policies or conventions for abbreviating bug
           numbers, so there is no need to add a long URL.
@@ -139,24 +185,24 @@ Fri Aug 23 08:42:42 UTC 2017 - <code class="systemitem">geeko</code>@example.com
          on <a class="link" href="https://bugzilla.opensuse.org" target="_blank">https://bugzilla.opensuse.org</a> and
          <code class="literal">fate#</code> is used for features on
          <a class="link" href="https://fate.opensuse.org" target="_blank">https://fate.opensuse.org</a>.
-        </p></li><li class="listitem "><p><span class="formalpara-title">Incompatible Changes. </span>
+        </p></li><li class="listitem"><p><span class="formalpara-title">Incompatible Changes. </span>
           Mention incompatible changes, such as API changes, that affect
           users or other developers creating extensions of your package.
-         </p></li><li class="listitem "><p><span class="formalpara-title">Distribution-Related Changes. </span>
+         </p></li><li class="listitem"><p><span class="formalpara-title">Distribution-Related Changes. </span>
           Mention any changes in the package structure, package names,
-          and additions or removals of patch files or <span class="quote">“<span class="quote ">hacks</span>”</span>.
+          and additions or removals of patch files or <span class="quote">“<span class="quote">hacks</span>”</span>.
          </p></li></ul></div><p>
        For more information about changelogs, see <a class="link" href="https://en.opensuse.org/openSUSE:Creating_a_changes_file_(RPM)" target="_blank">https://en.opensuse.org/openSUSE:Creating_a_changes_file_(RPM)</a>.
-      </p></li></ol></li><li class="step "><p>Add all the files to your working directory:</p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">osc</code> add *.spec *.changes *.tar.gz</pre></div></li><li class="step "><p>Build the package for a specific distribution and architecture,
+      </p></li></ol></li><li class="step"><p>Add all the files to your working directory:</p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">osc</code> add *.spec *.changes *.tar.gz</pre></div></li><li class="step"><p>Build the package for a specific distribution and architecture,
      for example, openSUSE Tumbleweed for x86-64:</p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">osc</code> build --local-package openSUSE_Tumbleweed x86_64 *.spec</pre></div><p>
      If you encounter problems, see <a class="xref" href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.builderrors" title="5.3. Investigating the Local Build Process">Section 5.3, “Investigating the Local Build Process”</a>.
-    </p></li><li class="step "><p>
+    </p></li><li class="step"><p>
      Check if your build was successful. If everything was fine, commit the
-     files to your package to your home project on OBS:</p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">osc</code> commit</pre></div></li></ol></div></div></div><div class="sect1 " id="sec.obs.basicworkflow.builderrors"><div class="titlepage"><div><div><h2 class="title"><span class="number">5.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Investigating the Local Build Process</span> <a title="Permalink" class="permalink" href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.builderrors">#</a></h2></div></div></div><p>
+     files to your package to your home project on OBS:</p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">osc</code> commit</pre></div></li></ol></div></div></section><section class="sect1" id="sec.obs.basicworkflow.builderrors" data-id-title="Investigating the Local Build Process"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">5.3 </span><span class="title-name">Investigating the Local Build Process</span></span> <a title="Permalink" class="permalink" href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.builderrors">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
    It is hard to describe a general procedure when you encounter a build
    error. Most build errors are very specific to the package being built.
    However, there are generic tools that often help:
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p><a class="xref" href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.builderrors.buildlog" title="5.3.1. Build Log">Section 5.3.1, “Build Log”</a></p></li><li class="listitem "><p><a class="xref" href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.builderrors.buildroot" title="5.3.2. Local Build Root Directory">Section 5.3.2, “Local Build Root Directory”</a></p></li></ul></div><div class="sect2 " id="sec.obs.basicworkflow.builderrors.buildlog"><div class="titlepage"><div><div><h3 class="title"><span class="number">5.3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Build Log</span> <a title="Permalink" class="permalink" href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.builderrors.buildlog">#</a></h3></div></div></div><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p><a class="xref" href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.builderrors.buildlog" title="5.3.1. Build Log">Section 5.3.1, “Build Log”</a></p></li><li class="listitem"><p><a class="xref" href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.builderrors.buildroot" title="5.3.2. Local Build Root Directory">Section 5.3.2, “Local Build Root Directory”</a></p></li></ul></div><section class="sect2" id="sec.obs.basicworkflow.builderrors.buildlog" data-id-title="Build Log"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.3.1 </span><span class="title-name">Build Log</span></span> <a title="Permalink" class="permalink" href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.builderrors.buildlog">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
     Each build produces a log file on OBS. This log file can be viewed by
     the <code class="command">buildlog</code> (or <code class="command">bl</code>) subcommand.
     It needs a build target which is the distribution and the architecture.
@@ -171,12 +217,12 @@ Fri Aug 23 08:42:42 UTC 2017 - <code class="systemitem">geeko</code>@example.com
    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">osc</code> buildlogtail openSUSE_Tumbleweed x86_64</pre></div><p>
     Additionally, the <code class="command">osc</code> creates some build log files in the build
     directory <code class="filename">/var/tmp/build-root/</code>:
-   </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.5.8.2.6.6.8.1"><span class="term "><code class="filename">.build.log</code></span></dt><dd><p>Contains the log.</p></dd><dt id="id-1.5.8.2.6.6.8.2"><span class="term "><code class="filename">.build.command</code></span></dt><dd><p>
+   </p><div class="variablelist"><dl class="variablelist"><dt id="id-1.5.8.2.6.6.8.1"><span class="term"><code class="filename">.build.log</code></span></dt><dd><p>Contains the log.</p></dd><dt id="id-1.5.8.2.6.6.8.2"><span class="term"><code class="filename">.build.command</code></span></dt><dd><p>
        Contains the command which is used to build the package. For RPM-like
-       systems it is <code class="command">rpmbuild</code> <code class="option">-ba <em class="replaceable ">PACKAGE</em>.spec</code>.
-      </p></dd><dt id="id-1.5.8.2.6.6.8.3"><span class="term "><code class="filename">.build.packages</code></span></dt><dd><p>
+       systems it is <code class="command">rpmbuild</code> <code class="option">-ba <em class="replaceable">PACKAGE</em>.spec</code>.
+      </p></dd><dt id="id-1.5.8.2.6.6.8.3"><span class="term"><code class="filename">.build.packages</code></span></dt><dd><p>
        Contains the path to all object files.
-      </p></dd></dl></div></div><div class="sect2 " id="sec.obs.basicworkflow.builderrors.buildroot"><div class="titlepage"><div><div><h3 class="title"><span class="number">5.3.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Local Build Root Directory</span> <a title="Permalink" class="permalink" href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.builderrors.buildroot">#</a></h3></div></div></div><p>
+      </p></dd></dl></div></section><section class="sect2" id="sec.obs.basicworkflow.builderrors.buildroot" data-id-title="Local Build Root Directory"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.3.2 </span><span class="title-name">Local Build Root Directory</span></span> <a title="Permalink" class="permalink" href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.builderrors.buildroot">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
     If you build a package locally and you get a build error, investigate
     the problems in the build root directory directly. This is sometimes
     easier and more effective than only looking at the build log.
@@ -197,22 +243,22 @@ Fri Aug 23 08:42:42 UTC 2017 - <code class="systemitem">geeko</code>@example.com
     <code class="systemitem">abuild</code> in group <code class="systemitem">abuild</code>.
    </p><p>
     The build root contains the following structure:
-   </p><div class="example" id="exa.workflow.buildroot"><div class="example-title-wrap"><h6 class="example-title"><span class="number">Example 5.2: </span><span class="name">Directory Structure of a Build Root (<code class="filename">/var/tmp/build-root/</code>) </span><a title="Permalink" class="permalink" href="cha.obs.basicworkflow.html#exa.workflow.buildroot">#</a></h6></div><div class="example-contents"><div class="verbatim-wrap"><pre class="screen">/home/abuild/
+   </p><div class="example" id="exa.workflow.buildroot" data-id-title="Directory Structure of a Build Root (/var/tmp/build-root/)"><div class="title-container"><div class="example-title-wrap"><div class="example-title"><span class="title-number-name"><span class="title-number">Example 5.2: </span><span class="title-name">Directory Structure of a Build Root (<code class="filename">/var/tmp/build-root/</code>) </span></span><a title="Permalink" class="permalink" href="cha.obs.basicworkflow.html#exa.workflow.buildroot">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div><div class="example-contents"><div class="verbatim-wrap"><pre class="screen">/home/abuild/
 └── rpmbuild
-    ├── BUILD <span id="co.workflow.buildroot.build"></span><span class="callout">1</span>
-    ├── BUILDROOT  <span id="co.workflow.buildroot.buildroot"></span><span class="callout">2</span>
-    ├── OTHER  <span id="co.workflow.buildroot.other"></span><span class="callout">3</span>
-    ├── RPMS  <span id="co.workflow.buildroot.rpms"></span><span class="callout">4</span>
+    ├── BUILD <span class="callout" id="co.workflow.buildroot.build">1</span>
+    ├── BUILDROOT  <span class="callout" id="co.workflow.buildroot.buildroot">2</span>
+    ├── OTHER  <span class="callout" id="co.workflow.buildroot.other">3</span>
+    ├── RPMS  <span class="callout" id="co.workflow.buildroot.rpms">4</span>
     │   ├── i386
     │   ├── noarch
     │   └── x86_64
-    ├── SOURCES  <span id="co.workflow.buildroot.sources"></span><span class="callout">5</span>
-    ├── SPECS  <span id="co.workflow.buildroot.specs"></span><span class="callout">6</span>
-    └── SRPMS  <span id="co.workflow.buildroot.srpms"></span><span class="callout">7</span></pre></div><div class="calloutlist "><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><p><a href="#co.workflow.buildroot.build"><span class="callout">1</span></a> </p></td><td valign="top" align="left"><p>
+    ├── SOURCES  <span class="callout" id="co.workflow.buildroot.sources">5</span>
+    ├── SPECS  <span class="callout" id="co.workflow.buildroot.specs">6</span>
+    └── SRPMS  <span class="callout" id="co.workflow.buildroot.srpms">7</span></pre></div><div class="calloutlist"><table style="border: 0; "><tr><td style="width: 5%; vertical-align: top; text-align: left; "><p><a href="#co.workflow.buildroot.build"><span class="callout">1</span></a> </p></td><td style="vertical-align: top; text-align: left; "><p>
        Contains directory named after the package name.
        In spec files, the name of the package directory is referenced
        using the <code class="systemitem">%buildroot</code> macro.
-      </p></td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#co.workflow.buildroot.buildroot"><span class="callout">2</span></a> </p></td><td valign="top" align="left"><p>
+      </p></td></tr><tr><td style="width: 5%; vertical-align: top; text-align: left; "><p><a href="#co.workflow.buildroot.buildroot"><span class="callout">2</span></a> </p></td><td style="vertical-align: top; text-align: left; "><p>
        If the build process was unable to create a package, this directory
        contains all files and directories which are installed in the target
        system through the <code class="systemitem">%install</code>
@@ -220,20 +266,20 @@ Fri Aug 23 08:42:42 UTC 2017 - <code class="systemitem">geeko</code>@example.com
       </p><p>
        If the package has been successfully built, this directory will be
        emptied.
-      </p></td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#co.workflow.buildroot.other"><span class="callout">3</span></a> </p></td><td valign="top" align="left"><p>
+      </p></td></tr><tr><td style="width: 5%; vertical-align: top; text-align: left; "><p><a href="#co.workflow.buildroot.other"><span class="callout">3</span></a> </p></td><td style="vertical-align: top; text-align: left; "><p>
        Usually contains the file <code class="filename">rpmlint.log</code>.
-      </p></td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#co.workflow.buildroot.rpms"><span class="callout">4</span></a> </p></td><td valign="top" align="left"><p>
+      </p></td></tr><tr><td style="width: 5%; vertical-align: top; text-align: left; "><p><a href="#co.workflow.buildroot.rpms"><span class="callout">4</span></a> </p></td><td style="vertical-align: top; text-align: left; "><p>
        If the build was successful, stores binary RPMs into subdirectories of
        architecture
        (for example, <code class="filename">noarch</code> or
        <code class="filename">x86_64</code>).
-      </p></td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#co.workflow.buildroot.sources"><span class="callout">5</span></a> </p></td><td valign="top" align="left"><p>
+      </p></td></tr><tr><td style="width: 5%; vertical-align: top; text-align: left; "><p><a href="#co.workflow.buildroot.sources"><span class="callout">5</span></a> </p></td><td style="vertical-align: top; text-align: left; "><p>
        All source files from the working copy will be copied here.
-      </p></td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#co.workflow.buildroot.specs"><span class="callout">6</span></a> </p></td><td valign="top" align="left"><p>
+      </p></td></tr><tr><td style="width: 5%; vertical-align: top; text-align: left; "><p><a href="#co.workflow.buildroot.specs"><span class="callout">6</span></a> </p></td><td style="vertical-align: top; text-align: left; "><p>
       
-      </p></td></tr><tr><td width="5%" valign="top" align="left"><p><a href="#co.workflow.buildroot.srpms"><span class="callout">7</span></a> </p></td><td valign="top" align="left"><p>
+      </p></td></tr><tr><td style="width: 5%; vertical-align: top; text-align: left; "><p><a href="#co.workflow.buildroot.srpms"><span class="callout">7</span></a> </p></td><td style="vertical-align: top; text-align: left; "><p>
        Stores source RPMs into this directory.
-      </p></td></tr></table></div></div></div></div></div><div class="sect1 " id="sec.obs.basicworkflow.add-dependencies"><div class="titlepage"><div><div><h2 class="title"><span class="number">5.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Adding Dependencies to Your Project</span> <a title="Permalink" class="permalink" href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.add-dependencies">#</a></h2></div></div></div><p>
+      </p></td></tr></table></div></div></div></section></section><section class="sect1" id="sec.obs.basicworkflow.add-dependencies" data-id-title="Adding Dependencies to Your Project"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">5.4 </span><span class="title-name">Adding Dependencies to Your Project</span></span> <a title="Permalink" class="permalink" href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.add-dependencies">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
    Software usually depends on other software: To run an application, you
    may, for example, need additional libraries. Such dependencies are called
    <span class="emphasis"><em>installation requirements</em></span>.
@@ -244,22 +290,22 @@ Fri Aug 23 08:42:42 UTC 2017 - <code class="systemitem">geeko</code>@example.com
   </p><p>
    The Open Build Service provides the following methods to handle both dependencies in
    your projects:
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      <a class="xref" href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.deps" title="5.4.1. Adding Dependencies to Your Build Recipes">Section 5.4.1, “Adding Dependencies to Your Build Recipes”</a>
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      <a class="xref" href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.layering" title="5.4.2. Associating Other Repositories with Your Repository">Section 5.4.2, “Associating Other Repositories with Your Repository”</a>
      (<span class="emphasis"><em>layering</em></span>)
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      <a class="xref" href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.reuse" title="5.4.3. Reusing Packages in Your Project">Section 5.4.3, “Reusing Packages in Your Project”</a>
      (<span class="emphasis"><em>linking</em></span> and <span class="emphasis"><em>aggregating</em></span>)
-    </p></li></ul></div><div class="sect2 " id="sec.obs.basicworkflow.deps"><div class="titlepage"><div><div><h3 class="title"><span class="number">5.4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Adding Dependencies to Your Build Recipes</span> <a title="Permalink" class="permalink" href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.deps">#</a></h3></div></div></div><p>
+    </p></li></ul></div><section class="sect2" id="sec.obs.basicworkflow.deps" data-id-title="Adding Dependencies to Your Build Recipes"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.4.1 </span><span class="title-name">Adding Dependencies to Your Build Recipes</span></span> <a title="Permalink" class="permalink" href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.deps">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
     In a spec file, dependencies are expressed with the keywords <code class="literal">Requires</code>
     (installation requirements) and <code class="literal">BuildRequires</code> (installation
     requirements). Both belong to the header of the spec file.
-   </p><div class="example" id="ex.obs.basicworkflow.excerpt"><div class="example-title-wrap"><h6 class="example-title"><span class="number">Example 5.3: </span><span class="name">Excerpt of Build and Installation Requirements </span><a title="Permalink" class="permalink" href="cha.obs.basicworkflow.html#ex.obs.basicworkflow.excerpt">#</a></h6></div><div class="example-contents"><div class="verbatim-wrap"><pre class="screen">Name:             foo-example
+   </p><div class="example" id="ex.obs.basicworkflow.excerpt" data-id-title="Excerpt of Build and Installation Requirements"><div class="title-container"><div class="example-title-wrap"><div class="example-title"><span class="title-number-name"><span class="title-number">Example 5.3: </span><span class="title-name">Excerpt of Build and Installation Requirements </span></span><a title="Permalink" class="permalink" href="cha.obs.basicworkflow.html#ex.obs.basicworkflow.excerpt">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div><div class="example-contents"><div class="verbatim-wrap"><pre class="screen">Name:             foo-example
 Version:          1.0.0
 BuildRequires:    bar
-Requires:         zool &gt;= 1.5.6</pre></div></div></div></div><div class="sect2 " id="sec.obs.basicworkflow.layering"><div class="titlepage"><div><div><h3 class="title"><span class="number">5.4.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Associating Other Repositories with Your Repository</span> <a title="Permalink" class="permalink" href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.layering">#</a></h3></div></div></div><p>
+Requires:         zool &gt;= 1.5.6</pre></div></div></div></section><section class="sect2" id="sec.obs.basicworkflow.layering" data-id-title="Associating Other Repositories with Your Repository"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.4.2 </span><span class="title-name">Associating Other Repositories with Your Repository</span></span> <a title="Permalink" class="permalink" href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.layering">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
     There is no need to duplicate the work of others. If you need a specific
     package which is available in another repository, you can reference this
     repository in your project metadata. This is called <span class="emphasis"><em>layering</em></span>.
@@ -269,11 +315,11 @@ Requires:         zool &gt;= 1.5.6</pre></div></div></div></div><div class="sect
    </p><p>
     To add another repository that can be used as build or installation
     requirements, do the following:
-   </p><div class="procedure "><div class="procedure-contents"><ol class="procedure" type="1"><li class="step "><p>
+   </p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
       Open a terminal.
-     </p></li><li class="step "><p>
+     </p></li><li class="step"><p>
       Edit the project metadata:
-     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">osc</code> meta prj --edit home:obsgeeko</pre></div></li><li class="step " id="st.obs.basicworkflow.layering.repository"><p>
+     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">osc</code> meta prj --edit home:obsgeeko</pre></div></li><li class="step" id="st.obs.basicworkflow.layering.repository"><p>
       Search for <code class="sgmltag-element">repository</code> elements. For example, to allow usage
       packages from <code class="uri">devel:languages:python</code> in a
       openSUSE Tumbleweed project, extend the <code class="sgmltag-element">repository</code> element with:
@@ -281,7 +327,7 @@ Requires:         zool &gt;= 1.5.6</pre></div></div></div></div><div class="sect
     <span class="strong"><strong>&lt;path project="devel:languages:python" repository="openSUSE_Factory"/&gt;</strong></span>
     &lt;path project="openSUSE:Factory" repository="standard"/&gt;
     &lt;arch&gt;x86_64&lt;/arch&gt;
-&lt;/repository&gt;</pre></div><div id="id-1.5.8.2.7.8.5.3.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg" /><h6>Note: Order Is Important</h6><p>
+&lt;/repository&gt;</pre></div><div id="id-1.5.8.2.7.8.5.3.3" data-id-title="Order Is Important" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note: Order Is Important</div><p>
        The order of the <code class="sgmltag-element">path</code> elements is important:
        <code class="sgmltag-element">path</code> elements are searched
        from top to bottom.
@@ -294,35 +340,35 @@ Requires:         zool &gt;= 1.5.6</pre></div></div></div></div><div class="sect
        For practical reasons, additional repositories should be added
        before the standard repositories of the specified
        distribution.
-      </p></div></li><li class="step " id="st.obs.basicworkflow.layering.path"><p>
+      </p></div></li><li class="step" id="st.obs.basicworkflow.layering.path"><p>
       Add more <code class="sgmltag-element">path</code> elements under the same
       <code class="sgmltag-element">repository</code> element.
-     </p></li><li class="step "><p>
+     </p></li><li class="step"><p>
       If necessary, repeat <a class="xref" href="cha.obs.basicworkflow.html#st.obs.basicworkflow.layering.repository" title="Step 3">Step 3</a> and
       <a class="xref" href="cha.obs.basicworkflow.html#st.obs.basicworkflow.layering.path" title="Step 4">Step 4</a> to add <code class="sgmltag-element">path</code>
       elements to <code class="sgmltag-element">repository</code> elements of other distributions or releases.
-     </p></li></ol></div></div></div><div class="sect2 " id="sec.obs.basicworkflow.reuse"><div class="titlepage"><div><div><h3 class="title"><span class="number">5.4.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Reusing Packages in Your Project</span> <a title="Permalink" class="permalink" href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.reuse">#</a></h3></div></div></div><p>
+     </p></li></ol></div></div></section><section class="sect2" id="sec.obs.basicworkflow.reuse" data-id-title="Reusing Packages in Your Project"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.4.3 </span><span class="title-name">Reusing Packages in Your Project</span></span> <a title="Permalink" class="permalink" href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.reuse">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
     To reuse existing packages in your package repository, OBS offers
-    two methods: <span class="quote">“<span class="quote ">aggregating</span>”</span> and <span class="quote">“<span class="quote ">linking</span>”</span>.
-   </p><div class="sect3 " id="sec.obs.basicworkflow.reuse.linking"><div class="titlepage"><div><div><h4 class="title"><span class="number">5.4.3.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Linking a Package</span> <a title="Permalink" class="permalink" href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.reuse.linking">#</a></h4></div></div></div><p>
+    two methods: <span class="quote">“<span class="quote">aggregating</span>”</span> and <span class="quote">“<span class="quote">linking</span>”</span>.
+   </p><section class="sect3" id="sec.obs.basicworkflow.reuse.linking" data-id-title="Linking a Package"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">5.4.3.1 </span><span class="title-name">Linking a Package</span></span> <a title="Permalink" class="permalink" href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.reuse.linking">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
      A linked package is a clone of another package with
      additional modifications. Linking is used in the following situations:
-    </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
        The source code needs changes, but the source either cannot be changed
        in the original package or doing so is impractical or inconvenient to
        change the source.
-      </p></li><li class="listitem "><p>
+      </p></li><li class="listitem"><p>
        To separate the original source from own patches.
       </p></li></ul></div><p>
      The general syntax of the <code class="command">linkpac</code> command is:
-    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">osc</code> linkpac <em class="replaceable ">SOURCEPRJ</em> <em class="replaceable ">SOURCEPAC</em> <em class="replaceable ">DESTPRJ</em></pre></div><p>
-     For example, to link the package <span class="package ">python-lxml</span> from
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">osc</code> linkpac <em class="replaceable">SOURCEPRJ</em> <em class="replaceable">SOURCEPAC</em> <em class="replaceable">DESTPRJ</em></pre></div><p>
+     For example, to link the package <span class="package">python-lxml</span> from
      <code class="uri">devel:language:python</code> into your home project, use the
      following command:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">osc</code> linkpac devel:language:python python-lxml home:obsgeeko</pre></div><p>
      In contrast to aggregating, the checkout contains all the
      files from the linked repository. To reduce it to a single file (like
-     with aggregating), <span class="quote">“<span class="quote ">unexpand</span>”</span> it in the working
+     with aggregating), <span class="quote">“<span class="quote">unexpand</span>”</span> it in the working
      directory like this:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">osc</code> up --unexpand-link
 Unexpanding to rev 1
@@ -337,9 +383,8 @@ At revision 1.</pre></div><p>
      <code class="filename">_aggregate</code> file. You can use the <code class="option">--expand-link</code>
      option in the <code class="command">up</code> subcommand to revert to the previous
      state.
-    </p></div></div></div><div class="sect1 " id="sec.obs.basicworkflow.manage-group"><div class="titlepage"><div><div><h2 class="title"><span class="number">5.5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Manage Group</span> <a title="Permalink" class="permalink" href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.manage-group">#</a></h2></div></div></div><p>
+    </p></section></section></section><section class="sect1" id="sec.obs.basicworkflow.manage-group" data-id-title="Manage Group"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">5.5 </span><span class="title-name">Manage Group</span></span> <a title="Permalink" class="permalink" href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.manage-group">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
     Users with Maintainer rights can add users to their group and remove users
     from it. They can also give other users Maintainer rights.
-  </p><div class="verbatim-wrap"><pre class="screen"><code class="command">osc api -d "&lt;group&gt;&lt;title&gt;&lt;group-title&gt;&lt;/title&gt;&lt;email&gt;&lt;group-email&gt;&lt;/email&gt;&lt;maintainer userid="&lt;user-name&gt;"/&gt;&lt;person&gt;&lt;person userid="&lt;user_name&gt;"/&gt;&lt;/person&gt;&lt;/group&gt;' -X PUT "/group/&lt;group-title&gt;" </code></pre></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="cha.obs.building.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 6 </span>Local Building</span></a><a class="nav-link" href="par.working.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Part IV </span>Usage</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
-        2024 
-        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="command">osc api -d "&lt;group&gt;&lt;title&gt;&lt;group-title&gt;&lt;/title&gt;&lt;email&gt;&lt;group-email&gt;&lt;/email&gt;&lt;maintainer userid="&lt;user-name&gt;"/&gt;&lt;person&gt;&lt;person userid="&lt;user_name&gt;"/&gt;&lt;/person&gt;&lt;/group&gt;' -X PUT "/group/&lt;group-title&gt;" </code></pre></div></section></section><nav class="bottom-pagination"><div><a class="pagination-link prev" href="par.working.html"><span class="pagination-relation">Previous</span><span class="pagination-label"><span class="title-number">Part IV </span>Usage</span></a> </div><div><a class="pagination-link next" href="cha.obs.building.html"><span class="pagination-relation">Next</span><span class="pagination-label"><span class="title-number">Chapter 6 </span>Local Building</span></a> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="sect1"><a href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.setuphome"><span class="title-number">5.1 </span><span class="title-name">Setting Up Your Home Project</span></a></span></li><li><span class="sect1"><a href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.create-new"><span class="title-number">5.2 </span><span class="title-name">Creating a New Package</span></a></span></li><li><span class="sect1"><a href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.builderrors"><span class="title-number">5.3 </span><span class="title-name">Investigating the Local Build Process</span></a></span></li><li><span class="sect1"><a href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.add-dependencies"><span class="title-number">5.4 </span><span class="title-name">Adding Dependencies to Your Project</span></a></span></li><li><span class="sect1"><a href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.manage-group"><span class="title-number">5.5 </span><span class="title-name">Manage Group</span></a></span></li></ul></div><div class="side-title">Share this page</div><ul class="share"><li><a id="_share-fb" href="#" title="Facebook"> </a></li><li><a id="_share-in" href="#" title="LinkedIn"> </a></li><li><a id="_share-tw" href="#" title="Twitter/X"> </a></li><li><a id="_share-mail" href="#" title="E-Mail"> </a></li><li><a id="_print-button" href="#" title="Print this page"> </a></li></ul> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
+                 2024</span></div></div></footer></body></html>

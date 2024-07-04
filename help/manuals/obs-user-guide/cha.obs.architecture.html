@@ -1,23 +1,69 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>OBS Architecture | User Guide</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" />
-<meta name="title" content="OBS Architecture" />
-<meta name="description" content="TBD" />
-<meta name="book-title" content="User Guide" />
-<meta name="chapter-title" content="Chapter 21. OBS Architecture" />
-<meta property="og:title" content="OBS Architecture" />
-<meta property="og:description" content="TBD" />
-<meta property="og:type" content="article" />
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="OBS Architecture" />
-<meta name="twitter:description" content="TBD" />
-<link rel="home" href="index.html" title="OBS Documentation" /><link rel="up" href="par.reference.html" title="Part VI. Reference" /><link rel="prev" href="par.reference.html" title="Part VI. Reference" /><link rel="next" href="cha.obs.concepts.html" title="Chapter 22. OBS Concepts" />
-<script type="text/javascript">
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><title>User Guide | OBS Architecture</title><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"/><link rel="schema.DCTERMS" href="http://purl.org/dc/terms/"/>
+<meta name="title" content="OBS Architecture"/>
+<meta name="description" content="TBD"/>
+<meta name="book-title" content="User Guide"/>
+<meta name="chapter-title" content="Chapter 21. OBS Architecture"/>
+<meta name="publisher" content="SUSE"/><meta property="og:title" content="OBS Architecture"/>
+<meta property="og:description" content="TBD"/>
+<meta property="og:type" content="article"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="OBS Architecture"/>
+<meta name="twitter:description" content="TBD"/>
+<script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": ["TechArticle"],
+    "image": "https://www.suse.com/assets/img/suse-white-logo-green.svg",
+    
+     "isPartOf": {
+      "@type": "CreativeWorkSeries",
+      "name": "Product &amp; Solutions"
+    },
+    
+    "inLanguage": "en",
+    
+
+    "headline": "OBS Architecture",
+  
+    "description": "TBD",
+      
+    "author": [
+      {
+        "@type": "Corporation",
+        "name": "SUSE Product &amp; Solution Documentation Team",
+        "url": "https://www.suse.com/assets/img/suse-white-logo-green.svg"
+      }
+    ],
+      
+
+    "about": [
+      
+    ],
+  
+    "sameAs": [
+          "https://www.facebook.com/SUSEWorldwide/about",
+          "https://www.youtube.com/channel/UCHTfqIzPKz4f_dri36lAQGA",
+          "https://twitter.com/SUSE",
+          "https://www.linkedin.com/company/suse"
+    ],
+    "publisher": {
+      "@type": "Corporation",
+      "name": "SUSE",
+      "url": "https://documentation.suse.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.suse.com/assets/img/suse-white-logo-green.svg"
+      }
+    }
+  }</script>
+<link rel="prev" href="par.reference.html" title="Part VI. Reference"/><link rel="next" href="cha.obs.concepts.html" title="Chapter 22. OBS Concepts"/><script type="text/javascript">
 
 if ( window.location.protocol.toLowerCase() != 'file:' ) {
   document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
 };
 
-</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css" /></noscript><script src="static/js/jquery-1.12.4.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"/></noscript><script src="static/js/script-purejs.js" type="text/javascript"> </script><script src="static/js/highlight.min.js" type="text/javascript"> </script><script>
 
 $(document).ready(function() {
   $('.verbatim-wrap.highlight').each(function(i, block) {
@@ -28,13 +74,13 @@ hljs.configure({
   useBR: false
 });
 
-</script></head><body class="offline js-off"><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg"><div id="_header"><div id="_logo"><img src="static/images/logo.svg" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="User Guide"><span class="book-icon">User Guide</span></a><span> › </span><a class="crumb" href="par.reference.html">Reference</a><span> › </span><a class="crumb" href="cha.obs.architecture.html">OBS Architecture</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>User Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="bk02pr01.html"><span class="number"> </span><span class="name">About this Guide</span></a></li><li class="inactive"><a href="par.first_steps.html"><span class="number">I </span><span class="name">First Steps</span></a><ol><li class="inactive"><a href="art.obs.bg.html"><span class="number">1 </span><span class="name">Beginnerʼs Guide</span></a></li></ol></li><li class="inactive"><a href="par.concepts.html"><span class="number">II </span><span class="name">Concepts</span></a><ol><li class="inactive"><a href="cha.obs.package_formats.html"><span class="number">2 </span><span class="name">Supported Build Recipes and Package Formats</span></a></li></ol></li><li class="inactive"><a href="bk02pt03.html"><span class="number">III </span><span class="name">Setup</span></a><ol><li class="inactive"><a href="cha.obs.osc.html"><span class="number">3 </span><span class="name">osc, the Command Line Tool</span></a></li><li class="inactive"><a href="cha.obs.prjconfig.html"><span class="number">4 </span><span class="name">Build Configuration</span></a></li></ol></li><li class="inactive"><a href="par.working.html"><span class="number">IV </span><span class="name">Usage</span></a><ol><li class="inactive"><a href="cha.obs.basicworkflow.html"><span class="number">5 </span><span class="name">Basic OBS Workflow</span></a></li><li class="inactive"><a href="cha.obs.building.html"><span class="number">6 </span><span class="name">Local Building</span></a></li><li class="inactive"><a href="cha.obs.source_service.html"><span class="number">7 </span><span class="name">Using Source Services</span></a></li><li class="inactive"><a href="cha.obs.scm_ci_workflow_integration.html"><span class="number">8 </span><span class="name">SCM/CI Workflow Integration</span></a></li><li class="inactive"><a href="cha.obs.stagingworkflow.html"><span class="number">9 </span><span class="name">Staging Workflow</span></a></li><li class="inactive"><a href="cha.obs.notifications.html"><span class="number">10 </span><span class="name">Notifications</span></a></li><li class="inactive"><a href="cha.obs.moderation.html"><span class="number">11 </span><span class="name">Moderation</span></a></li></ol></li><li class="inactive"><a href="par.best_practices.html"><span class="number">V </span><span class="name">Best Practices</span></a><ol><li class="inactive"><a href="cha.obs.best-practices.webuiusage.html"><span class="number">12 </span><span class="name">Using the OBS Web UI</span></a></li><li class="inactive"><a href="cha.obs.best-practices.basics.html"><span class="number">13 </span><span class="name">Basic Concepts and Work Styles</span></a></li><li class="inactive"><a href="cha.obs.best-practices.scm_integration.html"><span class="number">14 </span><span class="name">How to integrate external SCM sources</span></a></li><li class="inactive"><a href="cha.obs.best-practices.upstream.html"><span class="number">15 </span><span class="name">Publishing Upstream Binaries</span></a></li><li class="inactive"><a href="cha.obs.best-practices.bootstrapping.html"><span class="number">16 </span><span class="name">Bootstrapping</span></a></li><li class="inactive"><a href="cha.obs.best-practices.oscexamples.html"><span class="number">17 </span><span class="name"><code class="command">osc</code> Example Commands</span></a></li><li class="inactive"><a href="cha.obs.best-practices.advanced.html"><span class="number">18 </span><span class="name">Advanced Project Setups</span></a></li><li class="inactive"><a href="cha.obs.best-practices.kmp.html"><span class="number">19 </span><span class="name">Building Kernel Modules</span></a></li><li class="inactive"><a href="cha.obs.best-practices.howto.html"><span class="number">20 </span><span class="name">Common Questions and Solutions</span></a></li></ol></li><li class="inactive"><a href="par.reference.html"><span class="number">VI </span><span class="name">Reference</span></a><ol><li class="inactive"><a href="cha.obs.architecture.html"><span class="number">21 </span><span class="name">OBS Architecture</span></a></li><li class="inactive"><a href="cha.obs.concepts.html"><span class="number">22 </span><span class="name">OBS Concepts</span></a></li><li class="inactive"><a href="cha.obs.build_process.html"><span class="number">23 </span><span class="name">Build Process</span></a></li><li class="inactive"><a href="cha.obs.build_containers.html"><span class="number">24 </span><span class="name">Build Containers</span></a></li><li class="inactive"><a href="cha.obs.source_management.html"><span class="number">25 </span><span class="name">Source Management</span></a></li><li class="inactive"><a href="cha.obs.scm_bridge.html"><span class="number">26 </span><span class="name">SCM Bridge</span></a></li><li class="inactive"><a href="cha.obs.supported_formats.html"><span class="number">27 </span><span class="name">Supported Formats</span></a></li><li class="inactive"><a href="cha.obs.request_and_review_system.html"><span class="number">28 </span><span class="name">Request And Review System</span></a></li><li class="inactive"><a href="cha.obs.image_templates.html"><span class="number">29 </span><span class="name">Image Templates</span></a></li><li class="inactive"><a href="cha.obs.multibuild.html"><span class="number">30 </span><span class="name">Multiple Build Description File Handling</span></a></li><li class="inactive"><a href="cha.obs.maintenance_setup.html"><span class="number">31 </span><span class="name">Maintenance Support</span></a></li><li class="inactive"><a href="cha.obs.binary_tracking.html"><span class="number">32 </span><span class="name">Binary Package Tracking</span></a></li><li class="inactive"><a href="cha.obs.admin.html"><span class="number">33 </span><span class="name">Administration</span></a></li><li class="inactive"><a href="cha.obs.build_scheduling_and_dispatching.html"><span class="number">34 </span><span class="name">Scheduling and Dispatching</span></a></li><li class="inactive"><a href="cha.obs.build_constraints.html"><span class="number">35 </span><span class="name">Build Constraints</span></a></li><li class="inactive"><a href="cha.obs.build_preinstall.html"><span class="number">36 </span><span class="name">Building Preinstall Images</span></a></li><li class="inactive"><a href="cha.obs.authorization.token.html"><span class="number">37 </span><span class="name">Authorization</span></a></li><li class="inactive"><a href="cha.obs.qa_hooks.html"><span class="number">38 </span><span class="name">Quality Assurance(QA) Hooks</span></a></li><li class="inactive"><a href="cha.obs.factory.html"><span class="number">39 </span><span class="name">openSUSE Factory</span></a></li></ol></li><li class="inactive"><a href="obs.glossary.html"><span class="number"> </span><span class="name">Glossary</span></a></li><li class="inactive"><a href="bk02apa.html"><span class="number">A </span><span class="name">GNU Licenses</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Part VI. Reference" href="par.reference.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 22. OBS Concepts" href="cha.obs.concepts.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="User Guide"><span class="book-icon">User Guide</span></a><span> › </span><a class="crumb" href="par.reference.html">Reference</a><span> › </span><a class="crumb" href="cha.obs.architecture.html">OBS Architecture</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Part VI. Reference" href="par.reference.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 22. OBS Concepts" href="cha.obs.concepts.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class=""><div class="documentation"><div class="chapter " id="cha.obs.architecture"><div class="titlepage"><div><div><h2 class="title"><span class="number">21 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">OBS Architecture</span> <a title="Permalink" class="permalink" href="cha.obs.architecture.html#">#</a></h2></div><div><div class="abstract"><div class="abstract-title-wrap"><h6 class="abstract-title">Abstract<a title="Permalink" class="permalink" href="cha.obs.architecture.html#id-1.5.10.2.2.1">#</a></h6></div><p>
+</script></head><body class="wide offline js-off"><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-pagination">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><header id="_mainnav"><div class="growth-inhibitor"><img src="static/images/logo.svg" alt="Logo" class="logo"/></div></header><div class="crumbs"><div class="growth-inhibitor"><a class="crumb" href="index.html">User Guide</a><span> / </span><a class="crumb" href="par.reference.html">Reference</a><span> / </span><a class="crumb" href="cha.obs.architecture.html">OBS Architecture</a></div></div><main id="_content"><nav id="_side-toc-overall" class="side-toc"><div class="side-title">User Guide</div><ol><li><a href="bk02pr01.html" class=" "><span class="title-number"> </span><span class="title-name">About this Guide</span></a></li><li><a href="par.first_steps.html" class="has-children "><span class="title-number">I </span><span class="title-name">First Steps</span></a><ol><li><a href="art.obs.bg.html" class=" "><span class="title-number">1 </span><span class="title-name">Beginnerʼs Guide</span></a></li></ol></li><li><a href="par.concepts.html" class="has-children "><span class="title-number">II </span><span class="title-name">Concepts</span></a><ol><li><a href="cha.obs.package_formats.html" class=" "><span class="title-number">2 </span><span class="title-name">Supported Build Recipes and Package Formats</span></a></li></ol></li><li><a href="bk02pt03.html" class="has-children "><span class="title-number">III </span><span class="title-name">Setup</span></a><ol><li><a href="cha.obs.osc.html" class=" "><span class="title-number">3 </span><span class="title-name">osc, the Command Line Tool</span></a></li><li><a href="cha.obs.prjconfig.html" class=" "><span class="title-number">4 </span><span class="title-name">Build Configuration</span></a></li></ol></li><li><a href="par.working.html" class="has-children "><span class="title-number">IV </span><span class="title-name">Usage</span></a><ol><li><a href="cha.obs.basicworkflow.html" class=" "><span class="title-number">5 </span><span class="title-name">Basic OBS Workflow</span></a></li><li><a href="cha.obs.building.html" class=" "><span class="title-number">6 </span><span class="title-name">Local Building</span></a></li><li><a href="cha.obs.source_service.html" class=" "><span class="title-number">7 </span><span class="title-name">Using Source Services</span></a></li><li><a href="cha.obs.scm_ci_workflow_integration.html" class=" "><span class="title-number">8 </span><span class="title-name">SCM/CI Workflow Integration</span></a></li><li><a href="cha.obs.stagingworkflow.html" class=" "><span class="title-number">9 </span><span class="title-name">Staging Workflow</span></a></li><li><a href="cha.obs.notifications.html" class=" "><span class="title-number">10 </span><span class="title-name">Notifications</span></a></li><li><a href="cha.obs.moderation.html" class=" "><span class="title-number">11 </span><span class="title-name">Moderation</span></a></li></ol></li><li><a href="par.best_practices.html" class="has-children "><span class="title-number">V </span><span class="title-name">Best Practices</span></a><ol><li><a href="cha.obs.best-practices.webuiusage.html" class=" "><span class="title-number">12 </span><span class="title-name">Using the OBS Web UI</span></a></li><li><a href="cha.obs.best-practices.basics.html" class=" "><span class="title-number">13 </span><span class="title-name">Basic Concepts and Work Styles</span></a></li><li><a href="cha.obs.best-practices.scm_integration.html" class=" "><span class="title-number">14 </span><span class="title-name">How to integrate external SCM sources</span></a></li><li><a href="cha.obs.best-practices.upstream.html" class=" "><span class="title-number">15 </span><span class="title-name">Publishing Upstream Binaries</span></a></li><li><a href="cha.obs.best-practices.bootstrapping.html" class=" "><span class="title-number">16 </span><span class="title-name">Bootstrapping</span></a></li><li><a href="cha.obs.best-practices.oscexamples.html" class=" "><span class="title-number">17 </span><span class="title-name"><code class="command">osc</code> Example Commands</span></a></li><li><a href="cha.obs.best-practices.advanced.html" class=" "><span class="title-number">18 </span><span class="title-name">Advanced Project Setups</span></a></li><li><a href="cha.obs.best-practices.kmp.html" class=" "><span class="title-number">19 </span><span class="title-name">Building Kernel Modules</span></a></li><li><a href="cha.obs.best-practices.howto.html" class=" "><span class="title-number">20 </span><span class="title-name">Common Questions and Solutions</span></a></li></ol></li><li class="active"><a href="par.reference.html" class="has-children you-are-here"><span class="title-number">VI </span><span class="title-name">Reference</span></a><ol><li><a href="cha.obs.architecture.html" class=" you-are-here"><span class="title-number">21 </span><span class="title-name">OBS Architecture</span></a></li><li><a href="cha.obs.concepts.html" class=" "><span class="title-number">22 </span><span class="title-name">OBS Concepts</span></a></li><li><a href="cha.obs.build_process.html" class=" "><span class="title-number">23 </span><span class="title-name">Build Process</span></a></li><li><a href="cha.obs.build_containers.html" class=" "><span class="title-number">24 </span><span class="title-name">Build Containers</span></a></li><li><a href="cha.obs.source_management.html" class=" "><span class="title-number">25 </span><span class="title-name">Source Management</span></a></li><li><a href="cha.obs.scm_bridge.html" class=" "><span class="title-number">26 </span><span class="title-name">SCM Bridge</span></a></li><li><a href="cha.obs.supported_formats.html" class=" "><span class="title-number">27 </span><span class="title-name">Supported Formats</span></a></li><li><a href="cha.obs.request_and_review_system.html" class=" "><span class="title-number">28 </span><span class="title-name">Request And Review System</span></a></li><li><a href="cha.obs.image_templates.html" class=" "><span class="title-number">29 </span><span class="title-name">Image Templates</span></a></li><li><a href="cha.obs.multibuild.html" class=" "><span class="title-number">30 </span><span class="title-name">Multiple Build Description File Handling</span></a></li><li><a href="cha.obs.maintenance_setup.html" class=" "><span class="title-number">31 </span><span class="title-name">Maintenance Support</span></a></li><li><a href="cha.obs.binary_tracking.html" class=" "><span class="title-number">32 </span><span class="title-name">Binary Package Tracking</span></a></li><li><a href="cha.obs.admin.html" class=" "><span class="title-number">33 </span><span class="title-name">Administration</span></a></li><li><a href="cha.obs.build_scheduling_and_dispatching.html" class=" "><span class="title-number">34 </span><span class="title-name">Scheduling and Dispatching</span></a></li><li><a href="cha.obs.build_constraints.html" class=" "><span class="title-number">35 </span><span class="title-name">Build Constraints</span></a></li><li><a href="cha.obs.build_preinstall.html" class=" "><span class="title-number">36 </span><span class="title-name">Building Preinstall Images</span></a></li><li><a href="cha.obs.authorization.token.html" class=" "><span class="title-number">37 </span><span class="title-name">Authorization</span></a></li><li><a href="cha.obs.qa_hooks.html" class=" "><span class="title-number">38 </span><span class="title-name">Quality Assurance(QA) Hooks</span></a></li><li><a href="cha.obs.factory.html" class=" "><span class="title-number">39 </span><span class="title-name">openSUSE Factory</span></a></li></ol></li><li><a href="obs.glossary.html" class=" "><span class="title-number"> </span><span class="title-name">Glossary</span></a></li><li><a href="bk02apa.html" class=" "><span class="title-number">A </span><span class="title-name">GNU Licenses</span></a></li> </ol> </nav><button id="_open-side-toc-overall" title="Contents"> </button><article class="documentation"><button id="_unfold-side-toc-page">On this page</button><section class="chapter" id="cha.obs.architecture" data-id-title="OBS Architecture"><div class="titlepage"><div><div><div class="title-container"><h1 class="title"><span class="title-number-name"><span class="title-number">21 </span><span class="title-name">OBS Architecture</span></span> <a title="Permalink" class="permalink" href="cha.obs.architecture.html#">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div><div><div class="abstract"><p>
      
-   </p></div></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="cha.obs.architecture.html#_overview_graph"><span class="number">21.1 </span><span class="name">Overview Graph</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.architecture.html#_communication_flow"><span class="number">21.2 </span><span class="name">Communication Flow</span></a></span></dt></dl></div></div><div class="sect1 " id="_overview_graph"><div class="titlepage"><div><div><h2 class="title"><span class="number">21.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Overview Graph</span> <a title="Permalink" class="permalink" href="cha.obs.architecture.html#_overview_graph">#</a></h2></div></div></div><p> Open Build Service (OBS) is not a monolithic server; it consists of multiple daemons
-   that fulfill different tasks (see <a class="xref" href="cha.obs.architecture.html#fig.overview.simplified" title="Simplified OBS Component Overview">Figure 21.1, “Simplified OBS Component Overview”</a>). </p><div class="figure" id="fig.overview.simplified"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/obs_components.png" target="_blank"><img src="images/obs_components.png" width="" alt="Simplified OBS Component Overview" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 21.1: </span><span class="name">Simplified OBS Component Overview </span><a title="Permalink" class="permalink" href="cha.obs.architecture.html#fig.overview.simplified">#</a></h6></div></div><p>
+   </p></div></div></div></div><section class="sect1" id="_overview_graph" data-id-title="Overview Graph"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">21.1 </span><span class="title-name">Overview Graph</span></span> <a title="Permalink" class="permalink" href="cha.obs.architecture.html#_overview_graph">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p> Open Build Service (OBS) is not a monolithic server; it consists of multiple daemons
+   that fulfill different tasks (see <a class="xref" href="cha.obs.architecture.html#fig.overview.simplified" title="Simplified OBS Component Overview">Figure 21.1, “Simplified OBS Component Overview”</a>). </p><div class="figure" id="fig.overview.simplified"><div class="figure-contents"><div class="mediaobject"><a href="images/obs_components.png"><img src="images/obs_components.png" width="500" alt="Simplified OBS Component Overview" title="Simplified OBS Component Overview"/></a></div></div><div class="title-container"><div class="figure-title-wrap"><div class="figure-title"><span class="title-number-name"><span class="title-number">Figure 21.1: </span><span class="title-name">Simplified OBS Component Overview </span></span><a title="Permalink" class="permalink" href="cha.obs.architecture.html#fig.overview.simplified">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div><p>
   The OBS Back-end 
   manages the source files and build jobs of the OBS.
- </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.5.10.2.3.5.1"><span class="term ">Source Server</span></dt><dd><p> Maintains the source repository and project/package configurations.
+ </p><div class="variablelist"><dl class="variablelist"><dt id="id-1.5.10.2.3.5.1"><span class="term">Source Server</span></dt><dd><p> Maintains the source repository and project/package configurations.
       It provides an HTTP interface, which is the only interface for the
       Front-end and It may forward requests to further back-end services.
      </p><p> The Source Server keeps track of all sources that are available for
@@ -43,7 +89,7 @@ hljs.configure({
       the files in combination with the file names. All revisions of committed
       sources are stored and will not be deleted. This guarantees the ability
       to get the source for every delivered binary package. </p><p> Each OBS installation has one Source Server only. It maintains the
-      "sources", "trees" and "projects" directories. </p></dd><dt id="id-1.5.10.2.3.5.2"><span class="term ">Repository Server</span></dt><dd><p>
+      "sources", "trees" and "projects" directories. </p></dd><dt id="id-1.5.10.2.3.5.2"><span class="term">Repository Server</span></dt><dd><p>
       A repository server provides access to the binaries via an HTTP
       interface. It is used by the front-end via the source server only.
       Workers use the server for registration, requesting the needed binaries
@@ -51,12 +97,12 @@ hljs.configure({
       are also created by repository servers. Each OBS installation has at
       least one repository server. A larger installation using partitioning has
       one on each partition.
-     </p></dd><dt id="id-1.5.10.2.3.5.3"><span class="term ">Scheduler</span></dt><dd><p> A scheduler calculates the need for build jobs. It detects changes in
+     </p></dd><dt id="id-1.5.10.2.3.5.3"><span class="term">Scheduler</span></dt><dd><p> A scheduler calculates the need for build jobs. It detects changes in
      sources, project configurations or in binaries used in the build
      environment. It is responsible for starting jobs in the right order and
      integrating the built binary packages. Each OBS installation has one
      scheduler per available architecture and partition. It maintains the
-     content of the "build" directory. </p></dd><dt id="id-1.5.10.2.3.5.4"><span class="term ">Dispatcher</span></dt><dd><p> The dispatcher takes a job (created by the scheduler) and assigns it
+     content of the "build" directory. </p></dd><dt id="id-1.5.10.2.3.5.4"><span class="term">Dispatcher</span></dt><dd><p> The dispatcher takes a job (created by the scheduler) and assigns it
      to a free worker. It also checks possible build constraints to verify that
      the worker qualifies for the job. It only notifies a worker about a job; the
      worker downloads the needed resources itself afterwards. Each OBS
@@ -69,16 +115,16 @@ hljs.configure({
      repositories via the <span class="emphasis"><em>/build/<span class="emphasis"><em>_dispatchprios</em></span>
       <span class="strong"><strong>API</strong></span></em></span> call or via the <span class="strong"><strong>dispatch_adjust</strong></span> map in the BSConfig.pm
      configuration file. See the dispatch priorities in reference guide for more
-     details. </p></dd><dt id="id-1.5.10.2.3.5.5"><span class="term ">Publisher</span></dt><dd><p> The publisher processes publish events from the scheduler for
+     details. </p></dd><dt id="id-1.5.10.2.3.5.5"><span class="term">Publisher</span></dt><dd><p> The publisher processes publish events from the scheduler for
       finished repositories. It merges the build result of all architectures
       into a defined directory structure, creates the needed metadata, and may
       sync it to a download server. It maintains the content of the "repos"
       directory on the back-end. Each OBS installation has one publisher per
-      partition. </p></dd><dt id="id-1.5.10.2.3.5.6"><span class="term ">Signer</span></dt><dd><p>
+      partition. </p></dd><dt id="id-1.5.10.2.3.5.6"><span class="term">Signer</span></dt><dd><p>
       The signer handles signing events and calls an external tool to
       execute the signing. Each OBS installation usually has one signer per
       partition and also on the source server installation.
-      </p></dd><dt id="id-1.5.10.2.3.5.7"><span class="term ">Source Service Server</span></dt><dd><p>
+      </p></dd><dt id="id-1.5.10.2.3.5.7"><span class="term">Source Service Server</span></dt><dd><p>
      The Source Service Server helps to automate processes for <span class="strong"><strong>continuous integration</strong></span>. The server can call
      different services for different tasks. It can download sources from
      websites and version control systems such as subversion and git. Services
@@ -87,19 +133,19 @@ hljs.configure({
      also often used to enforce policies by running checks. A failed check will
      appear as broken source and blocks a package from building. </p><p> The Source Service Server is optional and currently only one Source
      Service Server is supported.
-    </p></dd><dt id="id-1.5.10.2.3.5.8"><span class="term ">Download on Demand Updater (dodup) (OBS version 2.7 or later)</span></dt><dd><p>
+    </p></dd><dt id="id-1.5.10.2.3.5.8"><span class="term">Download on Demand Updater (dodup) (OBS version 2.7 or later)</span></dt><dd><p>
       The download on demand updater monitors all external repositories
       which are defined as download on demand resources. It polls for changes
       in the metadata and re-downloads the metadata in case. The scheduler will
       be notified to recalculate the build jobs depending on these repositories
       afterwards. Each OBS installation can have one dodup service running on
-      each partition. </p></dd><dt id="id-1.5.10.2.3.5.9"><span class="term ">Delta Store (OBS version 2.7 or later)</span></dt><dd><p>
+      each partition. </p></dd><dt id="id-1.5.10.2.3.5.9"><span class="term">Delta Store (OBS version 2.7 or later)</span></dt><dd><p>
       The delta store daemon maintains the deltas in the source storage.
       Multiple obscpio archives can be stored in one deltastore to avoid
       duplication on disk. This service calculates the delta and maintains the
       delta store. Each OBS installation can have one delta store process
       running next to the source server.
-     </p></dd><dt id="id-1.5.10.2.3.5.10"><span class="term ">Worker</span></dt><dd><p>
+     </p></dd><dt id="id-1.5.10.2.3.5.10"><span class="term">Worker</span></dt><dd><p>
       The workers register with the repository servers. They receive build
       jobs from the dispatcher. Afterwards they download sources from the
       source server and the needed binaries from the repository server(s). They
@@ -107,16 +153,16 @@ hljs.configure({
       repository server. A worker can run on the same host as the other
       services, but most OBS installations have dedicated hardware for the
       workers.
-     </p></dd></dl></div></div><div class="sect1 " id="_communication_flow"><div class="titlepage"><div><div><h2 class="title"><span class="number">21.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Communication Flow</span> <a title="Permalink" class="permalink" href="cha.obs.architecture.html#_communication_flow">#</a></h2></div></div></div><p>
+     </p></dd></dl></div></section><section class="sect1" id="_communication_flow" data-id-title="Communication Flow"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">21.2 </span><span class="title-name">Communication Flow</span></span> <a title="Permalink" class="permalink" href="cha.obs.architecture.html#_communication_flow">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
    The communication flow can be split into the following major parts:
-  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+  </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
      communication between users and front-end
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      communication between front-end and source server
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      communication between source server and other back-end
      components, in particular the repository servers.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      communication between the back-end and the stage server to publish
      build results
     </p></li></ol></div><p>
@@ -130,15 +176,15 @@ hljs.configure({
    The communication between the front-end and the back-end also uses
    the HTTP protocol, using the back-end source server as the gateway to most
    other back-end components.
-  </p><div class="figure" id="fig_obs_communication"><div class="figure-contents"><div class="mediaobject"><a xmlns="" href="images/obs_communication.png" target="_blank"><img src="images/obs_communication.png" width="" alt="OBS Communication (Simplified)" /></a></div></div><div class="figure-title-wrap"><h6 class="figure-title"><span class="number">Figure 21.2: </span><span class="name">OBS Communication (Simplified) </span><a title="Permalink" class="permalink" href="cha.obs.architecture.html#fig_obs_communication">#</a></h6></div></div><p>
+  </p><div class="figure" id="fig_obs_communication"><div class="figure-contents"><div class="mediaobject"><a href="images/obs_communication.png"><img src="images/obs_communication.png" alt="OBS Communication (Simplified)" title="OBS Communication (Simplified)"/></a></div></div><div class="title-container"><div class="figure-title-wrap"><div class="figure-title"><span class="title-number-name"><span class="title-number">Figure 21.2: </span><span class="title-name">OBS Communication (Simplified) </span></span><a title="Permalink" class="permalink" href="cha.obs.architecture.html#fig_obs_communication">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div><p>
    The figure <a class="xref" href="cha.obs.architecture.html#fig_obs_communication" title="OBS Communication (Simplified)">Figure 21.2, “OBS Communication (Simplified)”</a> shows the
    communication flow between the OBS components if a package source
    (for example, a <code class="filename">_service</code> file) was updated:
-  </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p>
+  </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
      The new source file is uploaded with an HTTP PUT operation to the
      <span class="strong"><strong>front-end</strong></span>.
      The front-end authenticates and checks the permissions of the user.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      If the user has appropriate permissions, the new file will be sent to
      the back-end <span class="strong"><strong>source server</strong></span> via an
      HTTP PUT request.
@@ -148,27 +194,27 @@ hljs.configure({
      If so, the <span class="strong"><strong>source service server</strong></span> is
      informed via an HTTP PUT request of the <code class="filename">_service</code>
      file to run the requested services.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      The <span class="strong"><strong>source service server</strong></span> runs all
      required source services.
      For example, it could download the requested revision from a Git server.
      After running all services, it delivers the final sources back to the
      <span class="strong"><strong>source server</strong></span>, which then stores these
      under revision control.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      The <span class="strong"><strong>source server</strong></span> then notifies the
      <span class="strong"><strong>schedulers</strong></span> for each hardware
      architecture required about the change of the package via an event.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      The <span class="strong"><strong>scheduler</strong></span> then recalculates package
      and project state.
      If all build requirements are fulfilled, a build job is created and added
      to the <span class="strong"><strong>job pool</strong></span>.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      The <span class="strong"><strong>dispatcher</strong></span> is notified and selects
      a free <span class="strong"><strong>worker</strong></span> which meets the build
      constraints for the job and sends the job to it.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      The <span class="strong"><strong>worker</strong></span> downloads the sources from
      the <span class="strong"><strong>source server</strong></span> and all required
      binary packages from the <span class="strong"><strong>repository
@@ -178,20 +224,19 @@ hljs.configure({
      The <span class="strong"><strong>worker</strong></span> is monitored by the
      <span class="strong"><strong>warden</strong></span> service to detect any
      <span class="strong"><strong>worker</strong></span> crashes.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      If the build succeeds, the build results (including build logs) are
      uploaded to the <span class="strong"><strong>scheduler</strong></span>.
      If requested, the <span class="strong"><strong>signer</strong></span> signs the
      packages.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      The <span class="strong"><strong>scheduler</strong></span> recalculates the project
      status, checking whether dependent packages need to be rebuilt.
      If not, it requests the <span class="strong"><strong>publisher</strong></span> to
      publish the build results.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      The <span class="strong"><strong>publisher</strong></span> will create an updated
      version of the output repository and request the
      <span class="strong"><strong>signer</strong></span> to sign the repository metadata.
-    </p></li></ol></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="cha.obs.concepts.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 22 </span>OBS Concepts</span></a><a class="nav-link" href="par.reference.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Part VI </span>Reference</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
-        2024 
-        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>
+    </p></li></ol></div></section></section><nav class="bottom-pagination"><div><a class="pagination-link prev" href="par.reference.html"><span class="pagination-relation">Previous</span><span class="pagination-label"><span class="title-number">Part VI </span>Reference</span></a> </div><div><a class="pagination-link next" href="cha.obs.concepts.html"><span class="pagination-relation">Next</span><span class="pagination-label"><span class="title-number">Chapter 22 </span>OBS Concepts</span></a> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="sect1"><a href="cha.obs.architecture.html#_overview_graph"><span class="title-number">21.1 </span><span class="title-name">Overview Graph</span></a></span></li><li><span class="sect1"><a href="cha.obs.architecture.html#_communication_flow"><span class="title-number">21.2 </span><span class="title-name">Communication Flow</span></a></span></li></ul></div><div class="side-title">Share this page</div><ul class="share"><li><a id="_share-fb" href="#" title="Facebook"> </a></li><li><a id="_share-in" href="#" title="LinkedIn"> </a></li><li><a id="_share-tw" href="#" title="Twitter/X"> </a></li><li><a id="_share-mail" href="#" title="E-Mail"> </a></li><li><a id="_print-button" href="#" title="Print this page"> </a></li></ul> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
+                 2024</span></div></div></footer></body></html>

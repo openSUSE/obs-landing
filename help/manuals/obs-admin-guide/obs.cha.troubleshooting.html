@@ -1,23 +1,69 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Troubleshooting | Administrator Guide</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" />
-<meta name="title" content="Troubleshooting" />
-<meta name="description" content="Here are two major classes of problems regarding the Open Build Service:" />
-<meta name="book-title" content="Administrator Guide" />
-<meta name="chapter-title" content="Chapter 5. Troubleshooting" />
-<meta property="og:title" content="Troubleshooting" />
-<meta property="og:description" content="Here are two major classes of problems regarding the Open Build Service:" />
-<meta property="og:type" content="article" />
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Troubleshooting" />
-<meta name="twitter:description" content="Here are two major classes of problems regarding the Open Build Service:" />
-<link rel="home" href="index.html" title="OBS Documentation" /><link rel="up" href="book.obs-admin.html" title="Administrator Guide" /><link rel="prev" href="obs.cha.administration.html" title="Chapter 4. Administration" /><link rel="next" href="cha.obs.best-practices.localsetup.html" title="Chapter 6. Setting Up a Local OBS Instance" />
-<script type="text/javascript">
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><title>Administrator Guide | Troubleshooting</title><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"/><link rel="schema.DCTERMS" href="http://purl.org/dc/terms/"/>
+<meta name="title" content="Troubleshooting"/>
+<meta name="description" content="Here are two major classes of problems regarding the Open Build Service:"/>
+<meta name="book-title" content="Administrator Guide"/>
+<meta name="chapter-title" content="Chapter 5. Troubleshooting"/>
+<meta name="publisher" content="SUSE"/><meta property="og:title" content="Troubleshooting"/>
+<meta property="og:description" content="Here are two major classes of problems regarding the Open B…"/>
+<meta property="og:type" content="article"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Troubleshooting"/>
+<meta name="twitter:description" content="Here are two major classes of problems regarding the Open B…"/>
+<script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": ["TechArticle"],
+    "image": "https://www.suse.com/assets/img/suse-white-logo-green.svg",
+    
+     "isPartOf": {
+      "@type": "CreativeWorkSeries",
+      "name": "Product &amp; Solutions"
+    },
+    
+    "inLanguage": "en",
+    
+
+    "headline": "Troubleshooting",
+  
+    "description": "Troubleshooting",
+      
+    "author": [
+      {
+        "@type": "Corporation",
+        "name": "SUSE Product &amp; Solution Documentation Team",
+        "url": "https://www.suse.com/assets/img/suse-white-logo-green.svg"
+      }
+    ],
+      
+
+    "about": [
+      
+    ],
+  
+    "sameAs": [
+          "https://www.facebook.com/SUSEWorldwide/about",
+          "https://www.youtube.com/channel/UCHTfqIzPKz4f_dri36lAQGA",
+          "https://twitter.com/SUSE",
+          "https://www.linkedin.com/company/suse"
+    ],
+    "publisher": {
+      "@type": "Corporation",
+      "name": "SUSE",
+      "url": "https://documentation.suse.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.suse.com/assets/img/suse-white-logo-green.svg"
+      }
+    }
+  }</script>
+<link rel="prev" href="obs.cha.administration.html" title="Chapter 4. Administration"/><link rel="next" href="cha.obs.best-practices.localsetup.html" title="Chapter 6. Setting Up a Local OBS Instance"/><script type="text/javascript">
 
 if ( window.location.protocol.toLowerCase() != 'file:' ) {
   document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
 };
 
-</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css" /></noscript><script src="static/js/jquery-1.12.4.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"/></noscript><script src="static/js/script-purejs.js" type="text/javascript"> </script><script src="static/js/highlight.min.js" type="text/javascript"> </script><script>
 
 $(document).ready(function() {
   $('.verbatim-wrap.highlight').each(function(i, block) {
@@ -28,23 +74,23 @@ hljs.configure({
   useBR: false
 });
 
-</script></head><body class="offline js-off"><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg"><div id="_header"><div id="_logo"><img src="static/images/logo.svg" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="Administrator Guide"><span class="book-icon">Administrator Guide</span></a><span> › </span><a class="crumb" href="obs.cha.troubleshooting.html">Troubleshooting</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>Administrator Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="bk03pr01.html"><span class="number"> </span><span class="name">About this Guide</span></a></li><li class="inactive"><a href="obs.cha.installation_and_configuration.html"><span class="number">1 </span><span class="name">Installation and Configuration</span></a></li><li class="inactive"><a href="obs.cha.overview_filesystem.html"><span class="number">2 </span><span class="name">File System Overview</span></a></li><li class="inactive"><a href="obs.cha.security_concepts.html"><span class="number">3 </span><span class="name">Security Concepts</span></a></li><li class="inactive"><a href="obs.cha.administration.html"><span class="number">4 </span><span class="name">Administration</span></a></li><li class="inactive"><a href="obs.cha.troubleshooting.html"><span class="number">5 </span><span class="name">Troubleshooting</span></a></li><li class="inactive"><a href="cha.obs.best-practices.localsetup.html"><span class="number">6 </span><span class="name">Setting Up a Local OBS Instance</span></a></li><li class="inactive"><a href="bk03apa.html"><span class="number">A </span><span class="name">GNU Licenses</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 4. Administration" href="obs.cha.administration.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 6. Setting Up a Local OBS Instance" href="cha.obs.best-practices.localsetup.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="Administrator Guide"><span class="book-icon">Administrator Guide</span></a><span> › </span><a class="crumb" href="obs.cha.troubleshooting.html">Troubleshooting</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 4. Administration" href="obs.cha.administration.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Chapter 6. Setting Up a Local OBS Instance" href="cha.obs.best-practices.localsetup.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class=""><div class="documentation"><div class="chapter " id="obs.cha.troubleshooting"><div class="titlepage"><div><div><h1 class="title"><span class="number">5 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Troubleshooting</span> <a title="Permalink" class="permalink" href="obs.cha.troubleshooting.html#">#</a></h1></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="obs.cha.troubleshooting.html#_general_hints"><span class="number">5.1 </span><span class="name">General Hints</span></a></span></dt><dt><span class="sect1"><a href="obs.cha.troubleshooting.html#_debug_frontend_problems"><span class="number">5.2 </span><span class="name">Debugging Front-end Problems</span></a></span></dt></dl></div></div><p>Here are two major classes of problems regarding the Open Build Service:
- </p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p> Normal package build errors </p></li><li class="listitem "><p> Bugs, resource shortage or config issues caused issues </p></li></ol></div><p>The first category are errors like missing dependent packages in the
+</script></head><body class="wide offline js-off"><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-pagination">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><header id="_mainnav"><div class="growth-inhibitor"><img src="static/images/logo.svg" alt="Logo" class="logo"/></div></header><div class="crumbs"><div class="growth-inhibitor"><a class="crumb" href="index.html">Administrator Guide</a><span> / </span><a class="crumb" href="obs.cha.troubleshooting.html">Troubleshooting</a></div></div><main id="_content"><nav id="_side-toc-overall" class="side-toc"><div class="side-title">Administrator Guide</div><ol><li><a href="bk03pr01.html" class=" "><span class="title-number"> </span><span class="title-name">About this Guide</span></a></li><li><a href="obs.cha.installation_and_configuration.html" class=" "><span class="title-number">1 </span><span class="title-name">Installation and Configuration</span></a></li><li><a href="obs.cha.overview_filesystem.html" class=" "><span class="title-number">2 </span><span class="title-name">File System Overview</span></a></li><li><a href="obs.cha.security_concepts.html" class=" "><span class="title-number">3 </span><span class="title-name">Security Concepts</span></a></li><li><a href="obs.cha.administration.html" class=" "><span class="title-number">4 </span><span class="title-name">Administration</span></a></li><li><a href="obs.cha.troubleshooting.html" class=" you-are-here"><span class="title-number">5 </span><span class="title-name">Troubleshooting</span></a></li><li><a href="cha.obs.best-practices.localsetup.html" class=" "><span class="title-number">6 </span><span class="title-name">Setting Up a Local OBS Instance</span></a></li><li><a href="bk03apa.html" class=" "><span class="title-number">A </span><span class="title-name">GNU Licenses</span></a></li> </ol> </nav><button id="_open-side-toc-overall" title="Contents"> </button><article class="documentation"><button id="_unfold-side-toc-page">On this page</button><section class="chapter" id="obs.cha.troubleshooting" data-id-title="Troubleshooting"><div class="titlepage"><div><div><div class="title-container"><h1 class="title"><span class="title-number-name"><span class="title-number">5 </span><span class="title-name">Troubleshooting</span></span> <a title="Permalink" class="permalink" href="obs.cha.troubleshooting.html#">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>Here are two major classes of problems regarding the Open Build Service:
+ </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p> Normal package build errors </p></li><li class="listitem"><p> Bugs, resource shortage or config issues caused issues </p></li></ol></div><p>The first category are errors like missing dependent packages in the
   build environment, errors during compiling or linking, errors in the build
   description and so on. Most of them should not happen if the packager does
   test the build locally before committing it to the OBS. This type of problems
-  is not covered by this chapter.</p><div class="sect1 " id="_general_hints"><div class="titlepage"><div><div><h2 class="title"><span class="number">5.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">General Hints</span> <a title="Permalink" class="permalink" href="obs.cha.troubleshooting.html#_general_hints">#</a></h2></div></div></div><p>If you detect unexpected behavior of the open build service, you
-   should follow some rules to locate the problem:</p><div class="orderedlist "><ol class="orderedlist" type="1"><li class="listitem "><p> Consult the log files, for the back-end look at
+  is not covered by this chapter.</p><section class="sect1" id="_general_hints" data-id-title="General Hints"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">5.1 </span><span class="title-name">General Hints</span></span> <a title="Permalink" class="permalink" href="obs.cha.troubleshooting.html#_general_hints">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>If you detect unexpected behavior of the open build service, you
+   should follow some rules to locate the problem:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p> Consult the log files, for the back-end look at
       <span class="emphasis"><em>/srv/obs/log</em></span> for the back-end log files and
       <span class="emphasis"><em>/srv/www/obs/api/log</em></span> for the front-end log files.
      See the Log files <a class="xref" href="obs.cha.overview_filesystem.html#_log_files" title="2.2. Log Files">Section 2.2, “Log Files”</a> for more details.
-    </p></li><li class="listitem "><p> Consult the normal OS system logs and the kernel log (dmesg) if
-     here are reported system or HW problems. </p></li><li class="listitem "><p> Check if all services are running on the back-end and front-end.
-     See the OBS Architecture in reference book for details. </p></li><li class="listitem "><p> Try to find an easy way to reproduce the problem. </p></li><li class="listitem "><p> To check whether this issue was already reported, see <a class="link" href="https://github.com/openSUSE/open-build-service" target="_blank">https://github.com/openSUSE/open-build-service</a>. </p></li><li class="listitem "><p> Use search machines (Google) to find out if others did also run
+    </p></li><li class="listitem"><p> Consult the normal OS system logs and the kernel log (dmesg) if
+     here are reported system or HW problems. </p></li><li class="listitem"><p> Check if all services are running on the back-end and front-end.
+     See the OBS Architecture in reference book for details. </p></li><li class="listitem"><p> Try to find an easy way to reproduce the problem. </p></li><li class="listitem"><p> To check whether this issue was already reported, see <a class="link" href="https://github.com/openSUSE/open-build-service" target="_blank">https://github.com/openSUSE/open-build-service</a>. </p></li><li class="listitem"><p> Use search machines (Google) to find out if others did also run
      into this problem. If you are lucky, you will find a fix or workaround as
-     well. </p></li><li class="listitem "><p> If you create a new bug report, include all information to
+     well. </p></li><li class="listitem"><p> If you create a new bug report, include all information to
      reproduce the problem and the complete error message/error log if here are
-     any. </p></li></ol></div></div><div class="sect1 " id="_debug_frontend_problems"><div class="titlepage"><div><div><h2 class="title"><span class="number">5.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Debugging Front-end Problems</span> <a title="Permalink" class="permalink" href="obs.cha.troubleshooting.html#_debug_frontend_problems">#</a></h2></div></div></div><p>If you get unexpected results from submitting commands with the
+     any. </p></li></ol></div></section><section class="sect1" id="_debug_frontend_problems" data-id-title="Debugging Front-end Problems"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">5.2 </span><span class="title-name">Debugging Front-end Problems</span></span> <a title="Permalink" class="permalink" href="obs.cha.troubleshooting.html#_debug_frontend_problems">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>If you get unexpected results from submitting commands with the
     <span class="strong"><strong><span class="emphasis"><em>osc</em></span></strong></span> tool, you can
    use the debug feature of the tools to find more information about what
    happened.</p><p>osc debug options</p><div class="verbatim-wrap"><pre class="screen">--debugger         jump into the debugger before executing anything
@@ -61,9 +107,8 @@ hljs.configure({
    see the raw answers of OBS API, often this gives a hint what maybe wrong. If
    you report a problem regarding the <span class="strong"><strong><span class="emphasis"><em>osc</em></span></strong></span> tool, it may help to include the osc
    output with <span class="strong"><strong>additional *<span class="emphasis"><em>--http-debug
-     --traceback</em></span></strong></span> options.</p><div id="id-1.6.9.7.6" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.svg" /><h6>Warning</h6><p>With <span class="strong"><strong><span class="emphasis"><em>--http-full-debug</em></span></strong></span> all http headers are
+     --traceback</em></span></strong></span> options.</p><div id="id-1.6.9.7.6" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.svg"/><div class="admon-title">Warning</div><p>With <span class="strong"><strong><span class="emphasis"><em>--http-full-debug</em></span></strong></span> all http headers are
     included, this may include user data and authentication stuff so review and
     replace such data with XXXXXXXX or so before you post it on the
-    internet.</p></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="cha.obs.best-practices.localsetup.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Chapter 6 </span>Setting Up a Local OBS Instance</span></a><a class="nav-link" href="obs.cha.administration.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 4 </span>Administration</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
-        2024 
-        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>
+    internet.</p></div></section></section><nav class="bottom-pagination"><div><a class="pagination-link prev" href="obs.cha.administration.html"><span class="pagination-relation">Previous</span><span class="pagination-label"><span class="title-number">Chapter 4 </span>Administration</span></a> </div><div><a class="pagination-link next" href="cha.obs.best-practices.localsetup.html"><span class="pagination-relation">Next</span><span class="pagination-label"><span class="title-number">Chapter 6 </span>Setting Up a Local OBS Instance</span></a> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="sect1"><a href="obs.cha.troubleshooting.html#_general_hints"><span class="title-number">5.1 </span><span class="title-name">General Hints</span></a></span></li><li><span class="sect1"><a href="obs.cha.troubleshooting.html#_debug_frontend_problems"><span class="title-number">5.2 </span><span class="title-name">Debugging Front-end Problems</span></a></span></li></ul></div><div class="side-title">Share this page</div><ul class="share"><li><a id="_share-fb" href="#" title="Facebook"> </a></li><li><a id="_share-in" href="#" title="LinkedIn"> </a></li><li><a id="_share-tw" href="#" title="Twitter/X"> </a></li><li><a id="_share-mail" href="#" title="E-Mail"> </a></li><li><a id="_print-button" href="#" title="Print this page"> </a></li></ul> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
+                 2024</span></div></div></footer></body></html>

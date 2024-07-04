@@ -9,8 +9,84 @@ License: GPL 2+
 (c) 2012-2022 SUSE LLC
 */
 
-var active = false;
-var deactivatePosition = -1;
+
+// GLOBALS
+
+// Sticky headers
+// must be same value as 0-style.sass $i_head_offset!
+const cHeaderFixScrollStart = 65;
+
+// From https://github.com/openSUSE/suse-xsl/issues/472#issuecomment-1185401962
+const source_svg = '<svg class="source_svg" xmlns="http://www.w3.org/2000/svg" width="23.067348" height="26.213722" viewBox="0 0 6.1032359 6.9357145" version="1.1"><path fill="none" stroke="#c0c2c4" stroke-width="0.264583px" d="m 0.1327732,0.13229144 5.8381716,1.076e-5 -3.6e-6,4.7625 -3.7041668,1.21e-5 -1.0583335,1.6009044 -1.07e-5,-1.6009045 -1.05833339,5.9e-6 z M 3.9857659,1.7577095 4.8046844,2.5766279 3.985766,3.3955459 M 2.2976362,1.7577096 1.4787181,2.5766278 2.297636,3.3955459 M 3.6535249,1.5529801 2.6298773,3.6002755" /></svg>';
+const bug_svg = '<svg class="bug_svg" xmlns="http://www.w3.org/2000/svg" width="23.07" height="26.21" viewBox="0 0 6.1 6.94" version="1.1"><path fill="none" stroke="#c0c2c4" stroke-width="0.264581" d="m 3.04305,3.18412 5e-4,0.25999 M 3.04101,2.12253 3.04255,2.92414 M 3.03946,1.32091 4.64727,3.70101 1.46248,3.70713 Z M 0.155698,0.134866 5.98364,0.123661 5.99281,4.89001 2.26639,4.89718 1.18621,6.50249 1.18313,4.89926 0.164862,4.90122 Z" /></svg>';
+
+// we want these globally, but the DOM isn't there yet; probably doing it wrong
+var eBody = null;
+var eHead = null;
+var eMain = null;
+var eFoot = null;
+var eSideTocAll = null;
+var eSideTocPage = null;
+
+var lastScrollPosition = 0;
+
+
+
+function stickies() {
+  // sticky header and nav https://stackoverflow.com/questions/23842100/
+  // scroll-up header https://stackoverflow.com/questions/31223341/
+  let scrollPosition = window.scrollY;
+  let footTop = eFoot.getBoundingClientRect().top;
+  let windowHeight = (window.innerHeight || document.documentElement.clientHeight);
+  if (scrollPosition > cHeaderFixScrollStart) {
+    eHead.classList.add("sticky");
+    eMain.classList.add("sticky");
+    if (scrollPosition < lastScrollPosition) {
+      eBody.classList.add("scroll-up");
+    } else {
+      eBody.classList.remove("scroll-up");
+    };
+    lastScrollPosition = scrollPosition <= 0 ? 0 : scrollPosition;
+  } else {
+    eHead.classList.remove("sticky");
+    eMain.classList.remove("sticky");
+    eBody.classList.remove("scroll-up");
+  };
+  if (footTop <= windowHeight) {
+    let fTocBottom = windowHeight - footTop;
+    eMain.classList.add("scroll-with-footer");
+  } else {
+    eMain.classList.remove("scroll-with-footer");
+  };
+}
+
+// Social sharing
+function share( service ) {
+  // helpful: https://github.com/bradvin/social-share-urls
+  u = encodeURIComponent( document.URL );
+  t = encodeURIComponent( document.title );
+  shareSettings = 'menubar=0,toolbar=1,status=0,width=600,height=650';
+  if ( service == 'fb' ) {
+    shareURL = 'https://www.facebook.com/sharer.php?u=' + u + '&amp;t=' + t;
+    window.open(shareURL,'sharer', shareSettings);
+  }
+    else if ( service == 'tw' ) {
+    shareURL = 'https://twitter.com/share?text=' + t + '&amp;url=' + u + '&amp;hashtags=suse,docs';
+    window.open(shareURL, 'sharer', shareSettings);
+  }
+    else if ( service == 'in' ) {
+    shareURL = 'https://www.linkedin.com/shareArticle?mini=true&' + u + '&amp;title=' + t;
+    window.open(shareURL, 'sharer', shareSettings);
+  }
+    else if ( service == 'mail' ) {
+    shareURL = 'mailto:?subject=Check%20out%20the%20SUSE%20Documentation%2C%20%22' + t + '%22&body=' + u;
+    window.location.assign(shareURL);
+  };
+}
+
+
+// --- line of legacy jquery-based stuff ---
+
 
 var bugtrackerUrl = $( 'meta[name="tracker-url"]' ).attr('content');
 var bugtrackerType = $( 'meta[name="tracker-type"]' ).attr('content');
@@ -35,12 +111,9 @@ var ghLabels = $( 'meta[name="tracker-gh-labels"]' ).attr('content');
 var ghMilestone = $( 'meta[name="tracker-gh-milestone"]' ).attr('content');
 var ghTemplate = $( 'meta[name="tracker-gh-template"]' ).attr('content');
 
-const source_svg = '<svg class="source_svg" xmlns="http://www.w3.org/2000/svg" width="23.067348" height="26.213722" viewBox="0 0 6.1032359 6.9357145" version="1.1"><path fill="none" stroke="#c0c2c4" stroke-width="0.264583px" d="m 0.1327732,0.13229144 5.8381716,1.076e-5 -3.6e-6,4.7625 -3.7041668,1.21e-5 -1.0583335,1.6009044 -1.07e-5,-1.6009045 -1.05833339,5.9e-6 z M 3.9857659,1.7577095 4.8046844,2.5766279 3.985766,3.3955459 M 2.2976362,1.7577096 1.4787181,2.5766278 2.297636,3.3955459 M 3.6535249,1.5529801 2.6298773,3.6002755" /></svg>';
-const bug_svg = '<svg class="bug_svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 6.1 6.94" version="1.1"><path fill="none" stroke="black" stroke-width="0.264581" d="m 3.04305,3.18412 5e-4,0.25999 M 3.04101,2.12253 3.04255,2.92414 M 3.03946,1.32091 4.64727,3.70101 1.46248,3.70713 Z M 0.155698,0.134866 5.98364,0.123661 5.99281,4.89001 2.26639,4.89718 1.18621,6.50249 1.18313,4.89926 0.164862,4.90122 Z" /></svg>';
-
 
 function show_meta() {
-  console.group("Global variables");
+  console.groupCollapsed("Global variables");
   console.log("bugtrackerUrl: %s", bugtrackerUrl);
   console.log("bugtrackerType: ", bugtrackerType);
 
@@ -55,180 +128,18 @@ function show_meta() {
   console.log("ghLabels: %s", ghLabels);
   console.log("ghMilestone: %s", ghMilestone);
   console.log("ghTemplate: %s", ghTemplate);
-  // console.log("report bug SVG: %s", bug_svg);
+  console.log("report bug SVG: %s", bug_svg);
   console.groupEnd();
 }
 
 
-$(function() {
-  /* http://css-tricks.com/snippets/jquery/smooth-scrolling/ */
-  var speed = 400;
+function githubUrl(sectionName, permalink) {
+  var body = sectionName + ":\n\n" + permalink;
 
-  show_meta();
+  console.groupCollapsed("githubUrl");
+  console.log("sectionName '%s'", sectionName);
+  console.log("permalink: '%s'", permalink);
 
-  $('a.top-button[href=\\#]').click(function() {
-    $('html,body').animate({ scrollTop: 0 }, speed,
-      function() { location = location.pathname + '#'; });
-    return false;
-  });
-
-
-  $('body').removeClass('js-off');
-  $('body').addClass('js-on');
-
-  $(document).keyup(function(e) {
-    if (e.keyCode == 27) { deactivate() }
-  });
-
-  if( window.addEventListener ) {
-    window.addEventListener('scroll', scrollDeactivator, false);
-  }
-
-  hashActivator();
-  window.onhashchange = hashActivator;
-
-  $('._share-print').show();
-
-  if (location.protocol.match(/^(http|spdy)/)) {
-    $('body').removeClass('offline');
-  }
-
-  labelInputFind();
-
-  $('#_toc-area-button').click(function(){activate('_toc-area'); return false;});
-  $('#_fixed-header .single-crumb').unbind('click');
-  $('#_fixed-header .single-crumb').click(function(){activate('_fixed-header-wrap'); return false;});
-  $('#_header .single-crumb').unbind('click');
-  $('#_header .single-crumb').click(function(){ moveToc('up'); return false;});
-  $('#_find-area-button').click(function(){activate('_toc-area'); return false;});
-  $('#_format-picker-button').click(function(){activate('_format-picker'); return false;});
-  $('#_language-picker-button').click(function(){activate('_language-picker'); return false;});
-  $('html').click(function(e){deactivate(); e.stopPropagation();});
-  $('#_find-input').focus(function(){unlabelInputFind();});
-  $('#_find-input').blur(function(){labelInputFind();});
-  $('#_find-input-label').click(function(){$('#_find-input').focus();});
-
-  $('._share-fb').click(function(){share('fb');});
-  $('._share-in').click(function(){share('in');});
-  $('._share-tw').click(function(){share('tw');});
-  $('._share-mail').click(function(){share('mail');});
-  $('._print-button').click(function(){print();});
-
-  $('#_bubble-toc ol > li').filter(':has(ol)').children('a').unbind('click');
-  $('#_bubble-toc ol > li').filter(':has(ol)').children('a').append('<span class="arrow">&nbsp;</span>');
-  $('#_bubble-toc ol > li').filter(':has(ol)').children('a').click(function(e) {
-    exchClass('#_bubble-toc > ol > li', 'active', 'inactive');
-    $(this).parent('li').removeClass('inactive');
-    $(this).parent('li').addClass('active');
-    e.stopPropagation();
-    e.preventDefault();
-    return false;
-  });
-  $('#_bubble-toc ol > li').not(':has(ol)').children('a').click(function(e) {
-    deactivate();
-  });
-  $('#_bubble-toc > ol').not(':has(li > ol)').addClass('full-width');
-  $('#_bubble-toc ol > li').not(':has(ol)').children('a').addClass('leads-to-page');
-  $('#_bubble-toc ol > li').not(':has(ol)').children('a').click(function(e) {
-    exchClass('#_bubble-toc > ol > li', 'active', 'inactive');
-  });
-  $('#_bubble-toc ol > li').has('ol').children('a').append('<span class="arrow">&nbsp;</span>');
-  $('#_bubble-toc ol ol').prepend('<li class="bubble-back"><a href="#"><span class="back-icon">&nbsp;</span></a></li>');
-  $('.bubble-back').click(function(){exchClass('#_bubble-toc > ol > li', 'active', 'inactive'); return false;});
-  $('#_pickers a.selected').append('<span class="tick">&nbsp;</span>');
-  $(".bubble").click(function(e) {e.stopPropagation();});
-  $('.bubble h6').append('<span class="bubble-closer">&nbsp;</span>');
-  $('.bubble-closer').click(function(){deactivate(); return false;});
-  $('.question').click(function(){ $(this).parent('dl').toggleClass('active'); });
-  $('.table tr').has('td[rowspan]').addClass('contains-rowspan');
-  $('.informaltable tr').has('td[rowspan]').addClass('contains-rowspan');
-
-  if ( !( $('#_nav-area div').length ) ) {
-    $('#_toolbar').addClass('only-toc');
-  }
-  else if ( !( $('#_toc-area div').length && $('#_nav-area div').length ) ) {
-    $('#_toolbar').addClass('only-nav');
-  }
-
-  addBugLinks();
-  // hljs likes to unset click handlers, so run after it
-  var hljsInterval = window.setInterval(function() {
-    if (typeof(hljs) !== 'undefined') {
-      addClipboardButtons();
-      window.clearInterval(hljsInterval);
-    };
-  }, 500);
-});
-
-
-function addBugLinks() {
-  // do not create links if there is no URL
-  if ( typeof(bugtrackerUrl) == 'string') {
-
-    $('.permalink:not([href^=\\#idm])').each(function (index) {
-      var permalink = this.href;
-      var sectionNumber = "";
-      var sectionName = "";
-      var url = "";
-      var parentnode = $(this).parent()
-
-      function prev(x, node=parentnode) {
-        return node.children(x);
-      };
-
-      if ( prev('.title-number') ) {
-        sectionNumber = prev('.title-number').text();
-      }
-      if ( prev('span.title-number') ) {
-        sectionName = prev('.title-name').text();
-      }
-
-      // for the first link and when we have an empty section title,
-      // it's the title
-      if ( sectionName == "" && index == 1) {
-        // we are at the first link
-        sectionName = $("meta[name=book-title]").attr("content");
-      }
-
-      if ( sectionName == "" ) {
-        // usually bridgeheads
-        // console.log("section name is empty. Doing something else.");
-        sectionName = prev('.name').text();
-      }
-
-      console.log("Section[%s]: %s: '%s'", index, sectionNumber, sectionName);
-
-      if (bugtrackerType == 'bsc') {
-        url = bugzillaUrl(sectionNumber, sectionName, permalink);
-      }
-      else {
-        url = githubUrl(sectionNumber, sectionName, permalink);
-      }
-
-      report_bug_link = "<a class=\"report-bug\" target=\"_blank\" href=\""
-                        + url
-                        + "\" title=\"Report a bug against this section of the documentation\">"
-                        // + "&#9733;"
-                        // + "Report Bug "
-                        // + "<img src=\"bug-report.svg\" height=\"\"/>"
-                        + bug_svg
-                        + "</a> ";
-      console.log("Report bug link: %s", report_bug_link);
-      $(this).after(report_bug_link);
-      source_bug_link = "<a class=\"source-link\" title=\"Hallo\""
-                        + source_svg
-                        + "</a> ";
-      $(this).after(source_bug_link);
-      return true;
-    });
-  }
-  else {
-    return false;
-  }
-}
-
-function githubUrl(sectionNumber, sectionName, permalink) {
-  var body = sectionNumber + " " + sectionName + ":\n\n" + permalink;
   if (ghTemplate) {
     if (ghTemplate.indexOf('@@source@@') !== -1) {
       body = ghTemplate.replace(/@@source@@/i, body);
@@ -237,7 +148,7 @@ function githubUrl(sectionNumber, sectionName, permalink) {
     };
   };
   var url = bugtrackerUrl
-     + "?title=" + encodeURIComponent('[doc] ' + sectionNumber + ' ' + sectionName)
+     + "?title=" + encodeURIComponent('[doc] Issue in "' + sectionName + '"')
      + "&amp;body=" + encodeURIComponent(body);
   if (ghAssignee) {
     url += "&amp;assignee=" + encodeURIComponent(ghAssignee);
@@ -248,11 +159,18 @@ function githubUrl(sectionNumber, sectionName, permalink) {
   if (ghLabels) {
     url += "&amp;labels=" + encodeURIComponent(ghLabels);
   }
-  return url;
-}
 
-function bugzillaUrl(sectionNumber, sectionName, permalink) {
-  var body = sectionNumber + " " + sectionName + ":\n\n" + permalink;
+  console.log("url=", url);
+  console.groupEnd();
+  return url;
+};
+
+
+function bugzillaUrl(sectionName, permalink) {
+
+  console.groupCollapsed("bugzillaUrl");
+
+  var body = sectionName + ":\n\n" + (permalink || "");
   if (bscTemplate) {
     if (bscTemplate.indexOf('@@source@@') !== -1) {
       body = bscTemplate.replace(/@@source@@/i, body);
@@ -260,18 +178,92 @@ function bugzillaUrl(sectionNumber, sectionName, permalink) {
       body = body + '\n' + bscTemplate;
     };
   };
-  var url = bugtrackerUrl + "?&amp;product=" + encodeURIComponent(bscProduct)
+  var url = bugtrackerUrl
+    + "?&amp;product=" + encodeURIComponent(bscProduct)
     + '&amp;component=' + encodeURIComponent(bscComponent)
-    + "&amp;short_desc=" + encodeURIComponent('[doc] ' + sectionNumber + ' ' + sectionName)
+    + "&amp;short_desc=" + encodeURIComponent('[doc] Issue in "' + sectionName + '"')
     + "&amp;comment=" + encodeURIComponent(body);
-  if (bscAssignee) {
+
+    console.log("sectionName '%s'", sectionName);
+    console.log("permalink: '%s'", permalink || "");
+    console.log("body: '%s'", body || "");
+
+    if (bscAssignee) {
     url += "&amp;assigned_to=" + encodeURIComponent(bscAssignee);
   }
   if (bscVersion) {
     url += "&amp;version=" + encodeURIComponent(bscVersion);
   }
+
+  console.log("url=", url);
+  console.groupEnd();
   return url;
-}
+};
+
+
+// update the report bug url for the current section id as the user is scrolling
+// minor hitch: if there is a very short section at the end of the page, it may
+// not be picked up correctly by this.
+function bugReportScrollSpy() {
+  console.group("bugReportScrollSpy");
+
+  if (  typeof(bugtrackerUrl) == 'string' &&
+        document.getElementById('_feedback-reportbug') !== null ) {
+    var origin = window.location.origin;
+    if (origin === 'null') {
+      origin = '';
+    }
+    const plainBugUrl = origin + window.location.pathname;
+    console.log("plainBugUrl '%s'", plainBugUrl);
+
+    // Title selection fails silently, it's probably better that way
+    var sectionName = '';
+    var sectionBugUrl;
+    if (bugtrackerType == 'bsc') {
+      sectionBugUrl = bugzillaUrl(sectionName, plainBugUrl);
+    }
+    else {
+      sectionBugUrl = githubUrl(sectionName, plainBugUrl);
+    };
+    document.querySelector('#_feedback-reportbug').href = sectionBugUrl;
+
+    const observer = new IntersectionObserver(entries => {
+      entries.every(entry => {
+        if (entry.intersectionRatio > 0) {
+          const id = entry.target.getAttribute('id');
+          var origin = window.location.origin;
+          if (origin === 'null') {
+            origin = '';
+          };
+          const plainBugUrl = origin + window.location.pathname + '#' + id;
+          var sectionName = '';
+          if ( entry.target.getAttribute('data-id-title') !== null ) {
+            sectionName = entry.target.getAttribute('data-id-title');
+          };
+          var sectionBugUrl;
+          if (bugtrackerType == 'bsc') {
+            sectionBugUrl = bugzillaUrl(sectionName, plainBugUrl);
+          }
+          else {
+            sectionBugUrl = githubUrl(sectionName, plainBugUrl);
+          };
+
+          document.querySelector('#_feedback-reportbug').href = sectionBugUrl;
+          return false;
+        };
+        return true;
+      });
+    });
+
+    // Track all sections that have an `id` applied
+    document.querySelectorAll('section[id]').forEach((section) => {
+      observer.observe(section);
+    });
+  };
+
+  console.groupEnd();
+};
+
 
 function addClipboardButtons() {
   $( ".verbatim-wrap > pre" ).each(function () {
@@ -292,7 +284,7 @@ function addClipboardButtons() {
       return true;
     }
   );
-}
+};
 
 function copyToClipboard(elm) {
   // use temporary hidden form element for selection and copy action
@@ -341,73 +333,8 @@ function copyToClipboard(elm) {
   }
 
   return succeed;
-}
+};
 
-
-function activate( elm ) {
-  var element = elm;
-  if (element == '_toc-area' || element == '_find-area' ||
-    element == '_language-picker' || element == '_format-picker' ||
-    element == '_fixed-header-wrap') {
-    deactivate();
-    active = true;
-    exchClass( '#' + element , 'inactive', 'active' );
-    if (element == '_fixed-header-wrap') {
-      $('#_fixed-header .single-crumb').unbind('click');
-      $('#_fixed-header .single-crumb').click(function(){deactivate(); return false;});
-      exchClass( '#_find-area', 'active', 'inactive' );
-      deactivatePosition = $('html').scrollTop();
-    }
-    else {
-      if (element == '_find-area') {
-        $('#_find-input').focus();
-      }
-      else if ((element == '_toc-area')) {
-        exchClass( '#_find-area', 'active', 'inactive' );
-        deactivatePosition = $('html').scrollTop();
-        if ( $(window).width() < 450 ) {
-          $('body').css('overflow', 'hidden');
-          $('body').css('height', '100%');
-        }
-      }
-      $('#' + element + '-button').unbind('click');
-      $('#' + element + '-button').click(function(){deactivate(); return false;});
-    }
-  }
-}
-
-function moveToc ( direction ) {
-  if (direction == 'up') {
-    active = true;
-    $('#_fixed-header-wrap > .bubble').detach().appendTo('#_toc-bubble-wrap');
-    exchClass( '#_toc-bubble-wrap', 'inactive', 'active' );
-    exchClass( '#_header .crumbs', 'inactive', 'active' );
-    $('#_header .single-crumb').unbind('click');
-    $('#_header .single-crumb').click(function(){ moveToc('down'); return false;});
-    deactivatePosition = $('html').scrollTop();
-    if ( $(window).width() < 450 ) {
-      $('body').css('overflow', 'hidden');
-      $('body').css('height', '100%');
-    }
-  }
-  else if (direction == 'down') {
-    active = true;
-    $('#_toc-bubble-wrap > .bubble').detach().appendTo('#_fixed-header-wrap');
-    exchClass( '#_toc-bubble-wrap', 'active', 'inactive' );
-    exchClass( '#_header .crumbs', 'active', 'inactive' );
-    $('#_header .single-crumb').unbind('click');
-    $('#_header .single-crumb').click(function(){ moveToc('up'); return false;});
-  }
-}
-
-function scrollDeactivator() {
-  if (deactivatePosition != -1 && $(window).width() > 450 ) {
-    var diffPosition = $('html').scrollTop() - deactivatePosition;
-    if ((diffPosition < -300) || (diffPosition > 300)) {
-      deactivate();
-    }
-  }
-}
 
 function hashActivator() {
   if ( location.hash.length ) {
@@ -419,66 +346,242 @@ function hashActivator() {
       location.hash = $( locationhash ).parent(".qandaentry").prev('.free-id').attr('id');
     };
   };
-}
+};
 
-function deactivate() {
-  if (active == true) {
-    deactivatePosition = -1;
-    var changeClass = new Array('_toc-area','_language-picker','_format-picker');
-    for (var i = 0; i < changeClass.length; ++i) {
-      exchClass( '#' + changeClass[i] , 'active', 'inactive');
-      $('#' + changeClass[i] + '-button').unbind('click');
-    }
-    moveToc( 'down' );
-    $('#_fixed-header .single-crumb').unbind('click');
-    exchClass('#_fixed-header-wrap', 'active', 'inactive');
-    $('#_find-area-button').unbind('click');
-    $('#_toc-area-button').click(function(){activate('_toc-area'); return false;});
-    $('#_find-area-button').click(function(){activate('_find-area'); return false;});
-    $('#_language-picker-button').click(function(){activate('_language-picker'); return false;});
-    $('#_format-picker-button').click(function(){activate('_format-picker'); return false;});
-    $('#_fixed-header .single-crumb').click(function(){activate('_fixed-header-wrap'); return false;});
-    exchClass( '#_find-area', 'inactive', 'active' );
-    $('body').css('overflow', 'auto');
-    $('body').css('height', 'auto');
-    active = false;
-  }
-}
 
-function share( service ) {
-  // helpful: https://github.com/bradvin/social-share-urls
-  u = encodeURIComponent( document.URL );
-  t = encodeURIComponent( document.title );
-  shareSettings = 'menubar=0,toolbar=1,status=0,width=600,height=650';
-  if ( service == 'fb' ) {
-    shareURL = 'https://www.facebook.com/sharer.php?u=' + u + '&amp;t=' + t;
-    window.open(shareURL,'sharer', shareSettings);
+// INIT!
+
+$(function() {
+
+  console.group("Start SUSE script.js");
+
+  eBody = document.body;
+  eHead = document.getElementById('_mainnav');
+  eMain = document.getElementById('_content');
+  eFoot = document.getElementById('_footer');
+  eSideTocAll = document.getElementById('_side-toc-overall');
+  eSideTocPage = document.getElementById('_side-toc-page');
+
+  eBody.classList.remove('js-off');
+  eBody.classList.add('js-on');
+  if (location.protocol.match(/^http/)) {
+    eBody.classList.remove('offline');
   }
-    else if ( service == 'tw' ) {
-    shareURL = 'https://twitter.com/share?text=' + t + '&amp;url=' + u + '&amp;hashtags=suse,docs';
-    window.open(shareURL, 'sharer', shareSettings);
-  }
-    else if ( service == 'in' ) {
-    shareURL = 'https://www.linkedin.com/shareArticle?mini=true&' + u + '&amp;title=' + t;
-    window.open(shareURL, 'sharer', shareSettings);
-  }
-    else if ( service == 'mail' ) {
-    shareURL = 'mailto:?subject=Check%20out%20the%20SUSE%20Documentation%2C%20%22' + t + '%22&body=' + u;
-    window.location.assign(shareURL);
+
+  hashActivator();
+  window.onhashchange = hashActivator;
+
+
+  lastScrollPosition = window.scrollY;
+  stickies();
+  window.addEventListener('scroll', function(){ stickies(); }, false);
+
+
+  if ( document.getElementById('_share-fb') !== null ) {
+    document.getElementById('_share-fb').addEventListener('click', function(e){share('fb'); e.preventDefault();}, false);
   };
-}
+  if ( document.getElementById('_share-in') !== null ) {
+    document.getElementById('_share-in').addEventListener('click', function(e){share('in'); e.preventDefault();}, false);
+  };
+  if ( document.getElementById('_share-tw') !== null ) {
+    document.getElementById('_share-tw').addEventListener('click', function(e){share('tw'); e.preventDefault();}, false);
+  };
+  if ( document.getElementById('_share-mail') !== null ) {
+    document.getElementById('_share-mail').addEventListener('click', function(e){share('mail'); e.preventDefault();}, false);
+  };
+  if ( document.getElementById('_print-button') !== null ) {
+    document.getElementById('_print-button').addEventListener('click', function(e){print(); e.preventDefault();}, false);
+  };
 
-function unlabelInputFind() {
-  $('#_find-input-label').hide();
-}
+  if (  document.getElementById('_utilitynav-search') !== null &&
+        document.getElementById('_searchbox') !== null &&
+        document.getElementById('_mainnav') !== null ) {
+    document.getElementById('_utilitynav-search').addEventListener('click', function(e){
+        document.getElementById('_mainnav').classList.add('show-search');
+        e.preventDefault();
+    }, false);
+    document.getElementById('_searchbox').addEventListener('click', function(e){ e.stopPropagation(); }, false);
+    document.getElementById('_utilitynav-search').addEventListener('click', function(e){ e.stopPropagation(); }, false);
+ };
 
-function labelInputFind() {
-  if ( !($('#_find-input').val()) ) {
-    $('#_find-input-label').show();
+  if ( document.getElementById('_utilitynav-language') !== null &&
+       document.getElementById('_mainnav') !== null ) {
+    document.querySelector('#_utilitynav-language > .menu-item').addEventListener('click', function(e){
+        document.getElementById('_utilitynav-language').classList.toggle('visible');
+        e.preventDefault();
+        e.stopPropagation();
+    }, false);
+  };
+
+  eBody.addEventListener('click', function(e){
+      if ( document.getElementById('_mainnav') !== null ) {
+        document.getElementById('_mainnav').classList.remove('show-search');
+      };
+      if ( document.getElementById('_utilitynav-language') !== null ) {
+        document.getElementById('_utilitynav-language').classList.remove('visible');
+      };
+  }, false);
+
+  if (  eSideTocAll &&
+        document.getElementById('_open-side-toc-overall') !== null) {
+    document.getElementById('_open-side-toc-overall').addEventListener('click', function(e){
+        eSideTocAll.classList.toggle('mobile-visible');
+        e.preventDefault();
+    }, false);
+ };
+
+
+  if ( eSideTocAll !== null ) {
+    document.querySelectorAll('#_side-toc-overall li > a.has-children').forEach((elm) => {
+        elm.addEventListener('click', function(e){
+          this.parentElement.classList.toggle('active');
+          e.preventDefault();
+        }, false);
+      });
+  };
+
+  if (  eSideTocPage !== null &&
+        document.getElementById('_unfold-side-toc-page') !== null ) {
+    if ( document.querySelector('#_side-toc-page .toc li') === null ) {
+      document.getElementById('_unfold-side-toc-page').style.visibility = 'hidden';
+    } else {
+      document.getElementById('_unfold-side-toc-page').addEventListener('click', function(e){
+          document.getElementById('_side-toc-page').classList.toggle('mobile-visible');
+          e.preventDefault();
+      }, false);
+      document.getElementById('_side-toc-page').addEventListener('click', function(e){
+          this.classList.remove('mobile-visible');
+      }, false);
+    };
+  };
+
+
+  if (  eSideTocAll !== null &&
+        document.getElementById('_open-document-overview') !== null  ) {
+    document.getElementById('_open-document-overview').addEventListener('click', function(e){
+        eSideTocAll.classList.toggle('document-overview-visible');
+        e.preventDefault();
+    }, false);
+  };
+
+
+  document.querySelectorAll('.question').forEach((elm) => {
+      elm.addEventListener('click', function(){
+        this.parentElement.classList.toggle('active');
+        e.preventDefault();
+        }, false);
+ });
+
+ //  bugReportScrollSpy();
+
+  addBugLinks();
+
+  // hljs likes to unset click handlers, so run after it
+  // FIXME: this interval thing is a little crude
+  var hljsInterval = window.setInterval(function() {
+    if (typeof(hljs) !== 'undefined') {
+      addClipboardButtons();
+      window.clearInterval(hljsInterval);
+    };
+  }, 500);
+
+
+});
+
+
+function addBugLinks() {
+  show_meta();
+
+  if ( typeof(bugtrackerUrl) != 'string') {
+    console.warn("Didn't find meta[tracker-url]. Couldn't create report links. :-(");
+    return false;
   }
-}
 
-function exchClass(path, clsOld, clsNew) {
-  $(path).addClass(clsNew);
-  $(path).removeClass(clsOld);
+  $('.title-container').each(function(index) {
+    /* This function is applied to the following structure:
+       <div class="title-container">
+         <hX class="title">
+           <span class="title-number-name">
+             <span class="title-number">...</span>
+             <span class="title-name">...</span>
+           </span>
+           <a class="permalink title="Permalink" href="...">#</a>
+         </hX>
+       </div>
+       <div class="icons">
+          <a class="icon-reportbug"><img src="..."/></a>
+          <a class="icon-editsource" href="..."><img src="..."/></a>
+       </div>
+
+     Sometimes we have this structure (for example, in a title):
+
+     <div class="title-container">
+       <div class="table-title-wrap">
+         <h6 class="table-title">
+           <span class="title-number-name">
+             <span class="title-number">...</span>
+             <span class="title-name">...</span>
+           </span>
+         </h6>
+       </div>
+     </div
+
+     or even this
+
+     <div class="title-container">
+        <h1 class="title">
+          ...
+          <a class="permalink title="Permalink" href="...">#</a>
+        </h1>
+        <div class="icons">...</div>
+     </div>
+    */
+      console.groupCollapsed(`addBugLinks ${index}`);
+      var url = "";
+      var icons = this.getElementsByClassName("icons")[0];
+      var icon_reportbug = icons.getElementsByClassName("icon-reportbug")[0];
+      var permalink = this.getElementsByClassName("permalink")[0];
+      var title_number_name = this.getElementsByClassName("title-number-name")[0];
+      var firsttitle = this.getElementsByClassName("title")[0];
+
+      if (permalink == undefined) {
+        // If permalink is not available, use the global URL
+        permalink = document.createElement("span");
+        permalink.setAttribute("href", window.location.href)
+        permalink.textContent = "#";
+      }
+
+      console.log("title-number-name:", title_number_name,
+                  "\npermalink:",  permalink.href,
+                  "\ntitle-number:",
+                  // We need to check first as titles can have no div
+                  // with "title-number-name" class
+                  title_number_name != undefined ? title_number_name.getElementsByClassName("title-number")[0] : "n/a",
+      );
+
+      // Create empty <span> element
+      var sectionName = document.createElement("span");
+
+      if (title_number_name != undefined) {
+        sectionName = title_number_name.getElementsByClassName("title-name")[0];
+      }
+      else if (firsttitle != undefined) {
+        sectionName = firsttitle;
+      }
+
+      if (bugtrackerType == 'bsc') {
+        url = bugzillaUrl(sectionName.innerText, permalink.href);
+      }
+      else {
+        url = githubUrl(sectionName.innerText, permalink.href);
+      }
+
+      if (icon_reportbug != undefined) {
+        icon_reportbug.setAttribute("href", url);
+      }
+
+      console.groupEnd();
+    return true;
+  });
+
 }

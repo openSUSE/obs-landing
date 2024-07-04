@@ -1,23 +1,69 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Build Configuration | User Guide</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" /><link rel="stylesheet" type="text/css" href="static/css/style.css" /><link rel="stylesheet" type="text/css" href="static/css/highlight.css" />
-<meta name="title" content="Build Configuration" />
-<meta name="description" content="Each project has a build configuration which defines the setup of the build system and the publish behaviour. Usually the distribution base is defining it and …" />
-<meta name="book-title" content="User Guide" />
-<meta name="chapter-title" content="Chapter 4. Build Configuration" />
-<meta property="og:title" content="Build Configuration" />
-<meta property="og:description" content="Each project has a build configuration which defines the setup of the build system and the publish behaviour. Usually the distribution base is defining it and …" />
-<meta property="og:type" content="article" />
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Build Configuration" />
-<meta name="twitter:description" content="Each project has a build configuration which defines the setup of the build system and the publish behaviour. Usually the distribution base is defining it and …" />
-<link rel="home" href="index.html" title="OBS Documentation" /><link rel="up" href="bk02pt03.html" title="Part III. Setup" /><link rel="prev" href="cha.obs.osc.html" title="Chapter 3. osc, the Command Line Tool" /><link rel="next" href="par.working.html" title="Part IV. Usage" />
-<script type="text/javascript">
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><title>User Guide | Build Configuration</title><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"/><link rel="schema.DCTERMS" href="http://purl.org/dc/terms/"/>
+<meta name="title" content="Build Configuration"/>
+<meta name="description" content="Each project has a build configuration which defines the setup of the build system and the publish behaviour. Usually the distribution base is defini…"/>
+<meta name="book-title" content="User Guide"/>
+<meta name="chapter-title" content="Chapter 4. Build Configuration"/>
+<meta name="publisher" content="SUSE"/><meta property="og:title" content="Build Configuration"/>
+<meta property="og:description" content="Each project has a build configuration which defines the se…"/>
+<meta property="og:type" content="article"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Build Configuration"/>
+<meta name="twitter:description" content="Each project has a build configuration which defines the se…"/>
+<script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": ["TechArticle"],
+    "image": "https://www.suse.com/assets/img/suse-white-logo-green.svg",
+    
+     "isPartOf": {
+      "@type": "CreativeWorkSeries",
+      "name": "Product &amp; Solutions"
+    },
+    
+    "inLanguage": "en",
+    
+
+    "headline": "Build Configuration",
+  
+    "description": "Build Configuration",
+      
+    "author": [
+      {
+        "@type": "Corporation",
+        "name": "SUSE Product &amp; Solution Documentation Team",
+        "url": "https://www.suse.com/assets/img/suse-white-logo-green.svg"
+      }
+    ],
+      
+
+    "about": [
+      
+    ],
+  
+    "sameAs": [
+          "https://www.facebook.com/SUSEWorldwide/about",
+          "https://www.youtube.com/channel/UCHTfqIzPKz4f_dri36lAQGA",
+          "https://twitter.com/SUSE",
+          "https://www.linkedin.com/company/suse"
+    ],
+    "publisher": {
+      "@type": "Corporation",
+      "name": "SUSE",
+      "url": "https://documentation.suse.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.suse.com/assets/img/suse-white-logo-green.svg"
+      }
+    }
+  }</script>
+<link rel="prev" href="cha.obs.osc.html" title="Chapter 3. osc, the Command Line Tool"/><link rel="next" href="par.working.html" title="Part IV. Usage"/><script type="text/javascript">
 
 if ( window.location.protocol.toLowerCase() != 'file:' ) {
   document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
 };
 
-</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css" /></noscript><script src="static/js/jquery-1.12.4.min.js" type="text/javascript"></script><script src="static/js/script.js" type="text/javascript"></script><script src="static/js/highlight.min.js" type="text/javascript"></script><script>
+</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"/></noscript><script src="static/js/script-purejs.js" type="text/javascript"> </script><script src="static/js/highlight.min.js" type="text/javascript"> </script><script>
 
 $(document).ready(function() {
   $('.verbatim-wrap.highlight').each(function(i, block) {
@@ -28,22 +74,22 @@ hljs.configure({
   useBR: false
 });
 
-</script></head><body class="offline js-off"><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-navigation">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><div id="_outer-wrap"><div id="_white-bg"><div id="_header"><div id="_logo"><img src="static/images/logo.svg" alt="Logo" /></div><div class="crumbs"><a class="book-link" href="index.html" title="User Guide"><span class="book-icon">User Guide</span></a><span> › </span><a class="crumb" href="bk02pt03.html">Setup</a><span> › </span><a class="crumb" href="cha.obs.prjconfig.html">Build Configuration</a></div><div class="clearme"></div></div></div><div id="_toolbar-wrap"><div id="_toolbar"><div id="_toc-area" class="inactive"><a id="_toc-area-button" class="tool" title="Contents" accesskey="c" href="index.html"><span class="tool-spacer"><span class="toc-icon">Contents</span><span class="clearme"></span></span><span class="tool-label">Contents</span></a><div class="active-contents bubble-corner"></div><div class="active-contents bubble"><div class="bubble-container"><h6>User Guide</h6><div id="_bubble-toc"><ol><li class="inactive"><a href="bk02pr01.html"><span class="number"> </span><span class="name">About this Guide</span></a></li><li class="inactive"><a href="par.first_steps.html"><span class="number">I </span><span class="name">First Steps</span></a><ol><li class="inactive"><a href="art.obs.bg.html"><span class="number">1 </span><span class="name">Beginnerʼs Guide</span></a></li></ol></li><li class="inactive"><a href="par.concepts.html"><span class="number">II </span><span class="name">Concepts</span></a><ol><li class="inactive"><a href="cha.obs.package_formats.html"><span class="number">2 </span><span class="name">Supported Build Recipes and Package Formats</span></a></li></ol></li><li class="inactive"><a href="bk02pt03.html"><span class="number">III </span><span class="name">Setup</span></a><ol><li class="inactive"><a href="cha.obs.osc.html"><span class="number">3 </span><span class="name">osc, the Command Line Tool</span></a></li><li class="inactive"><a href="cha.obs.prjconfig.html"><span class="number">4 </span><span class="name">Build Configuration</span></a></li></ol></li><li class="inactive"><a href="par.working.html"><span class="number">IV </span><span class="name">Usage</span></a><ol><li class="inactive"><a href="cha.obs.basicworkflow.html"><span class="number">5 </span><span class="name">Basic OBS Workflow</span></a></li><li class="inactive"><a href="cha.obs.building.html"><span class="number">6 </span><span class="name">Local Building</span></a></li><li class="inactive"><a href="cha.obs.source_service.html"><span class="number">7 </span><span class="name">Using Source Services</span></a></li><li class="inactive"><a href="cha.obs.scm_ci_workflow_integration.html"><span class="number">8 </span><span class="name">SCM/CI Workflow Integration</span></a></li><li class="inactive"><a href="cha.obs.stagingworkflow.html"><span class="number">9 </span><span class="name">Staging Workflow</span></a></li><li class="inactive"><a href="cha.obs.notifications.html"><span class="number">10 </span><span class="name">Notifications</span></a></li><li class="inactive"><a href="cha.obs.moderation.html"><span class="number">11 </span><span class="name">Moderation</span></a></li></ol></li><li class="inactive"><a href="par.best_practices.html"><span class="number">V </span><span class="name">Best Practices</span></a><ol><li class="inactive"><a href="cha.obs.best-practices.webuiusage.html"><span class="number">12 </span><span class="name">Using the OBS Web UI</span></a></li><li class="inactive"><a href="cha.obs.best-practices.basics.html"><span class="number">13 </span><span class="name">Basic Concepts and Work Styles</span></a></li><li class="inactive"><a href="cha.obs.best-practices.scm_integration.html"><span class="number">14 </span><span class="name">How to integrate external SCM sources</span></a></li><li class="inactive"><a href="cha.obs.best-practices.upstream.html"><span class="number">15 </span><span class="name">Publishing Upstream Binaries</span></a></li><li class="inactive"><a href="cha.obs.best-practices.bootstrapping.html"><span class="number">16 </span><span class="name">Bootstrapping</span></a></li><li class="inactive"><a href="cha.obs.best-practices.oscexamples.html"><span class="number">17 </span><span class="name"><code class="command">osc</code> Example Commands</span></a></li><li class="inactive"><a href="cha.obs.best-practices.advanced.html"><span class="number">18 </span><span class="name">Advanced Project Setups</span></a></li><li class="inactive"><a href="cha.obs.best-practices.kmp.html"><span class="number">19 </span><span class="name">Building Kernel Modules</span></a></li><li class="inactive"><a href="cha.obs.best-practices.howto.html"><span class="number">20 </span><span class="name">Common Questions and Solutions</span></a></li></ol></li><li class="inactive"><a href="par.reference.html"><span class="number">VI </span><span class="name">Reference</span></a><ol><li class="inactive"><a href="cha.obs.architecture.html"><span class="number">21 </span><span class="name">OBS Architecture</span></a></li><li class="inactive"><a href="cha.obs.concepts.html"><span class="number">22 </span><span class="name">OBS Concepts</span></a></li><li class="inactive"><a href="cha.obs.build_process.html"><span class="number">23 </span><span class="name">Build Process</span></a></li><li class="inactive"><a href="cha.obs.build_containers.html"><span class="number">24 </span><span class="name">Build Containers</span></a></li><li class="inactive"><a href="cha.obs.source_management.html"><span class="number">25 </span><span class="name">Source Management</span></a></li><li class="inactive"><a href="cha.obs.scm_bridge.html"><span class="number">26 </span><span class="name">SCM Bridge</span></a></li><li class="inactive"><a href="cha.obs.supported_formats.html"><span class="number">27 </span><span class="name">Supported Formats</span></a></li><li class="inactive"><a href="cha.obs.request_and_review_system.html"><span class="number">28 </span><span class="name">Request And Review System</span></a></li><li class="inactive"><a href="cha.obs.image_templates.html"><span class="number">29 </span><span class="name">Image Templates</span></a></li><li class="inactive"><a href="cha.obs.multibuild.html"><span class="number">30 </span><span class="name">Multiple Build Description File Handling</span></a></li><li class="inactive"><a href="cha.obs.maintenance_setup.html"><span class="number">31 </span><span class="name">Maintenance Support</span></a></li><li class="inactive"><a href="cha.obs.binary_tracking.html"><span class="number">32 </span><span class="name">Binary Package Tracking</span></a></li><li class="inactive"><a href="cha.obs.admin.html"><span class="number">33 </span><span class="name">Administration</span></a></li><li class="inactive"><a href="cha.obs.build_scheduling_and_dispatching.html"><span class="number">34 </span><span class="name">Scheduling and Dispatching</span></a></li><li class="inactive"><a href="cha.obs.build_constraints.html"><span class="number">35 </span><span class="name">Build Constraints</span></a></li><li class="inactive"><a href="cha.obs.build_preinstall.html"><span class="number">36 </span><span class="name">Building Preinstall Images</span></a></li><li class="inactive"><a href="cha.obs.authorization.token.html"><span class="number">37 </span><span class="name">Authorization</span></a></li><li class="inactive"><a href="cha.obs.qa_hooks.html"><span class="number">38 </span><span class="name">Quality Assurance(QA) Hooks</span></a></li><li class="inactive"><a href="cha.obs.factory.html"><span class="number">39 </span><span class="name">openSUSE Factory</span></a></li></ol></li><li class="inactive"><a href="obs.glossary.html"><span class="number"> </span><span class="name">Glossary</span></a></li><li class="inactive"><a href="bk02apa.html"><span class="number">A </span><span class="name">GNU Licenses</span></a></li></ol></div><div class="clearme"></div></div></div></div><div id="_nav-area" class="inactive"><div class="tool"><span class="nav-inner"><span class="tool-label">Navigation</span><a accesskey="p" class="tool-spacer" title="Chapter 3. osc, the Command Line Tool" href="cha.obs.osc.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Part IV. Usage" href="par.working.html"><span class="next-icon">→</span></a></span></div></div></div></div><div id="_fixed-header-wrap" class="inactive"><div id="_fixed-header"><div class="crumbs"><a class="book-link" href="index.html" title="User Guide"><span class="book-icon">User Guide</span></a><span> › </span><a class="crumb" href="bk02pt03.html">Setup</a><span> › </span><a class="crumb" href="cha.obs.prjconfig.html">Build Configuration</a></div><div class="buttons"><a class="top-button button" href="#">Top</a><div class="button"><a accesskey="p" class="tool-spacer" title="Chapter 3. osc, the Command Line Tool" href="cha.obs.osc.html"><span class="prev-icon">←</span></a><a accesskey="n" class="tool-spacer" title="Part IV. Usage" href="par.working.html"><span class="next-icon">→</span></a></div><div class="clearme"></div></div><div class="clearme"></div></div></div><div id="_content" class=""><div class="documentation"><div class="chapter " id="cha.obs.prjconfig"><div class="titlepage"><div><div><h2 class="title"><span class="number">4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Build Configuration</span> <a title="Permalink" class="permalink" href="cha.obs.prjconfig.html#">#</a></h2></div></div></div><div class="line"><div class="toc"><dl><dt><span class="sect1"><a href="cha.obs.prjconfig.html#sec.prjconfig.about"><span class="number">4.1 </span><span class="name">About the Build Configuration</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.prjconfig.html#sec.prjconfig.syntax"><span class="number">4.2 </span><span class="name">Configuration File Syntax</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.prjconfig.html#sec.prjconfig.ccache"><span class="number">4.3 </span><span class="name">Building with ccache or sccache</span></a></span></dt><dt><span class="sect1"><a href="cha.obs.prjconfig.html#sec.prjconfig.macros"><span class="number">4.4 </span><span class="name">Macro Definitions in the Build Configuration</span></a></span></dt></dl></div></div><div class="sect1 " id="sec.prjconfig.about"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">About the Build Configuration</span> <a title="Permalink" class="permalink" href="cha.obs.prjconfig.html#sec.prjconfig.about">#</a></h2></div></div></div><p>
-   Each project has a <em class="firstterm ">build configuration</em> which
+</script></head><body class="wide offline js-off"><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-pagination">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><header id="_mainnav"><div class="growth-inhibitor"><img src="static/images/logo.svg" alt="Logo" class="logo"/></div></header><div class="crumbs"><div class="growth-inhibitor"><a class="crumb" href="index.html">User Guide</a><span> / </span><a class="crumb" href="bk02pt03.html">Setup</a><span> / </span><a class="crumb" href="cha.obs.prjconfig.html">Build Configuration</a></div></div><main id="_content"><nav id="_side-toc-overall" class="side-toc"><div class="side-title">User Guide</div><ol><li><a href="bk02pr01.html" class=" "><span class="title-number"> </span><span class="title-name">About this Guide</span></a></li><li><a href="par.first_steps.html" class="has-children "><span class="title-number">I </span><span class="title-name">First Steps</span></a><ol><li><a href="art.obs.bg.html" class=" "><span class="title-number">1 </span><span class="title-name">Beginnerʼs Guide</span></a></li></ol></li><li><a href="par.concepts.html" class="has-children "><span class="title-number">II </span><span class="title-name">Concepts</span></a><ol><li><a href="cha.obs.package_formats.html" class=" "><span class="title-number">2 </span><span class="title-name">Supported Build Recipes and Package Formats</span></a></li></ol></li><li class="active"><a href="bk02pt03.html" class="has-children you-are-here"><span class="title-number">III </span><span class="title-name">Setup</span></a><ol><li><a href="cha.obs.osc.html" class=" "><span class="title-number">3 </span><span class="title-name">osc, the Command Line Tool</span></a></li><li><a href="cha.obs.prjconfig.html" class=" you-are-here"><span class="title-number">4 </span><span class="title-name">Build Configuration</span></a></li></ol></li><li><a href="par.working.html" class="has-children "><span class="title-number">IV </span><span class="title-name">Usage</span></a><ol><li><a href="cha.obs.basicworkflow.html" class=" "><span class="title-number">5 </span><span class="title-name">Basic OBS Workflow</span></a></li><li><a href="cha.obs.building.html" class=" "><span class="title-number">6 </span><span class="title-name">Local Building</span></a></li><li><a href="cha.obs.source_service.html" class=" "><span class="title-number">7 </span><span class="title-name">Using Source Services</span></a></li><li><a href="cha.obs.scm_ci_workflow_integration.html" class=" "><span class="title-number">8 </span><span class="title-name">SCM/CI Workflow Integration</span></a></li><li><a href="cha.obs.stagingworkflow.html" class=" "><span class="title-number">9 </span><span class="title-name">Staging Workflow</span></a></li><li><a href="cha.obs.notifications.html" class=" "><span class="title-number">10 </span><span class="title-name">Notifications</span></a></li><li><a href="cha.obs.moderation.html" class=" "><span class="title-number">11 </span><span class="title-name">Moderation</span></a></li></ol></li><li><a href="par.best_practices.html" class="has-children "><span class="title-number">V </span><span class="title-name">Best Practices</span></a><ol><li><a href="cha.obs.best-practices.webuiusage.html" class=" "><span class="title-number">12 </span><span class="title-name">Using the OBS Web UI</span></a></li><li><a href="cha.obs.best-practices.basics.html" class=" "><span class="title-number">13 </span><span class="title-name">Basic Concepts and Work Styles</span></a></li><li><a href="cha.obs.best-practices.scm_integration.html" class=" "><span class="title-number">14 </span><span class="title-name">How to integrate external SCM sources</span></a></li><li><a href="cha.obs.best-practices.upstream.html" class=" "><span class="title-number">15 </span><span class="title-name">Publishing Upstream Binaries</span></a></li><li><a href="cha.obs.best-practices.bootstrapping.html" class=" "><span class="title-number">16 </span><span class="title-name">Bootstrapping</span></a></li><li><a href="cha.obs.best-practices.oscexamples.html" class=" "><span class="title-number">17 </span><span class="title-name"><code class="command">osc</code> Example Commands</span></a></li><li><a href="cha.obs.best-practices.advanced.html" class=" "><span class="title-number">18 </span><span class="title-name">Advanced Project Setups</span></a></li><li><a href="cha.obs.best-practices.kmp.html" class=" "><span class="title-number">19 </span><span class="title-name">Building Kernel Modules</span></a></li><li><a href="cha.obs.best-practices.howto.html" class=" "><span class="title-number">20 </span><span class="title-name">Common Questions and Solutions</span></a></li></ol></li><li><a href="par.reference.html" class="has-children "><span class="title-number">VI </span><span class="title-name">Reference</span></a><ol><li><a href="cha.obs.architecture.html" class=" "><span class="title-number">21 </span><span class="title-name">OBS Architecture</span></a></li><li><a href="cha.obs.concepts.html" class=" "><span class="title-number">22 </span><span class="title-name">OBS Concepts</span></a></li><li><a href="cha.obs.build_process.html" class=" "><span class="title-number">23 </span><span class="title-name">Build Process</span></a></li><li><a href="cha.obs.build_containers.html" class=" "><span class="title-number">24 </span><span class="title-name">Build Containers</span></a></li><li><a href="cha.obs.source_management.html" class=" "><span class="title-number">25 </span><span class="title-name">Source Management</span></a></li><li><a href="cha.obs.scm_bridge.html" class=" "><span class="title-number">26 </span><span class="title-name">SCM Bridge</span></a></li><li><a href="cha.obs.supported_formats.html" class=" "><span class="title-number">27 </span><span class="title-name">Supported Formats</span></a></li><li><a href="cha.obs.request_and_review_system.html" class=" "><span class="title-number">28 </span><span class="title-name">Request And Review System</span></a></li><li><a href="cha.obs.image_templates.html" class=" "><span class="title-number">29 </span><span class="title-name">Image Templates</span></a></li><li><a href="cha.obs.multibuild.html" class=" "><span class="title-number">30 </span><span class="title-name">Multiple Build Description File Handling</span></a></li><li><a href="cha.obs.maintenance_setup.html" class=" "><span class="title-number">31 </span><span class="title-name">Maintenance Support</span></a></li><li><a href="cha.obs.binary_tracking.html" class=" "><span class="title-number">32 </span><span class="title-name">Binary Package Tracking</span></a></li><li><a href="cha.obs.admin.html" class=" "><span class="title-number">33 </span><span class="title-name">Administration</span></a></li><li><a href="cha.obs.build_scheduling_and_dispatching.html" class=" "><span class="title-number">34 </span><span class="title-name">Scheduling and Dispatching</span></a></li><li><a href="cha.obs.build_constraints.html" class=" "><span class="title-number">35 </span><span class="title-name">Build Constraints</span></a></li><li><a href="cha.obs.build_preinstall.html" class=" "><span class="title-number">36 </span><span class="title-name">Building Preinstall Images</span></a></li><li><a href="cha.obs.authorization.token.html" class=" "><span class="title-number">37 </span><span class="title-name">Authorization</span></a></li><li><a href="cha.obs.qa_hooks.html" class=" "><span class="title-number">38 </span><span class="title-name">Quality Assurance(QA) Hooks</span></a></li><li><a href="cha.obs.factory.html" class=" "><span class="title-number">39 </span><span class="title-name">openSUSE Factory</span></a></li></ol></li><li><a href="obs.glossary.html" class=" "><span class="title-number"> </span><span class="title-name">Glossary</span></a></li><li><a href="bk02apa.html" class=" "><span class="title-number">A </span><span class="title-name">GNU Licenses</span></a></li> </ol> </nav><button id="_open-side-toc-overall" title="Contents"> </button><article class="documentation"><button id="_unfold-side-toc-page">On this page</button><section class="chapter" id="cha.obs.prjconfig" data-id-title="Build Configuration"><div class="titlepage"><div><div><div class="title-container"><h1 class="title"><span class="title-number-name"><span class="title-number">4 </span><span class="title-name">Build Configuration</span></span> <a title="Permalink" class="permalink" href="cha.obs.prjconfig.html#">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><section class="sect1" id="sec.prjconfig.about" data-id-title="About the Build Configuration"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">4.1 </span><span class="title-name">About the Build Configuration</span></span> <a title="Permalink" class="permalink" href="cha.obs.prjconfig.html#sec.prjconfig.about">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
+   Each project has a <em class="firstterm">build configuration</em> which
    defines the setup of the build system and the publish behaviour. Usually
    the distribution base is defining it and you do not need to change anything.
    However, when you change it, it can be used for the following reasons:
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      Handle compatibility layers. 
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Switch on or off certain features during the build.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Decide which package is installed during build.
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Resolve dependency problems like when there are multiple providers for a dependency:
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Handle user decisions like macro settings
-    </p></li><li class="listitem "><p>
+    </p></li><li class="listitem"><p>
      Modify publish behaviour, e.g. define metadata or filter binaries.
     </p></li></ul></div><p>
    The build configuration can be stored in multiple places. Inside of OBS it
@@ -56,9 +102,9 @@ hljs.configure({
    <code class="command">osc buildconfig</code>.
    To view or edit the build configuration in projects, use one of the following
    methods
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p><span class="formalpara-title">With <code class="command">osc</code>. </span>Use <code class="command">osc meta prjconf</code> in your working directory
-     of your project.</p></li><li class="listitem "><p><span class="formalpara-title">In the OBS Web UI. </span>Via the <span class="guimenu ">Project Config</span> tab.</p></li><li class="listitem "><p><span class="formalpara-title">With the OBS API. </span>Reachable via the <code class="uri">/source/<em class="replaceable ">PROJECT</em>/_config</code> path.</p></li><li class="listitem "><p><span class="formalpara-title">Via git/scmsync. </span>Store a file called '_config' in a git repository used via the scmsync mechanism
-     for a project.</p></li></ul></div></div><div class="sect1 " id="sec.prjconfig.syntax"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Configuration File Syntax</span> <a title="Permalink" class="permalink" href="cha.obs.prjconfig.html#sec.prjconfig.syntax">#</a></h2></div></div></div><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p><span class="formalpara-title">With <code class="command">osc</code>. </span>Use <code class="command">osc meta prjconf</code> in your working directory
+     of your project.</p></li><li class="listitem"><p><span class="formalpara-title">In the OBS Web UI. </span>Via the <span class="guimenu">Project Config</span> tab.</p></li><li class="listitem"><p><span class="formalpara-title">With the OBS API. </span>Reachable via the <code class="uri">/source/<em class="replaceable">PROJECT</em>/_config</code> path.</p></li><li class="listitem"><p><span class="formalpara-title">Via git/scmsync. </span>Store a file called '_config' in a git repository used via the scmsync mechanism
+     for a project.</p></li></ul></div></section><section class="sect1" id="sec.prjconfig.syntax" data-id-title="Configuration File Syntax"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">4.2 </span><span class="title-name">Configuration File Syntax</span></span> <a title="Permalink" class="permalink" href="cha.obs.prjconfig.html#sec.prjconfig.syntax">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
    The syntax is basically the same as in RPM spec files.
    However, it is independent of the packaging format used.
    The build configuration (prjconf) is parsed by OBS.
@@ -74,16 +120,16 @@ hljs.configure({
    An exclamation mark `!` can be prepended to the argument to remove 
    an existing entry from the data.
   </p><p>
-   In the following list, the placeholder <em class="replaceable ">PACKAGES</em>
+   In the following list, the placeholder <em class="replaceable">PACKAGES</em>
    indicates a package base name (or names). When specifying multiple packages,
    separate their base names with spaces.
    For example, as a package name you need the base name like
-   <span class="package ">gcc</span> but not the full name as in
-   <span class="package ">gcc-1.2.3.i386.rpm</span>.
+   <span class="package">gcc</span> but not the full name as in
+   <span class="package">gcc-1.2.3.i386.rpm</span>.
   </p><p>
    The following list contains a list of allowed keywords in the build
    configuration (prjconf):
-  </p><div class="variablelist " id="vl.prjconfig.keywords"><div class="variablelist-title-wrap"><h6 class="variablelist-title"><span class="name">Available Keywords in Build Configuration </span><a title="Permalink" class="permalink" href="cha.obs.prjconfig.html#vl.prjconfig.keywords">#</a></h6></div><dl class="variablelist"><dt id="id-1.5.7.3.4.9.2"><span class="term "><em class="parameter ">BinaryType: <em class="replaceable ">TYPE</em></em> (OBS 2.4 or later)</span></dt><dd><p>
+  </p><div class="variablelist" id="vl.prjconfig.keywords" data-id-title="Available Keywords in Build Configuration"><div class="title-container"><div class="variablelist-title-wrap"><div class="variablelist-title"><span class="title-number-name"><span class="title-name">Available Keywords in Build Configuration </span></span><a title="Permalink" class="permalink" href="cha.obs.prjconfig.html#vl.prjconfig.keywords">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div><dl class="variablelist"><dt id="id-1.5.7.3.4.9.2"><span class="term"><em class="parameter">BinaryType: <em class="replaceable">TYPE</em></em> (OBS 2.4 or later)</span></dt><dd><p>
       The binary type is the format of the packages that make up the build
       environment. This is usually set automatically depending on the recipe
       type and preinstall package list.
@@ -94,7 +140,7 @@ hljs.configure({
       and generate deb packages instead of RPMs. If no binary type is
       specified, OBS deduces it from the build recipe type. If the recipe type is
       also not set, OBS looks at the Preinstall package list for a hint.
-     </p></dd><dt id="id-1.5.7.3.4.9.3"><span class="term "><em class="parameter ">BuildEngine: <em class="replaceable ">ENGINE</em></em></span></dt><dd><p>
+     </p></dd><dt id="id-1.5.7.3.4.9.3"><span class="term"><em class="parameter">BuildEngine: <em class="replaceable">ENGINE</em></em></span></dt><dd><p>
        Use an alternative build engine. Examples are `mock` (for Fedora and
        Red Hat) and `debootstrap` (for Debian), `debbuild` (to build debian
        packages with spec files), `podman` (container builds).
@@ -104,32 +150,32 @@ hljs.configure({
 Repotype: debian
 Binarytype: deb
 BuildEngine: debbuild
-Support: pax debbuild</pre></div></dd><dt id="id-1.5.7.3.4.9.4"><span class="term "><em class="parameter ">BuildFlags: <em class="replaceable ">FLAG</em>:<em class="replaceable ">VALUE</em></em></span></dt><dd><p>
-      The <em class="parameter ">BuildFlags</em> keyword defines flags for the
-      build process. The following values for FLAG are usable.</p><div class="variablelist "><dl class="variablelist"><dt id="id-1.5.7.3.4.9.4.2.2.1"><span class="term "><em class="parameter ">allowrootforbuild</em></span></dt><dd><p>
+Support: pax debbuild</pre></div></dd><dt id="id-1.5.7.3.4.9.4"><span class="term"><em class="parameter">BuildFlags: <em class="replaceable">FLAG</em>:<em class="replaceable">VALUE</em></em></span></dt><dd><p>
+      The <em class="parameter">BuildFlags</em> keyword defines flags for the
+      build process. The following values for FLAG are usable.</p><div class="variablelist"><dl class="variablelist"><dt id="id-1.5.7.3.4.9.4.2.2.1"><span class="term"><em class="parameter">allowrootforbuild</em></span></dt><dd><p>
          Allow any package build to use root user for building. This still needs
          a marker inside of the build description to enable it.
-        </p></dd><dt id="id-1.5.7.3.4.9.4.2.2.2"><span class="term "><em class="parameter ">vmfstype:TYPE</em></span></dt><dd><p>
+        </p></dd><dt id="id-1.5.7.3.4.9.4.2.2.2"><span class="term"><em class="parameter">vmfstype:TYPE</em></span></dt><dd><p>
          Defines a specific file system when building inside of a VM.
          Possible values are
          <code class="literal">ext2</code>, <code class="literal">ext3</code>,
          <code class="literal">ext4</code>, <code class="literal">btrfs</code>,
          <code class="literal">xfs</code>, <code class="literal">reiserfs</code> (v3).
-        </p></dd><dt id="id-1.5.7.3.4.9.4.2.2.3"><span class="term "><em class="parameter ">vmfsoptions:OPTION</em></span></dt><dd><p>
+        </p></dd><dt id="id-1.5.7.3.4.9.4.2.2.3"><span class="term"><em class="parameter">vmfsoptions:OPTION</em></span></dt><dd><p>
           Sets options for file system creation. Currently only the `nodirindex`
           option is supported, which disables directory indexing for ext file
           systems. This makes file ordering inside of directories reproducible
           but may have a negative performance impact.
          <code class="literal">vmfsoptions:nodirindex</code>
-        </p></dd><dt id="id-1.5.7.3.4.9.4.2.2.4"><span class="term "><em class="parameter ">kiwiprofile:PROFILE</em></span></dt><dd><p>Selects the profiles to build in kiwi appliance builds.</p></dd><dt id="id-1.5.7.3.4.9.4.2.2.5"><span class="term "><em class="parameter ">logidlelimit:SECONDS</em></span></dt><dd><p>Build jobs which do not create any output are aborted after some time.
-               This flag can be used to modify the limit.</p></dd><dt id="id-1.5.7.3.4.9.4.2.2.6"><span class="term "><em class="parameter ">excludebuild:PACKAGE</em></span></dt><dd><p>Exclude a package from building. If a package builds multiple flavors,
-	       the corresponding flavor can be specified via the `package:flavor` syntax.</p></dd><dt id="id-1.5.7.3.4.9.4.2.2.7"><span class="term "><em class="parameter ">onlybuild:PACKAGE</em></span></dt><dd><p>DANGER: this may remove many build results when introduced the first time!
+        </p></dd><dt id="id-1.5.7.3.4.9.4.2.2.4"><span class="term"><em class="parameter">kiwiprofile:PROFILE</em></span></dt><dd><p>Selects the profiles to build in kiwi appliance builds.</p></dd><dt id="id-1.5.7.3.4.9.4.2.2.5"><span class="term"><em class="parameter">logidlelimit:SECONDS</em></span></dt><dd><p>Build jobs which do not create any output are aborted after some time.
+               This flag can be used to modify the limit.</p></dd><dt id="id-1.5.7.3.4.9.4.2.2.6"><span class="term"><em class="parameter">excludebuild:PACKAGE</em></span></dt><dd><p>Exclude a package from building. If a package builds multiple flavors,
+	       the corresponding flavor can be specified via the `package:flavor` syntax.</p></dd><dt id="id-1.5.7.3.4.9.4.2.2.7"><span class="term"><em class="parameter">onlybuild:PACKAGE</em></span></dt><dd><p>DANGER: this may remove many build results when introduced the first time!
                It can be used to maintain a whitelist of packages to be built. All other packages
-               will turn to excluded state and get removed if available.</p></dd><dt id="id-1.5.7.3.4.9.4.2.2.8"><span class="term "><em class="parameter ">useccache:PACKAGE</em></span></dt><dd><p>
+               will turn to excluded state and get removed if available.</p></dd><dt id="id-1.5.7.3.4.9.4.2.2.8"><span class="term"><em class="parameter">useccache:PACKAGE</em></span></dt><dd><p>
          Configure usage of ccache when building the specified package.
-        </p></dd><dt id="id-1.5.7.3.4.9.4.2.2.9"><span class="term "><em class="parameter ">ccachetype:TYPE</em></span></dt><dd><p>
+        </p></dd><dt id="id-1.5.7.3.4.9.4.2.2.9"><span class="term"><em class="parameter">ccachetype:TYPE</em></span></dt><dd><p>
           Defines the ccache implementation, possible values are: ccache, sccache
-        </p></dd><dt id="id-1.5.7.3.4.9.4.2.2.10"><span class="term "><em class="parameter ">obsgendiff</em></span></dt><dd><p>
+        </p></dd><dt id="id-1.5.7.3.4.9.4.2.2.10"><span class="term"><em class="parameter">obsgendiff</em></span></dt><dd><p>
           OBS can run an external program that has access to the current build
           and the previously successful result, e.g. to generate a difference or
           a changelog from the diff.
@@ -145,31 +191,31 @@ Support: pax debbuild</pre></div></dd><dt id="id-1.5.7.3.4.9.4"><span class="ter
         </p><p>
           A common use case for <code class="literal">obsgendiff</code> is to run <a class="link" href="https://github.com/openSUSE/release-compare" target="_blank">release-compare</a>
           after the build.
-        </p></dd><dt id="id-1.5.7.3.4.9.4.2.2.11"><span class="term "><em class="parameter ">setvcs</em></span></dt><dd><p>
+        </p></dd><dt id="id-1.5.7.3.4.9.4.2.2.11"><span class="term"><em class="parameter">setvcs</em></span></dt><dd><p>
           Add the SCM URL to binary results when the package sources are managed 
           via the scmsync mechanic. The url is written into the VCS tag of rpms
           when enabling this functionality.
-        </p></dd><dt id="id-1.5.7.3.4.9.4.2.2.12"><span class="term "><em class="parameter ">nodisturl</em></span></dt><dd><p>
+        </p></dd><dt id="id-1.5.7.3.4.9.4.2.2.12"><span class="term"><em class="parameter">nodisturl</em></span></dt><dd><p>
 	  Skip the embedding of DISTURL tag into binaries. Please note that this might
 	  also break other features like binary tracking. So never do this for maintained
 	  binaries.
-        </p></dd><dt id="id-1.5.7.3.4.9.4.2.2.13"><span class="term "><em class="parameter ">sbom:FORMAT</em></span></dt><dd><p>
+        </p></dd><dt id="id-1.5.7.3.4.9.4.2.2.13"><span class="term"><em class="parameter">sbom:FORMAT</em></span></dt><dd><p>
 	  OBS 2.11 can produce and publish additional SBOM (Software Bill Of Material) 
 	  meta data by enabling this flag.
 	  This is currently supported for container and kiwi images builds and includes
 	  only data from installed rpm packages. Supported formats are spdx and cyclonedx.
-        </p></dd><dt id="id-1.5.7.3.4.9.4.2.2.14"><span class="term "><em class="parameter ">container-compression-format:FORMAT</em></span></dt><dd><p>
+        </p></dd><dt id="id-1.5.7.3.4.9.4.2.2.14"><span class="term"><em class="parameter">container-compression-format:FORMAT</em></span></dt><dd><p>
           Sets a compression format for container layers. Possible values are gzip, zstd,
           zstd:chunked. Every value other than gzip is only supported by podman and buildah.
-        </p></dd><dt id="id-1.5.7.3.4.9.4.2.2.15"><span class="term "><em class="parameter ">container-build-format:FORMAT</em></span></dt><dd><p>
+        </p></dd><dt id="id-1.5.7.3.4.9.4.2.2.15"><span class="term"><em class="parameter">container-build-format:FORMAT</em></span></dt><dd><p>
           For podman container builds, it specifies the container config format. Possible values
           are 'docker' and 'oci'. The default is 'docker'. The 'docker' format allows a few
           extensions like ONBUILD, SHELL, DOMAINNAME, COMMENT, HEALTHCHECK amongst others.
-        </p></dd></dl></div></dd><dt id="id-1.5.7.3.4.9.5"><span class="term "><em class="parameter ">Conflict: <em class="replaceable ">PACKAGE</em></em></span></dt><dd><p>Specify that a package must not be installed in the build environment.</p></dd><dt id="id-1.5.7.3.4.9.6"><span class="term "><em class="parameter ">Conflict: <em class="replaceable ">PACKAGE_A</em>:<em class="replaceable ">PACKAGE_B</em></em></span></dt><dd><p>Specify a synthetic conflict between two given packages.</p></dd><dt id="id-1.5.7.3.4.9.7"><span class="term "><em class="parameter ">Constraint: <em class="replaceable ">SELECTOR</em> <em class="replaceable ">STRING</em></em> (OBS 2.4 or later)</span></dt><dd><p>
+        </p></dd></dl></div></dd><dt id="id-1.5.7.3.4.9.5"><span class="term"><em class="parameter">Conflict: <em class="replaceable">PACKAGE</em></em></span></dt><dd><p>Specify that a package must not be installed in the build environment.</p></dd><dt id="id-1.5.7.3.4.9.6"><span class="term"><em class="parameter">Conflict: <em class="replaceable">PACKAGE_A</em>:<em class="replaceable">PACKAGE_B</em></em></span></dt><dd><p>Specify a synthetic conflict between two given packages.</p></dd><dt id="id-1.5.7.3.4.9.7"><span class="term"><em class="parameter">Constraint: <em class="replaceable">SELECTOR</em> <em class="replaceable">STRING</em></em> (OBS 2.4 or later)</span></dt><dd><p>
       Define build constraints for build jobs. The selector is a
       colon-separated list which gets a string assigned. See the build job
       constraints page for details.
-     </p></dd><dt id="id-1.5.7.3.4.9.8"><span class="term "><em class="parameter ">DistMacro: <em class="replaceable ">NAME</em> <em class="replaceable ">VALUE</em></em></span></dt><dd><p>
+     </p></dd><dt id="id-1.5.7.3.4.9.8"><span class="term"><em class="parameter">DistMacro: <em class="replaceable">NAME</em> <em class="replaceable">VALUE</em></em></span></dt><dd><p>
       Define a macro to be used when parsing the spec files of packages.
       This is similar to using a `Macros:` section with the difference
       that the macro will not be written to the .rpmmacros file. It should
@@ -179,77 +225,77 @@ Support: pax debbuild</pre></div></dd><dt id="id-1.5.7.3.4.9.4"><span class="ter
       Note that the lines of the project config are macro expanded while
       parsing, so you have to use `%%` for a literal percent sign in
       the value.
-     </p></dd><dt id="id-1.5.7.3.4.9.9"><span class="term "><em class="parameter ">ExpandFlags: <em class="replaceable ">FLAG</em></em></span></dt><dd><p>
+     </p></dd><dt id="id-1.5.7.3.4.9.9"><span class="term"><em class="parameter">ExpandFlags: <em class="replaceable">FLAG</em></em></span></dt><dd><p>
       Flags which modify the behaviour during dependency resolution.
-     </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.5.7.3.4.9.9.2.2.1"><span class="term "><em class="parameter ">unorderedimagerepos</em> (OBS 2.10 or later)</span></dt><dd><p>The priority of repositories defined in an image build is usually important. This is to avoid switching repositories
+     </p><div class="variablelist"><dl class="variablelist"><dt id="id-1.5.7.3.4.9.9.2.2.1"><span class="term"><em class="parameter">unorderedimagerepos</em> (OBS 2.10 or later)</span></dt><dd><p>The priority of repositories defined in an image build is usually important. This is to avoid switching repositories
            when the same package is available in multiple repositories. However, it might be wanted to ignore that and just
-           pick the highest version. This can be achieved by defining this flag</p></dd><dt id="id-1.5.7.3.4.9.9.2.2.2"><span class="term "><em class="parameter ">preinstallexpand</em></span></dt><dd><p>Preinstall also all dependencies of a preinstalled package.
-                 This may increase the amount of preinstalled packages a lot.</p></dd><dt id="id-1.5.7.3.4.9.9.2.2.3"><span class="term "><em class="parameter ">module:NAME-STREAM</em> (OBS 2.10.7 or later)</span></dt><dd><p>Enable Red Hat-specific module support in repo md repositories. By default, 
+           pick the highest version. This can be achieved by defining this flag</p></dd><dt id="id-1.5.7.3.4.9.9.2.2.2"><span class="term"><em class="parameter">preinstallexpand</em></span></dt><dd><p>Preinstall also all dependencies of a preinstalled package.
+                 This may increase the amount of preinstalled packages a lot.</p></dd><dt id="id-1.5.7.3.4.9.9.2.2.3"><span class="term"><em class="parameter">module:NAME-STREAM</em> (OBS 2.10.7 or later)</span></dt><dd><p>Enable Red Hat-specific module support in repo md repositories. By default, 
 	      no module is used, so every module needed needs to be
               specified in the configuration. To remove a module,
-              add an exclamation mark (<code class="literal">!</code>) as prefix.</p></dd><dt id="id-1.5.7.3.4.9.9.2.2.4"><span class="term "><em class="parameter ">dorecommends</em></span></dt><dd><p>Try to install all recommended packages. Packages with dependency conflicts
-                are ignored.</p></dd><dt id="id-1.5.7.3.4.9.9.2.2.5"><span class="term "><em class="parameter ">dosupplements</em></span></dt><dd><p>Try to install all supplemented packages. Packages with dependency conflicts
+              add an exclamation mark (<code class="literal">!</code>) as prefix.</p></dd><dt id="id-1.5.7.3.4.9.9.2.2.4"><span class="term"><em class="parameter">dorecommends</em></span></dt><dd><p>Try to install all recommended packages. Packages with dependency conflicts
+                are ignored.</p></dd><dt id="id-1.5.7.3.4.9.9.2.2.5"><span class="term"><em class="parameter">dosupplements</em></span></dt><dd><p>Try to install all supplemented packages. Packages with dependency conflicts
                 are ignored. This has the downside that new packages can cause different
                 dependency expansion, so this should only be enabled for special use
-                cases.  </p></dd><dt id="id-1.5.7.3.4.9.9.2.2.6"><span class="term "><em class="parameter ">ignoreconflicts</em></span></dt><dd><p>Ignore defined conflicts of packages. By default these are reported as unresolvable.
+                cases.  </p></dd><dt id="id-1.5.7.3.4.9.9.2.2.6"><span class="term"><em class="parameter">ignoreconflicts</em></span></dt><dd><p>Ignore defined conflicts of packages. By default these are reported as unresolvable.
                 This switch may be useful when packages get not installed in the build environment,
                 but getting processed afterwards. That tool, e.g. some image building tool, must be
                 able to handle the situation (e.g. by just using a subset of the packages).
-                </p></dd><dt id="id-1.5.7.3.4.9.9.2.2.7"><span class="term "><em class="parameter ">kiwi-nobasepackages</em></span></dt><dd><p>Do not put the require/support/preinstall packages in the repositories
+                </p></dd><dt id="id-1.5.7.3.4.9.9.2.2.7"><span class="term"><em class="parameter">kiwi-nobasepackages</em></span></dt><dd><p>Do not put the require/support/preinstall packages in the repositories
                 offered to the kiwi build tool. This should have been the default.
-           </p></dd><dt id="id-1.5.7.3.4.9.9.2.2.8"><span class="term "><em class="parameter ">keepfilerequires</em></span></dt><dd><p>Dependencies on files are only fulfilled if matching FileProvides are specified
+           </p></dd><dt id="id-1.5.7.3.4.9.9.2.2.8"><span class="term"><em class="parameter">keepfilerequires</em></span></dt><dd><p>Dependencies on files are only fulfilled if matching FileProvides are specified
                 in the build configuration (prjconf). If those are missing, the dependency results in
                 an "unresolvable" state for directly required files or in silent breaking of the
                 dependency for indirectly required files. With this option, all file requires are
                 honoured by default and lead to "unresolvable" if there are no matching FileProvides defined.
-           </p></dd></dl></div></dd><dt id="id-1.5.7.3.4.9.10"><span class="term "><em class="parameter ">ExportFilter: <em class="replaceable ">REGEX</em> <em class="replaceable ">ARCHITECTURES</em></em></span></dt><dd><p>
+           </p></dd></dl></div></dd><dt id="id-1.5.7.3.4.9.10"><span class="term"><em class="parameter">ExportFilter: <em class="replaceable">REGEX</em> <em class="replaceable">ARCHITECTURES</em></em></span></dt><dd><p>
       The export filter can be used to export build results from one
       architecture to others. This is required when one architecture needs
       packages from another architecture for building.
-      The <em class="replaceable ">REGEX</em> placeholder must match
+      The <em class="replaceable">REGEX</em> placeholder must match
       the resulting binary name of the package. It will export it to all listed
       scheduler architectures. Using a single dot will export it to the
       architecture which was used to build it. So not using a dot there will
       filter the package.
-     </p></dd><dt id="id-1.5.7.3.4.9.11"><span class="term "><em class="parameter ">FileProvides: <em class="replaceable ">FILE</em> <em class="replaceable ">PACKAGES</em></em></span></dt><dd><p> OBS ignores dependencies to files (instead of package names) by
+     </p></dd><dt id="id-1.5.7.3.4.9.11"><span class="term"><em class="parameter">FileProvides: <em class="replaceable">FILE</em> <em class="replaceable">PACKAGES</em></em></span></dt><dd><p> OBS ignores dependencies to files (instead of package names) by
       default. This is mostly done to reduce the amount of memory needed, as
       the package file lists take up a considerable amount of repository meta
       data. As a workaround, FileProvides can be used to tell the systems which
-      packages contain a file. The File needs to have the full path.</p></dd><dt id="id-1.5.7.3.4.9.12"><span class="term "><em class="parameter ">HostArch: <em class="replaceable ">HOST_ARCH</em></em></span></dt><dd><p>
+      packages contain a file. The File needs to have the full path.</p></dd><dt id="id-1.5.7.3.4.9.12"><span class="term"><em class="parameter">HostArch: <em class="replaceable">HOST_ARCH</em></em></span></dt><dd><p>
       This is used for cross builds. It defines the host architecture used
       for building, while the scheduler architecture remains the target
       architecture.
-     </p></dd><dt id="id-1.5.7.3.4.9.13"><span class="term "><em class="parameter ">Ignore: <em class="replaceable ">PACKAGE_OR_DEPENDENCY</em></em></span></dt><dd><p>
+     </p></dd><dt id="id-1.5.7.3.4.9.13"><span class="term"><em class="parameter">Ignore: <em class="replaceable">PACKAGE_OR_DEPENDENCY</em></em></span></dt><dd><p>
       Ignore can be used to break dependencies. This can be useful to
       reduce the number of needed packages or to break cyclic dependencies. If a
       package is specified, all capabilities provided by the package are
       ignored.
-     </p></dd><dt id="id-1.5.7.3.4.9.14"><span class="term "><em class="parameter ">Ignore: <em class="replaceable ">ORIGIN_PACKAGE</em>:<em class="replaceable ">PACKAGE_OR_DEPENDENCY</em></em></span></dt><dd><p>
+     </p></dd><dt id="id-1.5.7.3.4.9.14"><span class="term"><em class="parameter">Ignore: <em class="replaceable">ORIGIN_PACKAGE</em>:<em class="replaceable">PACKAGE_OR_DEPENDENCY</em></em></span></dt><dd><p>
        Ignore a dependency coming from ORIGIN_PACKAGE. See the previous section
        for more details.
-     </p></dd><dt id="id-1.5.7.3.4.9.15"><span class="term "><em class="parameter ">Keep: <em class="replaceable ">PACKAGES</em></em></span></dt><dd><p>
+     </p></dd><dt id="id-1.5.7.3.4.9.15"><span class="term"><em class="parameter">Keep: <em class="replaceable">PACKAGES</em></em></span></dt><dd><p>
       To eliminate build cycles the to-be-built package are not installed
       by default, even when it is required. Keep can be used to overwrite this
       behavior. It is usually needed for packages like <code class="systemitem">make</code>
       that are used to build itself. Preinstalled packages are automatically kept, as the
       package installation program needs to work all the time.
-     </p></dd><dt id="id-1.5.7.3.4.9.16"><span class="term "><em class="parameter ">OptFlags: <em class="replaceable ">TARGET_ARCH</em> <em class="replaceable ">FLAGS</em></em> (RPM only)</span></dt><dd><p>
+     </p></dd><dt id="id-1.5.7.3.4.9.16"><span class="term"><em class="parameter">OptFlags: <em class="replaceable">TARGET_ARCH</em> <em class="replaceable">FLAGS</em></em> (RPM only)</span></dt><dd><p>
        Optflags exports compiler flags to the build by adding lines to rpm's
        <code class="command">rpmrc</code> file. They will only have an effect when the spec file is using
        <code class="command">$RPM_OPT_FLAGS</code> or <code class="command">%{optflags}</code>. The target architecture may be set
        to <code class="command">*</code> to affect all architectures.
-     </p></dd><dt id="id-1.5.7.3.4.9.17"><span class="term "><em class="parameter ">Order: <em class="replaceable ">PACKAG_A</em>:<em class="replaceable ">PACKAGE_B</em></em></span></dt><dd><p>
+     </p></dd><dt id="id-1.5.7.3.4.9.17"><span class="term"><em class="parameter">Order: <em class="replaceable">PACKAG_A</em>:<em class="replaceable">PACKAGE_B</em></em></span></dt><dd><p>
       The build script takes care about the installation order if they
       are defined via dependencies inside of the packages. However, there
       might be dependency loops (reported during setup of the build system) or
-      missing dependencies. The <em class="parameter ">Order</em> statement can
+      missing dependencies. The <em class="parameter">Order</em> statement can
       be used then to give a hint where to break the loop.
-     </p><p>The package in <em class="replaceable ">PACKAGE_A</em> will get
-      installed before the package in <em class="replaceable ">PACKAGE_B</em>.
-     </p></dd><dt id="id-1.5.7.3.4.9.18"><span class="term "><em class="parameter ">Patterntype: <em class="replaceable ">TYPE</em></em></span></dt><dd><p>
+     </p><p>The package in <em class="replaceable">PACKAGE_A</em> will get
+      installed before the package in <em class="replaceable">PACKAGE_B</em>.
+     </p></dd><dt id="id-1.5.7.3.4.9.18"><span class="term"><em class="parameter">Patterntype: <em class="replaceable">TYPE</em></em></span></dt><dd><p>
        Defines the pattern format. Valid values are: none (default), ymp, comps.
        Multiple types can be specified.
-     </p></dd><dt id="id-1.5.7.3.4.9.19"><span class="term "><em class="parameter ">Prefer: <em class="replaceable ">PACKAGES</em></em></span></dt><dd><p>
+     </p></dd><dt id="id-1.5.7.3.4.9.19"><span class="term"><em class="parameter">Prefer: <em class="replaceable">PACKAGES</em></em></span></dt><dd><p>
       In case multiple packages satisfy a dependency, the OBS system will
       complain about that situation. This is unlike like most package managing
       tools, which just pick one of the package. Because one of OBS' goal is to
@@ -257,28 +303,28 @@ Support: pax debbuild</pre></div></dd><dt id="id-1.5.7.3.4.9.4"><span class="ter
       choosing a random package. The Prefer: tag lists packages to be preferred
       in case a choice exists. When the package name is prefixed with a dash,
       this is treated as a de-prefer.
-     </p></dd><dt id="id-1.5.7.3.4.9.20"><span class="term "><em class="parameter ">Prefer: <em class="replaceable ">ORIGIN_PACKAGE</em>:<em class="replaceable ">PACKAGE</em></em></span></dt><dd><p>
+     </p></dd><dt id="id-1.5.7.3.4.9.20"><span class="term"><em class="parameter">Prefer: <em class="replaceable">ORIGIN_PACKAGE</em>:<em class="replaceable">PACKAGE</em></em></span></dt><dd><p>
       It is possible to define the prefer only when the dependency comes
       from the specified originating package.
-     </p></dd><dt id="id-1.5.7.3.4.9.21"><span class="term "><em class="parameter ">Preinstall: <em class="replaceable ">PACKAGE</em></em></span></dt><dd><p>
+     </p></dd><dt id="id-1.5.7.3.4.9.21"><span class="term"><em class="parameter">Preinstall: <em class="replaceable">PACKAGE</em></em></span></dt><dd><p>
        This is used to specify packages needed to run the package installation
        program. These packages are unpacked so that the native installation
        program can be used to install the build environment.
        Included scripts are <span class="emphasis"><em>not</em></span> executed during this phase. However, these
        packages will be re-installed later on including script execution.
-     </p></dd><dt id="id-1.5.7.3.4.9.22"><span class="term "><em class="parameter ">PublishFilter: <em class="replaceable ">REGEXP</em> [<em class="replaceable ">REGEXP</em>]</em></span></dt><dd><p>
+     </p></dd><dt id="id-1.5.7.3.4.9.22"><span class="term"><em class="parameter">PublishFilter: <em class="replaceable">REGEXP</em> [<em class="replaceable">REGEXP</em>]</em></span></dt><dd><p>
       Limits the published binary packages in public repositories. Packages
-      that match any <em class="replaceable ">REGEXP</em> will not be put into
+      that match any <em class="replaceable">REGEXP</em> will not be put into
       the exported repository. There can be only one line of
       PublishFilter for historic reasons. However, multiple
-      <em class="replaceable ">REGEXP</em> can be defined.
-     </p></dd><dt id="id-1.5.7.3.4.9.23"><span class="term "><em class="parameter ">PublishFlags: <em class="replaceable ">FLAG</em></em></span></dt><dd><p>
+      <em class="replaceable">REGEXP</em> can be defined.
+     </p></dd><dt id="id-1.5.7.3.4.9.23"><span class="term"><em class="parameter">PublishFlags: <em class="replaceable">FLAG</em></em></span></dt><dd><p>
       Flags which modify the behaviour during repository generation.
-     </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.5.7.3.4.9.23.2.2.1"><span class="term "><em class="parameter ">artifacthub:TAG</em> (OBS 2.11 or later)</span></dt><dd><p>Publish a specific verified publisher identifier (aka repository id) for artifactub.io.
+     </p><div class="variablelist"><dl class="variablelist"><dt id="id-1.5.7.3.4.9.23.2.2.1"><span class="term"><em class="parameter">artifacthub:TAG</em> (OBS 2.11 or later)</span></dt><dd><p>Publish a specific verified publisher identifier (aka repository id) for artifactub.io.
               This can be used to proof to be the publisher (aka maintainer) for containers from these
-              OBS repositories.</p></dd><dt id="id-1.5.7.3.4.9.23.2.2.2"><span class="term "><em class="parameter ">create_empty</em> (OBS 2.11 or later)</span></dt><dd><p>Create a repository even with no content, but with meta data.</p></dd><dt id="id-1.5.7.3.4.9.23.2.2.3"><span class="term "><em class="parameter ">noearlykiwipublish</em> (OBS 2.11 or later)</span></dt><dd><p>Only publish kiwi build results after entire repository has finished building. Without this kiwi
-                build results get published immediately after the build is finished.</p></dd><dt id="id-1.5.7.3.4.9.23.2.2.4"><span class="term "><em class="parameter ">archsync</em> (OBS 2.11 or later)</span></dt><dd><p>Publish all architectures at the same time. This means that the publisher is waiting
-              until the last architecture has finished building.</p></dd><dt id="id-1.5.7.3.4.9.23.2.2.5"><span class="term "><em class="parameter ">nofailedpackages</em> (OBS 2.11 or later)</span></dt><dd><p>
+              OBS repositories.</p></dd><dt id="id-1.5.7.3.4.9.23.2.2.2"><span class="term"><em class="parameter">create_empty</em> (OBS 2.11 or later)</span></dt><dd><p>Create a repository even with no content, but with meta data.</p></dd><dt id="id-1.5.7.3.4.9.23.2.2.3"><span class="term"><em class="parameter">noearlykiwipublish</em> (OBS 2.11 or later)</span></dt><dd><p>Only publish kiwi build results after entire repository has finished building. Without this kiwi
+                build results get published immediately after the build is finished.</p></dd><dt id="id-1.5.7.3.4.9.23.2.2.4"><span class="term"><em class="parameter">archsync</em> (OBS 2.11 or later)</span></dt><dd><p>Publish all architectures at the same time. This means that the publisher is waiting
+              until the last architecture has finished building.</p></dd><dt id="id-1.5.7.3.4.9.23.2.2.5"><span class="term"><em class="parameter">nofailedpackages</em> (OBS 2.11 or later)</span></dt><dd><p>
             Block publishing if any build result was failed, broken, or unresolvable.
             That means, packages can be published for an architecture on which it builds,
             even if a package fails to build on another architecture.
@@ -286,66 +332,66 @@ Support: pax debbuild</pre></div></dd><dt id="id-1.5.7.3.4.9.4"><span class="ter
 	    This is by default evaluated individually for each architecture. It can be
 	    combined with the archsync flag when publishing should be blocked also when a failure
 	    exists on any architecture.
-           </p></dd><dt id="id-1.5.7.3.4.9.23.2.2.6"><span class="term "><em class="parameter ">keepobsolete</em> (OBS 2.11 or later)</span></dt><dd><p>
+           </p></dd><dt id="id-1.5.7.3.4.9.23.2.2.6"><span class="term"><em class="parameter">keepobsolete</em> (OBS 2.11 or later)</span></dt><dd><p>
              The default behaviour of OBS is to remove binaries when a package object gets removed,
              even when the project is publish disabled (but the package may have been enabled).
            </p><p>
              This flag is changing this behaviour to keep binaries in published repositories
              even when a package gets removed. As consequence this flag has only an effect on
              publish disabled projects.
-           </p></dd><dt id="id-1.5.7.3.4.9.23.2.2.7"><span class="term "><em class="parameter ">singleexport</em> (OBS 2.11 or later)</span></dt><dd><p>
+           </p></dd><dt id="id-1.5.7.3.4.9.23.2.2.7"><span class="term"><em class="parameter">singleexport</em> (OBS 2.11 or later)</span></dt><dd><p>
              If multiple packages contain different versions of a rpm package, only
              publish the one from the first package. If the project is of the type
              maintenance_release, this will be the package with the highest
              incident number.
-           </p></dd><dt id="id-1.5.7.3.4.9.23.2.2.8"><span class="term "><em class="parameter ">withsbom</em> (OBS 2.11 or later)</span></dt><dd><p>Enables publishing of SBOM files (SPDX or CycloneDX format) (<code class="literal">.cdx.json</code> or <code class="literal">.spdx.json</code> files). Please note that the building of SBOM files usually needs to get enabled via a BuildFlags switch as well.</p></dd><dt id="id-1.5.7.3.4.9.23.2.2.9"><span class="term "><em class="parameter ">withreports</em> (OBS 2.11 or later)</span></dt><dd><p>Also publish internal content tracking files (<code class="literal">.report</code> files).</p></dd><dt id="id-1.5.7.3.4.9.23.2.2.10"><span class="term "><em class="parameter ">ympdist:NAME</em> (OBS 2.11 or later)</span></dt><dd><p>Defines the distversion to be used in group element of ymp files.
-              This is used by the installer to check if the repository is suitable for the installed distribution.</p></dd></dl></div></dd><dt id="id-1.5.7.3.4.9.24"><span class="term "><em class="parameter ">RegistryURL: <em class="replaceable ">URL</em></em></span></dt><dd><p>
+           </p></dd><dt id="id-1.5.7.3.4.9.23.2.2.8"><span class="term"><em class="parameter">withsbom</em> (OBS 2.11 or later)</span></dt><dd><p>Enables publishing of SBOM files (SPDX or CycloneDX format) (<code class="literal">.cdx.json</code> or <code class="literal">.spdx.json</code> files). Please note that the building of SBOM files usually needs to get enabled via a BuildFlags switch as well.</p></dd><dt id="id-1.5.7.3.4.9.23.2.2.9"><span class="term"><em class="parameter">withreports</em> (OBS 2.11 or later)</span></dt><dd><p>Also publish internal content tracking files (<code class="literal">.report</code> files).</p></dd><dt id="id-1.5.7.3.4.9.23.2.2.10"><span class="term"><em class="parameter">ympdist:NAME</em> (OBS 2.11 or later)</span></dt><dd><p>Defines the distversion to be used in group element of ymp files.
+              This is used by the installer to check if the repository is suitable for the installed distribution.</p></dd></dl></div></dd><dt id="id-1.5.7.3.4.9.24"><span class="term"><em class="parameter">RegistryURL: <em class="replaceable">URL</em></em></span></dt><dd><p>
        Define a url for the downloading of containers.
-     </p></dd><dt id="id-1.5.7.3.4.9.25"><span class="term "><em class="parameter ">Repotype:  <em class="replaceable ">TYPE[:OPTIONS]</em></em></span></dt><dd><p> Defines the repository format for published repositories. Read on
+     </p></dd><dt id="id-1.5.7.3.4.9.25"><span class="term"><em class="parameter">Repotype:  <em class="replaceable">TYPE[:OPTIONS]</em></em></span></dt><dd><p> Defines the repository format for published repositories. Read on
       for permissible values (repository types). The syntax of the OPTIONS
       parameter depends on the repository type, and is also described below.
      </p><p>
       This is the list of repository types. Multiple values can be combined
       in the same line, separated by spaces.
-     </p><div class="variablelist "><dl class="variablelist"><dt id="id-1.5.7.3.4.9.25.2.3.1"><span class="term "><em class="parameter ">rpm-md</em></span></dt><dd><p>rpm-md repository data is generated as invented by YUM originaly.</p></dd><dt id="id-1.5.7.3.4.9.25.2.3.2"><span class="term "><em class="parameter ">suse</em></span></dt><dd><p>suse tag repository data is generated as used until SUSE Linux 10 generation.</p></dd><dt id="id-1.5.7.3.4.9.25.2.3.3"><span class="term "><em class="parameter ">hdlist2</em></span></dt><dd><p>Mandriva repository format</p></dd><dt id="id-1.5.7.3.4.9.25.2.3.4"><span class="term "><em class="parameter ">debian</em></span></dt><dd><p>Debian repository format</p></dd><dt id="id-1.5.7.3.4.9.25.2.3.5"><span class="term "><em class="parameter ">arch</em></span></dt><dd><p>Arch Linux repository format</p></dd><dt id="id-1.5.7.3.4.9.25.2.3.6"><span class="term "><em class="parameter ">vagrant</em></span></dt><dd><p>Vagrant image repository format</p></dd><dt id="id-1.5.7.3.4.9.25.2.3.7"><span class="term "><em class="parameter ">staticlinks</em></span></dt><dd><p>Additional links to build results excluding version and build numbers are created.</p></dd><dt id="id-1.5.7.3.4.9.25.2.3.8"><span class="term "><em class="parameter ">zyppservice</em></span></dt><dd><p>Generate zypp service files, publishing all used repository pathes to the zypp client.</p></dd><dt id="id-1.5.7.3.4.9.25.2.3.9"><span class="term "><em class="parameter ">helm</em></span></dt><dd><p>Helm repository metadata</p></dd><dt id="id-1.5.7.3.4.9.25.2.3.10"><span class="term "><em class="parameter ">checksumsfile</em></span></dt><dd><p>Checksums file with signatures of repository content</p></dd><dt id="id-1.5.7.3.4.9.25.2.3.11"><span class="term "><em class="parameter ">ymp</em></span></dt><dd><p>YaST single install ymp file generation. Zypp services should be used instead.</p></dd><dt id="id-1.5.7.3.4.9.25.2.3.12"><span class="term "><em class="parameter ">comps</em></span></dt><dd><p>Generate comps files, Fedora style patterns</p></dd></dl></div><p>
-      This is the list of repository options to modify the way the repository type is generated:</p><div class="variablelist "><dl class="variablelist"><dt id="id-1.5.7.3.4.9.25.2.5.1"><span class="term "><em class="parameter ">sha256</em></span></dt><dd><p>rpm-md repository data is generated using SHA-256 checksums. This is the default.</p></dd><dt id="id-1.5.7.3.4.9.25.2.5.2"><span class="term "><em class="parameter ">sha512</em></span></dt><dd><p>rpm-md repository data is generated using SHA-512 checksums.</p></dd><dt id="id-1.5.7.3.4.9.25.2.5.3"><span class="term "><em class="parameter ">legacy</em></span></dt><dd><p>rpm-md repository data is generated using SHA-1 checksums. Considered to be unsafe and not anymore recommended.</p></dd><dt id="id-1.5.7.3.4.9.25.2.5.4"><span class="term "><em class="parameter ">zchunk</em></span></dt><dd><p>rpm-md repository data gets extended with additional zchunk compressed files.</p></dd><dt id="id-1.5.7.3.4.9.25.2.5.5"><span class="term "><em class="parameter ">filelists-ext</em></span></dt><dd><p>rpm-md repository provides additional filelist-ext provides</p></dd><dt id="id-1.5.7.3.4.9.25.2.5.6"><span class="term "><em class="parameter ">compression-zstd</em></span></dt><dd><p>rpm-md repository data is compressed using zstd instead of gz</p></dd><dt id="id-1.5.7.3.4.9.25.2.5.7"><span class="term "><em class="parameter ">deltainfo</em></span></dt><dd><p>rpm-md repository provides additional rpm delta informations for incremental rpm updates.</p></dd><dt id="id-1.5.7.3.4.9.25.2.5.8"><span class="term "><em class="parameter ">splitdebug:SUFFIX</em></span></dt><dd><p>A second repository is generated where all debuginfo and debugsource packages get moved to. The specified SUFFIX is added to the repository name. For example:</p><div class="verbatim-wrap"><pre class="screen">Repotype: rpm-md splitdebug:-debuginfo</pre></div></dd><dt id="id-1.5.7.3.4.9.25.2.5.9"><span class="term "><em class="parameter ">rsyncable</em></span></dt><dd><p>rpm-md repository gets recompressed using rsyncable format.</p></dd><dt id="id-1.5.7.3.4.9.25.2.5.10"><span class="term "><em class="parameter ">rawsig</em></span></dt><dd><p>checksumsfile repository provides binary signatures instead of ascii signatures</p></dd></dl></div></dd><dt id="id-1.5.7.3.4.9.26"><span class="term "><em class="parameter ">RepoURL: <em class="replaceable ">[TYPE@]URL</em></em></span></dt><dd><p>
+     </p><div class="variablelist"><dl class="variablelist"><dt id="id-1.5.7.3.4.9.25.2.3.1"><span class="term"><em class="parameter">rpm-md</em></span></dt><dd><p>rpm-md repository data is generated as invented by YUM originaly.</p></dd><dt id="id-1.5.7.3.4.9.25.2.3.2"><span class="term"><em class="parameter">suse</em></span></dt><dd><p>suse tag repository data is generated as used until SUSE Linux 10 generation.</p></dd><dt id="id-1.5.7.3.4.9.25.2.3.3"><span class="term"><em class="parameter">hdlist2</em></span></dt><dd><p>Mandriva repository format</p></dd><dt id="id-1.5.7.3.4.9.25.2.3.4"><span class="term"><em class="parameter">debian</em></span></dt><dd><p>Debian repository format</p></dd><dt id="id-1.5.7.3.4.9.25.2.3.5"><span class="term"><em class="parameter">arch</em></span></dt><dd><p>Arch Linux repository format</p></dd><dt id="id-1.5.7.3.4.9.25.2.3.6"><span class="term"><em class="parameter">vagrant</em></span></dt><dd><p>Vagrant image repository format</p></dd><dt id="id-1.5.7.3.4.9.25.2.3.7"><span class="term"><em class="parameter">staticlinks</em></span></dt><dd><p>Additional links to build results excluding version and build numbers are created.</p></dd><dt id="id-1.5.7.3.4.9.25.2.3.8"><span class="term"><em class="parameter">zyppservice</em></span></dt><dd><p>Generate zypp service files, publishing all used repository pathes to the zypp client.</p></dd><dt id="id-1.5.7.3.4.9.25.2.3.9"><span class="term"><em class="parameter">helm</em></span></dt><dd><p>Helm repository metadata</p></dd><dt id="id-1.5.7.3.4.9.25.2.3.10"><span class="term"><em class="parameter">checksumsfile</em></span></dt><dd><p>Checksums file with signatures of repository content</p></dd><dt id="id-1.5.7.3.4.9.25.2.3.11"><span class="term"><em class="parameter">ymp</em></span></dt><dd><p>YaST single install ymp file generation. Zypp services should be used instead.</p></dd><dt id="id-1.5.7.3.4.9.25.2.3.12"><span class="term"><em class="parameter">comps</em></span></dt><dd><p>Generate comps files, Fedora style patterns</p></dd></dl></div><p>
+      This is the list of repository options to modify the way the repository type is generated:</p><div class="variablelist"><dl class="variablelist"><dt id="id-1.5.7.3.4.9.25.2.5.1"><span class="term"><em class="parameter">sha256</em></span></dt><dd><p>rpm-md repository data is generated using SHA-256 checksums. This is the default.</p></dd><dt id="id-1.5.7.3.4.9.25.2.5.2"><span class="term"><em class="parameter">sha512</em></span></dt><dd><p>rpm-md repository data is generated using SHA-512 checksums.</p></dd><dt id="id-1.5.7.3.4.9.25.2.5.3"><span class="term"><em class="parameter">legacy</em></span></dt><dd><p>rpm-md repository data is generated using SHA-1 checksums. Considered to be unsafe and not anymore recommended.</p></dd><dt id="id-1.5.7.3.4.9.25.2.5.4"><span class="term"><em class="parameter">zchunk</em></span></dt><dd><p>rpm-md repository data gets extended with additional zchunk compressed files.</p></dd><dt id="id-1.5.7.3.4.9.25.2.5.5"><span class="term"><em class="parameter">filelists-ext</em></span></dt><dd><p>rpm-md repository provides additional filelist-ext provides</p></dd><dt id="id-1.5.7.3.4.9.25.2.5.6"><span class="term"><em class="parameter">compression-zstd</em></span></dt><dd><p>rpm-md repository data is compressed using zstd instead of gz</p></dd><dt id="id-1.5.7.3.4.9.25.2.5.7"><span class="term"><em class="parameter">deltainfo</em></span></dt><dd><p>rpm-md repository provides additional rpm delta informations for incremental rpm updates.</p></dd><dt id="id-1.5.7.3.4.9.25.2.5.8"><span class="term"><em class="parameter">splitdebug:SUFFIX</em></span></dt><dd><p>A second repository is generated where all debuginfo and debugsource packages get moved to. The specified SUFFIX is added to the repository name. For example:</p><div class="verbatim-wrap"><pre class="screen">Repotype: rpm-md splitdebug:-debuginfo</pre></div></dd><dt id="id-1.5.7.3.4.9.25.2.5.9"><span class="term"><em class="parameter">rsyncable</em></span></dt><dd><p>rpm-md repository gets recompressed using rsyncable format.</p></dd><dt id="id-1.5.7.3.4.9.25.2.5.10"><span class="term"><em class="parameter">rawsig</em></span></dt><dd><p>checksumsfile repository provides binary signatures instead of ascii signatures</p></dd></dl></div></dd><dt id="id-1.5.7.3.4.9.26"><span class="term"><em class="parameter">RepoURL: <em class="replaceable">[TYPE@]URL</em></em></span></dt><dd><p>
        Define a url for the downloading of repository packages. Supported types
        are currently `arch`, `debian`, `hdlist2`, `rpmmd`, `suse`. If the
        type is not specified, it is guessed from the build type.
-     </p></dd><dt id="id-1.5.7.3.4.9.27"><span class="term "><em class="parameter ">Required: <em class="replaceable ">PACKAGE</em></em></span></dt><dd><p>
+     </p></dd><dt id="id-1.5.7.3.4.9.27"><span class="term"><em class="parameter">Required: <em class="replaceable">PACKAGE</em></em></span></dt><dd><p>
       Specify a package that always is installed for package builds.
       A change in one of these packages triggers a new build.
-     </p></dd><dt id="id-1.5.7.3.4.9.28"><span class="term "><em class="parameter ">Runscripts: <em class="replaceable ">PACKAGES</em></em></span></dt><dd><p>
+     </p></dd><dt id="id-1.5.7.3.4.9.28"><span class="term"><em class="parameter">Runscripts: <em class="replaceable">PACKAGES</em></em></span></dt><dd><p>
       Defines the scripts of preinstalled packages which needs to be executed
       directly after the preinstall phase, but before installing the
       remaining packages.
-     </p></dd><dt id="id-1.5.7.3.4.9.29"><span class="term "><em class="parameter ">Substitute: <em class="replaceable ">OLD_DEPENDENCY</em> <em class="replaceable ">NEW_DEPENDENCY</em></em></span></dt><dd><p>
+     </p></dd><dt id="id-1.5.7.3.4.9.29"><span class="term"><em class="parameter">Substitute: <em class="replaceable">OLD_DEPENDENCY</em> <em class="replaceable">NEW_DEPENDENCY</em></em></span></dt><dd><p>
        It is possible to replace BuildRequires dependencies with other
        dependencies. This will have only an effect on directly BuildRequired
        packages, not on indirectly required packages.
-     </p></dd><dt id="id-1.5.7.3.4.9.30"><span class="term "><em class="parameter ">Support: <em class="replaceable ">PACKAGE</em></em></span></dt><dd><p>
+     </p></dd><dt id="id-1.5.7.3.4.9.30"><span class="term"><em class="parameter">Support: <em class="replaceable">PACKAGE</em></em></span></dt><dd><p>
        Specify a package that always is installed for package builds.
        Unlike Required:, a change in one of these packages does not trigger an
        automatic rebuild.
      </p><p>
       This is useful for packages that most likely do not influence the build
-      result, for example <span class="package ">make</span> or <span class="package ">coreutils</span>.
-     </p></dd><dt id="id-1.5.7.3.4.9.31"><span class="term "><em class="parameter ">Target: <em class="replaceable ">TARGET_ARCH</em></em></span></dt><dd><p>Defines the target architecture. This can be used to build for i686
+      result, for example <span class="package">make</span> or <span class="package">coreutils</span>.
+     </p></dd><dt id="id-1.5.7.3.4.9.31"><span class="term"><em class="parameter">Target: <em class="replaceable">TARGET_ARCH</em></em></span></dt><dd><p>Defines the target architecture. This can be used to build for i686
       on i586 schedulers for example. Please note that on rpm based systems just the architecture needs
-      to be specified, but on debian systems the gnu triplet, for example arm-linux-gnueabihf.</p></dd><dt id="id-1.5.7.3.4.9.32"><span class="term "><em class="parameter ">Target: <em class="replaceable ">GNU_TRIPLET</em></em></span></dt><dd><p>Defines the target architecture. This can be used to build for i686
+      to be specified, but on debian systems the gnu triplet, for example arm-linux-gnueabihf.</p></dd><dt id="id-1.5.7.3.4.9.32"><span class="term"><em class="parameter">Target: <em class="replaceable">GNU_TRIPLET</em></em></span></dt><dd><p>Defines the target architecture. This can be used to build for i686
       on i586 schedulers for example. Please note that on rpm based systems just the architecture needs
-      to be specified, but on debian systems the gnu triplet, for example arm-linux-gnueabihf.</p></dd><dt id="id-1.5.7.3.4.9.33"><span class="term "><em class="parameter ">Type: <em class="replaceable ">TYPE</em></em></span></dt><dd><p>
+      to be specified, but on debian systems the gnu triplet, for example arm-linux-gnueabihf.</p></dd><dt id="id-1.5.7.3.4.9.33"><span class="term"><em class="parameter">Type: <em class="replaceable">TYPE</em></em></span></dt><dd><p>
       Build recipe type. This is the format of the file which provides the
       build description. This gets usually autodetected, but in some rare cases
       it can be set here to either one of these: spec, dsc, kiwi, livebuild,
       arch, preinstallimage, mkosi.
      </p><p>Defines the build recipe format. Valid values are currently: none, spec,
       dsc, arch, kiwi, preinstallimage. If no type is specified, OBS deduces a
-      type from the binary type. </p></dd><dt id="id-1.5.7.3.4.9.34"><span class="term "><em class="parameter ">VMInstall: <em class="replaceable ">PACKAGE</em></em></span></dt><dd><p>
-      Like <em class="parameter ">Preinstall</em>, but these packages get only
+      type from the binary type. </p></dd><dt id="id-1.5.7.3.4.9.34"><span class="term"><em class="parameter">VMInstall: <em class="replaceable">PACKAGE</em></em></span></dt><dd><p>
+      Like <em class="parameter">Preinstall</em>, but these packages get only
       installed when a virtual machine like Xen or KVM is used for building.
-      Usually  packages like <span class="package ">mount</span> are listed here.
-     </p></dd></dl></div></div><div class="sect1 " id="sec.prjconfig.ccache"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.3 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Building with ccache or sccache</span> <a title="Permalink" class="permalink" href="cha.obs.prjconfig.html#sec.prjconfig.ccache">#</a></h2></div></div></div><p>
+      Usually  packages like <span class="package">mount</span> are listed here.
+     </p></dd></dl></div></section><section class="sect1" id="sec.prjconfig.ccache" data-id-title="Building with ccache or sccache"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">4.3 </span><span class="title-name">Building with ccache or sccache</span></span> <a title="Permalink" class="permalink" href="cha.obs.prjconfig.html#sec.prjconfig.ccache">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
     The usage of ccache or sccache can be enabled for each package by
     seting the useccache:PACKAGE build flag.
   </p><p>
@@ -375,11 +421,11 @@ Support: pax debbuild</pre></div></dd><dt id="id-1.5.7.3.4.9.4"><span class="ter
     It is also possible to set the type, eg:
   </p><div class="verbatim-wrap"><pre class="screen"><code class="command">
       Substitute: cargo cargo --enable-ccache=sccache
-  </code></pre></div></div><div class="sect1 " id="sec.prjconfig.macros"><div class="titlepage"><div><div><h2 class="title"><span class="number">4.4 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Macro Definitions in the Build Configuration</span> <a title="Permalink" class="permalink" href="cha.obs.prjconfig.html#sec.prjconfig.macros">#</a></h2></div></div></div><p>
+  </code></pre></div></section><section class="sect1" id="sec.prjconfig.macros" data-id-title="Macro Definitions in the Build Configuration"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">4.4 </span><span class="title-name">Macro Definitions in the Build Configuration</span></span> <a title="Permalink" class="permalink" href="cha.obs.prjconfig.html#sec.prjconfig.macros">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
     You can use rpm macro definitions in the build configuration (prjconf) to improve
     configurability. There are two types of macros that can be defined in the build
     configuration:
-  </p><div class="itemizedlist "><ul class="itemizedlist"><li class="listitem "><p><span class="formalpara-title">Macros: Macro Definitions. </span>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p><span class="formalpara-title">Macros: Macro Definitions. </span>
       Macros defined after a <code class="systemitem">Macros:</code> line
       are exported into the <code class="filename">.rpmmacros</code> file of the
       build root. As such, these macro definitions can be used in a spec
@@ -394,7 +440,7 @@ Support: pax debbuild</pre></div></dd><dt id="id-1.5.7.3.4.9.4"><span class="ter
       Macros defined in this section are used by Open Build Service for build dependency resolution
       and are also available at build time. Any definition here is also overwriting
       definitions provided by any packages.
-     </p></li><li class="listitem "><p><span class="formalpara-title">DistMacro. </span>
+     </p></li><li class="listitem"><p><span class="formalpara-title">DistMacro. </span>
        The DistMacro can be used to define a macro for build dependency resolution.
        It is intended to be used when a distribution defines relevant macros inside
        of any of their packages. These macros are hidden by default to the Open Build Service dependency
@@ -402,7 +448,7 @@ Support: pax debbuild</pre></div></dd><dt id="id-1.5.7.3.4.9.4"><span class="ter
 
        Unlike Macros:, DistMacro won't overwrite any existing and possibly
        changed definition at build time.
-     </p></li><li class="listitem "><p><span class="formalpara-title">%define Macro Definitions. </span>
+     </p></li><li class="listitem"><p><span class="formalpara-title">%define Macro Definitions. </span>
       Macro definitions starting with a <code class="systemitem">%define</code>
       line are used during the build configuration parsing only. These definitions are
       <span class="emphasis"><em>not</em></span> available inside the build root or during parsing
@@ -410,7 +456,7 @@ Support: pax debbuild</pre></div></dd><dt id="id-1.5.7.3.4.9.4"><span class="ter
 
       Typical use cases are macros inside of %if statements inside of the build
       configuration or macros in any Support, Require or Substitute line.
-     </p></li></ul></div><div class="sect2 " id="sec.prjconfig.macros.define"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.4.1 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Macros for the Build Configuration Only</span> <a title="Permalink" class="permalink" href="cha.obs.prjconfig.html#sec.prjconfig.macros.define">#</a></h3></div></div></div><p>
+     </p></li></ul></div><section class="sect2" id="sec.prjconfig.macros.define" data-id-title="Macros for the Build Configuration Only"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">4.4.1 </span><span class="title-name">Macros for the Build Configuration Only</span></span> <a title="Permalink" class="permalink" href="cha.obs.prjconfig.html#sec.prjconfig.macros.define">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
      To specify macros for the building process, use the %define
      keyword.
    </p><p>
@@ -418,7 +464,7 @@ Support: pax debbuild</pre></div></dd><dt id="id-1.5.7.3.4.9.4"><span class="ter
    </p><div class="verbatim-wrap"><pre class="screen">%define _with_pulseaudio 1</pre></div><p>
     then the macro %_with_pulseaudio will expand to 1 only inside
     the build configuration.
-   </p></div><div class="sect2 " id="sec.prjconfig.macros.macrosection"><div class="titlepage"><div><div><h3 class="title"><span class="number">4.4.2 </span><span xmlns:dm="urn:x-suse:ns:docmanager" class="name">Macros Used in Spec Files Only</span> <a title="Permalink" class="permalink" href="cha.obs.prjconfig.html#sec.prjconfig.macros.macrosection">#</a></h3></div></div></div><p>
+   </p></section><section class="sect2" id="sec.prjconfig.macros.macrosection" data-id-title="Macros Used in Spec Files Only"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">4.4.2 </span><span class="title-name">Macros Used in Spec Files Only</span></span> <a title="Permalink" class="permalink" href="cha.obs.prjconfig.html#sec.prjconfig.macros.macrosection">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
     To define the values of macros used in spec files, `%define` is <span class="bold"><strong>not</strong></span> used. For this use case, either enclose the macro
     definitions between "Macros:"/":Macros" lines, or place them at the end of the
     prjconf file. All lines after a line containing the directive "Macros:" up
@@ -428,7 +474,7 @@ Support: pax debbuild</pre></div></dd><dt id="id-1.5.7.3.4.9.4"><span class="ter
    </p><p>
     The macro definition in the project configuration is located at the end
     and has the following structure:
-   </p><div class="example" id="id-1.5.7.3.6.5.4"><div class="example-title-wrap"><h6 class="example-title"><span class="number">Example 4.1: </span><span class="name">Structure of a Macro Definition </span><a title="Permalink" class="permalink" href="cha.obs.prjconfig.html#id-1.5.7.3.6.5.4">#</a></h6></div><div class="example-contents"><div class="verbatim-wrap"><pre class="screen">Macros:
+   </p><div class="example" id="id-1.5.7.3.6.5.4" data-id-title="Structure of a Macro Definition"><div class="title-container"><div class="example-title-wrap"><div class="example-title"><span class="title-number-name"><span class="title-number">Example 4.1: </span><span class="title-name">Structure of a Macro Definition </span></span><a title="Permalink" class="permalink" href="cha.obs.prjconfig.html#id-1.5.7.3.6.5.4">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div><div class="example-contents"><div class="verbatim-wrap"><pre class="screen">Macros:
   # add your macro definitions
 :Macros</pre></div></div></div><p>
     Everything that starts with a hash mark (<code class="literal">#</code>) is
@@ -436,6 +482,5 @@ Support: pax debbuild</pre></div></dd><dt id="id-1.5.7.3.4.9.4"><span class="ter
    </p><p>
     The macro definition itself are defined without a <code class="literal">%define</code>
     keyword. Start with <code class="literal">%macroname</code>, for example:
-   </p><div class="verbatim-wrap"><pre class="screen">%_hardened_build 0</pre></div></div></div></div></div><div class="page-bottom"><div id="_bottom-navigation"><a class="nav-link" href="par.working.html"><span class="next-icon">→</span><span class="nav-label"><span class="number">Part IV </span>Usage</span></a><a class="nav-link" href="cha.obs.osc.html"><span class="prev-icon">←</span><span class="nav-label"><span class="number">Chapter 3 </span>osc, the Command Line Tool</span></a></div><div class="_share-print"><div class="online-contents share"><strong>Share this page: </strong><span class="share-buttons"><span class="_share-fb bottom-button">Facebook</span><span class="spacer"> • </span><span class="_share-in bottom-button">LinkedIn</span><span class="spacer"> • </span><span class="_share-tw bottom-button">Twitter</span><span class="spacer"> • </span><span class="_share-mail bottom-button">E-Mail</span></span></div><div class="print"><span class="_print-button bottom-button">Print this page</span></div><div class="clearme"></div></div></div></div><div id="_inward"></div></div><div id="_footer-wrap"><div id="_footer"><p>©
-        2024 
-        SUSE</p><ul><li><a href="https://jobs.suse.com/" target="_top">Careers</a></li><li><a href="https://www.suse.com/company/legal/" target="_top">Legal</a></li><li><a href="https://www.suse.com/company/about/" target="_top">About</a></li><li><a href="https://www.suse.com/contact/" target="_top">Contact Us</a></li></ul></div></div></body></html>
+   </p><div class="verbatim-wrap"><pre class="screen">%_hardened_build 0</pre></div></section></section></section><nav class="bottom-pagination"><div><a class="pagination-link prev" href="cha.obs.osc.html"><span class="pagination-relation">Previous</span><span class="pagination-label"><span class="title-number">Chapter 3 </span>osc, the Command Line Tool</span></a> </div><div><a class="pagination-link next" href="par.working.html"><span class="pagination-relation">Next</span><span class="pagination-label"><span class="title-number">Part IV </span>Usage</span></a> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="sect1"><a href="cha.obs.prjconfig.html#sec.prjconfig.about"><span class="title-number">4.1 </span><span class="title-name">About the Build Configuration</span></a></span></li><li><span class="sect1"><a href="cha.obs.prjconfig.html#sec.prjconfig.syntax"><span class="title-number">4.2 </span><span class="title-name">Configuration File Syntax</span></a></span></li><li><span class="sect1"><a href="cha.obs.prjconfig.html#sec.prjconfig.ccache"><span class="title-number">4.3 </span><span class="title-name">Building with ccache or sccache</span></a></span></li><li><span class="sect1"><a href="cha.obs.prjconfig.html#sec.prjconfig.macros"><span class="title-number">4.4 </span><span class="title-name">Macro Definitions in the Build Configuration</span></a></span></li></ul></div><div class="side-title">Share this page</div><ul class="share"><li><a id="_share-fb" href="#" title="Facebook"> </a></li><li><a id="_share-in" href="#" title="LinkedIn"> </a></li><li><a id="_share-tw" href="#" title="Twitter/X"> </a></li><li><a id="_share-mail" href="#" title="E-Mail"> </a></li><li><a id="_print-button" href="#" title="Print this page"> </a></li></ul> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
+                 2024</span></div></div></footer></body></html>
