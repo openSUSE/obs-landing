@@ -177,7 +177,7 @@ hljs.configure({
    You can see how it looks like in
    <a class="xref" href="cha.obs.best-practices.upstream.html#cha.obs.best-practices.upstream.download.screenshot" title="openSUSE download page for package from OBS">Figure 15.1, “openSUSE download page for package from OBS”</a>. It
    contains links to the packages and instructions how to install them.
-  </p><div class="figure" id="cha.obs.best-practices.upstream.download.screenshot"><div class="figure-contents"><div class="mediaobject"><a href="images/download_page_screenshot.png"><img src="images/download_page_screenshot.png" width="800" alt="openSUSE download page for package from OBS" title="openSUSE download page for package from OBS"/></a></div></div><div class="title-container"><div class="figure-title-wrap"><div class="figure-title"><span class="title-number-name"><span class="title-number">Figure 15.1: </span><span class="title-name">openSUSE download page for package from OBS </span></span><a title="Permalink" class="permalink" href="cha.obs.best-practices.upstream.html#cha.obs.best-practices.upstream.download.screenshot">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div><p>
+  </p><div class="figure" id="cha.obs.best-practices.upstream.download.screenshot"><div class="figure-contents"><div class="mediaobject"><a href="images/download_page_screenshot.png"><img src="images/download_page_screenshot.png" width="80%" alt="openSUSE download page for package from OBS" title="openSUSE download page for package from OBS"/></a></div></div><div class="title-container"><div class="figure-title-wrap"><div class="figure-title"><span class="title-number-name"><span class="title-number">Figure 15.1: </span><span class="title-name">openSUSE download page for package from OBS </span></span><a title="Permalink" class="permalink" href="cha.obs.best-practices.upstream.html#cha.obs.best-practices.upstream.download.screenshot">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div><p>
    URL always has to start with
    <a class="link" href="http://software.opensuse.org/download.html?" target="_blank">http://software.opensuse.org/download.html?</a>.You can attach
    any number of <code class="literal">&amp;</code>-separated parameters. But at least two of them -
@@ -218,10 +218,10 @@ hljs.configure({
     a website, we would use
     <code class="code">object</code>
     to include download code:
-   </p><div class="verbatim-wrap"><pre class="screen">&lt;object type="text/html" 
+   </p><div class="verbatim-wrap"><pre class="screen">&lt;object type="text/html"
    data="http://software.opensuse.org/download.html?project=openSUSE:Tools&amp;package=osc&amp;bcolor=004&amp;acolor=ff0&amp;fcolor=fff&amp;hcolor=0ff"
    width="100%" height="100%"&gt;
-   &lt;param name="src" 
+   &lt;param name="src"
       value="http://software.opensuse.org/download.html?project=openSUSE:Tools&amp;package=osc&amp;bcolor=004&amp;acolor=ff0&amp;fcolor=fff&amp;hcolor=0ff" /&gt;
    Your browser doesn't support objects, please continue to the
    &lt;a href="http://software.opensuse.org/download.html?project=openSUSE:Tools&amp;package=osc&amp;bcolor=004&amp;acolor=ff0&amp;fcolor=fff&amp;hcolor=0ff"&gt;
@@ -232,10 +232,10 @@ hljs.configure({
    </p><div class="verbatim-wrap"><pre class="screen">&lt;?php
    $url = "http://software.opensuse.org/download.html?project=openSUSE:Tools&amp;package=osc&amp;bcolor=004&amp;acolor=ff0&amp;fcolor=fff&amp;hcolor=0ff";
    echo '
-&lt;object type="text/html" 
+&lt;object type="text/html"
    data="' . $url . '"
    width="100%" height="100%"&gt;
-   &lt;param name="src" 
+   &lt;param name="src"
       value="' . $url . '" /&gt;
    Your browser doesn't support objects, please continue to the
    &lt;a href="' . $url . '"&gt;download page&lt;/a&gt;

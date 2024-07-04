@@ -119,7 +119,7 @@ hljs.configure({
    data, but add to it. This means you can have multiple `BuildFlags`
    lines instead of having one line with all the flags you need.
   </p><p>
-   An exclamation mark `!` can be prepended to the argument to remove 
+   An exclamation mark `!` can be prepended to the argument to remove
    an existing entry from the data.
   </p><p>
    In the following list, the placeholder <em class="replaceable">PACKAGES</em>
@@ -146,9 +146,9 @@ hljs.configure({
        Use an alternative build engine. Examples are `mock` (for Fedora and
        Red Hat) and `debootstrap` (for Debian), `debbuild` (to build debian
        packages with spec files), `podman` (container builds).
-       
+
        Here is an example config for `debbuild`:
-	</p><div class="verbatim-wrap"><pre class="screen">Type: spec
+        </p><div class="verbatim-wrap"><pre class="screen">Type: spec
 Repotype: debian
 Binarytype: deb
 BuildEngine: debbuild
@@ -171,7 +171,7 @@ Support: pax debbuild</pre></div></dd><dt id="id-1.2.7.3.4.9.4"><span class="ter
          <code class="literal">vmfsoptions:nodirindex</code>
         </p></dd><dt id="id-1.2.7.3.4.9.4.2.2.4"><span class="term"><em class="parameter">kiwiprofile:PROFILE</em></span></dt><dd><p>Selects the profiles to build in kiwi appliance builds.</p></dd><dt id="id-1.2.7.3.4.9.4.2.2.5"><span class="term"><em class="parameter">logidlelimit:SECONDS</em></span></dt><dd><p>Build jobs which do not create any output are aborted after some time.
                This flag can be used to modify the limit.</p></dd><dt id="id-1.2.7.3.4.9.4.2.2.6"><span class="term"><em class="parameter">excludebuild:PACKAGE</em></span></dt><dd><p>Exclude a package from building. If a package builds multiple flavors,
-	       the corresponding flavor can be specified via the `package:flavor` syntax.</p></dd><dt id="id-1.2.7.3.4.9.4.2.2.7"><span class="term"><em class="parameter">onlybuild:PACKAGE</em></span></dt><dd><p>DANGER: this may remove many build results when introduced the first time!
+               the corresponding flavor can be specified via the `package:flavor` syntax.</p></dd><dt id="id-1.2.7.3.4.9.4.2.2.7"><span class="term"><em class="parameter">onlybuild:PACKAGE</em></span></dt><dd><p>DANGER: this may remove many build results when introduced the first time!
                It can be used to maintain a whitelist of packages to be built. All other packages
                will turn to excluded state and get removed if available.</p></dd><dt id="id-1.2.7.3.4.9.4.2.2.8"><span class="term"><em class="parameter">useccache:PACKAGE</em></span></dt><dd><p>
          Configure usage of ccache when building the specified package.
@@ -194,18 +194,18 @@ Support: pax debbuild</pre></div></dd><dt id="id-1.2.7.3.4.9.4"><span class="ter
           A common use case for <code class="literal">obsgendiff</code> is to run <a class="link" href="https://github.com/openSUSE/release-compare" target="_blank">release-compare</a>
           after the build.
         </p></dd><dt id="id-1.2.7.3.4.9.4.2.2.11"><span class="term"><em class="parameter">setvcs</em></span></dt><dd><p>
-          Add the SCM URL to binary results when the package sources are managed 
+          Add the SCM URL to binary results when the package sources are managed
           via the scmsync mechanic. The url is written into the VCS tag of rpms
           when enabling this functionality.
         </p></dd><dt id="id-1.2.7.3.4.9.4.2.2.12"><span class="term"><em class="parameter">nodisturl</em></span></dt><dd><p>
-	  Skip the embedding of DISTURL tag into binaries. Please note that this might
-	  also break other features like binary tracking. So never do this for maintained
-	  binaries.
+          Skip the embedding of DISTURL tag into binaries. Please note that this might
+          also break other features like binary tracking. So never do this for maintained
+          binaries.
         </p></dd><dt id="id-1.2.7.3.4.9.4.2.2.13"><span class="term"><em class="parameter">sbom:FORMAT</em></span></dt><dd><p>
-	  OBS 2.11 can produce and publish additional SBOM (Software Bill Of Material) 
-	  meta data by enabling this flag.
-	  This is currently supported for container and kiwi images builds and includes
-	  only data from installed rpm packages. Supported formats are spdx and cyclonedx.
+          OBS 2.11 can produce and publish additional SBOM (Software Bill Of Material)
+          meta data by enabling this flag.
+          This is currently supported for container and kiwi images builds and includes
+          only data from installed rpm packages. Supported formats are spdx and cyclonedx.
         </p></dd><dt id="id-1.2.7.3.4.9.4.2.2.14"><span class="term"><em class="parameter">container-compression-format:FORMAT</em></span></dt><dd><p>
           Sets a compression format for container layers. Possible values are gzip, zstd,
           zstd:chunked. Every value other than gzip is only supported by podman and buildah.
@@ -223,7 +223,7 @@ Support: pax debbuild</pre></div></dd><dt id="id-1.2.7.3.4.9.4"><span class="ter
       that the macro will not be written to the .rpmmacros file. It should
       therefore be used for macros that come from packages of the
       distributions.
-      
+
       Note that the lines of the project config are macro expanded while
       parsing, so you have to use `%%` for a literal percent sign in
       the value.
@@ -232,8 +232,8 @@ Support: pax debbuild</pre></div></dd><dt id="id-1.2.7.3.4.9.4"><span class="ter
      </p><div class="variablelist"><dl class="variablelist"><dt id="id-1.2.7.3.4.9.9.2.2.1"><span class="term"><em class="parameter">unorderedimagerepos</em> (OBS 2.10 or later)</span></dt><dd><p>The priority of repositories defined in an image build is usually important. This is to avoid switching repositories
            when the same package is available in multiple repositories. However, it might be wanted to ignore that and just
            pick the highest version. This can be achieved by defining this flag</p></dd><dt id="id-1.2.7.3.4.9.9.2.2.2"><span class="term"><em class="parameter">preinstallexpand</em></span></dt><dd><p>Preinstall also all dependencies of a preinstalled package.
-                 This may increase the amount of preinstalled packages a lot.</p></dd><dt id="id-1.2.7.3.4.9.9.2.2.3"><span class="term"><em class="parameter">module:NAME-STREAM</em> (OBS 2.10.7 or later)</span></dt><dd><p>Enable Red Hat-specific module support in repo md repositories. By default, 
-	      no module is used, so every module needed needs to be
+                 This may increase the amount of preinstalled packages a lot.</p></dd><dt id="id-1.2.7.3.4.9.9.2.2.3"><span class="term"><em class="parameter">module:NAME-STREAM</em> (OBS 2.10.7 or later)</span></dt><dd><p>Enable Red Hat-specific module support in repo md repositories. By default,
+              no module is used, so every module needed needs to be
               specified in the configuration. To remove a module,
               add an exclamation mark (<code class="literal">!</code>) as prefix.</p></dd><dt id="id-1.2.7.3.4.9.9.2.2.4"><span class="term"><em class="parameter">dorecommends</em></span></dt><dd><p>Try to install all recommended packages. Packages with dependency conflicts
                 are ignored.</p></dd><dt id="id-1.2.7.3.4.9.9.2.2.5"><span class="term"><em class="parameter">dosupplements</em></span></dt><dd><p>Try to install all supplemented packages. Packages with dependency conflicts
@@ -332,9 +332,9 @@ Support: pax debbuild</pre></div></dd><dt id="id-1.2.7.3.4.9.4"><span class="ter
             That means, packages can be published for an architecture on which it builds,
             even if a package fails to build on another architecture.
            </p><p>
-	    This is by default evaluated individually for each architecture. It can be
-	    combined with the archsync flag when publishing should be blocked also when a failure
-	    exists on any architecture.
+            This is by default evaluated individually for each architecture. It can be
+            combined with the archsync flag when publishing should be blocked also when a failure
+            exists on any architecture.
            </p></dd><dt id="id-1.2.7.3.4.9.23.2.2.6"><span class="term"><em class="parameter">keepobsolete</em> (OBS 2.11 or later)</span></dt><dd><p>
              The default behaviour of OBS is to remove binaries when a package object gets removed,
              even when the project is publish disabled (but the package may have been enabled).
@@ -415,16 +415,12 @@ Support: pax debbuild</pre></div></dd><dt id="id-1.2.7.3.4.9.4"><span class="ter
   </p><p>
     An alternative way to enable caching based on build dependencies is to
     add "--enable-cache" as dependency, for example via a Substitute rule:
-  </p><div class="verbatim-wrap"><pre class="screen"><code class="command">
-      Substitute: gcc-c++ gcc-c++ --enable-ccache
-  </code></pre></div><p>
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="command">Substitute: gcc-c++ gcc-c++ --enable-ccache</code></pre></div><p>
     This will always enable ccache when a direct build depdency to gcc-c++
     is required.
   </p><p>
     It is also possible to set the type, eg:
-  </p><div class="verbatim-wrap"><pre class="screen"><code class="command">
-      Substitute: cargo cargo --enable-ccache=sccache
-  </code></pre></div></section><section class="sect1" id="sec.prjconfig.macros" data-id-title="Macro Definitions in the Build Configuration"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">4.4 </span><span class="title-name">Macro Definitions in the Build Configuration</span></span> <a title="Permalink" class="permalink" href="cha.obs.prjconfig.html#sec.prjconfig.macros">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="command">Substitute: cargo cargo --enable-ccache=sccache</code></pre></div></section><section class="sect1" id="sec.prjconfig.macros" data-id-title="Macro Definitions in the Build Configuration"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">4.4 </span><span class="title-name">Macro Definitions in the Build Configuration</span></span> <a title="Permalink" class="permalink" href="cha.obs.prjconfig.html#sec.prjconfig.macros">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
     You can use rpm macro definitions in the build configuration (prjconf) to improve
     configurability. There are two types of macros that can be defined in the build
     configuration:
@@ -447,7 +443,7 @@ Support: pax debbuild</pre></div></dd><dt id="id-1.2.7.3.4.9.4"><span class="ter
        The DistMacro can be used to define a macro for build dependency resolution.
        It is intended to be used when a distribution defines relevant macros inside
        of any of their packages. These macros are hidden by default to the Open Build Service dependency
-       resolver. Use this directive to make it known to Open Build Service. 
+       resolver. Use this directive to make it known to Open Build Service.
 
        Unlike Macros:, DistMacro won't overwrite any existing and possibly
        changed definition at build time.

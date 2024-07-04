@@ -127,7 +127,7 @@ hljs.configure({
    OCI-compatible registry, with the URLs to the images constructed as follows:
    <code class="literal"> $BASE/$PROJECT/$REPOSITORY/$IMAGE_NAME:$TAG </code> with the
    following components:
-   </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
       <code class="literal">$BASE</code>: URL/IP under which the Open Build Service
       instance is reachable
      </p></li><li class="listitem"><p>
@@ -149,7 +149,6 @@ hljs.configure({
       <code class="literal">latest</code> with alternatives being provided in a similar
       fashion as the image's name.
      </p></li></ul></div><p>
-  </p><p>
    The
    <a class="link" href="https://github.com/openSUSE/cooverview" target="_blank">cooverview</a>
    project provides a simple user-facing webpage to search for containers
@@ -168,7 +167,7 @@ hljs.configure({
      Create a <code class="literal">yaml</code> file under
      <code class="literal">/etc/containers/registries.d/</code> with an appropriate name
      for your instance and the following contents:
-     </p><div class="example" id="id-1.2.10.5.6.4.1.1.3" data-id-title="registry.yaml"><div class="title-container"><div class="example-title-wrap"><div class="example-title"><span class="title-number-name"><span class="title-number">Example 24.1: </span><span class="title-name">registry.yaml </span></span><a title="Permalink" class="permalink" href="cha.obs.build_containers.html#id-1.2.10.5.6.4.1.1.3">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div><div class="example-contents"><div class="verbatim-wrap"><pre class="screen">---
+    </p><div class="example" id="id-1.2.10.5.6.4.1.2" data-id-title="registry.yaml"><div class="title-container"><div class="example-title-wrap"><div class="example-title"><span class="title-number-name"><span class="title-number">Example 24.1: </span><span class="title-name">registry.yaml </span></span><a title="Permalink" class="permalink" href="cha.obs.build_containers.html#id-1.2.10.5.6.4.1.2">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div><div class="example-contents"><div class="verbatim-wrap"><pre class="screen">---
 docker:
   <em class="replaceable">REGISTRY_URL</em>:
     sigstore: <em class="replaceable">REGISTRY_URL</em>/sigstore</pre></div></div></div><p>

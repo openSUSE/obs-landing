@@ -86,10 +86,10 @@ hljs.configure({
    and the repository name where the binary got built. Last part is the source
    md5 sum and the package name. </p><p> The disturl can also be entered in the search field of the web
    interface of the build service. </p><p>rpm packages managed via the scmsync mechanic may have also the VCS tag.
-   It provides the git repository URL when the project is build using the
-    </p><div class="verbatim-wrap"><pre class="screen"><code class="command">BuildFlags: setvcs</code></pre></div><p>
-   flag in the build config.
-  </p></section><section class="sect1" id="id-1.2.10.6.4" data-id-title="Generating SLSA Provenance Data"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">25.2 </span><span class="title-name">Generating SLSA Provenance Data</span></span> <a title="Permalink" class="permalink" href="cha.obs.source_management.html#id-1.2.10.6.4">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p> 
+  It provides the git repository URL when the project is build using the
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="command">BuildFlags: setvcs</code></pre></div><p>
+    flag in the build config.
+  </p></section><section class="sect1" id="id-1.2.10.6.4" data-id-title="Generating SLSA Provenance Data"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">25.2 </span><span class="title-name">Generating SLSA Provenance Data</span></span> <a title="Permalink" class="permalink" href="cha.obs.source_management.html#id-1.2.10.6.4">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
           OBS 2.11 can produce and publish additional SLSA provenance attestation
           files. This files are currently following the v0.2 Alpha spec, which is
           suspect to change. We will change the code to follow the specification,
@@ -100,7 +100,7 @@ hljs.configure({
           that the functionality is expensive in regards of disk space. All old
           binaries used for build are kept.
           You may want to enable it nevertheless by setting the slsaprovenance variable
-          in BSConfig.pm with a list of projects to enable it.</p></section><section class="sect1" id="id-1.2.10.6.5" data-id-title="Generating SBOM (Software Bill Of Material) Data"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">25.3 </span><span class="title-name">Generating SBOM (Software Bill Of Material) Data</span></span> <a title="Permalink" class="permalink" href="cha.obs.source_management.html#id-1.2.10.6.5">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p> 
+          in BSConfig.pm with a list of projects to enable it.</p></section><section class="sect1" id="id-1.2.10.6.5" data-id-title="Generating SBOM (Software Bill Of Material) Data"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">25.3 </span><span class="title-name">Generating SBOM (Software Bill Of Material) Data</span></span> <a title="Permalink" class="permalink" href="cha.obs.source_management.html#id-1.2.10.6.5">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
      OBS 2.11 can produce and publish additional SPDX data for certain build types.
      This is controlled via the project configuration. For details, refer to
      <a class="xref" href="cha.obs.prjconfig.html#sec.prjconfig.syntax" title="4.2. Configuration File Syntax">Section 4.2, “Configuration File Syntax”</a> for

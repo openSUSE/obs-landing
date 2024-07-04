@@ -1701,20 +1701,20 @@ amqp_queue_options:
             </p>
           </td></tr></tbody></table></div></div></section></section></section><section class="sect1" id="_backup" data-id-title="Backup"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">4.10 </span><span class="title-name">Backup</span></span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_backup">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
     Open Build Service configuration and content needs usually a backup. The following explains
-    suggested strategies and places considered for a backup. 
+    suggested strategies and places considered for a backup.
   </p><section class="sect2" id="_backup_places" data-id-title="Places to consider"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">4.10.1 </span><span class="title-name">Places to consider</span></span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_backup_places">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The following is pointing to the places with admin configurations or user content.
-	 The default location places are considered here.
+         The default location places are considered here.
    </p><section class="sect3" id="_backup_configuration_frontend" data-id-title="Frontend Configuration"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">4.10.1.1 </span><span class="title-name">Frontend Configuration</span></span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_backup_configuration_frontend">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>/srv/www/obs/api/config</p></li><li class="listitem"><p>/srv/www/obs/api/log (optional)</p></li></ul></div><p>The configuration is not changing usually. It is enough to backup it after config changes.
     </p></section><section class="sect3" id="_backup_database_frontend" data-id-title="Frontend Database"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">4.10.1.2 </span><span class="title-name">Frontend Database</span></span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_backup_database_frontend">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The MySQL/MariaDB database backup can be done in different ways. Please consider the database
-	   manual for details. One possible way is to create dumps via mysqldump tool. The backup should be
-	   done at the same point of time as the source server. Inconsistencies can be resolved
+           manual for details. One possible way is to create dumps via mysqldump tool. The backup should be
+           done at the same point of time as the source server. Inconsistencies can be resolved
            using the check_consistency tool.</p></section><section class="sect3" id="_backup_backend_configuration" data-id-title="Backend Configuration"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">4.10.1.3 </span><span class="title-name">Backend Configuration</span></span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_backup_backend_configuration">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The backend has a single configuration file which may got altered. This is by default
-	     /usr/lib/obs/server/BSConfig.pm . The file is not supposed to be changed usually and
-	     it can only be done by the system root user. A backup after a change is sufficient.
+             /usr/lib/obs/server/BSConfig.pm . The file is not supposed to be changed usually and
+             it can only be done by the system root user. A backup after a change is sufficient.
      </p></section><section class="sect3" id="_backup_backend_content" data-id-title="Backend Content"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">4.10.1.4 </span><span class="title-name">Backend Content</span></span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_backup_backend_content">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>All backend content is below /srv/obs directory. This include the sources, build results and
-	   also all configuration changes done by the OBS admin users.
+           also all configuration changes done by the OBS admin users.
      </p></section></section><section class="sect2" id="_backup_strategies" data-id-title="Backup strategies"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">4.10.2 </span><span class="title-name">Backup strategies</span></span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_backup_strategies">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
-     A backup is ideally taken only from a not running service. In real live this is 
+     A backup is ideally taken only from a not running service. In real live this is
      usually not possible, so it is important to run a backup on a production system.
    </p><section class="sect3" id="_backup_strategy_database" data-id-title="Database"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">4.10.2.1 </span><span class="title-name">Database</span></span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_backup_strategy_database">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>MySQL backup either directly from a non-primary node in the galera
     cluster (table dump locks the database during operation) or from a mysql slave
@@ -1722,8 +1722,7 @@ amqp_queue_options:
     </p></section><section class="sect3" id="_backup_strategy_backend_sources" data-id-title="Sources"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">4.10.2.2 </span><span class="title-name">Sources</span></span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_backup_strategy_backend_sources">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The sources are supposed to be backup at the same time as the database. This
            can get achieved by either having a dedicated instance for the source server
            or by having a backup of the following directories.
-     </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>/srv/obs/projects</p></li><li class="listitem"><p>/srv/obs/sources</p></li></ul></div><p>
-    </p></section><section class="sect3" id="_backup_strategy_backend_binaries" data-id-title="Build Results"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">4.10.2.3 </span><span class="title-name">Build Results</span></span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_backup_strategy_backend_binaries">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>Full backups via snapshots, either offered by the SAN storage or
+     </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>/srv/obs/projects</p></li><li class="listitem"><p>/srv/obs/sources</p></li></ul></div></section><section class="sect3" id="_backup_strategy_backend_binaries" data-id-title="Build Results"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">4.10.2.3 </span><span class="title-name">Build Results</span></span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_backup_strategy_backend_binaries">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>Full backups via snapshots, either offered by the SAN storage or
     via LVM snapshot methods. Consistency is normally on repository level. Any inconsistency
     will be found by the scheduler and content will be retriggered. This is not true
     for disabled builds like released builds.
@@ -1731,36 +1730,34 @@ amqp_queue_options:
     A restored system might contain inconsistencies if it was taken from a running service.
     These can be resolved as follows.
   </p><section class="sect2" id="_restore_database_inconsistencies" data-id-title="Check and repair database inconsistencies"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">4.11.1 </span><span class="title-name">Check and repair database inconsistencies</span></span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_restore_database_inconsistencies">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>If either database portions or sources got restored there are chances for inconsistencies.
-	   These can be found via
-	   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">cd /srv/www/obs/api/</code> 
-	           <code class="prompt user">geeko &gt; </code><code class="command">./bin/rails c</code> 
-	           <code class="prompt user">geeko &gt; </code><code class="command">ConsistencyCheckJob.new.perform</code></pre></div><p>
-	   Single projects can be either checked with
-	   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">cd /srv/www/obs/api/</code> 
-	           <code class="prompt user">geeko &gt; </code><code class="command">./bin/rake check_project project="YOUR_PROJECT"</code></pre></div><p>
-	   or inconsistencies fixed via
-	   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">cd /srv/www/obs/api/</code> 
-	           <code class="prompt user">geeko &gt; </code><code class="command">./bin/rake fix_project project="YOUR_PROJECT"</code></pre></div><p>
-   </p></section><section class="sect2" id="_restore_binaries" data-id-title="Binaries"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">4.11.2 </span><span class="title-name">Binaries</span></span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_restore_binaries">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>All build results are evaluated by the scheduler. Therefore any inconsistency can be
-	   detected by the scheduler. One way is to enforce a cold start, which means that the
-	   scheduler would rescan all sources and binaries and trigger builds where needed.
-	   This can be achieved by
-	   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">rcobsscheduler stop     # ensure no scheduler is running</code> 
-	           <code class="prompt user">geeko &gt; </code><code class="command">rm /srv/obs/run/*.state # remove all state files</code> 
-	           <code class="prompt user">geeko &gt; </code><code class="command">rcobsscheduler start</code></pre></div><p>
-	   The scheduler state will be visible as in cold start. It may take a longer time, so it
-	   might be more efficient to check only certain projects or architectures if needed.
-	   This can be triggered in a running system by executing
-	   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">obs_admin --check-project PROJECT ARCHITERCTURE</code></pre></div><p>
-	   A deep check is necessary in case sources have been restored:
-	   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">obs_admin --deep-check-project PROJECT ARCHITERCTURE</code></pre></div><p>
-   </p></section></section><section class="sect1" id="_handle_data_corruption" data-id-title="Repair Data Corruption"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">4.12 </span><span class="title-name">Repair Data Corruption</span></span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_handle_data_corruption">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
-	  On-disk data might be corrupted independent of a restore. For example due to power outage, filesystem
-	  or disk errors. A MySQL/Maria database in a cluster should repair itself in that case. Data
-	  on disk in the backend parts can be checked and fixed using an dedicated tool. See the help
-	  of the tool for further details or run
-	  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">/usr/lib/obs/server/bs_check_consistency --check-all</code></pre></div><p>
-	  Data can be repaired using the fix options.
+   These can be found via
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">cd /srv/www/obs/api/</code>
+<code class="prompt user">geeko &gt; </code><code class="command">./bin/rails c</code>
+<code class="prompt user">geeko &gt; </code><code class="command">ConsistencyCheckJob.new.perform</code></pre></div><p>
+             Single projects can be either checked with
+           </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">cd /srv/www/obs/api/</code>
+<code class="prompt user">geeko &gt; </code><code class="command">./bin/rake check_project project="YOUR_PROJECT"</code></pre></div><p>
+             or inconsistencies fixed via
+           </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">cd /srv/www/obs/api/</code>
+<code class="prompt user">geeko &gt; </code><code class="command">./bin/rake fix_project project="YOUR_PROJECT"</code></pre></div></section><section class="sect2" id="_restore_binaries" data-id-title="Binaries"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">4.11.2 </span><span class="title-name">Binaries</span></span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_restore_binaries">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>All build results are evaluated by the scheduler. Therefore any inconsistency can be
+           detected by the scheduler. One way is to enforce a cold start, which means that the
+           scheduler would rescan all sources and binaries and trigger builds where needed.
+           This can be achieved by
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">rcobsscheduler stop     # ensure no scheduler is running</code>
+<code class="prompt user">geeko &gt; </code><code class="command">rm /srv/obs/run/*.state # remove all state files</code>
+<code class="prompt user">geeko &gt; </code><code class="command">rcobsscheduler start</code></pre></div><p>
+     The scheduler state will be visible as in cold start. It may take a longer time, so it
+           might be more efficient to check only certain projects or architectures if needed.
+           This can be triggered in a running system by executing
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">obs_admin --check-project PROJECT ARCHITERCTURE</code></pre></div><p>
+     A deep check is necessary in case sources have been restored:
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">obs_admin --deep-check-project PROJECT ARCHITERCTURE</code></pre></div></section></section><section class="sect1" id="_handle_data_corruption" data-id-title="Repair Data Corruption"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">4.12 </span><span class="title-name">Repair Data Corruption</span></span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_handle_data_corruption">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
+          On-disk data might be corrupted independent of a restore. For example due to power outage, filesystem
+          or disk errors. A MySQL/Maria database in a cluster should repair itself in that case. Data
+          on disk in the backend parts can be checked and fixed using an dedicated tool. See the help
+          of the tool for further details or run
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">/usr/lib/obs/server/bs_check_consistency --check-all</code></pre></div><p>
+          Data can be repaired using the fix options.
   </p></section><section class="sect1" id="_obs_spider_identification" data-id-title="Spider Identification"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">4.13 </span><span class="title-name">Spider Identification</span></span> <a title="Permalink" class="permalink" href="obs.cha.administration.html#_obs_spider_identification">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p> OBS is hiding specific parts/pages of the application from search
   crawlers (DuckDuckGo, Google, etc.), mostly for performance reasons. Which
   user-agent strings are identified as crawlers configured in the file
