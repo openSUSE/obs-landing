@@ -573,14 +573,13 @@ Patch0:         my-first-obs-package_main.diff</pre></div></li><li class="step">
     </p></li><li class="listitem"><p>
      To apply temporary changes to try out a different path of development.
     </p></li></ul></div><p>
-   We assume that you have checked out the project
-   <code class="uri">home:obsgeeko/my-first-obs-package</code>
-   on OBS and the user <code class="systemitem">obstux</code>
-   wants to change the code to change the welcome message. The code should
-   then be submitted to the original project.
+   Let us assume that there is a user <code class="systemitem">obsgeeko</code>
+   who has created a package <code class="uri">home:obsgeeko/my-first-obs-package</code>
+   on OBS. Now, a second user, <code class="systemitem">obstux</code>,
+   would like to submit a code change request to that package.
   </p><p>
    User <code class="systemitem">obstux</code> has to perform the
-   following steps.
+   following steps:
   </p><div class="procedure" id="pro.obsbg.uc.branchprj" data-id-title="Branching from a Project"><div class="title-container"><div class="procedure-title-wrap"><div class="procedure-title"><span class="title-number-name"><span class="title-number">Procedure 1.4: </span><span class="title-name">Branching from a Project </span></span><a title="Permalink" class="permalink" href="art.obs.bg.html#pro.obsbg.uc.branchprj">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
      In the terminal, choose or create a directory on a local partition with
      enough free space.
@@ -608,10 +607,15 @@ Patch0:         my-first-obs-package_main.diff</pre></div></li><li class="step">
      destination projects and the package name:
     </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">tux &gt; </code><code class="command">osc</code> submitreq home:obstux:branches:home:obsgeeko my-first-obs-package home:obsgeeko</pre></div></li></ol></div></div><p>
    User <code class="systemitem">obstux</code> has
-   finished the task now and the submit request is assigned to <code class="systemitem">obsgeeko</code>. User <code class="systemitem">obsgeeko</code> can now either accept or decline
-   the submit request.
-  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p><span class="formalpara-title">Accept the Submit Request. </span>The changes from user <code class="systemitem">obstux</code> will be integrated into the
-     <code class="uri">home:obsgeeko</code> project. The accepted submit request will be
+   finished the task now and the submit request is assigned to
+   <code class="systemitem">obsgeeko</code>. User
+   <code class="systemitem">obsgeeko</code> can now either accept or
+   decline the submit request (<span class="quote">“<span class="quote">SR</span>”</span>). Also, as long as the SR remains
+   open, <code class="systemitem">obstux</code> can also supersede
+   it with a new request.
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p><span class="formalpara-title">Accept the Submit Request. </span>The changes from user
+      <code class="systemitem">obstux</code> will be integrated into
+      the <code class="uri">home:obsgeeko</code> project. The accepted submit request will be
       closed. To make further changes, obstux needs to create a new submit
       request.
      </p></li><li class="listitem"><p><span class="formalpara-title">Decline the Submit Request. </span>
@@ -623,7 +627,17 @@ Patch0:         my-first-obs-package_main.diff</pre></div></li><li class="step">
       request. User obstux can then 1) correct their submission using a new submit
       request that supersedes the previous one, 2) disagree and reopen
       the request, or 3) accept the decline and revoke the request.
-    </p></li></ul></div><p>
+    </p></li><li class="listitem"><p><span class="formalpara-title">Supersede the Submit Request. </span>
+      As long as the SR is still open (and this includes the case when it has
+      been declined), <code class="systemitem">obstux</code> can
+      continue making changes in their local checkout and, at any time, issue a new
+      submit request using the above workflow. At submission time, OBS will detect
+      the existing (previous) SR and ask the submitter whether they would like to
+      supersede it. If <code class="systemitem">obstux</code> answers
+      "yes" here, the new SR will supersede the previous one. Alternatively, by
+      answering "no" to the supersede question, a second SR will be created alongside
+      the previous one.
+     </p></li></ul></div><p>
    User <code class="systemitem">obsgeeko</code> is responsible for
    the following.
   </p><div id="id-1.5.5.2.11.11" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>If preferred, the below steps can also be performed using the OBS GUI. Requests can be managed under the <span class="guimenu">Tasks</span> tab.</p></div><div class="procedure" id="pro.obsbg.uc.branchprj.sr" data-id-title="Dealing with Submit Requests"><div class="title-container"><div class="procedure-title-wrap"><div class="procedure-title"><span class="title-number-name"><span class="title-number">Procedure 1.5: </span><span class="title-name">Dealing with Submit Requests </span></span><a title="Permalink" class="permalink" href="art.obs.bg.html#pro.obsbg.uc.branchprj.sr">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>Show all submit requests that belong to your home project</p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">osc</code> request list -s new -P home:obsgeeko</pre></div></li><li class="step"><p>
