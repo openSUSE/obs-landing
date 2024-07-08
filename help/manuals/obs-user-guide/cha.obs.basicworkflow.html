@@ -141,13 +141,14 @@ hljs.configure({
     </p></li></ol></div></div><p>
    After a while, the defined build targets show up in your home project.
   </p></section><section class="sect1" id="sec.obs.basicworkflow.create-new" data-id-title="Creating a New Package"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">5.2 </span><span class="title-name">Creating a New Package</span></span> <a title="Permalink" class="permalink" href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.create-new">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
-   This section covers how to create packages from a project hosted on GitHub
-   (the <span class="quote">“<span class="quote">upstream project</span>”</span>). We assume that this project contains source code
-   which you want to package for different SUSE distributions.
+   This section covers how to create packages for an arbitrary software project,
+   which we will refer to here as the <span class="quote">“<span class="quote">upstream project</span>”</span>. We
+   assume that this project contains source code
+   which you want to package for one or more SUSE (openSUSE) distributions.
    We assume the setup of your home project in your OBS instance is
    already done. If not, refer to <a class="xref" href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.setuphome" title="5.1. Setting Up Your Home Project">Section 5.1, “Setting Up Your Home Project”</a>.
   </p><p>
-   To create a package from an upstream project, do the following:
+   To create a package from the upstream project, do the following:
   </p><div class="procedure" id="id-1.2.8.2.5.4" data-id-title="General Procedure to Build a RPM Package"><div class="title-container"><div class="procedure-title-wrap"><div class="procedure-title"><span class="title-number-name"><span class="title-number">Procedure 5.2: </span><span class="title-name">General Procedure to Build a RPM Package </span></span><a title="Permalink" class="permalink" href="cha.obs.basicworkflow.html#id-1.2.8.2.5.4">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
      Open a shell. Choose or create a directory on your system in a partition
      that has enough space to hold the package sources.
@@ -200,7 +201,15 @@ Fri Aug 23 08:42:42 UTC 2017 - <code class="systemitem">geeko</code>@example.com
      If you encounter problems, see <a class="xref" href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.builderrors" title="5.3. Investigating the Local Build Process">Section 5.3, “Investigating the Local Build Process”</a>.
     </p></li><li class="step"><p>
      Check if your build was successful. If everything was fine, commit the
-     files to your package to your home project on OBS:</p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">osc</code> commit</pre></div></li></ol></div></div></section><section class="sect1" id="sec.obs.basicworkflow.builderrors" data-id-title="Investigating the Local Build Process"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">5.3 </span><span class="title-name">Investigating the Local Build Process</span></span> <a title="Permalink" class="permalink" href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.builderrors">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
+     files to your package to your home project on OBS:</p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">osc</code> commit</pre></div></li></ol></div></div><p>
+   To delete a file in your working directory, merely deleting it from the local
+   filesystem (<code class="command">rm FILE</code>) is not sufficient, since
+   <code class="command">osc</code>, like any other Source Code Control System, will just complain
+   that the file is missing. If you really want to delete a file, use the command:
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">osc</code> delete FILE</pre></div><p>
+   While there is no dedicated <code class="command">osc</code> to "move" (rename) a file,
+   the desired end result can be obtained using the following procedure:
+  </p><div class="procedure" id="id-1.2.8.2.5.8" data-id-title="Procedure for Moving a File within a Locally Checked-out OBS Package"><div class="title-container"><div class="procedure-title-wrap"><div class="procedure-title"><span class="title-number-name"><span class="title-number">Procedure 5.3: </span><span class="title-name">Procedure for Moving a File within a Locally Checked-out OBS Package </span></span><a title="Permalink" class="permalink" href="cha.obs.basicworkflow.html#id-1.2.8.2.5.8">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">cp</code> ORIGINAL_FILE NEW_FILE</pre></div></li><li class="step"><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">osc</code> delete ORIGINAL_FILE</pre></div></li><li class="step"><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">osc</code> add NEW_FILE</pre></div></li><li class="step"><p>And, finally:</p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">osc</code> status</pre></div><p>to verify that the end result is as intended.</p></li></ol></div></div></section><section class="sect1" id="sec.obs.basicworkflow.builderrors" data-id-title="Investigating the Local Build Process"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">5.3 </span><span class="title-name">Investigating the Local Build Process</span></span> <a title="Permalink" class="permalink" href="cha.obs.basicworkflow.html#sec.obs.basicworkflow.builderrors">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
    It is hard to describe a general procedure when you encounter a build
    error. Most build errors are very specific to the package being built.
    However, there are generic tools that often help:
