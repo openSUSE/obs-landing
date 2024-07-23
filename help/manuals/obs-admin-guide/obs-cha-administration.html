@@ -1,0 +1,1927 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><title>Administrator Guide | Administration</title><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"/><link rel="schema.DCTERMS" href="http://purl.org/dc/terms/"/>
+<meta name="title" content="Administration"/>
+<meta name="description" content="obs_admin is a command-line tool used on the back-end server(s) to manage running services, submit maintenance tasks, and debug problems. It should b…"/>
+<meta name="book-title" content="Administrator Guide"/>
+<meta name="chapter-title" content="Chapter 5. Administration"/>
+<meta name="tracker-url" content="https://github.com/openSUSE/obs-docu/issues/new"/>
+<meta name="tracker-type" content="gh"/>
+<meta name="publisher" content="SUSE"/><meta property="og:title" content="Administration"/>
+<meta property="og:description" content="obs_admin is a command-line tool used on the back-end serve…"/>
+<meta property="og:type" content="article"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Administration"/>
+<meta name="twitter:description" content="obs_admin is a command-line tool used on the back-end serve…"/>
+<script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": ["TechArticle"],
+    "image": "https://www.suse.com/assets/img/suse-white-logo-green.svg",
+    
+     "isPartOf": {
+      "@type": "CreativeWorkSeries",
+      "name": "Product &amp; Solutions"
+    },
+    
+    "inLanguage": "en",
+    
+
+    "headline": "Administration",
+  
+    "description": "Administration",
+      
+    "author": [
+      {
+        "@type": "Corporation",
+        "name": "SUSE Product &amp; Solution Documentation Team",
+        "url": "https://www.suse.com/assets/img/suse-white-logo-green.svg"
+      }
+    ],
+      
+
+    "about": [
+      
+    ],
+  
+    "sameAs": [
+          "https://www.facebook.com/SUSEWorldwide/about",
+          "https://www.youtube.com/channel/UCHTfqIzPKz4f_dri36lAQGA",
+          "https://twitter.com/SUSE",
+          "https://www.linkedin.com/company/suse"
+    ],
+    "publisher": {
+      "@type": "Corporation",
+      "name": "SUSE",
+      "url": "https://documentation.suse.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.suse.com/assets/img/suse-white-logo-green.svg"
+      }
+    }
+  }</script>
+<link rel="prev" href="obs-cha-security-concepts.html" title="Chapter 4. Security Concepts"/><link rel="next" href="obs-cha-troubleshooting.html" title="Chapter 6. Troubleshooting"/><script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
+};
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"/></noscript><script src="static/js/script-purejs.js" type="text/javascript"> </script><script src="static/js/highlight.min.js" type="text/javascript"> </script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="wide offline js-off"><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-pagination">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><header id="_mainnav"><div class="growth-inhibitor"/></header><div class="crumbs"><div class="growth-inhibitor"><a class="crumb" href="index.html">Administrator Guide</a><span> / </span><a class="crumb" href="obs-cha-administration.html">Administration</a></div></div><main id="_content"><nav id="_side-toc-overall" class="side-toc"><div class="side-title">Administrator Guide</div><ol><li><a href="bk02pr01.html" class=" "><span class="title-number"> </span><span class="title-name">About this Guide</span></a></li><li><a href="cha-obs-admin.html" class=" "><span class="title-number">1 </span><span class="title-name">High-level Overview</span></a></li><li><a href="obs-cha-installation-and-configuration.html" class=" "><span class="title-number">2 </span><span class="title-name">Installation and Configuration</span></a></li><li><a href="obs-cha-overview-filesystem.html" class=" "><span class="title-number">3 </span><span class="title-name">File System Overview</span></a></li><li><a href="obs-cha-security-concepts.html" class=" "><span class="title-number">4 </span><span class="title-name">Security Concepts</span></a></li><li><a href="obs-cha-administration.html" class=" you-are-here"><span class="title-number">5 </span><span class="title-name">Administration</span></a></li><li><a href="obs-cha-troubleshooting.html" class=" "><span class="title-number">6 </span><span class="title-name">Troubleshooting</span></a></li><li><a href="cha-obs-best-practices-localsetup.html" class=" "><span class="title-number">7 </span><span class="title-name">Setting Up a Local OBS Instance</span></a></li><li><a href="bk02apa.html" class=" "><span class="title-number">A </span><span class="title-name">GNU Licenses</span></a></li> </ol> </nav><button id="_open-side-toc-overall" title="Contents"> </button><article class="documentation"><button id="_unfold-side-toc-page">On this page</button><section class="chapter" id="obs-cha-administration" data-id-title="Administration"><div class="titlepage"><div><div><div class="title-container"><h1 class="title"><span class="title-number-name"><span class="title-number">5 </span><span class="title-name">Administration</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><section class="sect1" id="tools" data-id-title="Tools"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">5.1 </span><span class="title-name">Tools</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#tools">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><section class="sect2" id="tools-obs-admin" data-id-title="obs_admin"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.1.1 </span><span class="title-name"><code class="command">obs_admin</code></span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#tools-obs-admin">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>obs_admin is a command-line tool used on the back-end server(s) to manage
+running services, submit maintenance tasks, and debug problems.
+It should be only used by experienced admins.</p><p>It has built-in help which you can display with <span class="emphasis"><em>obs_admin --help</em></span>.</p><p>Options to control the running services:</p><div class="verbatim-wrap"><pre class="screen">Job Controlling
+===============
+
+ --shutdown-scheduler &lt;architecture&gt;
+   Stops the scheduler nicely with dumping out its current state
+   for fast startup.
+
+ --check-project &lt;project&gt; &lt;architecture&gt;
+ --check-project &lt;project&gt; &lt;repository&gt; &lt;architecture&gt;
+ --check-all-projects &lt;architecture&gt;
+   Check status of a project and its repositories again
+
+ --deep-check-project &lt;project&gt; &lt;architecture&gt;
+ --deep-check-project &lt;project&gt; &lt;repository&gt; &lt;architecture&gt;
+   Check status of a project and its repositories again
+   This deep check also includes the sources, in case of lost events.
+
+ --check-package &lt;project&gt; &lt;package&gt; &lt;architecture&gt;
+   Check status of a package in all repositories
+
+ --publish-repository &lt;project&gt; &lt;repository&gt;
+   Creates an event for the publisher. The scheduler is NOT scanning for new packages.
+   The publisher may skip the event, if nothing has changed.
+   Use --republish-repository when you want to enforce a publish.
+
+ --unpublish-repository &lt;project&gt; &lt;repository&gt;
+   Removes the prepared :repo collection and let the publisher remove the result. This
+   is also updating the search database.
+   WARNING: this works also for locked projects!
+
+ --prefer-publish-event &lt;name&gt;
+   prefers a publish event to be next. &lt;name&gt; is the file name inside of the publish
+   event directory.
+
+ --republish-repository &lt;project&gt; &lt;repository&gt;
+   enforce to publish a repository
+
+ --rebuild-full-tree &lt;project&gt; &lt;repository&gt; &lt;arch&gt;
+   rebuild the content of :full/ directory
+
+ --clone-repository &lt;source project&gt; &lt;source repository&gt; &lt;destination repository&gt;
+ --clone-repository &lt;source project&gt; &lt;source repository&gt; &lt;destination project&gt; &lt;destination repository&gt;
+   Clone an existing repo into another existing repository.
+   Usefull for creating snapshots.
+
+ --rescan-repository &lt;project&gt; &lt;repository&gt; &lt;architecture&gt;
+   Asks the scheduler to scan a repository for new packages and add
+   them to the cache file.
+
+ --force-check-project &lt;project&gt; &lt;repository&gt; &lt;architecture&gt;
+   Enforces the check of an repository, even when it is currently blocked due to amount of
+   calculating time.
+
+ --create-patchinfo-from-updateinfo
+   creates a patchinfo submission based on an updateinfo information.</pre></div><p>Options for maintenance are:</p><div class="verbatim-wrap"><pre class="screen">Maintenance Tasks
+=================
+
+Note: the --update-*-db calls are usually only needed when corrupt data has been created, for
+      example after a file system corruption.
+
+ --update-source-db [&lt;project&gt;]
+   Update the index for all source files.
+
+ --update-request-db
+   Updates the index for all requests.
+
+ --remove-old-sources &lt;days&gt; &lt;y&gt; (--debug)
+   WARNING: this is an experimental feature atm. It may trash your data, but you have anyway
+            a backup, right?
+   remove sources older than &lt;x&gt; days, but keep &lt;y&gt; number of revisions
+   --debug for debug output</pre></div><p>Options for debugging:</p><div class="verbatim-wrap"><pre class="screen">Debug Options
+=============
+
+ --dump-cache &lt;project&gt; &lt;repository&gt; &lt;architecture&gt;
+   Dumps out the content of a binary cache file.
+   This shows all the content of a repository, including all provides
+   and requires.
+
+ --dump-state &lt;architecture&gt;
+
+ --dump-project-from-state &lt;project&gt; &lt;arch&gt;
+   dump the state of a project.
+
+ --dump-relsync &lt;file&gt;
+   To dump content of :relsync files.
+
+ --set-relsync &lt;file&gt; &lt;key&gt; &lt;value&gt;
+   Modify key content in a a :relsync file.
+
+ --check-meta-xml &lt;project&gt;
+ --check-meta-xml &lt;project&gt; &lt;package&gt;
+   Is parsing a project or package xml file and puts out error messages, in case of errors.
+
+ --check-product-xml &lt;file&gt;
+   Is parsing a product xml file and puts out error messages, in case of errors.
+   It does expand all xi:include references and validates the result.
+
+ --check-product-group-xml &lt;file&gt;
+   Is parsing a group xml file from a product definition and puts out error messages, in case of errors.
+
+ --check-kiwi-xml &lt;file&gt;
+ --check-kiwi-xml &lt;project&gt; &lt;package&gt;
+   Is parsing a KIWI xml file and puts out error messages, in case of errors.
+
+ --check-constraints &lt;file&gt;
+ --check-constraints &lt;project&gt; &lt;package&gt;
+   Validates a _constraints file
+
+ --check-pattern-xml &lt;file&gt;
+   Is parsing a pattern xml file and puts out error messages, in case of errors.
+
+ --check-request-xml &lt;file&gt;
+   Is parsing a request xml file and puts out error messages, in case of errors.
+
+ --parse-build-desc &lt;file&gt; [&lt;arch&gt; [&lt;buildconfigfile&gt;]]
+   Parse a spec, dsc or KIWI file with the Build script parser.
+
+ --show-scheduler-architectures
+   Show all architectures which are configured in configuration.xml to be supported by this instance.
+
+ --show-delta-file &lt;file&gt;
+   Show all instructions of a OBS delta file
+
+ --show-delta-store &lt;file&gt;
+   Show delta store statistics</pre></div></section><section class="sect2" id="tools-osc" data-id-title="osc"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.1.2 </span><span class="title-name"><code class="command">osc</code></span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#tools-osc">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The <span class="strong"><strong><span class="emphasis"><em>osc</em></span></strong></span> command-line client is mainly used by developers and packagers. But
+for some tasks, admin people also need this tool. It too has builtin help:
+use <span class="emphasis"><em>osc --help</em></span>. The tool needs to be configured first to know the
+OBS API URL and your user details.</p><p>To configure the <span class="strong"><strong><span class="emphasis"><em>osc</em></span></strong></span> tool the first time you need to call it with</p><div class="verbatim-wrap"><pre class="screen">osc -A &lt;URL to the OBS API&gt;
+For example:
+osc -A https://api.testobs.org</pre></div><p>Follow the instructions on the terminal.</p><div id="id-1.3.9.3.3.6" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.svg"/><div class="admon-title">Warning</div><p>The password is stored in clear text in the .oscrc file by default, so you need to
+give this file restrictive access rights, only read/write access for your user
+should be allowed. <span class="strong"><strong>osc</strong></span> allows to store the password in other ways (in keyrings
+for example) and may use different methods for authentication like
+Kerberos see <a class="xref" href="obs-cha-administration.html#user-and-group-management-authentication-methods-kerberos" title="5.8.7.2. Kerberos">Section 5.8.7.2, “Kerberos”</a>
+   </p></div><p>For admins the most important <span class="strong"><strong><span class="emphasis"><em>osc</em></span></strong></span> subcommands are:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+meta  - to create or update projects or package data
+</p></li><li class="listitem"><p>
+API - to read and write online configuration data
+</p></li></ul></div><section class="sect3" id="tools-osc-osc-meta-subcommand" data-id-title="osc meta Subcommand"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">5.1.2.1 </span><span class="title-name"><code class="command">osc meta</code> Subcommand</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#tools-osc-osc-meta-subcommand">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The <code class="command">osc meta</code> subcommand is documented inside the "osc" tool itself. This documentation can be displayed by issuing the command:</p><div class="verbatim-wrap"><pre class="screen">osc meta --help</pre></div></section><section class="sect3" id="tools-osc-osc-api-subcommand" data-id-title="osc api Subcommand"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">5.1.2.2 </span><span class="title-name"><code class="command">osc api</code> Subcommand</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#tools-osc-osc-api-subcommand">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The <code class="command">osc api</code> subcommand is documented inside the "osc" tool itself. This documentation can be displayed by issuing the command:</p><div class="verbatim-wrap"><pre class="screen">osc api --help</pre></div><p>The OBS API itself is documented at
+<a class="link" href="https://api.opensuse.org/apidocs/" target="_blank">https://api.opensuse.org/apidocs/</a>
+   </p><p>Some examples for admin stuff:</p><div class="verbatim-wrap"><pre class="screen"># Read the global configuration file
+  osc api /configuration
+# Update the global configuration
+  osc api /configuration -T /tmp/configuration.xml
+
+# Read the distributions list
+  osc api /distributions
+# Udate the distributions list
+  osc api /distributions -T /tmp/distributions.xml
+
+# retrieve statistics
+  osc api /statistics/latest_added</pre></div></section></section></section><section class="sect1" id="managing-build-targets" data-id-title="Managing Build Targets"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">5.2 </span><span class="title-name">Managing Build Targets</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#managing-build-targets">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><section class="sect2" id="managing-build-targets-interconnect" data-id-title="Interconnect"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.2.1 </span><span class="title-name">Interconnect</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#managing-build-targets-interconnect">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>Using another Open Build Service as source for build targets is the
+   easiest way to start. The advantage is, that you save local resources and
+   you do not need to build everything from scratch. The disadvantage is that
+   you depend on the remote instance, if it has a downtime your instance cannot
+   do any builds for these targets, if the remote admins decide to remove some
+   targets you cannot use them anymore.</p><p>The easiest way to interconnect with some of the public OBS
+   instances is to use the Web UI. You need to log in with an administrator
+   account of your instance to do this. On the start page of an administrator
+   account you will find a <span class="strong"><strong>Configuration</strong></span>
+   link. On the Configuration page you find an Interconnect tab on the top, use
+   this and select the public side you want.</p><p>If you want to connect to a not listed instance, you can simple
+   create a remote project using the <span class="emphasis"><em>osc meta prj</em></span> command.
+   A remote project differs from a local project as it has a <span class="strong"><strong>remoteurl</strong></span> tag (see <a class="xref" href="obs-cha-overview-filesystem.html#meta-data-project-meta-data" title="3.4.2. Project Metadata">Section 3.4.2, “Project Metadata”</a>).</p><p>Example:</p><div class="verbatim-wrap"><pre class="screen">&lt;project name="openSUSE.org"&gt;
+  &lt;title&gt;openSUSE.org Project Link&lt;/title&gt;
+  &lt;description&gt;
+This project refers to projects hosted on the openSUSE Build Service
+&lt;/description&gt;
+  &lt;remoteurl&gt;https://api.opensuse.org/public&lt;/remoteurl&gt;
+&lt;/project&gt;</pre></div><p>Sending this via osc to the server:</p><div class="verbatim-wrap"><pre class="screen">osc meta prj -m "add openSUSE.org remote" -F /tmp/openSUSE.org.prj</pre></div></section><section class="sect2" id="managing-build-targets-importing-distributions" data-id-title="Importing Distributions"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.2.2 </span><span class="title-name">Importing Distributions</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#managing-build-targets-importing-distributions">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>FIXME: describe how to do it using DoD</p></section></section><section class="sect1" id="sec-obs-source-service" data-id-title="Source Services"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">5.3 </span><span class="title-name">Source Services</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#sec-obs-source-service">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p> Source Services are tools to validate, generate or modify sources in a
+  trustable way. They are designed as smallest possible tools and can be
+  combined following the powerful idea of the classic UNIX design. </p><p> Design goals of source services were: </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p> server side generated files must be easy to identify and must not
+    be modifiable by the user. This way other users can trust them to be
+    generated in the documented way without modifications. </p></li><li class="listitem"><p> generated files must never create merge conflicts </p></li><li class="listitem"><p> generated files must be a separate commit to the user change
+   </p></li><li class="listitem"><p> services must be runnable at any time without user commit
+   </p></li><li class="listitem"><p> services must be runnable on server and client side in the same
+    way </p></li><li class="listitem"><p> services must be designed in a safe way. A source checkout and
+    service run must never harm the system of a user. </p></li><li class="listitem"><p> services shall be designed in a way to avoid unnecessary commits.
+    This means there shall be no time-dependent changes. In case the package
+    already contains the same file, the newly generated file must be dropped.
+   </p></li><li class="listitem"><p> local services can be added and used by everybody. </p></li><li class="listitem"><p> server side services must be installed by the admin of the OBS
+    server. </p></li><li class="listitem"><p> services can be defined per package or project wide. </p></li></ul></div><section class="sect2" id="id-1.3.9.5.5" data-id-title="Using Services for Validation"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.3.1 </span><span class="title-name">Using Services for Validation</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#id-1.3.9.5.5">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p> Source Services may be used to validate sources. This can happen per
+   package, which is useful when the packager wants to validate that downloaded
+   sources are really from the original maintainer. Or validation can happen
+   for an entire project to apply general policies. These services cannot get
+   skipped in any package </p><p> Validation can happen by validating files (for example using the
+    <code class="command">verify_file</code> or <code class="command">source_validator</code>
+   service. These services just fail in the error case which leads to the build
+   state "broken". Or validation can happen by redoing a certain action and
+   store the result as new file as <code class="command">download_files</code> is doing.
+   In this case the newly generated file will be used instead of the committed
+   one during build. </p></section><section class="sect2" id="id-1.3.9.5.6" data-id-title="Different Modes When Using Services"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.3.2 </span><span class="title-name">Different Modes When Using Services</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#id-1.3.9.5.6">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p> Each service can be used in a special mode defining when it should run
+   and how to use the result. This can be done per package or globally for an
+   entire project. </p><section class="sect3" id="id-1.3.9.5.6.3" data-id-title="Default Mode"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">5.3.2.1 </span><span class="title-name">Default Mode</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#id-1.3.9.5.6.3">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p> The default mode of a service is to always run after each commit on
+    the server side and locally before every local build. </p></section><section class="sect3" id="id-1.3.9.5.6.4" data-id-title="trylocal Mode"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">5.3.2.2 </span><span class="title-name"><code class="literal">trylocal</code> Mode</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#id-1.3.9.5.6.4">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p> The trylocal mode is running the service locally when using current
+    osc versions. The result gets committed as standard files and not named
+    with _service: prefix. Additionally the service runs on the server by
+    default, but usually the service should detect that the result is the same
+    and skip the generated files. If they differ (for example, because
+    the Web UI or API was used), they are generated and added on the
+    server. </p></section><section class="sect3" id="id-1.3.9.5.6.5" data-id-title="localonly Mode"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">5.3.2.3 </span><span class="title-name"><code class="literal">localonly</code> Mode</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#id-1.3.9.5.6.5">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p> The localonly mode is running the service locally when using current
+    osc versions. The result gets committed as standard files and not named
+    with _service: prefix. The service is never running on the server side. It
+    is also not possible to trigger it manually. </p></section><section class="sect3" id="id-1.3.9.5.6.6" data-id-title="serveronly Mode"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">5.3.2.4 </span><span class="title-name"><code class="literal">serveronly</code> Mode</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#id-1.3.9.5.6.6">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p> The serviceonly mode is running the service on the server only. This
+    can be useful, when the service is not available or can not work on
+    developer workstations. </p></section><section class="sect3" id="id-1.3.9.5.6.7" data-id-title="buildtime Mode"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">5.3.2.5 </span><span class="title-name"><code class="literal">buildtime</code> Mode</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#id-1.3.9.5.6.7">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p> The service is running inside of the build job, for local and server
+    side builds. A side effect is that the service package is becoming a build
+    dependency and must be available. Every user can provide and use a service
+    this way in their projects. The generated sources are not part of the
+    source repository, but part of the generated source packages. Network
+    access is not be available when the workers are running in a secure mode.
+   </p></section><section class="sect3" id="id-1.3.9.5.6.8" data-id-title="disabled Mode"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">5.3.2.6 </span><span class="title-name"><code class="literal">disabled</code> Mode</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#id-1.3.9.5.6.8">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p> The disabled mode is neither running the service locally or on the
+    server side. It can be used to temporarily disable the service but keeping
+    the definition as part of the service definition. Or it can be used to
+    define the way how to generate the sources and doing so by manually calling
+    <code class="command">osc service runall</code> The result will
+    get committed as standard files again. </p></section></section><section class="sect2" id="id-1.3.9.5.7" data-id-title="Storage of Source Service Definitions"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.3.3 </span><span class="title-name">Storage of Source Service Definitions</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#id-1.3.9.5.7">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p> The called services are always defined in a
+    <code class="command">_service</code> file. It is either part of the package sources
+   or used project-wide when stored inside the <code class="command">_project</code>
+   package. </p><p> The _service file contains a list of services which get called in this
+   order. Each service may define a list of parameters and a mode. The project
+   wide services get called after the per package defined services. The
+   _service file is an xml file like this example:</p><div class="verbatim-wrap"><pre class="screen">&lt;services&gt;
+  &lt;service name="download_files" mode="trylocal" /&gt;
+  &lt;service name="verify_file"&gt;
+    &lt;param name="file"&gt;krabber-1.0.tar.gz&lt;/param&gt;
+    &lt;param name="verifier"&gt;sha256&lt;/param&gt;
+    &lt;param name="checksum"&gt;7f535a96a834b31ba2201a90c4d365990785dead92be02d4cf846713be938b78&lt;/param&gt;
+  &lt;/service&gt;
+&lt;/services&gt;</pre></div><p>
+   This example downloads the files via download_files service via the given
+   URLs from the spec file. When using osc this file gets committed as part of
+   the commit. Afterwards the krabber-1.0.tar.gz file will always be compared
+   with the sha256 checksum. </p></section><section class="sect2" id="id-1.3.9.5.8" data-id-title="Dropping a Source Service Again"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.3.4 </span><span class="title-name">Dropping a Source Service Again</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#id-1.3.9.5.8">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p> Sometimes it is useful to continue working on generated files
+   manually. In this situation the _service file needs to be dropped, but all
+   generated files need to be committed as standard files. The OBS provides the
+   "mergeservice" command for this. It can also be used via osc by calling
+    <code class="command">osc service merge</code>. </p></section></section><section class="sect1" id="source-publish" data-id-title="Source Publisher"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">5.4 </span><span class="title-name">Source Publisher</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#source-publish">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The job of the source publish service is to publish all sources for 
+directly before published binaries. This will include the sources of repackaged
+binaries. For example, the sources of RPMs which are used inside of product, 
+appliance or container images. A prerequisite for this is that OBS has enabled
+content tracking for the used projects.</p><section class="sect2" id="source-publish-configuration" data-id-title="Configuring Source Publisher"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.4.1 </span><span class="title-name">Configuring Source Publisher</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#source-publish-configuration">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The source publishing can be configured via the file
+    <span class="emphasis"><em>/usr/lib/obs/server/BSConfig.pm</em></span>, where it can be 
+    enabled globally or just for some projects. It is possible to use regular
+   expressions here.</p><p>Publishing can be enabled by defining the rsync module to push the content:</p><div class="verbatim-wrap highlight perl"><pre class="screen">our $sourcepublish_sync = 'rsync://your_rsync_server/rsync_module';</pre></div><p>By default every project get published, but it is possible to define a whitelist via:</p><div class="verbatim-wrap highlight perl"><pre class="screen">our $sourcepublish_filter = [ "openSUSE:.*", "SUSE:.*" ];</pre></div></section><section class="sect2" id="source-publish-considerations" data-id-title="Considerations"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.4.2 </span><span class="title-name">Considerations</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#source-publish-considerations">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The source publishing service is publishing the sources as they are hosted in Open Build Service. This
+        means these are the unprocessed sources and the content is not identical to the
+        content of source RPMs for example. Instead these are the sources which are the
+        base for source RPMs.</p><p>As a consequence hints like NoSource: tags in spec files are ignored. The only
+        way to disable publishing for the user is to disable access or sourceaccess via
+        the flags.</p><p>The filesystem structure is <span class="emphasis"><em>$project/$package/$srcmd5/</em></span>. A  <span class="intraxref"/>
+        inside of binary builds can be used to find the right sources.</p><p>Open Build Service will care for de-duplication on the rsync server. This must get implemented there.</p></section></section><section class="sect1" id="dispatch-priorities" data-id-title="Dispatch Priorities"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">5.5 </span><span class="title-name">Dispatch Priorities</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#dispatch-priorities">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The dispatcher takes a job from the scheduler and assign it to a free
+  worker. It tries to share the available build time fair between all the
+  project repositories with pending jobs. To achieve this the dispatcher
+  calculates a <span class="strong"><strong><span class="emphasis"><em>load</em></span></strong></span> per
+  project repository of the used build time (similar to the system load in Unix
+  operating systems). The dispatcher assigned jobs to build clients from the
+  repository with the lowest load (thereby increasing its load). It is
+  possible to tweak this mechanism via dispatching priorities assigned to the
+  repositories via the <span class="strong"><strong><span class="emphasis"><em>/build/_dispatchprios</em></span></strong></span><span class="strong"><strong>API</strong></span> call or via the <span class="strong"><strong><span class="emphasis"><em>dispatch_adjust</em></span></strong></span> array in the
+   <span class="emphasis"><em>BSConfig.pm</em></span><a class="xref" href="obs-cha-overview-filesystem.html#bsconfig-pm" title="3.1.2.2. BSConfig.pm">Section 3.1.2.2, “BSConfig.pm”</a> configuration
+  file.</p><section class="sect2" id="dispatch-priorities-build-dispatchprios-api-call" data-id-title="The /build/_dispatchprios API Call"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.5.1 </span><span class="title-name">The <code class="literal">/build/_dispatchprios</code> API Call</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#dispatch-priorities-build-dispatchprios-api-call">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The <span class="emphasis"><em>/build/_dispatchprios</em></span> API call allows an
+   Admin to set a priority for defined projects and repositories using the HTTP
+   put method. With the HTTP get method the current XML priority file can be
+   read.</p><div class="verbatim-wrap"><pre class="screen">&lt;dispatchprios&gt;
+  &lt;prio project="ProjectName" repository="RepoName" arch="Architecture" adjust="Number" /&gt;
+&lt;/dispatchprios&gt;</pre></div><p>The attributes <span class="emphasis"><em>project</em></span>,
+    <span class="emphasis"><em>repository</em></span> and <span class="emphasis"><em>arch</em></span> are all
+   optional, if for example <span class="emphasis"><em>arch</em></span> and
+    <span class="emphasis"><em>repository</em></span> are missing the entry is used for all
+   repositories and architectures for the given project. It is not supported to
+   use regular expressions for the names. The adjust value is taken as
+   logarithmic scale factor to the current load of the repositories during the
+   compare. Projects without any entry get a default priority of 0, higher
+   values cause the matching projects to get more build time.</p><p>Example dispatchprios XML file</p><div class="verbatim-wrap"><pre class="screen">&lt;dispatchprios&gt;
+   &lt;prio project="DemoProject1" repository="openSUSE_Leap_42.1" adjust="10" /&gt;
+   &lt;prio project="Test1" adjust="5" /&gt;
+   &lt;prio project="Test11" repository="openSUSE_13.2" arch="i586" adjust="-10"/&gt;
+&lt;/dispatchprios&gt;</pre></div><div class="table" id="id-1.3.9.7.3.7" data-id-title="Rounded Scale Factors Resulting from a Priority"><div class="title-container"><div class="table-title-wrap"><div class="table-title"><span class="title-number-name"><span class="title-number">Table 5.1: </span><span class="title-name">Rounded Scale Factors Resulting from a Priority </span></span><a title="Permalink" class="permalink" href="obs-cha-administration.html#id-1.3.9.7.3.7">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div><div class="table-contents"><table style="width: 70%; border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col class="col_1"/><col class="col_2"/><col class="col_3"/><col class="col_4"/><col class="col_5"/></colgroup><thead><tr><th style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; "> priority </th><th style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; "> scale factor </th><th style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; "> </th><th style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; "> priority </th><th style="text-align: left; vertical-align: top; border-bottom: 1px solid ; "> scale factor</th></tr></thead><tbody><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+       <p>-50</p>
+      </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+       <p>100000</p>
+      </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+       
+      </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+       <p>3</p>
+      </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+       <p>0.5</p>
+      </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+       <p>-30</p>
+      </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+       <p>1000</p>
+      </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+       
+      </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+       <p>5</p>
+      </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+       <p>0.3</p>
+      </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+       <p>-20</p>
+      </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+       <p>100</p>
+      </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+       
+      </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+       <p>7</p>
+      </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+       <p>0.2</p>
+      </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+       <p>-15</p>
+      </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+       <p>30</p>
+      </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+       
+      </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+       <p>10</p>
+      </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+       <p>0.1</p>
+      </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+       <p>-10</p>
+      </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+       <p>10</p>
+      </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+       
+      </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+       <p>15</p>
+      </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+       <p>0.03</p>
+      </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+       <p>-7</p>
+      </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+       <p>5</p>
+      </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+       
+      </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+       <p>20</p>
+      </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+       <p>0.01</p>
+      </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+       <p>-5</p>
+      </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+       <p>3</p>
+      </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+       
+      </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+       <p>30</p>
+      </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+       <p>0.001</p>
+      </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+       <p>-3</p>
+      </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+       <p>2</p>
+      </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+       
+      </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+       <p>40</p>
+      </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+       <p>0.0001</p>
+      </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; ">
+       <p>0</p>
+      </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; ">
+       <p>1</p>
+      </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; ">
+       
+      </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; ">
+       <p>50</p>
+      </td><td style="text-align: left; vertical-align: top; ">
+       <p>0.00001</p>
+      </td></tr></tbody></table></div></div></section><section class="sect2" id="dispatch-priorities-dispatch-adjust-array" data-id-title="dispatch_adjust Array"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.5.2 </span><span class="title-name"><code class="literal">dispatch_adjust</code> Array</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#dispatch-priorities-dispatch-adjust-array">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>With the <span class="strong"><strong><span class="emphasis"><em>dispatch_adjust</em></span></strong></span> array in the
+    <span class="emphasis"><em>BSConfig.pm</em></span> file the dispatch priorities of project
+   repositories based on regular expressions for the project, repository name
+   and maybe architecture. Each match will add or subtract a value to the
+   priority of the repository. The default priority is 0, higher values cause
+   the matching projects to get more build time.</p><p>Each entry in the dispatch_adjust array has the format</p><div class="verbatim-wrap"><pre class="screen">'regex string'  =&gt; priority adjustment</pre></div><p>The full name of a build repository looks like</p><div class="verbatim-wrap"><pre class="screen">Project:Subproject/Repository/Architecture
+
+Examples:
+   Devel:Science/SLES-11/i586
+   home:king:test/Leap42/x86_64</pre></div><p>If a repository matches a string the adjustment is added to the
+   current value. The final value is the sum of the adjustments of all matched
+   entries. This sum is the same logarithmic scale factor as described in the
+   previous section.</p><p>Example dispatch_adjust definition in the BSConfig.pm</p><div class="verbatim-wrap"><pre class="screen">our $dispatch_adjust = [
+    'Devel:' =&gt; 7,
+    'HotFix:' =&gt; +20,
+    '.+:test.*' =&gt; -10,
+    'home:' =&gt; -3,
+    'home:king' =&gt; +30,
+    '.+/SLE12-SP2' =&gt; -40,
+];</pre></div><p>The above example could have the following background: All Devel
+   projects should get some higher priority so the developer jobs getting more
+   build time. The projects under HotFix are very important fixes for customers
+   and so they should get a worker as soon as possible. All projects with test
+   in the name get some penalty, also home projects are getting only about half
+   of the build time as a normal project, with the exception of the home
+   project from king, the user account of the boss. The SLES12-SP2 repository
+   is not in real use yet, but if here is nothing else to do, build for it as
+   well.</p><div id="id-1.3.9.7.4.11" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg"/><div class="admon-title">Important</div><p>The dispatcher calculates the values form the <span class="strong"><strong><span class="emphasis"><em>'dispatch_adjust'</em></span></strong></span> array
+    first, if the same project and repository also has an entry in the
+    dispatchprios XML file, the XML file entry will overwrite the calculated
+    priority. The best practice is to only use one of the methods.</p></div></section></section><section class="sect1" id="publisher-hooks" data-id-title="Publisher Hooks"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">5.6 </span><span class="title-name">Publisher Hooks</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#publisher-hooks">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The job of the publisher service is to publish the built packages
+  and/or images by creating repositories that are made available through a web
+  server.</p><p>It can be configured to use custom scripts to copy the build results
+  to different servers or do anything with them that comes to mind. These
+  scripts are called <span class="strong"><strong><span class="emphasis"><em>publisher
+    hooks</em></span></strong></span>.</p><section class="sect2" id="publisher-hooks-publisher-hooks-configuration" data-id-title="Configuring Publisher Hooks"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.6.1 </span><span class="title-name">Configuring Publisher Hooks</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#publisher-hooks-publisher-hooks-configuration">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>Hooks are configured via the configuration file
+    <span class="emphasis"><em>/usr/lib/obs/server/BSConfig.pm</em></span>, where one script per
+   project is linked to the repository that should be run if the
+   project/repository combination is published. It is possible to use regular
+   expressions here.</p><p>
+   The script is called by the user
+   <code class="systemitem">obsrun</code> with the following
+   parameters:
+  </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
+     information about the project and its repository (for example,
+     <code class="literal">training/SLE11-SP1</code>)
+    </p></li><li class="listitem"><p>
+     path to published repository (for example,
+     <code class="filename">/srv/obs/repos/training/SLE11-SP1</code>)
+    </p></li><li class="listitem"><p>
+     changed packages (for example, <code class="literal">x86 64/test.rpm x86
+     64/utils.rpm</code>)
+    </p></li></ol></div><p>The hooks are configured by adding a hash reference named
+    <span class="emphasis"><em>$publishedhook</em></span> to the <span class="emphasis"><em>BSConfig.pm</em></span>
+   configuration file. The key contains the project, and the value references
+   the accompanying script. If the value is written as an array reference it is
+   possible to call the hook with self-defined parameters.</p><p>The publisher will add the 3 listed parameters at the end, after the
+   self-defined parameters
+   (in <code class="filename">/usr/lib/obs/server/BSConfig.pm</code>):
+  </p><div class="verbatim-wrap highlight perl"><pre class="screen">our $publishedhook = {
+ "Product/SLES12"     =&gt; "/usr/local/bin/script2run_sles12",
+ "Product/SLES11-SP3" =&gt; "/usr/local/bin/script2run_sles11",
+ "Product/SLES11-SP4" =&gt; "/usr/local/bin/script2run_sles11",
+};</pre></div><p>Regular expressions or substrings can be used to define a script for
+   more than one repository in one project. The use of regular expressions has
+   to be activated by defining
+   <code class="literal">$publishedhook use regex = 1;</code> as follows
+   (in <code class="filename">/usr/lib/obs/server/BSConfig.pm</code>):
+  </p><div class="verbatim-wrap highlight perl"><pre class="screen">our $publishedhook_use_regex = 1;
+our $publishedhook = {
+    "Product\/SLES12"     =&gt; "/usr/local/bin/script2run_sles12",
+    "Product\/SLES11.*"   =&gt; "/usr/local/bin/script2run_sles11",
+};</pre></div><p>With self defined parameters:</p><div class="verbatim-wrap highlight perl"><pre class="screen">our $publishedhook_use_regex = 1;
+our $publishedhook = {
+    "Product\/SLES11.*" =&gt; ["/usr/local/bin/script2run", "sles11", "/srv/www/public_mirror"],
+};</pre></div><p>The configuration is read by the publisher at startup only, so it
+   has to be restarted after configuration changes have been made. The hook
+   script’s output is not logged by the publisher and should be written to a
+   log file by the script itself. In case of a broken script,this is logged in
+   the publisher’s log file (/srv/obs/log/publisher.log by default):</p><div class="verbatim-wrap"><pre class="screen">Mon Mar  7 14:34:17 2016 publishing Product/SLES12
+    fetched 0 patterns
+    running createrepo
+    calling published hook /usr/local/bin/script2run_sles12
+    /usr/local/bin/script2run_sles12 failed: 65280
+    syncing database (6 ops)</pre></div><p>Interactive scripts are not working and will fail
+   immediately.</p><p>If you need to do a lot of work in the hook script and do not want to
+   block the publisher all the time, you should consider using a separate
+   daemon that does all the work and just gets triggered by the configured hook
+   script.</p><p>The scripts are called without a timeout.</p></section><section class="sect2" id="publisher-hooks-example-publisher-scripts" data-id-title="Example Publisher Scripts"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.6.2 </span><span class="title-name">Example Publisher Scripts</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#publisher-hooks-example-publisher-scripts">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><section class="sect3" id="publisher-hooks-example-publisher-scripts-simple-publisher-hook" data-id-title="Simple Publisher Hook"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">5.6.2.1 </span><span class="title-name">Simple Publisher Hook</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#publisher-hooks-example-publisher-scripts-simple-publisher-hook">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The following example script ignores the packages that have changed
+    and copies all RPMs from the repository directory to a target
+    directory:</p><div class="verbatim-wrap highlight bash"><pre class="screen">#!/bin/bash
+OBSHOME="/srv/obs"
+SRC_REPO_DIR="$OBSHOME/repos"
+LOGFILE="$OBSHOME/log/reposync.log"
+DST_REPO_DIR="/srv/repo-mirror"
+# Global substitution! To handle strings like Foo:Bar:testing - two
+#+double-colons!
+PRJ_PATH=${1//:/:\/}
+PATH_TO_REPO=$2
+rsync -a --log-file=$LOGFILE --mkpath $PATH_TO_REPO/ $DST_REPO_DIR/$PRJ_PATH/</pre></div><p>For testing purposes, it can be invoked as follows:</p><div class="verbatim-wrap"><pre class="screen">$ sudo -u obsrun /usr/local/bin/publish-hook.sh Product/SLES11-SP1 \
+    /srv/obs/repos/Product/SLE11-SP1</pre></div></section><section class="sect3" id="publisher-hooks-example-publisher-scripts-advanced-publisher-hook" data-id-title="Advanced Publisher Hook"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">5.6.2.2 </span><span class="title-name">Advanced Publisher Hook</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#publisher-hooks-example-publisher-scripts-advanced-publisher-hook">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The following example script reads the destination path from a
+    parameter that is configured with the hook script:</p><div class="verbatim-wrap highlight bash"><pre class="screen">#!/bin/bash
+LOGFILE="/srv/obs/log/reposync.log"
+DST_REPO_DIR=$1
+# Global substion! To handle strings like Foo:Bar:testing - two
+#+double-colons!
+PRJ_PATH=${2//:/:\/}
+PATH_TO_REPO=$3
+mkdir -p $DST_REPO_DIR/$PRJ_PATH
+rsync -a --log-file=$LOGFILE --mkpath $PATH_TO_REPO/ $DST_REPO_DIR/$PRJ_PATH/</pre></div><p>For testing purposes, it can be invoked as follows:</p><div class="verbatim-wrap"><pre class="screen">$ sudo -u obsrun /usr/local/bin/publish-hook.sh \
+    /srv/www/public_mirror/Product/SLES11-SP1 \
+    /srv/obs/repos/Product/SLE11SP1</pre></div><p>The following example script only copies packages that have
+    changed, but does not delete packages that have been removed:</p><div class="verbatim-wrap highlight bash"><pre class="screen">#!/bin/bash
+
+DST_REPO_DIR=$1
+PRJ_PATH=${2//:/:\/}
+PATH_TO_REPO=$3
+shift 3
+
+mkdir -p $DST_REPO_DIR/$PRJ_PATH
+
+while [ $# -gt 0 ]
+do
+  dir=(${1//\// })
+  if [ ! -d  "$DST_REPO_DIR/$PRJ_PATH/$dir" ]; then
+    mkdir -p $DST_REPO_DIR/$PRJ_PATH/$dir
+  fi
+  cp $PATH_TO_REPO/$1 $DST_REPO_DIR/$PRJ_PATH/$1
+  shift
+done
+
+createrepo $DST_REPO_DIR/$PRJ_PATH/.</pre></div><p>For testing purposes, it can be invoked as follows:</p><div class="verbatim-wrap"><pre class="screen">$ sudo -o obsrun /usr/local/bin/publish-hook.sh  /srv/www/public_mirror \
+   Product/SLES11-SP1 /srv/obs/repos/Product/SLE11-SP1 \
+   src/icinga-1.13.3-1.3.src.rpm x86_64/icinga-1.13.3-1.3.x86_64.rpm \
+   x86_64/icinga-devel-1.13.3-1.3.x86_64.rpm</pre></div></section></section></section><section class="sect1" id="unpublisher-hooks" data-id-title="Unpublisher Hooks"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">5.7 </span><span class="title-name">Unpublisher Hooks</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#unpublisher-hooks">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The job of the publisher service is to publish the built packages
+  and/or images by creating repositories that are made available through a web
+  server.</p><p>The OBS Publisher can be configured to use custom scripts to be
+  called whenever already published packages get removed. These scripts are
+  called <span class="strong"><strong>unpublisher hooks</strong></span>. <span class="strong"><strong>Unpublisher hooks</strong></span> are run before the <span class="strong"><strong>publisher hooks</strong></span>.</p><section class="sect2" id="unpublisher-hooks-unpublisher-hooks-configuration" data-id-title="Configuring Unpublisher Hooks"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.7.1 </span><span class="title-name">Configuring Unpublisher Hooks</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#unpublisher-hooks-unpublisher-hooks-configuration">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>Hooks are configured via the configuration file
+    <span class="emphasis"><em>/usr/lib/obs/server/BSConfig.pm</em></span>, where one script per
+   project is linked to the repository that should be run if the
+   project/repository combination is removed. It is possible to use regular
+   expressions here.</p><p>
+   The script is called by the user
+   <code class="systemitem">obsrun</code> with the following
+   parameters:
+  </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
+     information about the project and its repository (for example,
+     <span class="emphasis"><em>training/SLE11-SP1</em></span>)
+     </p></li><li class="listitem"><p>
+     repository path (for example,
+     <code class="filename">/srv/obs/repos/training/SLE11-SP1</code>)
+     </p></li><li class="listitem"><p>
+     removed packages (for example, <code class="literal">x86 64/test.rpm x86
+     64/utils.rpm</code>)
+    </p></li></ol></div><p>The hooks are configured by adding a hash reference named
+    <span class="emphasis"><em>$unpublishedhook</em></span> to the
+    <span class="emphasis"><em>BSConfig.pm</em></span> configuration file. The key contains the
+   project and the value references the accompanying script. If the value is
+   written as an array reference, it is possible to call the hook with custom
+   parameters.</p><p>The publisher adds the three listed parameters at the end, directly after
+   the custom parameters
+   (in <code class="filename">/usr/lib/obs/server/BSConfig.pm</code>):
+  </p><div class="verbatim-wrap highlight perl"><pre class="screen">our $unpublishedhook = {
+    "Product/SLES12"     =&gt; "/usr/local/bin/script2run_sles12",
+    "Product/SLES11-SP3" =&gt; "/usr/local/bin/script2run_sles11",
+    "Product/SLES11-SP4" =&gt; "/usr/local/bin/script2run_sles11",
+};</pre></div><p>Regular expressions or substrings can be used to define a script for
+   more than one repository in one project. The use of regular expressions
+   needs to be activated by defining
+   <code class="literal">$unpublishedhook use regex = 1;</code>
+   (in <code class="filename">/usr/lib/obs/server/BSConfig.pm</code>):
+   </p><div class="verbatim-wrap highlight perl"><pre class="screen">our $unpublishedhook_use_regex = 1;
+our $unpublishedhook = {
+    "Product\/SLES12"     =&gt; "/usr/local/bin/script2run_sles12",
+    "Product\/SLES11.*"   =&gt; "/usr/local/bin/script2run_sles11",
+};</pre></div><p>With custom parameters:</p><div class="verbatim-wrap highlight perl"><pre class="screen">our $unpublishedhook_use_regex = 1;
+our $unpublishedhook = {
+    "Product\/SLES11.*" =&gt; [
+      "/usr/local/bin/script2run", "sles11", "/srv/www/public_mirror"
+    ],
+};</pre></div><p>The configuration is read by the publisher at startup only, so it
+   has to be restarted after configuration changes have been made. The hook
+   script’s output is not logged by the publisher and should be written to a
+   log file by the script itself. In case of a broken script, this is logged in
+   the publisher’s log file (/srv/obs/log/publisher.log by default):</p><div class="verbatim-wrap"><pre class="screen">Mon Mar  7 14:34:17 2016 publishing Product/SLES12
+    fetched 0 patterns
+    running createrepo
+    calling unpublished hook /usr/local/bin/script2run_sles12
+    /usr/local/bin/script2run_sles12 failed: 65280
+    syncing database (6 ops)</pre></div><p>Interactive scripts are not working and will fail
+   immediately.</p><p>If you need to do a lot of work in the hook script and do not want
+   to block the publisher all the time, consider using a separate daemon that
+   does all the work and just gets triggered by the configured hook
+   script.</p><p>The scripts are called without a timeout.</p><div id="id-1.3.9.9.4.17" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p><span class="strong"><strong>Reminder:</strong></span> If <span class="emphasis"><em>unpublish
+     hooks</em></span> and <span class="emphasis"><em>publish hooks</em></span> are defined, the
+     <span class="emphasis"><em>unpublish hook</em></span> runs before the <span class="emphasis"><em>publish
+     hook</em></span>.</p></div></section><section class="sect2" id="unpublisher-scripts-example-unpublisher-scripts" data-id-title="Example Unpublisher Scripts"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.7.2 </span><span class="title-name">Example Unpublisher Scripts</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#unpublisher-scripts-example-unpublisher-scripts">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><section class="sect3" id="unpublisher-scripts-example-unpublisher-scripts-simple-unpublisher-hook" data-id-title="Simple Unpublisher Hook"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">5.7.2.1 </span><span class="title-name">Simple Unpublisher Hook</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#unpublisher-scripts-example-unpublisher-scripts-simple-unpublisher-hook">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The following example script deletes all packages from the target
+    directory that have been removed from the repository.</p><div class="verbatim-wrap highlight bash"><pre class="screen">#!/bin/bash
+OBSHOME="/srv/obs"
+LOGFILE="$OBSHOME/log/reposync.log"
+DST_REPO_DIR="/srv/repo-mirror"
+# Global substitution! To handle strings like Foo:Bar:testing - two
+#+double-colons!
+PRJ_PATH=${1//:/:\/}
+PATH_TO_REPO=$2
+
+shift 2
+
+while [ $# -gt 0 ]
+do
+  rm -v $DST_REPO_DIR/$PRJ_PATH/$1 &gt;&gt;$LOGFILE 2&gt;&amp;1
+  shift
+done</pre></div><p>For testing purposes, it can be invoked as follows:</p><div class="verbatim-wrap"><pre class="screen">$ sudo -u obsrun /usr/local/bin/unpublish-hook.sh \
+    Product/SLES11-SP1                            \
+    /srv/obs/repos/Product/SLE11-SP1              \
+    src/icinga-1.13.3-1.3.src.rpm                 \
+    x86_64/icinga-1.13.3-1.3.x86_64.rpm           \
+    x86_64/icinga-devel-1.13.3-1.3.x86_64.rpm</pre></div></section><section class="sect3" id="unpublisher-scripts-example-unpublisher-scripts-advanced-unpublisher-hook" data-id-title="Advanced Unpublisher Hook"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">5.7.2.2 </span><span class="title-name">Advanced Unpublisher Hook</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#unpublisher-scripts-example-unpublisher-scripts-advanced-unpublisher-hook">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The following example script reads the destination path from a
+    parameter that is configured via the hook script:</p><div class="verbatim-wrap highlight bash"><pre class="screen">#!/bin/bash
+OBSHOME="/srv/obs"
+LOGFILE="$OBSHOME/log/reposync.log"
+DST_REPO_DIR=$1
+# Global substitution! To handle strings like Foo:Bar:testing - two
+#+double-colons!
+PRJ_PATH=${1//:/:\/}
+PATH_TO_REPO=$2
+
+shift 3
+
+while [ $# -gt 0 ]
+do
+  rm -v $DST_REPO_DIR/$PRJ_PATH/$1 &gt;&gt;$LOGFILE 2&gt;&amp;1
+  shift
+done</pre></div><p>For testing purposes, it can be invoked as follows:</p><div class="verbatim-wrap"><pre class="screen">$ sudo -u obsrun /usr/local/bin/unpublish-hook.sh \
+    /srv/www/public_mirror/Product/SLES11-SP1     \
+    /srv/obs/repos/Product/SLE11SP1               \
+    src/icinga-1.13.3-1.3.src.rpm                 \
+    x86_64/icinga-1.13.3-1.3.x86_64.rpm           \
+    x86_64/icinga-devel-1.13.3-1.3.x86_64.rpm</pre></div></section></section></section><section class="sect1" id="user-and-group-management" data-id-title="Managing Users and Groups"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">5.8 </span><span class="title-name">Managing Users and Groups</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#user-and-group-management">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The OBS has an integrated user and group management with a role based
+  access rights model. In every OBS instance, at least one user need to exist
+  and have the global Admin role assigned. Groups can be defined by the Admin
+  and instead of adding a list of users to a project/package role user can
+  be added to a group and the group will be added to a project or package
+  role.</p><section class="sect2" id="user-and-group-management-user-and-group-roles" data-id-title="User and Group Roles"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.8.1 </span><span class="title-name">User and Group Roles</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#user-and-group-management-user-and-group-roles">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The OBS role model has one global role: Admin, which can be granted
+   to users. An OBS admin has access to all projects and packages via the API
+   interface and the web user interface. Some menus in the Web UI do not allow
+   changes by an Admin (for example, the Repository menu) as long the Admin is not a
+   Maintainer for the project as well. But the same change can be done via
+   editing the metadata directly. The other roles are specific to projects and
+   packages and can be assigned to a user or a group.</p><div class="table" id="id-1.3.9.10.3.3" data-id-title="Roles in OBS"><div class="title-container"><div class="table-title-wrap"><div class="table-title"><span class="title-number-name"><span class="title-number">Table 5.2: </span><span class="title-name">Roles in OBS </span></span><a title="Permalink" class="permalink" href="obs-cha-administration.html#id-1.3.9.10.3.3">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div><div class="table-contents"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col class="col_1"/><col class="col_2"/><col class="col_3"/></colgroup><thead><tr><th style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; "> Role </th><th style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; "> Description </th><th style="text-align: left; vertical-align: top; border-bottom: 1px solid ; "> Remarks</th></tr></thead><tbody><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+       <p>Maintainer</p>
+      </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+       <p>Read and write access to projects or packages</p>
+      </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+       
+      </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+       <p>Bugowner</p>
+      </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+       <p>Read access to projects or packages</p>
+      </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+       <p>should be unique per package</p>
+      </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+       <p>Reader</p>
+      </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+       <p>Read access to sources</p>
+      </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+       
+      </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+       <p>Downloader</p>
+      </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+       <p>Read access to the binaries</p>
+      </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+       
+      </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; ">
+       <p>Reviewer</p>
+      </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; ">
+       <p>Default reviewer for a package or project</p>
+      </td><td style="text-align: left; vertical-align: top; ">
+       
+      </td></tr></tbody></table></div></div></section><section class="sect2" id="user-and-group-management-standalone-user-and-group-database" data-id-title="Standalone User and Group Database"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.8.2 </span><span class="title-name">Standalone User and Group Database</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#user-and-group-management-standalone-user-and-group-database">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>OBS provides its own user database which can also store a password.
+   The authentication to the API happens via HTTP BASIC AUTH. See the API
+   documentation to find out how to create, modify or delete user data. Also a
+   call for changing the password exists.</p><p>Users can be added by the maintainer or if registration is allowed
+   via the registration menu on the Web UI. It can be configured that a
+   confirmation is needed after registration before the user may
+   login.</p></section><section class="sect2" id="user-and-group-management-users-and-group-maintainers" data-id-title="Users and Group Maintainers"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.8.3 </span><span class="title-name">Users and Group Maintainers</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#user-and-group-management-users-and-group-maintainers">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
+    Administrators can create groups, add users to them, remove users from them and
+    give Maintainer rights to users. This way, a maintainer will be able to also
+    add, remove and give maintainer rights to other users.
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="command">osc api -d "&lt;group&gt;&lt;title&gt;&lt;group-title&gt;&lt;/title&gt;&lt;email&gt;&lt;group-email&gt;&lt;/email&gt;&lt;maintainer userid="&lt;user-name&gt;"/&gt;&lt;person&gt;&lt;person userid="&lt;user_name&gt;"/&gt;&lt;/person&gt;&lt;/group&gt;' -X PUT "/group/&lt;group-title&gt;" </code></pre></div></section><section class="sect2" id="user-and-group-management-gravatar-for-groups" data-id-title="Gravatar for Groups"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.8.4 </span><span class="title-name">Gravatar for Groups</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#user-and-group-management-gravatar-for-groups">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>In certain cases, it might be desirable to show a Gravatar for a group,
+    similar to the users. In order to show a Gravatar, an email address is needed.
+    Therefore, it is necessary that an admin adds an email address to the group
+    through the API. This can be a achieved by
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="command">osc api -X POST "/group/&lt;group-title&gt;?cmd=set_email&amp;email=&lt;groups-email-address&gt;"</code></pre></div></section><section class="sect2" id="user-and-group-management-proxy-mode" data-id-title="Proxy Mode"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.8.5 </span><span class="title-name">Proxy Mode</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#user-and-group-management-proxy-mode">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The proxy mode can be used for specially secured instances, where
+   the OBS web server shall not get connected to the network directly. There
+   are authentication proxy products out there which do the authentication and
+   send the user name via an HTTP header to OBS. Originally, this was developed
+   for IChain - a legacy single login authentication method from Novell. This
+   also has the advantage that the user password never reaches OBS.</p><p>The proxy mode can also be used for LDAP or Active Directory, but
+   only for authentication.</p><div id="id-1.3.9.10.7.4" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg"/><div class="admon-title">Important</div><p>With enabled proxy mode the OBS trust the username in the http
+    header. Since this was verified by the Web server and the Web server
+    only forward requests for a verified and authenticated session, this is
+    safe, as long you make sure that the direct web/API interface of the OBS is
+    not reachable from the outside.</p></div><p>With the proxy mode the user still need to be registered in the OBS
+   and all OBS roles and user properties are managed inside the OBS.</p><section class="sect3" id="user-and-group-management-proxy-mode-obs-proxy-mode-configuration" data-id-title="OBS Proxy Mode Configuration"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">5.8.5.1 </span><span class="title-name">OBS Proxy Mode Configuration</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#user-and-group-management-proxy-mode-obs-proxy-mode-configuration">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>Currently the LDAP configuration is in the
+     <span class="emphasis"><em>options.yml</em></span> file.</p><div class="table" id="id-1.3.9.10.7.6.3" data-id-title="Options for Proxy Mode Configuration"><div class="title-container"><div class="table-title-wrap"><div class="table-title"><span class="title-number-name"><span class="title-number">Table 5.3: </span><span class="title-name">Options for Proxy Mode Configuration </span></span><a title="Permalink" class="permalink" href="obs-cha-administration.html#id-1.3.9.10.7.6.3">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div><div class="table-contents"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col class="col_1"/><col class="col_2"/><col class="col_3"/><col class="col_4"/></colgroup><thead><tr><th style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; "> Config item </th><th style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; "> Description </th><th style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; "> Values <code class="literal">default</code>
+       </th><th style="text-align: left; vertical-align: top; border-bottom: 1px solid ; "> Remarks</th></tr></thead><tbody><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; ">
+        <p>proxy_auth_mode</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; ">
+        <p>turn proxy mode on/off</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; ">
+        <p><code class="literal">:off</code> :on</p>
+       </td><td style="text-align: left; vertical-align: top; ">
+        <p>need to be :off if ldap_mode: is :on</p>
+       </td></tr></tbody></table></div></div></section></section><section class="sect2" id="user-and-group-management-ldap-active-directory" data-id-title="LDAP/Active Directory"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.8.6 </span><span class="title-name">LDAP/Active Directory</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#user-and-group-management-ldap-active-directory">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><div id="id-1.3.9.10.8.2" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>The LDAP support was considered experimental and not officially
+    supported. It is officially supported since 2.8.3 release.</p></div><p>Using LDAP or Active Directory as source for user and optional group
+   information in environments which already have such a server has the
+   advantage for the admin people that the user related information only need
+   to be maintained in one place. In the following sections we are writing
+   LDAP, but this includes Microsoft's Active Directory as well. Only in parts
+   where differences exists Active Directory (AD) will be explicit
+   mentioned.</p><p>In this mode the OBS contact the LDAP server directly from the OBS
+   API, if the user was found and provides the correct password the user is
+   added transparently to the OBS user database. The password or password hash
+   is not stored in the OBS database. Because the user database password field
+   is mandatory, a random hash is stored instead. The LDAP interface allows to
+   restrict the access to users which are in a special LDAP group. Optional
+   also groups can be discovered from the LDAP server. This can be also
+   filtered.</p><p>Before anybody can add a user to a package or project with a role,
+   the user need to had logged in at least one time, since the check for
+   available users is local only. If the LDAP group mode is enabled, LDAP
+   groups are also added transparently, if an existing group on the LDAP server
+   is added to a project or package.</p><p>On bigger installations this mode can result in many search requests
+   to the LDAP server and slow down access to projects and packages,
+   because on every role check an LDAP search operation will contact the LDAP
+   server. As alternative method group mirroring was implemented. This allows
+   that the internal OBS group database is updated with the group membership
+   information during the user authentication. All role test are made local
+   against the OBS database and do not need additional
+   LDAPoperations.</p><div id="id-1.3.9.10.8.7" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>The local user group membership in :mirror mode is updated as
+    follows: When the user logins, the user <span class="emphasis"><em>memberOf</em></span>
+    attributes are parsed and compared with the global OBS grouplist, if a
+    group matches, the user is added, if they are no longer a group member,
+    they are removed. since this maybe a costly operation, depending on the
+    group counts, this is only done on a full login. After a full login the
+    user status is cashed for 2 minutes, if the user do a login during this
+    time, nothing will be checked or updated. Here is a second mechanism to
+    update user membership: If somebody adds a new Group in the OBS, the
+     <span class="emphasis"><em>member</em></span> attributes of the group are parsed and all
+    current users which are in the local database become members.</p></div><section class="sect3" id="user-and-group-management-ldap-active-directory-obs-ldap-configuration" data-id-title="OBS LDAP Configuration"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">5.8.6.1 </span><span class="title-name">OBS LDAP Configuration</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#user-and-group-management-ldap-active-directory-obs-ldap-configuration">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
+    Currently the main OBS LDAP configuration is in the
+    file <code class="filename">options.yml</code>. Beside the settings in that file, the
+    openLDAP configuration file is also evaluated by the Ruby LDAP
+    implementation. This configuration file is usually located at
+    <code class="filename">/etc/openldap/ldap.conf</code>. You can set here additional
+    TLS/SSL directives like
+    <code class="literal">TLS_CACERT</code>, <code class="literal">TLS_CACERTDIR</code> and
+    <code class="literal">TLS_REQCERT</code>. For more information
+    refer to the openLDAP man page (<code class="command">man ldap.conf</code>).
+   </p><div id="id-1.3.9.10.8.8.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
+     When LDAP mode is activated, users can only log in via LDAP. This also
+     includes existing admin accounts. To make a LDAP user an admin,
+     use a rake task which can be run on the OBS instance.
+     For example, to make user <code class="systemitem">tux</code>,
+     use:
+    </p><div class="verbatim-wrap"><pre class="screen">cd /srv/www/obs/api
+bundle exec rake user:give_admin_rights tux RAILS_ENV=production</pre></div></div><div class="table" id="id-1.3.9.10.8.8.4" data-id-title="LDAP Configuration Options"><div class="title-container"><div class="table-title-wrap"><div class="table-title"><span class="title-number-name"><span class="title-number">Table 5.4: </span><span class="title-name">LDAP Configuration Options </span></span><a title="Permalink" class="permalink" href="obs-cha-administration.html#id-1.3.9.10.8.8.4">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div><div class="table-contents"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col class="col_1"/><col class="col_2"/><col class="col_3"/><col class="col_4"/></colgroup><thead><tr><th style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; "> Config item </th><th style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; "> Description </th><th style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; "> Values <code class="literal">default</code>
+       </th><th style="text-align: left; vertical-align: top; border-bottom: 1px solid ; "> Remarks</th></tr></thead><tbody><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>ldap_mode</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>OBS LDAP mode on/off</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p><code class="literal">:off</code> :on</p>
+       </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+        
+       </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>ldap_servers</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>List of LDAP servers</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        
+       </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+        <p>colon-separated list</p>
+       </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>ldap_max_attempts</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>tries to ping LDAP server</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>int <code class="literal">15</code>
+        </p>
+       </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+        
+       </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>ldap_search_timeout</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>timeout of an LDAP search</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>int 0…N <code class="literal">5</code>
+        </p>
+       </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+        <p>0 wait for ever</p>
+       </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>ldap_user_memberof_attr</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>User attribute for Group membership</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p><code class="literal">memberOf</code>
+        </p>
+       </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+        <p>case sensitive</p>
+       </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>ldap_group_member_attr</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>Group attribute for members</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p><code class="literal">member</code>
+        </p>
+       </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+        
+       </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>ldap_ssl</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>use ldaps port and protocol</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p><code class="literal">:off</code> :on</p>
+       </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+        
+       </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>ldap_start_tls</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>usr Start TLS on LDAP protocol</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>:off <code class="literal">:on</code>
+        </p>
+       </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+        
+       </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>ldap_port</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>LDAP portnumbers</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        
+       </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+        <p>if not set 389 for LDAP, 636 for LDAPS</p>
+       </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>ldap_referrals</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>Windows 2003 AD requires</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p><code class="literal">:off</code> :on</p>
+       </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+        
+       </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>ldap_search_base</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>company’s LDAP search base for the users who will use
+         OBS</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p><code class="literal">none</code>
+        </p>
+       </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+        
+       </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>ldap_search_attr</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>user ID attribute</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p><code class="literal">sAMAccountName</code> uid</p>
+       </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+        <p>sAMAccountName for AD, uid for openldap</p>
+       </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>ldap_name_attr</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>Full user name</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p><code class="literal">cn</code>
+        </p>
+       </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+        
+       </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>ldap_mail_attr</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>Attribute for users email</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p><code class="literal">mail</code>
+        </p>
+       </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+        
+       </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>ldap_search_user</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>Bind user for LDAP search</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        
+       </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+        <p>for example, cn=ldapbind, ou=system, dc=mycompany, dc=com</p>
+       </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>ldap_search_auth</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>Password for the ldap_search_user</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        
+       </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+        
+       </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>ldap_user_filter</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>Search filter for OBS users</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        
+       </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+        <p>for example, a group membership, empty all users allowed</p>
+       </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>ldap_authenticate</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>How user how the credentials are verified</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p><code class="literal">:ldap</code> :local</p>
+       </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+        <p>only use :ldap</p>
+       </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>ldap_auth_mech</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>Used auth mech</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p><code class="literal">:md5</code> :cleartext</p>
+       </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+        <p>only if local</p>
+       </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>ldap_auth_attr</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>Used auth attribute for :local</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p><code class="literal">userPassword</code>
+        </p>
+       </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+        <p>do not use</p>
+       </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>ldap_group_support</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>Import OBS groups from LDAP</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p><code class="literal">:off</code> :on :mirror</p>
+       </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+        <p>see text</p>
+       </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>ldap_group_search_base</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>company’s LDAP search base for groups</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        
+       </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+        
+       </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>ldap_group_title_attr</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>Attribute of the group name</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p><code class="literal">cn</code>
+        </p>
+       </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+        
+       </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>ldap_group_objectclass_attr</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>Object class for group</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p><code class="literal">Group</code>
+        </p>
+       </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+        
+       </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; ">
+        <p>ldap_obs_admin_group</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; ">
+        <p>Group name for OBS Admins</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; ">
+        
+       </td><td style="text-align: left; vertical-align: top; ">
+        <p>if set, members of that group become OBS admin role</p>
+       </td></tr></tbody></table></div></div><p>Example LDAP section of the <span class="emphasis"><em>options.yml</em></span>
+    file:</p><div class="verbatim-wrap"><pre class="screen">[...]
+##################
+# LDAP options
+##################
+
+ldap_mode: :on
+# LDAP Servers separated by ':'.
+# OVERRIDE with your company's ldap servers. Servers are picked randomly for
+# each connection to distribute load.
+ldap_servers: ldap1.mycompany.com:ldap2.mycompany.com
+
+# Max number of times to attempt to contact the LDAP servers
+ldap_max_attempts: 15
+
+# timeout of an ldap search requests to avoid infinitely lookups (in seconds, 0 no timeout)
+ldap_search_timeout: 5
+
+# The attribute the user member of is stored in (case sensitive !)
+ldap_user_memberof_attr: memberOf
+
+# Perform the group_user search with the member attribute of group entry or memberof attribute of user entry
+# It depends on your ldap define
+# The attribute the group member is stored in
+ldap_group_member_attr: member
+
+# If you're using ldap_authenticate=:ldap then you should ensure that
+# ldaps is used to transfer the credentials over SSL or use the StartTLS extension
+ldap_ssl: :on
+
+# Use StartTLS extension of LDAP
+ldap_start_tls: :off
+
+# LDAP port defaults to 636 for ldaps and 389 for ldap and ldap with StartTLS
+#ldap_port:
+# Authentication with Windows 2003 AD requires
+ldap_referrals: :off
+
+# OVERRIDE with your company's ldap search base for the users who will use OBS
+ldap_search_base: ou=developmentt,dc=mycompany,dc=com
+# Account name attribute (sAMAccountName for Active Directory, uid for openLDAP)
+ldap_search_attr: sAMAccountName
+# The attribute the users name is stored in
+ldap_name_attr: cn
+# The attribute the users email is stored in
+ldap_mail_attr: mail
+# Credentials to use to search ldap for the username
+ldap_search_user: "cn=ldapbind,ou=system,dc=mycompany,dc=com"
+ldap_search_auth: "top secret"
+
+# By default any LDAP user can be used to authenticate to the OBS
+# In some deployments this may be too broad and certain criteria should
+# be met; eg group membership
+#
+# To allow only users in a specific group uncomment this line:
+ldap_user_filter: (memberof=cn=obsusers,ou=groups,dc=mycompany,dc=com)
+#
+# Note this is joined to the normal selection like so:
+# (&amp;(#{dap_search_attr}=#{login})#{ldap_user_filter})
+# giving an ldap search of:
+#  (&amp;(sAMAccountName=#{login})(memberof=CN=group,OU=Groups,DC=Domain Component))
+#
+# Also note that openLDAP must be configured to use the memberOf overlay
+
+# ldap_authenticate says how the credentials are verified:
+#   :ldap = attempt to bind to ldap as user using supplied credentials
+#   :local = compare the credentials supplied with those in
+#            LDAP using #{ldap_auth_attr} &amp; #{ldap_auth_mech}
+#       if :local is used then ldap_auth_mech can be
+#       :md5
+#       :cleartext
+ldap_authenticate: :ldap
+ldap_auth_mech: :md5
+# This is a string
+ldap_auth_attr: userPassword
+
+# Whether to search group info from ldap, it does not take effect it is not set
+# Please also set below ldap_group_* configs correctly to ensure the operation works properly
+# Possible values:
+#         :off     disabled
+#         :on      enabled; every group member operation ask the LDAP server
+#         :mirror  enabled; group membership is mirrored and updated on user login
+#
+ldap_group_support: :mirror
+
+# OVERRIDE with your company's ldap search base for groups
+ldap_group_search_base: ou=obsgroups,dc=mycompany,dc=com
+
+# The attribute the group name is stored in
+ldap_group_title_attr: cn
+
+# The value of the group objectclass attribute
+# group for Active Directory, groupOfNames in openLDAP
+ldap_group_objectclass_attr: group
+
+# The LDAP group for obs admins
+# if this group is set and a user belongs to this group they get the global admin role
+#
+ldap_obs_admin_group: obsadmins</pre></div></section></section><section class="sect2" id="user-and-group-management-authentication-methods" data-id-title="Authentication Methods"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.8.7 </span><span class="title-name">Authentication Methods</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#user-and-group-management-authentication-methods">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><section class="sect3" id="user-and-group-management-authentication-methods-ldap-methods" data-id-title="LDAP Methods"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">5.8.7.1 </span><span class="title-name">LDAP Methods</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#user-and-group-management-authentication-methods-ldap-methods">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The LDAP mode has 2 methods to check
+    authorization:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p> LDAP bind method.<br/>
+ With the provided credentials,
+      an LDAP bind request is tried. </p></li><li class="listitem"><p> Local method.<br/>
+ The provided credentials checked
+      locally against the content of the
+       <span class="emphasis"><em>userPassword</em></span> attribute. </p></li></ol></div><div id="id-1.3.9.10.9.2.4" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg"/><div class="admon-title">Important</div><p>The local method should be not used, since the
+      <span class="emphasis"><em>userPassword</em></span> attribute in most LDAP installations
+     will not be available until you are bind with a privilege user.</p></div></section><section class="sect3" id="user-and-group-management-authentication-methods-kerberos" data-id-title="Kerberos"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">5.8.7.2 </span><span class="title-name">Kerberos</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#user-and-group-management-authentication-methods-kerberos">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>In OBS you can use single sign on via Kerberos tickets.</p><p>OBS Kerberos configuration resides in the
+     <span class="emphasis"><em>options.yml</em></span> file.</p><div class="table" id="id-1.3.9.10.9.3.4" data-id-title="Kerberos Configuration Options"><div class="title-container"><div class="table-title-wrap"><div class="table-title"><span class="title-number-name"><span class="title-number">Table 5.5: </span><span class="title-name">Kerberos Configuration Options </span></span><a title="Permalink" class="permalink" href="obs-cha-administration.html#id-1.3.9.10.9.3.4">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div><div class="table-contents"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col class="col_1"/><col class="col_2"/><col class="col_3"/></colgroup><thead><tr><th style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; "> Config item </th><th style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; "> Description </th><th style="text-align: left; vertical-align: top; border-bottom: 1px solid ; "> Example </th></tr></thead><tbody><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>kerberos_keytab</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>Kerberos key table: file where long-term keys for one or more
+         principals are stored</p>
+       </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+        <p>"/etc/krb5.keytab"</p>
+       </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>kerberos_service_principal</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>Kerberos OBS principal: OBS unique identity to which Kerberos
+         can assign tickets</p>
+       </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+        <p>"HTTP/hostname.example.com@EXAMPLE.COM"</p>
+       </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; ">
+        <p>kerberos_realm</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; ">
+        <p>Kerberos realm: authentication administrative domain</p>
+       </td><td style="text-align: left; vertical-align: top; ">
+        <p>"EXAMPLE.COM"</p>
+       </td></tr></tbody></table></div></div><p>
+    Example Kerberos section of the <code class="filename">options.yml</code> file:
+   </p><div class="verbatim-wrap"><pre class="screen">[...]
+
+##################
+# Kerberos options
+##################
+
+kerberos_mode: true
+kerberos_keytab: "/etc/krb5.keytab"
+kerberos_service_principal: "HTTP/hostname.example.com@EXAMPLE.COM"
+kerberos_realm: "EXAMPLE.COM"
+
+[...]</pre></div><div id="id-1.3.9.10.9.3.7" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p> Once Kerberos is enabled, only users with logins that match users
+     known to Kerberos will be able to authenticate to OBS. It is recommended
+     to give admin rights to a matching user before enabling Kerberos mode.
+    </p></div></section><section class="sect3" id="id-1.3.9.10.9.4" data-id-title="OBS Token Authorization"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">5.8.7.3 </span><span class="title-name">OBS Token Authorization</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#id-1.3.9.10.9.4">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p> OBS 2.5 provides a mechanism to create tokens for specific
+    operations. This can be used to allow certain operations in the name of a
+    user to others. This is esp. useful when integrating external
+    infrastructure. The create token should be kept secret by default, but it
+    can also be revoked at any time if it became obsolete or leaked. </p><section class="sect4" id="id-1.3.9.10.9.4.3" data-id-title="Managing Tokens of a User"><div class="titlepage"><div><div><div class="title-container"><h5 class="title"><span class="title-number-name"><span class="title-number">5.8.7.3.1 </span><span class="title-name">Managing Tokens of a User</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#id-1.3.9.10.9.4.3">#</a></h5><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p> Tokens belong always to a user. A list of active tokens can received
+     via </p><div class="verbatim-wrap"><pre class="screen"><code class="command">osc token</code></pre></div><div class="verbatim-wrap"><pre class="screen"><code class="command">osc token --delete &lt;TOKEN&gt;</code></pre></div></section><section class="sect4" id="id-1.3.9.10.9.4.4" data-id-title="Executing a Source Service"><div class="titlepage"><div><div><div class="title-container"><h5 class="title"><span class="title-number-name"><span class="title-number">5.8.7.3.2 </span><span class="title-name">Executing a Source Service</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#id-1.3.9.10.9.4.4">#</a></h5><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p> A token can be used to execute a source service. The source service
+     has to be setup for the package first, check the source service chapter
+     for this. A typical example is to update sources of a package from git. A
+     source service for that can be setup with </p><div class="verbatim-wrap"><pre class="screen"><code class="command">osc add git://....</code></pre></div><p> A token can be registered as generic token, means allowing to
+     execute all source services in OBS if the user has permissions. You can
+     create such a token and execute the operation with </p><div class="verbatim-wrap"><pre class="screen"><code class="command">osc token --create</code></pre></div><div class="verbatim-wrap"><pre class="screen"><code class="command">osc token --trigger &lt;TOKEN&gt; &lt;PROJECT&gt; &lt;PACKAGE&gt;</code></pre></div><div class="verbatim-wrap"><pre class="screen"><code class="command">osc api -X POST /trigger/runservice?token=&lt;TOKEN&gt;&amp;project=&lt;PROJECT&gt;&amp;package=&lt;PACKAGE&gt;</code></pre></div><p> You can also limit the token to a specific package. The advantage is
+     that the operation is limited to that package, so less bad things can
+     happen when the token leaks. Also you do not need to specify the package
+     on execution time. Create and execute it with </p><div class="verbatim-wrap"><pre class="screen"><code class="command">osc token --create &lt;PROJECT&gt; &lt;PACKAGE&gt;</code></pre></div><div class="verbatim-wrap"><pre class="screen"><code class="command">osc token --trigger &lt;TOKEN&gt;</code></pre></div><div class="verbatim-wrap"><pre class="screen"><code class="command">osc api -X POST /trigger/runservice?token=&lt;TOKEN&gt;</code></pre></div></section></section></section></section><section class="sect1" id="message-bus" data-id-title="Message Bus for Event Notifications"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">5.9 </span><span class="title-name">Message Bus for Event Notifications</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#message-bus">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The OBS has an integrated notification subsystem for sending events that are happening in our app through a message bus.
+   We have chosen <a class="link" href="https://www.rabbitmq.com/" target="_blank">RabbitMQ</a> as our message bus server technology based on the
+   <a class="link" href="https://www.amqp.org/" target="_blank">AMQP</a> protocol.
+ </p><section class="sect2" id="message-bus-rabbit-mq" data-id-title="RabbitMQ"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.9.1 </span><span class="title-name">RabbitMQ</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#message-bus-rabbit-mq">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
+    RabbitMQ claims to be <span class="emphasis"><em>"the most popular open source message broker"</em></span>. Meaning that it can deliver asynchronous messages in many
+    different exchange ways (one to one, broadcasting, based on topics). It also includes a flexible routing system based on queues.
+  </p><p>
+    RabbitMQ is lightweight and easy to deploy on premises and in the cloud. It supports multiple messaging protocols too.
+    And can be deployed in distributed and federated configurations to meet high-scale, high-availability requirements.
+  </p><section class="sect3" id="message-bus-rabbit-mq-rabbit-mq-configuration" data-id-title="Configuration"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">5.9.1.1 </span><span class="title-name">Configuration</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#message-bus-rabbit-mq-rabbit-mq-configuration">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
+    Currently the RabbitMQ configuration is in the file <code class="filename">options.yml</code>.
+    All those options there start with the prefix <span class="emphasis"><em>amqp</em></span>. These configuration items match
+    with some of the calls we do using the <a class="link" href="http://rubybunny.info/" target="_blank">Bunny</a> gem.
+   </p><div class="table" id="id-1.3.9.11.3.4.3" data-id-title="RabbitMQ Configuration Options"><div class="title-container"><div class="table-title-wrap"><div class="table-title"><span class="title-number-name"><span class="title-number">Table 5.6: </span><span class="title-name">RabbitMQ Configuration Options </span></span><a title="Permalink" class="permalink" href="obs-cha-administration.html#id-1.3.9.11.3.4.3">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div><div class="table-contents"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col class="col_1"/><col class="col_2"/><col class="col_3"/><col class="col_4"/></colgroup><thead><tr><th style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            Config item
+          </th><th style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            Description
+          </th><th style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            Values
+            <code class="literal">default</code>
+          </th><th style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            Remarks</th></tr></thead><tbody><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>amqp_namespace</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>Namespace for the queues of this instance</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>
+              <code class="literal">'opensuse.obs'</code>
+            </p>
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            <p>Is a prefix for the queue names</p>
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>amqp_options</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>Connection configuration</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            <p>See
+              <a class="link" href="http://rubybunny.info/articles/connecting.html" target="_blank">this guide</a>
+              to know which are the parameters allowed.</p>
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>amqp_options[host]</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>Server host</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            <p>A valid hostname</p>
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>amqp_options[port]</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>Server port</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>
+              <code class="literal">5672</code>
+            </p>
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>amqp_options[user]</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>User account</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>amqp_options[pass]</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>Account password</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>amqp_options[vhost]</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>Virtual host</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>amqp_exchange_name</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>Name for the exchange</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>amqp_exchange_options</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>Exchange configuration</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            <p>See
+              <a class="link" href="http://rubybunny.info/articles/exchanges.html" target="_blank">this guide</a>
+              to know more about exchanges.</p>
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>amqp_exchange_options[type]</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>Type of communication for the exchange</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>
+              <code class="literal">direct</code>
+            </p>
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>amqp_exchange_options[auto_delete]</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>If set, the exchange is deleted when all queues have finished using it</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>
+              <code class="literal">false</code>
+            </p>
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>amqp_exchange_options[arguments]</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>More configuration for plugins / extensions</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>amqp_queue_options</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>Queues configuration</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            <p>See
+              <a class="link" href="http://rubybunny.info/articles/queues.html" target="_blank">this guide</a>
+              to know more about queues.</p>
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>amqp_queue_options[durable]</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>Should this queue be durable? </p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>
+              <code class="literal">false</code>
+            </p>
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>amqp_queue_options[auto_delete]</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>Should this queue be automatically deleted when the last consumer disconnects?</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>
+              <code class="literal">false</code>
+            </p>
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>amqp_queue_options[exclusive]</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>Should this queue be exclusive (only can be used by this connection, removed when the connection is closed)? </p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>
+              <code class="literal">false</code>
+            </p>
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; ">
+            <p>amqp_queue_options[arguments]</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; ">
+            <p>Additional optional arguments (typically used by RabbitMQ extensions and plugins)</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; ">
+            
+          </td><td style="text-align: left; vertical-align: top; ">
+            
+          </td></tr></tbody></table></div></div><p>Example of the RabbitMQ section of the <span class="emphasis"><em>options.yml</em></span>
+    file:</p><div class="verbatim-wrap"><pre class="screen">[...]
+# RabbitMQ based message bus
+#
+# Prefix of the message bus rooting key
+
+amqp_namespace: 'opensuse.obs'
+
+# Connection options -&gt; http://rubybunny.info/articles/connecting.html
+
+amqp_options:
+  host: rabbit.example.com
+  port: 5672
+  user: guest
+  pass: guest
+  vhost: /vhost
+
+# Exchange options -&gt; http://rubybunny.info/articles/exchanges.html
+
+amqp_exchange_name: pubsub
+amqp_exchange_options:
+  type: topic
+  auto_delete: false
+  arguments:
+    persistent: true
+    passive: true
+
+# Queue options -&gt; http://rubybunny.info/articles/queues.html
+amqp_queue_options:
+  durable: false
+  auto-delete: false
+  exclusive: false
+  arguments:
+    extension_1: blah</pre></div><div class="table" id="id-1.3.9.11.3.4.6" data-id-title="List of event messages / queues for the message bus"><div class="title-container"><div class="table-title-wrap"><div class="table-title"><span class="title-number-name"><span class="title-number">Table 5.7: </span><span class="title-name">List of event messages / queues for the message bus </span></span><a title="Permalink" class="permalink" href="obs-cha-administration.html#id-1.3.9.11.3.4.6">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div><div class="table-contents"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col class="col_1"/><col class="col_2"/><col class="col_3"/></colgroup><thead><tr><th style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            Queue Name
+          </th><th style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            Description
+          </th><th style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            Payload
+          </th></tr></thead><tbody><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p><span class="emphasis"><em>__prefix__</em></span>.package.build_success</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>A package build has succeeded</p>
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            <p>
+              :project, :package, :repository, :arch, :release, :readytime,
+              :srcmd5, :rev, :reason, :bcnt, :verifymd5, :starttime, :endtime,
+              :workerid, :versrel, :buildtype
+            </p>
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p><span class="emphasis"><em>__prefix__</em></span>.package.build_fail</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>A package build has failed</p>
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            <p>
+              :project, :package, :repository, :arch, :release, :readytime,
+              :srcmd5, :rev, :reason, :bcnt, :verifymd5, :starttime, :endtime,
+              :workerid, :versrel, :previouslyfailed, :successive_failcount,
+              :buildtype
+            </p>
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p><span class="emphasis"><em>__prefix__</em></span>.package.build_unchanged</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>A package build has succeeded with unchanged result</p>
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            <p>
+              :project, :package, :repository, :arch, :release, :readytime,
+              :srcmd5, :rev, :reason, :bcnt, :verifymd5, :starttime, :endtime,
+              :workerid, :versrel, :buildtype
+            </p>
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p><span class="emphasis"><em>__prefix__</em></span>.package.create</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>A new package was created</p>
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            <p>
+              :project, :package, :sender
+            </p>
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p><span class="emphasis"><em>__prefix__</em></span>.package.update</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>The package metadata was updated</p>
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            <p>
+              :project, :package, :sender
+            </p>
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p><span class="emphasis"><em>__prefix__</em></span>.package.delete</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>A package was deleted</p>
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            <p>
+              :project, :package, :sender, :comment
+            </p>
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p><span class="emphasis"><em>__prefix__</em></span>.package.undelete</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>A package was undeleted</p>
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            <p>
+              :project, :package, :sender, :comment
+            </p>
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p><span class="emphasis"><em>__prefix__</em></span>.package.branch</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>A package was branched</p>
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            <p>
+              :project, :package, :sender, :targetproject, :targetpackage, :user
+            </p>
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p><span class="emphasis"><em>__prefix__</em></span>.package.commit</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>A package has committed changes</p>
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            <p>
+              :project, :package, :sender, :comment, :user, :files, :rev, :requestid
+            </p>
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p><span class="emphasis"><em>__prefix__</em></span>.package.upload</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>Sources of a package were uploaded</p>
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            <p>
+              :project, :package, :sender, :comment, :filename, :requestid, :target, :user
+            </p>
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p><span class="emphasis"><em>__prefix__</em></span>.package.service_success</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>Source service succeeded for a package</p>
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            <p>
+              :comment, :project, :package, :sender, :rev, :user, :requestid
+            </p>
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p><span class="emphasis"><em>__prefix__</em></span>.package.service_fail</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>Source service failed for a package</p>
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            <p>
+              :comment, :error, :project, :package, :sender, :rev, :user, :requestid
+            </p>
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p><span class="emphasis"><em>__prefix__</em></span>.package.version_change</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>A package has changed its version</p>
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            <p>
+              :project, :package, :sender, :comment, :requestid, :files, :rev, :newversion, :user, :oldversion
+            </p>
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p><span class="emphasis"><em>__prefix__</em></span>.package.comment</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>A new comment for the package was created</p>
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            <p>
+              :project, :package, :sender, :commenters, :commenter, :comment_body, :comment_title
+            </p>
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p><span class="emphasis"><em>__prefix__</em></span>.project.create</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>A new project was created</p>
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            <p>
+              :project, :sender
+            </p>
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p><span class="emphasis"><em>__prefix__</em></span>.project.update_project_conf</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>The project configuration was updated</p>
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            <p>
+              :project, :sender, :files, :comment
+            </p>
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p><span class="emphasis"><em>__prefix__</em></span>.project.update</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>A project was updated</p>
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            <p>
+              :project, :sender
+            </p>
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p><span class="emphasis"><em>__prefix__</em></span>.project.delete</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>A project was deleted</p>
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            <p>
+              :project, :comment, :requestid, :sender
+            </p>
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p><span class="emphasis"><em>__prefix__</em></span>.project.undelete</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>A project was undeleted</p>
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            <p>
+              :project, :comment, :sender
+            </p>
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p><span class="emphasis"><em>__prefix__</em></span>.project.comment</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>A new comment for the project was created</p>
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            <p>
+              :project, :commenters, :commenter, :comment_body, :comment_title
+            </p>
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p><span class="emphasis"><em>__prefix__</em></span>.repo.packtrack</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>Binary was published in the repository</p>
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            <p>
+              :project, :repo, :payload
+            </p>
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p><span class="emphasis"><em>__prefix__</em></span>.repo.publish_state</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>Publish State of Repository has changed</p>
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            <p>
+              :project, :repo, :state
+            </p>
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p><span class="emphasis"><em>__prefix__</em></span>.repo.published</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>A repository was published</p>
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            <p>
+              :project, :repo
+            </p>
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p><span class="emphasis"><em>__prefix__</em></span>.repo.build_started</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>Repository (re)started building</p>
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            <p>
+              :project, :repo, :arch, :buildid
+            </p>
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p><span class="emphasis"><em>__prefix__</em></span>.repo.build_finished</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>Repository finished building</p>
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            <p>
+              :project, :repo, :arch, :buildid
+            </p>
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p><span class="emphasis"><em>__prefix__</em></span>.repo.status_report</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>Status Check for Finished Repository Created</p>
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            <p>
+              :project, :repo, :arch, :buildid
+            </p>
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p><span class="emphasis"><em>__prefix__</em></span>.request.create</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>A request was created</p>
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            <p>
+              :author, :comment, :description, :number, :actions, :state, :when, :who,
+              :diff (local projects)
+            </p>
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p><span class="emphasis"><em>__prefix__</em></span>.request.change</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>A request was changed (admin only)</p>
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            <p>
+              :author, :comment, :description, :number, :actions, :state, :when, :who
+            </p>
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p><span class="emphasis"><em>__prefix__</em></span>.request.delete</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>A request was deleted</p>
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            <p>
+              :author, :comment, :description, :number, :actions, :state, :when, :who
+            </p>
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p><span class="emphasis"><em>__prefix__</em></span>.request.state_change</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>The state of a request was changed</p>
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            <p>
+              :author, :comment, :description, :number, :actions, :state, :when, :who, :oldstate
+            </p>
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p><span class="emphasis"><em>__prefix__</em></span>.request.review_wanted</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>A request requires a review</p>
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            <p>
+              :author, :comment, :description, :number, :actions, :state, :when, :who,
+              :reviewers, :by_user, :by_group, :by_project, :by_package,
+              :diff (local projects)
+            </p>
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p><span class="emphasis"><em>__prefix__</em></span>.request.review_changed</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>Request was reviewed</p>
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            <p>
+              :reviewers, :by_user, :by_group, :by_project, :by_package
+            </p>
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p><span class="emphasis"><em>__prefix__</em></span>.request.reviews_done</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>All reviews of request have been completed</p>
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            <p>
+              :author, :comment, :description, :number, :actions, :state, :when, :who,
+              :reviewers, :by_user, :by_group, :by_project, :by_package,
+              :diff (local projects)
+            </p>
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p><span class="emphasis"><em>__prefix__</em></span>.request.comment</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>A new comment for the request was created</p>
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            <p>
+              :author, :comment, :description, :number, :actions, :state, :when, :who,
+              :commenters, :commenter, :comment_body, :comment_title,
+              :request_number
+            </p>
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p><span class="emphasis"><em>__prefix__</em></span>.request.status_report</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            <p>
+              :number
+            </p>
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; ">
+            <p><span class="emphasis"><em>__prefix__</em></span>.published.status_report</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; ">
+            <p>Status Check for Published Repository Created</p>
+          </td><td style="text-align: left; vertical-align: top; ">
+            <p>
+              :project, :repo, :buildid
+            </p>
+          </td></tr></tbody></table></div></div></section></section></section><section class="sect1" id="backup" data-id-title="Backup"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">5.10 </span><span class="title-name">Backup</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#backup">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
+    Open Build Service configuration and content needs usually a backup. The following explains
+    suggested strategies and places considered for a backup.
+  </p><section class="sect2" id="backup-backup-places" data-id-title="Places to consider"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.10.1 </span><span class="title-name">Places to consider</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#backup-backup-places">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The following is pointing to the places with admin configurations or user content.
+         The default location places are considered here.
+   </p><section class="sect3" id="backup-backup-places-backup-configuration-frontend" data-id-title="Frontend Configuration"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">5.10.1.1 </span><span class="title-name">Frontend Configuration</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#backup-backup-places-backup-configuration-frontend">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>/srv/www/obs/api/config</p></li><li class="listitem"><p>/srv/www/obs/api/log (optional)</p></li></ul></div><p>The configuration is not changing usually. It is enough to backup it after config changes.
+    </p></section><section class="sect3" id="backup-backup-places-backup-database-frontend" data-id-title="Frontend Database"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">5.10.1.2 </span><span class="title-name">Frontend Database</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#backup-backup-places-backup-database-frontend">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The MySQL/MariaDB database backup can be done in different ways. Please consider the database
+           manual for details. One possible way is to create dumps via mysqldump tool. The backup should be
+           done at the same point of time as the source server. Inconsistencies can be resolved
+           using the check_consistency tool.</p></section><section class="sect3" id="backup-backup-places-backup-backend-configuration" data-id-title="Backend Configuration"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">5.10.1.3 </span><span class="title-name">Backend Configuration</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#backup-backup-places-backup-backend-configuration">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The backend has a single configuration file which may got altered. This is by default
+             /usr/lib/obs/server/BSConfig.pm . The file is not supposed to be changed usually and
+             it can only be done by the system root user. A backup after a change is sufficient.
+     </p></section><section class="sect3" id="backup-backup-places-backup-backend-content" data-id-title="Backend Content"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">5.10.1.4 </span><span class="title-name">Backend Content</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#backup-backup-places-backup-backend-content">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>All backend content is below /srv/obs directory. This include the sources, build results and
+           also all configuration changes done by the OBS admin users.
+     </p></section></section><section class="sect2" id="backup-backup-strategies" data-id-title="Backup strategies"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.10.2 </span><span class="title-name">Backup strategies</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#backup-backup-strategies">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
+     A backup is ideally taken only from a not running service. In real live this is
+     usually not possible, so it is important to run a backup on a production system.
+   </p><section class="sect3" id="backup-backup-strategies-backup-strategy-database" data-id-title="Database"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">5.10.2.1 </span><span class="title-name">Database</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#backup-backup-strategies-backup-strategy-database">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>MySQL backup either directly from a non-primary node in the galera
+    cluster (table dump locks the database during operation) or from a mysql slave
+    attached to the cluster.
+    </p></section><section class="sect3" id="backup-backup-strategies-backup-strategy-backend-sources" data-id-title="Sources"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">5.10.2.2 </span><span class="title-name">Sources</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#backup-backup-strategies-backup-strategy-backend-sources">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The sources are supposed to be backup at the same time as the database. This
+           can get achieved by either having a dedicated instance for the source server
+           or by having a backup of the following directories.
+     </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>/srv/obs/projects</p></li><li class="listitem"><p>/srv/obs/sources</p></li></ul></div></section><section class="sect3" id="backup-backup-strategies-backup-strategy-backend-binaries" data-id-title="Build Results"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">5.10.2.3 </span><span class="title-name">Build Results</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#backup-backup-strategies-backup-strategy-backend-binaries">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>Full backups via snapshots, either offered by the SAN storage or
+    via LVM snapshot methods. Consistency is normally on repository level. Any inconsistency
+    will be found by the scheduler and content will be retriggered. This is not true
+    for disabled builds like released builds.
+    </p></section></section></section><section class="sect1" id="restore" data-id-title="Restore"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">5.11 </span><span class="title-name">Restore</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#restore">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
+    A restored system might contain inconsistencies if it was taken from a running service.
+    These can be resolved as follows.
+  </p><section class="sect2" id="restore-restore-database-inconsistencies" data-id-title="Check and repair database inconsistencies"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.11.1 </span><span class="title-name">Check and repair database inconsistencies</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#restore-restore-database-inconsistencies">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>If either database portions or sources got restored there are chances for inconsistencies.
+   These can be found via
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">cd /srv/www/obs/api/</code>
+<code class="prompt user">geeko &gt; </code><code class="command">./bin/rails c</code>
+<code class="prompt user">geeko &gt; </code><code class="command">ConsistencyCheckJob.new.perform</code></pre></div><p>
+             Single projects can be either checked with
+           </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">cd /srv/www/obs/api/</code>
+<code class="prompt user">geeko &gt; </code><code class="command">./bin/rake check_project project="YOUR_PROJECT"</code></pre></div><p>
+             or inconsistencies fixed via
+           </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">cd /srv/www/obs/api/</code>
+<code class="prompt user">geeko &gt; </code><code class="command">./bin/rake fix_project project="YOUR_PROJECT"</code></pre></div></section><section class="sect2" id="restore-restore-binaries" data-id-title="Binaries"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.11.2 </span><span class="title-name">Binaries</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#restore-restore-binaries">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>All build results are evaluated by the scheduler. Therefore any inconsistency can be
+           detected by the scheduler. One way is to enforce a cold start, which means that the
+           scheduler would rescan all sources and binaries and trigger builds where needed.
+           This can be achieved by
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">rcobsscheduler stop     # ensure no scheduler is running</code>
+<code class="prompt user">geeko &gt; </code><code class="command">rm /srv/obs/run/*.state # remove all state files</code>
+<code class="prompt user">geeko &gt; </code><code class="command">rcobsscheduler start</code></pre></div><p>
+     The scheduler state will be visible as in cold start. It may take a longer time, so it
+           might be more efficient to check only certain projects or architectures if needed.
+           This can be triggered in a running system by executing
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">obs_admin --check-project PROJECT ARCHITERCTURE</code></pre></div><p>
+     A deep check is necessary in case sources have been restored:
+   </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">obs_admin --deep-check-project PROJECT ARCHITERCTURE</code></pre></div></section></section><section class="sect1" id="repair-data-corruption" data-id-title="Repair Data Corruption"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">5.12 </span><span class="title-name">Repair Data Corruption</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#repair-data-corruption">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
+          On-disk data might be corrupted independent of a restore. For example due to power outage, filesystem
+          or disk errors. A MySQL/Maria database in a cluster should repair itself in that case. Data
+          on disk in the backend parts can be checked and fixed using an dedicated tool. See the help
+          of the tool for further details or run
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">/usr/lib/obs/server/bs_check_consistency --check-all</code></pre></div><p>
+          Data can be repaired using the fix options.
+  </p></section><section class="sect1" id="obs-spider-identification" data-id-title="Spider Identification"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">5.13 </span><span class="title-name">Spider Identification</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#obs-spider-identification">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p> OBS is hiding specific parts/pages of the application from search
+  crawlers (DuckDuckGo, Google, etc.), mostly for performance reasons. Which
+  user-agent strings are identified as crawlers configured in the file
+   <code class="filename">/srv/www/obs/api/config/crawler-user-agents.json</code>. </p><p> To update that list, you must run the command <code class="command">bundle exec rake
+   voight_kampf:import_user_agents</code> in the root directory of your OBS
+  instance. This downloads the current crawler list of user agents as a JSON
+  file into the <code class="filename">config/</code> directory of the Rails
+  application. </p><p> If you want to extend or edit this list, switch to the
+   <code class="filename">config/</code> directory and open the
+   <code class="filename">crawler-user-agents.json</code> file with the editor of your
+  choice. The content can look like this:
+  </p><div class="verbatim-wrap"><pre class="screen">[
+   {
+       "pattern": "Googlebot\\/",
+       "url": "http://www.google.com/bot.html"
+   },
+   {
+       "pattern": "Googlebot-Mobile"
+   },
+   {
+       "pattern": "Googlebot-Image"
+   },
+   [...]
+]</pre></div><p> To add a new bot to this list, a pattern must be defined. This is
+  required to identify a bot. Almost all bots have their own user agent that
+  they are sending to a Web server to identify them. For example, the user
+  agent of the Googlebot looks like this:</p><div class="verbatim-wrap"><pre class="screen">Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)</pre></div><p>To choose the pattern for the new bot, compare the user agent of the bot you
+  want to identify with others and look for a part that is unique (like in the
+  Googlebot example, the part: Googlebot). </p><p> Let's assume we want to add the bot Geekobot to the list of bots and
+  the user agent looks like this:</p><div class="verbatim-wrap"><pre class="screen">Mozilla/5.0 (compatible; Geekobot/2.1; +https://www.opensuse.org)</pre></div><p>Our unique part would be Geekobot. So we add a new entry to the list of bots:</p><div class="verbatim-wrap"><pre class="screen">[
+   {
+       "pattern": "Googlebot\\/",
+       "url": "http://www.google.com/bot.html"
+   },
+   {
+       "pattern": "Googlebot-Mobile"
+   },
+   {
+       "pattern": "Googlebot-Image"
+   },
+   [...]
+   {
+       "pattern": "Geekobot"
+   }
+]</pre></div><div id="id-1.3.9.15.13" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>You can also use regular expressions in the pattern element.</p></div><p> Save the file and restart the Rails application and the bot Geekobot
+  should be identified properly. </p></section><section xml:lang="en" class="sect1" id="worker-in-kubernetes" data-id-title="Worker in Kubernetes"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">5.14 </span><span class="title-name">Worker in Kubernetes</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#worker-in-kubernetes">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><div id="id-1.3.9.16.2" data-id-title="Alpha Implementation" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.svg"/><div class="admon-title">Warning: Alpha Implementation</div><p>This is Alpha implementation and not recommended for production.</p><p>The Kubernetes device plugin deployed here makes several assumptions about which and how many containers will have access to KVM device.</p><p>The plugin also assumes availability of /dev/kvm on every node where the device-plugin-container is running</p></div><p>The build service worker itself has many backends to run its jobs. One of the preferred backends is KVM.</p><p>This backend allows building inside a VM. This has many advantages from security and isolation perspective.</p><p>When a build worker is running inside the containerized environment (for example, using Kubernetes) access to KVM is not available.</p><p>For such situations Kubernetes provides access to host devices (for example: KVM, GPU…​) through device plugins.</p><p>So, <code class="literal">/dev/kvm</code> can be made available to containers via Kubernetes using device plugin API (<a class="link" href="https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/" target="_blank">https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/</a>).</p><p>One of the implementations of K8s devices plugin for KVM is available here : <a class="link" href="https://github.com/kubevirt/kubernetes-device-plugins" target="_blank">https://github.com/kubevirt/kubernetes-device-plugins</a></p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step" id="k8s-worker-getkvm"><p>Use the following manifest to deploy the KVM device plugin in a container.</p><p>This plugin is packaged as <code class="literal">k8s-device-plugin-kvm</code> and corresponding container built here:
+        <a class="link" href="https://build.opensuse.org/package/show/home:sjamgade:branches:devel:CaaSP:Head:ControllerNode/kubernetes-device-plugins-docker" target="_blank">https://build.opensuse.org/package/show/home:sjamgade:branches:devel:CaaSP:Head:ControllerNode/kubernetes-device-plugins-docker</a></p><div class="verbatim-wrap"><pre class="screen">apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: kvm-deployment
+spec:
+   replicas: 1
+   selector: 
+     matchLabels:
+        app: kvm-server
+   template:
+     metadata:
+       labels:
+         app: kvm-server
+     spec:
+       containers:
+       - name: kvm-pod
+         command: ["/usr/bin/k8s-kvm"]
+         args: ["-v", "3","-logtostderr"]
+         image: registry.opensuse.org/home/sjamgade/branches/devel/caasp/head/controllernode/containers/my_container
+         imagePullPolicy: IfNotPresent
+         securityContext:
+          capabilities:
+            add:
+            - NET_ADMIN
+            - SYS_NICE
+          privileged: True
+          runAsUser: 0
+         volumeMounts:
+              - name: device-plugins-socket
+                mountPath: /var/lib/kubelet/device-plugins
+       hostname: kvm-server
+       volumes:
+         - name: device-plugins-socket
+           hostPath:
+           path: /var/lib/kubelet/device-plugins</pre></div></li><li class="step" id="k8s-worker-buildworker"><p>Build container image of the build service locally and load it to all worker nodes. There is sample project file here:
+            <a class="link" href="https://build.opensuse.org/package/show/home:sjamgade:branches:OBS:Server:Unstable/OBS-Appliance" target="_blank">https://build.opensuse.org/package/show/home:sjamgade:branches:OBS:Server:Unstable/OBS-Appliance</a> 
+            <code class="literal">docker load &lt; "/path/to/docker.archive.tar.gz" </code>
+         </p></li><li class="step" id="k8s-worker-loadworker"><p>Use the following manifest to deploy the build service worker.</p><p>Here ports are hard-coded to allow easy integration with local kubelet without requiring a separate ingress-controller</p><div class="verbatim-wrap"><pre class="screen">apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: worker-deployment-1
+spec:
+   replicas: 1
+   selector: 
+     matchLabels:
+        app: obsworkerappname
+   template:
+     metadata:
+       labels:
+         app: obsworkerappname
+     spec:
+       containers:
+       - name: test-worker-pod
+         command: ["/bin/bash"]
+         args: ["-c", "sleep 1d  &amp;&amp; echo Sleep expired &gt; /dev/termination-log"]
+         image: docker.io/library/obsworker
+         imagePullPolicy: Never
+         resources:
+          limits:
+            devices.kubevirt.io/kvm: "1"
+          requests:
+            cpu: 100m
+            devices.kubevirt.io/kvm: "1"
+         securityContext:
+          capabilities:
+            add:
+            - NET_ADMIN
+            - SYS_NICE
+          privileged: false
+          runAsUser: 0
+         volumeMounts:
+              - name: boot-dir
+                mountPath: /boot
+              - name: modules-dir
+                mountPath: /lib/modules
+       volumes:
+         - name: boot-dir
+           hostPath:
+             path: /boot
+         - name: modules-dir
+           hostPath:
+             path: /lib/modules
+       hostname: obs-worker-1
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: myobsservice
+  labels:
+    servicename: obsworkerservicename
+spec:
+  selector:
+    app: obsworkerappname
+  type: NodePort
+  externalTrafficPolicy: "Local"
+  ports:
+    - name: woker-1
+      protocol: TCP
+      port: 32515
+      targetPort: 32515
+      nodePort: 32315
+    - name: woker-2
+      protocol: TCP
+      port: 32516
+      targetPort: 32516
+      nodePort: 32516</pre></div></li><li class="step" id="k8s-worker-createworkerconfig"><p>Save the following into a file <code class="literal">launchworker.sh</code>. Later use this file to launch the worker. Make sure you uncomment the OBS_REPO_SERVERS line and change the IP address to your build servers address</p><div class="verbatim-wrap"><pre class="screen">cat &lt;&lt; EOH &gt; /etc/buildhost.config
+OBS_WORKER_DIRECTORY=/var/cache/obs/worker
+OBS_CACHE_DIR=/var/cache/obs/worker/cache
+OBS_CACHE_SIZE=50140
+#### CHANGE THIS TO YOUR SERVER ADDRESS
+# OBS_REPO_SERVERS=192.168.132.113:5252
+####
+OBS_WORKER_INSTANCES=1
+OBS_WORKER_PORTBASE=32516
+OBS_WORKER_TEST_MODE=1
+OBS_VM_TYPE=kvm
+OBS_WORKER_WIPE_AFTER_BUILD=1
+EOH
+
+obsworker restart</pre></div></li><li class="step" id="k8s-worker-startworker"><p>Use the following command to launch the build service worker.</p><div class="verbatim-wrap"><pre class="screen">cat launchworker.sh | kubectl exec -i -t test-worker-pod bash</pre></div></li></ol></div></div></section></section><nav class="bottom-pagination"><div><a class="pagination-link prev" href="obs-cha-security-concepts.html"><span class="pagination-relation">Previous</span><span class="pagination-label"><span class="title-number">Chapter 4 </span>Security Concepts</span></a> </div><div><a class="pagination-link next" href="obs-cha-troubleshooting.html"><span class="pagination-relation">Next</span><span class="pagination-label"><span class="title-number">Chapter 6 </span>Troubleshooting</span></a> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="sect1"><a href="obs-cha-administration.html#tools"><span class="title-number">5.1 </span><span class="title-name">Tools</span></a></span></li><li><span class="sect1"><a href="obs-cha-administration.html#managing-build-targets"><span class="title-number">5.2 </span><span class="title-name">Managing Build Targets</span></a></span></li><li><span class="sect1"><a href="obs-cha-administration.html#sec-obs-source-service"><span class="title-number">5.3 </span><span class="title-name">Source Services</span></a></span></li><li><span class="sect1"><a href="obs-cha-administration.html#source-publish"><span class="title-number">5.4 </span><span class="title-name">Source Publisher</span></a></span></li><li><span class="sect1"><a href="obs-cha-administration.html#dispatch-priorities"><span class="title-number">5.5 </span><span class="title-name">Dispatch Priorities</span></a></span></li><li><span class="sect1"><a href="obs-cha-administration.html#publisher-hooks"><span class="title-number">5.6 </span><span class="title-name">Publisher Hooks</span></a></span></li><li><span class="sect1"><a href="obs-cha-administration.html#unpublisher-hooks"><span class="title-number">5.7 </span><span class="title-name">Unpublisher Hooks</span></a></span></li><li><span class="sect1"><a href="obs-cha-administration.html#user-and-group-management"><span class="title-number">5.8 </span><span class="title-name">Managing Users and Groups</span></a></span></li><li><span class="sect1"><a href="obs-cha-administration.html#message-bus"><span class="title-number">5.9 </span><span class="title-name">Message Bus for Event Notifications</span></a></span></li><li><span class="sect1"><a href="obs-cha-administration.html#backup"><span class="title-number">5.10 </span><span class="title-name">Backup</span></a></span></li><li><span class="sect1"><a href="obs-cha-administration.html#restore"><span class="title-number">5.11 </span><span class="title-name">Restore</span></a></span></li><li><span class="sect1"><a href="obs-cha-administration.html#repair-data-corruption"><span class="title-number">5.12 </span><span class="title-name">Repair Data Corruption</span></a></span></li><li><span class="sect1"><a href="obs-cha-administration.html#obs-spider-identification"><span class="title-number">5.13 </span><span class="title-name">Spider Identification</span></a></span></li><li><span class="sect1"><a href="obs-cha-administration.html#worker-in-kubernetes"><span class="title-number">5.14 </span><span class="title-name">Worker in Kubernetes</span></a></span></li></ul></div> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
+                 2024</span></div></div></footer></body></html>

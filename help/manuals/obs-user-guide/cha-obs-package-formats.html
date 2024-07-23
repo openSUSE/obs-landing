@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><title>User Guide | Supported Build Recipes and Package Formats</title><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"/><link rel="schema.DCTERMS" href="http://purl.org/dc/terms/"/>
+<meta name="title" content="Supported Build Recipes and Package Formats"/>
+<meta name="description" content="OBS differentiates between the format of the build recipes and the format of the installed packages. For example, the spec recipe format is used to b…"/>
+<meta name="book-title" content="User Guide"/>
+<meta name="chapter-title" content="Chapter 2. Supported Build Recipes and Package Formats"/>
+<meta name="tracker-url" content="https://github.com/openSUSE/obs-docu/issues/new"/>
+<meta name="tracker-type" content="gh"/>
+<meta name="publisher" content="SUSE"/><meta property="og:title" content="Supported Build Recipes and Package Formats"/>
+<meta property="og:description" content="OBS differentiates between the format of the build recipes …"/>
+<meta property="og:type" content="article"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Supported Build Recipes and Package Formats"/>
+<meta name="twitter:description" content="OBS differentiates between the format of the build recipes …"/>
+<script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": ["TechArticle"],
+    "image": "https://www.suse.com/assets/img/suse-white-logo-green.svg",
+    
+     "isPartOf": {
+      "@type": "CreativeWorkSeries",
+      "name": "Product &amp; Solutions"
+    },
+    
+    "inLanguage": "en",
+    
+
+    "headline": "Supported Build Recipes and Package Formats",
+  
+    "description": "Supported Build Recipes and Package Formats",
+      
+    "author": [
+      {
+        "@type": "Corporation",
+        "name": "SUSE Product &amp; Solution Documentation Team",
+        "url": "https://www.suse.com/assets/img/suse-white-logo-green.svg"
+      }
+    ],
+      
+
+    "about": [
+      
+    ],
+  
+    "sameAs": [
+          "https://www.facebook.com/SUSEWorldwide/about",
+          "https://www.youtube.com/channel/UCHTfqIzPKz4f_dri36lAQGA",
+          "https://twitter.com/SUSE",
+          "https://www.linkedin.com/company/suse"
+    ],
+    "publisher": {
+      "@type": "Corporation",
+      "name": "SUSE",
+      "url": "https://documentation.suse.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.suse.com/assets/img/suse-white-logo-green.svg"
+      }
+    }
+  }</script>
+<link rel="prev" href="par-concepts.html" title="Part II. Concepts"/><link rel="next" href="bk01pt03.html" title="Part III. Setup"/><script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
+};
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"/></noscript><script src="static/js/script-purejs.js" type="text/javascript"> </script><script src="static/js/highlight.min.js" type="text/javascript"> </script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="wide offline js-off"><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-pagination">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><header id="_mainnav"><div class="growth-inhibitor"/></header><div class="crumbs"><div class="growth-inhibitor"><a class="crumb" href="index.html">User Guide</a><span> / </span><a class="crumb" href="par-concepts.html">Concepts</a><span> / </span><a class="crumb" href="cha-obs-package-formats.html">Supported Build Recipes and Package Formats</a></div></div><main id="_content"><nav id="_side-toc-overall" class="side-toc"><div class="side-title">User Guide</div><ol><li><a href="bk01pr01.html" class=" "><span class="title-number"> </span><span class="title-name">About this Guide</span></a></li><li><a href="par-first-steps.html" class="has-children "><span class="title-number">I </span><span class="title-name">First Steps</span></a><ol><li><a href="art-obs-bg.html" class=" "><span class="title-number">1 </span><span class="title-name">Beginnerʼs Guide</span></a></li></ol></li><li class="active"><a href="par-concepts.html" class="has-children you-are-here"><span class="title-number">II </span><span class="title-name">Concepts</span></a><ol><li><a href="cha-obs-package-formats.html" class=" you-are-here"><span class="title-number">2 </span><span class="title-name">Supported Build Recipes and Package Formats</span></a></li></ol></li><li><a href="bk01pt03.html" class="has-children "><span class="title-number">III </span><span class="title-name">Setup</span></a><ol><li><a href="cha-obs-osc.html" class=" "><span class="title-number">3 </span><span class="title-name">osc, the Command Line Tool</span></a></li><li><a href="cha-obs-prjconfig.html" class=" "><span class="title-number">4 </span><span class="title-name">Build Configuration</span></a></li></ol></li><li><a href="par-working.html" class="has-children "><span class="title-number">IV </span><span class="title-name">Usage</span></a><ol><li><a href="cha-obs-basicworkflow.html" class=" "><span class="title-number">5 </span><span class="title-name">Basic OBS Workflow</span></a></li><li><a href="cha-obs-local-building.html" class=" "><span class="title-number">6 </span><span class="title-name">Local Building</span></a></li><li><a href="cha-obs-source-services.html" class=" "><span class="title-number">7 </span><span class="title-name">Using Source Services</span></a></li><li><a href="cha-obs-scm-ci-workflow-integration.html" class=" "><span class="title-number">8 </span><span class="title-name">SCM/CI Workflow Integration</span></a></li><li><a href="cha-obs-stagingworkflow.html" class=" "><span class="title-number">9 </span><span class="title-name">Staging Workflow</span></a></li><li><a href="cha-obs-notifications.html" class=" "><span class="title-number">10 </span><span class="title-name">Notifications</span></a></li><li><a href="cha-obs-moderation.html" class=" "><span class="title-number">11 </span><span class="title-name">Moderation</span></a></li></ol></li><li><a href="par-best-practices.html" class="has-children "><span class="title-number">V </span><span class="title-name">Best Practices</span></a><ol><li><a href="cha-obs-best-practices-webuiusage.html" class=" "><span class="title-number">12 </span><span class="title-name">Using the OBS Web UI</span></a></li><li><a href="cha-obs-best-practices-basics.html" class=" "><span class="title-number">13 </span><span class="title-name">Basic Concepts and Work Styles</span></a></li><li><a href="cha-obs-best-practices-scm-integration.html" class=" "><span class="title-number">14 </span><span class="title-name">How to integrate external SCM sources</span></a></li><li><a href="cha-obs-best-practices-upstream.html" class=" "><span class="title-number">15 </span><span class="title-name">Publishing Upstream Binaries</span></a></li><li><a href="cha-obs-best-practices-bootstrapping.html" class=" "><span class="title-number">16 </span><span class="title-name">Bootstrapping</span></a></li><li><a href="cha-obs-best-practices-oscexamples.html" class=" "><span class="title-number">17 </span><span class="title-name"><code class="command">osc</code> Example Commands</span></a></li><li><a href="cha-obs-best-practices-advanced.html" class=" "><span class="title-number">18 </span><span class="title-name">Advanced Project Setups</span></a></li><li><a href="cha-obs-best-practices-kmp.html" class=" "><span class="title-number">19 </span><span class="title-name">Building Kernel Modules</span></a></li><li><a href="cha-obs-best-practices-howto.html" class=" "><span class="title-number">20 </span><span class="title-name">Common Questions and Solutions</span></a></li></ol></li><li><a href="par-reference.html" class="has-children "><span class="title-number">VI </span><span class="title-name">Reference</span></a><ol><li><a href="cha-obs-architecture.html" class=" "><span class="title-number">21 </span><span class="title-name">OBS Architecture</span></a></li><li><a href="cha-obs-concepts.html" class=" "><span class="title-number">22 </span><span class="title-name">OBS Concepts</span></a></li><li><a href="cha-obs-build-process.html" class=" "><span class="title-number">23 </span><span class="title-name">Build Process</span></a></li><li><a href="cha-obs-build-containers.html" class=" "><span class="title-number">24 </span><span class="title-name">Build Containers</span></a></li><li><a href="cha-obs-source-management.html" class=" "><span class="title-number">25 </span><span class="title-name">Source Management</span></a></li><li><a href="cha-obs-scm-bridge.html" class=" "><span class="title-number">26 </span><span class="title-name">SCM Bridge</span></a></li><li><a href="cha-obs-supported-formats.html" class=" "><span class="title-number">27 </span><span class="title-name">Supported Formats</span></a></li><li><a href="cha-obs-request-and-review-system.html" class=" "><span class="title-number">28 </span><span class="title-name">Request And Review System</span></a></li><li><a href="cha-obs-image-templates.html" class=" "><span class="title-number">29 </span><span class="title-name">Image Templates</span></a></li><li><a href="cha-obs-multibuild.html" class=" "><span class="title-number">30 </span><span class="title-name">Multiple Build Description File Handling</span></a></li><li><a href="cha-obs-maintenance-setup.html" class=" "><span class="title-number">31 </span><span class="title-name">Maintenance Support</span></a></li><li><a href="cha-obs-binary-tracking.html" class=" "><span class="title-number">32 </span><span class="title-name">Binary Package Tracking</span></a></li><li><a href="cha-obs-build-scheduling-and-dispatching.html" class=" "><span class="title-number">33 </span><span class="title-name">Scheduling and Dispatching</span></a></li><li><a href="cha-obs-build-constraints.html" class=" "><span class="title-number">34 </span><span class="title-name">Build Constraints</span></a></li><li><a href="cha-obs-build-preinstall.html" class=" "><span class="title-number">35 </span><span class="title-name">Building Preinstall Images</span></a></li><li><a href="cha-obs-authorization-token.html" class=" "><span class="title-number">36 </span><span class="title-name">Authorization</span></a></li><li><a href="cha-obs-qa-hooks.html" class=" "><span class="title-number">37 </span><span class="title-name">Quality Assurance(QA) Hooks</span></a></li><li><a href="cha-obs-factory.html" class=" "><span class="title-number">38 </span><span class="title-name">openSUSE Factory</span></a></li></ol></li><li><a href="obs-glossary.html" class=" "><span class="title-number"> </span><span class="title-name">Glossary</span></a></li><li><a href="bk01apa.html" class=" "><span class="title-number">A </span><span class="title-name">GNU Licenses</span></a></li> </ol> </nav><button id="_open-side-toc-overall" title="Contents"> </button><article class="documentation"><button id="_unfold-side-toc-page">On this page</button><section class="chapter" id="cha-obs-package-formats" data-id-title="Supported Build Recipes and Package Formats"><div class="titlepage"><div><div><div class="title-container"><h1 class="title"><span class="title-number-name"><span class="title-number">2 </span><span class="title-name">Supported Build Recipes and Package Formats</span></span> <a title="Permalink" class="permalink" href="cha-obs-package-formats.html#">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><section class="sect1" id="id-1.2.6.2.5" data-id-title="About Formats"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">2.1 </span><span class="title-name">About Formats</span></span> <a title="Permalink" class="permalink" href="cha-obs-package-formats.html#id-1.2.6.2.5">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p> OBS differentiates between the format of the build recipes and the
+   format of the installed packages. For example, the spec recipe format is
+   used to build RPM packages by calling <code class="command">rpmbuild</code>. </p><p> In most cases, the build result format is the same as the package
+   format used for setting up the build environment, but sometimes the format
+   is different. An example is the KIWI build recipe format, which can build
+    ISOs, but uses RPM packages to set up the build process.
+  </p><p> OBS currently supports the following build recipe formats and packages:
+  </p><div class="itemizedlist"><div class="title-container"><div class="itemizedlist-title-wrap"><div class="itemizedlist-title"><span class="title-number-name"><span class="title-name">Supported Package Formats </span></span><a title="Permalink" class="permalink" href="cha-obs-package-formats.html#id-1.2.6.2.5.6">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div><ul class="itemizedlist"><li class="listitem"><p>RPM package format, used for all RPM-based distributions like
+     openSUSE, SUSE Linux Enterprise, Fedora, and others.</p></li><li class="listitem"><p>DEB package format, used in Debian, Ubuntu, and derived
+     distributions</p></li><li class="listitem"><p>Arch package format, used by Arch Linux</p></li></ul></div><div class="itemizedlist"><div class="title-container"><div class="itemizedlist-title-wrap"><div class="itemizedlist-title"><span class="title-number-name"><span class="title-name">Supported Build Recipe Formats </span></span><a title="Permalink" class="permalink" href="cha-obs-package-formats.html#id-1.2.6.2.5.7">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div><ul class="itemizedlist"><li class="listitem"><p>Spec format for RPM packages</p></li><li class="listitem"><p>Dsc format for DEB packages</p></li><li class="listitem"><p>KIWI format, both product and appliances</p></li><li class="listitem"><p>preinstallimage</p></li><li class="listitem"><p>SimpleImage format</p></li><li class="listitem"><p>Mkosi format to build images</p></li></ul></div><p> If no build recipe format and binary format are specified in the project
+   configuration, OBS tries to deduce them from the preinstall list, which
+   includes the name of the used package manager.
+   This means that you need to manually configure the
+    <code class="literal">kiwi</code> build recipe, as an RPM package format will select
+    <code class="literal">spec</code> builds as default. This configuration is done by
+   adding a <code class="literal">Type</code> line to the project configuration. </p></section><section class="sect1" id="id-1.2.6.2.6" data-id-title="RPM: Spec"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">2.2 </span><span class="title-name">RPM: Spec</span></span> <a title="Permalink" class="permalink" href="cha-obs-package-formats.html#id-1.2.6.2.6">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
+   RPM (RPM Package Manager) is used on openSUSE, SUSE Linux Enterprise, Red Hat, Fedora,
+   and other distributions. For building RPMs you need:
+  </p><div class="variablelist"><dl class="variablelist"><dt id="id-1.2.6.2.6.3.1"><span class="term"><code class="filename">.spec</code></span></dt><dd><p>
+      the <em class="firstterm">spec file</em> for each package containing
+      metadata and build instructions. OBS parses the spec file's
+      BuildRequires lines to get a list of package dependencies. OBS uses this
+      information to both build the packages in the correct order and also for
+      setting up the build environment. The parser understands most of RPMs
+      macro handling, so it is possible to use architecture specific
+      BuildRequires, conditional builds and other advanced RPM features.
+     </p></dd><dt id="id-1.2.6.2.6.3.2"><span class="term"><code class="filename">.changes</code></span></dt><dd><p>the file which contains the changelog.</p></dd></dl></div></section><section class="sect1" id="id-1.2.6.2.7" data-id-title="Debian: Dsc"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">2.3 </span><span class="title-name">Debian: Dsc</span></span> <a title="Permalink" class="permalink" href="cha-obs-package-formats.html#id-1.2.6.2.7">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
+   DEB packages are used on all Debian or Ubuntu based distributions.
+   For building <code class="filename">.deb</code> files, you need:
+  </p><div class="variablelist"><dl class="variablelist"><dt id="id-1.2.6.2.7.3.1"><span class="term"><code class="filename">debian.control</code></span></dt><dd><p>The file contains the meta information for the package like the
+      build dependencies or some description. </p></dd><dt id="id-1.2.6.2.7.3.2"><span class="term"><code class="filename">debian.rules</code></span></dt><dd><p>This file describes the build section of the DEB building process.
+      There are the configure and make compile commands including other DEB
+      building sections.</p></dd><dt id="id-1.2.6.2.7.3.3"><span class="term"><code class="filename"><em class="replaceable">PACKAGE</em>.dsc</code></span></dt><dd><p>In this file you describe the package names of each subpackage and
+      their dependency level. Unlike RPM, the release numbers are not increased
+      automatically during build unless the keyword
+      <code class="varname">DEBTRANSFORM-RELEASE</code> is added to the file.</p></dd></dl></div></section><section class="sect1" id="id-1.2.6.2.8" data-id-title="Arch: pkg"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">2.4 </span><span class="title-name">Arch: pkg</span></span> <a title="Permalink" class="permalink" href="cha-obs-package-formats.html#id-1.2.6.2.8">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
+   Pkg files is used on Arch Linux and its derivatives. For building
+   Pkg you need:
+  </p><div class="variablelist"><dl class="variablelist"><dt id="id-1.2.6.2.8.3.1"><span class="term"><code class="filename">PKGBUILD</code></span></dt><dd><p>
+      It contains the build description and the source tarball. The file
+       <code class="filename">PKGBUILD</code> does not have macros like
+       <code class="literal">%{buildroot}</code>. It contains variables, for example,
+        <code class="literal">makedepends=(<em class="replaceable">PACKAGE1</em>,
+        <em class="replaceable">PACKAGE2</em>)</code>. These variables are
+      parsed by OBS and uses them as dependencies. On Arch Linux you typically
+      build packages without subpackage. They are no <span class="package">*-dev</span>
+      or <span class="package">*-devel</span> packages.
+     </p></dd></dl></div></section><section class="sect1" id="kiwi-appliance" data-id-title="KIWI Appliance"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">2.5 </span><span class="title-name">KIWI Appliance</span></span> <a title="Permalink" class="permalink" href="cha-obs-package-formats.html#kiwi-appliance">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
+   <a class="link" href="https://github.com/OSInside/kiwi" target="_blank">KIWI</a> is an OS
+   appliance builder that builds images for various formats, starting from
+   hardware images, virtualization systems like QEMU/KVM, Xen and VMware,
+   and more. It supports a wide range of architectures, which are x86, x86_64,
+   s390 and ppc. </p><p> For building an image in KIWI you need:</p><div class="variablelist"><dl class="variablelist"><dt id="id-1.2.6.2.9.4.1"><span class="term"><code class="filename">my_image.kiwi</code></span></dt><dd><p>
+      Contains the image configuration in XML format. Full XML schema
+      documentation can be found <a class="link" href="https://osinside.github.io/kiwi/image_description.html" target="_blank">https://osinside.github.io/kiwi/image_description.html</a>.
+     </p></dd><dt id="id-1.2.6.2.9.4.2"><span class="term"><code class="filename">config.sh</code> (optional)</span></dt><dd><p>configuration script that runs
+     at the end of the installation, but before package scripts have run.</p></dd><dt id="id-1.2.6.2.9.4.3"><span class="term"><code class="filename">root/</code></span></dt><dd><p>
+      directory that contains files that will be applied to the built
+      image after package installation. This can also be an archived and
+      compressed directory, usually named <code class="filename">root.tar.gz</code>.
+     </p></dd></dl></div><div id="id-1.2.6.2.9.5" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p> OBS only accepts KIWI configuration files with a <code class="filename">.kiwi</code> suffix. Other naming schemes KIWI
+    supports like <code class="filename">config.xml</code>, are ignored in OBS.
+   </p></div><p> For more information about building images with KIWI, see the <a class="link" href="https://osinside.github.io/kiwi/building_images.html" target="_blank">https://osinside.github.io/kiwi/building_images.html</a>.
+  </p></section><section class="sect1" id="id-1.2.6.2.10" data-id-title="SimpleImage"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">2.6 </span><span class="title-name">SimpleImage</span></span> <a title="Permalink" class="permalink" href="cha-obs-package-formats.html#id-1.2.6.2.10">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
+   
+   This format can be used to get simple rootfs tarball or squashfs
+   image. It does not contain a bootloader or a kernel.
+   For advanced features, use KIWI.
+   Use SimpleImage for simple rootfs tarball/squashfs image of any
+   distribution that is supported by OBS but does not have anything
+   fancier than that. </p><p>For building a SimpleImage, you need a <code class="filename">simpleimage</code>
+   file. Be aware of the following points:
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>SimpleImage uses a similar syntax than a spec file.</p></li><li class="listitem"><p>
+     Supported tags include <code class="literal">Name</code>,
+     <code class="literal">Version</code>, <code class="literal">BuildRequires</code>, and
+    <code class="literal">#!BuildIgnore</code>.
+    </p></li><li class="listitem"><p>Additional customization with <code class="literal">%build</code> phase
+     is supported.</p></li><li class="listitem"><p>RPM macros are not supported, but <code class="varname">$SRCDIR</code> shell
+     variable is available.</p></li></ul></div><div class="example" id="id-1.2.6.2.10.6" data-id-title="SimpleImage File (simpleimage)"><div class="title-container"><div class="example-title-wrap"><div class="example-title"><span class="title-number-name"><span class="title-number">Example 2.1: </span><span class="title-name">SimpleImage File (<code class="filename">simpleimage</code>) </span></span><a title="Permalink" class="permalink" href="cha-obs-package-formats.html#id-1.2.6.2.10.6">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div><div class="example-contents"><div class="verbatim-wrap"><pre class="screen">Name:           example-image
+Version:        1.0
+BuildRequire:   emacs
+#!BuildIgnore:  gcc-c++
+
+%build
+# Set root password
+passwd &lt;&lt; EOF
+opensuse
+opensuse
+EOF
+
+# Enable ssh
+systemctl enable sshd</pre></div></div></div></section><section class="sect1" id="id-1.2.6.2.11" data-id-title="AppImage"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">2.7 </span><span class="title-name">AppImage</span></span> <a title="Permalink" class="permalink" href="cha-obs-package-formats.html#id-1.2.6.2.11">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div></section><section class="sect1" id="sec-pkgfmt-flatpak" data-id-title="Flatpak"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">2.8 </span><span class="title-name">Flatpak</span></span> <a title="Permalink" class="permalink" href="cha-obs-package-formats.html#sec-pkgfmt-flatpak">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
+  The <a class="link" href="https://flatpak.org/" target="_blank">Flatpak</a> format can be used
+  to generate desktop apps for Linux.
+  </p><p>
+  For building an installable Flatpak bundle, you need a
+  <code class="filename">flatpak.yaml</code> manifest file.
+  See
+  <a class="link" href="https://docs.flatpak.org/en/latest/manifests.html" target="_blank">Flatpak Manifests</a>
+  for the full documentation.
+  </p><p>
+  Also some project and package configuration is necessary.
+  </p><div class="itemizedlist"><div class="title-container"><div class="itemizedlist-title-wrap"><div class="itemizedlist-title"><span class="title-number-name"><span class="title-name">Quick Start </span></span><a title="Permalink" class="permalink" href="cha-obs-package-formats.html#id-1.2.6.2.12.5">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div><ul class="itemizedlist"><li class="listitem"><p>
+  To avoid having to enter the configuration manually, you can:
+  </p></li><li class="listitem"><p>
+  go to the
+  <a class="link" href="https://build.opensuse.org/image_templates" target="_blank">Image Templates</a>
+  and create a project from there, or
+  </p></li><li class="listitem"><p>
+  branch the
+  <a class="link" href="https://build.opensuse.org/package/show/OBS:Flatpak:Templates/FlatpakTemplate" target="_blank">Template Package</a>
+  </p></li></ul></div><div class="itemizedlist"><div class="title-container"><div class="itemizedlist-title-wrap"><div class="itemizedlist-title"><span class="title-number-name"><span class="title-name">Manifest Format </span></span><a title="Permalink" class="permalink" href="cha-obs-package-formats.html#id-1.2.6.2.12.6">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div><ul class="itemizedlist"><li class="listitem"><p>
+  Input format is <a class="link" href="https://yaml.org" target="_blank">YAML</a>. Although
+  flatpak also accepts JSON, we are using YAML in Open Build Service, because we have
+  a special additional field in form of a YAML comment.
+  </p></li><li class="listitem"><p>
+  You can use JSON, as it is a subset of YAML. But be aware that flatpak
+  accepts non-standard <code class="literal">//</code> comments, while Open Build Service does not.
+  </p></li><li class="listitem"><p>
+  <code class="literal">#!BuildVersion</code> - Use this field to specify the version
+  of your app so the <code class="literal">.flatpak</code> file will be versioned.
+  Flatpak manifests do not have a version field.
+  </p></li><li class="listitem"><p>
+  To learn YAML, have a look at this <a class="link" href="https://www.yaml.info/" target="_blank">YAML Tutorial</a>.
+  </p></li></ul></div><p>
+  The base images for Freedesktop, GNOME, KDE are maintained in the
+  <a class="link" href="https://build.opensuse.org/project/show/OBS:Flatpak" target="_blank">OBS:Flatpak</a>
+  repository in form of rpm packages. They are generated by installing the
+  images from <a class="link" href="https://flathub.org/" target="_blank">Flathub</a>
+  and packing the directories into a tar archive.
+  </p><div class="example" id="id-1.2.6.2.12.8" data-id-title="Flatpak Manifest (flatpak.yaml)"><div class="title-container"><div class="example-title-wrap"><div class="example-title"><span class="title-number-name"><span class="title-number">Example 2.2: </span><span class="title-name">Flatpak Manifest (<code class="filename">flatpak.yaml</code>) </span></span><a title="Permalink" class="permalink" href="cha-obs-package-formats.html#id-1.2.6.2.12.8">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div><div class="example-contents"><div class="verbatim-wrap"><pre class="screen">######################################################
+# Flatpak manifest example for Open Build Service
+# https://docs.flatpak.org/en/latest/manifests.html
+# Input should be YAML, even though the file can have
+# a .json suffix (JSON is a subset of YAML).
+# Don't use '//' comments!
+######################################################
+
+# Special OBS field because flatpak does not have a version field
+# Default will be '0' if the field is missing.
+#!BuildVersion: 3.14.15
+---
+app-id: org.gnome.Mahjongg
+runtime: org.gnome.Platform
+sdk: org.gnome.Sdk
+runtime-version: '3.36'
+command: gnome-mahjongg
+
+finish-args:
+  - --share=ipc
+  - --socket=fallback-x11
+  - --socket=wayland
+  - --device=dri
+  - --metadata=X-DConf=migrate-path=/org/gnome/Mahjongg/
+
+cleanup:
+  - "/share/man"
+
+modules:
+- name: gnome-mahjongg
+  buildsystem: meson
+  sources:
+  - type: archive
+
+    # Source archives should be put into the OBS package, but you can
+    # keep the original URL from where it was downloaded here.
+    url: https://download.gnome.org/sources/gnome-mahjongg/3.36/gnome-mahjongg-3.36.2.tar.xz
+
+    # You can also just specify a simple filename
+    # url: gnome-mahjongg-3.36.2.tar.xz
+
+    # flatpak-builder will do a checksum
+    sha256: 'd2e8f1563ee03d112a17042c4e99971295b36f3ba795c7d905d636cc94b8ae97'</pre></div></div></div><div class="example" id="id-1.2.6.2.12.9" data-id-title="Flatpak Project config (prjconf)"><div class="title-container"><div class="example-title-wrap"><div class="example-title"><span class="title-number-name"><span class="title-number">Example 2.3: </span><span class="title-name">Flatpak Project config (<code class="filename">prjconf</code>) </span></span><a title="Permalink" class="permalink" href="cha-obs-package-formats.html#id-1.2.6.2.12.9">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div><div class="example-contents"><div class="verbatim-wrap"><pre class="screen">Type: flatpak
+Support: kmod-compat kernel-default perl-YAML-LibYAML</pre></div></div></div><div class="example" id="id-1.2.6.2.12.10" data-id-title="Flatpak Project meta example"><div class="title-container"><div class="example-title-wrap"><div class="example-title"><span class="title-number-name"><span class="title-number">Example 2.4: </span><span class="title-name">Flatpak Project meta example </span></span><a title="Permalink" class="permalink" href="cha-obs-package-formats.html#id-1.2.6.2.12.10">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div><div class="example-contents"><div class="verbatim-wrap"><pre class="screen">&lt;project name="Your:Project:Name"&gt;
+  &lt;title&gt;Title&lt;/title&gt;
+  &lt;description&gt;Description&lt;/description&gt;
+  &lt;repository name="openSUSE_Leap_15.2"&gt;
+    &lt;path project="OBS:Flatpak" repository="openSUSE_Leap_15.2"/&gt;
+    &lt;arch&gt;x86_64&lt;/arch&gt;
+  &lt;/repository&gt;
+  &lt;repository name="openSUSE_Leap_15.1"&gt;
+    &lt;path project="OBS:Flatpak" repository="openSUSE_Leap_15.1"/&gt;
+    &lt;arch&gt;x86_64&lt;/arch&gt;
+  &lt;/repository&gt;
+&lt;/project&gt;</pre></div></div></div></section><section class="sect1" id="sec-pkgfmt-mkosi" data-id-title="mkosi"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">2.9 </span><span class="title-name">mkosi</span></span> <a title="Permalink" class="permalink" href="cha-obs-package-formats.html#sec-pkgfmt-mkosi">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
+   <a class="link" href="https://github.com/systemd/mkosi/" target="_blank">Mkosi</a> allows
+   building images for rpm, arch, deb and gentoo based distributions, on any
+   architecture that supports UEFI. Images built with mkosi will follow the
+   <a class="link" href="https://systemd.io/DISCOVERABLE_PARTITIONS/" target="_blank">Discoverable Partitions Specification</a>
+   and will be bootable on baremetal (UEFI), virtual machines (UEFI),
+   containers via
+   <a class="link" href="https://www.freedesktop.org/software/systemd/man/systemd-nspawn.html" target="_blank">systemd-nspawn,</a>
+   or as
+   <a class="link" href="https://systemd.io/PORTABLE_SERVICES/" target="_blank">Portable Services</a>
+   in systemd.</p><p> For building an image in mkosi you need the
+   <code class="filename">mkosi.my_image</code> recipe file. This file contains the
+   image configuration in INI format. All available options can be found in the
+   <a class="link" href="https://github.com/systemd/mkosi/blob/main/mkosi.md" target="_blank">Mkosi documentation</a>.
+  </p><div id="id-1.2.6.2.13.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>Ensure to set <code class="literal">Type: mkosi</code> in the repository's
+   <code class="literal">prjconf</code> where the image builds are enabled on OBS.
+   </p></div><div class="example" id="id-1.2.6.2.13.5" data-id-title="mkosi minimal build recipe (mkosi.suse) for a Tumbleweed image"><div class="title-container"><div class="example-title-wrap"><div class="example-title"><span class="title-number-name"><span class="title-number">Example 2.5: </span><span class="title-name">mkosi minimal build recipe (<code class="filename">mkosi.suse</code>) for a
+   Tumbleweed image </span></span><a title="Permalink" class="permalink" href="cha-obs-package-formats.html#id-1.2.6.2.13.5">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div><div class="example-contents"><div class="verbatim-wrap"><pre class="screen">[Distribution]
+Distribution=opensuse
+Release=tumbleweed
+
+[Output]
+Format=gpt_ext4
+
+[Content]
+Password=
+Autologin=yes
+Packages=
+ patterns-base-minimal_base</pre></div></div></div><div class="example" id="id-1.2.6.2.13.6" data-id-title="mkosi Project config (prjconf)"><div class="title-container"><div class="example-title-wrap"><div class="example-title"><span class="title-number-name"><span class="title-number">Example 2.6: </span><span class="title-name">mkosi Project config (<code class="filename">prjconf</code>) </span></span><a title="Permalink" class="permalink" href="cha-obs-package-formats.html#id-1.2.6.2.13.6">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div><div class="example-contents"><div class="verbatim-wrap"><pre class="screen">%if "%_repository" == "suse"
+Type: mkosi
+Substitute: integritysetup
+Substitute: veritysetup
+Prefer: openSUSE-release-appliance-custom python310-cryptography
+%endif</pre></div></div></div><div class="example" id="id-1.2.6.2.13.7" data-id-title="mkosi Project meta example"><div class="title-container"><div class="example-title-wrap"><div class="example-title"><span class="title-number-name"><span class="title-number">Example 2.7: </span><span class="title-name">mkosi Project meta example </span></span><a title="Permalink" class="permalink" href="cha-obs-package-formats.html#id-1.2.6.2.13.7">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div><div class="example-contents"><div class="verbatim-wrap"><pre class="screen">&lt;project name="Your:Project:Name"&gt;
+  &lt;title&gt;Title&lt;/title&gt;
+  &lt;description&gt;Description&lt;/description&gt;
+  &lt;repository name="suse"&gt;
+    &lt;path project="openSUSE:Factory" repository="snapshot"/&gt;
+    &lt;arch&gt;x86_64&lt;/arch&gt;
+  &lt;/repository&gt;
+&lt;/project&gt;</pre></div></div></div></section></section><nav class="bottom-pagination"><div><a class="pagination-link prev" href="par-concepts.html"><span class="pagination-relation">Previous</span><span class="pagination-label"><span class="title-number">Part II </span>Concepts</span></a> </div><div><a class="pagination-link next" href="bk01pt03.html"><span class="pagination-relation">Next</span><span class="pagination-label"><span class="title-number">Part III </span>Setup</span></a> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="sect1"><a href="cha-obs-package-formats.html#id-1.2.6.2.5"><span class="title-number">2.1 </span><span class="title-name">About Formats</span></a></span></li><li><span class="sect1"><a href="cha-obs-package-formats.html#id-1.2.6.2.6"><span class="title-number">2.2 </span><span class="title-name">RPM: Spec</span></a></span></li><li><span class="sect1"><a href="cha-obs-package-formats.html#id-1.2.6.2.7"><span class="title-number">2.3 </span><span class="title-name">Debian: Dsc</span></a></span></li><li><span class="sect1"><a href="cha-obs-package-formats.html#id-1.2.6.2.8"><span class="title-number">2.4 </span><span class="title-name">Arch: pkg</span></a></span></li><li><span class="sect1"><a href="cha-obs-package-formats.html#kiwi-appliance"><span class="title-number">2.5 </span><span class="title-name">KIWI Appliance</span></a></span></li><li><span class="sect1"><a href="cha-obs-package-formats.html#id-1.2.6.2.10"><span class="title-number">2.6 </span><span class="title-name">SimpleImage</span></a></span></li><li><span class="sect1"><a href="cha-obs-package-formats.html#id-1.2.6.2.11"><span class="title-number">2.7 </span><span class="title-name">AppImage</span></a></span></li><li><span class="sect1"><a href="cha-obs-package-formats.html#sec-pkgfmt-flatpak"><span class="title-number">2.8 </span><span class="title-name">Flatpak</span></a></span></li><li><span class="sect1"><a href="cha-obs-package-formats.html#sec-pkgfmt-mkosi"><span class="title-number">2.9 </span><span class="title-name">mkosi</span></a></span></li></ul></div> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
+                 2024</span></div></div></footer></body></html>

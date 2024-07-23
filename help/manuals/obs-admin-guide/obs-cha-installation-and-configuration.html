@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><title>Administrator Guide | Installation and Configuration</title><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"/><link rel="schema.DCTERMS" href="http://purl.org/dc/terms/"/>
+<meta name="title" content="Installation and Configuration"/>
+<meta name="description" content="For testing your own OBS instance, or for small setups, such as if you only want to package a few scripts into RPMS and create proper installation so…"/>
+<meta name="book-title" content="Administrator Guide"/>
+<meta name="chapter-title" content="Chapter 2. Installation and Configuration"/>
+<meta name="tracker-url" content="https://github.com/openSUSE/obs-docu/issues/new"/>
+<meta name="tracker-type" content="gh"/>
+<meta name="publisher" content="SUSE"/><meta property="og:title" content="Installation and Configuration"/>
+<meta property="og:description" content="For testing your own OBS instance, or for small setups, suc…"/>
+<meta property="og:type" content="article"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Installation and Configuration"/>
+<meta name="twitter:description" content="For testing your own OBS instance, or for small setups, suc…"/>
+<script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": ["TechArticle"],
+    "image": "https://www.suse.com/assets/img/suse-white-logo-green.svg",
+    
+     "isPartOf": {
+      "@type": "CreativeWorkSeries",
+      "name": "Product &amp; Solutions"
+    },
+    
+    "inLanguage": "en",
+    
+
+    "headline": "Installation and Configuration",
+  
+    "description": "Installation and Configuration",
+      
+    "author": [
+      {
+        "@type": "Corporation",
+        "name": "SUSE Product &amp; Solution Documentation Team",
+        "url": "https://www.suse.com/assets/img/suse-white-logo-green.svg"
+      }
+    ],
+      
+
+    "about": [
+      
+    ],
+  
+    "sameAs": [
+          "https://www.facebook.com/SUSEWorldwide/about",
+          "https://www.youtube.com/channel/UCHTfqIzPKz4f_dri36lAQGA",
+          "https://twitter.com/SUSE",
+          "https://www.linkedin.com/company/suse"
+    ],
+    "publisher": {
+      "@type": "Corporation",
+      "name": "SUSE",
+      "url": "https://documentation.suse.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.suse.com/assets/img/suse-white-logo-green.svg"
+      }
+    }
+  }</script>
+<link rel="prev" href="cha-obs-admin.html" title="Chapter 1. High-level Overview"/><link rel="next" href="obs-cha-overview-filesystem.html" title="Chapter 3. File System Overview"/><script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
+};
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"/></noscript><script src="static/js/script-purejs.js" type="text/javascript"> </script><script src="static/js/highlight.min.js" type="text/javascript"> </script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="wide offline js-off"><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-pagination">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><header id="_mainnav"><div class="growth-inhibitor"/></header><div class="crumbs"><div class="growth-inhibitor"><a class="crumb" href="index.html">Administrator Guide</a><span> / </span><a class="crumb" href="obs-cha-installation-and-configuration.html">Installation and Configuration</a></div></div><main id="_content"><nav id="_side-toc-overall" class="side-toc"><div class="side-title">Administrator Guide</div><ol><li><a href="bk02pr01.html" class=" "><span class="title-number"> </span><span class="title-name">About this Guide</span></a></li><li><a href="cha-obs-admin.html" class=" "><span class="title-number">1 </span><span class="title-name">High-level Overview</span></a></li><li><a href="obs-cha-installation-and-configuration.html" class=" you-are-here"><span class="title-number">2 </span><span class="title-name">Installation and Configuration</span></a></li><li><a href="obs-cha-overview-filesystem.html" class=" "><span class="title-number">3 </span><span class="title-name">File System Overview</span></a></li><li><a href="obs-cha-security-concepts.html" class=" "><span class="title-number">4 </span><span class="title-name">Security Concepts</span></a></li><li><a href="obs-cha-administration.html" class=" "><span class="title-number">5 </span><span class="title-name">Administration</span></a></li><li><a href="obs-cha-troubleshooting.html" class=" "><span class="title-number">6 </span><span class="title-name">Troubleshooting</span></a></li><li><a href="cha-obs-best-practices-localsetup.html" class=" "><span class="title-number">7 </span><span class="title-name">Setting Up a Local OBS Instance</span></a></li><li><a href="bk02apa.html" class=" "><span class="title-number">A </span><span class="title-name">GNU Licenses</span></a></li> </ol> </nav><button id="_open-side-toc-overall" title="Contents"> </button><article class="documentation"><button id="_unfold-side-toc-page">On this page</button><section class="chapter" id="obs-cha-installation-and-configuration" data-id-title="Installation and Configuration"><div class="titlepage"><div><div><div class="title-container"><h1 class="title"><span class="title-number-name"><span class="title-number">2 </span><span class="title-name">Installation and Configuration</span></span> <a title="Permalink" class="permalink" href="obs-cha-installation-and-configuration.html#">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><section class="sect1" id="planning" data-id-title="Planning"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">2.1 </span><span class="title-name">Planning</span></span> <a title="Permalink" class="permalink" href="obs-cha-installation-and-configuration.html#planning">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>For testing your own OBS instance, or for small setups, such as if you only
+   want to package a few scripts into RPMS and create
+   proper installation sources from them, the ready-to-use obs-server appliance
+   images are the easiest way. You can download them from <a class="link" href="http://openbuildservice.org/download/" target="_blank">http://openbuildservice.org/download/</a>.</p><p>
+   However, to use the OBS for large Linux software development with
+   many packages, projects and users, consider setting up a regular installation.
+   Depending on the number of users, projects, and
+   architectures, you can split up the back-end
+   (called partitioning) and have separate hosts for the front-end and the
+   database.
+  </p><p>For most installations, it is OK to run everything except workers
+   on one host, if it has sufficient resources.</p><p>For flexibility and if you want some kind of high availability it is
+   recommended to use virtualization for the different components.</p><section class="sect2" id="planning-resource-planning" data-id-title="Resource Planning"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">2.1.1 </span><span class="title-name">Resource Planning</span></span> <a title="Permalink" class="permalink" href="obs-cha-installation-and-configuration.html#planning-resource-planning">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>Normally, for an small or middle-sized installation, a setup with everything
+    on one host (except workers) is sufficient. You should have a separate /srv
+    volume for the back-end data.  We recommend that you use XFS as file system.</p><p>For each scheduler architecture, you should add 4 GB RAM and one CPU
+    core. For each build distribution you should add at least 50GB disk space
+    per architecture.</p><p>A medium instance with about 50 users can easily run on a machine with
+    16GB RAM, 4 cores and 1 TB storage. The storage, of course, depends on the size
+    of your projects and how often you have new versions.</p><p>For bigger installations, you can use separate networks for back-end
+    communication, workers and front-end.</p><p>As of May 2021, the reference installation on <span class="strong"><strong>build.opensuse.org</strong></span>, which has a lot of users
+    and distributions, runs on a partitioned setup with:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p> a mysql cluster as database </p></li><li class="listitem"><p> api-server: 16GB RAM, 4 cores, 50GB disk </p></li><li class="listitem"><p> separate binary back-ends (scheduler, dispatcher, reposerver,
+      publisher, warden) </p></li><li class="listitem"><p> source server: 11 GB RAM, 4 cores, 3 TB disk.  The RAM is used mainly for
+      caching. </p></li><li class="listitem"><p> main back-end: 62 GB RAM (oversized), 16TB disk </p></li><li class="listitem"><p> a lot of workers (see - <a class="link" href="https://build.opensuse.org/monitor" target="_blank">https://build.opensuse.org/monitor</a>) </p></li></ul></div><p>For build time and performance, the count and performance of available
+    worker hosts is more important than the other parts.</p></section></section><section class="sect1" id="simple-installation" data-id-title="Simple Installation"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">2.2 </span><span class="title-name">Simple Installation</span></span> <a title="Permalink" class="permalink" href="obs-cha-installation-and-configuration.html#simple-installation">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>In this document, we call "simple installation" an OBS installation where all OBS services are running on the same
+   machine.</p><div id="id-1.3.6.4.3" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg"/><div class="admon-title">Important</div><p>It is very important that you read the <span class="strong"><strong>README.SETUP</strong></span> file coming with your OBS version and follow the
+    instructions there, because it may provide additional, version-specific information.</p></div><p>Before you start the installation of the OBS, you should make sure that
+   your hosts have the correct fully qualified hostname, and that DNS is working and
+   can resolve all names.</p><section class="sect2" id="simple-installation-backend-installation" data-id-title="Back-end Installation"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">2.2.1 </span><span class="title-name">Back-end Installation</span></span> <a title="Permalink" class="permalink" href="obs-cha-installation-and-configuration.html#simple-installation-backend-installation">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The back-end hosts all sources and built packages. It also schedules
+    the jobs. To install it, install the "obs-server" package. After installation,
+    it's a good idea to check the service configuration in
+    <span class="strong"><strong>/usr/lib/obs/server/BSConfig.pm</strong></span>, although
+    the defaults should be good enough for simple cases.</p><div id="id-1.3.6.4.5.3" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
+      Read more about configuring the backend in <a class="xref" href="obs-cha-installation-and-configuration.html#distributed-setup" title="2.4. Distributed Setup">Section 2.4, “Distributed Setup”</a>.
+    </p></div><p>The back-end consists of a number of systemd units (services):</p><div class="table" id="id-1.3.6.4.5.5" data-id-title="Services"><div class="title-container"><div class="table-title-wrap"><div class="table-title"><span class="title-number-name"><span class="title-number">Table 2.1: </span><span class="title-name">Services </span></span><a title="Permalink" class="permalink" href="obs-cha-installation-and-configuration.html#id-1.3.6.4.5.5">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div><div class="table-contents"><table style="width: 75%; border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col class="col_1"/><col class="col_2"/><col class="col_3"/></colgroup><thead><tr><th style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; "> Service </th><th style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; "> Description </th><th style="text-align: left; vertical-align: top; border-bottom: 1px solid ; "> Remark </th></tr></thead><tbody><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>obssrcserver.service</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>Source server</p>
+       </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+        
+       </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>obsrepserver.service</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>Repository server</p>
+       </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+        
+       </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>obsservice.service</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>Source services server</p>
+       </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+        
+       </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>obsdodup.service</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>Repository metadata download</p>
+       </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+        <p>since 2.7</p>
+       </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>obsdeltastore.service</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>Delta storage</p>
+       </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+        <p>since 2.7</p>
+       </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>obsscheduler.service</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>Scheduler</p>
+       </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+        
+       </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>obsdispatcher.service</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>Dispatcher proxy</p>
+       </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+        
+       </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>obsservicedispatch.service</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>Dispatcher</p>
+       </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+        
+       </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>obspublisher.service</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>Publisher</p>
+       </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+        
+       </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>obssigner.service</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>Signer proxy</p>
+       </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+        
+       </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>obssignd.service</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>Signer</p>
+       </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+        
+       </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>obswarden.service</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>Warden</p>
+       </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+        
+       </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>obsclouduploadworker.service</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+        <p>Cloud upload worker</p>
+       </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+        <p>Only needed for cloud upload feature</p>
+       </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; ">
+        <p>obsclouduploadserver.service</p>
+       </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; ">
+        <p>Cloud upload server</p>
+       </td><td style="text-align: left; vertical-align: top; ">
+        <p>Only needed for cloud upload feature</p>
+       </td></tr></tbody></table></div></div><p>These services are controlled via <span class="emphasis"><em>systemctl</em></span>.
+    Basically, you can enable/disable a service to start when the system
+    boot, and you can start/stop/restart it in a running system as well.
+    For more information, see
+    <a class="link" href="https://manpages.opensuse.org/Tumbleweed/systemd/systemctl.1.en.html#COMMANDS" target="_blank">the systemctl man page</a>.
+    For example, to restart the repository server, do:
+   </p><div class="verbatim-wrap"><pre class="screen">systemctl restart obsrepserver.service</pre></div><p>When starting the various services, <span class="emphasis"><em>obssrcserver.service</em></span>
+    (the source server) must be started first, and <span class="emphasis"><em>obsrepservice.service</em></span>
+    (the repository server) second, followed by the remaining services in
+    any order. When installing manually, you will need to first enable the
+    services with</p><div class="verbatim-wrap"><pre class="screen">systemctl enable &lt;name&gt;</pre></div><p>so they start automatically at boot. In this case, the start order
+    will be enforced via the respective systemd unit files. Should you want to
+    start the services manually, you will need to ensure the correct ordering
+    yourself, by starting the source server first and the repository server
+    second, like so:</p><div class="verbatim-wrap"><pre class="screen">systemctl start obssrcserver.service
+systemctl start obsrepserver.service</pre></div><p>followed by the remaining services in any order.</p><div id="id-1.3.6.4.5.13" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.svg"/><div class="admon-title">Warning</div><p>The start-up commands start services which are accessible from the
+     outside. If the system is connected to an untrusted network, either block
+     the ports with a firewall or do not run the commands at all.</p></div><section class="sect3" id="simple-installation-backend-installation-cloud-upload-setup" data-id-title="Cloud Upload Setup"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">2.2.1.1 </span><span class="title-name">Cloud Upload Setup</span></span> <a title="Permalink" class="permalink" href="obs-cha-installation-and-configuration.html#simple-installation-backend-installation-cloud-upload-setup">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>In order to setup the Cloud Upload feature you will need to configure the tools required per each cloud provider.
+      Right now we only support the AWS Amazon Cloud (<a class="link" href="https://aws.amazon.com" target="_blank">https://aws.amazon.com</a>) and Microsoft Azure
+      (<a class="link" href="https://portal.azure.com" target="_blank">https://portal.azure.com</a>) as providers.
+    </p><p>
+      Before you can start uploading images to the Amazon Web Services (AWS)
+      and/or Microsoft Azure, you have to:
+    </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Install the obs-cloud-uploader package</p><div class="verbatim-wrap"><pre class="screen">zypper in obs-cloud-uploader</pre></div></li><li class="listitem"><p>Start the cloud upload services</p><div class="verbatim-wrap"><pre class="screen">systemctl start obsclouduploadworker.service
+systemctl start obsclouduploadserver.service</pre></div></li></ol></div><p>
+      At last you have to register the cloud uploader service in
+      <span class="emphasis"><em>/usr/lib/obs/server/BSConfig.pm</em></span>, for example, by adding
+      following line:
+    </p><div class="verbatim-wrap"><pre class="screen">our $clouduploadserver = "http://$hostname:5452";</pre></div><div id="id-1.3.6.4.5.14.7" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.svg"/><div class="admon-title">Warning</div><p>
+        Ensure that the system time of your cloud uploader instance is correct.
+        AWS is relying on the timestamps of the requests it receives.
+        Having an incorrect system time will cause cloud uploads to fail.
+      </p></div><section class="sect4" id="simple-installation-backend-installation-cloud-upload-setup-aws" data-id-title="AWS Amazon Cloud"><div class="titlepage"><div><div><div class="title-container"><h5 class="title"><span class="title-number-name"><span class="title-number">2.2.1.1.1 </span><span class="title-name">AWS Amazon Cloud</span></span> <a title="Permalink" class="permalink" href="obs-cha-installation-and-configuration.html#simple-installation-backend-installation-cloud-upload-setup-aws">#</a></h5><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><section class="sect5" id="simple-installation-backend-installation-cloud-upload-setup-aws-aws-authentication-workflow" data-id-title="Authentication Workflow"><div class="titlepage"><div><div><div class="title-container"><h6 class="title"><span class="title-number-name"><span class="title-number">2.2.1.1.1.1 </span><span class="title-name">Authentication Workflow</span></span> <a title="Permalink" class="permalink" href="obs-cha-installation-and-configuration.html#simple-installation-backend-installation-cloud-upload-setup-aws-aws-authentication-workflow">#</a></h6><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
+         We are going to use the role based authentication provided by Amazon to enable the OBS instance to upload images to other user's accounts.
+       </p><p>
+         The users will obtain an external ID (automatically created and unique) and the OBS account ID to create an Identity and Access Management (IAM) role.
+         After the user created the role, he needs to provide the Amazon Resource Name (ARN) of the role to OBS. OBS will use this ARN to obtain temporary credentials,
+         therefore an uploader account is necessary which we need to configure (see AWS authentication credentials setup).
+         OBS will use the ARN to obtain temporary credentials for the users account to upload the appliance. The ARN and the external ID are not considered as a secret.
+       </p><p>
+         The whole workflow is described in the <a class="link" href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html" target="_blank">AWS documentation</a>.
+       </p></section><section class="sect5" id="simple-installation-backend-installation-cloud-upload-setup-aws-aws-authentication-credential-setup" data-id-title="Credentials Setup"><div class="titlepage"><div><div><div class="title-container"><h6 class="title"><span class="title-number-name"><span class="title-number">2.2.1.1.1.2 </span><span class="title-name">Credentials Setup</span></span> <a title="Permalink" class="permalink" href="obs-cha-installation-and-configuration.html#simple-installation-backend-installation-cloud-upload-setup-aws-aws-authentication-credential-setup">#</a></h6><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
+         For uploading images to AWS, OBS is using the <a class="link" href="https://aws.amazon.com/cli" target="_blank">AWS CLI</a> tool.
+         Before you can start uploading your images, you have to enter the AWS credentials to the
+         <span class="strong"><strong>/etc/obs/cloudupload/.aws/credentials</strong></span> configuration file.
+         These credentials will then be used by OBS to retrieve the temporary credentials from the ARN provided by users.
+         More information about IAM role base authorization can be found in the <a class="link" href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html" target="_blank">Amazon documentation</a>).
+       </p></section></section><section class="sect4" id="simple-installation-backend-installation-cloud-upload-setup-ms-azure" data-id-title="Microsoft Azure"><div class="titlepage"><div><div><div class="title-container"><h5 class="title"><span class="title-number-name"><span class="title-number">2.2.1.1.2 </span><span class="title-name">Microsoft Azure</span></span> <a title="Permalink" class="permalink" href="obs-cha-installation-and-configuration.html#simple-installation-backend-installation-cloud-upload-setup-ms-azure">#</a></h5><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><section class="sect5" id="simple-installation-backend-installation-cloud-upload-setup-ms-azure-ms-azure-authentication-workflow" data-id-title="Authentication Workflow"><div class="titlepage"><div><div><div class="title-container"><h6 class="title"><span class="title-number-name"><span class="title-number">2.2.1.1.2.1 </span><span class="title-name">Authentication Workflow</span></span> <a title="Permalink" class="permalink" href="obs-cha-installation-and-configuration.html#simple-installation-backend-installation-cloud-upload-setup-ms-azure-ms-azure-authentication-workflow">#</a></h6><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
+       The authentication is done via Microsoft's Active Directory. The user has to create a new application and needs to
+       provide those two credentials to OBS:
+      </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Application ID</p><p>The Application ID is a unique ID that represents an Active Directory Application.</p></li><li class="listitem"><p>Application Key</p><p>The Application Key can be generated for every application and is the password.</p></li></ol></div><p>
+       OBS communicates with the REST API of Microsoft Azure to authenticate and upload images.
+      </p></section><section class="sect5" id="simple-installation-backend-installation-cloud-upload-setup-ms-azure-setup" data-id-title="Configuration"><div class="titlepage"><div><div><div class="title-container"><h6 class="title"><span class="title-number-name"><span class="title-number">2.2.1.1.2.2 </span><span class="title-name">Configuration</span></span> <a title="Permalink" class="permalink" href="obs-cha-installation-and-configuration.html#simple-installation-backend-installation-cloud-upload-setup-ms-azure-setup">#</a></h6><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
+       The <span class="strong"><strong>Application ID</strong></span> and the <span class="strong"><strong>Application Key</strong></span> will be stored encrypted in
+       the database. As for that, it's required to generate an SSL secret and public key that has to be stored on the server where the
+       <span class="strong"><strong>obs-cloud-uploader</strong></span> package has been installed.
+      </p><p>
+       To generate that SSL certificate, execute the following commands:
+      </p><div class="verbatim-wrap"><pre class="screen">cd /etc/obs/cloudupload
+openssl genrsa -out secret.pem
+openssl rsa -in secret.pem -out _pubkey -outform PEM -pubout</pre></div></section><section class="sect5" id="simple-installation-backend-installation-cloud-upload-setup-aws-ms-azure-authentication-credential-setup" data-id-title="Credentials setup"><div class="titlepage"><div><div><div class="title-container"><h6 class="title"><span class="title-number-name"><span class="title-number">2.2.1.1.2.3 </span><span class="title-name">Credentials setup</span></span> <a title="Permalink" class="permalink" href="obs-cha-installation-and-configuration.html#simple-installation-backend-installation-cloud-upload-setup-aws-ms-azure-authentication-credential-setup">#</a></h6><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
+       It's important that the public key is named <span class="strong"><strong>_pubkey</strong></span> and the secret key is named
+       <span class="strong"><strong>secret.pem</strong></span> and are kept in <span class="strong"><strong>/etc/obs/cloudupload</strong></span>.
+      </p></section></section></section></section><section class="sect2" id="simple-installation-frontend-installation" data-id-title="Front-end Installation"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">2.2.2 </span><span class="title-name">Front-end Installation</span></span> <a title="Permalink" class="permalink" href="obs-cha-installation-and-configuration.html#simple-installation-frontend-installation">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>You need to install the "obs-api" package for this and a MySQL
+    server.</p><section class="sect3" id="simple-installation-frontend-installation-mysql-setup" data-id-title="MySQL Setup"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">2.2.2.1 </span><span class="title-name">MySQL Setup</span></span> <a title="Permalink" class="permalink" href="obs-cha-installation-and-configuration.html#simple-installation-frontend-installation-mysql-setup">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>Make sure that the mysql server is started on every system reboot
+     (use "insserv mysql" for permanent start). You should run
+     mysql_secure_installation and follow the instructions.</p><p>Create the empty production databases:</p><div class="verbatim-wrap"><pre class="screen"># mysql -u root -p
+mysql&gt; create database api_production;
+mysql&gt; quit</pre></div><p>
+     Use a separate MySQL user (for example,
+     <code class="systemitem">obs</code>) for the OBS access:
+    </p><div class="verbatim-wrap"><pre class="screen"># mysql -u root -p
+mysql&gt; create user 'obs'@'%' identified by 'TopSecretPassword';
+mysql&gt; create user 'obs'@'localhost' identified by 'TopSecretPassword';
+mysql&gt; GRANT all privileges ON api_production.*
+      TO 'obs'@'%', 'obs'@'localhost';
+mysql&gt; FLUSH PRIVILEGES;
+mysql&gt; quit</pre></div><p>Configure your MySQL user and password in the "production" section of
+     the api config: <span class="strong"><strong>/srv/www/obs/api/config/database.yml</strong></span>
+    </p><p>Example:</p><div class="verbatim-wrap"><pre class="screen"># MySQL (default setup).  Versions 4.1 and 5.0 are recommended.
+#
+# Get the fast C bindings:
+#   gem install mysql
+#   (on OS X: gem install mysql -- --include=/usr/local/lib)
+# And be sure to use new-style password hashing:
+#   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
+
+production:
+  adapter: mysql2
+  database: api_production
+  username: obs
+  password: TopSecretPassword
+  encoding: utf8
+  timeout: 15
+  pool: 30</pre></div><p>Now populate the database</p><div class="verbatim-wrap"><pre class="screen">cd /srv/www/obs/api/
+sudo RAILS_ENV="production" rake db:setup
+sudo RAILS_ENV="production" rake writeconfiguration
+sudo chown -R wwwrun.www log tmp</pre></div><p>Now you are done with the database setup.</p></section><section class="sect3" id="simple-installation-frontend-installation-apache-setup" data-id-title="Apache Setup"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">2.2.2.2 </span><span class="title-name">Apache Setup</span></span> <a title="Permalink" class="permalink" href="obs-cha-installation-and-configuration.html#simple-installation-frontend-installation-apache-setup">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>Now we need to configure the Web server. By default, you can reach
+     the familiar web user interface and also api both on port 443 speaking
+     https. Repositories can be accessed via http on port 82 (once some
+     packages are built). An overview page about your OBS instance can be found
+     behind <span class="emphasis"><em>'http://localhost'</em></span>.</p><p>The obs-api package comes with an Apache vhost file, which does not
+     need to get modified when you stay with these defaults:
+      <span class="emphasis"><em>/etc/apache2/vhosts.d/obs.conf</em></span>
+    </p><p>Install the required packages via</p><div class="verbatim-wrap"><pre class="screen">zypper in obs-api apache2 apache2-mod_xforward rubygem-passenger-apache2 memcached</pre></div><p>
+     Add the following Apache modules in <code class="filename">/etc/sysconfig/apache2</code>:
+    </p><div class="verbatim-wrap"><pre class="screen">APACHE_MODULES="... passenger rewrite proxy proxy_http xforward headers socache_shmcb"</pre></div><p>Enable SSL in /etc/sysconfig/apache2 via</p><div class="verbatim-wrap"><pre class="screen">APACHE_SERVER_FLAGS="SSL"</pre></div><p>For production systems you should order official SSL certificates.
+     For testing follow the instructions to create a self signed SSL
+     certificate:</p><div class="verbatim-wrap"><pre class="screen">mkdir /srv/obs/certs
+openssl genrsa -out /srv/obs/certs/server.key 4096
+openssl req -new -key /srv/obs/certs/server.key \
+        -out /srv/obs/certs/server.csr
+openssl x509 -req -days 365 -in /srv/obs/certs/server.csr \
+        -signkey /srv/obs/certs/server.key -out /srv/obs/certs/server.crt
+cat /srv/obs/certs/server.key /srv/obs/certs/server.crt \
+      &gt; /srv/obs/certs/server.pem</pre></div><p>At the time of this writing (2024), we consider the 4K RSA key
+     to be a safe implementation, but you might want to check out the
+     current standards by consulting (on both client and server side)
+     the output of</p><div class="verbatim-wrap"><pre class="screen"><code class="command">man crypto-policies</code></pre></div><p>and</p><div class="verbatim-wrap"><pre class="screen"><code class="command">man update-crypto-policies</code></pre></div><p>To allow the usage of https API in Web UI code you need to trust your
+     certificate as well:</p><div class="verbatim-wrap"><pre class="screen">cp /srv/obs/certs/server.pem /etc/ssl/certs/
+c_rehash /etc/ssl/certs/</pre></div></section><section class="sect3" id="simple-installation-frontend-installation-api-configuration" data-id-title="API Configuration"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">2.2.2.3 </span><span class="title-name">API Configuration</span></span> <a title="Permalink" class="permalink" href="obs-cha-installation-and-configuration.html#simple-installation-frontend-installation-api-configuration">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>Check and edit <span class="strong"><strong>/srv/www/obs/api/config/options.yml</strong></span>
+    </p><p>If you change the hostnames/ips of the API, you need to adjust
+      <span class="strong"><strong>frontend_host</strong></span>
+     accordingly. If you want to use LDAP, you need to change the LDAP settings
+     as well. Look at the <a class="xref" href="obs-cha-administration.html#user-and-group-management" title="5.8. Managing Users and Groups">Section 5.8, “Managing Users and Groups”</a> for
+     details. You will find examples and more details in the <a class="xref" href="obs-cha-overview-filesystem.html#configuration-files" title="3.1. Configuration Files">Section 3.1, “Configuration Files”</a>.</p><p>It is strongly recommended to enable</p><div class="verbatim-wrap"><pre class="screen">use_xforward: true</pre></div><p>as well here, to tell Rails to forward requests to the back-end for
+     asynchronous processing. (Without this setting, the front-end will block
+     while the back-end handles each request.)</p><p>Afterwards, you can start the OBS API and make it permanent
+     via</p><div class="verbatim-wrap"><pre class="screen">systemctl enable apache2
+systemctl start apache2
+
+systemctl enable obs-api-support.target
+systemctl start obs-api-support.target
+
+systemctl enable memcached.service
+systemctl start memcached.service</pre></div><p>Now you have you own empty instance running and you can do some
+     online configuration steps.</p></section></section><section class="sect2" id="simple-installation-online-configuration" data-id-title="Online Configuration"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">2.2.3 </span><span class="title-name">Online Configuration</span></span> <a title="Permalink" class="permalink" href="obs-cha-installation-and-configuration.html#simple-installation-online-configuration">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>To customize the OBS instance you may need to configure some settings
+    via the OBS API and Web user interface.</p><p>First you should change the password of the Admin account, for this
+    you need first login as user Admin in the Web UI with the default password
+    "opensuse". Click on the Admin link (right top of the page), here you can
+    change the password.</p><p>
+    After changing the Admin password, set up <code class="command">osc</code> to use the
+    Admin account for more changes. Here an example:</p><div class="verbatim-wrap"><pre class="screen">osc -c ~/.obsadmin_osc.rc -A https://api.testobs.org</pre></div><p>Follow the instructions on the terminal.</p><div id="id-1.3.6.4.7.7" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.svg"/><div class="admon-title">Warning</div><p>The password is stored in clear text in this file by default, so you
+     need to give this file restrictive access rights, only read/write access
+     for your user should be allowed. <span class="strong"><strong>osc</strong></span>
+     allows to store the password in other ways (in keyrings for example),
+     refer to the osc documentation for this.</p></div><p>Now you can check out the main configuration of the OBS:</p><div class="verbatim-wrap"><pre class="screen">osc -c ~/.obsadmin_osc.rc api /configuration &gt;/tmp/obs.config
+cat /tmp/obs.config
+&lt;configuration&gt;
+  &lt;title&gt;Open Build Service&lt;/title&gt;
+  &lt;description&gt;
+    &amp;lt;p class="description"&amp;gt;
+      The &amp;lt;a href="http://openbuildservice.org"&amp;gt; Open Build Service (OBS)&amp;lt;/a&amp;gt;
+      is an open and complete distribution development platform that provides a transparent
+      infrastructure for development of Linux distributions, used by openSUSE, MeeGo
+      and other distributions.
+      Supporting also Fedora, Debian, Ubuntu, RedHat and other Linux distributions.
+    &amp;lt;/p&amp;gt;
+    &amp;lt;p class="description"&amp;gt;
+      The OBS is developed under the umbrella of the &amp;lt;a href="http://www.opensuse.org"&amp;gt;openSUSE project&amp;lt;
+      /a&amp;gt;. Please find further informations on the &amp;lt;
+      a href="http://wiki.opensuse.org/openSUSE:Build_Service"&amp;gt;openSUSE Project wiki pages&amp;lt;/a&amp;gt;.
+    &amp;lt;/p&amp;gt;
+
+    &amp;lt;p class="description"&amp;gt;
+      The Open Build Service developer team is greeting you. In case you use your OBS productive
+      in your facility, please do us a favor and add yourself at &amp;lt;
+      a href="http://wiki.opensuse.org/openSUSE:Build_Service_installations"&amp;gt;
+      this wiki page&amp;lt;/a&amp;gt;. Have fun and fast build times!
+    &amp;lt;/p&amp;gt;
+  &lt;/description&gt;
+  &lt;name&gt;private&lt;/name&gt;
+  &lt;download_on_demand&gt;on&lt;/download_on_demand&gt;
+  &lt;enforce_project_keys&gt;off&lt;/enforce_project_keys&gt;
+  &lt;anonymous&gt;on&lt;/anonymous&gt;
+  &lt;registration&gt;allow&lt;/registration&gt;
+  &lt;default_access_disabled&gt;off&lt;/default_access_disabled&gt;
+  &lt;allow_user_to_create_home_project&gt;on&lt;/allow_user_to_create_home_project&gt;
+  &lt;disallow_group_creation&gt;off&lt;/disallow_group_creation&gt;
+  &lt;change_password&gt;on&lt;/change_password&gt;
+  &lt;hide_private_options&gt;off&lt;/hide_private_options&gt;
+  &lt;gravatar&gt;on&lt;/gravatar&gt;
+  &lt;cleanup_empty_projects&gt;on&lt;/cleanup_empty_projects&gt;
+  &lt;disable_publish_for_branches&gt;on&lt;/disable_publish_for_branches&gt;
+  &lt;admin_email&gt;unconfigured@openbuildservice.org&lt;/admin_email&gt;
+  &lt;unlisted_projects_filter&gt;^home:.+&lt;/unlisted_projects_filter&gt;
+  &lt;unlisted_projects_filter_description&gt;home projects&lt;/unlisted_projects_filter_description&gt;
+  &lt;schedulers&gt;
+    &lt;arch&gt;armv7l&lt;/arch&gt;
+    &lt;arch&gt;i586&lt;/arch&gt;
+    &lt;arch&gt;x86_64&lt;/arch&gt;
+  &lt;/schedulers&gt;
+&lt;/configuration&gt;</pre></div><div id="id-1.3.6.4.7.10" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg"/><div class="admon-title">Important</div><p>
+     <span class="strong"><strong>unlisted_projects_filter</strong></span> only admit
+     Regular Expression (see RLIKE specifications of MySQL/MariaDB for more
+     information) and <span class="strong"><strong>unlisted_projects_filter_description</strong></span> is part of the link
+     shown in the project list for filtering </p></div><p>You should edit this file according to your preferences, then sent it
+    back to the server:</p><div class="verbatim-wrap"><pre class="screen">osc -c ~/.obsadmin_osc.rc api /configuration -T /tmp/obs.config</pre></div><p>If you want to use an interconnect to another OBS instance to reuse
+    the build targets you can do this as Admin via the Web UI or create a
+    project with a <span class="strong"><strong>remoteurl</strong></span> tag (see <a class="xref" href="obs-cha-overview-filesystem.html#meta-data-project-meta-data" title="3.4.2. Project Metadata">Section 3.4.2, “Project Metadata”</a>)</p><div class="verbatim-wrap"><pre class="screen">&lt;project name="openSUSE.org"&gt;
+  &lt;title&gt;openSUSE.org Project&lt;/title&gt;
+  &lt;description&gt;
+ This project refers to projects hosted on the Build Service
+[...]
+
+Use openSUSE.org:openSUSE:12.3 for example to build against the
+openSUSE:12.3 project as specified on the opensuse.org Build Service.
+&lt;/description&gt;
+  &lt;remoteurl&gt;https://api.opensuse.org/public&lt;/remoteurl&gt;
+&lt;/project&gt;</pre></div><p>You can create the project using a file with the above content with
+     <span class="strong"><strong>osc</strong></span> like
+    this:</p><div class="verbatim-wrap"><pre class="screen">osc -c ~/.obsadmin_osc.rc meta prj openSUSE.org -F /tmp/openSUSE.org.meta</pre></div><p>You also can import binary distribution, see <a class="xref" href="obs-cha-administration.html#managing-build-targets-importing-distributions" title="5.2.2. Importing Distributions">Section 5.2.2, “Importing Distributions”</a> for this.</p><p>The OBS has a list of available distributions used for build. This
+    list is displayed to user, if they are adding repositories to their
+    projects. This list can be managed via the API path /distributions</p><div class="verbatim-wrap"><pre class="screen">osc -c ~/.obsadmin_osc.rc api /distributions &gt; /tmp/distributions.xml</pre></div><p>Example distributions.xml file:</p><div class="verbatim-wrap"><pre class="screen">&lt;distributions&gt;
+  &lt;distribution vendor="SUSE" version="SLE-12-SP1" id="137"&gt;
+    &lt;name&gt;SLE-12-SP1&lt;/name&gt;
+    &lt;project&gt;SUSE:SLE-12-SP1&lt;/project&gt;
+    &lt;reponame&gt;SLE-12-SP1&lt;/reponame&gt;
+    &lt;repository&gt;standard&lt;/repository&gt;
+    &lt;link&gt;http://www.suse.com/&lt;/link&gt;
+    &lt;icon url="https://static.opensuse.org/distributions/logos/suse-SLE-12-8.png" width="8" height="8"/&gt;
+    &lt;icon url="https://static.opensuse.org/distributions/logos/suse-SLE-12-16.png" width="16" height="16"/&gt;
+    &lt;architecture&gt;x86_64&lt;/architecture&gt;
+  &lt;/distribution&gt;
+&lt;/distributions&gt;</pre></div><p>You can add your own distributions here and update the list on the
+    server:</p><div class="verbatim-wrap"><pre class="screen">osc -c ~/.obsadmin_osc.rc api /distributions -T /tmp/distributions.xml</pre></div></section></section><section class="sect1" id="worker-farm" data-id-title="Worker Farm"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">2.3 </span><span class="title-name">Worker Farm</span></span> <a title="Permalink" class="permalink" href="obs-cha-installation-and-configuration.html#worker-farm">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>To not burden your OBS back-end daemons with the unpredictable load
+   package builds can produce (think someone builds a monstrous package like
+   LibreOffice) you should not run OBS workers on the same host as the rest of
+   the back-end daemons.</p><div id="id-1.3.6.5.3" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg"/><div class="admon-title">Important</div><p>You back-end need to be configured to use the correct hostnames for
+    the repo and source server and the ports need to be reachable by the
+    workers. Also, the IP addresses of the workers need to be allowed to connect
+    the services. (look at the
+     <span class="emphasis"><em>/usr/lib/obs/server/BSConfig.pm::ipaccess</em></span>
+    array).</p></div><p>You can deploy workers quite simply using the worker appliance. Or
+   install a minimum system plus the obs-worker package on the hardware.</p><p>Edit the <span class="strong"><strong>/etc/sysconfig/obs-server</strong></span> file, at least
+    <span class="strong"><strong>OBS_SRC_SERVER</strong></span>, <span class="strong"><strong>OBS_REPO_SERVERS</strong></span> and <span class="strong"><strong>OBS_WORKER_INSTANCES</strong></span> need to be set. More details in the <a class="xref" href="obs-cha-overview-filesystem.html#configuration-files" title="3.1. Configuration Files">Section 3.1, “Configuration Files”</a>.</p><p>start the worker:</p><div class="verbatim-wrap"><pre class="screen">systemctl enable obsworker
+systemctl start obsworker</pre></div></section><section class="sect1" id="distributed-setup" data-id-title="Distributed Setup"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">2.4 </span><span class="title-name">Distributed Setup</span></span> <a title="Permalink" class="permalink" href="obs-cha-installation-and-configuration.html#distributed-setup">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>All OBS back-end daemons can also be started on individual machines in
+   your network. Also, the front-end Web server and the MySQL server can run on
+   different machines. Especially for large scale OBS installations this is the
+   recommended setup.</p><p>A setup with partitioning is very similar to the steps of the simple
+   setup. Here we are only mention the differences to the simple setup.</p><div id="id-1.3.6.6.4" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>You need to make sure that the different machines can communicate via
+    the network, it is very recommended to use a separate network for this to
+    isolate it from the public part.</p></div><p>On all back-end hosts you need to install the obs-server package. On
+   the front-end host you need to install the obs-api package.</p><div id="id-1.3.6.6.6" class="admonition important normal"><img class="symbol" alt="Important" title="Important" src="static/images/icon-important.svg"/><div class="admon-title">Important</div><p>Only one source server instance can be exist on a single OBS
+    installation.</p></div><p>The binary back-end can be split on project level, this is called
+   partitioning.</p><p>On one partition following services needs to be configured and
+   run:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p> repserver </p></li><li class="listitem"><p> schedulers </p></li><li class="listitem"><p> dispatcher </p></li><li class="listitem"><p> warden </p></li><li class="listitem"><p> publisher </p></li></ol></div><p>You do not need to share any directories on File System level between
+   the partitions.</p><p>Here some example for partitioning:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p> A main partition for everything not in the others (host mainbackend)
+    </p></li><li class="listitem"><p> A home partition for all home projects of the users (host
+     homebackend) </p></li><li class="listitem"><p> A release partition for released software projects (host
+     releasebackend) </p></li></ol></div><p>The configuration is done in the back-end config file <span class="strong"><strong>/usr/lib/obs/server/BSConfig.pm</strong></span>. Most parts of the
+   file can be shared between the back-ends.</p><p>Here the important parts of the mainbackend of out testobs.org
+   installation:</p><div class="verbatim-wrap"><pre class="screen">[...]
+my $hostname = Net::Domain::hostfqdn() || 'localhost';
+# IP corresponding to hostname (only used for $ipaccess); fallback to localhost since inet_aton may fail to resolve at shutdown.
+my $ip = quotemeta inet_ntoa(inet_aton($hostname) || inet_aton("localhost"));
+
+my $frontend = 'api.testobs.org'; # FQDN of the Web UI/API server if it's not $hostname
+
+# If defined, restrict access to the backend servers (bs_repserver, bs_srcserver, bs_service)
+our $ipaccess = {
+   '127\..*' =&gt; 'rw', # only the localhost can write to the backend
+   "^$ip" =&gt; 'rw',    # Permit IP of FQDN
+   "10.20.1.100" =&gt; 'rw',    # Permit IP of srcsrv.testobs.org
+   "10.20.1.101" =&gt; 'rw',    # Permit IP of mainbackend.testobs.org
+   "10.20.1.102" =&gt; 'rw',    # Permit IP of homebackend.testobs.org
+   "10.20.1.103" =&gt; 'rw',    # Permit IP of releasebackend.testobs.org
+   '10.20.2.*' =&gt; 'worker',  # build results can be delivered from any client in the network
+};
+
+# IP of the Web UI/API Server (only used for $ipaccess)
+if ($frontend) {
+  my $frontendip = quotemeta inet_ntoa(inet_aton($frontend) || inet_aton("localhost"));
+  $ipaccess-&gt;{$frontendip} = 'rw' ; # in dotted.quad format
+}
+
+# also change the SLP reg files in /etc/slp.reg.d/ when you touch hostname or port
+our $srcserver = "http://srcsrv.testobs.org:5352";
+our $reposerver = "http://mainbackend.testobs.org:5252";
+our $serviceserver = "http://service.testobs.org:5152";
+
+# Needed if you want to use the cloud upload feature
+our $clouduploadserver = "http://$hostname:5452";
+
+#
+our @reposervers = ("
+    http://mainbackend.testobs.org:5252,
+    http://homebackend.testobs.org:5252,
+    http://releasebackend.testobs.org:5252
+");
+
+# you can use different ports for worker connections
+our $workersrcserver = "http://w-srcsrv.testobs.org:5353";
+our $workerreposerver = "http://w-mainbackend.testobs.org:5253";
+[...]
+our $partition = 'main';
+#
+# this defines how the projects are split. All home: projects are hosted
+# on an own server in this example. Order is important.
+our $partitioning = [
+    'home:' =&gt; 'home',
+    'release' =&gt; 'release'
+    '.*'    =&gt; 'main',
+];
+our $partitionservers = {
+    'home' =&gt; 'http://homebackend.testobs.org:5252',
+    'release' =&gt; 'http://releasebackend.testobs.org:5252',
+    'main' =&gt; 'http://mainbackend.testobs.org:5252',
+};
+[...]</pre></div><p>On the other partition server you need to change <span class="strong"><strong>"our $reposerver"</strong></span>, <span class="strong"><strong>"our $workerreposerver"</strong></span> and
+    <span class="strong"><strong>"our
+   $partition"</strong></span>.</p><p>On all partition servers you need to start:</p><div class="verbatim-wrap"><pre class="screen">systemctl start obsrepserver.service
+systemctl start obsscheduler.service
+systemctl start obsdispatcher.service
+systemctl start obspublisher.service
+systemctl start obswarden.service</pre></div><p>On the worker machines you should set of repo servers in the <span class="strong"><strong>OBS_REPO_SERVERS</strong></span> variable. You can also define
+   workers with a subset of the repo servers to prioritize partitions.</p></section><section class="sect1" id="monitoring" data-id-title="Monitoring"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">2.5 </span><span class="title-name">Monitoring</span></span> <a title="Permalink" class="permalink" href="obs-cha-installation-and-configuration.html#monitoring">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>In this chapter you will find some general monitoring instructions for
+   the Open Build Service. All examples are based on Nagios plugins, but the
+   information provided should be easily adaptable for other monitoring
+   solutions.</p><section class="sect2" id="monitoring-endpoint-checks" data-id-title="Endpoint Checks"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">2.5.1 </span><span class="title-name">Endpoint Checks</span></span> <a title="Permalink" class="permalink" href="obs-cha-installation-and-configuration.html#monitoring-endpoint-checks">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><section class="sect3" id="monitoring-endpoint-checks-http-checks-check-if-the-http-server-responds" data-id-title="HTTP Checks: Checking Whether the HTTP Server Responds"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">2.5.1.1 </span><span class="title-name">HTTP Checks: Checking Whether the HTTP Server Responds</span></span> <a title="Permalink" class="permalink" href="obs-cha-installation-and-configuration.html#monitoring-endpoint-checks-http-checks-check-if-the-http-server-responds">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>This check will output a critical if the HTTP server with ip address
+     172.19.19.19 (-I 172.19.19.19) listening on port 80 (-p 80) does not
+     answer and output a warning if the HTTP return code is not 200. The server
+     name that will be used is server (-H server) which is important if
+     different virtual hosts are listening on the same port.</p><div class="verbatim-wrap"><pre class="screen">check_http -H server -I 172.19.19.19 -p 80 -u http://server</pre></div><p>The same check, but this time it will check a ssl enabled HTTP
+     server.</p><div class="verbatim-wrap"><pre class="screen">check_http -S -H server -I 172.19.19.19 -p 443 -u https://server</pre></div><p>It is also possible to check the presence of a certain string in the
+     HTTP response. In this case it will check for the string <span class="emphasis"><em>Source
+      Service Server</em></span>.</p><div class="verbatim-wrap"><pre class="screen">check_http -s "Source Service Server" -S -H server -I 172.19.19.19 -p 5152</pre></div><p>Open Build Service HTTP endpoints that should be checked:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p> Web Interface / API: port 443 </p></li><li class="listitem"><p> Repository Server: port 82 </p></li><li class="listitem"><p> Package Repository Server: port 5252 </p></li><li class="listitem"><p> Source Repository Server: port 5352 </p></li><li class="listitem"><p> Source Service Server: port 5152 </p></li><li class="listitem"><p> Cloud Upload Server: port 5452 </p></li></ol></div></section></section><section class="sect2" id="monitoring-common-checks" data-id-title="Common Checks"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">2.5.2 </span><span class="title-name">Common Checks</span></span> <a title="Permalink" class="permalink" href="obs-cha-installation-and-configuration.html#monitoring-common-checks">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>This is a list of common checks that should be run on each individual
+    server.</p><section class="sect3" id="monitoring-common-checks-disk-space-check-for-available-disk-space" data-id-title="Disk Space: Checking Available Disk Space"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">2.5.2.1 </span><span class="title-name">Disk Space: Checking Available Disk Space</span></span> <a title="Permalink" class="permalink" href="obs-cha-installation-and-configuration.html#monitoring-common-checks-disk-space-check-for-available-disk-space">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>This check will output a warning if less than 10 percent disk space
+     is available (-w 10) and output a critical if less than 5 percent disk
+     space are available (-c 5). It will check all file systems except file
+     systems with type <span class="emphasis"><em>none</em></span> (-x none).</p><div class="verbatim-wrap"><pre class="screen">check_disk -w 10 -c 5 -x none</pre></div></section><section class="sect3" id="monitoring-common-checks-memory-usage-check-for-available-memory" data-id-title="Memory Usage: Checking Available Memory"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">2.5.2.2 </span><span class="title-name">Memory Usage: Checking Available Memory</span></span> <a title="Permalink" class="permalink" href="obs-cha-installation-and-configuration.html#monitoring-common-checks-memory-usage-check-for-available-memory">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>This check will output a warning if less than 10 percent memory is
+     available (-w 10) and output a critical if less than 5 percent memory is
+     available (-c 5). OS caches will be counted as free memory (-C) and it
+     will check the available memory (-f). check_mem.pl is not a standard
+     Nagios plugin and can be downloaded at <a class="link" href="https://exchange.nagios.org/" target="_blank">https://exchange.nagios.org/</a>.</p><div class="verbatim-wrap"><pre class="screen">check_mem.pl -f -C -w 10 -c 5</pre></div></section><section class="sect3" id="monitoring-common-checks-ntp-check-date-and-time" data-id-title="NTP: Checking Date and Time"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">2.5.2.3 </span><span class="title-name">NTP: Checking Date and Time</span></span> <a title="Permalink" class="permalink" href="obs-cha-installation-and-configuration.html#monitoring-common-checks-ntp-check-date-and-time">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>This check will compare the local time with the time provided by the
+     NTP server pool.ntp.org (-H pool.ntp.org). It will output a warning if the
+     time differs by 0.5 seconds (-w 0.5) and output a critical if the time
+     differs by 1 seconds (-c 1).</p><div class="verbatim-wrap"><pre class="screen">check_ntp_time -H pool.ntp.org -w 0.5 -c 1</pre></div></section><section class="sect3" id="monitoring-common-checks-ping-check-that-the-server-is-alive" data-id-title="Ping: Checking That the Server Is Alive"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">2.5.2.4 </span><span class="title-name">Ping: Checking That the Server Is Alive</span></span> <a title="Permalink" class="permalink" href="obs-cha-installation-and-configuration.html#monitoring-common-checks-ping-check-that-the-server-is-alive">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>This plugin checks if the server responds to a ping request and it
+     will output a warning if the respond time exceeds 200ms or 30 percent
+     package loss (-w 200.0,30%) and output a critical if the respond time
+     exceeds 500ms or 60 percent package loss.</p><div class="verbatim-wrap"><pre class="screen">check_icmp -H server -w 200.0,30% -c 500.0,60%</pre></div></section><section class="sect3" id="monitoring-common-checks-load-check-the-load-on-the-server" data-id-title="Load: Checking the Load on the Server"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">2.5.2.5 </span><span class="title-name">Load: Checking the Load on the Server</span></span> <a title="Permalink" class="permalink" href="obs-cha-installation-and-configuration.html#monitoring-common-checks-load-check-the-load-on-the-server">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>This check will output a warning if the load value exceeded 7.0 in
+     the last minute, 6.0 in the last 5 minutes or 5.0 in the last 15 minutes
+     (-w 7.0,6.0,5.0). It will output a critical if the load value exceeded
+     12.0 in the last minute, 8.0 in the last 5 minutes or 6.0 in the last 15
+     minutes (-c 12.0,8.0,6.0).</p><div class="verbatim-wrap"><pre class="screen">check_load -w 7.0,6.0,5.0 -c 12.0,8.0,6.0</pre></div></section><section class="sect3" id="monitoring-common-checks-disk-health-check-the-health-of-local-hard-disks" data-id-title="Disk Health: Checking the Health of Local Hard Disks"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">2.5.2.6 </span><span class="title-name">Disk Health: Checking the Health of Local Hard Disks</span></span> <a title="Permalink" class="permalink" href="obs-cha-installation-and-configuration.html#monitoring-common-checks-disk-health-check-the-health-of-local-hard-disks">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>This check is only relevant on physical systems with local storage
+     attached to it. It will check the disk status utilizing the S.M.A.R.T
+     interface and it will output a critical if any of the S.M.A.R.T values
+     exceeds critical limits. check_smartmon is not a standard Nagios plugin
+     and can be downloaded at <a class="link" href="https://exchange.nagios.org/" target="_blank">https://exchange.nagios.org/</a>.</p><div class="verbatim-wrap"><pre class="screen">check_smartmon --drive /dev/sda --drive /dev/sdb</pre></div></section></section><section class="sect2" id="monitoring-other-checks" data-id-title="Other Checks"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">2.5.3 </span><span class="title-name">Other Checks</span></span> <a title="Permalink" class="permalink" href="obs-cha-installation-and-configuration.html#monitoring-other-checks">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><section class="sect3" id="monitoring-other-checks-mysql-check-that-the-mysql-database-is-responding" data-id-title="MySQL: Checking That the MySQL Database Is Responding"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">2.5.3.1 </span><span class="title-name">MySQL: Checking That the MySQL Database Is Responding</span></span> <a title="Permalink" class="permalink" href="obs-cha-installation-and-configuration.html#monitoring-other-checks-mysql-check-that-the-mysql-database-is-responding">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>This check will check that the MySQL database server is running and
+     that the database <span class="emphasis"><em>api_production</em></span> is available.</p><div class="verbatim-wrap"><pre class="screen">check_mysql -H localhost -u nagios -p xxxxxx -d api_production</pre></div><p>MySQL Databases to check:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p> api_production </p></li><li class="listitem"><p> mysql </p></li></ol></div></section><section class="sect3" id="monitoring-other-checks-backup-status-check-that-a-valid-backup-is-avilable" data-id-title="Backup Status: Checking That a Valid Backup Is Available"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">2.5.3.2 </span><span class="title-name">Backup Status: Checking That a Valid Backup Is Available</span></span> <a title="Permalink" class="permalink" href="obs-cha-installation-and-configuration.html#monitoring-other-checks-backup-status-check-that-a-valid-backup-is-avilable">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>It is always advisable to check that the last backup run was
+     successful and a recent backup is available. The check itself depends on
+     the Backup solution that is used.</p></section></section></section></section><nav class="bottom-pagination"><div><a class="pagination-link prev" href="cha-obs-admin.html"><span class="pagination-relation">Previous</span><span class="pagination-label"><span class="title-number">Chapter 1 </span>High-level Overview</span></a> </div><div><a class="pagination-link next" href="obs-cha-overview-filesystem.html"><span class="pagination-relation">Next</span><span class="pagination-label"><span class="title-number">Chapter 3 </span>File System Overview</span></a> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="sect1"><a href="obs-cha-installation-and-configuration.html#planning"><span class="title-number">2.1 </span><span class="title-name">Planning</span></a></span></li><li><span class="sect1"><a href="obs-cha-installation-and-configuration.html#simple-installation"><span class="title-number">2.2 </span><span class="title-name">Simple Installation</span></a></span></li><li><span class="sect1"><a href="obs-cha-installation-and-configuration.html#worker-farm"><span class="title-number">2.3 </span><span class="title-name">Worker Farm</span></a></span></li><li><span class="sect1"><a href="obs-cha-installation-and-configuration.html#distributed-setup"><span class="title-number">2.4 </span><span class="title-name">Distributed Setup</span></a></span></li><li><span class="sect1"><a href="obs-cha-installation-and-configuration.html#monitoring"><span class="title-number">2.5 </span><span class="title-name">Monitoring</span></a></span></li></ul></div> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
+                 2024</span></div></div></footer></body></html>

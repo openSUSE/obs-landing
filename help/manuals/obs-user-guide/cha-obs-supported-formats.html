@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><title>User Guide | Supported Formats</title><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"/><link rel="schema.DCTERMS" href="http://purl.org/dc/terms/"/>
+<meta name="title" content="Supported Formats"/>
+<meta name="description" content="Open Build Service is by design format agnostic, but it needs format specific support to be able to parse build descriptions and running the build. T…"/>
+<meta name="book-title" content="User Guide"/>
+<meta name="chapter-title" content="Chapter 27. Supported Formats"/>
+<meta name="tracker-url" content="https://github.com/openSUSE/obs-docu/issues/new"/>
+<meta name="tracker-type" content="gh"/>
+<meta name="publisher" content="SUSE"/><meta property="og:title" content="Supported Formats"/>
+<meta property="og:description" content="Open Build Service is by design format agnostic, but it nee…"/>
+<meta property="og:type" content="article"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Supported Formats"/>
+<meta name="twitter:description" content="Open Build Service is by design format agnostic, but it nee…"/>
+<script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": ["TechArticle"],
+    "image": "https://www.suse.com/assets/img/suse-white-logo-green.svg",
+    
+     "isPartOf": {
+      "@type": "CreativeWorkSeries",
+      "name": "Product &amp; Solutions"
+    },
+    
+    "inLanguage": "en",
+    
+
+    "headline": "Supported Formats",
+  
+    "description": "Supported Formats",
+      
+    "author": [
+      {
+        "@type": "Corporation",
+        "name": "SUSE Product &amp; Solution Documentation Team",
+        "url": "https://www.suse.com/assets/img/suse-white-logo-green.svg"
+      }
+    ],
+      
+
+    "about": [
+      
+    ],
+  
+    "sameAs": [
+          "https://www.facebook.com/SUSEWorldwide/about",
+          "https://www.youtube.com/channel/UCHTfqIzPKz4f_dri36lAQGA",
+          "https://twitter.com/SUSE",
+          "https://www.linkedin.com/company/suse"
+    ],
+    "publisher": {
+      "@type": "Corporation",
+      "name": "SUSE",
+      "url": "https://documentation.suse.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.suse.com/assets/img/suse-white-logo-green.svg"
+      }
+    }
+  }</script>
+<link rel="prev" href="cha-obs-scm-bridge.html" title="Chapter 26. SCM Bridge"/><link rel="next" href="cha-obs-request-and-review-system.html" title="Chapter 28. Request And Review System"/><script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
+};
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"/></noscript><script src="static/js/script-purejs.js" type="text/javascript"> </script><script src="static/js/highlight.min.js" type="text/javascript"> </script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="wide offline js-off"><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-pagination">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><header id="_mainnav"><div class="growth-inhibitor"/></header><div class="crumbs"><div class="growth-inhibitor"><a class="crumb" href="index.html">User Guide</a><span> / </span><a class="crumb" href="par-reference.html">Reference</a><span> / </span><a class="crumb" href="cha-obs-supported-formats.html">Supported Formats</a></div></div><main id="_content"><nav id="_side-toc-overall" class="side-toc"><div class="side-title">User Guide</div><ol><li><a href="bk01pr01.html" class=" "><span class="title-number"> </span><span class="title-name">About this Guide</span></a></li><li><a href="par-first-steps.html" class="has-children "><span class="title-number">I </span><span class="title-name">First Steps</span></a><ol><li><a href="art-obs-bg.html" class=" "><span class="title-number">1 </span><span class="title-name">Beginnerʼs Guide</span></a></li></ol></li><li><a href="par-concepts.html" class="has-children "><span class="title-number">II </span><span class="title-name">Concepts</span></a><ol><li><a href="cha-obs-package-formats.html" class=" "><span class="title-number">2 </span><span class="title-name">Supported Build Recipes and Package Formats</span></a></li></ol></li><li><a href="bk01pt03.html" class="has-children "><span class="title-number">III </span><span class="title-name">Setup</span></a><ol><li><a href="cha-obs-osc.html" class=" "><span class="title-number">3 </span><span class="title-name">osc, the Command Line Tool</span></a></li><li><a href="cha-obs-prjconfig.html" class=" "><span class="title-number">4 </span><span class="title-name">Build Configuration</span></a></li></ol></li><li><a href="par-working.html" class="has-children "><span class="title-number">IV </span><span class="title-name">Usage</span></a><ol><li><a href="cha-obs-basicworkflow.html" class=" "><span class="title-number">5 </span><span class="title-name">Basic OBS Workflow</span></a></li><li><a href="cha-obs-local-building.html" class=" "><span class="title-number">6 </span><span class="title-name">Local Building</span></a></li><li><a href="cha-obs-source-services.html" class=" "><span class="title-number">7 </span><span class="title-name">Using Source Services</span></a></li><li><a href="cha-obs-scm-ci-workflow-integration.html" class=" "><span class="title-number">8 </span><span class="title-name">SCM/CI Workflow Integration</span></a></li><li><a href="cha-obs-stagingworkflow.html" class=" "><span class="title-number">9 </span><span class="title-name">Staging Workflow</span></a></li><li><a href="cha-obs-notifications.html" class=" "><span class="title-number">10 </span><span class="title-name">Notifications</span></a></li><li><a href="cha-obs-moderation.html" class=" "><span class="title-number">11 </span><span class="title-name">Moderation</span></a></li></ol></li><li><a href="par-best-practices.html" class="has-children "><span class="title-number">V </span><span class="title-name">Best Practices</span></a><ol><li><a href="cha-obs-best-practices-webuiusage.html" class=" "><span class="title-number">12 </span><span class="title-name">Using the OBS Web UI</span></a></li><li><a href="cha-obs-best-practices-basics.html" class=" "><span class="title-number">13 </span><span class="title-name">Basic Concepts and Work Styles</span></a></li><li><a href="cha-obs-best-practices-scm-integration.html" class=" "><span class="title-number">14 </span><span class="title-name">How to integrate external SCM sources</span></a></li><li><a href="cha-obs-best-practices-upstream.html" class=" "><span class="title-number">15 </span><span class="title-name">Publishing Upstream Binaries</span></a></li><li><a href="cha-obs-best-practices-bootstrapping.html" class=" "><span class="title-number">16 </span><span class="title-name">Bootstrapping</span></a></li><li><a href="cha-obs-best-practices-oscexamples.html" class=" "><span class="title-number">17 </span><span class="title-name"><code class="command">osc</code> Example Commands</span></a></li><li><a href="cha-obs-best-practices-advanced.html" class=" "><span class="title-number">18 </span><span class="title-name">Advanced Project Setups</span></a></li><li><a href="cha-obs-best-practices-kmp.html" class=" "><span class="title-number">19 </span><span class="title-name">Building Kernel Modules</span></a></li><li><a href="cha-obs-best-practices-howto.html" class=" "><span class="title-number">20 </span><span class="title-name">Common Questions and Solutions</span></a></li></ol></li><li class="active"><a href="par-reference.html" class="has-children you-are-here"><span class="title-number">VI </span><span class="title-name">Reference</span></a><ol><li><a href="cha-obs-architecture.html" class=" "><span class="title-number">21 </span><span class="title-name">OBS Architecture</span></a></li><li><a href="cha-obs-concepts.html" class=" "><span class="title-number">22 </span><span class="title-name">OBS Concepts</span></a></li><li><a href="cha-obs-build-process.html" class=" "><span class="title-number">23 </span><span class="title-name">Build Process</span></a></li><li><a href="cha-obs-build-containers.html" class=" "><span class="title-number">24 </span><span class="title-name">Build Containers</span></a></li><li><a href="cha-obs-source-management.html" class=" "><span class="title-number">25 </span><span class="title-name">Source Management</span></a></li><li><a href="cha-obs-scm-bridge.html" class=" "><span class="title-number">26 </span><span class="title-name">SCM Bridge</span></a></li><li><a href="cha-obs-supported-formats.html" class=" you-are-here"><span class="title-number">27 </span><span class="title-name">Supported Formats</span></a></li><li><a href="cha-obs-request-and-review-system.html" class=" "><span class="title-number">28 </span><span class="title-name">Request And Review System</span></a></li><li><a href="cha-obs-image-templates.html" class=" "><span class="title-number">29 </span><span class="title-name">Image Templates</span></a></li><li><a href="cha-obs-multibuild.html" class=" "><span class="title-number">30 </span><span class="title-name">Multiple Build Description File Handling</span></a></li><li><a href="cha-obs-maintenance-setup.html" class=" "><span class="title-number">31 </span><span class="title-name">Maintenance Support</span></a></li><li><a href="cha-obs-binary-tracking.html" class=" "><span class="title-number">32 </span><span class="title-name">Binary Package Tracking</span></a></li><li><a href="cha-obs-build-scheduling-and-dispatching.html" class=" "><span class="title-number">33 </span><span class="title-name">Scheduling and Dispatching</span></a></li><li><a href="cha-obs-build-constraints.html" class=" "><span class="title-number">34 </span><span class="title-name">Build Constraints</span></a></li><li><a href="cha-obs-build-preinstall.html" class=" "><span class="title-number">35 </span><span class="title-name">Building Preinstall Images</span></a></li><li><a href="cha-obs-authorization-token.html" class=" "><span class="title-number">36 </span><span class="title-name">Authorization</span></a></li><li><a href="cha-obs-qa-hooks.html" class=" "><span class="title-number">37 </span><span class="title-name">Quality Assurance(QA) Hooks</span></a></li><li><a href="cha-obs-factory.html" class=" "><span class="title-number">38 </span><span class="title-name">openSUSE Factory</span></a></li></ol></li><li><a href="obs-glossary.html" class=" "><span class="title-number"> </span><span class="title-name">Glossary</span></a></li><li><a href="bk01apa.html" class=" "><span class="title-number">A </span><span class="title-name">GNU Licenses</span></a></li> </ol> </nav><button id="_open-side-toc-overall" title="Contents"> </button><article class="documentation"><button id="_unfold-side-toc-page">On this page</button><section class="chapter" id="cha-obs-supported-formats" data-id-title="Supported Formats"><div class="titlepage"><div><div><div class="title-container"><h1 class="title"><span class="title-number-name"><span class="title-number">27 </span><span class="title-name">Supported Formats</span></span> <a title="Permalink" class="permalink" href="cha-obs-supported-formats.html#">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
+  Open Build Service is by design format agnostic, but it needs format specific
+  support to be able to parse build descriptions and running the build.
+  This chapter is focusing on describing Open Build Service specifics of a format.
+  Either limitations or extensions of Open Build Service builds.
+ </p><section class="sect1" id="sec-obs-building-spec2rpm" data-id-title="Spec File Specials (RPM)"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">27.1 </span><span class="title-name">Spec File Specials (RPM)</span></span> <a title="Permalink" class="permalink" href="cha-obs-supported-formats.html#sec-obs-building-spec2rpm">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
+     To create an RPM package, you need a spec file.
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+     A file with the extension <code class="filename">.changes</code>
+     can be used to document the package history, but it is not required.
+    </p></li><li class="listitem"><p>
+     OBS-specific RPM macros which are set are: <code class="literal">%_project</code> and <code class="literal">%_repository</code>
+    </p></li><li class="listitem"><p>
+     <code class="code">#!ForceMultiVersion</code> can be used to avoid resetting the
+     build counter reset on version update. This is handled automatically in
+     most cases. Explicitly adding this instruction is only needed when it is
+     not possible to detect whether there are subpackages defining their own
+     version. This can be the case when the subpackages are created
+     dynamically via external rpm macros.
+    </p></li><li class="listitem"><p>
+      <code class="code">#!BcntSyncTag: STRING</code> defines the build counter sync tag in a spec file.
+      It is used when the bcntsynctag element tag is not defined in package meta. Also it can
+      depend on architecture, repository or flavor for example.
+    </p></li><li class="listitem"><p>
+        <code class="code">#!BuildConflicts: STRING</code> defines a conflicting package or dependency at build time only.
+    </p></li><li class="listitem"><p>
+     <code class="code">#!BuildIgnore: STRING</code> ignores a dependency at build time.
+    </p></li><li class="listitem"><p>
+     <code class="code">#!BuildRequires: STRING</code> Requires a build dependency. Usually the rpm native BuildRequires
+     is the better way to define this. Use this tag only when the dependency should only exist when using
+     the build script or OBS.
+    </p></li><li class="listitem"><p>
+	    <code class="code">#!needsrootforbuild</code> The build will be executed by root user. Please note that this must
+    be permitted either by the OBS admin (via the BSConfig.pm configuration) or enabled in via build configuration rule. Also osc requires an additional parameter for local build (--userootforbuild).</p></li><li class="listitem"><p>
+	    <code class="code">#!needsslcertforbuild</code> This will prepare an SSL certification based on the project key. It is
+	    used to create secure boot enabled packages usually. Please note that this will fail, if the project
+	    still has an old DSA key.
+</p></li><li class="listitem"><p>
+	    <code class="code">#!needsappxsslcertforbuild</code> Creates an appx compatible ssl certificate based on the project key.
+            Please note that this will fail, if the project still has an old DSA key.
+</p></li><li class="listitem"><p>
+	    <code class="code">#!needsbinariesforbuild</code> All package files are usually removed before starting the build (after finishing to setup the build environment). This marker keeps them also during build.</p></li></ul></div></section><section class="sect1" id="id-1.2.10.8.4" data-id-title="OBS Extensions for (KIWI) Appliance Builds"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">27.2 </span><span class="title-name">OBS Extensions for (KIWI) Appliance Builds</span></span> <a title="Permalink" class="permalink" href="cha-obs-supported-formats.html#id-1.2.10.8.4">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
+	KIWI appliance builds create images which can be used for direct consumption. Note: builds in non-VM
+	environments do fail often due to the bootloader setup. Use <code class="command">osc build --vm-type=kvm</code> for local building.
+	OBS is evaluating kiwi builds at least two times. One time for the build host dependencies and another
+	time for the target distribution used inside of the image. For container builds a third evaluation
+	happens to find the base container.
+   </p><p>
+     KIWI builds inside of OBS need to fulfill following requirements:
+   </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p><code class="filename">config.xml</code> files need to be renamed to a filename with <code class="filename">.kiwi</code> suffix. </p></li><li class="listitem"><p>repositories which are used must use either a URL which starts with the OBS download prefix or they must
+  	   be written in <code class="uri">obs://PROJECT/REPOSITORY</code> syntax. </p></li></ul></div><p>
+     OBS extends kiwi functionality with following options. These covers cases which would need explicit
+     command line commands, so they are covered via the tags to have them in a reproducible way.
+   </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>A repository defined as <code class="uri">obsrepositories:/</code> will used the expanded list of repositories as defined in the project meta.
+           This is useful when moving kiwi image descriptions between projects, for example for development and release builds. </p></li><li class="listitem"><p>Defining build counter sync tag <code class="command">OBS-BcntSyncTag: STRING</code>
+     </p></li><li class="listitem"><p>An exclusive architecture list to build for can be defined with an xml comment <code class="command">OBS-ExclusiveArch: ARCH_LIST</code>
+     </p></li><li class="listitem"><p>An excluded architecture list to skip builds can be defined with an xml comment <code class="command">OBS-ExcludeArch: ARCH_LIST</code>
+     </p></li><li class="listitem"><p>A list of profiles to build can be defined via an xml comment <code class="command">OBS-Profiles: PROFILE_LIST</code>
+     </p><p>This can also be handled via _multibuild flavor lists by setting a fixed string of <code class="command">OBS-Profiles: @BUILD_FLAVOR@</code>
+     </p></li><li class="listitem"><p>Packages get picked usually in a fixed order from the most important repository in OBS. This happens independently
+      of the version number of the packages. Set the xml comment <code class="command">OBS-UnorderedRepos</code> to disable the repository order handling and to have a more similar behavior as with plain package manager builds. Note: this can result into switching
+  	 repositories between builds and is therefore less reproducible.
+     </p></li><li class="listitem"><p>Container builds can specify a specific repository which shall be used for searching the base container.
+      Use the XML comment <code class="command">OBS-Imagerepo:$REPOSITORY_URL</code> for this. The repository URL may be
+  	   in <code class="uri">obs://$PROJECT/$REPOSITORY</code> style.
+     </p></li><li class="listitem"><p>Container builds can specify additional tags via <code class="command">OBS-AddTag:$TAG</code> (KIWI limits it to one tag)
+  	   in <code class="uri">obs://$PROJECT/$REPOSITORY</code> style.
+     </p></li><li class="listitem"><p>A predefined milestone <code class="command">OBS-Milestone: milestone</code>
+     </p><p>
+      This defines a milestone name (for example, <code class="literal">Beta1</code>)
+      which will be applied during release operations. The candidate will
+      receive its final tag then.
+     </p></li></ul></div></section><section class="sect1" id="id-1.2.10.8.5" data-id-title="OBS Extensions for Dockerfile based builds"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">27.3 </span><span class="title-name">OBS Extensions for Dockerfile based builds</span></span> <a title="Permalink" class="permalink" href="cha-obs-supported-formats.html#id-1.2.10.8.5">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
+	OBS needs to parse RUN commands to detect build dependencies (repositories and packages).
+       Currently calls from zypper, apt-get, yum and dnf are supported.
+       Additional downloads need to be covered by source services. This ensures reproducible
+       builds and a safe build environment without network access.
+   </p><p>
+     OBS extends Docker functionality with the below tags.
+     Instead of these options, you would otherwise need explicit command-line commands.
+     However, to make it possible to create reproducible builds, use the OBS tags.
+   </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>A <code class="command">#!UseOBSRepositories</code> tag will use the expanded list of repositories as defined via path elements in the project meta.
+           This is useful when moving descriptions between projects, for example for development and release builds. </p></li><li class="listitem"><p>
+     The tag <code class="command">#!UnorderedRepos</code> will disable the
+     repository prioritization for build dependencies.
+     This behavior is similar to plain Docker tooling.
+     It introduces the risk that with each build another repository is
+     prioritized or that dependency problems of newer package versions
+     are hidden.
+ </p></li><li class="listitem"><p><code class="command">#!BcntSyncTag: TAG</code> to define the build counter sync tag.
+     </p></li><li class="listitem"><p><code class="command">#!BuildTag: TAG</code> to define one or multiple tags to be used for the container.
+     </p></li><li class="listitem"><p><code class="command">#!BuildName: NAME</code> Report back a defined NAME. Otherwise it gets derived from the first tag, replacing all / and : with - characters.
+     </p></li><li class="listitem"><p><code class="command">#!BuildVersion: VERSION</code> Report back a defined VERSION. By default it is set to zero. The version is used by OBS for tracking. This needs to be set together with BuildName, otherwise it will be ignored.
+     </p></li><li class="listitem"><p><code class="command">#!ExclusiveArch: ARCH_LIST</code> An exclusive architecture list to build for. The architecture list is separated by spaces.
+     </p></li><li class="listitem"><p><code class="command">#!ExcludeArch: ARCH_LIST</code> An excluded architecture list to skip builds. The architecture list is separated by spaces.
+     </p></li><li class="listitem"><p><code class="command">#!ArchExclusiveLine: ARCH_LIST</code> The next line will only be considered by the scheduler the listed architectures. The line will still get executed on all architectures during the build.
+     </p></li><li class="listitem"><p><code class="command">#!ArchExcludedLine: ARCH_LIST</code> The next line will not be considered by the scheduler on the listed architectures. The line will still get executed on all architectures during the build.
+     </p></li><li class="listitem"><p>
+      <code class="command">#!Milestone: MILESTONE</code>
+      This defines a milestone name (for example, <code class="literal">Beta1</code>)
+      which will be applied during release operations. The candidate will
+      receive its final tag then.
+     </p></li><li class="listitem"><p>
+      <code class="command">#!NoSquash</code> disables the squashing of all layers created
+      during the build to a single layer. Without this, every RUN line is an additional layer.
+     </p></li></ul></div><p>
+    The used filename of the build results are only important inside of OBS. The publishing 
+    happens via the built-in registry interface which is providing all defined tags for an image.
+    The filename itself may be used on aggregates or other binary filters in OBS. It is either 
+    derived by the first defined tag or by the BuildName and BuildVersion tag if both are defined.
+   </p></section></section><nav class="bottom-pagination"><div><a class="pagination-link prev" href="cha-obs-scm-bridge.html"><span class="pagination-relation">Previous</span><span class="pagination-label"><span class="title-number">Chapter 26 </span>SCM Bridge</span></a> </div><div><a class="pagination-link next" href="cha-obs-request-and-review-system.html"><span class="pagination-relation">Next</span><span class="pagination-label"><span class="title-number">Chapter 28 </span>Request And Review System</span></a> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="sect1"><a href="cha-obs-supported-formats.html#sec-obs-building-spec2rpm"><span class="title-number">27.1 </span><span class="title-name">Spec File Specials (RPM)</span></a></span></li><li><span class="sect1"><a href="cha-obs-supported-formats.html#id-1.2.10.8.4"><span class="title-number">27.2 </span><span class="title-name">OBS Extensions for (KIWI) Appliance Builds</span></a></span></li><li><span class="sect1"><a href="cha-obs-supported-formats.html#id-1.2.10.8.5"><span class="title-number">27.3 </span><span class="title-name">OBS Extensions for Dockerfile based builds</span></a></span></li></ul></div> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
+                 2024</span></div></div></footer></body></html>

@@ -1,0 +1,736 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><title>User Guide | SCM/CI Workflow Integration</title><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"/><link rel="schema.DCTERMS" href="http://purl.org/dc/terms/"/>
+<meta name="title" content="SCM/CI Workflow Integration"/>
+<meta name="description" content="With this integration, you can take advantage of source code management (SCM) systems like GitHub, GitLab or Gitea to manage your packages sources. T…"/>
+<meta name="book-title" content="User Guide"/>
+<meta name="chapter-title" content="Chapter 8. SCM/CI Workflow Integration"/>
+<meta name="tracker-url" content="https://github.com/openSUSE/obs-docu/issues/new"/>
+<meta name="tracker-type" content="gh"/>
+<meta name="publisher" content="SUSE"/><meta property="og:title" content="SCM/CI Workflow Integration"/>
+<meta property="og:description" content="With this integration, you can take advantage of source cod…"/>
+<meta property="og:type" content="article"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SCM/CI Workflow Integration"/>
+<meta name="twitter:description" content="With this integration, you can take advantage of source cod…"/>
+<script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": ["TechArticle"],
+    "image": "https://www.suse.com/assets/img/suse-white-logo-green.svg",
+    
+     "isPartOf": {
+      "@type": "CreativeWorkSeries",
+      "name": "Product &amp; Solutions"
+    },
+    
+    "inLanguage": "en",
+    
+
+    "headline": "SCM/CI Workflow Integration",
+  
+    "description": "SCM/CI Workflow Integration",
+      
+    "author": [
+      {
+        "@type": "Corporation",
+        "name": "SUSE Product &amp; Solution Documentation Team",
+        "url": "https://www.suse.com/assets/img/suse-white-logo-green.svg"
+      }
+    ],
+      
+
+    "about": [
+      
+    ],
+  
+    "sameAs": [
+          "https://www.facebook.com/SUSEWorldwide/about",
+          "https://www.youtube.com/channel/UCHTfqIzPKz4f_dri36lAQGA",
+          "https://twitter.com/SUSE",
+          "https://www.linkedin.com/company/suse"
+    ],
+    "publisher": {
+      "@type": "Corporation",
+      "name": "SUSE",
+      "url": "https://documentation.suse.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.suse.com/assets/img/suse-white-logo-green.svg"
+      }
+    }
+  }</script>
+<link rel="prev" href="cha-obs-source-services.html" title="Chapter 7. Using Source Services"/><link rel="next" href="cha-obs-stagingworkflow.html" title="Chapter 9. Staging Workflow"/><script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
+};
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"/></noscript><script src="static/js/script-purejs.js" type="text/javascript"> </script><script src="static/js/highlight.min.js" type="text/javascript"> </script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="wide offline js-off"><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-pagination">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><header id="_mainnav"><div class="growth-inhibitor"/></header><div class="crumbs"><div class="growth-inhibitor"><a class="crumb" href="index.html">User Guide</a><span> / </span><a class="crumb" href="par-working.html">Usage</a><span> / </span><a class="crumb" href="cha-obs-scm-ci-workflow-integration.html">SCM/CI Workflow Integration</a></div></div><main id="_content"><nav id="_side-toc-overall" class="side-toc"><div class="side-title">User Guide</div><ol><li><a href="bk01pr01.html" class=" "><span class="title-number"> </span><span class="title-name">About this Guide</span></a></li><li><a href="par-first-steps.html" class="has-children "><span class="title-number">I </span><span class="title-name">First Steps</span></a><ol><li><a href="art-obs-bg.html" class=" "><span class="title-number">1 </span><span class="title-name">Beginnerʼs Guide</span></a></li></ol></li><li><a href="par-concepts.html" class="has-children "><span class="title-number">II </span><span class="title-name">Concepts</span></a><ol><li><a href="cha-obs-package-formats.html" class=" "><span class="title-number">2 </span><span class="title-name">Supported Build Recipes and Package Formats</span></a></li></ol></li><li><a href="bk01pt03.html" class="has-children "><span class="title-number">III </span><span class="title-name">Setup</span></a><ol><li><a href="cha-obs-osc.html" class=" "><span class="title-number">3 </span><span class="title-name">osc, the Command Line Tool</span></a></li><li><a href="cha-obs-prjconfig.html" class=" "><span class="title-number">4 </span><span class="title-name">Build Configuration</span></a></li></ol></li><li class="active"><a href="par-working.html" class="has-children you-are-here"><span class="title-number">IV </span><span class="title-name">Usage</span></a><ol><li><a href="cha-obs-basicworkflow.html" class=" "><span class="title-number">5 </span><span class="title-name">Basic OBS Workflow</span></a></li><li><a href="cha-obs-local-building.html" class=" "><span class="title-number">6 </span><span class="title-name">Local Building</span></a></li><li><a href="cha-obs-source-services.html" class=" "><span class="title-number">7 </span><span class="title-name">Using Source Services</span></a></li><li><a href="cha-obs-scm-ci-workflow-integration.html" class=" you-are-here"><span class="title-number">8 </span><span class="title-name">SCM/CI Workflow Integration</span></a></li><li><a href="cha-obs-stagingworkflow.html" class=" "><span class="title-number">9 </span><span class="title-name">Staging Workflow</span></a></li><li><a href="cha-obs-notifications.html" class=" "><span class="title-number">10 </span><span class="title-name">Notifications</span></a></li><li><a href="cha-obs-moderation.html" class=" "><span class="title-number">11 </span><span class="title-name">Moderation</span></a></li></ol></li><li><a href="par-best-practices.html" class="has-children "><span class="title-number">V </span><span class="title-name">Best Practices</span></a><ol><li><a href="cha-obs-best-practices-webuiusage.html" class=" "><span class="title-number">12 </span><span class="title-name">Using the OBS Web UI</span></a></li><li><a href="cha-obs-best-practices-basics.html" class=" "><span class="title-number">13 </span><span class="title-name">Basic Concepts and Work Styles</span></a></li><li><a href="cha-obs-best-practices-scm-integration.html" class=" "><span class="title-number">14 </span><span class="title-name">How to integrate external SCM sources</span></a></li><li><a href="cha-obs-best-practices-upstream.html" class=" "><span class="title-number">15 </span><span class="title-name">Publishing Upstream Binaries</span></a></li><li><a href="cha-obs-best-practices-bootstrapping.html" class=" "><span class="title-number">16 </span><span class="title-name">Bootstrapping</span></a></li><li><a href="cha-obs-best-practices-oscexamples.html" class=" "><span class="title-number">17 </span><span class="title-name"><code class="command">osc</code> Example Commands</span></a></li><li><a href="cha-obs-best-practices-advanced.html" class=" "><span class="title-number">18 </span><span class="title-name">Advanced Project Setups</span></a></li><li><a href="cha-obs-best-practices-kmp.html" class=" "><span class="title-number">19 </span><span class="title-name">Building Kernel Modules</span></a></li><li><a href="cha-obs-best-practices-howto.html" class=" "><span class="title-number">20 </span><span class="title-name">Common Questions and Solutions</span></a></li></ol></li><li><a href="par-reference.html" class="has-children "><span class="title-number">VI </span><span class="title-name">Reference</span></a><ol><li><a href="cha-obs-architecture.html" class=" "><span class="title-number">21 </span><span class="title-name">OBS Architecture</span></a></li><li><a href="cha-obs-concepts.html" class=" "><span class="title-number">22 </span><span class="title-name">OBS Concepts</span></a></li><li><a href="cha-obs-build-process.html" class=" "><span class="title-number">23 </span><span class="title-name">Build Process</span></a></li><li><a href="cha-obs-build-containers.html" class=" "><span class="title-number">24 </span><span class="title-name">Build Containers</span></a></li><li><a href="cha-obs-source-management.html" class=" "><span class="title-number">25 </span><span class="title-name">Source Management</span></a></li><li><a href="cha-obs-scm-bridge.html" class=" "><span class="title-number">26 </span><span class="title-name">SCM Bridge</span></a></li><li><a href="cha-obs-supported-formats.html" class=" "><span class="title-number">27 </span><span class="title-name">Supported Formats</span></a></li><li><a href="cha-obs-request-and-review-system.html" class=" "><span class="title-number">28 </span><span class="title-name">Request And Review System</span></a></li><li><a href="cha-obs-image-templates.html" class=" "><span class="title-number">29 </span><span class="title-name">Image Templates</span></a></li><li><a href="cha-obs-multibuild.html" class=" "><span class="title-number">30 </span><span class="title-name">Multiple Build Description File Handling</span></a></li><li><a href="cha-obs-maintenance-setup.html" class=" "><span class="title-number">31 </span><span class="title-name">Maintenance Support</span></a></li><li><a href="cha-obs-binary-tracking.html" class=" "><span class="title-number">32 </span><span class="title-name">Binary Package Tracking</span></a></li><li><a href="cha-obs-build-scheduling-and-dispatching.html" class=" "><span class="title-number">33 </span><span class="title-name">Scheduling and Dispatching</span></a></li><li><a href="cha-obs-build-constraints.html" class=" "><span class="title-number">34 </span><span class="title-name">Build Constraints</span></a></li><li><a href="cha-obs-build-preinstall.html" class=" "><span class="title-number">35 </span><span class="title-name">Building Preinstall Images</span></a></li><li><a href="cha-obs-authorization-token.html" class=" "><span class="title-number">36 </span><span class="title-name">Authorization</span></a></li><li><a href="cha-obs-qa-hooks.html" class=" "><span class="title-number">37 </span><span class="title-name">Quality Assurance(QA) Hooks</span></a></li><li><a href="cha-obs-factory.html" class=" "><span class="title-number">38 </span><span class="title-name">openSUSE Factory</span></a></li></ol></li><li><a href="obs-glossary.html" class=" "><span class="title-number"> </span><span class="title-name">Glossary</span></a></li><li><a href="bk01apa.html" class=" "><span class="title-number">A </span><span class="title-name">GNU Licenses</span></a></li> </ol> </nav><button id="_open-side-toc-overall" title="Contents"> </button><article class="documentation"><button id="_unfold-side-toc-page">On this page</button><section class="chapter" id="cha-obs-scm-ci-workflow-integration" data-id-title="SCM/CI Workflow Integration"><div class="titlepage"><div><div><div class="title-container"><h1 class="title"><span class="title-number-name"><span class="title-number">8 </span><span class="title-name">SCM/CI Workflow Integration</span></span> <a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><section class="sect1" id="sec-obs-obs-scm-ci-workflow-integration-setup" data-id-title="SCM/CI Workflow Integration Setup"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">8.1 </span><span class="title-name">SCM/CI Workflow Integration Setup</span></span> <a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><section class="sect2" id="sec-obs-obs-scm-ci-workflow-integration-setup-introduction" data-id-title="Introduction"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">8.1.1 </span><span class="title-name">Introduction</span></span> <a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup-introduction">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>With this integration, you can take advantage of source code management (SCM)
+      systems like GitHub, GitLab or Gitea to manage your packages sources. Then, you can
+      integrate those sources with OBS to run different <span class="bold"><strong>workflows</strong></span>, for instance, to build a
+      package and report back the result to the SCM.</p><p>In the following sections, you will find the instructions to set
+      up the integration between SCMs and OBS.</p><p>This chapter talks in GitHub jargon to simplify the text. As
+      constantly mentioning all the names for the same things, e.g. <span class="emphasis"><em>Pull Requests/Merge Requests</em></span>,
+      is tiresome and confusing. However, every aspect has its
+      correspondence in GitLab and Gitea. Refer to <a class="xref" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup-equivalence-table" title="8.1.10. Equivalence Table">Section 8.1.10, “Equivalence Table”</a>
+      for clarification of terminology.</p></section><section class="sect2" id="sec-obs-obs-scm-ci-workflow-integration-setup-prerequisites" data-id-title="Prerequisites"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">8.1.2 </span><span class="title-name">Prerequisites</span></span> <a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup-prerequisites">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>Before you start, you need to</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>have a repository on GitHub.</p></li><li class="listitem"><p>have a package on an OBS Instance.</p></li></ul></div></section><section class="sect2" id="sec-obs-obs-scm-ci-workflow-integration-setup-supported-scms" data-id-title="Supported SCMs"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">8.1.3 </span><span class="title-name">Supported SCMs</span></span> <a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup-supported-scms">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>We support the GitHub.com and GitLab.com instances.</p><p>We also support Self-Hosted instances from GitHub, GitLab and Gitea.
+      As long as the network connectivity works, OBS will be able to interact
+      with that SCM.</p></section><section class="sect2" id="sec-obs-obs-scm-ci-workflow-integration-setup-token-authentication" data-id-title="Token Authentication"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">8.1.4 </span><span class="title-name">Token Authentication</span></span> <a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup-token-authentication">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>OBS and GitHub need to talk to each other. Tokens are the way to
+      make this happen.</p><section class="sect3" id="sec-obs-obs-scm-ci-workflow-integration-setup-token-authentication-how-to-authenticate-obs-with-scm" data-id-title="How to Authenticate OBS with SCMs"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">8.1.4.1 </span><span class="title-name">How to Authenticate OBS with SCMs</span></span> <a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup-token-authentication-how-to-authenticate-obs-with-scm">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>You have to create a GitHub <span class="bold"><strong>personal
+        access token</strong></span>. OBS is going to use it to talk to
+        GitHub on your behalf.</p><p>The personal access token needs, at least, the following scopes
+        assigned:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>GitHub Classic Token: repo</p></li><li class="listitem"><p>GitHub Fine-Grained Token:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>Contents: Read only</p></li><li class="listitem"><p>Commit statuses: Read and write</p></li></ul></div></li><li class="listitem"><p>GitLab: api</p></li><li class="listitem"><p>Gitea: repo</p></li></ul></div><p>Check <a class="link" href="https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token" target="_blank">GitHub’s</a>
+        , <a class="link" href="https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html#creating-a-personal-access-token" target="_blank">GitLab's</a>
+        and <a class="link" href="https://docs.gitea.io/en-us/api-usage/#generating-and-listing-api-tokens" target="_blank">Gitea's</a>
+        documentation to learn how.</p></section><section class="sect3" id="sec-obs-obs-scm-ci-workflow-integration-setup-token-authentication-how-to-authenticate-scm-with-obs" data-id-title="How to Authenticate SCMs with OBS"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">8.1.4.2 </span><span class="title-name">How to Authenticate SCMs with OBS</span></span> <a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup-token-authentication-how-to-authenticate-scm-with-obs">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>You have to create an OBS <span class="bold"><strong>workflow
+        token</strong></span>. Github is going to use it to trigger actions on
+        OBS on your behalf.</p><section class="sect4" id="sec-obs-obs-scm-ci-workflow-integration-setup-token-authentication-how-to-authenticate-scm-with-obs-create-token" data-id-title="Create Token"><div class="titlepage"><div><div><div class="title-container"><h5 class="title"><span class="title-number-name"><span class="title-number">8.1.4.2.1 </span><span class="title-name">Create Token</span></span> <a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup-token-authentication-how-to-authenticate-scm-with-obs-create-token">#</a></h5><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>You can create the OBS token via WebUI in <span class="emphasis"><em>Profile
+          &gt; Manage Your Tokens.</em></span></p><p>You can also use <span class="emphasis"><em>osc</em></span> for this:</p><div class="verbatim-wrap"><pre class="screen">osc token --create --operation workflow --scm-token long_ascii_salad</pre></div><p>Example of response:</p><div class="verbatim-wrap highlight xml"><pre class="screen">&lt;status code="ok"&gt;
+    &lt;summary&gt;Ok&lt;/summary&gt;
+    &lt;data name="token"&gt;long_ascii_salad&lt;/data&gt;
+    &lt;data name="id"&gt;12345&lt;/data&gt;
+&lt;/status&gt;</pre></div><p>Make sure you replace <span class="emphasis"><em>long_ascii_salad</em></span>
+          with your real GitHub personal access token created in <a class="xref" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup-token-authentication-how-to-authenticate-obs-with-scm" title="8.1.4.1. How to Authenticate OBS with SCMs">Section 8.1.4.1, “How to Authenticate OBS with SCMs”</a></p><div id="id-1.2.8.5.2.5.4.3.8" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.svg"/><div class="admon-title">Warning</div><p>Don't forget to keep your token secret to prevent someone
+            else from triggering operations in your name!</p></div></section><section class="sect4" id="sec-obs-obs-scm-ci-workflow-integration-setup-token-authentication-how-to-authenticate-scm-with-obs-revoke-regenerate-token" data-id-title="Regenerating Secrets and Deleting Tokens"><div class="titlepage"><div><div><div class="title-container"><h5 class="title"><span class="title-number-name"><span class="title-number">8.1.4.2.2 </span><span class="title-name">Regenerating Secrets and Deleting Tokens</span></span> <a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup-token-authentication-how-to-authenticate-scm-with-obs-revoke-regenerate-token">#</a></h5><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>If you suspect your OBS token secret was leaked, you can regenerate
+          the secret or delete the whole token to secure it again:</p><p><span class="bold"><strong>a) Regenerate the
+          token secret</strong></span></p><p>Through the WebUI in<span class="emphasis"><em> Profile &gt; Manage Your Tokens
+          &gt; Edit &gt; Regenerate Token</em></span>.</p><p><span class="bold"><strong>b) Delete the token</strong></span></p><p>You can always delete your token via WebUI, in
+          <span class="emphasis"><em>Profile &gt; Manage Your Tokens</em></span>, or with these
+          commands:</p><div class="verbatim-wrap highlight xml"><pre class="screen"><code class="command">osc</code> token # list all your tokens</pre></div><div class="verbatim-wrap highlight xml"><pre class="screen"><code class="command">osc</code> token --delete $token_id # remove the token with the given id</pre></div><p>Then you can create a new one as explained in <a class="xref" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup-token-authentication-how-to-authenticate-scm-with-obs" title="8.1.4.2. How to Authenticate SCMs with OBS">Section 8.1.4.2, “How to Authenticate SCMs with OBS”</a>
+          and replace it wherever you use it.</p></section></section></section><section class="sect2" id="sec-obs-obs-scm-ci-workflow-integration-setup-webhooks" data-id-title="Webhooks"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">8.1.5 </span><span class="title-name">Webhooks</span></span> <a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup-webhooks">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>Once OBS and GitHub are allowed to speak to each other, they can
+      start talking via <span class="bold"><strong>webhooks</strong></span>.</p><section class="sect3" id="sec-obs-obs-scm-ci-workflow-integration-setup-webhooks-scm-events" data-id-title="SCM Events"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">8.1.5.1 </span><span class="title-name">SCM Events</span></span> <a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup-webhooks-scm-events">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>On a GitHub repository, events are happening all the time: a
+        pull request is created, somebody pushes a commit, a pull request is
+        merged etc. When you set up a webhook on GitHub, you can specify
+        which events you are interested in. Only when those events happen, the
+        webhook will be sent to OBS.</p><p>This is the list of SCM events supported by the existing
+        workflows in OBS:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>Pull requests and Merge requests</p></li><li class="listitem"><p>Pushes</p></li><li class="listitem"><p>Tag Pushes</p></li></ul></div><p>In addition, the Pull request events contain a field called
+        action. OBS supports a different subset of Pull request event actions,
+        depending on the SCM. For GitHub and Gitea, the following set of actions
+        is supported:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>closed</p></li><li class="listitem"><p>opened</p></li><li class="listitem"><p>reopened</p></li><li class="listitem"><p>synchronize</p></li><li class="listitem"><p>synchronized</p></li></ul></div><p>For Gitlab's Merge request events, the following actions are
+        supported:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>close</p></li><li class="listitem"><p>merge</p></li><li class="listitem"><p>open</p></li><li class="listitem"><p>reopen</p></li><li class="listitem"><p>update</p></li></ul></div><p>Refer to the <a class="xref" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup-equivalence-table" title="8.1.10. Equivalence Table">Equivalence Table</a> for more details or read more about <a class="link" href="https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads" target="_blank">GitHub
+        events</a>, <a class="link" href="https://docs.gitlab.com/ee/user/project/integrations/webhook_events.html" target="_blank">GitLab
+        events</a>
+        and <a class="link" href="https://docs.gitea.io/en-us/webhooks/" target="_blank">Gitea
+        events</a>.</p></section><section class="sect3" id="sec-obs-obs-scm-ci-workflow-integration-setup-webhooks-how-to-set-up-a-webhook-on-github" data-id-title="How to Set Up a Webhook on Github"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">8.1.5.2 </span><span class="title-name">How to Set Up a Webhook on Github</span></span> <a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup-webhooks-how-to-set-up-a-webhook-on-github">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>Go to the project you want to set the integration on, then under
+        <span class="emphasis"><em>Settings &gt; Webhooks</em></span>.</p><div class="figure" id="id-1.2.8.5.2.6.4.3"><div class="figure-contents"><div class="mediaobject"><a href="images/sprint_95_github_webhook_form.png"><img src="images/sprint_95_github_webhook_form.png" width="50%" alt="Webhooks on GitHub." title="Webhooks on GitHub."/></a></div></div><div class="title-container"><div class="figure-title-wrap"><div class="figure-title"><span class="title-number-name"><span class="title-number">Figure 8.1: </span><span class="title-name">Webhooks on GitHub. </span></span><a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#id-1.2.8.5.2.6.4.3">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div><p>You have to fill in the form with:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p><span class="bold"><strong>Payload URL:</strong></span>
+            <span class="emphasis"><em>https://build.opensuse.org/trigger/workflow?id=12345</em></span>.
+            Replace 12345 with the OBS token numerical ID previously
+            obtained.</p></li><li class="listitem"><p><span class="bold"><strong>Content type:</strong></span>
+            application/json.</p></li><li class="listitem"><p><span class="bold"><strong>Secret:</strong></span>
+            <span class="emphasis"><em>uvwxyz</em></span>. Replace uvwxyz with the OBS token
+            secret string previously obtained.</p></li><li class="listitem"><p><span class="bold"><strong>Enable SSL
+            verification</strong></span>.</p></li><li class="listitem"><p><span class="bold"><strong>Let me select individual
+            events</strong></span>: Pull requests, Pushes.</p></li></ul></div></section><section class="sect3" id="sec-obs-obs-scm-ci-workflow-integration-setup-webhooks-how-to-set-up-a-webhook-on-gitlab" data-id-title="How to Set Up a Webhook on GitLab"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">8.1.5.3 </span><span class="title-name">How to Set Up a Webhook on GitLab</span></span> <a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup-webhooks-how-to-set-up-a-webhook-on-gitlab">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>Go to the project you want to set the integration on, under
+        the<span class="emphasis"><em> Settings &gt; Webhooks</em></span>.</p><div class="figure" id="id-1.2.8.5.2.6.5.3"><div class="figure-contents"><div class="mediaobject"><a href="images/sprint_95_gitlab_webhook_form.png"><img src="images/sprint_95_gitlab_webhook_form.png" width="50%" alt="Webhooks on GitLab." title="Webhooks on GitLab."/></a></div></div><div class="title-container"><div class="figure-title-wrap"><div class="figure-title"><span class="title-number-name"><span class="title-number">Figure 8.2: </span><span class="title-name">Webhooks on GitLab. </span></span><a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#id-1.2.8.5.2.6.5.3">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div><p>Fill in the following fields:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p><span class="bold"><strong>URL:</strong></span><span class="emphasis"><em>
+            https://build.opensuse.org/trigger/workflow?id=12345.</em></span>
+            Replace 12345 with the OBS token numerical ID previously
+            obtained.</p></li><li class="listitem"><p><span class="bold"><strong>Secret Token:</strong></span>
+            <span class="emphasis"><em>uvwxyz</em></span> Replace uvwxyz with the OBS token
+            secret string previously obtained.</p></li><li class="listitem"><p><span class="bold"><strong>Trigger:</strong></span> <span class="emphasis"><em>Merge
+            request events</em></span>, <span class="emphasis"><em>Push
+              events</em></span>, <span class="emphasis"><em>Tag push events</em></span>.</p></li></ul></div></section><section class="sect3" id="sec-obs-obs-scm-ci-workflow-integration-setup-webhooks-how-to-set-up-a-webhook-on-gitea" data-id-title="How to Set Up a Webhook on Gitea"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">8.1.5.4 </span><span class="title-name">How to Set Up a Webhook on Gitea</span></span> <a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup-webhooks-how-to-set-up-a-webhook-on-gitea">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>Go to the repository you want to set the integration on, then under
+        <span class="emphasis"><em>Settings &gt; Webhooks</em></span>.</p><div class="figure" id="id-1.2.8.5.2.6.6.3"><div class="figure-contents"><div class="mediaobject"><a href="images/sprint_95_gitea_webhook_form.png"><img src="images/sprint_95_gitea_webhook_form.png" width="50%" alt="Webhooks on Gitea." title="Webhooks on Gitea."/></a></div></div><div class="title-container"><div class="figure-title-wrap"><div class="figure-title"><span class="title-number-name"><span class="title-number">Figure 8.3: </span><span class="title-name">Webhooks on Gitea. </span></span><a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#id-1.2.8.5.2.6.6.3">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div><p>You have to fill in the form with:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p><span class="bold"><strong>Target URL:</strong></span>
+            <span class="emphasis"><em>https://build.opensuse.org/trigger/workflow?id=12345</em></span>.
+            Replace 12345 with the OBS token numerical ID previously
+            obtained.</p></li><li class="listitem"><p><span class="bold"><strong>HTTP Method:</strong></span>
+            POST.</p></li><li class="listitem"><p><span class="bold"><strong>POST Content Type:</strong></span>
+            application/json.</p></li><li class="listitem"><p><span class="bold"><strong>Secret:</strong></span>
+            <span class="emphasis"><em>uvwxyz</em></span>. Replace uvwxyz with the OBS token
+            secret string previously obtained.</p></li><li class="listitem"><p><span class="bold"><strong>Custom events...</strong></span>:
+            Pull Request, Push.</p></li></ul></div></section></section><section class="sect2" id="sec-obs-obs-scm-ci-workflow-integration-setup-obs-workflows" data-id-title="OBS Workflows"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">8.1.6 </span><span class="title-name">OBS Workflows</span></span> <a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup-obs-workflows">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>A GitHub event occurs and OBS receives the corresponding webhook.
+      Now is when the <span class="bold"><strong>OBS workflows</strong></span> come into
+      play.</p><p>A workflow is nothing else than a sequence of <span class="bold"><strong>steps</strong></span> you want to perform in OBS.
+      You can describe the steps to run in a YAML configuration
+      file.</p><p>To do so, in the root directory of your GitHub repository, create
+      a directory <span class="emphasis"><em>.obs</em></span> which contains a file called
+      <span class="emphasis"><em>workflows.yml</em></span>. If you don't want to use that
+      directory, you should check
+      <a class="xref" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup-obs-workflows-config-location" title="8.1.6.1. Configuration File Location">Configuration File Location</a> out.</p><p>
+        The content of <span class="emphasis"><em>.obs/workflows.yml</em></span> could look
+        like this:
+      </p><div class="verbatim-wrap"><pre class="screen">rebuild_master:
+  steps:
+    - rebuild_package:
+        project: home:Admin
+        package: ctris
+  filters:
+    event: push</pre></div><p>You can also define multiple workflows, each one needs an
+      <span class="emphasis"><em>unique</em></span> name. The following example contains two
+      workflows: <span class="emphasis"><em>main_workflow</em></span> and
+      <span class="emphasis"><em>rebuild_master</em></span>.</p><div class="verbatim-wrap"><pre class="screen">main_workflow:
+  steps:
+    - branch_package:
+        source_project: OBS:Server:Unstable
+        source_package: obs-server
+        target_project: OBS:Server:Unstable:CI
+  filters:
+    event: pull_request
+rebuild_master:
+  steps:
+    - rebuild_package:
+        project: home:Admin
+        package: ctris
+  filters:
+    event: push
+    branches:
+      only:
+        - master</pre></div><section class="sect3" id="sec-obs-obs-scm-ci-workflow-integration-setup-obs-workflows-config-location" data-id-title="Configuration File Location"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">8.1.6.1 </span><span class="title-name">Configuration File Location</span></span> <a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup-obs-workflows-config-location">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>By default the configuration file is fetched from the repository's
+        target branch under <span class="emphasis"><em>.obs/workflows.yml</em></span>. You can
+        of course adjust that by editing the token configuration in OBS. The
+        following options are available:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p><span class="emphasis"><em>Path for Workflows Configuration File</em></span>
+            allows you to adjust the path to be different than the default
+            <span class="emphasis"><em>.obs/workflows.yml</em></span> in the code repository.</p></li><li class="listitem"><p><span class="emphasis"><em>URL to Workflows Configuration File</em></span>
+            allows you to use a file that is hosted in a different place than
+            the code repository.</p></li></ul></div><div class="figure" id="id-1.2.8.5.2.7.9.4"><div class="figure-contents"><div class="mediaobject"><a href="images/workflows_config_file_location.png"><img src="images/workflows_config_file_location.png" width="50%" alt="Configuration File Location Options in Edit Token" title="Configuration File Location Options in Edit Token"/></a></div></div><div class="title-container"><div class="figure-title-wrap"><div class="figure-title"><span class="title-number-name"><span class="title-number">Figure 8.4: </span><span class="title-name">Configuration File Location Options in Edit Token </span></span><a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#id-1.2.8.5.2.7.9.4">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></section><section class="sect3" id="sec-obs-obs-scm-ci-workflow-integration-setup-obs-workflows-steps" data-id-title="OBS Workflow Steps"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">8.1.6.2 </span><span class="title-name">OBS Workflow Steps</span></span> <a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup-obs-workflows-steps">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>We support the following steps (the keys used in the
+        configuration file appears surrounded with parenthesis):</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>Branch a package in a project (branch_package).</p></li><li class="listitem"><p>Submit a request (submit_request).</p></li><li class="listitem"><p>Link a package to a project (link_package).</p></li><li class="listitem"><p>Configure repositories/architectures for a project
+            (configure_repositories)</p></li><li class="listitem"><p>Rebuild a package (rebuild_package)</p></li><li class="listitem"><p>Set flags for projects, packages, repositories or architectures (set_flags)</p></li><li class="listitem"><p>Trigger services of a package (trigger_services)</p></li></ul></div><div id="id-1.2.8.5.2.7.10.4" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.svg"/><div class="admon-title">Warning</div><p>The user the token belongs to needs to have permissions to
+          branch a package, link packages, configure repositories/architectures, rebuild packages and trigger services of a package.</p></div><section class="sect4" id="sec-obs-obs-scm-ci-workflow-integration-obs-workflows-steps-branch-a-package" data-id-title="Branch a Package in a Project"><div class="titlepage"><div><div><div class="title-container"><h5 class="title"><span class="title-number-name"><span class="title-number">8.1.6.2.1 </span><span class="title-name">Branch a Package in a Project</span></span> <a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-obs-workflows-steps-branch-a-package">#</a></h5><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>Given we have a source package called<span class="emphasis"><em>
+          ctris</em></span> coming from a source project called
+          <span class="emphasis"><em>games</em></span>, and a target project called
+          <span class="emphasis"><em>home:jane</em></span>, this step will branch that package
+          onto the target project, keeping in mind that:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>With a pull request event, it will go to e.g.:
+              <span class="emphasis"><em>home:jane:github:jane:ctris:PR-1/ctris</em></span>. <span class="emphasis"><em>PR-1</em></span> being the pull request number.</p></li><li class="listitem"><p>With a push event for commits, it will go to e.g.:<span class="emphasis"><em>
+              home:jane/ctris-66f2acfbded89a19935ee6d481b7cf2ab95427f6</em></span>. <span class="emphasis"><em>66f2acfbded89a19935ee6d481b7cf2ab95427f6</em></span> being the SHA of the latest commit that triggered the event.</p></li><li class="listitem"><p>With a push event for tags, it will go to e.g.:<span class="emphasis"><em>
+              home:jane/ctris-release_1</em></span>. <span class="emphasis"><em>release_1</em></span> being the name of the tag that triggered the event.</p></li></ul></div><p>This is an example of a configuration file with a branch
+          package step:</p><div class="verbatim-wrap"><pre class="screen">workflow:
+  steps:
+    - branch_package:
+        source_project: games
+        source_package: ctris
+        target_project: home:jane</pre></div><p>Branching a package into a project that did not exist before, for instance for a pull request event, will branch the package and
+        set up the same repositories that the source project has. If you want to skip this and set up repositories yourself, with the
+        configure_repositories step, set the <span class="emphasis"><em>add_repositories</em></span> key to anything else than <span class="emphasis"><em>enabled</em></span>.</p></section><section class="sect4" id="sec-obs-obs-scm-ci-workflow-integration-obs-workflows-steps-submit-request" data-id-title="Submit a Request"><div class="titlepage"><div><div><div class="title-container"><h5 class="title"><span class="title-number-name"><span class="title-number">8.1.6.2.2 </span><span class="title-name">Submit a Request</span></span> <a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-obs-workflows-steps-submit-request">#</a></h5><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The submit request step is the equivalent of the <span class="emphasis"><em>osc submitrequest</em></span> command.</p><p>The requirements to run a submit request step are:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>There has to be a source package.</p></li><li class="listitem"><p>There has to be some changes between the source package and the target package.</p></li></ul></div><p>After the previous requirements are met, keep in mind that:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>With a pull request open event, push event, or tag_push event, it will create the submit request.</p></li><li class="listitem"><p>When more commits are added to the pull request, it will supersede
+              the request it previously created with a new request.</p></li><li class="listitem"><p>With a pull_request closed event, it will revoke the request.</p></li></ul></div><p>This is an example of a configuration file with a submit request step:</p><div class="verbatim-wrap"><pre class="screen">workflow:
+  steps:
+    - submit_request:
+        source_project: games
+        source_package: ctris
+        target_project: home:jane_doe
+        target_package: ctris                        # (optional, uses source_package if not set)
+        description: 'Check out this cool package'   # (optional, uses the commit/pull request message if not set)</pre></div></section><section class="sect4" id="sec-obs-obs-scm-ci-workflow-integration-obs-workflows-steps-link-a-package-to-a-project" data-id-title="Link a Package to a Project"><div class="titlepage"><div><div><div class="title-container"><h5 class="title"><span class="title-number-name"><span class="title-number">8.1.6.2.3 </span><span class="title-name">Link a Package to a Project</span></span> <a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-obs-workflows-steps-link-a-package-to-a-project">#</a></h5><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The link package step is the equivalent of <span class="emphasis"><em>osc
+          linkpac</em></span> command.</p><p>Given a source project called <span class="emphasis"><em>devel</em></span>, a
+          source package called <span class="emphasis"><em>gcc</em></span>, a target project
+          called <span class="emphasis"><em>home:jane</em></span>, and a GitHub fork called
+          <span class="emphasis"><em>jane/gcc</em></span> the step will link the package
+          <span class="emphasis"><em>devel/gcc</em></span> against:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p><span class="emphasis"><em>home:jane:github:jane:gcc:PR-1/gcc</em></span>
+              for a pull request event. <span class="emphasis"><em>PR-1</em></span> being the pull request number.</p></li><li class="listitem"><p><span class="emphasis"><em>home:jane/gcc-fae00a0ac0e5687343a60ae02bf60352002ab9aa</em></span>
+              with a push event for commits. <span class="emphasis"><em>fae00a0ac0e5687343a60ae02bf60352002ab9aa</em></span>
+              being the SHA of the latest commit that triggered the event.</p></li><li class="listitem"><p><span class="emphasis"><em>home:jane/gcc-release_1</em></span>
+              with a push event for tags. <span class="emphasis"><em>release_1</em></span>
+              being the name of the tag that triggered the event.</p></li></ul></div><p>This is an example of a configuration file with a link package
+          step:</p><div class="verbatim-wrap"><pre class="screen">workflow:
+  steps:
+    - link_package:
+        source_project: devel
+        source_package: gcc
+        target_project: home:jane</pre></div><div id="id-1.2.8.5.2.7.10.7.7" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>If you rely on <a class="xref" href="cha-obs-source-services.html" title="Chapter 7. Using Source Services"><em>Using Source Services</em></a>
+            to run, for instance to pick up changes from a PR with the <span class="emphasis"><em>obs_scm</em></span> service, you can't make use of this step.
+            Package links do not run the services. Use the <span class="emphasis"><em>branch_package</em></span> step instead.</p></div></section><section class="sect4" id="sec-obs-obs-scm-ci-workflow-integration-obs-workflows-steps-configure-repositories-architectures-for-a-project" data-id-title="Configure Repositories/Architectures for a Project"><div class="titlepage"><div><div><div class="title-container"><h5 class="title"><span class="title-number-name"><span class="title-number">8.1.6.2.4 </span><span class="title-name">Configure Repositories/Architectures for a Project</span></span> <a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-obs-workflows-steps-configure-repositories-architectures-for-a-project">#</a></h5><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>Given a project called <span class="emphasis"><em>home:jane</em></span>, the step will
+          configure a number of repositories and architectures for:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p><span class="emphasis"><em>home:jane:jane_github:repo123:PR-1</em></span>
+              when the event is a pull request. <span class="emphasis"><em>jane_github</em></span> being the
+              username/organization which owns the SCM repository.
+              <span class="emphasis"><em>repo123</em></span> being the name of the SCM repository.
+              <span class="emphasis"><em>PR-1</em></span> being the pull request number.</p></li><li class="listitem"><p><span class="emphasis"><em>home:jane</em></span> when the event is a commit or tag push.</p></li></ul></div><p>Each repository needs:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>a name, e.g.:
+              <span class="emphasis"><em>openSUSE_Tumbleweed</em></span></p></li><li class="listitem"><p>a list of paths, each having a target project (e.g: <span class="emphasis"><em>openSUSE:Factory</em></span>)
+                and target repository (e.g: <span class="emphasis"><em>snapshot</em></span>)</p></li><li class="listitem"><p>a list of architectures to be defined for each repository.
+              e.g.: <span class="emphasis"><em>x86_64</em></span> and
+              <span class="emphasis"><em>i586</em></span></p></li></ul></div><p>This is an example of a configuration file with a configure
+          repositories step:</p><div class="verbatim-wrap"><pre class="screen">workflow:
+  steps:
+    - configure_repositories:
+        project: home:jane
+        repositories:
+          - name: openSUSE_Tumbleweed
+            paths:
+              - target_project: openSUSE:Factory
+                target_repository: snapshot
+              - target_project: openSUSE:Tumbleweed
+                target_repository: standard
+            architectures:
+              - x86_64
+              - i586
+          - name: openSUSE_Leap_15.2
+            paths:
+              - target_project: openSUSE:Leap:15.2
+                target_repository: standard
+            architectures:
+              - x86_64</pre></div></section><section class="sect4" id="sec-obs-obs-scm-ci-workflow-integration-obs-workflows-steps-rebuild-a-package" data-id-title="Rebuild a Package"><div class="titlepage"><div><div><div class="title-container"><h5 class="title"><span class="title-number-name"><span class="title-number">8.1.6.2.5 </span><span class="title-name">Rebuild a Package</span></span> <a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-obs-workflows-steps-rebuild-a-package">#</a></h5><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>Given a project called <span class="emphasis"><em>home:Admin</em></span> and a
+          package <span class="emphasis"><em>ctris</em></span>, the step will rebuild the
+          package <span class="emphasis"><em>home:Admin/ctris</em></span>.</p><p>This is an example of a configuration file with a rebuild
+          package step.</p><div class="verbatim-wrap"><pre class="screen">workflow:
+  steps:
+    - rebuild_package:
+        project: home:Admin
+        package: ctris</pre></div></section><section class="sect4" id="sec-obs-obs-scm-ci-workflow-integration-obs-workflows-steps-set-flags" data-id-title="Set Flags for Projects, Packages, Repositories or Architectures"><div class="titlepage"><div><div><div class="title-container"><h5 class="title"><span class="title-number-name"><span class="title-number">8.1.6.2.6 </span><span class="title-name">Set Flags for Projects, Packages, Repositories or Architectures</span></span> <a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-obs-workflows-steps-set-flags">#</a></h5><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>There are OBS-wide defaults for each flag type. This step is
+          only necessary if you want to diverge from the defaults (see
+          <a class="xref" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-obs-workflows-steps-set-flags-type" title="Valid flag types">Valid flag types</a>).</p><p>Providing the type <span class="emphasis"><em>build</em></span>, the status <span class="emphasis"><em>enable</em></span> and the project <span class="emphasis"><em>home:Admin</em></span>, OBS will
+          enable <span class="emphasis"><em>all</em></span> builds:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>for the <span class="emphasis"><em>home:Admin:$MY_SCM_ORG:$MY_SCM_PROJECT:PR-$MY_PR_NUMBER</em></span> project
+              when the webhook event is a pull request.</p></li><li class="listitem"><p>for the <span class="emphasis"><em>home:Admin</em></span> project when the webhook event is a push.</p></li></ul></div><p>Providing multiple flags is supported as noted in the configuration file below:</p><div class="verbatim-wrap"><pre class="screen">workflow:
+  steps:
+    - set_flags:
+        flags:
+          - type: build
+            status: enable
+            project: home:Admin
+          - type: publish
+            status: disable
+            project: home:Admin</pre></div><p>The type, status and project keys are always required. Optional keys are also available to limit the flag to a package, repository or architecture.</p><p>The project, package, repository and architecture should exist before a flag is set for them. They can be created in steps preceding a
+          <span class="emphasis"><em>set_flags</em></span> step, although this isn't necessary as long as they exist.</p><p>The type has to be one of the following values:</p><div class="itemizedlist" id="sec-obs-obs-scm-ci-workflow-integration-obs-workflows-steps-set-flags-type" data-id-title="Valid flag types"><div class="title-container"><div class="itemizedlist-title-wrap"><div class="itemizedlist-title"><span class="title-number-name"><span class="title-name">Valid flag types </span></span><a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-obs-workflows-steps-set-flags-type">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div><ul class="itemizedlist"><li class="listitem"><p>lock (default status <span class="emphasis"><em>disable</em></span>)</p></li><li class="listitem"><p>build (default status <span class="emphasis"><em>enable</em></span>)</p></li><li class="listitem"><p>publish (default status <span class="emphasis"><em>enable</em></span>)</p></li><li class="listitem"><p>debuginfo (default status <span class="emphasis"><em>disable</em></span>)</p></li><li class="listitem"><p>useforbuild (default status <span class="emphasis"><em>enable</em></span>)</p></li><li class="listitem"><p>binarydownload (default status <span class="emphasis"><em>enable</em></span>)</p></li><li class="listitem"><p>sourceaccess (default status <span class="emphasis"><em>enable</em></span>)</p></li><li class="listitem"><p>access (default status <span class="emphasis"><em>enable</em></span>)</p></li></ul></div><p>The status is either <span class="emphasis"><em>disable</em></span> or <span class="emphasis"><em>enable</em></span>.</p><p>Take into consideration, that if the <span class="emphasis"><em>set_flags</em></span> step doesn't define a flag specifically, a flag which had been set
+          previously will preserve its value.</p><p>So with the configuration file provided below and a <span class="emphasis"><em>pull request event</em></span>, builds of the
+          <span class="emphasis"><em>home:Admin:$MY_SCM_ORG:$MY_SCM_PROJECT:PR-$MY_PR_NUMBER/ctris</em></span> package will be disabled for the
+          <span class="emphasis"><em>openSUSE_Tumbleweed</em></span> repository and <span class="emphasis"><em>x86_64</em></span> architecture. For a <span class="emphasis"><em>push event</em></span>,
+          it's exactly the same, except for the package which is <span class="emphasis"><em>home:Admin/ctris-$MY_COMMIT_SHA_OR_TAG_NAME</em></span>.</p><div class="verbatim-wrap"><pre class="screen">workflow:
+  steps:
+    - set_flags:
+        flags:
+          - type: build
+            status: disable
+            project: home:Admin
+            package: ctris
+            repository: openSUSE_Tumbleweed
+            architecture: x86_64</pre></div></section><section class="sect4" id="sec-obs-obs-scm-ci-workflow-integration-obs-workflows-steps-trigger-services" data-id-title="Trigger Services of a Package"><div class="titlepage"><div><div><div class="title-container"><h5 class="title"><span class="title-number-name"><span class="title-number">8.1.6.2.7 </span><span class="title-name">Trigger Services of a Package</span></span> <a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-obs-workflows-steps-trigger-services">#</a></h5><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>Given a project called <span class="emphasis"><em>home:Admin</em></span> and a
+          package <span class="emphasis"><em>ctris</em></span>, the step will trigger services of the
+          package <span class="emphasis"><em>home:Admin/ctris</em></span>.</p><p>Be sure to have a <a class="link" href="https://openbuildservice.org/help/manuals/obs-user-guide/cha.obs.source_service.html" target="_blank">_service</a>
+          file in the package <span class="emphasis"><em>home:Admin/ctris</em></span>.</p><p>This is an example of a configuration file with a trigger services step:</p><div class="verbatim-wrap"><pre class="screen">workflow:
+  steps:
+    - trigger_services:
+        project: home:Admin
+        package: ctris</pre></div></section></section><section class="sect3" id="sec-obs-obs-scm-ci-workflow-integration-setup-obs-workflows-filters" data-id-title="Filters"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">8.1.6.3 </span><span class="title-name">Filters</span></span> <a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup-obs-workflows-filters">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>You can customize when workflows run by declaring
+        <span class="bold"><strong>branch</strong></span> or <span class="bold"><strong>Event</strong></span> filters.
+        They will make workflows run or not for specific branches/events.
+        </p><p>You can define them in the configuration file
+        <span class="emphasis"><em>.obs/workflows.yml</em></span>. Here's an example:</p><div class="verbatim-wrap"><pre class="screen">workflow:
+  steps:
+    - branch_package:
+        source_project: home:jane_doe
+        source_package: ctris
+        target_project: games
+  filters:
+    event: pull_request
+    branches:
+      only:
+        - master
+        - staging</pre></div><section class="sect4" id="sec-obs-obs-scm-ci-workflow-integration-setup-obs-workflows-filters-delimiters" data-id-title="Filters Delimiters: only and ignore"><div class="titlepage"><div><div><div class="title-container"><h5 class="title"><span class="title-number-name"><span class="title-number">8.1.6.3.1 </span><span class="title-name">Filters Delimiters: only and ignore</span></span> <a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup-obs-workflows-filters-delimiters">#</a></h5><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>Some steps can affect a group of elements (branches)
+          You can use filter delimiters like <span class="bold"><strong>only</strong></span> and <span class="bold"><strong>ignore</strong></span> to specify which elements should be
+          affected, or not, by the step.</p><p>The available filters delimiters are:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p><span class="bold"><strong>only: </strong></span>the step only
+              affects the elements in the list.</p></li><li class="listitem"><p><span class="bold"><strong>ignore:</strong></span> the step affects
+              all the elements except those in the list.</p></li></ul></div><div id="id-1.2.8.5.2.7.11.5.5" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p><span class="bold"><strong>only</strong></span> has precedence over
+            <span class="bold"><strong>ignore</strong></span>, so if both are defined,
+            <span class="bold"><strong>ignore</strong></span> is not considered.</p></div><p>This is an example to run a workflow <span class="emphasis"><em>only</em></span> for the target
+          branches <span class="emphasis"><em>master</em></span>:</p><div class="verbatim-wrap"><pre class="screen">workflow:
+  steps:
+    - rebuild_package:
+        project: games
+        package: ctris
+  filters:
+    branches:
+      only:
+        - master</pre></div><p>This is an example to run a workflow for all the target branches
+          <span class="emphasis"><em>except</em></span> for the branch <span class="emphasis"><em>staging</em></span>:</p><div class="verbatim-wrap"><pre class="screen">workflow:
+  steps:
+    - rebuild_package:
+        project: games
+        package: ctris
+  filters:
+    branches:
+      ignore:
+        - staging</pre></div></section><section class="sect4" id="sec-obs-obs-scm-ci-workflow-integration-obs-workflows-filters-event-filter" data-id-title="Event Filter"><div class="titlepage"><div><div><div class="title-container"><h5 class="title"><span class="title-number-name"><span class="title-number">8.1.6.3.2 </span><span class="title-name">Event Filter</span></span> <a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-obs-workflows-filters-event-filter">#</a></h5><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>Setting an event filter will run the workflow only for this event. The event filter doesn't accept multiple events.
+          Documentation on the SCM events can be found here: <a class="xref" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup-webhooks-scm-events" title="8.1.5.1. SCM Events">Section 8.1.5.1, “SCM Events”</a>.</p><p>The available event filters are:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p><span class="bold"><strong>pull_request</strong></span> is for pull
+              request events.</p></li><li class="listitem"><p><span class="bold"><strong>merge_request</strong></span> is an alias for the
+              'pull_request' event. Introduced with workflow version 1.1 (also see <a class="xref" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-workflow-version-table" title="8.3.1. Workflow Version Table">Section 8.3.1, “Workflow Version Table”</a>).
+              .</p></li><li class="listitem"><p><span class="bold"><strong>push</strong></span> is for push
+              events related to commits.</p></li><li class="listitem"><p><span class="bold"><strong>tag_push</strong></span> is for push
+              events related to tags.</p></li></ul></div><p>The following is an example to run a workflow only for a pull
+          request event:</p><div class="verbatim-wrap"><pre class="screen">workflow:
+  steps:
+    - branch_package:
+        source_project: games
+        source_package: ctris
+        target_project: home:jane_doe
+  filters:
+    event: pull_request</pre></div></section><section class="sect4" id="sec-obs-obs-scm-ci-workflow-integration-obs-workflows-filters-branches-filter" data-id-title="Branches Filter"><div class="titlepage"><div><div><div class="title-container"><h5 class="title"><span class="title-number-name"><span class="title-number">8.1.6.3.3 </span><span class="title-name">Branches Filter</span></span> <a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-obs-workflows-filters-branches-filter">#</a></h5><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>Matches target branches based on their names and runs a
+          workflow only for those branches.</p><p>This is an example to run a workflow for all target branches,
+          except <span class="emphasis"><em>master</em></span> and
+          <span class="emphasis"><em>final</em></span>:</p><div class="verbatim-wrap"><pre class="screen">workflow:
+  steps:
+    - branch_package:
+        source_project: home:jane_doe
+        source_package: ctris
+        target_project: games
+  filters:
+    branches:
+      ignore:
+        - master
+        - final</pre></div><p>Learn more about <a class="xref" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup-obs-workflows-filters-delimiters" title="8.1.6.3.1. Filters Delimiters: only and ignore">Filters Delimiters: only and ignore</a>.</p><div id="id-1.2.8.5.2.7.11.7.6" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>
+              <span class="bold"><strong>tag_push</strong></span> events are not supported by the
+              <span class="bold"><strong>branches filter</strong></span>.
+            </p></div></section></section><section class="sect3" id="sec-obs-obs-scm-ci-workflow-integration-setup-obs-workflows-placeholder-variables" data-id-title="Placeholder Variables"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">8.1.6.4 </span><span class="title-name">Placeholder Variables</span></span> <a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup-obs-workflows-placeholder-variables">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>With placeholder variables, workflows are now dynamic. Whenever a
+        webhook event comes in, OBS downloads the workflows file and parses it.
+        This is when the placeholder variables are replaced by the data they
+        refer to in the webhook event payload.</p><p>Here's a list of supported placeholder variables and their mapping:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p><span class="emphasis"><em>%{SCM_ORGANIZATION_NAME}</em></span>: The name of the SCM
+            organization, like <span class="emphasis"><em>openSUSE</em></span> for the GitHub repository
+            <span class="emphasis"><em>openSUSE/open-build-service</em></span>.</p></li><li class="listitem"><p><span class="emphasis"><em>%{SCM_REPOSITORY_NAME}</em></span>: The name of the SCM
+            repository, like <span class="emphasis"><em>open-build-service</em></span> for the GitHub repository
+            <span class="emphasis"><em>openSUSE/open-build-service</em></span>.</p></li><li class="listitem"><p><span class="emphasis"><em>%{SCM_PR_NUMBER}</em></span>: The number of the pull/merge
+            request from which the webhook event originates. This placeholder variable should be defined
+            in workflows running only for pull request webhook events.</p></li><li class="listitem"><p><span class="emphasis"><em>%{SCM_COMMIT_SHA}</em></span>: The SHA of the commit from
+            which the webhook event originates.</p></li></ul></div><p>Below is an example of a workflow with a placeholder variable:</p><div class="verbatim-wrap"><pre class="screen"># The test_build workflow will branch a package based on the SCM repository name from which the webhook event came from.
+test_build:
+  steps:
+    - branch_package:
+        source_project: games
+        source_package: %{SCM_REPOSITORY_NAME}
+        target_project: games:CI
+  filters:
+    event: pull_request</pre></div><p>For a more in-depth example in combination with configuration file
+        location, refer to
+        <a class="xref" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-use-cases-config-url-and-placeholder-variables" title="8.4.6. Using a Custom Configuration File URL in Combination with Placeholder Variables">Section 8.4.6, “Using a Custom Configuration File URL in Combination with Placeholder Variables”</a>.</p></section></section><section class="sect2" id="sec-obs-obs-scm-ci-workflow-integration-setup-status-reporting" data-id-title="Status Reporting"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">8.1.7 </span><span class="title-name">Status Reporting</span></span> <a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup-status-reporting">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>Once all the steps in the workflow are done, OBS will report the build results back to GitHub.</p><p>OBS will show detailed package build status for each distribution
+      and architecture you have set up in the configuration file.</p><div class="figure" id="id-1.2.8.5.2.8.4"><div class="figure-contents"><div class="mediaobject"><a href="images/commit_status.png"><img src="images/commit_status.png" width="50%" alt="Build Status" title="Build Status"/></a></div></div><div class="title-container"><div class="figure-title-wrap"><div class="figure-title"><span class="title-number-name"><span class="title-number">Figure 8.5: </span><span class="title-name">Build Status </span></span><a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#id-1.2.8.5.2.8.4">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div><p>Moreover, if your package builds several multibuild flavors, the status will
+      have the <a class="link" href="https://openbuildservice.org/help/manuals/obs-user-guide/cha.obs.multibuild.html" target="_blank">flavor</a>
+      name appended to the package name:</p><div class="figure" id="id-1.2.8.5.2.8.6"><div class="figure-contents"><div class="mediaobject"><a href="images/commit_status_multibuild.png"><img src="images/commit_status_multibuild.png" width="50%" alt="Build Status for Several Multibuild Flavors" title="Build Status for Several Multibuild Flavors"/></a></div></div><div class="title-container"><div class="figure-title-wrap"><div class="figure-title"><span class="title-number-name"><span class="title-number">Figure 8.6: </span><span class="title-name">Build Status for Several Multibuild Flavors </span></span><a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#id-1.2.8.5.2.8.6">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div><div id="id-1.2.8.5.2.8.7" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note</div><p>Due to a limitation, the <span class="bold"><strong>initial</strong></span>
+        "pending" build status of packages with multibuild flavors is <span class="bold"><strong>not</strong></span>
+        reported. The build status for those flavors will however still be reported
+        when the build finishes.</p></div></section><section class="sect2" id="sec-obs-obs-scm-ci-workflow-integration-setup-workflow-runs" data-id-title="Workflow Runs"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">8.1.8 </span><span class="title-name">Workflow Runs</span></span> <a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup-workflow-runs">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>For every SCM event, OBS compiles relevant information about the workflows running on the system. You can find the
+      so-called "Workflow Runs" under the list of tokens.</p><div class="figure" id="id-1.2.8.5.2.9.3"><div class="figure-contents"><div class="mediaobject"><a href="images/tokens_ui_index_with_workflow_run.png"><img src="images/tokens_ui_index_with_workflow_run.png" width="50%" alt="Tokens list" title="Tokens list"/></a></div></div><div class="title-container"><div class="figure-title-wrap"><div class="figure-title"><span class="title-number-name"><span class="title-number">Figure 8.7: </span><span class="title-name">Tokens list </span></span><a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#id-1.2.8.5.2.9.3">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div><p>From the list of workflow runs, you can get information like:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>the status (running/fail/success) represented by icons,</p></li><li class="listitem"><p>the type of event and action,</p></li><li class="listitem"><p>links to the SCM repository, pull/merge request or commit involved,</p></li><li class="listitem"><p>the time when the workflow was triggered</p></li></ul></div><div class="figure" id="id-1.2.8.5.2.9.6"><div class="figure-contents"><div class="mediaobject"><a href="images/workflow_runs_list.png"><img src="images/workflow_runs_list.png" width="50%" alt="Workflow Runs" title="Workflow Runs"/></a></div></div><div class="title-container"><div class="figure-title-wrap"><div class="figure-title"><span class="title-number-name"><span class="title-number">Figure 8.8: </span><span class="title-name">Workflow Runs </span></span><a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#id-1.2.8.5.2.9.6">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div><p>Click on each workflow run to get detailed information about it. OBS records the request received from the SCM,</p><div class="figure" id="id-1.2.8.5.2.9.8"><div class="figure-contents"><div class="mediaobject"><a href="images/workflow_runs_request.png"><img src="images/workflow_runs_request.png" width="50%" alt="Workflow Runs - Request" title="Workflow Runs - Request"/></a></div></div><div class="title-container"><div class="figure-title-wrap"><div class="figure-title"><span class="title-number-name"><span class="title-number">Figure 8.9: </span><span class="title-name">Workflow Runs - Request </span></span><a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#id-1.2.8.5.2.9.8">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div><p>the response sent back to the SCM,</p><div class="figure" id="id-1.2.8.5.2.9.10"><div class="figure-contents"><div class="mediaobject"><a href="images/workflow_runs_response.png"><img src="images/workflow_runs_response.png" width="50%" alt="Workflow Runs - Response" title="Workflow Runs - Response"/></a></div></div><div class="title-container"><div class="figure-title-wrap"><div class="figure-title"><span class="title-number-name"><span class="title-number">Figure 8.10: </span><span class="title-name">Workflow Runs - Response </span></span><a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#id-1.2.8.5.2.9.10">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div><p>and the artifacts used or generated during the run of each workflow.</p><div class="figure" id="id-1.2.8.5.2.9.12"><div class="figure-contents"><div class="mediaobject"><a href="images/workflow_runs_artifacts.png"><img src="images/workflow_runs_artifacts.png" width="50%" alt="Workflow Runs - Artifacts" title="Workflow Runs - Artifacts"/></a></div></div><div class="title-container"><div class="figure-title-wrap"><div class="figure-title"><span class="title-number-name"><span class="title-number">Figure 8.11: </span><span class="title-name">Workflow Runs - Artifacts </span></span><a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#id-1.2.8.5.2.9.12">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div><p>These records will help with debugging workflows. If an error occurs in any of the workflow steps,
+      the workflow run will record error messages. And reading the artifacts will help to understand what happened behind the scenes.</p></section><section class="sect2" id="sec-obs-obs-scm-ci-workflow-integration-setup-errors" data-id-title="Errors"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">8.1.9 </span><span class="title-name">Errors</span></span> <a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup-errors">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><div class="table" id="id-1.2.8.5.2.10.2" data-id-title="Common Errors"><div class="title-container"><div class="table-title-wrap"><div class="table-title"><span class="title-number-name"><span class="title-number">Table 8.1: </span><span class="title-name">Common Errors </span></span><a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#id-1.2.8.5.2.10.2">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div><div class="table-contents"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col/><col/></colgroup><thead><tr><th style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">Error</th><th style="text-align: left; border-bottom: 1px solid ; ">Reason</th></tr></thead><tbody><tr><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; "><span class="emphasis"><em>"Project not found"</em></span></td><td style="text-align: left; border-bottom: 1px solid ; ">Make sure the projects you declared in the
+              .obs/workflows.yml file exist in your OBS instance.</td></tr><tr><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; "><span class="emphasis"><em>"Package not found"</em></span></td><td style="text-align: left; border-bottom: 1px solid ; ">Make sure the packages you declared in the
+              .obs/workflows.yml file exist in your OBS instance.</td></tr><tr><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">No build result updates are displayed in your
+              PR/MR</td><td style="text-align: left; border-bottom: 1px solid ; ">Make sure there are repositories defined on your source
+              project. Another reason can be that the build did not start because
+              your package is "unresolvable" or "broken".</td></tr><tr><td style="text-align: left; border-right: 1px solid ; ">The project in OBS doesn't get updated with the latest
+              changes in the SCM.</td><td style="text-align: left; ">For certain steps you need to set up a
+              <span class="emphasis"><em>_service</em></span> file. Follow the <a class="link" href="https://github.com/openSUSE/obs-service-tar_scm#user-documentation" target="_blank">obs-service-tar_scm</a>
+              documentation.</td></tr></tbody></table></div></div></section><section class="sect2" id="sec-obs-obs-scm-ci-workflow-integration-setup-equivalence-table" data-id-title="Equivalence Table"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">8.1.10 </span><span class="title-name">Equivalence Table</span></span> <a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup-equivalence-table">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><div class="table" id="id-1.2.8.5.2.11.2" data-id-title="Equivalence table"><div class="title-container"><div class="table-title-wrap"><div class="table-title"><span class="title-number-name"><span class="title-number">Table 8.2: </span><span class="title-name">Equivalence table </span></span><a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#id-1.2.8.5.2.11.2">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div><div class="table-contents"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col/><col/><col/></colgroup><thead><tr><th style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">GitHub</th><th style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">GitLab</th><th style="text-align: left; border-bottom: 1px solid ; ">Gitea</th></tr></thead><tbody><tr><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">Repository</td><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">Project</td><td style="text-align: left; border-bottom: 1px solid ; ">Repository</td></tr><tr><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">Pull request</td><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">Merge request</td><td style="text-align: left; border-bottom: 1px solid ; ">Pull request</td></tr><tr><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">PR</td><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">MR</td><td style="text-align: left; border-bottom: 1px solid ; ">PR</td></tr><tr><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">Push</td><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">Push Hook</td><td style="text-align: left; border-bottom: 1px solid ; ">Push</td></tr><tr><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">Pull requests (in webhook configuration)</td><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">Merge request events (in webhook configuration)</td><td style="text-align: left; border-bottom: 1px solid ; ">Pull Request (in webhook configuration)</td></tr><tr><td style="text-align: left; border-right: 1px solid ; ">Pushes (in webhook configuration)</td><td style="text-align: left; border-right: 1px solid ; ">Push events (in webhook configuration)</td><td style="text-align: left; ">Push (in webhook configuration)</td></tr></tbody></table></div></div></section></section><section class="sect1" id="sec-obs-obs-scm-ci-workflow-integration-setup-event-action-and-status-report-table" data-id-title="SCM/CI Workflow Steps Reference Table"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">8.2 </span><span class="title-name">SCM/CI Workflow Steps Reference Table</span></span> <a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup-event-action-and-status-report-table">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>For each step, this table shows which event on the SCM will trigger which operations on the OBS.</p><div class="table" id="id-1.2.8.5.3.3" data-id-title="Workflow Steps reference table"><div class="title-container"><div class="table-title-wrap"><div class="table-title"><span class="title-number-name"><span class="title-number">Table 8.3: </span><span class="title-name">Workflow Steps reference table </span></span><a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#id-1.2.8.5.3.3">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div><div class="table-contents"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col/><col/><col/><col/><col/><col/><col/><col/></colgroup><thead><tr><th style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">SCM event and action</th><th style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">branch_package step</th><th style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">submit_request step</th><th style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">link_package step</th><th style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">rebuild_package step</th><th style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">trigger_services step</th><th style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">configure_repositories step</th><th style="text-align: left; border-bottom: 1px solid ; ">set_flags step</th></tr></thead><tbody><tr><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">Pull Request opened</td><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">
+              The <code class="envar">%{source_project}/%{source_package}</code> will be branched to
+              <code class="envar">%{target_project}:PR-%{SCM_PR_NUMBER}/%{source_package}</code>
+              The <code class="envar">%{SCM_COMMIT_SHA}</code> will be updated in the file <code class="filename">_branch_request</code>
+              or in the <code class="envar">scmsync</code> attribute of the package.
+              This will trigger a run of the services, which will trigger a rebuild.
+              The build results of the branched package will be reported to the <code class="envar">%{SCM_COMMIT_SHA}</code> as commit status.
+            </td><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">
+              Create a submit request from <code class="envar">%{source_project}/%{source_package}</code>
+              to <code class="envar">%{target_project}/%{target_package}</code>.
+              The request status changes will be reported to the <code class="envar">%{SCM_COMMIT_SHA}</code> as commit status.
+            </td><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">
+              The <code class="envar">%{source_project}/%{source_package}</code> will be linked into
+              <code class="envar">%{target_project}:PR-%{SCM_PR_NUMBER}/%{source_package}</code>
+              The <code class="envar">%{SCM_COMMIT_SHA}</code> will be updated in the <code class="envar">scmsync</code> attribute of the package.
+              This will trigger a run of the services, which will trigger a rebuild.
+              The build results of the linked package will will be reported to the <code class="envar">%{SCM_COMMIT_SHA}</code> as commit status.
+            </td><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">
+              The <code class="envar">%{project}/%{package}</code> will be rebuild.
+              The build results will be reported back to the <code class="envar">%{SCM_COMMIT_SHA}</code> as commit status.
+            </td><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">
+              The services of <code class="envar">%{project}/%{package}</code> will be triggered.
+              The build results will be reported back to the <code class="envar">%{SCM_COMMIT_SHA}</code> as commit status.
+            </td><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">
+              The repositories will be configured for the <code class="envar">%{target_project}:PR-%{SCM_PR_NUMBER}</code> project.
+              Nothing will be reported to the SCM.
+            </td><td style="text-align: left; border-bottom: 1px solid ; ">
+              The flags will be configured for the <code class="envar">%{target_project}:PR-%{SCM_PR_NUMBER}/%{package}</code>.
+              Nothing will be reported to the SCM.
+            </td></tr><tr><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">Pull Request updated</td><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">
+              The <code class="envar">%{SCM_COMMIT_SHA}</code> will be updated in the file <code class="filename">_branch_request</code>
+              or in the <code class="envar">scmsync</code> attribute of the
+              package <code class="envar">%{target_project}:PR-%{SCM_PR_NUMBER}/%{source_package}</code>
+              This will trigger a run of the services, which will trigger a rebuild.
+              The build results will be reported back to the <code class="envar">%{SCM_COMMIT_SHA}</code> as commit status.
+            </td><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">
+              Supersede the request it previously created with a new request
+              from <code class="envar">%{source_project}/%{source_package}</code> to <code class="envar">%{target_project}/%{target_package}</code>.
+              The request status changes will be reported to the <code class="envar">%{SCM_COMMIT_SHA}</code> as commit status.
+            </td><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">
+              The <code class="envar">%{SCM_COMMIT_SHA}</code> will be updated in in the <code class="envar">scmsync</code> attribute of the
+              package <code class="envar">%{target_project}:PR-%{SCM_PR_NUMBER}/%{source_package}</code>
+              This will trigger a run of the services, which will trigger a rebuild.
+              The build results will be reported back to the <code class="envar">%{SCM_COMMIT_SHA}</code> as commit status.
+            </td><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">
+              The <code class="envar">%{project}/%{package}</code> will be rebuild.
+              The build results will be reported back to the <code class="envar">%{SCM_COMMIT_SHA}</code> as commit status.
+            </td><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">
+              The services of <code class="envar">%{project}/%{package}</code> will be triggered.
+              The build results will be reported back to the <code class="envar">%{SCM_COMMIT_SHA}</code> as commit status.
+            </td><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">
+              The repositories will be configured for the <code class="envar">%{target_project}:PR-%{SCM_PR_NUMBER}</code> project.
+              Nothing will be reported to the SCM.
+            </td><td style="text-align: left; border-bottom: 1px solid ; ">
+              The flags will be configured for the <code class="envar">%{target_project}:PR-%{SCM_PR_NUMBER}/%{package}</code>.
+              Nothing will be reported to the SCM.
+            </td></tr><tr><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">Pull Request closed</td><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">
+              The project <code class="envar">%{target_project}:PR-%{SCM_PR_NUMBER}</code> will be deleted.
+              </td><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">
+              The submit request will be revoked.
+            </td><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">
+              The project <code class="envar">%{target_project}:PR-%{SCM_PR_NUMBER}</code> will be deleted.
+            </td><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">
+              This event is ignored.
+            </td><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">
+              This event is ignored.
+            </td><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">
+              This event is ignored.
+            </td><td style="text-align: left; border-bottom: 1px solid ; ">
+              This event is ignored.
+            </td></tr><tr><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">Pull Request reopened</td><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">
+              The project <code class="envar">%{target_project}:PR-%{SCM_PR_NUMBER}</code> will be restored.
+              This will trigger a rebuild of the contained packages.
+              The build results of the branched package will be reported to the <code class="envar">%{SCM_COMMIT_SHA}</code> as commit status.
+            </td><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">
+              Create a submit request from <code class="envar">%{source_project}/%{source_package}</code>
+              to <code class="envar">%{target_project}/%{target_package}</code>.
+              The request status changes will be reported to the <code class="envar">%{SCM_COMMIT_SHA}</code> as commit status.
+            </td><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">
+              The project <code class="envar">%{target_project}:PR-%{SCM_PR_NUMBER}</code> will be restored.
+              This will trigger a rebuild of the contained packages.
+              The build results of the branched package will be reported to the <code class="envar">%{SCM_COMMIT_SHA}</code> as commit status.
+            </td><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">
+              This event is ignored.
+            </td><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">
+              This event is ignored.
+            </td><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">
+              This event is ignored.
+            </td><td style="text-align: left; border-bottom: 1px solid ; ">
+              This event is ignored.
+            </td></tr><tr><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">Push</td><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">
+              The <code class="envar">%{source_project}/%{source_package}</code> will be branched to
+              <code class="envar">%{target_project}/%{source_package}-%{SCM_COMMIT_SHA}</code>
+              The build results of the branched package will be reported to the <code class="envar">%{SCM_COMMIT_SHA}</code> as commit status.
+            </td><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">
+              Create a submit request from <code class="envar">%{source_project}/%{source_package}</code>
+              to <code class="envar">%{target_project}/%{target_package}</code>.
+              The request status changes will be reported to the <code class="envar">%{SCM_COMMIT_SHA}</code> as commit status.
+            </td><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">
+              The <code class="envar">%{source_project}/%{source_package}</code> will be linked into
+              <code class="envar">%{target_project}/%{source_package}-%{SCM_COMMIT_SHA}</code>
+              The build results of the linked package will be reported to the <code class="envar">%{SCM_COMMIT_SHA}</code> as commit status.
+            </td><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">
+              The <code class="envar">%{project}/%{package}</code> will be rebuild.
+              The build results will be reported back to the <code class="envar">%{SCM_COMMIT_SHA}</code> as commit status.
+            </td><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">
+              The services of <code class="envar">%{project}/%{package}</code> will be triggered.
+              The build results will be reported back to the <code class="envar">%{SCM_COMMIT_SHA}</code> as commit status.
+            </td><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">
+              The repositories will be configured for the <code class="envar">%{project}</code>.
+              Nothing will be reported to the SCM.
+            </td><td style="text-align: left; border-bottom: 1px solid ; ">
+              The flags will be configured for the <code class="envar">%{project}/%{package}</code>.
+              Nothing will be reported to the SCM.
+            </td></tr><tr><td style="text-align: left; border-right: 1px solid ; ">Tag Push</td><td style="text-align: left; border-right: 1px solid ; ">
+              The <code class="envar">%{source_project}/%{source_package}</code> will be branched to
+              <code class="envar">%{target_project}/%{source_package}-%{TAG_NAME}</code>
+              Nothing will be reported to the SCM.
+            </td><td style="text-align: left; border-right: 1px solid ; ">
+              Create a submit request from <code class="envar">%{source_project}/%{source_package}</code>
+              to <code class="envar">%{target_project}/%{target_package}</code>.
+            </td><td style="text-align: left; border-right: 1px solid ; ">
+              The <code class="envar">%{source_project}/%{source_package}</code> will be linked into
+              <code class="envar">%{target_project}/%{source_package}-%{TAG_NAME}</code>
+              Nothing will be reported to the SCM.
+            </td><td style="text-align: left; border-right: 1px solid ; ">
+              The <code class="envar">%{project}/%{package}</code> will be rebuild.
+              Nothing will be reported to the SCM.
+            </td><td style="text-align: left; border-right: 1px solid ; ">
+              The services of <code class="envar">%{project}/%{package}</code> will be triggered.
+              Nothing will be reported to the SCM.
+            </td><td style="text-align: left; border-right: 1px solid ; ">
+              The repositories will be configured for the <code class="envar">%{project}</code>.
+              Nothing will be reported to the SCM.
+            </td><td style="text-align: left; ">
+              The flags will be configured for the <code class="envar">%{project}/%{package}</code>.
+              Nothing will be reported to the SCM.
+            </td></tr></tbody></table></div></div></section><section class="sect1" id="sec-obs-obs-scm-ci-workflow-integration-versions" data-id-title="SCM/CI Workflow Versions"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">8.3 </span><span class="title-name">SCM/CI Workflow Versions</span></span> <a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-versions">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>To secure the compatibility of SCM/CI workflows with new features and changes,
+    we are introducing those through new versions. We specify them with a <span class="bold"><strong>MAJOR.MINOR</strong></span> versioning scheme.
+    We introduce breaking, non-backward compatible features and changes with
+    major version updates. Minor updates only include backward compatible updates,
+    but might require adjustments to the workflows in order to benefit from new features.
+    The workflow version is specified on the toplevel of your workflow configuration
+    yaml file. Right now we don't enforce to specify a version in the workflow yaml
+    configuration and default to the latest minor version.</p><div class="verbatim-wrap"><pre class="screen">    version: '1.0'
+    workflow:
+      steps:
+        - link_package:
+            source_project: GNOME:Factory
+            source_package: gnome-shell
+            target_project: home:jane:playground</pre></div><section class="sect2" id="sec-obs-obs-scm-ci-workflow-integration-workflow-version-table" data-id-title="Workflow Version Table"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">8.3.1 </span><span class="title-name">Workflow Version Table</span></span> <a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-workflow-version-table">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>Current available workflow versions and the introduced changes can be found
+      in the versions table below.</p><div class="table" id="id-1.2.8.5.4.4.3" data-id-title="Workflow Versions"><div class="title-container"><div class="table-title-wrap"><div class="table-title"><span class="title-number-name"><span class="title-number">Table 8.4: </span><span class="title-name">Workflow Versions </span></span><a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#id-1.2.8.5.4.4.3">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div><div class="table-contents"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col/><col/></colgroup><thead><tr><th style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">Version</th><th style="text-align: left; border-bottom: 1px solid ; ">Changes</th></tr></thead><tbody><tr><td style="text-align: left; border-right: 1px solid ; ">1.1</td><td style="text-align: left; ">
+                <p>
+                  Add alias for 'merge_request' to event filters.
+                  Previously we only supported the term 'pull_request'.
+                </p>
+              </td></tr></tbody></table></div></div></section></section><section class="sect1" id="sec-obs-obs-scm-ci-workflow-integration-use-cases" data-id-title="SCM/CI Workflow Integration Use-Cases"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">8.4 </span><span class="title-name">SCM/CI Workflow Integration Use-Cases</span></span> <a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-use-cases">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><section class="sect2" id="sec-obs-obs-scm-ci-workflow-integration-use-cases-service" data-id-title="OBS SCM Service"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">8.4.1 </span><span class="title-name">OBS SCM Service</span></span> <a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-use-cases-service">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>For some of the use cases, you might want the OBS package to get
+      the sources from the pull request in GitHub.</p><p>For this, you can make use of the existing <a class="link" href="https://github.com/openSUSE/obs-service-tar_scm#user-documentation" target="_blank">obs-service-tar_scm</a>
+      service. Your package should include a properly defined
+      <span class="emphasis"><em>_service</em></span> file. obs-service-tar_scm will
+      automatically use the sources of the pull request that triggered
+      it.</p></section><section class="sect2" id="sec-obs-obs-scm-ci-workflow-integration-use-cases-test-build-pull-request" data-id-title="Test Build a Package For Every Pull Request on GitHub"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">8.4.2 </span><span class="title-name">Test Build a Package For Every Pull Request on GitHub</span></span> <a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-use-cases-test-build-pull-request">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>You decide to manage your package sources from a GitHub
+      repository. However, every time someone tries to add changes to your
+      sources by opening a pull request, you need to verify that your package
+      still builds for certain repositories and architectures in OBS. You can
+      have the best of both worlds with the <a class="xref" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup" title="8.1. SCM/CI Workflow Integration Setup">SCM/CI Workflow Integration Setup</a>.</p><p>You will need:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>A project in OBS that you own, it will be the <span class="emphasis"><em>target
+          project</em></span>. Let's say:
+          <span class="emphasis"><em>home:jane:playground</em></span>.</p></li><li class="listitem"><p>A package in OBS that you want to test build, it will be the
+          <span class="emphasis"><em>source package</em></span> inside the source project. E.g.:
+          <span class="emphasis"><em>GNOME:Factory/gnome-shell</em></span>.</p></li><li class="listitem"><p>A repository in GitHub with the source code that will receive
+          the pull requests, e.g.:
+          <span class="emphasis"><em>https://github.com/GNOME/gnome-shell</em></span>.</p></li><li class="listitem"><p>The required tokens to allow OBS and GitHub talk each other as
+          explained in <a class="xref" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup-token-authentication" title="8.1.4. Token Authentication">Section 8.1.4, “Token Authentication”</a></p></li><li class="listitem"><p>The required webhooks so GitHub notifies OBS of any event as
+          explained in <a class="xref" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup-webhooks" title="8.1.5. Webhooks">Section 8.1.5, “Webhooks”</a></p></li></ul></div><p>This is obviously a good candidate to use the <a class="xref" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-use-cases-service" title="8.4.1. OBS SCM Service">OBS SCM Service</a>.</p><p>There are two different strategies to do this: <span class="bold"><strong>branching</strong></span> the package or <span class="bold"><strong>linking</strong></span> to it.</p><section class="sect3" id="sec-obs-obs-scm-ci-workflow-integration-use-cases-test-build-pull-request-branch" data-id-title="Branch"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">8.4.2.1 </span><span class="title-name">Branch</span></span> <a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-use-cases-test-build-pull-request-branch">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>If you decide to branch the package for the test build, the
+        configuration file should be something like this:</p><div class="verbatim-wrap"><pre class="screen">workflow:
+  steps:
+    - branch_package:
+        source_project: GNOME:Factory
+        source_package: gnome-shell
+        target_project: home:jane:playground
+  filters:
+    event: pull_request</pre></div><p>Whenever someone opens a new pull request in the repository, OBS
+        will branch the <span class="emphasis"><em>source package</em></span> onto the
+        <span class="emphasis"><em>target project</em></span>, trigger the build, and report the
+        results in the pull request's status checks.</p><p>Keep in mind that, when OBS branches a package, it copies the
+        repositories from the <span class="emphasis"><em>source project</em></span> to the
+        <span class="emphasis"><em>target project</em></span>, so everything is ready to start
+        building.</p><p>Once the pull request is accepted or closed, the branched
+        package will be deleted.</p><p>Read <a class="xref" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup" title="8.1. SCM/CI Workflow Integration Setup">SCM/CI Workflow Integration Setup</a> and,
+        specifically, the workflow steps (<a class="xref" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup-obs-workflows-steps" title="8.1.6.2. OBS Workflow Steps">Section 8.1.6.2, “OBS Workflow Steps”</a>).</p></section><section class="sect3" id="sec-obs-obs-scm-ci-workflow-integration-use-cases-test-build-pull-request-link-configure-repositories" data-id-title="Link and Configure Repositories"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">8.4.2.2 </span><span class="title-name">Link and Configure Repositories</span></span> <a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-use-cases-test-build-pull-request-link-configure-repositories">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>If you prefer to link the package for the test build, the
+        configuration file should be something like this:</p><div class="verbatim-wrap"><pre class="screen">workflow:
+  steps:
+    - link_package:
+        source_project: GNOME:Factory
+        source_package: gnome-shell
+        target_project: home:jane:playground
+    - configure_repositories:
+        project: home:jane:playground
+        repositories:
+          - name: openSUSE_Tumbleweed
+            paths:
+              - target_project: openSUSE:Factory
+                target_repository: snapshot
+            architectures:
+              - x86_64
+              - i586
+          - name: openSUSE_Leap_15.2
+            paths:
+              - target_project: openSUSE:Leap:15.2
+                target_repository: standard
+            architectures:
+              - x86_64
+  filters:
+    event: pull_request</pre></div><p>Whenever someone opens a new pull request in the repository, OBS
+        will create a <span class="emphasis"><em>target package</em></span> linked to the
+        <span class="emphasis"><em>source package</em></span>.</p><p>Unlike the branching, in this case the repositories are not copied to the
+        <span class="emphasis"><em>target project</em></span>. That is why you need to set up
+        the <span class="emphasis"><em>configure_repositories</em></span> step giving you the
+        flexibility to decide which repositories are you interested in.</p><p>Read <a class="xref" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup" title="8.1. SCM/CI Workflow Integration Setup">SCM/CI Workflow Integration Setup</a> and,
+        specifically, the workflow steps (<a class="xref" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup-obs-workflows-steps" title="8.1.6.2. OBS Workflow Steps">Section 8.1.6.2, “OBS Workflow Steps”</a>).</p></section></section><section class="sect2" id="sec-obs-obs-scm-ci-workflow-integration-use-cases-rebuild-package-for-every-change" data-id-title="Rebuild a Package for Every Change in a Branch"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">8.4.3 </span><span class="title-name">Rebuild a Package for Every Change in a Branch</span></span> <a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-use-cases-rebuild-package-for-every-change">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>You have a test build set up and you want it to keep up to date
+      with the new changes you add to the PR. One way to do it, is to
+      configure a rebuild package step with a push event filter.</p><p>You need:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>A project and package to test build. E.g.:
+          <span class="emphasis"><em>home:jane/rust</em></span></p></li><li class="listitem"><p>A repository in GitHub with an opened PR. E.g.:
+          <span class="emphasis"><em>https://github.com/jane/rust/pull/1</em></span></p></li><li class="listitem"><p>The required tokens to allow OBS and GitHub talk each other as
+          explained in <a class="xref" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup-token-authentication" title="8.1.4. Token Authentication">Section 8.1.4, “Token Authentication”</a></p></li><li class="listitem"><p>The required webhooks so GitHub notifies OBS of any event as
+          explained in <a class="xref" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup-webhooks" title="8.1.5. Webhooks">Section 8.1.5, “Webhooks”</a></p></li><li class="listitem"><p>The source code synchronization setup with the <a class="xref" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-use-cases-service" title="8.4.1. OBS SCM Service">OBS SCM Service</a>.</p></li></ul></div><p>The workflow configuration should be like this one:</p><div class="verbatim-wrap"><pre class="screen">workflow:
+  steps:
+    - rebuild_package:
+        project: home:jane
+        package: rust
+  filters:
+    event: push</pre></div></section><section class="sect2" id="sec-obs-obs-scm-ci-workflow-integration-use-cases-set-flags" data-id-title="Set Flags on a Package to Disable Builds for an Architecture"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">8.4.4 </span><span class="title-name">Set Flags on a Package to Disable Builds for an Architecture</span></span> <a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-use-cases-set-flags">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>When you branch a package, all its repositories and their architectures will be copied over.
+      For this package, you might want to disable builds for a certain repository or architecture. This is
+      possible with the <span class="emphasis"><em>set_flags</em></span> step.</p><p>The workflow configuration should be like this one:</p><div class="verbatim-wrap"><pre class="screen">workflow:
+  steps:
+    - branch_package:
+        source_project: home:jane_doe
+        source_package: rust
+        target_project: home:jane_doe:CI
+    - set_flags:
+        flags:
+          - type: build
+            status: disable
+            project: home:jane_doe:CI
+            package: rust
+            architecture: x86_64</pre></div></section><section class="sect2" id="sec-obs-obs-scm-ci-workflow-integration-use-cases-create-package-releases-with-tags" data-id-title="Create Package on OBS for Every Software Release With Git Tags"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">8.4.5 </span><span class="title-name">Create Package on OBS for Every Software Release With Git Tags</span></span> <a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-use-cases-create-package-releases-with-tags">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>You have a software project for which you mark releases with Git tags. For every release, you want to create
+      a package on OBS. This can be automated in a workflow with the <span class="emphasis"><em>branch_package</em></span> step and the
+      <span class="emphasis"><em>tag_push</em></span> event filter. Once the workflow is in place, every tag you push to your SCM repository
+      will branch a package on OBS and create, then build a package for the source code associated to the tag's commit.
+      This way, your users can always install a versioned release of your software project. You can also link one of those
+      versioned releases to another project on OBS if you need it as a dependency.</p><p>After the usual setup for
+      OBS workflows with tokens and webhooks (see <a class="xref" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup" title="8.1. SCM/CI Workflow Integration Setup">Section 8.1, “SCM/CI Workflow Integration Setup”</a>), you will need:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>A package in OBS that you own, and for which you want to create releases. It will be the
+          <span class="emphasis"><em>source package</em></span> (e.g.: <span class="emphasis"><em>home:jane/my_package</em></span>) and it will
+          contain a <span class="emphasis"><em>_service</em></span> file. When this package is branched by the
+          <span class="emphasis"><em>branch_package</em></span> step, the branched package name will end with the name of the tag which
+          was pushed (e.g.: <span class="emphasis"><em>my_package-1.0</em></span>).</p></li><li class="listitem"><p>A project in OBS that you own, and which will contain all packages created by the <span class="emphasis"><em>branch_package</em></span>
+          step. It will be the <span class="emphasis"><em>target project</em></span> (e.g.: <span class="emphasis"><em>home:jane:releases</em></span>).</p></li><li class="listitem"><p>A SCM repository for your software project with the source code and spec file in which you
+          will create Git tags to mark releases, e.g.: <span class="emphasis"><em>https://github.com/jane/my_package</em></span>.</p></li></ul></div><p>The workflow configuration should be like this one:</p><div class="verbatim-wrap"><pre class="screen">workflow:
+  steps:
+    - branch_package:
+        source_project: home:jane
+        source_package: my_package
+        target_project: home:jane:releases
+  filters:
+    event: tag_push</pre></div><p>The <span class="emphasis"><em>_service</em></span> file in your source package should be like:</p><div class="verbatim-wrap"><pre class="screen">&lt;?xml version="1.0"?&gt;
+  &lt;services&gt;
+    &lt;service name="obs_scm"&gt;
+      &lt;param name="versionformat"&gt;@PARENT_TAG@&lt;/param&gt;
+      &lt;param name="url"&gt;https://github.com/jane/my_package.git&lt;/param&gt;
+      &lt;param name="scm"&gt;git&lt;/param&gt;
+      &lt;param name="revision"&gt;@PARENT_TAG@&lt;/param&gt;
+      &lt;param name="extract"&gt;my_package.spec&lt;/param&gt;
+    &lt;/service&gt;
+    &lt;service name="set_version"/&gt;
+    &lt;service name="tar" mode="buildtime"/&gt;
+  &lt;/services&gt;</pre></div><p>Here's an explanation of the services involved:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>The <a class="link" href="https://github.com/openSUSE/obs-service-tar_scm#obs_scm" target="_blank">obs_scm</a> service fetches
+          the source code from your SCM repository for a specific revision, which in this case, is for the latest tag
+          (<span class="emphasis"><em>@PARENT_TAG@</em></span>). Don't forget to extract the spec file with a <span class="emphasis"><em>extract</em></span> element.</p><p>Set the <span class="emphasis"><em>versionformat</em></span> to match how you want to name your releases. This is typically
+          the Git tag name, so <span class="emphasis"><em>@PARENT_TAG@</em></span> is what you should use. For other options, refer to
+          <a class="link" href="https://git-scm.com/docs/git-log" target="_blank">git log</a> and its <span class="emphasis"><em>format:&lt;format-string&gt;</em></span>
+          documentation.</p></li><li class="listitem"><p>The <a class="link" href="https://github.com/openSUSE/obs-service-set_version" target="_blank">set_version</a> service updates the
+          <span class="emphasis"><em>Version</em></span> directive in the spec file downloaded by the <span class="emphasis"><em>obs_scm</em></span> service. The version
+          format comes from the <span class="emphasis"><em>versionformat</em></span> element under the <span class="emphasis"><em>obs_scm</em></span> service.</p></li><li class="listitem"><p>The <a class="link" href="https://github.com/openSUSE/obs-service-tar_scm#tar" target="_blank">tar</a> service creates a tarball out of
+          the source code fetched by the <span class="emphasis"><em>obs_scm</em></span> service.</p></li></ul></div><p>For the spec file in your SCM repository, pay attention to this:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>The <span class="emphasis"><em>Source0</em></span> directive is based on values you provided to the <span class="emphasis"><em>obs_scm</em></span> service
+          in the <span class="emphasis"><em>_service</em></span> file and it should be like this: <span class="emphasis"><em>my_package-%{version}.tar</em></span>.</p><p>The first part is the SCM repository name (e.g: <span class="emphasis"><em>my_package</em></span>). The second part is the version
+          macro which will be expanded to match what you defined in the <span class="emphasis"><em>versionformat</em></span> of the
+          <span class="emphasis"><em>obs_scm</em></span> service in the <span class="emphasis"><em>_service</em></span> file. The third part is the archive extension
+          (<span class="emphasis"><em>.tar</em></span>) since a tarball was created by the <span class="emphasis"><em>tar</em></span> service.</p></li><li class="listitem"><p>Under the <span class="emphasis"><em>%prep</em></span> directive, you might have to update the <span class="emphasis"><em>%setup</em></span> directive
+          if your source package name doesn't match the name of your SCM repository. Here's how, with <span class="emphasis"><em>my_package</em></span>
+          being the SCM repository name:</p><div class="verbatim-wrap"><pre class="screen">%prep
+  %setup -q -n my_package-%version</pre></div></li></ul></div></section><section class="sect2" id="sec-obs-obs-scm-ci-workflow-integration-use-cases-config-url-and-placeholder-variables" data-id-title="Using a Custom Configuration File URL in Combination with Placeholder Variables"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">8.4.6 </span><span class="title-name">Using a Custom Configuration File URL in Combination with Placeholder Variables</span></span> <a title="Permalink" class="permalink" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-use-cases-config-url-and-placeholder-variables">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>It may happen that you have multiple repositories following the same
+      set of workflow steps, and you would rather have one copy of the configuration
+      file stored in a single place and applied to multiple workflows. This can be
+      done with the combination of placeholder variables and the configuration
+      file url setting</p><p>Let's say you have the following configuration file that works with
+      your SCM repository called <span class="emphasis"><em>gnome-shell</em></span></p><div class="verbatim-wrap"><pre class="screen">workflow:
+  steps:
+    - branch_package:
+        source_project: "test-project"
+        source_package: "gnome-shell"
+        target_project: "test-target-project"
+  filters:
+    event: pull_request</pre></div><p>If you replace <span class="emphasis"><em>gnome-shell</em></span> with
+      <span class="emphasis"><em>%{SCM_REPOSITORY_NAME}</em></span> like so:</p><div class="verbatim-wrap"><pre class="screen">workflow:
+  steps:
+    - branch_package:
+        source_project: "test-project"
+        source_package: "%{SCM_REPOSITORY_NAME}"
+        target_project: "test-target-project"
+  filters:
+    event: pull_request</pre></div><p>It will perform just as well as it did before, however now
+      this configuration can be applied to any other OBS package in the
+      <span class="emphasis"><em>test-project</em></span> and SCM repository combination assuming
+      they have the same name.</p><p>From here the only thing left to do would be to host this file
+      somewhere where OBS can access it, creating a workflow token and the
+      corresponding webhooks (following the setup instructions at <a class="xref" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup-token-authentication" title="8.1.4. Token Authentication">Section 8.1.4, “Token Authentication”</a>)
+      for every SCM repository you want this configuration file to apply to,
+      making sure you set the correct configuration url (see <a class="xref" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup-obs-workflows-config-location" title="8.1.6.1. Configuration File Location">Section 8.1.6.1, “Configuration File Location”</a>).</p><p>There are many other ways to use these two features in parallel,
+      make sure to read
+      <a class="xref" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup-obs-workflows-placeholder-variables" title="8.1.6.4. Placeholder Variables">Section 8.1.6.4, “Placeholder Variables”</a>
+      and <a class="xref" href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup-obs-workflows-config-location" title="8.1.6.1. Configuration File Location">Section 8.1.6.1, “Configuration File Location”</a>
+      to get some inspiration on how you can use them in your project.</p></section></section></section><nav class="bottom-pagination"><div><a class="pagination-link prev" href="cha-obs-source-services.html"><span class="pagination-relation">Previous</span><span class="pagination-label"><span class="title-number">Chapter 7 </span>Using Source Services</span></a> </div><div><a class="pagination-link next" href="cha-obs-stagingworkflow.html"><span class="pagination-relation">Next</span><span class="pagination-label"><span class="title-number">Chapter 9 </span>Staging Workflow</span></a> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="sect1"><a href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup"><span class="title-number">8.1 </span><span class="title-name">SCM/CI Workflow Integration Setup</span></a></span></li><li><span class="sect1"><a href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup-event-action-and-status-report-table"><span class="title-number">8.2 </span><span class="title-name">SCM/CI Workflow Steps Reference Table</span></a></span></li><li><span class="sect1"><a href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-versions"><span class="title-number">8.3 </span><span class="title-name">SCM/CI Workflow Versions</span></a></span></li><li><span class="sect1"><a href="cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-use-cases"><span class="title-number">8.4 </span><span class="title-name">SCM/CI Workflow Integration Use-Cases</span></a></span></li></ul></div> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
+                 2024</span></div></div></footer></body></html>

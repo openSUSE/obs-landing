@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><title>User Guide | Local Building</title><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"/><link rel="schema.DCTERMS" href="http://purl.org/dc/terms/"/>
+<meta name="title" content="Local Building"/>
+<meta name="description" content="Every build that happens on the server can also be executed locally in the same environment using the osc tool. All you need is to check out the sour…"/>
+<meta name="book-title" content="User Guide"/>
+<meta name="chapter-title" content="Chapter 6. Local Building"/>
+<meta name="tracker-url" content="https://github.com/openSUSE/obs-docu/issues/new"/>
+<meta name="tracker-type" content="gh"/>
+<meta name="publisher" content="SUSE"/><meta property="og:title" content="Local Building"/>
+<meta property="og:description" content="Every build that happens on the server can also be executed…"/>
+<meta property="og:type" content="article"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Local Building"/>
+<meta name="twitter:description" content="Every build that happens on the server can also be executed…"/>
+<script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": ["TechArticle"],
+    "image": "https://www.suse.com/assets/img/suse-white-logo-green.svg",
+    
+     "isPartOf": {
+      "@type": "CreativeWorkSeries",
+      "name": "Product &amp; Solutions"
+    },
+    
+    "inLanguage": "en",
+    
+
+    "headline": "Local Building",
+  
+    "description": "Every build that happens on the server can also be executed locally in the same environment using the osc tool. All you need is to check out the sour…",
+      
+    "author": [
+      {
+        "@type": "Corporation",
+        "name": "SUSE Product &amp; Solution Documentation Team",
+        "url": "https://www.suse.com/assets/img/suse-white-logo-green.svg"
+      }
+    ],
+      
+
+    "about": [
+      
+    ],
+  
+    "sameAs": [
+          "https://www.facebook.com/SUSEWorldwide/about",
+          "https://www.youtube.com/channel/UCHTfqIzPKz4f_dri36lAQGA",
+          "https://twitter.com/SUSE",
+          "https://www.linkedin.com/company/suse"
+    ],
+    "publisher": {
+      "@type": "Corporation",
+      "name": "SUSE",
+      "url": "https://documentation.suse.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.suse.com/assets/img/suse-white-logo-green.svg"
+      }
+    }
+  }</script>
+<link rel="prev" href="cha-obs-basicworkflow.html" title="Chapter 5. Basic OBS Workflow"/><link rel="next" href="cha-obs-source-services.html" title="Chapter 7. Using Source Services"/><script type="text/javascript">
+
+if ( window.location.protocol.toLowerCase() != 'file:' ) {
+  document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
+};
+
+</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"/></noscript><script src="static/js/script-purejs.js" type="text/javascript"> </script><script src="static/js/highlight.min.js" type="text/javascript"> </script><script>
+
+$(document).ready(function() {
+  $('.verbatim-wrap.highlight').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+hljs.configure({
+  useBR: false
+});
+
+</script></head><body class="wide offline js-off"><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-pagination">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><header id="_mainnav"><div class="growth-inhibitor"/></header><div class="crumbs"><div class="growth-inhibitor"><a class="crumb" href="index.html">User Guide</a><span> / </span><a class="crumb" href="par-working.html">Usage</a><span> / </span><a class="crumb" href="cha-obs-local-building.html">Local Building</a></div></div><main id="_content"><nav id="_side-toc-overall" class="side-toc"><div class="side-title">User Guide</div><ol><li><a href="bk01pr01.html" class=" "><span class="title-number"> </span><span class="title-name">About this Guide</span></a></li><li><a href="par-first-steps.html" class="has-children "><span class="title-number">I </span><span class="title-name">First Steps</span></a><ol><li><a href="art-obs-bg.html" class=" "><span class="title-number">1 </span><span class="title-name">Beginnerʼs Guide</span></a></li></ol></li><li><a href="par-concepts.html" class="has-children "><span class="title-number">II </span><span class="title-name">Concepts</span></a><ol><li><a href="cha-obs-package-formats.html" class=" "><span class="title-number">2 </span><span class="title-name">Supported Build Recipes and Package Formats</span></a></li></ol></li><li><a href="bk01pt03.html" class="has-children "><span class="title-number">III </span><span class="title-name">Setup</span></a><ol><li><a href="cha-obs-osc.html" class=" "><span class="title-number">3 </span><span class="title-name">osc, the Command Line Tool</span></a></li><li><a href="cha-obs-prjconfig.html" class=" "><span class="title-number">4 </span><span class="title-name">Build Configuration</span></a></li></ol></li><li class="active"><a href="par-working.html" class="has-children you-are-here"><span class="title-number">IV </span><span class="title-name">Usage</span></a><ol><li><a href="cha-obs-basicworkflow.html" class=" "><span class="title-number">5 </span><span class="title-name">Basic OBS Workflow</span></a></li><li><a href="cha-obs-local-building.html" class=" you-are-here"><span class="title-number">6 </span><span class="title-name">Local Building</span></a></li><li><a href="cha-obs-source-services.html" class=" "><span class="title-number">7 </span><span class="title-name">Using Source Services</span></a></li><li><a href="cha-obs-scm-ci-workflow-integration.html" class=" "><span class="title-number">8 </span><span class="title-name">SCM/CI Workflow Integration</span></a></li><li><a href="cha-obs-stagingworkflow.html" class=" "><span class="title-number">9 </span><span class="title-name">Staging Workflow</span></a></li><li><a href="cha-obs-notifications.html" class=" "><span class="title-number">10 </span><span class="title-name">Notifications</span></a></li><li><a href="cha-obs-moderation.html" class=" "><span class="title-number">11 </span><span class="title-name">Moderation</span></a></li></ol></li><li><a href="par-best-practices.html" class="has-children "><span class="title-number">V </span><span class="title-name">Best Practices</span></a><ol><li><a href="cha-obs-best-practices-webuiusage.html" class=" "><span class="title-number">12 </span><span class="title-name">Using the OBS Web UI</span></a></li><li><a href="cha-obs-best-practices-basics.html" class=" "><span class="title-number">13 </span><span class="title-name">Basic Concepts and Work Styles</span></a></li><li><a href="cha-obs-best-practices-scm-integration.html" class=" "><span class="title-number">14 </span><span class="title-name">How to integrate external SCM sources</span></a></li><li><a href="cha-obs-best-practices-upstream.html" class=" "><span class="title-number">15 </span><span class="title-name">Publishing Upstream Binaries</span></a></li><li><a href="cha-obs-best-practices-bootstrapping.html" class=" "><span class="title-number">16 </span><span class="title-name">Bootstrapping</span></a></li><li><a href="cha-obs-best-practices-oscexamples.html" class=" "><span class="title-number">17 </span><span class="title-name"><code class="command">osc</code> Example Commands</span></a></li><li><a href="cha-obs-best-practices-advanced.html" class=" "><span class="title-number">18 </span><span class="title-name">Advanced Project Setups</span></a></li><li><a href="cha-obs-best-practices-kmp.html" class=" "><span class="title-number">19 </span><span class="title-name">Building Kernel Modules</span></a></li><li><a href="cha-obs-best-practices-howto.html" class=" "><span class="title-number">20 </span><span class="title-name">Common Questions and Solutions</span></a></li></ol></li><li><a href="par-reference.html" class="has-children "><span class="title-number">VI </span><span class="title-name">Reference</span></a><ol><li><a href="cha-obs-architecture.html" class=" "><span class="title-number">21 </span><span class="title-name">OBS Architecture</span></a></li><li><a href="cha-obs-concepts.html" class=" "><span class="title-number">22 </span><span class="title-name">OBS Concepts</span></a></li><li><a href="cha-obs-build-process.html" class=" "><span class="title-number">23 </span><span class="title-name">Build Process</span></a></li><li><a href="cha-obs-build-containers.html" class=" "><span class="title-number">24 </span><span class="title-name">Build Containers</span></a></li><li><a href="cha-obs-source-management.html" class=" "><span class="title-number">25 </span><span class="title-name">Source Management</span></a></li><li><a href="cha-obs-scm-bridge.html" class=" "><span class="title-number">26 </span><span class="title-name">SCM Bridge</span></a></li><li><a href="cha-obs-supported-formats.html" class=" "><span class="title-number">27 </span><span class="title-name">Supported Formats</span></a></li><li><a href="cha-obs-request-and-review-system.html" class=" "><span class="title-number">28 </span><span class="title-name">Request And Review System</span></a></li><li><a href="cha-obs-image-templates.html" class=" "><span class="title-number">29 </span><span class="title-name">Image Templates</span></a></li><li><a href="cha-obs-multibuild.html" class=" "><span class="title-number">30 </span><span class="title-name">Multiple Build Description File Handling</span></a></li><li><a href="cha-obs-maintenance-setup.html" class=" "><span class="title-number">31 </span><span class="title-name">Maintenance Support</span></a></li><li><a href="cha-obs-binary-tracking.html" class=" "><span class="title-number">32 </span><span class="title-name">Binary Package Tracking</span></a></li><li><a href="cha-obs-build-scheduling-and-dispatching.html" class=" "><span class="title-number">33 </span><span class="title-name">Scheduling and Dispatching</span></a></li><li><a href="cha-obs-build-constraints.html" class=" "><span class="title-number">34 </span><span class="title-name">Build Constraints</span></a></li><li><a href="cha-obs-build-preinstall.html" class=" "><span class="title-number">35 </span><span class="title-name">Building Preinstall Images</span></a></li><li><a href="cha-obs-authorization-token.html" class=" "><span class="title-number">36 </span><span class="title-name">Authorization</span></a></li><li><a href="cha-obs-qa-hooks.html" class=" "><span class="title-number">37 </span><span class="title-name">Quality Assurance(QA) Hooks</span></a></li><li><a href="cha-obs-factory.html" class=" "><span class="title-number">38 </span><span class="title-name">openSUSE Factory</span></a></li></ol></li><li><a href="obs-glossary.html" class=" "><span class="title-number"> </span><span class="title-name">Glossary</span></a></li><li><a href="bk01apa.html" class=" "><span class="title-number">A </span><span class="title-name">GNU Licenses</span></a></li> </ol> </nav><button id="_open-side-toc-overall" title="Contents"> </button><article class="documentation"><button id="_unfold-side-toc-page">On this page</button><section class="chapter" id="cha-obs-local-building" data-id-title="Local Building"><div class="titlepage"><div><div><div class="title-container"><h1 class="title"><span class="title-number-name"><span class="title-number">6 </span><span class="title-name">Local Building</span></span> <a title="Permalink" class="permalink" href="cha-obs-local-building.html#">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div><div><div class="abstract"><p>
+      Every build that happens on the server can also be executed locally in the same environment using
+      the osc tool. All you need is to check out the source code and run <code class="command">osc build</code> to run the build recipe. The
+      following explains it for RPM format, but it works for any. osc will download needed binaries
+      and execute the local build.
+   </p></div></div></div></div><section class="sect1" id="sec-obs-local-building-generic" data-id-title="Generic Local Build Options"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">6.1 </span><span class="title-name">Generic Local Build Options</span></span> <a title="Permalink" class="permalink" href="cha-obs-local-building.html#sec-obs-local-building-generic">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
+     Frequently, local builds are undertaken on local checkouts of source packages that
+     already reside on an OBS server - for example, to test changes before commiting
+     them to the server.
+  </p><p>
+     It is also possible to trigger a local build in an arbitrary local directory containing
+     sources, without any corresponding source package on an OBS server. (However, osc
+     will still need a connection to the server in order to download build dependencies.)
+     The following text describes what the source directory should contain, at a minimum.
+  </p><p>
+     Independent of the build format you need at least one source file as build description.
+     The file name and structure is format specific. You can find some supported formats described below.
+     To build your build format, you need:
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>the original source archive. Instead of that the package may contain a _service file which
+	   describes how to create it, for example by downloading it or building it from a SCM repository.
+	   It can also be used to create the build description file. Find more details about it in the
+	   source service chapter.
+      </p></li><li class="listitem"><p>
+     optional patches which changes the original source code to fix problems
+     regarding security, the build process, or other issues
+    </p></li><li class="listitem"><p>
+     other files which do not fall into one of the previous categories
+    </p></li></ul></div><p>
+   In the typical case of source packages locally checked out from an OBS
+   server, this is already the case. To build an existing package, the general
+   procedure is as follows:</p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step"><p>
+     If you have not done so yet, set up your project as shown in
+     <a class="xref" href="cha-obs-basicworkflow.html#sec-obs-basicworkflow-setuphome" title="5.1. Setting Up Your Home Project">Section 5.1, “Setting Up Your Home Project”</a>.
+    </p></li><li class="step"><p>
+     In the terminal, choose or create a directory on a local partition that
+     has enough space to hold the package sources.
+    </p></li><li class="step"><p>
+     Check out the project that contains the package:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">osc</code> checkout <em class="replaceable">PROJECT</em> <em class="replaceable">PACKAGE</em></pre></div><p>
+     This creates a <code class="filename"><em class="replaceable">PROJECT</em>/<em class="replaceable">PACKAGE</em></code>
+     directory in the current directory.
+    </p></li><li class="step"><p>
+     Change into the directory:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">cd</code> <em class="replaceable">PROJECT</em>/<em class="replaceable">PACKAGE</em></pre></div></li><li class="step"><p>
+     The simplest way to run a build is just to call the <code class="command">osc build</code>
+     command. osc will try to detect your installed OS and build for it if possible.
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">osc</code> build</pre></div><p>
+     However, you may also manually specify the build target. For example openSUSE Tumbleweed for
+     x86_64, you want to create the RPM package:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">osc</code> build openSUSE_Tumbleweed x86_64</pre></div></li><li class="step"><p>
+	It will download the required dependencies and execute the build script. Therefore it needs to ask for root permissions in most cases.
+    </p><div class="variablelist"><dl class="variablelist"><dt id="id-1.2.8.3.4.7.6.2.1"><span class="term">Successful Build</span></dt><dd><div class="verbatim-wrap"><pre class="screen">[   15s] RPMLINT report:
+[   15s] ===============
+[   16s] 2 packages and 0 specfiles checked; 0 errors, 0 warnings.
+[   16s]
+[   16s]
+[   16s] venus finished "build <em class="replaceable">PACKAGE</em>.spec" at Fri Sep  1 11:54:31 UTC 2017.
+[   16s]
+
+/var/tmp/build-root/openSUSE_Tumbleweed-x86_64/home/abuild/rpmbuild/SRPMS/<em class="replaceable">PACKAGE</em>-<em class="replaceable">VERSION</em>-0.src.rpm
+
+/var/tmp/build-root/openSUSE_Tumbleweed-x86_64/home/abuild/rpmbuild/RPMS/noarch/<em class="replaceable">PACKAGE</em>-<em class="replaceable">VERSION</em>-0.noarch.rpm</pre></div></dd><dt id="id-1.2.8.3.4.7.6.2.2"><span class="term">Unsuccessful Build</span></dt><dd><div class="verbatim-wrap"><pre class="screen">[    8s] venus failed "build <em class="replaceable">PACKAGE</em>.spec" at Fri Sep  1 11:58:55 UTC 2017.
+[    8s]
+
+The buildroot was: /var/tmp/build-root/openSUSE_Tumbleweed-x86_64</pre></div></dd></dl></div><p>
+     A successful build of a spec file ends with the creation of the RPM and SRPM files.
+    </p></li><li class="step"><p>
+     For a detailed log, see the file
+     <code class="filename">/var/tmp/build-root/openSUSE_Tumbleweed-x86_64/.build.log</code>.
+    </p></li></ol></div></div></section><section class="sect1" id="sec-obs-local-building-advanced" data-id-title="Advanced Local Build Environment Handling"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">6.2 </span><span class="title-name">Advanced Local Build Environment Handling</span></span> <a title="Permalink" class="permalink" href="cha-obs-local-building.html#sec-obs-local-building-advanced">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
+	  The default build environment for local builds is usually chroot. While this is simplest environment
+	  and is therefore easy and fast to handle, it has also a number of shortcomings. For one it is
+	  not safe against attacks, so you must not build sources or using build dependencies from a resource
+	  which you do not trust. Furthermore the environment is not fully isolated and runs on the kernel the
+	  target distribution runs. This means esp image builds and kernel/hardware specific builds may fail or
+	  won't produce the same result. The server side is usually set to inside of KVM therefore to avoid this.
+  </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>You can also build locally in KVM (if your hardware supports it) by running
+      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">osc</code> build --vm-type=kvm --vm-memory=<em class="replaceable">MB</em></pre></div></li><li class="listitem"><p>Another important virtualization mode is qemu. This can be used to build for a foreign hardware
+	      architecture even when the distribution is not prepared for the qemu user land emulator. However, this
+	      qemu system emulator approach will be much slower. 
+      </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">osc</code> build --vm-type=qemu --vm-memory=<em class="replaceable">MB</em> <em class="replaceable">REPOSITORY</em> <em class="replaceable">ARCHITECTURE</em></pre></div></li><li class="listitem"><p>You may want to jump inside of a the build environment for debugging purposes. This can be done via the following command:
+           </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">osc</code> shell --vm-type=<em class="replaceable">VM</em></pre></div></li><li class="listitem"><p>To remove the build environment, use:
+           </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">osc</code> wipe --vm-type=<em class="replaceable">VM</em></pre></div></li></ul></div></section></section><nav class="bottom-pagination"><div><a class="pagination-link prev" href="cha-obs-basicworkflow.html"><span class="pagination-relation">Previous</span><span class="pagination-label"><span class="title-number">Chapter 5 </span>Basic OBS Workflow</span></a> </div><div><a class="pagination-link next" href="cha-obs-source-services.html"><span class="pagination-relation">Next</span><span class="pagination-label"><span class="title-number">Chapter 7 </span>Using Source Services</span></a> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="sect1"><a href="cha-obs-local-building.html#sec-obs-local-building-generic"><span class="title-number">6.1 </span><span class="title-name">Generic Local Build Options</span></a></span></li><li><span class="sect1"><a href="cha-obs-local-building.html#sec-obs-local-building-advanced"><span class="title-number">6.2 </span><span class="title-name">Advanced Local Build Environment Handling</span></a></span></li></ul></div> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
+                 2024</span></div></div></footer></body></html>
