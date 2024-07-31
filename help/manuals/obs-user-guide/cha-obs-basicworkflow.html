@@ -361,7 +361,29 @@ Requires:         zool &gt;= 1.5.6</pre></div></div></div></section><section cla
      </p></li></ol></div></div></section><section class="sect2" id="sec-obs-basicworkflow-reuse" data-id-title="Reusing Packages in Your Project"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.4.3 </span><span class="title-name">Reusing Packages in Your Project</span></span> <a title="Permalink" class="permalink" href="cha-obs-basicworkflow.html#sec-obs-basicworkflow-reuse">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
     To reuse existing packages in your package repository, OBS offers
     two methods: <span class="quote">“<span class="quote">aggregating</span>”</span> and <span class="quote">“<span class="quote">linking</span>”</span>.
-   </p><section class="sect3" id="sec-obs-basicworkflow-reuse-linking" data-id-title="Linking a Package"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">5.4.3.1 </span><span class="title-name">Linking a Package</span></span> <a title="Permalink" class="permalink" href="cha-obs-basicworkflow.html#sec-obs-basicworkflow-reuse-linking">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
+   </p><section class="sect3" id="sec-obs-basicworkflow-reuse-aggregating" data-id-title="Aggregating a Package"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">5.4.3.1 </span><span class="title-name">Aggregating a Package</span></span> <a title="Permalink" class="permalink" href="cha-obs-basicworkflow.html#sec-obs-basicworkflow-reuse-aggregating">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
+     An <span class="quote">“<span class="quote">aggregate</span>”</span> package is a pointer to an OBS package.
+     Such package and the result of it are referenced int another project.
+     <span class="quote">“<span class="quote">Aggregating</span>”</span> is used in the following situations:
+    </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
+       No changes in the source code are needed.
+      </p></li><li class="listitem"><p>
+       Packages that are needed for building are only available in a
+       different project.
+      </p></li><li class="listitem"><p>
+       Build results (binaries) of the aggregated package are copied
+       into the target's package repository.
+      </p></li><li class="listitem"><p>To avoid package rebuilds.</p></li></ul></div><p>
+     The general syntax of the <code class="command">aggregatepac</code> command is:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">osc</code> aggregatepac <em class="replaceable">SOURCEPRJ</em> <em class="replaceable">SOURCEPAC</em> <em class="replaceable">DESTPRJ</em></pre></div><p>
+     For example, to aggregate the package <span class="package">python-lxml</span>
+     from <code class="uri">devel:language:python</code> into your home project,
+     use the following command:
+    </p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">osc</code> aggregatepac devel:language:python python-lxml home:obsgeeko</pre></div><p>
+     The next time you update your working directory, the <code class="filename">python-lxml</code>
+
+     contains the <code class="filename">_aggregate</code> file.
+    </p></section><section class="sect3" id="sec-obs-basicworkflow-reuse-linking" data-id-title="Linking a Package"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">5.4.3.2 </span><span class="title-name">Linking a Package</span></span> <a title="Permalink" class="permalink" href="cha-obs-basicworkflow.html#sec-obs-basicworkflow-reuse-linking">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
      A linked package is a clone of another package with
      additional modifications. Linking is used in the following situations:
     </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
