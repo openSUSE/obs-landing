@@ -40,8 +40,8 @@ team_members:
     github: ncounter
     irc: dario[m]
 
-  - name: Jacob Michalskie
-    email: jacob.michalskie@suse.com
+  - name: Jay Michalska
+    email: jay.michalska@suse.com
     github: hellcp-work
     irc: hellcp
 
