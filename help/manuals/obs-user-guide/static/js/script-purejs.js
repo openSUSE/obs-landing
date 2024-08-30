@@ -676,3 +676,29 @@ function addBugLinks() {
       return true;
     });
 }
+
+function showTabContent(event) {
+     var tab = event.target.closest('.tab')
+      if (tab) {
+          var tabs = tab.parentElement;
+   
+          // Get the index of the clicked tab
+          var index = Array.from(tabs.children).indexOf(tab);
+   
+          // Hide all tab contents
+          Array.from(tabs.nextElementSibling.children).forEach(content => {
+              content.style.display = 'none';
+          });
+   
+          // Remove "active" class from all tabs
+          tabs.querySelectorAll('.tab').forEach(tab => {
+              tab.classList.remove('active-tab');
+          });
+   
+          // Display the selected tab content
+          tabs.nextElementSibling.children[index].style.display = 'block';
+   
+          // Add "active" class to the clicked tab
+          tab.classList.add('active-tab');
+      }
+}

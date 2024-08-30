@@ -2775,6 +2775,33 @@ li > p {
 div.blockquote {
   margin: 17px 35px; }
 
+.tab-structure {
+  display: flex;
+  border: 1px solid #30ba78;
+  flex-direction: column;
+  margin-top: 32px;
+  margin-bottom: 32px; }
+  .tab-structure .tabs {
+    display: flex;
+    overflow-x: auto;
+    padding: 0;
+    margin: 0; }
+    .tab-structure .tabs .tab {
+      cursor: pointer;
+      list-style: none;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      padding-left: 16px;
+      padding-right: 16px; }
+    .tab-structure .tabs .tab.active-tab {
+      border-bottom: 3px solid #30ba78;
+      color: #0c322c;
+      font-size: bold; }
+  .tab-structure .content-container {
+    background-color: #f6f8fa;
+    padding: 8px;
+    overflow-x: auto; }
+
 .qandadiv {
   margin: 0 0 40px 0; }
 
