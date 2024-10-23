@@ -9,7 +9,7 @@ Our recent redesign of the request page has introduced three significant improve
 
 # More Clarity on the Diffs
 
-We've added eyecatchers on the request's diff page. The diff component now shows small highlights that help you understand what exactly changed.
+The diff tab now shows small highlights (called eyecatchers) that show the exact change. Those eyecatchers will help you see what exactly is new or changed and allow you to focus better on those differences, making it easier to review the request.
 
 <figure>
   <img src="/images/posts/2024-10-23/eyecatchers.png" alt="Eyecatchers in a file diff" />
