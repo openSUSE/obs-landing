@@ -18,7 +18,10 @@ We've added eyecatchers on the request's diff page. The diff component now shows
 
 To reduce some clutter on a request's conversation timeline we combined the review decision and the comment boxes into a single, more streamlined one.
 
-<screenshot>
+<figure>
+  <img src="/images/posts/2024-10-23/decision_and_comment_boxes_combined.png" alt="Review decisions and comment boxes combined" />
+  <figcaption>Review decisions and comment boxes combined</figcaption>
+</figure>
 
 Finally, we removed all the states that the user cannot do anything about from the request's build results, like "Excluded" state. This makes easier for you to understand the state of a request.
 
