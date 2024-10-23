@@ -18,7 +18,7 @@ The diff tab now shows small highlights (called eyecatchers) that show the exact
 
 # Streamlined Conversations
 
-To reduce some clutter on a request's conversation timeline we combined the review decision and the comment boxes into just one. 
+You'll notice that the review decision and the comment boxes are now combined into just one box. This will reduce the clutter on a request's conversation timeline and help you focus on _what_ you have to do, not _where_.
 
 <figure>
   <img src="/images/posts/2024-10-23/decision_and_comment_boxes_combined.png" alt="Review decisions and comment boxes combined" />
@@ -27,13 +27,13 @@ To reduce some clutter on a request's conversation timeline we combined the revi
 
 # Less Noise on the Builds
 
-Finally, we removed all the states that the user cannot do anything about from the request's build results, like "Excluded" state. This makes easier for you to understand the state of a request because we show only what is useful.
+The build status of a request was showing a lot of information that was not really useful for you, like the "Excluded" state. Now it shows only relevant information to the changes. This will make easier for you to understand the state of the request and help you make a decision about it.
 
 <figure>
   <img src="/images/posts/2024-10-23/better_build_results.png" alt="Better build results" />
   <figcaption>Better build results</figcaption>
 </figure>
 
-We hope those changes will help you focus on the important bits of a request better. As always we are eager to know what do you think about this!
+We hope those changes will help you focus better on the important bits of a request. As always we are eager to know what do you think about this!
 
 {% include partials/_how-to-give-us-feedback.md %}
