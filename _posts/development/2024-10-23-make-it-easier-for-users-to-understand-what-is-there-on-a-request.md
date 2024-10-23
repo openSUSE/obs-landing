@@ -36,3 +36,4 @@ Finally, we removed all the states that the user cannot do anything about from t
   <figcaption>Better build results</figcaption>
 </figure>
 
+{% include partials/_how-to-give-us-feedback.md %}
