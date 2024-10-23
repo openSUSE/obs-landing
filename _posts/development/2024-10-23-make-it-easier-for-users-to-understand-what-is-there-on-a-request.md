@@ -5,6 +5,10 @@ category: development
 ---
 To make it easier for users to understand what is there on a request page we've introduced three significant improvements.
 
+This blog post is part of the [beta program](/2018/10/04/the-beta-program/).
+
+{% include partials/_series-of-posts-about-request-redesign.md %}
+
 We've added eyecatchers on the request's diff page. The diff component now shows small highlights that help users understand what exactly changed before and after.
 
 <figure>
