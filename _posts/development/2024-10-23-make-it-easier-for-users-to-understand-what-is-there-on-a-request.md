@@ -3,9 +3,7 @@ layout: post
 title: 3 Improvements For Collaboration on the Request Page
 category: development
 ---
-Our recent redesign of the request page has introduced three significant improvements that make it easier for users to understand better their requests.
-
-This blog post is part of the [beta program](/2018/10/04/the-beta-program/).
+Our recent redesign of the request page has introduced three significant improvements that make it easier for users to understand better their requests. Those improvements are part of the [beta program](/2018/10/04/the-beta-program/).
 
 {% include partials/_series-of-posts-about-request-redesign.md %}
 
