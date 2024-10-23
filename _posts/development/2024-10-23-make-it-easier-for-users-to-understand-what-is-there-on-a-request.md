@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Make it easier for users to understand what is there on a request
+title: 3 Improvements For Collaboration on the Request Page
 category: development
 ---
 Our recent redesign of the request page has introduced three significant improvements that make it easier for users to understand better their requests.
