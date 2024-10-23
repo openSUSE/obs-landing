@@ -36,4 +36,6 @@ Finally, we removed all the states that the user cannot do anything about from t
   <figcaption>Better build results</figcaption>
 </figure>
 
+We hope those changes will help users focus on the important bits of a request better. As always we are eager to know what do you think about this!
+
 {% include partials/_how-to-give-us-feedback.md %}
