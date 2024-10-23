@@ -25,5 +25,8 @@ To reduce some clutter on a request's conversation timeline we combined the revi
 
 Finally, we removed all the states that the user cannot do anything about from the request's build results, like "Excluded" state. This makes easier for you to understand the state of a request.
 
-<screenshot>
+<figure>
+  <img src="/images/posts/2024-10-23/better_build_results.png" alt="Better build results" />
+  <figcaption>Better build results</figcaption>
+</figure>
 
