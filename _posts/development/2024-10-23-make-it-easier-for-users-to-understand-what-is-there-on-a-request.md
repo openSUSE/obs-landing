@@ -18,7 +18,7 @@ The diff tab now shows small highlights (called eyecatchers) that show the exact
 
 ## Less Clutter in Conversations
 
-You'll notice that the review decision and the comment boxes are now combined into just one box. This will reduce the clutter on a request's conversation timeline and help you focus on _what_ you have to do, not _where_.
+Before we had two boxes on the conversation timeline: if you wanted to write a comment, you had to find the comment box, if you wanted to give a reason because you declined something you had to find the decision box. Now, you only have one box, so you don't have to think where you write things anymore because there is no choice!
 
 <figure>
   <img src="/images/posts/2024-10-23/decision_and_comment_boxes_combined.png" alt="Review decisions and comment boxes combined" />
