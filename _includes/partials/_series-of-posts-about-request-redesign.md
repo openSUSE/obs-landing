@@ -10,5 +10,4 @@ In July 2023 we introduced [Set Bugowner action and diff comments for non-beta u
 In September 2023 we focused on [Build Results Summary Gets Into Shape](/2023/09/08/request-workflow-redesign).
 Later 2023, in November, we added the [Build Status Refresh and Other Insights on Our Request Page](/2023/11/30/introducing-build-status-refresh-and-other-insights-in-our-request-page).
 The year 2024 started with [Revamping the Request Build Status Page and Introducing the Dark Mode](/2024/01/25/revamping-the-build-status-page-and-introducing-the-dark-mode).
-We continued in February with [Build Results Summary Chart Links to Build Results Overview](/2024/02/19/build-results-summary-chart-links-to-build-results).
-And now we did some [Improvements On the Redesigned Request Page](/2024/04/08/improvements-on-the-redesigned-request-page).
+We continued in February with [Build Results Summary Chart Links to Build Results Overview](/2024/02/19/build-results-summary-chart-links-to-build-results) and in April with [Improvements On the Redesigned Request Page](/2024/04/08/improvements-on-the-redesigned-request-page).
