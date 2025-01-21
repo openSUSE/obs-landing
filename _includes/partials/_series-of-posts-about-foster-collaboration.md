@@ -1,1 +1,1 @@
-_Our efforts to foster collaboration started in August 2024, when we [introduced labels and bug report links](/2024/08/14/introduction-labels-and-foster-collab). This time, we've [improved labels to foster collaboration](/2024/09/25/improving-labels)._
+_Our efforts to foster collaboration started in August 2024, when we [introduced labels and bug report links](/2024/08/14/introduction-labels-and-foster-collab). Next, we've [improved labels to foster collaboration](/2024/09/25/improving-labels). Now, we [focused on labeling projects](/2025/01/21/project-labels)_
