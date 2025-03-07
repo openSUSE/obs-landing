@@ -12,7 +12,7 @@ Another round of changes for the request index beta feature! This time we improv
 The group detail has three tabs that you can use to check "Incoming Reviews", "Incoming Requests" and "All Requests". For those of you using the Request Index feature of the Beta program there is only one tab now, showing the request index page to find requests involving that group. That way it is now consistent with the way you can look for requests in package, project and user pages.
 
 <figure>
-  <img src="/images/posts/2025-03-05/group-requests.png" alt="Requests for the opensuse-review-team group" width="1000px"/>
+  <img src="/images/posts/2025-03-07/group-requests.png" alt="Requests for the opensuse-review-team group" width="1000px"/>
   <figcaption>Requests for the opensuse-review-team group</figcaption>
 </figure>
 
@@ -21,7 +21,7 @@ The group detail has three tabs that you can use to check "Incoming Reviews", "I
 We added two more filters to the request index page to filter by package and project names.
 
 <figure>
-  <img src="/images/posts/2025-03-05/package-and-project-filters.png" alt="Package and project filters" width="300px"/>
+  <img src="/images/posts/2025-03-07/package-and-project-filters.png" alt="Package and project filters" width="300px"/>
   <figcaption>Package and project filters</figcaption>
 </figure>
 
