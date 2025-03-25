@@ -1284,13 +1284,13 @@ th {
       width: 100%; } }
 html,
 body {
-  font-size: 16px;
+  font-size: 18px;
   height: 100%;
   scroll-behavior: smooth; }
 
 body {
   background-color: white;
-  font-family: Poppins, Roboto, sans-serif;
+  font-family: SUSE, Suse, Roboto, sans-serif;
   line-height: 140%; }
   body main,
   body .growth-inhibitor {
@@ -1647,7 +1647,7 @@ header #_searchbox {
   header #_searchbox .search-text {
     background-color: transparent;
     color: #FFF;
-    font-family: Poppins, Roboto, sans-serif;
+    font-family: SUSE, Suse, Roboto, sans-serif;
     font-size: 0.7rem;
     outline: none;
     width: 150px;
@@ -1658,7 +1658,7 @@ header #_searchbox {
   header #_searchbox .search-submit {
     outline: none;
     min-width: 3rem;
-    font-family: Poppins, Roboto, sans-serif;
+    font-family: SUSE, Suse, Roboto, sans-serif;
     font-size: 0.7rem;
     border: 1px solid #fe7c3f;
     padding: .25rem;
@@ -1710,7 +1710,7 @@ body.disable-language-switcher #_utilitynav #_utilitynav-language {
     text-decoration: underline; }
 
 .crumbs span {
-  color: #30ba78; }
+  color: #025937; }
 
 .side-toc > *:last-child::after {
   content: '';
@@ -1750,10 +1750,10 @@ body.disable-language-switcher #_utilitynav #_utilitynav-language {
     font-style: normal; }
 
 #_side-toc-page a {
-  color: #30ba78;
-  padding: 0.4rem 0; }
+  color: #025937;
+  padding: 0.4rem 0;
+  font-weight: 500; }
   #_side-toc-page a:focus, #_side-toc-page a:hover, #_side-toc-page a:active {
-    background-color: transparent;
     text-decoration: underline; }
 
 @media screen and (max-width: 1024px) {
@@ -1824,7 +1824,7 @@ body.disable-language-switcher #_utilitynav #_utilitynav-language {
   transform: rotate(0.01deg); }
 
 #_side-toc-overall ol > li.active > a {
-  background-color: #30ba78;
+  background-color: #025937;
   color: white; }
   #_side-toc-overall ol > li.active > a ol li > a {
     padding-left: 1rem; }
@@ -2127,7 +2127,7 @@ body.scroll-up main.sticky #_open-side-toc-overall {
   display: table-cell;
   height: 60px;
   vertical-align: middle;
-  font-family: Poppins, Roboto, sans-serif;
+  font-family: SUSE, Suse, Roboto, sans-serif;
   padding: 0 2rem;
   color: #0c322c;
   background-color: #30ba78;
@@ -2624,9 +2624,9 @@ strong {
 
 .arch-arrow-start,
 .arch-arrow-end {
-  background-color: #30ba78;
+  background-color: #90ebcd;
   border-radius: 3px;
-  color: white;
+  color: #0c322c;
   display: inline-block;
   font-size: 14px;
   height: 20px;
@@ -2703,13 +2703,17 @@ p {
   color: #333; }
 
 article a {
-  color: #26915e;
-  text-decoration: none; }
+  color: #008657;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px; }
   article a:active, article a:focus, article a:hover, article a:visited:active, article a:visited:focus, article a:visited:hover {
-    color: #26915e;
-    text-decoration: underline; }
+    color: #008657;
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-decoration-color: #0c322c; }
   article a:visited {
-    color: #26915e; }
+    color: #008657; }
 
 .free-id {
   height: 0.01px;
@@ -2719,7 +2723,7 @@ article a {
 
 .complex-example .example-contents,
 .procedure-contents {
-  background-color: #f4f4f4;
+  background-color: #fcfcfc;
   border-left: 0.2rem solid #dedfe0; }
 
 .complex-example .example-contents {
@@ -2742,7 +2746,7 @@ article a {
   border-radius: 50%;
   color: white;
   display: inline-block;
-  font-family: Poppins, Roboto, sans-serif;
+  font-family: SUSE, Suse, Roboto, sans-serif;
   font-size: .7rem;
   font-weight: 600;
   line-height: 1rem;
@@ -3234,7 +3238,7 @@ article a:hover code {
 .verbatim-wrap > pre {
   background-color: unset;
   box-sizing: border-box;
-  color: #c7f1e3;
+  color: white;
   display: block;
   font: normal 13px "Roboto Mono", "RobotoMono", "DejaVu Sans Mono", "DejaVuSansMono", "Menlo", "Andale Mono", monospace;
   line-height: 125%;
@@ -3266,15 +3270,15 @@ article a:hover code {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background-color: #dedfe0;
-  background-image: url('data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 16 16" y="0px" x="0px" width="16" height="16"><path fill="%230c322c" d="m 14,1 v 12 h -2 v -1 h 1 V 2 H 5 V 2 H 4 V 1 Z" /><path fill="%230c322c" d="M 2,3 V 15 H 12 V 3 Z m 1,1 h 8 V 14 H 3 Z M 4,6 V 7 H 8 V 6 Z m 0,2 v 1 h 6 V 8 Z m 0,2 v 1 h 3 v -1 z" /></svg>');
+  background-color: #efefef;
+  background-image: url('data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 16 16" y="0px" x="0px" width="16" height="16"><path fill="black" d="m 14,1 v 12 h -2 v -1 h 1 V 2 H 5 V 2 H 4 V 1 Z" /><path fill="black" d="M 2,3 V 15 H 12 V 3 Z m 1,1 h 8 V 14 H 3 Z M 4,6 V 7 H 8 V 6 Z m 0,2 v 1 h 6 V 8 Z m 0,2 v 1 h 3 v -1 z" /></svg>');
   background-position: 5px 5px;
   background-repeat: no-repeat;
   border: none;
   box-sizing: border-box;
-  color: #0c322c;
+  color: black;
   display: inline-block;
-  font-family: Poppins, Roboto, sans-serif;
+  font-family: SUSE, Suse, Roboto, sans-serif;
   font-size: 12px;
   height: 26px;
   line-height: 26px;
@@ -3294,72 +3298,75 @@ article a:hover code {
 
 .verbatim-wrap > .clip-button:hover,
 .verbatim-wrap > .clip-button:focus {
-  background-color: #efefef; }
+  background-color: #008657;
+  color: #efefef;
+  background-image: url('data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 16 16" y="0px" x="0px" width="16" height="16"><path fill="white" d="m 14,1 v 12 h -2 v -1 h 1 V 2 H 5 V 2 H 4 V 1 Z" /><path fill="white" d="M 2,3 V 15 H 12 V 3 Z m 1,1 h 8 V 14 H 3 Z M 4,6 V 7 H 8 V 6 Z m 0,2 v 1 h 6 V 8 Z m 0,2 v 1 h 3 v -1 z" /></svg>'); }
 
 .verbatim-wrap.copy-success > div,
 .verbatim-wrap.copy-success > pre {
-  background-color: #165b50; }
+  background-color: #0b41b8; }
 
 @media screen {
   .hljs {
     display: block;
     overflow-x: auto;
     padding: 0.5em;
-    color: #c7f1e3; }
-  .hljs-comment,
-  .hljs-quote {
-    color: #bfcbfb;
+    font-weight: 400; }
+  .hljs-comment, .hljs-quote {
+    color: #eafaf4;
     font-style: italic; }
-  .hljs-keyword,
-  .hljs-selector-tag,
-  .hljs-subst {
-    color: #c7f1e3;
-    font-weight: bold; }
-  .hljs-number,
+  .hljs-keyword, .hljs-selector-tag, .hljs-subst {
+    color: #90ebcd; }
   .hljs-literal,
-  .hljs-variable,
-  .hljs-template-variable,
-  .hljs-tag .hljs-attr {
-    color: #4cd191; }
-  .hljs-string,
-  .hljs-doctag {
-    color: #f3b292; }
-  .hljs-title,
-  .hljs-section,
-  .hljs-selector-id {
-    color: #fe7c3f;
-    font-weight: bold; }
-  .hljs-subst {
-    font-weight: normal; }
-  .hljs-type,
-  .hljs-class .hljs-title {
-    color: #bbbdd4;
-    font-weight: bold; }
+  .hljs-number,
   .hljs-tag,
+  .hljs-template-variable,
+  .hljs-variable {
+    color: #eafaf4; }
+  .hljs-tag .hljs-attr,
+  .hljs-tag .hljs-name {
+    color: #90ebcd; }
+  .hljs-attr {
+    color: #90ebcd; }
+  .hljs-doctag,
+  .hljs-string {
+    color: #eafaf4; }
+  .hljs-section,
+  .hljs-selector-id,
+  .hljs-title {
+    color: #ffd3bd; }
+  .hljs-subst {
+    font-weight: 400; }
+  .hljs-class .hljs-title,
+  .hljs-type {
+    color: #eafaf4; }
+  .hljs-attribute,
   .hljs-name,
-  .hljs-attribute {
-    color: #dedfe0;
-    font-weight: normal; }
-  .hljs-regexp,
-  .hljs-link {
-    color: #30ba78; }
-  .hljs-symbol,
-  .hljs-bullet {
-    color: #fe7c3f; }
+  .hljs-tag {
+    color: #eafaf4; }
+  .hljs-tag {
+    color: #90ebcd; }
+  .hljs-link,
+  .hljs-regexp {
+    color: #eafaf4; }
+  .hljs-bullet,
+  .hljs-symbol {
+    color: #ffd3bd; }
   .hljs-built_in,
   .hljs-builtin-name {
-    color: #bfcbfb; }
+    color: #eafaf4; }
   .hljs-meta {
-    color: #e3f8f1;
-    font-weight: bold; }
+    color: #ccc; }
   .hljs-deletion {
-    background: #f9dac8; }
+    background: #fdd;
+    color: #0c322c; }
   .hljs-addition {
-    background: #e3f8f1; }
+    background: #dfd;
+    color: #0c322c; }
   .hljs-emphasis {
     font-style: italic; }
   .hljs-strong {
-    font-weight: bold; } }
+    font-weight: 600; } }
 
 .doc-status,
 .remark {

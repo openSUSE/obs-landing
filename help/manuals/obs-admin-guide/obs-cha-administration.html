@@ -2,17 +2,17 @@
 <!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><title>Administrator Guide | Administration</title><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><link rel="stylesheet" type="text/css" href="static/css/style.css"/>
 <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"/><link rel="schema.DCTERMS" href="http://purl.org/dc/terms/"/>
 <meta name="title" content="Administration"/>
-<meta name="description" content="obs_admin is a command-line tool used on the back-end server(s) to manage running services, submit maintenance tasks, and debug problems. It should b…"/>
+<meta name="description" content="Administration"/>
 <meta name="book-title" content="Administrator Guide"/>
 <meta name="chapter-title" content="Chapter 5. Administration"/>
 <meta name="tracker-url" content="https://github.com/openSUSE/obs-docu/issues/new"/>
 <meta name="tracker-type" content="gh"/>
 <meta name="publisher" content="SUSE"/><meta property="og:title" content="Administration"/>
-<meta property="og:description" content="obs_admin is a command-line tool used on the back-end serve…"/>
+<meta property="og:description" content="Administration"/>
 <meta property="og:type" content="article"/>
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Administration"/>
-<meta name="twitter:description" content="obs_admin is a command-line tool used on the back-end serve…"/>
+<meta name="twitter:description" content="Administration"/>
 <script type="application/ld+json">{
     "@context": "http://schema.org",
     "@type": ["TechArticle"],
@@ -59,24 +59,7 @@
       }
     }
   }</script>
-<link rel="prev" href="obs-cha-security-concepts.html" title="Chapter 4. Security Concepts"/><link rel="next" href="obs-cha-troubleshooting.html" title="Chapter 6. Troubleshooting"/><script type="text/javascript">
-
-if ( window.location.protocol.toLowerCase() != 'file:' ) {
-  document.write('<link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"></link>');
-};
-
-</script><noscript><link rel="stylesheet" type="text/css" href="https://documentation.suse.com/docserv/res/fonts/poppins/poppins.css"/></noscript><script src="static/js/script-purejs.js" type="text/javascript"> </script><script src="static/js/highlight.min.js" type="text/javascript"> </script><script>
-
-$(document).ready(function() {
-  $('.verbatim-wrap.highlight').each(function(i, block) {
-    hljs.highlightBlock(block);
-  });
-});
-hljs.configure({
-  useBR: false
-});
-
-</script></head><body class="wide offline js-off"><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-pagination">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><header id="_mainnav"><div class="growth-inhibitor"/></header><div class="crumbs"><div class="growth-inhibitor"><a class="crumb" href="index.html">Administrator Guide</a><span> / </span><a class="crumb" href="obs-cha-administration.html">Administration</a></div></div><main id="_content"><nav id="_side-toc-overall" class="side-toc"><div class="side-title">Administrator Guide</div><ol><li><a href="bk02pr01.html" class=" "><span class="title-number"> </span><span class="title-name">About this Guide</span></a></li><li><a href="cha-obs-admin.html" class=" "><span class="title-number">1 </span><span class="title-name">High-level Overview</span></a></li><li><a href="obs-cha-installation-and-configuration.html" class=" "><span class="title-number">2 </span><span class="title-name">Installation and Configuration</span></a></li><li><a href="obs-cha-overview-filesystem.html" class=" "><span class="title-number">3 </span><span class="title-name">File System Overview</span></a></li><li><a href="obs-cha-security-concepts.html" class=" "><span class="title-number">4 </span><span class="title-name">Security Concepts</span></a></li><li><a href="obs-cha-administration.html" class=" you-are-here"><span class="title-number">5 </span><span class="title-name">Administration</span></a></li><li><a href="obs-cha-troubleshooting.html" class=" "><span class="title-number">6 </span><span class="title-name">Troubleshooting</span></a></li><li><a href="cha-obs-best-practices-localsetup.html" class=" "><span class="title-number">7 </span><span class="title-name">Setting Up a Local OBS Instance</span></a></li><li><a href="bk02apa.html" class=" "><span class="title-number">A </span><span class="title-name">GNU Licenses</span></a></li> </ol> </nav><button id="_open-side-toc-overall" title="Contents"> </button><article class="documentation"><button id="_unfold-side-toc-page">On this page</button><section class="chapter" id="obs-cha-administration" data-id-title="Administration"><div class="titlepage"><div><div><div class="title-container"><h1 class="title"><span class="title-number-name"><span class="title-number">5 </span><span class="title-name">Administration</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><section class="sect1" id="tools" data-id-title="Tools"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">5.1 </span><span class="title-name">Tools</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#tools">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><section class="sect2" id="tools-obs-admin" data-id-title="obs_admin"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.1.1 </span><span class="title-name"><code class="command">obs_admin</code></span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#tools-obs-admin">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>obs_admin is a command-line tool used on the back-end server(s) to manage
+<link rel="prev" href="obs-cha-security-concepts.html" title="Chapter 4. Security Concepts"/><link rel="next" href="obs-cha-troubleshooting.html" title="Chapter 6. Troubleshooting"/><link type="text/css" rel="preload" as="style" onload="this.rel='stylesheet'" href="https://documentation.suse.com/docserv/res/fonts/suse/suse.css"/><script src="static/js/script-purejs.js" type="text/javascript"> </script><script src="static/js/highlight.js" type="text/javascript"> </script><script>hljs.highlightAll();</script></head><body class="wide offline js-off"><div class="bypass-block"><a href="#_content">Jump to content</a><a href="#_bottom-pagination">Jump to page navigation: previous page [access key p]/next page [access key n]</a></div><header id="_mainnav"><div class="growth-inhibitor"/></header><div class="crumbs"><div class="growth-inhibitor"><a class="crumb" href="index.html">Administrator Guide</a><span> / </span><a class="crumb" href="obs-cha-administration.html">Administration</a></div></div><main id="_content"><nav id="_side-toc-overall" tabindex="0" class="side-toc"><div class="side-title">Administrator Guide</div><ol role="list"><li role="listitem"><a href="bk02pr01.html" class=" "><span class="title-number"> </span><span class="title-name">About this Guide</span></a></li><li role="listitem"><a href="cha-obs-admin.html" class=" "><span class="title-number">1 </span><span class="title-name">High-level Overview</span></a></li><li role="listitem"><a href="obs-cha-installation-and-configuration.html" class=" "><span class="title-number">2 </span><span class="title-name">Installation and Configuration</span></a></li><li role="listitem"><a href="obs-cha-overview-filesystem.html" class=" "><span class="title-number">3 </span><span class="title-name">File System Overview</span></a></li><li role="listitem"><a href="obs-cha-security-concepts.html" class=" "><span class="title-number">4 </span><span class="title-name">Security Concepts</span></a></li><li role="listitem"><a href="obs-cha-administration.html" class=" you-are-here"><span class="title-number">5 </span><span class="title-name">Administration</span></a></li><li role="listitem"><a href="obs-cha-troubleshooting.html" class=" "><span class="title-number">6 </span><span class="title-name">Troubleshooting</span></a></li><li role="listitem"><a href="cha-obs-best-practices-localsetup.html" class=" "><span class="title-number">7 </span><span class="title-name">Setting Up a Local OBS Instance</span></a></li><li role="listitem"><a href="bk02apa.html" class=" "><span class="title-number">A </span><span class="title-name">GNU Licenses</span></a></li> </ol> </nav><button id="_open-side-toc-overall" title="Contents"> </button><article class="documentation"><button id="_unfold-side-toc-page">On this page</button><section class="chapter" id="obs-cha-administration" data-id-title="Administration"><div class="titlepage"><div><div><div class="title-container"><h1 class="title"><span class="title-number-name"><span class="title-number">5 </span><span class="title-name">Administration</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#">#</a></h1><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><section class="sect1" id="tools" data-id-title="Tools"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">5.1 </span><span class="title-name">Tools</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#tools">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><section class="sect2" id="tools-obs-admin" data-id-title="obs_admin"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.1.1 </span><span class="title-name"><code class="command">obs_admin</code></span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#tools-obs-admin">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>obs_admin is a command-line tool used on the back-end server(s) to manage
 running services, submit maintenance tasks, and debug problems.
 It should be only used by experienced admins.</p><p>It has built-in help which you can display with <span class="emphasis"><em>obs_admin --help</em></span>.</p><p>Options to control the running services:</p><div class="verbatim-wrap"><pre class="screen">Job Controlling
 ===============
@@ -322,7 +305,7 @@ appliance or container images. A prerequisite for this is that OBS has enabled
 content tracking for the used projects.</p><section class="sect2" id="source-publish-configuration" data-id-title="Configuring Source Publisher"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.4.1 </span><span class="title-name">Configuring Source Publisher</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#source-publish-configuration">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The source publishing can be configured via the file
     <span class="emphasis"><em>/usr/lib/obs/server/BSConfig.pm</em></span>, where it can be 
     enabled globally or just for some projects. It is possible to use regular
-   expressions here.</p><p>Publishing can be enabled by defining the rsync module to push the content:</p><div class="verbatim-wrap highlight perl"><pre class="screen">our $sourcepublish_sync = 'rsync://your_rsync_server/rsync_module';</pre></div><p>By default every project get published, but it is possible to define a whitelist via:</p><div class="verbatim-wrap highlight perl"><pre class="screen">our $sourcepublish_filter = [ "openSUSE:.*", "SUSE:.*" ];</pre></div></section><section class="sect2" id="source-publish-considerations" data-id-title="Considerations"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.4.2 </span><span class="title-name">Considerations</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#source-publish-considerations">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The source publishing service is publishing the sources as they are hosted in Open Build Service. This
+   expressions here.</p><p>Publishing can be enabled by defining the rsync module to push the content:</p><div class="verbatim-wrap highlight perl"><pre class="screen"><code class="language-perl">our $sourcepublish_sync = 'rsync://your_rsync_server/rsync_module';</code></pre></div><p>By default every project get published, but it is possible to define a whitelist via:</p><div class="verbatim-wrap highlight perl"><pre class="screen"><code class="language-perl">our $sourcepublish_filter = [ "openSUSE:.*", "SUSE:.*" ];</code></pre></div></section><section class="sect2" id="source-publish-considerations" data-id-title="Considerations"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.4.2 </span><span class="title-name">Considerations</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#source-publish-considerations">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The source publishing service is publishing the sources as they are hosted in Open Build Service. This
         means these are the unprocessed sources and the content is not identical to the
         content of source RPMs for example. Instead these are the sources which are the
         base for source RPMs.</p><p>As a consequence hints like NoSource: tags in spec files are ignored. The only
@@ -506,23 +489,23 @@ Examples:
    possible to call the hook with self-defined parameters.</p><p>The publisher will add the 3 listed parameters at the end, after the
    self-defined parameters
    (in <code class="filename">/usr/lib/obs/server/BSConfig.pm</code>):
-  </p><div class="verbatim-wrap highlight perl"><pre class="screen">our $publishedhook = {
+  </p><div class="verbatim-wrap highlight perl"><pre class="screen"><code class="language-perl">our $publishedhook = {
  "Product/SLES12"     =&gt; "/usr/local/bin/script2run_sles12",
  "Product/SLES11-SP3" =&gt; "/usr/local/bin/script2run_sles11",
  "Product/SLES11-SP4" =&gt; "/usr/local/bin/script2run_sles11",
-};</pre></div><p>Regular expressions or substrings can be used to define a script for
+};</code></pre></div><p>Regular expressions or substrings can be used to define a script for
    more than one repository in one project. The use of regular expressions has
    to be activated by defining
    <code class="literal">$publishedhook use regex = 1;</code> as follows
    (in <code class="filename">/usr/lib/obs/server/BSConfig.pm</code>):
-  </p><div class="verbatim-wrap highlight perl"><pre class="screen">our $publishedhook_use_regex = 1;
+  </p><div class="verbatim-wrap highlight perl"><pre class="screen"><code class="language-perl">our $publishedhook_use_regex = 1;
 our $publishedhook = {
     "Product\/SLES12"     =&gt; "/usr/local/bin/script2run_sles12",
     "Product\/SLES11.*"   =&gt; "/usr/local/bin/script2run_sles11",
-};</pre></div><p>With self defined parameters:</p><div class="verbatim-wrap highlight perl"><pre class="screen">our $publishedhook_use_regex = 1;
+};</code></pre></div><p>With self defined parameters:</p><div class="verbatim-wrap highlight perl"><pre class="screen"><code class="language-perl">our $publishedhook_use_regex = 1;
 our $publishedhook = {
     "Product\/SLES11.*" =&gt; ["/usr/local/bin/script2run", "sles11", "/srv/www/public_mirror"],
-};</pre></div><p>The configuration is read by the publisher at startup only, so it
+};</code></pre></div><p>The configuration is read by the publisher at startup only, so it
    has to be restarted after configuration changes have been made. The hook
    script’s output is not logged by the publisher and should be written to a
    log file by the script itself. In case of a broken script,this is logged in
@@ -537,7 +520,7 @@ our $publishedhook = {
    daemon that does all the work and just gets triggered by the configured hook
    script.</p><p>The scripts are called without a timeout.</p></section><section class="sect2" id="publisher-hooks-example-publisher-scripts" data-id-title="Example Publisher Scripts"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.6.2 </span><span class="title-name">Example Publisher Scripts</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#publisher-hooks-example-publisher-scripts">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><section class="sect3" id="publisher-hooks-example-publisher-scripts-simple-publisher-hook" data-id-title="Simple Publisher Hook"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">5.6.2.1 </span><span class="title-name">Simple Publisher Hook</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#publisher-hooks-example-publisher-scripts-simple-publisher-hook">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The following example script ignores the packages that have changed
     and copies all RPMs from the repository directory to a target
-    directory:</p><div class="verbatim-wrap highlight bash"><pre class="screen">#!/bin/bash
+    directory:</p><div class="verbatim-wrap highlight bash"><pre class="screen"><code class="language-bash">#!/bin/bash
 OBSHOME="/srv/obs"
 SRC_REPO_DIR="$OBSHOME/repos"
 LOGFILE="$OBSHOME/log/reposync.log"
@@ -546,9 +529,9 @@ DST_REPO_DIR="/srv/repo-mirror"
 #+double-colons!
 PRJ_PATH=${1//:/:\/}
 PATH_TO_REPO=$2
-rsync -a --log-file=$LOGFILE --mkpath $PATH_TO_REPO/ $DST_REPO_DIR/$PRJ_PATH/</pre></div><p>For testing purposes, it can be invoked as follows:</p><div class="verbatim-wrap"><pre class="screen">$ sudo -u obsrun /usr/local/bin/publish-hook.sh Product/SLES11-SP1 \
+rsync -a --log-file=$LOGFILE --mkpath $PATH_TO_REPO/ $DST_REPO_DIR/$PRJ_PATH/</code></pre></div><p>For testing purposes, it can be invoked as follows:</p><div class="verbatim-wrap"><pre class="screen">$ sudo -u obsrun /usr/local/bin/publish-hook.sh Product/SLES11-SP1 \
     /srv/obs/repos/Product/SLE11-SP1</pre></div></section><section class="sect3" id="publisher-hooks-example-publisher-scripts-advanced-publisher-hook" data-id-title="Advanced Publisher Hook"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">5.6.2.2 </span><span class="title-name">Advanced Publisher Hook</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#publisher-hooks-example-publisher-scripts-advanced-publisher-hook">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The following example script reads the destination path from a
-    parameter that is configured with the hook script:</p><div class="verbatim-wrap highlight bash"><pre class="screen">#!/bin/bash
+    parameter that is configured with the hook script:</p><div class="verbatim-wrap highlight bash"><pre class="screen"><code class="language-bash">#!/bin/bash
 LOGFILE="/srv/obs/log/reposync.log"
 DST_REPO_DIR=$1
 # Global substion! To handle strings like Foo:Bar:testing - two
@@ -556,10 +539,10 @@ DST_REPO_DIR=$1
 PRJ_PATH=${2//:/:\/}
 PATH_TO_REPO=$3
 mkdir -p $DST_REPO_DIR/$PRJ_PATH
-rsync -a --log-file=$LOGFILE --mkpath $PATH_TO_REPO/ $DST_REPO_DIR/$PRJ_PATH/</pre></div><p>For testing purposes, it can be invoked as follows:</p><div class="verbatim-wrap"><pre class="screen">$ sudo -u obsrun /usr/local/bin/publish-hook.sh \
+rsync -a --log-file=$LOGFILE --mkpath $PATH_TO_REPO/ $DST_REPO_DIR/$PRJ_PATH/</code></pre></div><p>For testing purposes, it can be invoked as follows:</p><div class="verbatim-wrap"><pre class="screen">$ sudo -u obsrun /usr/local/bin/publish-hook.sh \
     /srv/www/public_mirror/Product/SLES11-SP1 \
     /srv/obs/repos/Product/SLE11SP1</pre></div><p>The following example script only copies packages that have
-    changed, but does not delete packages that have been removed:</p><div class="verbatim-wrap highlight bash"><pre class="screen">#!/bin/bash
+    changed, but does not delete packages that have been removed:</p><div class="verbatim-wrap highlight bash"><pre class="screen"><code class="language-bash">#!/bin/bash
 
 DST_REPO_DIR=$1
 PRJ_PATH=${2//:/:\/}
@@ -578,7 +561,7 @@ do
   shift
 done
 
-createrepo $DST_REPO_DIR/$PRJ_PATH/.</pre></div><p>For testing purposes, it can be invoked as follows:</p><div class="verbatim-wrap"><pre class="screen">$ sudo -o obsrun /usr/local/bin/publish-hook.sh  /srv/www/public_mirror \
+createrepo $DST_REPO_DIR/$PRJ_PATH/.</code></pre></div><p>For testing purposes, it can be invoked as follows:</p><div class="verbatim-wrap"><pre class="screen">$ sudo -o obsrun /usr/local/bin/publish-hook.sh  /srv/www/public_mirror \
    Product/SLES11-SP1 /srv/obs/repos/Product/SLE11-SP1 \
    src/icinga-1.13.3-1.3.src.rpm x86_64/icinga-1.13.3-1.3.x86_64.rpm \
    x86_64/icinga-devel-1.13.3-1.3.x86_64.rpm</pre></div></section></section></section><section class="sect1" id="unpublisher-hooks" data-id-title="Unpublisher Hooks"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">5.7 </span><span class="title-name">Unpublisher Hooks</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#unpublisher-hooks">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The job of the publisher service is to publish the built packages
@@ -610,25 +593,25 @@ createrepo $DST_REPO_DIR/$PRJ_PATH/.</pre></div><p>For testing purposes, it can 
    parameters.</p><p>The publisher adds the three listed parameters at the end, directly after
    the custom parameters
    (in <code class="filename">/usr/lib/obs/server/BSConfig.pm</code>):
-  </p><div class="verbatim-wrap highlight perl"><pre class="screen">our $unpublishedhook = {
+  </p><div class="verbatim-wrap highlight perl"><pre class="screen"><code class="language-perl">our $unpublishedhook = {
     "Product/SLES12"     =&gt; "/usr/local/bin/script2run_sles12",
     "Product/SLES11-SP3" =&gt; "/usr/local/bin/script2run_sles11",
     "Product/SLES11-SP4" =&gt; "/usr/local/bin/script2run_sles11",
-};</pre></div><p>Regular expressions or substrings can be used to define a script for
+};</code></pre></div><p>Regular expressions or substrings can be used to define a script for
    more than one repository in one project. The use of regular expressions
    needs to be activated by defining
    <code class="literal">$unpublishedhook use regex = 1;</code>
    (in <code class="filename">/usr/lib/obs/server/BSConfig.pm</code>):
-   </p><div class="verbatim-wrap highlight perl"><pre class="screen">our $unpublishedhook_use_regex = 1;
+   </p><div class="verbatim-wrap highlight perl"><pre class="screen"><code class="language-perl">our $unpublishedhook_use_regex = 1;
 our $unpublishedhook = {
     "Product\/SLES12"     =&gt; "/usr/local/bin/script2run_sles12",
     "Product\/SLES11.*"   =&gt; "/usr/local/bin/script2run_sles11",
-};</pre></div><p>With custom parameters:</p><div class="verbatim-wrap highlight perl"><pre class="screen">our $unpublishedhook_use_regex = 1;
+};</code></pre></div><p>With custom parameters:</p><div class="verbatim-wrap highlight perl"><pre class="screen"><code class="language-perl">our $unpublishedhook_use_regex = 1;
 our $unpublishedhook = {
     "Product\/SLES11.*" =&gt; [
       "/usr/local/bin/script2run", "sles11", "/srv/www/public_mirror"
     ],
-};</pre></div><p>The configuration is read by the publisher at startup only, so it
+};</code></pre></div><p>The configuration is read by the publisher at startup only, so it
    has to be restarted after configuration changes have been made. The hook
    script’s output is not logged by the publisher and should be written to a
    log file by the script itself. In case of a broken script, this is logged in
@@ -645,7 +628,7 @@ our $unpublishedhook = {
      hooks</em></span> and <span class="emphasis"><em>publish hooks</em></span> are defined, the
      <span class="emphasis"><em>unpublish hook</em></span> runs before the <span class="emphasis"><em>publish
      hook</em></span>.</p></div></section><section class="sect2" id="unpublisher-scripts-example-unpublisher-scripts" data-id-title="Example Unpublisher Scripts"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.7.2 </span><span class="title-name">Example Unpublisher Scripts</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#unpublisher-scripts-example-unpublisher-scripts">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><section class="sect3" id="unpublisher-scripts-example-unpublisher-scripts-simple-unpublisher-hook" data-id-title="Simple Unpublisher Hook"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">5.7.2.1 </span><span class="title-name">Simple Unpublisher Hook</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#unpublisher-scripts-example-unpublisher-scripts-simple-unpublisher-hook">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The following example script deletes all packages from the target
-    directory that have been removed from the repository.</p><div class="verbatim-wrap highlight bash"><pre class="screen">#!/bin/bash
+    directory that have been removed from the repository.</p><div class="verbatim-wrap highlight bash"><pre class="screen"><code class="language-bash">#!/bin/bash
 OBSHOME="/srv/obs"
 LOGFILE="$OBSHOME/log/reposync.log"
 DST_REPO_DIR="/srv/repo-mirror"
@@ -660,13 +643,13 @@ while [ $# -gt 0 ]
 do
   rm -v $DST_REPO_DIR/$PRJ_PATH/$1 &gt;&gt;$LOGFILE 2&gt;&amp;1
   shift
-done</pre></div><p>For testing purposes, it can be invoked as follows:</p><div class="verbatim-wrap"><pre class="screen">$ sudo -u obsrun /usr/local/bin/unpublish-hook.sh \
+done</code></pre></div><p>For testing purposes, it can be invoked as follows:</p><div class="verbatim-wrap"><pre class="screen">$ sudo -u obsrun /usr/local/bin/unpublish-hook.sh \
     Product/SLES11-SP1                            \
     /srv/obs/repos/Product/SLE11-SP1              \
     src/icinga-1.13.3-1.3.src.rpm                 \
     x86_64/icinga-1.13.3-1.3.x86_64.rpm           \
     x86_64/icinga-devel-1.13.3-1.3.x86_64.rpm</pre></div></section><section class="sect3" id="unpublisher-scripts-example-unpublisher-scripts-advanced-unpublisher-hook" data-id-title="Advanced Unpublisher Hook"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">5.7.2.2 </span><span class="title-name">Advanced Unpublisher Hook</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#unpublisher-scripts-example-unpublisher-scripts-advanced-unpublisher-hook">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>The following example script reads the destination path from a
-    parameter that is configured via the hook script:</p><div class="verbatim-wrap highlight bash"><pre class="screen">#!/bin/bash
+    parameter that is configured via the hook script:</p><div class="verbatim-wrap highlight bash"><pre class="screen"><code class="language-bash">#!/bin/bash
 OBSHOME="/srv/obs"
 LOGFILE="$OBSHOME/log/reposync.log"
 DST_REPO_DIR=$1
@@ -681,7 +664,7 @@ while [ $# -gt 0 ]
 do
   rm -v $DST_REPO_DIR/$PRJ_PATH/$1 &gt;&gt;$LOGFILE 2&gt;&amp;1
   shift
-done</pre></div><p>For testing purposes, it can be invoked as follows:</p><div class="verbatim-wrap"><pre class="screen">$ sudo -u obsrun /usr/local/bin/unpublish-hook.sh \
+done</code></pre></div><p>For testing purposes, it can be invoked as follows:</p><div class="verbatim-wrap"><pre class="screen">$ sudo -u obsrun /usr/local/bin/unpublish-hook.sh \
     /srv/www/public_mirror/Product/SLES11-SP1     \
     /srv/obs/repos/Product/SLE11SP1               \
     src/icinga-1.13.3-1.3.src.rpm                 \
@@ -1681,9 +1664,10 @@ amqp_queue_options:
             <p>A new comment for the request was created</p>
           </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
             <p>
-              :author, :comment, :description, :number, :actions, :state, :when, :who,
-              :commenters, :commenter, :comment_body, :comment_title,
-              :request_number
+              :id, :author, :comment, :description, :number, :actions, :state,
+              :when, :who, :commenters, :commenter, :comment_body, :comment_title,
+              :request_number, :number, :diff_ref, :diff_file_index,
+              :diff_line_number
             </p>
           </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
             <p><span class="emphasis"><em>__prefix__</em></span>.request.status_report</p>
@@ -1693,13 +1677,37 @@ amqp_queue_options:
             <p>
               :number
             </p>
-          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; ">
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
             <p><span class="emphasis"><em>__prefix__</em></span>.published.status_report</p>
-          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; ">
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
             <p>Status Check for Published Repository Created</p>
-          </td><td style="text-align: left; vertical-align: top; ">
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
             <p>
               :project, :repo, :buildid
+            </p>
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p><span class="emphasis"><em>__prefix__</em></span>.container.published</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>A container has been published</p>
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            <p>
+              :project, :repo, :buildid, :container
+            </p>
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p><span class="emphasis"><em>__prefix__</em></span>.relationship.create</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; border-bottom: 1px solid ; ">
+            <p>A user or group role has been added</p>
+          </td><td style="text-align: left; vertical-align: top; border-bottom: 1px solid ; ">
+            <p>
+              :who, :user, :group, :project, :package, :role, :notifiable_id
+            </p>
+          </td></tr><tr><td style="text-align: left; vertical-align: top; border-right: 1px solid ; ">
+            <p><span class="emphasis"><em>__prefix__</em></span>.relationship.delete</p>
+          </td><td style="text-align: left; vertical-align: top; border-right: 1px solid ; ">
+            <p>A user or group role has been removed</p>
+          </td><td style="text-align: left; vertical-align: top; ">
+            <p>
+              :who, :user, :group, :project, :package, :role, :notifiable_id
             </p>
           </td></tr></tbody></table></div></div></section></section></section><section class="sect1" id="backup" data-id-title="Backup"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">5.10 </span><span class="title-name">Backup</span></span> <a title="Permalink" class="permalink" href="obs-cha-administration.html#backup">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
     Open Build Service configuration and content needs usually a backup. The following explains
@@ -1926,4 +1934,4 @@ OBS_WORKER_WIPE_AFTER_BUILD=1
 EOH
 
 obsworker restart</pre></div></li><li class="step" id="k8s-worker-startworker"><p>Use the following command to launch the build service worker.</p><div class="verbatim-wrap"><pre class="screen">cat launchworker.sh | kubectl exec -i -t test-worker-pod bash</pre></div></li></ol></div></div></section></section><nav class="bottom-pagination"><div><a class="pagination-link prev" href="obs-cha-security-concepts.html"><span class="pagination-relation">Previous</span><span class="pagination-label"><span class="title-number">Chapter 4 </span>Security Concepts</span></a> </div><div><a class="pagination-link next" href="obs-cha-troubleshooting.html"><span class="pagination-relation">Next</span><span class="pagination-label"><span class="title-number">Chapter 6 </span>Troubleshooting</span></a> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="sect1"><a href="obs-cha-administration.html#tools"><span class="title-number">5.1 </span><span class="title-name">Tools</span></a></span></li><li><span class="sect1"><a href="obs-cha-administration.html#managing-build-targets"><span class="title-number">5.2 </span><span class="title-name">Managing Build Targets</span></a></span></li><li><span class="sect1"><a href="obs-cha-administration.html#sec-obs-source-service"><span class="title-number">5.3 </span><span class="title-name">Source Services</span></a></span></li><li><span class="sect1"><a href="obs-cha-administration.html#source-publish"><span class="title-number">5.4 </span><span class="title-name">Source Publisher</span></a></span></li><li><span class="sect1"><a href="obs-cha-administration.html#dispatch-priorities"><span class="title-number">5.5 </span><span class="title-name">Dispatch Priorities</span></a></span></li><li><span class="sect1"><a href="obs-cha-administration.html#publisher-hooks"><span class="title-number">5.6 </span><span class="title-name">Publisher Hooks</span></a></span></li><li><span class="sect1"><a href="obs-cha-administration.html#unpublisher-hooks"><span class="title-number">5.7 </span><span class="title-name">Unpublisher Hooks</span></a></span></li><li><span class="sect1"><a href="obs-cha-administration.html#user-and-group-management"><span class="title-number">5.8 </span><span class="title-name">Managing Users and Groups</span></a></span></li><li><span class="sect1"><a href="obs-cha-administration.html#message-bus"><span class="title-number">5.9 </span><span class="title-name">Message Bus for Event Notifications</span></a></span></li><li><span class="sect1"><a href="obs-cha-administration.html#backup"><span class="title-number">5.10 </span><span class="title-name">Backup</span></a></span></li><li><span class="sect1"><a href="obs-cha-administration.html#restore"><span class="title-number">5.11 </span><span class="title-name">Restore</span></a></span></li><li><span class="sect1"><a href="obs-cha-administration.html#repair-data-corruption"><span class="title-number">5.12 </span><span class="title-name">Repair Data Corruption</span></a></span></li><li><span class="sect1"><a href="obs-cha-administration.html#obs-spider-identification"><span class="title-number">5.13 </span><span class="title-name">Spider Identification</span></a></span></li><li><span class="sect1"><a href="obs-cha-administration.html#worker-in-kubernetes"><span class="title-number">5.14 </span><span class="title-name">Worker in Kubernetes</span></a></span></li></ul></div> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
-                 2024</span></div></div></footer></body></html>
+                 2025</span></div></div></footer></body></html>
