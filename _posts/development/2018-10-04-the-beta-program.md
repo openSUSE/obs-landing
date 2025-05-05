@@ -51,7 +51,7 @@ Describe the problem and explain how to reproduce it.
 The more details you add, the better: screenshots, the URL of the page, etc.
 Do not forget to mention that you have joined the beta program.
 
-Before opening an issue, it is a good idea to check [the issues list](https://github.com/openSUSE/open-build-service/issues?q=is%3Aissue+is%3Aopen+label%3A%22Frontend+%F0%9F%91%BB%22) to avoid reporting a problem, which someone else has already reported.
+Before opening an issue, it is a good idea to check [the issues list](https://github.com/openSUSE/open-build-service/issues?q=is%3Aissue+is%3Aopen+label%3A"Frontend") to avoid reporting a problem, which someone else has already reported.
 In case you have more information about an already opened issue, please add a comment with your findings.
 
 # Help Us
