@@ -16,7 +16,7 @@ The `label` beta program now includes a way to list, create and delete labels on
 That opens up their use with tooling external to OBS, making this functionality more useful to teams that script their workflow around OBS.
 
 <figure>
-  <img src="/images/posts/2025-01-21/screenshot-label-api.png" alt="Screenshot of the label API documentation" />
+  <img src="/images/posts/2025-05-05/screenshot-label-api.png" alt="Screenshot of the label API documentation" />
   <figcaption>Label API documentation</figcaption>
 </figure>
 
