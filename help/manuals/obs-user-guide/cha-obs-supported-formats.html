@@ -68,7 +68,10 @@
      To create an RPM package, you need a spec file.
   </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      A file with the extension <code class="filename">.changes</code>
-     can be used to document the package history, but it is not required.
+     can be used to document the package history, but it is not required. On SUSE
+     distributions a reduced version of it gets applied into the build rpm. This
+     keeps the rpm database in installed systems smaller, but avoids loosing information
+     in the source repository.
     </p></li><li class="listitem"><p>
      OBS-specific RPM macros which are set are: <code class="literal">%_project</code> and <code class="literal">%_repository</code>
     </p></li><li class="listitem"><p>
@@ -83,7 +86,7 @@
       It is used when the bcntsynctag element tag is not defined in package meta. Also it can
       depend on architecture, repository or flavor for example.
     </p></li><li class="listitem"><p>
-        <code class="code">#!BuildConflicts: STRING</code> defines a conflicting package or dependency at build time only.
+     <code class="code">#!BuildConflicts: STRING</code> defines a conflicting package or dependency at build time only.
     </p></li><li class="listitem"><p>
      <code class="code">#!BuildIgnore: STRING</code> ignores a dependency at build time.
     </p></li><li class="listitem"><p>
@@ -91,16 +94,24 @@
      is the better way to define this. Use this tag only when the dependency should only exist when using
      the build script or OBS.
     </p></li><li class="listitem"><p>
-	    <code class="code">#!needsrootforbuild</code> The build will be executed by root user. Please note that this must
-    be permitted either by the OBS admin (via the BSConfig.pm configuration) or enabled in via build configuration rule. Also osc requires an additional parameter for local build (--userootforbuild).</p></li><li class="listitem"><p>
-	    <code class="code">#!needsslcertforbuild</code> This will prepare an SSL certification based on the project key. It is
-	    used to create secure boot enabled packages usually. Please note that this will fail, if the project
-	    still has an old DSA key.
+     <code class="code">#!CreateArchive</code> or <code class="code">#!CreateArchive: DIRECTORY</code> creates a tar ball based on
+
+     a provided directory. The tar ball name is used from next Source line of the spec file. The expected
+     directory name needs either to be specified as part of the tag or is also derived from the next Source line. This is useful when working with directories coming from git submodules or source services.
+    </p></li><li class="listitem"><p>
+     <code class="code">#!NoUseForBuild</code> This can be used to configure that package is built, but not used
+           for building other packages. The package may get published anyway.
+    </p></li><li class="listitem"><p>
+     <code class="code">#!needsrootforbuild</code> The build will be executed by root user. Please note that this must
+     be permitted either by the OBS admin (via the BSConfig.pm configuration) or enabled in via build configuration rule. Also osc requires an additional parameter for local build (--userootforbuild).</p></li><li class="listitem"><p>
+     <code class="code">#!needssslcertforbuild</code> This will prepare a X.509 certification based on the project key. It is
+     used to create secure boot enabled packages usually. Please note that this will fail, if the project
+     still has an old DSA key.
 </p></li><li class="listitem"><p>
-	    <code class="code">#!needsappxsslcertforbuild</code> Creates an appx compatible ssl certificate based on the project key.
-            Please note that this will fail, if the project still has an old DSA key.
+     <code class="code">#!needsappxcertforbuild</code> Creates an appx compatible X.509 certificate based on the project key.
+     Please note that this will fail, if the project still has an old DSA key.
 </p></li><li class="listitem"><p>
-	    <code class="code">#!needsbinariesforbuild</code> All package files are usually removed before starting the build (after finishing to setup the build environment). This marker keeps them also during build.</p></li></ul></div></section><section class="sect1" id="id-1.2.10.8.4" data-id-title="OBS Extensions for (KIWI) Appliance Builds"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">27.2 </span><span class="title-name">OBS Extensions for (KIWI) Appliance Builds</span></span> <a title="Permalink" class="permalink" href="cha-obs-supported-formats.html#id-1.2.10.8.4">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
+     <code class="code">#!NeedsBinariesForBuild</code> All package files are usually removed before starting the build (after finishing to setup the build environment). This marker keeps them also during build.</p></li></ul></div></section><section class="sect1" id="id-1.2.10.8.4" data-id-title="OBS Extensions for (KIWI) Appliance Builds"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">27.2 </span><span class="title-name">OBS Extensions for (KIWI) Appliance Builds</span></span> <a title="Permalink" class="permalink" href="cha-obs-supported-formats.html#id-1.2.10.8.4">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
 	KIWI appliance builds create images which can be used for direct consumption. Note: builds in non-VM
 	environments do fail often due to the bootloader setup. Use <code class="command">osc build --vm-type=kvm</code> for local building.
 	OBS is evaluating kiwi builds at least two times. One time for the build host dependencies and another
@@ -169,5 +180,5 @@
     happens via the built-in registry interface which is providing all defined tags for an image.
     The filename itself may be used on aggregates or other binary filters in OBS. It is either 
     derived by the first defined tag or by the BuildName and BuildVersion tag if both are defined.
-   </p></section></section><nav class="bottom-pagination"><div><a class="pagination-link prev" href="cha-obs-scm-bridge.html"><span class="pagination-relation">Previous</span><span class="pagination-label"><span class="title-number">Chapter 26 </span>SCM Bridge</span></a> </div><div><a class="pagination-link next" href="cha-obs-request-and-review-system.html"><span class="pagination-relation">Next</span><span class="pagination-label"><span class="title-number">Chapter 28 </span>Request and Review System</span></a> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="sect1"><a href="cha-obs-supported-formats.html#sec-obs-building-spec2rpm"><span class="title-number">27.1 </span><span class="title-name">Spec File Specials (RPM)</span></a></span></li><li><span class="sect1"><a href="cha-obs-supported-formats.html#id-1.2.10.8.4"><span class="title-number">27.2 </span><span class="title-name">OBS Extensions for (KIWI) Appliance Builds</span></a></span></li><li><span class="sect1"><a href="cha-obs-supported-formats.html#id-1.2.10.8.5"><span class="title-number">27.3 </span><span class="title-name">OBS Extensions for Dockerfile based builds</span></a></span></li></ul></div> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
+   </p></section></section><nav class="bottom-pagination"><div> </div><div> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="sect1"><a href="cha-obs-supported-formats.html#sec-obs-building-spec2rpm"><span class="title-number">27.1 </span><span class="title-name">Spec File Specials (RPM)</span></a></span></li><li><span class="sect1"><a href="cha-obs-supported-formats.html#id-1.2.10.8.4"><span class="title-number">27.2 </span><span class="title-name">OBS Extensions for (KIWI) Appliance Builds</span></a></span></li><li><span class="sect1"><a href="cha-obs-supported-formats.html#id-1.2.10.8.5"><span class="title-number">27.3 </span><span class="title-name">OBS Extensions for Dockerfile based builds</span></a></span></li></ul></div> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
                  2025</span></div></div></footer></body></html>

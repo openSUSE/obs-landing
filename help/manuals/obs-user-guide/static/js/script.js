@@ -149,15 +149,15 @@ function githubUrl(sectionName, permalink) {
   };
   var url = bugtrackerUrl
      + "?title=" + encodeURIComponent('[doc] Issue in "' + sectionName + '"')
-     + "&amp;body=" + encodeURIComponent(body);
+     + "&body=" + encodeURIComponent(body);
   if (ghAssignee) {
-    url += "&amp;assignee=" + encodeURIComponent(ghAssignee);
+    url += "&assignee=" + encodeURIComponent(ghAssignee);
   }
   if (ghMilestone) {
-    url += "&amp;milestone=" + encodeURIComponent(ghMilestone);
+    url += "&milestone=" + encodeURIComponent(ghMilestone);
   }
   if (ghLabels) {
-    url += "&amp;labels=" + encodeURIComponent(ghLabels);
+    url += "&labels=" + encodeURIComponent(ghLabels);
   }
 
   console.log("url=", url);
