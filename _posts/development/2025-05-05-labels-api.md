@@ -6,7 +6,7 @@ category: development
 
 Over the last few weeks we worked to improve the functionality of Labels. Now, we are ready to present the fruit of that labour.
 
-These updates are part of the `Labels` beta programs. You can find more information about the beta program [here](/2018/10/04/the-beta-program/).
+These updates are part of the `Labels` beta program. You can find more information about the beta program [here](/2018/10/04/the-beta-program/).
 
 {% include partials/_series-of-posts-about-foster-collaboration.md %}
 
