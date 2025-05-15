@@ -5,7 +5,7 @@ category: development
 ---
 Over the last few days, we’ve been focused on improving how responsibility is tracked in packages. Today, we’re excited to introduce Assignments.
 
-These updates are part of the `Foster Collaboration` beta programs. You can find more information about the beta program [here](/2018/10/04/the-beta-program/).
+These updates are part of the `Foster Collaboration` beta program. You can find more information about the beta program [here](/2018/10/04/the-beta-program/).
 
 {% include partials/_series-of-posts-about-foster-collaboration.md %}
 
