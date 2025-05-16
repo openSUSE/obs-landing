@@ -8,7 +8,7 @@ We worked diligently to bring you the next set of improvements to the ways to co
 With that we are happy to announce you will now be able to label all of your projects and subprojects,
 to allow yourself and other users better understand what purpose they serve at a glance. 
 
-These updates are part of the `Labels` beta programs. You can find more information about the beta program [here](/2018/10/04/the-beta-program/).
+These updates are part of the `Labels` beta program. You can find more information about the beta program [here](/2018/10/04/the-beta-program/).
 
 {% include partials/_series-of-posts-about-foster-collaboration.md %}
 
