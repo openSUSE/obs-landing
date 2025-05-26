@@ -23,7 +23,7 @@ We manually reverted the update and restored the service back to working order
 
 ## Lessons Learned
 - Test major dependency updates in build-test.opensuse.org before deployment to build.opensuse.org
-- Make sure that the depencencies are compatible with other dependencies in production
+- Make sure that the dependencies are compatible with other dependencies in production
 
 ## Timeline (All Time in UTC)
 
