@@ -29,13 +29,13 @@ OBS will then follow your device’s light or dark mode automatically.
 ## How to Enable It
 
 Trying it out is as simple as selecting a theme from your settings, nothing else needed.
-Just head to "Your Profile", click in "Edit", and select your "Theme":
+Just head to "Your Profile", click the "Theme" selector, and choose your preferred one:
 
   * system (automatically matches your device setting, default)
   * light
   * dark
 
-After clicking on "Update", you will enjoy your new theme setting.
+After clicking on one option the page will reload. You will enjoy your new theme setting.
 As always, your choice will be remembered across sessions.
 That's it!
 
