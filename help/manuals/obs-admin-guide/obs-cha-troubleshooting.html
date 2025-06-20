@@ -66,8 +66,8 @@
   test the build locally before committing it to the OBS. This type of problems
   is not covered by this chapter.</p><section class="sect1" id="general-hints" data-id-title="General Hints"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">6.1 </span><span class="title-name">General Hints</span></span> <a title="Permalink" class="permalink" href="obs-cha-troubleshooting.html#general-hints">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>If you detect unexpected behavior of the OBS, you
    should follow some rules to locate the problem:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p> Consult the log files, for the back-end look at
-      <span class="emphasis"><em>/srv/obs/log</em></span> for the back-end log files and
-      <span class="emphasis"><em>/srv/www/obs/api/log</em></span> for the front-end log files.
+      <span><em class="emphasis">/srv/obs/log</em></span> for the back-end log files and
+      <span><em class="emphasis">/srv/www/obs/api/log</em></span> for the front-end log files.
      See the Log files <a class="xref" href="obs-cha-overview-filesystem.html#log-files" title="3.2. Log Files">Section 3.2, “Log Files”</a> for more details.
     </p></li><li class="listitem"><p> Consult the normal OS system logs and the kernel log (dmesg) if
      here are reported system or HW problems. </p></li><li class="listitem"><p> Check if all services are running on the back-end and front-end.
@@ -76,24 +76,24 @@
      well. </p></li><li class="listitem"><p> If you create a new bug report, include all information to
      reproduce the problem and the complete error message/error log if here are
      any. </p></li></ol></div></section><section class="sect1" id="debug-frontend-problems" data-id-title="Debugging Front-end Problems"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">6.2 </span><span class="title-name">Debugging Front-end Problems</span></span> <a title="Permalink" class="permalink" href="obs-cha-troubleshooting.html#debug-frontend-problems">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>If you get unexpected results from submitting commands with the
-    <span class="strong"><strong><span class="emphasis"><em>osc</em></span></strong></span> tool, you can
+    <span><span class="emphasis"><strong><span><em class="emphasis">osc</em></span></strong></span></span> tool, you can
    use the debug feature of the tools to find more information about what
    happened.</p><p>osc debug options</p><div class="verbatim-wrap"><pre class="screen">--debugger         jump into the debugger before executing anything
 --post-mortem      jump into the debugger in case of errors
 -t, --traceback    print call trace in case of errors
 -H, --http-debug   debug HTTP traffic (filters some headers)
 --http-full-debug  debug HTTP traffic (filters no headers)
--d, --debug        print info useful for debugging</pre></div><p>The <span class="strong"><strong><span class="emphasis"><em>--debugger</em></span></strong></span> and <span class="strong"><strong><span class="emphasis"><em>--post-mortem</em></span></strong></span> are only suitable for
-    <span class="emphasis"><em>osc</em></span> developers. If you get an error message from osc,
-   the <span class="strong"><strong><span class="emphasis"><em>-t, --traceback</em></span></strong></span>
+-d, --debug        print info useful for debugging</pre></div><p>The <span><span class="emphasis"><strong><span><em class="emphasis">--debugger</em></span></strong></span></span> and <span><span class="emphasis"><strong><span><em class="emphasis">--post-mortem</em></span></strong></span></span> are only suitable for
+    <span><em class="emphasis">osc</em></span> developers. If you get an error message from osc,
+   the <span><span class="emphasis"><strong><span><em class="emphasis">-t, --traceback</em></span></strong></span></span>
    can give the developer some more information about the problem. The
-    <span class="strong"><strong><span class="emphasis"><em>-H, --http-debug</em></span></strong></span>
-   and <span class="strong"><strong><span class="emphasis"><em>--http-full-debug</em></span></strong></span> options are useful to
+    <span><span class="emphasis"><strong><span><em class="emphasis">-H, --http-debug</em></span></strong></span></span>
+   and <span><span class="emphasis"><strong><span><em class="emphasis">--http-full-debug</em></span></strong></span></span> options are useful to
    see the raw answers of OBS API, often this gives a hint what maybe wrong. If
-   you report a problem regarding the <span class="strong"><strong><span class="emphasis"><em>osc</em></span></strong></span> tool, it may help to include the osc
-   output with <span class="strong"><strong>additional *<span class="emphasis"><em>--http-debug
-     --traceback</em></span></strong></span> options.</p><div id="id-1.3.10.7.6" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.svg"/><div class="admon-title">Warning</div><p>With <span class="strong"><strong><span class="emphasis"><em>--http-full-debug</em></span></strong></span> all http headers are
+   you report a problem regarding the <span><span class="emphasis"><strong><span><em class="emphasis">osc</em></span></strong></span></span> tool, it may help to include the osc
+   output with <span><span class="emphasis"><strong>additional *<span><em class="emphasis">--http-debug
+     --traceback</em></span></strong></span></span> options.</p><div id="id-1.3.10.7.6" class="admonition warning normal"><img class="symbol" alt="Warning" title="Warning" src="static/images/icon-warning.svg"/><div class="admon-title">Warning</div><p>With <span><span class="emphasis"><strong><span><em class="emphasis">--http-full-debug</em></span></strong></span></span> all http headers are
     included, this may include user data and authentication stuff so review and
     replace such data with XXXXXXXX or so before you post it on the
-    internet.</p></div></section></section><nav class="bottom-pagination"><div> </div><div> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="sect1"><a href="obs-cha-troubleshooting.html#general-hints"><span class="title-number">6.1 </span><span class="title-name">General Hints</span></a></span></li><li><span class="sect1"><a href="obs-cha-troubleshooting.html#debug-frontend-problems"><span class="title-number">6.2 </span><span class="title-name">Debugging Front-end Problems</span></a></span></li></ul></div> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
+    internet.</p></div></section></section><nav class="bottom-pagination"><div><a class="pagination-link prev" href="obs-cha-administration.html"><span class="pagination-relation">Previous</span><span class="pagination-label"><span class="title-number">Chapter 5 </span>Administration</span></a> </div><div><a class="pagination-link next" href="cha-obs-best-practices-localsetup.html"><span class="pagination-relation">Next</span><span class="pagination-label"><span class="title-number">Chapter 7 </span>Setting Up a Local OBS Instance</span></a> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="sect1"><a href="obs-cha-troubleshooting.html#general-hints"><span class="title-number">6.1 </span><span class="title-name">General Hints</span></a></span></li><li><span class="sect1"><a href="obs-cha-troubleshooting.html#debug-frontend-problems"><span class="title-number">6.2 </span><span class="title-name">Debugging Front-end Problems</span></a></span></li></ul></div> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
                  2025</span></div></div></footer></body></html>

@@ -222,7 +222,7 @@ Fri Aug 23 08:42:42 UTC 2017 - <code class="systemitem">geeko</code>@example.com
     easier and more effective than only looking at the build log.
    </p><p>
     By default, the directory <code class="filename">/var/tmp/build-root/</code>
-    is used as the <span class="emphasis"><em>build root</em></span>. This is defined in
+    is used as the <span><em class="emphasis">build root</em></span>. This is defined in
     the configuration file <code class="filename">~/.oscrc</code> using the
     key <code class="option">build-root</code>.
    </p><p>
@@ -283,14 +283,14 @@ Fri Aug 23 08:42:42 UTC 2017 - <code class="systemitem">geeko</code>@example.com
    dependencies (build and runtime) in your projects:
   </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>
      <a class="xref" href="cha-obs-basicworkflow.html#sec-obs-basicworkflow-layering" title="5.4.1. Associating Other Repositories with Your Repository">Section 5.4.1, “Associating Other Repositories with Your Repository”</a>
-     (<span class="emphasis"><em>layering</em></span>)
+     (<span><em class="emphasis">layering</em></span>)
     </p></li><li class="listitem"><p>
      <a class="xref" href="cha-obs-basicworkflow.html#sec-obs-basicworkflow-reuse" title="5.4.2. Reusing Packages in Your Project">Section 5.4.2, “Reusing Packages in Your Project”</a>
-     (<span class="emphasis"><em>linking</em></span> and <span class="emphasis"><em>aggregating</em></span>)
+     (<span><em class="emphasis">linking</em></span> and <span><em class="emphasis">aggregating</em></span>)
     </p></li></ul></div><section class="sect2" id="sec-obs-basicworkflow-layering" data-id-title="Associating Other Repositories with Your Repository"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">5.4.1 </span><span class="title-name">Associating Other Repositories with Your Repository</span></span> <a title="Permalink" class="permalink" href="cha-obs-basicworkflow.html#sec-obs-basicworkflow-layering">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
     There is no need to duplicate the work of others. If you need a specific
     package which is available in another repository, you can reference this
-    repository in your project metadata. This is called <span class="emphasis"><em>layering</em></span>.
+    repository in your project metadata. This is called <span><em class="emphasis">layering</em></span>.
    </p><p>
     When a package is needed, it can be installed from another
     other repository (see the note below).
@@ -306,7 +306,7 @@ Fri Aug 23 08:42:42 UTC 2017 - <code class="systemitem">geeko</code>@example.com
       packages from <code class="uri">devel:languages:python</code> in a
       openSUSE Tumbleweed project, extend the <code class="sgmltag-element">repository</code> element with:
      </p><div class="verbatim-wrap highlight xml"><pre class="screen">&lt;repository name="openSUSE_Tumbleweed"&gt;
-    <span class="strong"><strong>&lt;path project="devel:languages:python" repository="openSUSE_Factory"/&gt;</strong></span>
+    <span><span class="emphasis"><strong>&lt;path project="devel:languages:python" repository="openSUSE_Factory"/&gt;</strong></span></span>
     &lt;path project="openSUSE:Factory" repository="standard"/&gt;
     &lt;arch&gt;x86_64&lt;/arch&gt;
 &lt;/repository&gt;</pre></div><div id="id-1.2.8.2.7.5.5.3.3" data-id-title="Order Is Important" class="admonition note normal"><img class="symbol" alt="Note" title="Note" src="static/images/icon-note.svg"/><div class="admon-title">Note: Order Is Important</div><p>
@@ -390,5 +390,5 @@ At revision 1.</pre></div><p>
     </p></section></section></section><section class="sect1" id="sec-obs-basicworkflow-manage-group" data-id-title="Manage Group"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">5.5 </span><span class="title-name">Manage Group</span></span> <a title="Permalink" class="permalink" href="cha-obs-basicworkflow.html#sec-obs-basicworkflow-manage-group">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
     Users with Maintainer rights can add users to their group and remove users
     from it. They can also give other users Maintainer rights.
-  </p><div class="verbatim-wrap"><pre class="screen"><code class="command">osc api -d "&lt;group&gt;&lt;title&gt;&lt;group-title&gt;&lt;/title&gt;&lt;email&gt;&lt;group-email&gt;&lt;/email&gt;&lt;maintainer userid="&lt;user-name&gt;"/&gt;&lt;person&gt;&lt;person userid="&lt;user_name&gt;"/&gt;&lt;/person&gt;&lt;/group&gt;' -X PUT "/group/&lt;group-title&gt;" </code></pre></div></section></section><nav class="bottom-pagination"><div> </div><div> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="sect1"><a href="cha-obs-basicworkflow.html#sec-obs-basicworkflow-setuphome"><span class="title-number">5.1 </span><span class="title-name">Setting Up Your Home Project</span></a></span></li><li><span class="sect1"><a href="cha-obs-basicworkflow.html#sec-obs-basicworkflow-create-new"><span class="title-number">5.2 </span><span class="title-name">Creating a New Package</span></a></span></li><li><span class="sect1"><a href="cha-obs-basicworkflow.html#sec-obs-basicworkflow-builderrors"><span class="title-number">5.3 </span><span class="title-name">Investigating the Local Build Process</span></a></span></li><li><span class="sect1"><a href="cha-obs-basicworkflow.html#sec-obs-basicworkflow-add-dependencies"><span class="title-number">5.4 </span><span class="title-name">Dependency Handling in Your Projects</span></a></span></li><li><span class="sect1"><a href="cha-obs-basicworkflow.html#sec-obs-basicworkflow-manage-group"><span class="title-number">5.5 </span><span class="title-name">Manage Group</span></a></span></li></ul></div> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
+  </p><div class="verbatim-wrap"><pre class="screen"><code class="command">osc api -d "&lt;group&gt;&lt;title&gt;&lt;group-title&gt;&lt;/title&gt;&lt;email&gt;&lt;group-email&gt;&lt;/email&gt;&lt;maintainer userid="&lt;user-name&gt;"/&gt;&lt;person&gt;&lt;person userid="&lt;user_name&gt;"/&gt;&lt;/person&gt;&lt;/group&gt;' -X PUT "/group/&lt;group-title&gt;" </code></pre></div></section></section><nav class="bottom-pagination"><div><a class="pagination-link prev" href="par-working.html"><span class="pagination-relation">Previous</span><span class="pagination-label"><span class="title-number">Part IV </span>Usage</span></a> </div><div><a class="pagination-link next" href="cha-obs-local-building.html"><span class="pagination-relation">Next</span><span class="pagination-label"><span class="title-number">Chapter 6 </span>Local Building</span></a> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="sect1"><a href="cha-obs-basicworkflow.html#sec-obs-basicworkflow-setuphome"><span class="title-number">5.1 </span><span class="title-name">Setting Up Your Home Project</span></a></span></li><li><span class="sect1"><a href="cha-obs-basicworkflow.html#sec-obs-basicworkflow-create-new"><span class="title-number">5.2 </span><span class="title-name">Creating a New Package</span></a></span></li><li><span class="sect1"><a href="cha-obs-basicworkflow.html#sec-obs-basicworkflow-builderrors"><span class="title-number">5.3 </span><span class="title-name">Investigating the Local Build Process</span></a></span></li><li><span class="sect1"><a href="cha-obs-basicworkflow.html#sec-obs-basicworkflow-add-dependencies"><span class="title-number">5.4 </span><span class="title-name">Dependency Handling in Your Projects</span></a></span></li><li><span class="sect1"><a href="cha-obs-basicworkflow.html#sec-obs-basicworkflow-manage-group"><span class="title-number">5.5 </span><span class="title-name">Manage Group</span></a></span></li></ul></div> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
                  2025</span></div></div></footer></body></html>

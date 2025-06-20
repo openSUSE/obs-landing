@@ -119,8 +119,8 @@
        Packages depend on other packages to function properly. These
        relationships are referred to as "dependencies".
        There are two types of dependencies:
-       <span class="emphasis"><em>build dependencies</em></span> and
-       <span class="emphasis"><em>runtime dependencies</em></span>.
+       <span><em class="emphasis">build dependencies</em></span> and
+       <span><em class="emphasis">runtime dependencies</em></span>.
        Build dependencies are packages that must be present at build time
        in order to successfully build your source package. The act of building
        your source package will create one or more binary packages. Each binary
@@ -157,7 +157,7 @@
    If the build is successful, the files which belong to the package
    are installed into the sandbox. From those sandboxed files, the final RPM
    package is created and moved into a download area, the
-   <span class="emphasis"><em>download repository</em></span>.
+   <span><em class="emphasis">download repository</em></span>.
   </p><p>
     End users can install the package using their preferred package management
     tools. On a SUSE-based system, you can use YaST or Zypper command-line
@@ -170,7 +170,7 @@
    The schematic in <a class="xref" href="art-obs-bg.html#fig-obsbg-concept" title="Conceptual Overview of Open Build Service">Figure 1.1, “Conceptual Overview of Open Build Service”</a> shows the components
    in context.
   </p><div class="figure" id="fig-obsbg-concept"><div class="figure-contents"><div class="mediaobject"><a href="images/obs-concept.svg"><img src="images/obs-concept.svg" width="80%" alt="Conceptual Overview of Open Build Service" title="Conceptual Overview of Open Build Service"/></a></div></div><div class="title-container"><div class="figure-title-wrap"><div class="figure-title"><span class="title-number-name"><span class="title-number">Figure 1.1: </span><span class="title-name">Conceptual Overview of Open Build Service </span></span><a title="Permalink" class="permalink" href="art-obs-bg.html#fig-obsbg-concept">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></section><section class="sect2" id="sec-obsbg-project" data-id-title="Projects and Packages"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">1.2.3 </span><span class="title-name">Projects and Packages</span></span> <a title="Permalink" class="permalink" href="art-obs-bg.html#sec-obsbg-project">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
-    In OBS, packages are organized in <span class="emphasis"><em>projects</em></span>.
+    In OBS, packages are organized in <span><em class="emphasis">projects</em></span>.
     A single project can contain several packages, and it usually serves a specific
     organizational purpose. Generic access control, related repositories, and
     build targets (operating systems and architectures) are all defined on
@@ -219,7 +219,7 @@
         Download the file from <a class="link" href="https://download.opensuse.org/repositories/openSUSE:/Tools/AppImage/" target="_blank">https://download.opensuse.org/repositories/openSUSE:/Tools/AppImage/</a>,
         save it in your <code class="filename">~/bin</code> directory,
         and make the file executable.
-       </p></li></ul></div></dd><dt id="id-1.2.5.2.5.3.2"><span class="term">Hardware Requirements</span></dt><dd><p>
+       </p></li></ul></div></dd><dt id="vle-obsbg-hardware-reqs"><span class="term">Hardware Requirements</span></dt><dd><p>
       Make sure you have a minimum of 1 GB of free disk space. The
       <code class="command">osc</code> command builds all packages locally under
       <code class="filename">/var/tmp/oscbuild</code> and
@@ -450,7 +450,7 @@ Fri Aug 23 12:31:41 UTC 2017 - <code class="systemitem">geeko</code>@example.com
     </p><p>
      Save the file and leave the editor. <code class="command">osc</code> then
      creates the file <code class="filename">my-first-obs-package.changes</code>.
-    </p><p>Your project directory should now look something like this:</p><div class="verbatim-wrap"><pre class="screen"><span class="emphasis"><em>project directory</em></span>
+    </p><p>Your project directory should now look something like this:</p><div class="verbatim-wrap"><pre class="screen"><span><em class="emphasis">project directory</em></span>
      ├── my-first-obs-package-0.1.0.tar.gz
      ├── my-first-obs-package.changes
      └── my-first-obs-package.spec</pre></div></li><li class="step"><p>Add all the files to your working directory:</p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">osc</code> add *.spec *.changes *.tar.gz</pre></div></li><li class="step"><p>Build the package for the default build target:</p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">osc</code> build --local-package</pre></div><p>
@@ -488,13 +488,13 @@ Fri Aug 23 12:31:41 UTC 2017 - <code class="systemitem">geeko</code>@example.com
     </p></li><li class="listitem"><p><span class="formalpara-title">Improve Structure and Consistency. </span>
      From an organizational point of view, it is better when changes are
      separated from the source code. With the changes inside the patch file,
-     everybody can see <span class="emphasis"><em>what</em></span> was changed and
+     everybody can see <span><em class="emphasis">what</em></span> was changed and
      which files changes were applied to.
     </p></li></ul></div><p>
    We assume that you already have a project as described in
   <a class="xref" href="art-obs-bg.html#sec-obsbg-uc-newprj" title="1.7. Creating a New Package Within Your Home Project">Section 1.7, “Creating a New Package Within Your Home Project”</a>. The project directory should look
    similar to this:
-  </p><div class="verbatim-wrap"><pre class="screen"><span class="emphasis"><em>project directory</em></span>
+  </p><div class="verbatim-wrap"><pre class="screen"><span><em class="emphasis">project directory</em></span>
 ├── my-first-obs-package-0.1.0.tar.gz
 ├── my-first-obs-package.changes
 └── my-first-obs-package.spec</pre></div><p>In our case, we want to modify the source code under
@@ -658,7 +658,7 @@ Patch0:         my-first-obs-package_main.diff</pre></div></li><li class="step">
   </p><p>
    For example, if you have enabled the openSUSE Tumbleweed distribution,
    all packages for openSUSE Tumbleweed will be published at
-   <code class="uri">https://download.opensuse.org/repositories/home:/obsgeeko/openSUSE_Tumbleweed</code>. This <span class="emphasis"><em>download
+   <code class="uri">https://download.opensuse.org/repositories/home:/obsgeeko/openSUSE_Tumbleweed</code>. This <span><em class="emphasis">download
    repository</em></span> is used as an installation source for Zypper or YaST.
   </p><p>To install the <span class="package">my-first-obs-package</span> package from your home project,
   use the following steps:</p><div class="procedure"><div class="procedure-contents"><ol class="procedure" type="1"><li class="step" id="st-obsbg-uc-install-from-obs-repourls"><p>Inside your working directory, determine the download repository
@@ -678,5 +678,5 @@ https://download.opensuse.org/repositories/home:/obsgeeko/openSUSE_42.2/home:obs
    overview of their syntax, use
    <code class="command">osc <em class="replaceable">SUBCOMMAND</em> --help</code>.
   </p><div class="variablelist"><dl class="variablelist"><dt id="id-1.2.5.2.13.3.1"><span class="term"><code class="command">osc diff</code></span></dt><dd><p>Generates a diff, comparing local changes against the remote
-      OBS project.</p></dd><dt id="id-1.2.5.2.13.3.2"><span class="term"><code class="command">osc list</code></span></dt><dd><p>Shows source or binaries on an OBS server.</p></dd><dt id="id-1.2.5.2.13.3.3"><span class="term"><code class="command">osc prjresults</code></span></dt><dd><p>Shows project-wide build results.</p></dd><dt id="id-1.2.5.2.13.3.4"><span class="term"><code class="command">osc status</code></span></dt><dd><p>Shows the status of files in your working directory</p></dd></dl></div></section></section><nav class="bottom-pagination"><div> </div><div> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="sect1"><a href="art-obs-bg.html#sec-obsbg-targetaudience"><span class="title-number">1.1 </span><span class="title-name">Target Audience</span></a></span></li><li><span class="sect1"><a href="art-obs-bg.html#sec-obsbg-concept"><span class="title-number">1.2 </span><span class="title-name">Conceptual Overview</span></a></span></li><li><span class="sect1"><a href="art-obs-bg.html#sec-obsbg-req"><span class="title-number">1.3 </span><span class="title-name">Requirements for Working with the <code class="command">osc</code> Command-Line Tool</span></a></span></li><li><span class="sect1"><a href="art-obs-bg.html#sec-obsbg-usagescenarios"><span class="title-number">1.4 </span><span class="title-name">Covered Scenarios</span></a></span></li><li><span class="sect1"><a href="art-obs-bg.html#sec-obsbg-obsconfig"><span class="title-number">1.5 </span><span class="title-name">Configuring Your System for OBS</span></a></span></li><li><span class="sect1"><a href="art-obs-bg.html#sec-obsbg-uc-setuphome"><span class="title-number">1.6 </span><span class="title-name">Setting Up Your Home Project for the First Time</span></a></span></li><li><span class="sect1"><a href="art-obs-bg.html#sec-obsbg-uc-newprj"><span class="title-number">1.7 </span><span class="title-name">Creating a New Package Within Your Home Project</span></a></span></li><li><span class="sect1"><a href="art-obs-bg.html#sec-obsbg-uc-patching"><span class="title-number">1.8 </span><span class="title-name">Patching Source Code</span></a></span></li><li><span class="sect1"><a href="art-obs-bg.html#sec-obsbg-uc-branchprj"><span class="title-number">1.9 </span><span class="title-name">Branching a Package</span></a></span></li><li><span class="sect1"><a href="art-obs-bg.html#sec-obsbg-uc-install-from-obs"><span class="title-number">1.10 </span><span class="title-name">Installing Packages from OBS</span></a></span></li><li><span class="sect1"><a href="art-obs-bg.html#sec-obsbg-cheatsheet"><span class="title-number">1.11 </span><span class="title-name">Other Useful <code class="command">osc</code> Commands</span></a></span></li></ul></div> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
+      OBS project.</p></dd><dt id="id-1.2.5.2.13.3.2"><span class="term"><code class="command">osc list</code></span></dt><dd><p>Shows source or binaries on an OBS server.</p></dd><dt id="id-1.2.5.2.13.3.3"><span class="term"><code class="command">osc prjresults</code></span></dt><dd><p>Shows project-wide build results.</p></dd><dt id="id-1.2.5.2.13.3.4"><span class="term"><code class="command">osc status</code></span></dt><dd><p>Shows the status of files in your working directory</p></dd></dl></div></section></section><nav class="bottom-pagination"><div><a class="pagination-link prev" href="par-first-steps.html"><span class="pagination-relation">Previous</span><span class="pagination-label"><span class="title-number">Part I </span>First Steps</span></a> </div><div><a class="pagination-link next" href="par-concepts.html"><span class="pagination-relation">Next</span><span class="pagination-label"><span class="title-number">Part II </span>Concepts</span></a> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="sect1"><a href="art-obs-bg.html#sec-obsbg-targetaudience"><span class="title-number">1.1 </span><span class="title-name">Target Audience</span></a></span></li><li><span class="sect1"><a href="art-obs-bg.html#sec-obsbg-concept"><span class="title-number">1.2 </span><span class="title-name">Conceptual Overview</span></a></span></li><li><span class="sect1"><a href="art-obs-bg.html#sec-obsbg-req"><span class="title-number">1.3 </span><span class="title-name">Requirements for Working with the <code class="command">osc</code> Command-Line Tool</span></a></span></li><li><span class="sect1"><a href="art-obs-bg.html#sec-obsbg-usagescenarios"><span class="title-number">1.4 </span><span class="title-name">Covered Scenarios</span></a></span></li><li><span class="sect1"><a href="art-obs-bg.html#sec-obsbg-obsconfig"><span class="title-number">1.5 </span><span class="title-name">Configuring Your System for OBS</span></a></span></li><li><span class="sect1"><a href="art-obs-bg.html#sec-obsbg-uc-setuphome"><span class="title-number">1.6 </span><span class="title-name">Setting Up Your Home Project for the First Time</span></a></span></li><li><span class="sect1"><a href="art-obs-bg.html#sec-obsbg-uc-newprj"><span class="title-number">1.7 </span><span class="title-name">Creating a New Package Within Your Home Project</span></a></span></li><li><span class="sect1"><a href="art-obs-bg.html#sec-obsbg-uc-patching"><span class="title-number">1.8 </span><span class="title-name">Patching Source Code</span></a></span></li><li><span class="sect1"><a href="art-obs-bg.html#sec-obsbg-uc-branchprj"><span class="title-number">1.9 </span><span class="title-name">Branching a Package</span></a></span></li><li><span class="sect1"><a href="art-obs-bg.html#sec-obsbg-uc-install-from-obs"><span class="title-number">1.10 </span><span class="title-name">Installing Packages from OBS</span></a></span></li><li><span class="sect1"><a href="art-obs-bg.html#sec-obsbg-cheatsheet"><span class="title-number">1.11 </span><span class="title-name">Other Useful <code class="command">osc</code> Commands</span></a></span></li></ul></div> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
                  2025</span></div></div></footer></body></html>

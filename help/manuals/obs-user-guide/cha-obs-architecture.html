@@ -92,12 +92,12 @@
      worker downloads the needed resources itself afterwards. Each OBS
      installation has one dispatcher per partition, one of which is the master
      dispatcher. </p><p> The dispatcher tries to assign jobs fairly between the project
-     repositories. For this the dispatcher maintains a <span class="strong"><strong>load</strong></span> per project repository (similar to the Unix system load)
+     repositories. For this the dispatcher maintains a <span><span class="emphasis"><strong>load</strong></span></span> per project repository (similar to the Unix system load)
      of used build time. The dispatcher assigned jobs to build clients from the
      repository with the lowest load (thereby increasing its load). It is
      possible to tweak this mechanism via dispatching priorities assigned to the
-     repositories via the <span class="emphasis"><em>/build/<span class="emphasis"><em>_dispatchprios</em></span>
-      <span class="strong"><strong>API</strong></span></em></span> call or via the <span class="strong"><strong>dispatch_adjust</strong></span> map in the BSConfig.pm
+     repositories via the <span><em class="emphasis">/build/<span><span>_dispatchprios</span></span>
+      <span><span class="emphasis"><strong>API</strong></span></span></em></span> call or via the <span><span class="emphasis"><strong>dispatch_adjust</strong></span></span> map in the BSConfig.pm
      configuration file. See the dispatch priorities in reference guide for more
      details. </p></dd><dt id="id-1.2.10.2.3.5.5"><span class="term">Publisher</span></dt><dd><p> The publisher processes publish events from the scheduler for
       finished repositories. It merges the build result of all architectures
@@ -109,7 +109,7 @@
       execute the signing. Each OBS installation usually has one signer per
       partition and also on the source server installation.
       </p></dd><dt id="id-1.2.10.2.3.5.7"><span class="term">Source Service Server</span></dt><dd><p>
-     The Source Service Server helps to automate processes for <span class="strong"><strong>continuous integration</strong></span>. The server can call
+     The Source Service Server helps to automate processes for <span><span class="emphasis"><strong>continuous integration</strong></span></span>. The server can call
      different services for different tasks. It can download sources from
      websites and version control systems such as subversion and git. Services
      can also include working on the source to extract spec-files from archives,
@@ -166,61 +166,61 @@
    (for example, a <code class="filename">_service</code> file) was updated:
   </p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>
      The new source file is uploaded with an HTTP PUT operation to the
-     <span class="strong"><strong>front-end</strong></span>.
+     <span><span class="emphasis"><strong>front-end</strong></span></span>.
      The front-end authenticates and checks the permissions of the user.
     </p></li><li class="listitem"><p>
      If the user has appropriate permissions, the new file will be sent to
-     the back-end <span class="strong"><strong>source server</strong></span> via an
+     the back-end <span><span class="emphasis"><strong>source server</strong></span></span> via an
      HTTP PUT request.
      The source server stores the changed source under revision control.
     </p><p>
      It then checks whether this change makes source service runs necessary.
-     If so, the <span class="strong"><strong>source service server</strong></span> is
+     If so, the <span><span class="emphasis"><strong>source service server</strong></span></span> is
      informed via an HTTP PUT request of the <code class="filename">_service</code>
      file to run the requested services.
     </p></li><li class="listitem"><p>
-     The <span class="strong"><strong>source service server</strong></span> runs all
+     The <span><span class="emphasis"><strong>source service server</strong></span></span> runs all
      required source services.
      For example, it could download the requested revision from a Git server.
      After running all services, it delivers the final sources back to the
-     <span class="strong"><strong>source server</strong></span>, which then stores these
+     <span><span class="emphasis"><strong>source server</strong></span></span>, which then stores these
      under revision control.
     </p></li><li class="listitem"><p>
-     The <span class="strong"><strong>source server</strong></span> then notifies the
-     <span class="strong"><strong>schedulers</strong></span> for each hardware
+     The <span><span class="emphasis"><strong>source server</strong></span></span> then notifies the
+     <span><span class="emphasis"><strong>schedulers</strong></span></span> for each hardware
      architecture required about the change of the package via an event.
     </p></li><li class="listitem"><p>
-     The <span class="strong"><strong>scheduler</strong></span> then recalculates package
+     The <span><span class="emphasis"><strong>scheduler</strong></span></span> then recalculates package
      and project state.
      If all build requirements are fulfilled, a build job is created and added
-     to the <span class="strong"><strong>job pool</strong></span>.
+     to the <span><span class="emphasis"><strong>job pool</strong></span></span>.
     </p></li><li class="listitem"><p>
-     The <span class="strong"><strong>dispatcher</strong></span> is notified and selects
-     a free <span class="strong"><strong>worker</strong></span> which meets the build
+     The <span><span class="emphasis"><strong>dispatcher</strong></span></span> is notified and selects
+     a free <span><span class="emphasis"><strong>worker</strong></span></span> which meets the build
      constraints for the job and sends the job to it.
     </p></li><li class="listitem"><p>
-     The <span class="strong"><strong>worker</strong></span> downloads the sources from
-     the <span class="strong"><strong>source server</strong></span> and all required
-     binary packages from the <span class="strong"><strong>repository
-     server</strong></span>.
+     The <span><span class="emphasis"><strong>worker</strong></span></span> downloads the sources from
+     the <span><span class="emphasis"><strong>source server</strong></span></span> and all required
+     binary packages from the <span><span class="emphasis"><strong>repository
+     server</strong></span></span>.
      The package then will be built.
     </p><p>
-     The <span class="strong"><strong>worker</strong></span> is monitored by the
-     <span class="strong"><strong>warden</strong></span> service to detect any
-     <span class="strong"><strong>worker</strong></span> crashes.
+     The <span><span class="emphasis"><strong>worker</strong></span></span> is monitored by the
+     <span><span class="emphasis"><strong>warden</strong></span></span> service to detect any
+     <span><span class="emphasis"><strong>worker</strong></span></span> crashes.
     </p></li><li class="listitem"><p>
      If the build succeeds, the build results (including build logs) are
-     uploaded to the <span class="strong"><strong>scheduler</strong></span>.
-     If requested, the <span class="strong"><strong>signer</strong></span> signs the
+     uploaded to the <span><span class="emphasis"><strong>scheduler</strong></span></span>.
+     If requested, the <span><span class="emphasis"><strong>signer</strong></span></span> signs the
      packages.
     </p></li><li class="listitem"><p>
-     The <span class="strong"><strong>scheduler</strong></span> recalculates the project
+     The <span><span class="emphasis"><strong>scheduler</strong></span></span> recalculates the project
      status, checking whether dependent packages need to be rebuilt.
-     If not, it requests the <span class="strong"><strong>publisher</strong></span> to
+     If not, it requests the <span><span class="emphasis"><strong>publisher</strong></span></span> to
      publish the build results.
     </p></li><li class="listitem"><p>
-     The <span class="strong"><strong>publisher</strong></span> will create an updated
+     The <span><span class="emphasis"><strong>publisher</strong></span></span> will create an updated
      version of the output repository and request the
-     <span class="strong"><strong>signer</strong></span> to sign the repository metadata.
-    </p></li></ol></div></section></section><nav class="bottom-pagination"><div> </div><div> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="sect1"><a href="cha-obs-architecture.html#overview-graph"><span class="title-number">21.1 </span><span class="title-name">Overview Graph</span></a></span></li><li><span class="sect1"><a href="cha-obs-architecture.html#communication-flow"><span class="title-number">21.2 </span><span class="title-name">Communication Flow</span></a></span></li></ul></div> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
+     <span><span class="emphasis"><strong>signer</strong></span></span> to sign the repository metadata.
+    </p></li></ol></div></section></section><nav class="bottom-pagination"><div><a class="pagination-link prev" href="par-reference.html"><span class="pagination-relation">Previous</span><span class="pagination-label"><span class="title-number">Part VI </span>Reference</span></a> </div><div><a class="pagination-link next" href="cha-obs-concepts.html"><span class="pagination-relation">Next</span><span class="pagination-label"><span class="title-number">Chapter 22 </span>OBS Concepts</span></a> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="sect1"><a href="cha-obs-architecture.html#overview-graph"><span class="title-number">21.1 </span><span class="title-name">Overview Graph</span></a></span></li><li><span class="sect1"><a href="cha-obs-architecture.html#communication-flow"><span class="title-number">21.2 </span><span class="title-name">Communication Flow</span></a></span></li></ul></div> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
                  2025</span></div></div></footer></body></html>

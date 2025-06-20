@@ -169,10 +169,10 @@ Support: pax debbuild</pre></div></dd><dt id="id-1.2.7.3.4.9.4"><span class="ter
         </p><p>
           OBS will run all scripts in
           <code class="filename">/usr/lib/build/obsgendiff.d/</code> on the build host
-          (not in the <span class="emphasis"><em>%buildroot</em></span>) when this flag is set.
+          (not in the <span><em class="emphasis">%buildroot</em></span>) when this flag is set.
           If one of the scripts fails to run or no scripts are found, then the
           overall build fails. I.e. if <code class="literal">BuildFlags: obsgendiff</code>
-          is set, then you <span class="emphasis"><em>must</em></span> provide at least one script
+          is set, then you <span><em class="emphasis">must</em></span> provide at least one script
           in <code class="filename">/usr/lib/build/obsgendiff.d/</code>, otherwise your
           build will fail.
         </p><p>
@@ -313,7 +313,7 @@ Support: pax debbuild</pre></div></dd><dt id="id-1.2.7.3.4.9.4"><span class="ter
        This is used to specify packages needed to run the package installation
        program. These packages are unpacked so that the native installation
        program can be used to install the build environment.
-       Included scripts are <span class="emphasis"><em>not</em></span> executed during this phase. However, these
+       Included scripts are <span><em class="emphasis">not</em></span> executed during this phase. However, these
        packages will be re-installed later on including script execution.
      </p></dd><dt id="id-1.2.7.3.4.9.22"><span class="term"><em class="parameter">PublishFilter: <em class="replaceable">REGEXP</em> [<em class="replaceable">REGEXP</em>]</em></span></dt><dd><p>
       Limits the published binary packages in public repositories. Packages
@@ -455,7 +455,7 @@ Support: pax debbuild</pre></div></dd><dt id="id-1.2.7.3.4.9.4"><span class="ter
      </p></li><li class="listitem"><p><span class="formalpara-title">%define Macro Definitions. </span>
       Macro definitions starting with a <code class="systemitem">%define</code>
       line are used during the build configuration parsing only. These definitions are
-      <span class="emphasis"><em>not</em></span> available inside the build root or during parsing
+      <span><em class="emphasis">not</em></span> available inside the build root or during parsing
       of build recipes.
 
       Typical use cases are macros inside of %if statements inside of the build
@@ -469,7 +469,7 @@ Support: pax debbuild</pre></div></dd><dt id="id-1.2.7.3.4.9.4"><span class="ter
     then the macro %_with_pulseaudio will expand to 1 only inside
     the build configuration.
    </p></section><section class="sect2" id="sec-prjconfig-macros-macrosection" data-id-title="Macros Used in Spec Files Only"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">4.4.2 </span><span class="title-name">Macros Used in Spec Files Only</span></span> <a title="Permalink" class="permalink" href="cha-obs-prjconfig.html#sec-prjconfig-macros-macrosection">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
-    To define the values of macros used in spec files, `%define` is <span class="bold"><strong>not</strong></span> used. For this use case, either enclose the macro
+    To define the values of macros used in spec files, `%define` is <span><span class="emphasis"><strong>not</strong></span></span> used. For this use case, either enclose the macro
     definitions between "Macros:"/":Macros" lines, or place them at the end of the
     prjconf file. All lines after a line containing the directive "Macros:" up
     to the end of the config, or up to a :Macros line, are used when parsing
@@ -486,5 +486,5 @@ Support: pax debbuild</pre></div></dd><dt id="id-1.2.7.3.4.9.4"><span class="ter
    </p><p>
     The macro definition itself are defined without a <code class="literal">%define</code>
     keyword. Start with <code class="literal">%macroname</code>, for example:
-   </p><div class="verbatim-wrap"><pre class="screen">%_hardened_build 0</pre></div></section></section></section><nav class="bottom-pagination"><div> </div><div> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="sect1"><a href="cha-obs-prjconfig.html#sec-prjconfig-about"><span class="title-number">4.1 </span><span class="title-name">About the Build Configuration</span></a></span></li><li><span class="sect1"><a href="cha-obs-prjconfig.html#sec-prjconfig-syntax"><span class="title-number">4.2 </span><span class="title-name">Configuration File Syntax</span></a></span></li><li><span class="sect1"><a href="cha-obs-prjconfig.html#sec-prjconfig-ccache"><span class="title-number">4.3 </span><span class="title-name">Building with ccache or sccache</span></a></span></li><li><span class="sect1"><a href="cha-obs-prjconfig.html#sec-prjconfig-macros"><span class="title-number">4.4 </span><span class="title-name">Macro Definitions in the Build Configuration</span></a></span></li></ul></div> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
+   </p><div class="verbatim-wrap"><pre class="screen">%_hardened_build 0</pre></div></section></section></section><nav class="bottom-pagination"><div><a class="pagination-link prev" href="cha-obs-osc.html"><span class="pagination-relation">Previous</span><span class="pagination-label"><span class="title-number">Chapter 3 </span>osc, the Command Line Tool</span></a> </div><div><a class="pagination-link next" href="par-working.html"><span class="pagination-relation">Next</span><span class="pagination-label"><span class="title-number">Part IV </span>Usage</span></a> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="sect1"><a href="cha-obs-prjconfig.html#sec-prjconfig-about"><span class="title-number">4.1 </span><span class="title-name">About the Build Configuration</span></a></span></li><li><span class="sect1"><a href="cha-obs-prjconfig.html#sec-prjconfig-syntax"><span class="title-number">4.2 </span><span class="title-name">Configuration File Syntax</span></a></span></li><li><span class="sect1"><a href="cha-obs-prjconfig.html#sec-prjconfig-ccache"><span class="title-number">4.3 </span><span class="title-name">Building with ccache or sccache</span></a></span></li><li><span class="sect1"><a href="cha-obs-prjconfig.html#sec-prjconfig-macros"><span class="title-number">4.4 </span><span class="title-name">Macro Definitions in the Build Configuration</span></a></span></li></ul></div> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
                  2025</span></div></div></footer></body></html>

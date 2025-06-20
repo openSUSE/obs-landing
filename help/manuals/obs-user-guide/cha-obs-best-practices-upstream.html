@@ -95,9 +95,9 @@
     one big mess.
    </p><p>
     In openSUSE Build Service, packages are divided into categories regarding
-    their function. MySQL is in <span class="emphasis"><em>server:database</em></span>
-    repository, lighttpd in <span class="emphasis"><em>server:http</em></span> and for example
-    KMyMoney has its own subproject in <span class="emphasis"><em>KDE:Apps</em></span>. So it is
+    their function. MySQL is in <span><em class="emphasis">server:database</em></span>
+    repository, lighttpd in <span><em class="emphasis">server:http</em></span> and for example
+    KMyMoney has its own subproject in <span><em class="emphasis">KDE:Apps</em></span>. So it is
     a good idea to think about in what category available on the OBS your
     application will fit the best.
    </p><p>
@@ -118,8 +118,8 @@
     same project multiple times.
    </p><section class="sect3" id="id-1.2.9.5.5.4.3" data-id-title="Stable and Development Versions"><div class="titlepage"><div><div><div class="title-container"><h4 class="title"><span class="title-number-name"><span class="title-number">15.2.2.1 </span><span class="title-name">Stable and Development Versions</span></span> <a title="Permalink" class="permalink" href="cha-obs-best-practices-upstream.html#id-1.2.9.5.5.4.3">#</a></h4><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
      Let's assume that you have found project suitable for your program. Some
-     projects already have something like <span class="emphasis"><em>STABLE</em></span> and
-     <span class="emphasis"><em>UNSTABLE</em></span> subprojects. So you can use these, if you
+     projects already have something like <span><em class="emphasis">STABLE</em></span> and
+     <span><em class="emphasis">UNSTABLE</em></span> subprojects. So you can use these, if you
      discuss it with maintainers of these project. Other way is to ask somebody
      from the maintainers of the project to create either these subprojects (if
      they do not exist) or something similar. Always try to discuss it with the
@@ -132,11 +132,11 @@
      creating them under some project you are sharing with other packages,
      having you package name in the name of projects is a good idea as well.
     </p><p>
-     GNOME is a good example: There is the <span class="emphasis"><em>GNOME</em></span> project and
+     GNOME is a good example: There is the <span><em class="emphasis">GNOME</em></span> project and
      many subprojects. Among them are, for example,
-     <span class="emphasis"><em>GNOME:STABLE:2.30</em></span>,
-     <span class="emphasis"><em>GNOME:STABLE:2.32</em></span>, and
-     <span class="emphasis"><em>GNOME:STABLE:3.0</em></span>. These projects hold different
+     <span><em class="emphasis">GNOME:STABLE:2.30</em></span>,
+     <span><em class="emphasis">GNOME:STABLE:2.32</em></span>, and
+     <span><em class="emphasis">GNOME:STABLE:3.0</em></span>. These projects hold different
      stable versions of GNOME with latest fixes.
     </p></section></section></section><section class="sect1" id="id-1.2.9.5.6" data-id-title="Creating a Package"><div class="titlepage"><div><div><div class="title-container"><h2 class="title"><span class="title-number-name"><span class="title-number">15.3 </span><span class="title-name">Creating a Package</span></span> <a title="Permalink" class="permalink" href="cha-obs-best-practices-upstream.html#id-1.2.9.5.6">#</a></h2><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
    Packaging is quite a complex topic. Instead of trying to cover it in this
@@ -164,7 +164,7 @@
    URL always has to start with
    <a class="link" href="http://software.opensuse.org/download.html?" target="_blank">http://software.opensuse.org/download.html?</a>.You can attach
    any number of <code class="literal">&amp;</code>-separated parameters. But at least two of them -
-   <span class="emphasis"><em>project</em></span> and <span class="emphasis"><em>package</em></span> - are
+   <span><em class="emphasis">project</em></span> and <span><em class="emphasis">package</em></span> - are
    required. All parameters with descriptions can be found in
    <a class="xref" href="cha-obs-best-practices-upstream.html#cha-obs-best-practices-upstream-download-params" title="Parameters for Download Page">Table 15.1, “Parameters for Download Page”</a>.
   </p><div class="table" id="cha-obs-best-practices-upstream-download-params" data-id-title="Parameters for Download Page"><div class="title-container"><div class="table-title-wrap"><div class="table-title"><span class="title-number-name"><span class="title-number">Table 15.1: </span><span class="title-name">Parameters for Download Page </span></span><a title="Permalink" class="permalink" href="cha-obs-best-practices-upstream.html#cha-obs-best-practices-upstream-download-params">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div><div class="table-contents"><table style="border-collapse: collapse; border-top: 1px solid ; border-bottom: 1px solid ; border-left: 1px solid ; border-right: 1px solid ; "><colgroup><col/><col/></colgroup><thead><tr><th style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">parameter</th><th style="text-align: left; border-bottom: 1px solid ; ">description</th></tr></thead><tbody><tr><td style="text-align: left; border-right: 1px solid ; border-bottom: 1px solid ; ">
@@ -194,7 +194,7 @@
       </td></tr></tbody></table></div></div><section class="sect2" id="id-1.2.9.5.7.7" data-id-title="Examples"><div class="titlepage"><div><div><div class="title-container"><h3 class="title"><span class="title-number-name"><span class="title-number">15.4.1 </span><span class="title-name">Examples</span></span> <a title="Permalink" class="permalink" href="cha-obs-best-practices-upstream.html#id-1.2.9.5.7.7">#</a></h3><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div></div></div></div><p>
     Now we will take a look at how to include the download page into your
     project pages. As an example, we will use the <code class="command">osc</code> client from the
-    <span class="emphasis"><em>openSUSE:Tools</em></span> project. To demonstrate the colors
+    <span><em class="emphasis">openSUSE:Tools</em></span> project. To demonstrate the colors
     change, we will use theme that would match Midnight Commander.
    </p><p>
     First we will start with recent web page supporting new standards. On such
@@ -228,5 +228,5 @@
     If you are running some legacy website, you might have to use
     <code class="code">iframe</code>
     :
-   </p><div class="verbatim-wrap"><pre class="screen">&lt;iframe src="http://software.opensuse.org/download.html?project=openSUSE:Tools&amp;package=osc&amp;bcolor=004&amp;acolor=ff0&amp;fcolor=fff&amp;hcolor=0ff"/&gt;</pre></div></section></section></section><nav class="bottom-pagination"><div> </div><div> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="sect1"><a href="cha-obs-best-practices-upstream.html#id-1.2.9.5.4"><span class="title-number">15.1 </span><span class="title-name">Which Instance to Use?</span></a></span></li><li><span class="sect1"><a href="cha-obs-best-practices-upstream.html#id-1.2.9.5.5"><span class="title-number">15.2 </span><span class="title-name">Where to Place Your Project</span></a></span></li><li><span class="sect1"><a href="cha-obs-best-practices-upstream.html#id-1.2.9.5.6"><span class="title-number">15.3 </span><span class="title-name">Creating a Package</span></a></span></li><li><span class="sect1"><a href="cha-obs-best-practices-upstream.html#id-1.2.9.5.7"><span class="title-number">15.4 </span><span class="title-name">Getting Binaries</span></a></span></li></ul></div> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
+   </p><div class="verbatim-wrap"><pre class="screen">&lt;iframe src="http://software.opensuse.org/download.html?project=openSUSE:Tools&amp;package=osc&amp;bcolor=004&amp;acolor=ff0&amp;fcolor=fff&amp;hcolor=0ff"/&gt;</pre></div></section></section></section><nav class="bottom-pagination"><div><a class="pagination-link prev" href="cha-obs-best-practices-scm-integration.html"><span class="pagination-relation">Previous</span><span class="pagination-label"><span class="title-number">Chapter 14 </span>How to integrate external SCM sources</span></a> </div><div><a class="pagination-link next" href="cha-obs-best-practices-bootstrapping.html"><span class="pagination-relation">Next</span><span class="pagination-label"><span class="title-number">Chapter 16 </span>Bootstrapping</span></a> </div></nav></article><aside id="_side-toc-page" class="side-toc"><div class="side-title">On this page</div><div class="toc"><ul><li><span class="sect1"><a href="cha-obs-best-practices-upstream.html#id-1.2.9.5.4"><span class="title-number">15.1 </span><span class="title-name">Which Instance to Use?</span></a></span></li><li><span class="sect1"><a href="cha-obs-best-practices-upstream.html#id-1.2.9.5.5"><span class="title-number">15.2 </span><span class="title-name">Where to Place Your Project</span></a></span></li><li><span class="sect1"><a href="cha-obs-best-practices-upstream.html#id-1.2.9.5.6"><span class="title-number">15.3 </span><span class="title-name">Creating a Package</span></a></span></li><li><span class="sect1"><a href="cha-obs-best-practices-upstream.html#id-1.2.9.5.7"><span class="title-number">15.4 </span><span class="title-name">Getting Binaries</span></a></span></li></ul></div> </aside></main><footer id="_footer"><div class="growth-inhibitor"><div class="copy"><span class="copy__rights">© SUSE
                  2025</span></div></div></footer></body></html>
