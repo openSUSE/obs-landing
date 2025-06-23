@@ -114,7 +114,7 @@
   </p><p>
    The following list contains a list of allowed keywords in the build
    configuration (prjconf):
-  </p><div class="variablelist" id="vl-prjconfig-keywords" data-id-title="Available Keywords in Build Configuration"><div class="title-container"><div class="variablelist-title-wrap"><div class="variablelist-title"><span class="title-number-name"><span class="title-name">Available Keywords in Build Configuration </span></span><a title="Permalink" class="permalink" href="cha-obs-prjconfig.html#vl-prjconfig-keywords">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div><dl class="variablelist"><dt id="id-1.2.7.3.4.9.2"><span class="term"><em class="parameter">BinaryType: <em class="replaceable">TYPE</em></em> (OBS 2.4 or later)</span></dt><dd><p>
+  </p><div class="variablelist" id="vl-prjconfig-keywords" data-id-title="Available Keywords in Build Configuration"><div class="title-container"><div class="variablelist-title-wrap"><div class="variablelist-title"><span class="title-number-name"><span class="title-name">Available Keywords in Build Configuration </span></span><a title="Permalink" class="permalink" href="cha-obs-prjconfig.html#vl-prjconfig-keywords">#</a></div></div><div class="icons"><a target="_blank" class="icon-reportbug" title="Report an issue"> </a></div></div><dl class="variablelist"><dt id="vl-prjconfig-binarytype"><span class="term"><em class="parameter">BinaryType: <em class="replaceable">TYPE</em></em> (OBS 2.4 or later)</span></dt><dd><p>
       The binary type is the format of the packages that make up the build
       environment. This is usually set automatically depending on the recipe
       type and preinstall package list.
@@ -125,7 +125,7 @@
       and generate deb packages instead of RPMs. If no binary type is
       specified, OBS deduces it from the build recipe type. If the recipe type is
       also not set, OBS looks at the Preinstall package list for a hint.
-     </p></dd><dt id="id-1.2.7.3.4.9.3"><span class="term"><em class="parameter">BuildEngine: <em class="replaceable">ENGINE</em></em></span></dt><dd><p>
+     </p></dd><dt id="vl-prjconfig-buildengine"><span class="term"><em class="parameter">BuildEngine: <em class="replaceable">ENGINE</em></em></span></dt><dd><p>
        Use an alternative build engine. Examples are `mock` (for Fedora and
        Red Hat) and `debootstrap` (for Debian), `debbuild` (to build debian
        packages with spec files), `podman` (container builds).
@@ -135,90 +135,56 @@
 Repotype: debian
 Binarytype: deb
 BuildEngine: debbuild
-Support: pax debbuild</pre></div></dd><dt id="id-1.2.7.3.4.9.4"><span class="term"><em class="parameter">BuildFlags: <em class="replaceable">FLAG</em>:<em class="replaceable">VALUE</em></em></span></dt><dd><p>
-      The <em class="parameter">BuildFlags</em> keyword defines flags for the
-      build process. The following values for FLAG are usable.</p><div class="variablelist"><dl class="variablelist"><dt id="id-1.2.7.3.4.9.4.2.2.1"><span class="term"><em class="parameter">allowrootforbuild</em></span></dt><dd><p>
-         Allow any package build to use root user for building. This still needs
-         a marker inside of the build description to enable it.
-        </p></dd><dt id="id-1.2.7.3.4.9.4.2.2.2"><span class="term"><em class="parameter">vmfstype:TYPE</em></span></dt><dd><p>
-         Defines a specific file system when building inside of a VM.
-         Possible values are
-         <code class="literal">ext2</code>, <code class="literal">ext3</code>,
-         <code class="literal">ext4</code>, <code class="literal">btrfs</code>,
-         <code class="literal">xfs</code>, <code class="literal">reiserfs</code> (v3).
-        </p></dd><dt id="id-1.2.7.3.4.9.4.2.2.3"><span class="term"><em class="parameter">vmfsoptions:OPTION</em></span></dt><dd><p>
-          Sets options for file system creation. Currently only the `nodirindex`
-          option is supported, which disables directory indexing for ext file
-          systems. This makes file ordering inside of directories reproducible
-          but may have a negative performance impact.
-         <code class="literal">vmfsoptions:nodirindex</code>
-        </p></dd><dt id="id-1.2.7.3.4.9.4.2.2.4"><span class="term"><em class="parameter">kiwiprofile:PROFILE</em></span></dt><dd><p>Selects the profiles to build in kiwi appliance builds.</p></dd><dt id="id-1.2.7.3.4.9.4.2.2.5"><span class="term"><em class="parameter">logidlelimit:SECONDS</em></span></dt><dd><p>Build jobs which do not create any output are aborted after some time.
-               This flag can be used to modify the limit.</p></dd><dt id="id-1.2.7.3.4.9.4.2.2.6"><span class="term"><em class="parameter">excludebuild:PACKAGE</em></span></dt><dd><p>Exclude a package from building. If a package builds multiple flavors,
-               the corresponding flavor can be specified via the `package:flavor` syntax.</p></dd><dt id="id-1.2.7.3.4.9.4.2.2.7"><span class="term"><em class="parameter">nouseforbuild:PACKAGE</em></span></dt><dd><p>This can be used to configure that package is build, but not used
-               for building other packages. The package may get published anyway.
-               </p></dd><dt id="id-1.2.7.3.4.9.4.2.2.8"><span class="term"><em class="parameter">onlybuild:PACKAGE</em></span></dt><dd><p>DANGER: this may remove many build results when introduced the first time!
+Support: pax debbuild</pre></div></dd><dt id="vl-prjconfig-buildflags"><span class="term"><em class="parameter">BuildFlags: <em class="replaceable">FLAG</em>:<em class="replaceable">VALUE</em></em></span></dt><dd><p>The <em class="parameter">BuildFlags</em> keyword defines flags for the
+            build process. The following values for FLAG are usable:</p><div class="variablelist"><dl class="variablelist"><dt id="vl-prjconfig-buildflags-allowrootforbuild"><span class="term"><em class="parameter">allowrootforbuild</em></span></dt><dd><p>Allow any package build to use root user for building. This still needs
+               a marker inside of the build description to enable it.</p></dd><dt id="vl-prjconfig-buildflags-vmfstype"><span class="term"><em class="parameter">vmfstype:TYPE</em></span></dt><dd><p>Defines a specific file system when building inside of a VM.
+               Possible values are
+               <code class="literal">ext2</code>, <code class="literal">ext3</code>,
+               <code class="literal">ext4</code>, <code class="literal">btrfs</code>,
+               <code class="literal">xfs</code>, <code class="literal">reiserfs</code> (v3).</p></dd><dt id="vl-prjconfig-buildflags-vmfsoptions"><span class="term"><em class="parameter">vmfsoptions:OPTION</em></span></dt><dd><p>Sets options for file system creation. Currently only the `nodirindex`
+               option is supported, which disables directory indexing for ext file
+               systems. This makes file ordering inside of directories reproducible
+               but may have a negative performance impact.
+              <code class="literal">vmfsoptions:nodirindex</code></p></dd><dt id="vl-prjconfig-buildflags-kiwiprofile"><span class="term"><em class="parameter">kiwiprofile:PROFILE</em></span></dt><dd><p>Selects the profiles to build in kiwi appliance builds.</p></dd><dt id="vl-prjconfig-buildflags-logidlelimit"><span class="term"><em class="parameter">logidlelimit:SECONDS</em></span></dt><dd><p>Build jobs which do not create any output are aborted after some time.
+               This flag can be used to modify the limit.</p></dd><dt id="vl-prjconfig-buildflags-excludebuild"><span class="term"><em class="parameter">excludebuild:PACKAGE</em></span></dt><dd><p>Exclude a package from building. If a package builds multiple flavors,
+               the corresponding flavor can be specified via the `package:flavor` syntax.</p></dd><dt id="vl-prjconfig-buildflags-nouseforbuild"><span class="term"><em class="parameter">nouseforbuild:PACKAGE</em></span></dt><dd><p>This can be used to specify that a package is to be built, but not used
+               for building other packages. The package may get published anyway.</p></dd><dt id="vl-prjconfig-buildflags-onlybuild"><span class="term"><em class="parameter">onlybuild:PACKAGE</em></span></dt><dd><p>DANGER: this may remove many build results when introduced the first time!
                It can be used to maintain a whitelist of packages to be built. All other packages
-               will turn to excluded state and get removed if available.</p></dd><dt id="id-1.2.7.3.4.9.4.2.2.9"><span class="term"><em class="parameter">useccache:PACKAGE</em></span></dt><dd><p>
-         Configure usage of ccache when building the specified package.
-        </p></dd><dt id="id-1.2.7.3.4.9.4.2.2.10"><span class="term"><em class="parameter">ccachetype:TYPE</em></span></dt><dd><p>
-          Defines the ccache implementation, possible values are: ccache, sccache
-        </p></dd><dt id="id-1.2.7.3.4.9.4.2.2.11"><span class="term"><em class="parameter">obsgendiff</em></span></dt><dd><p>
-          OBS can run an external program that has access to the current build
-          and the previously successful result, e.g. to generate a difference or
-          a changelog from the diff.
-        </p><p>
-          OBS will run all scripts in
-          <code class="filename">/usr/lib/build/obsgendiff.d/</code> on the build host
-          (not in the <span><em class="emphasis">%buildroot</em></span>) when this flag is set.
-          If one of the scripts fails to run or no scripts are found, then the
-          overall build fails. I.e. if <code class="literal">BuildFlags: obsgendiff</code>
-          is set, then you <span><em class="emphasis">must</em></span> provide at least one script
-          in <code class="filename">/usr/lib/build/obsgendiff.d/</code>, otherwise your
-          build will fail.
-        </p><p>
-          A common use case for <code class="literal">obsgendiff</code> is to run <a class="link" href="https://github.com/openSUSE/release-compare" target="_blank">release-compare</a>
-          after the build.
-        </p></dd><dt id="id-1.2.7.3.4.9.4.2.2.12"><span class="term"><em class="parameter">setvcs</em></span></dt><dd><p>
-          Add the SCM URL to binary results when the package sources are managed
-          via the scmsync mechanic. The url is written into the VCS tag of rpms
-          when enabling this functionality.
-        </p></dd><dt id="id-1.2.7.3.4.9.4.2.2.13"><span class="term"><em class="parameter">nodisturl</em></span></dt><dd><p>
-          Skip the embedding of DISTURL tag into binaries. Please note that this might
-          also break other features like binary tracking. So never do this for maintained
-          binaries.
-        </p></dd><dt id="id-1.2.7.3.4.9.4.2.2.14"><span class="term"><em class="parameter">productcompose-buildoption:OPTION</em></span></dt><dd><p>
-          This option can be used to hand over additional build options to productcomposer
-          builds. This is typical used to enable debug or testing options and avoids
-          the need to modify the recipe source of the product. For example to be
-          used in test staging projects where you want to enable certain options for testing
-          purposes.
-        </p></dd><dt id="id-1.2.7.3.4.9.4.2.2.15"><span class="term"><em class="parameter">productcompose-onlydirectrepos</em></span></dt><dd><p>
-          This option can be used to limit used binaries of product builds to repositories
-          which are directly referenced as path in the building repository.
-          This is typical used to reduce the size or a project for test builds or to be
-          able to build add-on products ensuring that binaries only from certain repositories
-          appear in the product.
-        </p></dd><dt id="id-1.2.7.3.4.9.4.2.2.16"><span class="term"><em class="parameter">sbom:FORMAT</em></span></dt><dd><p>
-          OBS 2.11 can produce and publish additional SBOM (Software Bill Of Material)
-          meta data by enabling this flag.
-          This is currently supported for container and kiwi images builds and includes
-          only data from installed rpm packages. Supported formats are spdx and cyclonedx.
-        </p></dd><dt id="id-1.2.7.3.4.9.4.2.2.17"><span class="term"><em class="parameter">slsaversion:VERSION</em></span></dt><dd><p>
-	  OBS 2.11 is producing slsa provenance files in version 0 by default at build
-	  time, when enabled.
-          It is possible to switch to v1 by specifing slsaversion:v1 as buildflag.
-        </p></dd><dt id="id-1.2.7.3.4.9.4.2.2.18"><span class="term"><em class="parameter">container-compression-format:FORMAT</em></span></dt><dd><p>
-          Sets a compression format for container layers. Possible values are gzip, zstd,
-          zstd:chunked. Every value other than gzip is only supported by podman and buildah.
-        </p></dd><dt id="id-1.2.7.3.4.9.4.2.2.19"><span class="term"><em class="parameter">container-build-format:FORMAT</em></span></dt><dd><p>
-          For podman container builds, it specifies the container config format. Possible values
-          are 'docker' and 'oci'. The default is 'docker'. The 'docker' format allows a few
-          extensions like ONBUILD, SHELL, DOMAINNAME, COMMENT, HEALTHCHECK amongst others.
-        </p></dd></dl></div></dd><dt id="id-1.2.7.3.4.9.5"><span class="term"><em class="parameter">Conflict: <em class="replaceable">PACKAGE</em></em></span></dt><dd><p>Specify that a package must not be installed in the build environment.</p></dd><dt id="id-1.2.7.3.4.9.6"><span class="term"><em class="parameter">Conflict: <em class="replaceable">PACKAGE_A</em>:<em class="replaceable">PACKAGE_B</em></em></span></dt><dd><p>Specify a synthetic conflict between two given packages.</p></dd><dt id="id-1.2.7.3.4.9.7"><span class="term"><em class="parameter">Constraint: <em class="replaceable">SELECTOR</em> <em class="replaceable">STRING</em></em> (OBS 2.4 or later)</span></dt><dd><p>
+               will turn to excluded state and get removed if available.</p></dd><dt id="vl-prjconfig-buildflags-useccache"><span class="term"><em class="parameter">useccache:PACKAGE</em></span></dt><dd><p>Configure usage of ccache when building the specified package.</p></dd><dt id="vl-prjconfig-buildflags-ccachetype"><span class="term"><em class="parameter">ccachetype:TYPE</em></span></dt><dd><p>Defines the ccache implementation, possible values are: ccache, sccache</p></dd><dt id="vl-prjconfig-buildflags-obsgendiff"><span class="term"><em class="parameter">obsgendiff</em></span></dt><dd><p>OBS can run an external program that has access to the current build
+               and the previously successful result, e.g. to generate a difference or
+               a changelog from the diff.</p><p>OBS will run all scripts in <code class="filename">/usr/lib/build/obsgendiff.d/</code>
+               on the build host (not in the <span><em class="emphasis">%buildroot</em></span>) when this flag
+               is set. If one of the scripts fails to run or no scripts are found, then the
+               overall build fails. I.e. if <code class="literal">BuildFlags: obsgendiff</code>
+               is set, then you <span><em class="emphasis">must</em></span> provide at least one script
+               in <code class="filename">/usr/lib/build/obsgendiff.d/</code>, otherwise your
+               build will fail.</p><p>A common use case for <code class="literal">obsgendiff</code> is to run <a class="link" href="https://github.com/openSUSE/release-compare" target="_blank">release-compare</a>
+               after the build.</p></dd><dt id="vl-prjconfig-buildflags-setvcs"><span class="term"><em class="parameter">setvcs</em></span></dt><dd><p>Add the SCM URL to binary results when the package sources are managed
+               via the scmsync mechanic. The url is written into the VCS tag of rpms
+               when enabling this functionality.</p></dd><dt id="vl-prjconfig-buildflags-nodisturl"><span class="term"><em class="parameter">nodisturl</em></span></dt><dd><p>Skip the embedding of DISTURL tag into binaries. Please note that this might
+               also break other features like binary tracking. So never do this for maintained
+               binaries.</p></dd><dt id="vl-prjconfig-buildflags-productcompose-buildoption"><span class="term"><em class="parameter">productcompose-buildoption:OPTION</em></span></dt><dd><p>This option can be used to pass additional build options to productcomposer
+               builds. This is typically used to enable debug or testing options and avoids
+               the need to modify the recipe source of the product. For example, this can be
+               useful in test and/or staging projects where you want to enable certain options
+               for testing purposes.</p></dd><dt id="vl-prjconfig-buildflags-productcompose-onlydirectrepos"><span class="term"><em class="parameter">productcompose-onlydirectrepos</em></span></dt><dd><p>This option can be used to limit used binaries of product builds to repositories
+               which are directly referenced as path in the building repository.
+               This is typical used to reduce the size or a project for test builds or to be
+               able to build add-on products ensuring that binaries only from certain repositories
+               appear in the product.</p></dd><dt id="vl-prjconfig-buildflags-sbom"><span class="term"><em class="parameter">sbom:FORMAT</em></span></dt><dd><p>OBS 2.11 can produce and publish additional SBOM (Software Bill Of Material)
+               meta data by enabling this flag.</p><p>This is currently supported for container and kiwi images builds and includes
+               only data from installed rpm packages. Supported formats are spdx and cyclonedx.</p></dd><dt id="vl-prjconfig-buildflags-slsaversion"><span class="term"><em class="parameter">slsaversion:VERSION</em></span></dt><dd><p>OBS 2.11 is producing slsa provenance files in version 0 by default at build
+               time, when enabled. It is possible to switch to v1 by specifing slsaversion:v1
+               as buildflag.</p></dd><dt id="vl-prjconfig-buildflags-container-compression-format"><span class="term"><em class="parameter">container-compression-format:FORMAT</em></span></dt><dd><p>Sets a compression format for container layers. Possible values are gzip,
+               zstd, zstd:chunked. Every value other than gzip is only supported by podman
+               and buildah.</p></dd><dt id="vl-prjconfig-buildflags-container-build-format"><span class="term"><em class="parameter">container-build-format:FORMAT</em></span></dt><dd><p>For podman container builds, it specifies the container config format.
+               Possible values are 'docker' and 'oci'. The default is 'docker'. The 'docker'
+               format allows a few extensions like ONBUILD, SHELL, DOMAINNAME, COMMENT,
+               HEALTHCHECK amongst others.</p></dd></dl></div></dd><dt id="vl-prjconfig-conflict"><span class="term"><em class="parameter">Conflict: <em class="replaceable">PACKAGE</em></em></span></dt><dd><p>Specify that a package must not be installed in the build environment.</p></dd><dt id="id-1.2.7.3.4.9.6"><span class="term"><em class="parameter">Conflict: <em class="replaceable">PACKAGE_A</em>:<em class="replaceable">PACKAGE_B</em></em></span></dt><dd><p>Specify a synthetic conflict between two given packages.</p></dd><dt id="vl-prjconfig-constraint"><span class="term"><em class="parameter">Constraint: <em class="replaceable">SELECTOR</em> <em class="replaceable">STRING</em></em> (OBS 2.4 or later)</span></dt><dd><p>
       Define build constraints for build jobs. The selector is a
       colon-separated list which gets a string assigned. See the build job
       constraints page for details.
-     </p></dd><dt id="id-1.2.7.3.4.9.8"><span class="term"><em class="parameter">DistMacro: <em class="replaceable">NAME</em> <em class="replaceable">VALUE</em></em></span></dt><dd><p>
+     </p></dd><dt id="vl-prjconfig-dist-macro"><span class="term"><em class="parameter">DistMacro: <em class="replaceable">NAME</em> <em class="replaceable">VALUE</em></em></span></dt><dd><p>
       Define a macro to be used when parsing the spec files of packages.
       This is similar to using a `Macros:` section with the difference
       that the macro will not be written to the .rpmmacros file. It should
@@ -228,30 +194,30 @@ Support: pax debbuild</pre></div></dd><dt id="id-1.2.7.3.4.9.4"><span class="ter
       Note that the lines of the project config are macro expanded while
       parsing, so you have to use `%%` for a literal percent sign in
       the value.
-     </p></dd><dt id="id-1.2.7.3.4.9.9"><span class="term"><em class="parameter">ExpandFlags: <em class="replaceable">FLAG</em></em></span></dt><dd><p>
+     </p></dd><dt id="vl-prjconfig-expandflags"><span class="term"><em class="parameter">ExpandFlags: <em class="replaceable">FLAG</em></em></span></dt><dd><p>
       Flags which modify the behaviour during dependency resolution.
-     </p><div class="variablelist"><dl class="variablelist"><dt id="id-1.2.7.3.4.9.9.2.2.1"><span class="term"><em class="parameter">unorderedimagerepos</em> (OBS 2.10 or later)</span></dt><dd><p>The priority of repositories defined in an image build is usually important. This is to avoid switching repositories
-           when the same package is available in multiple repositories. However, it might be wanted to ignore that and just
-           pick the highest version. This can be achieved by defining this flag</p></dd><dt id="id-1.2.7.3.4.9.9.2.2.2"><span class="term"><em class="parameter">preinstallexpand</em></span></dt><dd><p>Preinstall also all dependencies of a preinstalled package.
-                 This may increase the amount of preinstalled packages a lot.</p></dd><dt id="id-1.2.7.3.4.9.9.2.2.3"><span class="term"><em class="parameter">module:NAME-STREAM</em> (OBS 2.10.7 or later)</span></dt><dd><p>Enable Red Hat-specific module support in repo md repositories. By default,
+     </p><div class="variablelist"><dl class="variablelist"><dt id="vl-prjconfig-expandflags-unorderedimagerepos"><span class="term"><em class="parameter">unorderedimagerepos</em> (OBS 2.10 or later)</span></dt><dd><p>The priority of repositories defined in an image build is usually
+                 important. This is to avoid switching repositories when the same
+                 package is available in multiple repositories. However, it might be
+                 wanted to ignore that and just pick the highest version. This can
+                 be achieved by defining this flag.</p></dd><dt id="vl-prjconfig-expandflags-preinstallexpand"><span class="term"><em class="parameter">preinstallexpand</em></span></dt><dd><p>Preinstall also all dependencies of a preinstalled package.
+                 This may increase the amount of preinstalled packages a lot.</p></dd><dt id="vl-prjconfig-expandflags-module"><span class="term"><em class="parameter">module:NAME-STREAM</em> (OBS 2.10.7 or later)</span></dt><dd><p>Enable Red Hat-specific module support in repo md repositories. By default,
               no module is used, so every module needed needs to be
               specified in the configuration. To remove a module,
-              add an exclamation mark (<code class="literal">!</code>) as prefix.</p></dd><dt id="id-1.2.7.3.4.9.9.2.2.4"><span class="term"><em class="parameter">dorecommends</em></span></dt><dd><p>Try to install all recommended packages. Packages with dependency conflicts
-                are ignored.</p></dd><dt id="id-1.2.7.3.4.9.9.2.2.5"><span class="term"><em class="parameter">dosupplements</em></span></dt><dd><p>Try to install all supplemented packages. Packages with dependency conflicts
+              add an exclamation mark (<code class="literal">!</code>) as prefix.</p></dd><dt id="vl-prjconfig-expandflags-dorecommends"><span class="term"><em class="parameter">dorecommends</em></span></dt><dd><p>Try to install all recommended packages. Packages with dependency conflicts
+                are ignored.</p></dd><dt id="vl-prjconfig-expandflags-dosupplements"><span class="term"><em class="parameter">dosupplements</em></span></dt><dd><p>Try to install all supplemented packages. Packages with dependency conflicts
                 are ignored. This has the downside that new packages can cause different
                 dependency expansion, so this should only be enabled for special use
-                cases.  </p></dd><dt id="id-1.2.7.3.4.9.9.2.2.6"><span class="term"><em class="parameter">ignoreconflicts</em></span></dt><dd><p>Ignore defined conflicts of packages. By default these are reported as unresolvable.
+                cases.  </p></dd><dt id="vl-prjconfig-expandflags-ignoreconflicts"><span class="term"><em class="parameter">ignoreconflicts</em></span></dt><dd><p>Ignore defined conflicts of packages. By default these are reported as unresolvable.
                 This switch may be useful when packages get not installed in the build environment,
                 but getting processed afterwards. That tool, e.g. some image building tool, must be
-                able to handle the situation (e.g. by just using a subset of the packages).
-                </p></dd><dt id="id-1.2.7.3.4.9.9.2.2.7"><span class="term"><em class="parameter">kiwi-nobasepackages</em></span></dt><dd><p>Do not put the require/support/preinstall packages in the repositories
-                offered to the kiwi build tool. This should have been the default.
-           </p></dd><dt id="id-1.2.7.3.4.9.9.2.2.8"><span class="term"><em class="parameter">keepfilerequires</em></span></dt><dd><p>Dependencies on files are only fulfilled if matching FileProvides are specified
-                in the build configuration (prjconf). If those are missing, the dependency results in
-                an "unresolvable" state for directly required files or in silent breaking of the
-                dependency for indirectly required files. With this option, all file requires are
-                honoured by default and lead to "unresolvable" if there are no matching FileProvides defined.
-           </p></dd></dl></div></dd><dt id="id-1.2.7.3.4.9.10"><span class="term"><em class="parameter">ExportFilter: <em class="replaceable">REGEX</em> <em class="replaceable">ARCHITECTURES</em></em></span></dt><dd><p>
+                able to handle the situation (e.g. by just using a subset of the packages).</p></dd><dt id="vl-prjconfig-expandflags-kiwi-nobasepackages"><span class="term"><em class="parameter">kiwi-nobasepackages</em></span></dt><dd><p>Do not put the require/support/preinstall packages in the repositories
+                offered to the kiwi build tool. This should have been the default.</p></dd><dt id="vl-prjconfig-expandflags-keepfilerequires"><span class="term"><em class="parameter">keepfilerequires</em></span></dt><dd><p>Dependencies on files are only fulfilled if matching FileProvides are specified
+                in the build configuration (prjconf). If those are missing, the dependency results
+                in an "unresolvable" state for directly required files or in silent breaking of
+                the dependency for indirectly required files. With this option, all file requires
+                are honoured by default and lead to "unresolvable" if there are no matching
+                FileProvides defined.</p></dd></dl></div></dd><dt id="vl-prjconfig-exportsfilter"><span class="term"><em class="parameter">ExportFilter: <em class="replaceable">REGEX</em> <em class="replaceable">ARCHITECTURES</em></em></span></dt><dd><p>
       The export filter can be used to export build results from one
       architecture to others. This is required when one architecture needs
       packages from another architecture for building.
@@ -260,34 +226,34 @@ Support: pax debbuild</pre></div></dd><dt id="id-1.2.7.3.4.9.4"><span class="ter
       scheduler architectures. Using a single dot will export it to the
       architecture which was used to build it. So not using a dot there will
       filter the package.
-     </p></dd><dt id="id-1.2.7.3.4.9.11"><span class="term"><em class="parameter">FileProvides: <em class="replaceable">FILE</em> <em class="replaceable">PACKAGES</em></em></span></dt><dd><p> OBS ignores dependencies to files (instead of package names) by
+     </p></dd><dt id="vl-prjconfig-fileprovides"><span class="term"><em class="parameter">FileProvides: <em class="replaceable">FILE</em> <em class="replaceable">PACKAGES</em></em></span></dt><dd><p> OBS ignores dependencies to files (instead of package names) by
       default. This is mostly done to reduce the amount of memory needed, as
       the package file lists take up a considerable amount of repository meta
       data. As a workaround, FileProvides can be used to tell the systems which
-      packages contain a file. The File needs to have the full path.</p></dd><dt id="id-1.2.7.3.4.9.12"><span class="term"><em class="parameter">HostArch: <em class="replaceable">HOST_ARCH</em></em></span></dt><dd><p>
+      packages contain a file. The File needs to have the full path.</p></dd><dt id="vl-prjconfig-expandflags-hostarch"><span class="term"><em class="parameter">HostArch: <em class="replaceable">HOST_ARCH</em></em></span></dt><dd><p>
       This is used for cross builds. It defines the host architecture used
       for building, while the scheduler architecture remains the target
       architecture.
-     </p></dd><dt id="id-1.2.7.3.4.9.13"><span class="term"><em class="parameter">Ignore: <em class="replaceable">PACKAGE_OR_DEPENDENCY</em></em></span></dt><dd><p>
+     </p></dd><dt id="vl-prjconfig-ignore-dependency"><span class="term"><em class="parameter">Ignore: <em class="replaceable">PACKAGE_OR_DEPENDENCY</em></em></span></dt><dd><p>
       Ignore can be used to break dependencies. This can be useful to
       reduce the number of needed packages or to break cyclic dependencies. If a
       package is specified, all capabilities provided by the package are
       ignored.
-     </p></dd><dt id="id-1.2.7.3.4.9.14"><span class="term"><em class="parameter">Ignore: <em class="replaceable">ORIGIN_PACKAGE</em>:<em class="replaceable">PACKAGE_OR_DEPENDENCY</em></em></span></dt><dd><p>
+     </p></dd><dt id="vl-prjconfig-ignore-dependency-from-package"><span class="term"><em class="parameter">Ignore: <em class="replaceable">ORIGIN_PACKAGE</em>:<em class="replaceable">PACKAGE_OR_DEPENDENCY</em></em></span></dt><dd><p>
        Ignore a dependency coming from ORIGIN_PACKAGE. See the previous section
        for more details.
-     </p></dd><dt id="id-1.2.7.3.4.9.15"><span class="term"><em class="parameter">Keep: <em class="replaceable">PACKAGES</em></em></span></dt><dd><p>
+     </p></dd><dt id="vl-prjconfig-keep"><span class="term"><em class="parameter">Keep: <em class="replaceable">PACKAGES</em></em></span></dt><dd><p>
       To eliminate build cycles the to-be-built package are not installed
       by default, even when it is required. Keep can be used to overwrite this
       behavior. It is usually needed for packages like <code class="systemitem">make</code>
       that are used to build itself. Preinstalled packages are automatically kept, as the
       package installation program needs to work all the time.
-     </p></dd><dt id="id-1.2.7.3.4.9.16"><span class="term"><em class="parameter">OptFlags: <em class="replaceable">TARGET_ARCH</em> <em class="replaceable">FLAGS</em></em> (RPM only)</span></dt><dd><p>
+     </p></dd><dt id="vl-prjconfig-optflags"><span class="term"><em class="parameter">OptFlags: <em class="replaceable">TARGET_ARCH</em> <em class="replaceable">FLAGS</em></em> (RPM only)</span></dt><dd><p>
        Optflags exports compiler flags to the build by adding lines to rpm's
        <code class="command">rpmrc</code> file. They will only have an effect when the spec file is using
        <code class="command">$RPM_OPT_FLAGS</code> or <code class="command">%{optflags}</code>. The target architecture may be set
        to <code class="command">*</code> to affect all architectures.
-     </p></dd><dt id="id-1.2.7.3.4.9.17"><span class="term"><em class="parameter">Order: <em class="replaceable">PACKAG_A</em>:<em class="replaceable">PACKAGE_B</em></em></span></dt><dd><p>
+     </p></dd><dt id="vl-prjconfig-order"><span class="term"><em class="parameter">Order: <em class="replaceable">PACKAG_A</em>:<em class="replaceable">PACKAGE_B</em></em></span></dt><dd><p>
       The build script takes care about the installation order if they
       are defined via dependencies inside of the packages. However, there
       might be dependency loops (reported during setup of the build system) or
@@ -295,10 +261,10 @@ Support: pax debbuild</pre></div></dd><dt id="id-1.2.7.3.4.9.4"><span class="ter
       be used then to give a hint where to break the loop.
      </p><p>The package in <em class="replaceable">PACKAGE_A</em> will get
       installed before the package in <em class="replaceable">PACKAGE_B</em>.
-     </p></dd><dt id="id-1.2.7.3.4.9.18"><span class="term"><em class="parameter">Patterntype: <em class="replaceable">TYPE</em></em></span></dt><dd><p>
+     </p></dd><dt id="vl-prjconfig-patterntype"><span class="term"><em class="parameter">Patterntype: <em class="replaceable">TYPE</em></em></span></dt><dd><p>
        Defines the pattern format. Valid values are: none (default), ymp, comps.
        Multiple types can be specified.
-     </p></dd><dt id="id-1.2.7.3.4.9.19"><span class="term"><em class="parameter">Prefer: <em class="replaceable">PACKAGES</em></em></span></dt><dd><p>
+     </p></dd><dt id="vl-prjconfig-prefer"><span class="term"><em class="parameter">Prefer: <em class="replaceable">PACKAGES</em></em></span></dt><dd><p>
       In case multiple packages satisfy a dependency, the OBS system will
       complain about that situation. This is unlike like most package managing
       tools, which just pick one of the package. Because one of OBS' goal is to
@@ -306,29 +272,36 @@ Support: pax debbuild</pre></div></dd><dt id="id-1.2.7.3.4.9.4"><span class="ter
       choosing a random package. The Prefer: tag lists packages to be preferred
       in case a choice exists. When the package name is prefixed with a dash,
       this is treated as a de-prefer.
-     </p></dd><dt id="id-1.2.7.3.4.9.20"><span class="term"><em class="parameter">Prefer: <em class="replaceable">ORIGIN_PACKAGE</em>:<em class="replaceable">PACKAGE</em></em></span></dt><dd><p>
+     </p></dd><dt id="vl-prjconfig-prefer-from-package"><span class="term"><em class="parameter">Prefer: <em class="replaceable">ORIGIN_PACKAGE</em>:<em class="replaceable">PACKAGE</em></em></span></dt><dd><p>
       It is possible to define the prefer only when the dependency comes
       from the specified originating package.
-     </p></dd><dt id="id-1.2.7.3.4.9.21"><span class="term"><em class="parameter">Preinstall: <em class="replaceable">PACKAGE</em></em></span></dt><dd><p>
+     </p></dd><dt id="vl-prjconfig-preinstall"><span class="term"><em class="parameter">Preinstall: <em class="replaceable">PACKAGE</em></em></span></dt><dd><p>
        This is used to specify packages needed to run the package installation
        program. These packages are unpacked so that the native installation
        program can be used to install the build environment.
        Included scripts are <span><em class="emphasis">not</em></span> executed during this phase. However, these
        packages will be re-installed later on including script execution.
-     </p></dd><dt id="id-1.2.7.3.4.9.22"><span class="term"><em class="parameter">PublishFilter: <em class="replaceable">REGEXP</em> [<em class="replaceable">REGEXP</em>]</em></span></dt><dd><p>
+     </p></dd><dt id="vl-prjconfig-publishfilter"><span class="term"><em class="parameter">PublishFilter: <em class="replaceable">REGEXP</em> [<em class="replaceable">REGEXP</em>]</em></span></dt><dd><p>
       Limits the published binary packages in public repositories. Packages
       that match any <em class="replaceable">REGEXP</em> will not be put into
       the exported repository. There can be only one line of
       PublishFilter for historic reasons. However, multiple
       <em class="replaceable">REGEXP</em> can be defined.
-     </p></dd><dt id="id-1.2.7.3.4.9.23"><span class="term"><em class="parameter">PublishFlags: <em class="replaceable">FLAG</em></em></span></dt><dd><p>
+     </p></dd><dt id="vl-prjconfig-publishflags"><span class="term"><em class="parameter">PublishFlags: <em class="replaceable">FLAG</em></em></span></dt><dd><p>
       Flags which modify the behaviour during repository generation.
-     </p><div class="variablelist"><dl class="variablelist"><dt id="id-1.2.7.3.4.9.23.2.2.1"><span class="term"><em class="parameter">artifacthub:TAG</em> (OBS 2.11 or later)</span></dt><dd><p>Publish a specific verified publisher identifier (aka repository id) for artifactub.io.
+     </p><div class="variablelist"><dl class="variablelist"><dt id="vl-prjconfig-publishflags-archsync"><span class="term"><em class="parameter">archsync</em> (OBS 2.11 or later)</span></dt><dd><p>Publish all architectures at the same time. This means that the publisher is waiting
+              until the last architecture has finished building.</p></dd><dt id="vl-prjconfig-publishflags-artifacthub"><span class="term"><em class="parameter">artifacthub:TAG</em> (OBS 2.11 or later)</span></dt><dd><p>Publish a specific verified publisher identifier (aka repository id) for artifactub.io.
               This can be used to proof to be the publisher (aka maintainer) for containers from these
-              OBS repositories.</p></dd><dt id="id-1.2.7.3.4.9.23.2.2.2"><span class="term"><em class="parameter">createempty</em> (OBS 2.11 or later)</span></dt><dd><p>Create a repository even with no content, but with meta data.</p></dd><dt id="id-1.2.7.3.4.9.23.2.2.3"><span class="term"><em class="parameter">noearlypublish</em> (OBS 2.11 or later)</span></dt><dd><p>Only publish build results after entire repository has finished building. This is the default for
+              OBS repositories.</p></dd><dt id="vl-prjconfig-publishflags-createempty"><span class="term"><em class="parameter">createempty</em> (OBS 2.11 or later)</span></dt><dd><p>Create a repository even with no content, but with meta data.</p></dd><dt id="vl-prjconfig-publishflags-keepobsolete"><span class="term"><em class="parameter">keepobsolete</em> (OBS 2.11 or later)</span></dt><dd><p>
+             The default behaviour of OBS is to remove binaries when a package object gets removed,
+             even when the project is publish disabled (but the package may have been enabled).
+           </p><p>
+             This flag is changing this behaviour to keep binaries in published repositories
+             even when a package gets removed. As consequence this flag has only an effect on
+             publish disabled projects.
+           </p></dd><dt id="vl-prjconfig-publishflags-noearlypublish"><span class="term"><em class="parameter">noearlypublish</em> (OBS 2.11 or later)</span></dt><dd><p>Only publish build results after entire repository has finished building. This is the default for
                 classic package (rpm/deb) build types, but not for certain image builds (like kiwi or products).
-                Without this, build results get published immediately after the build is finished.</p></dd><dt id="id-1.2.7.3.4.9.23.2.2.4"><span class="term"><em class="parameter">archsync</em> (OBS 2.11 or later)</span></dt><dd><p>Publish all architectures at the same time. This means that the publisher is waiting
-              until the last architecture has finished building.</p></dd><dt id="id-1.2.7.3.4.9.23.2.2.5"><span class="term"><em class="parameter">nofailedpackages</em> (OBS 2.11 or later)</span></dt><dd><p>
+                Without this, build results get published immediately after the build is finished.</p></dd><dt id="vl-prjconfig-publishflags-nofailedpackages"><span class="term"><em class="parameter">nofailedpackages</em> (OBS 2.11 or later)</span></dt><dd><p>
             Block publishing if any build result was failed, broken, or unresolvable.
             That means, packages can be published for an architecture on which it builds,
             even if a package fails to build on another architecture.
@@ -336,66 +309,63 @@ Support: pax debbuild</pre></div></dd><dt id="id-1.2.7.3.4.9.4"><span class="ter
             This is by default evaluated individually for each architecture. It can be
             combined with the archsync flag when publishing should be blocked also when a failure
             exists on any architecture.
-           </p></dd><dt id="id-1.2.7.3.4.9.23.2.2.6"><span class="term"><em class="parameter">keepobsolete</em> (OBS 2.11 or later)</span></dt><dd><p>
-             The default behaviour of OBS is to remove binaries when a package object gets removed,
-             even when the project is publish disabled (but the package may have been enabled).
-           </p><p>
-             This flag is changing this behaviour to keep binaries in published repositories
-             even when a package gets removed. As consequence this flag has only an effect on
-             publish disabled projects.
-           </p></dd><dt id="id-1.2.7.3.4.9.23.2.2.7"><span class="term"><em class="parameter">singleexport</em> (OBS 2.11 or later)</span></dt><dd><p>
+           </p></dd><dt id="vl-prjconfig-publishflags-singleexport"><span class="term"><em class="parameter">singleexport</em> (OBS 2.11 or later)</span></dt><dd><p>
              If multiple packages contain different versions of a rpm package, only
              publish the one from the first package. If the project is of the type
              maintenance_release, this will be the package with the highest
              incident number.
-           </p></dd><dt id="id-1.2.7.3.4.9.23.2.2.8"><span class="term"><em class="parameter">withsbom</em> (OBS 2.11 or later)</span></dt><dd><p>Enables publishing of SBOM files (SPDX or CycloneDX format) (<code class="literal">.cdx.json</code> or <code class="literal">.spdx.json</code> files). Please note that the building of SBOM files usually needs to get enabled via a BuildFlags switch as well.</p></dd><dt id="id-1.2.7.3.4.9.23.2.2.9"><span class="term"><em class="parameter">withreports</em> (OBS 2.11 or later)</span></dt><dd><p>Also publish internal content tracking files (<code class="literal">.report</code> files).</p></dd><dt id="id-1.2.7.3.4.9.23.2.2.10"><span class="term"><em class="parameter">ympdist:NAME</em> (OBS 2.11 or later)</span></dt><dd><p>Defines the distversion to be used in group element of ymp files.
-              This is used by the installer to check if the repository is suitable for the installed distribution.</p></dd></dl></div></dd><dt id="id-1.2.7.3.4.9.24"><span class="term"><em class="parameter">RegistryURL: <em class="replaceable">URL</em></em></span></dt><dd><p>
+           </p></dd><dt id="vl-prjconfig-publishflags-withreports"><span class="term"><em class="parameter">withreports</em> (OBS 2.11 or later)</span></dt><dd><p>Also publish internal content tracking files (<code class="literal">.report</code> files).</p></dd><dt id="vl-prjconfig-publishflags-withsbom"><span class="term"><em class="parameter">withsbom</em> (OBS 2.11 or later)</span></dt><dd><p>Enables publishing of SBOM files (SPDX or CycloneDX format)x
+                (<code class="literal">.cdx.json</code> or <code class="literal">.spdx.json</code> files).
+                Please note that the building of SBOM files usually needs to get
+                enabled via a BuildFlags switch as well.</p></dd><dt id="vl-prjconfig-publishflags-ympdist"><span class="term"><em class="parameter">ympdist:NAME</em> (OBS 2.11 or later)</span></dt><dd><p>Defines the distversion to be used in group element of ymp files.
+              This is used by the installer to check if the repository is suitable
+              for the installed distribution.</p></dd></dl></div></dd><dt id="vl-prjconfig-registryurl"><span class="term"><em class="parameter">RegistryURL: <em class="replaceable">URL</em></em></span></dt><dd><p>
        Define a url for the downloading of containers.
-     </p></dd><dt id="id-1.2.7.3.4.9.25"><span class="term"><em class="parameter">Release: <em class="replaceable">CI_CNT</em> <em class="replaceable">B_CNT</em></em> (RPM only)</span></dt><dd><p>
+     </p></dd><dt id="vl-prjconfig-release"><span class="term"><em class="parameter">Release: <em class="replaceable">CI_CNT</em> <em class="replaceable">B_CNT</em></em> (RPM only)</span></dt><dd><p>
        <code class="command">CI_CNT</code> is the number of commits.
        <code class="command">B_CNT</code> is the number of rebuilds.
        The default is <code class="command">CI_CNT.B_CNT</code>.
-     </p></dd><dt id="id-1.2.7.3.4.9.26"><span class="term"><em class="parameter">Repotype:  <em class="replaceable">TYPE[:OPTIONS]</em></em></span></dt><dd><p> Defines the repository format for published repositories. Read on
+     </p></dd><dt id="vl-prjconfig-repotype"><span class="term"><em class="parameter">Repotype:  <em class="replaceable">TYPE[:OPTIONS]</em></em></span></dt><dd><p> Defines the repository format for published repositories. Read on
       for permissible values (repository types). The syntax of the OPTIONS
       parameter depends on the repository type, and is also described below.
      </p><p>
       This is the list of repository types. Multiple values can be combined
       in the same line, separated by spaces.
-     </p><div class="variablelist"><dl class="variablelist"><dt id="id-1.2.7.3.4.9.26.2.3.1"><span class="term"><em class="parameter">rpm-md</em></span></dt><dd><p>rpm-md repository data is generated as invented by YUM originaly.</p></dd><dt id="id-1.2.7.3.4.9.26.2.3.2"><span class="term"><em class="parameter">suse</em></span></dt><dd><p>suse tag repository data is generated as used until SUSE Linux 10 generation.</p></dd><dt id="id-1.2.7.3.4.9.26.2.3.3"><span class="term"><em class="parameter">hdlist2</em></span></dt><dd><p>Mandriva repository format</p></dd><dt id="id-1.2.7.3.4.9.26.2.3.4"><span class="term"><em class="parameter">debian</em></span></dt><dd><p>Debian repository format</p></dd><dt id="id-1.2.7.3.4.9.26.2.3.5"><span class="term"><em class="parameter">arch</em></span></dt><dd><p>Arch Linux repository format</p></dd><dt id="id-1.2.7.3.4.9.26.2.3.6"><span class="term"><em class="parameter">vagrant</em></span></dt><dd><p>Vagrant image repository format</p></dd><dt id="id-1.2.7.3.4.9.26.2.3.7"><span class="term"><em class="parameter">staticlinks</em></span></dt><dd><p>Additional links to build results excluding version and build numbers are created.</p></dd><dt id="id-1.2.7.3.4.9.26.2.3.8"><span class="term"><em class="parameter">zyppservice</em></span></dt><dd><p>Generate zypp service files, publishing all used repository pathes to the zypp client.</p></dd><dt id="id-1.2.7.3.4.9.26.2.3.9"><span class="term"><em class="parameter">helm</em></span></dt><dd><p>Helm repository metadata</p></dd><dt id="id-1.2.7.3.4.9.26.2.3.10"><span class="term"><em class="parameter">checksumsfile</em></span></dt><dd><p>Checksums file with signatures of repository content</p></dd><dt id="id-1.2.7.3.4.9.26.2.3.11"><span class="term"><em class="parameter">ymp</em></span></dt><dd><p>YaST single install ymp file generation. Zypp services should be used instead.</p></dd><dt id="id-1.2.7.3.4.9.26.2.3.12"><span class="term"><em class="parameter">comps</em></span></dt><dd><p>Generate comps files, Fedora style patterns</p></dd></dl></div><p>
-      This is the list of repository options to modify the way the repository type is generated:</p><div class="variablelist"><dl class="variablelist"><dt id="id-1.2.7.3.4.9.26.2.5.1"><span class="term"><em class="parameter">sha256</em></span></dt><dd><p>rpm-md repository data is generated using SHA-256 checksums. This is the default.</p></dd><dt id="id-1.2.7.3.4.9.26.2.5.2"><span class="term"><em class="parameter">sha512</em></span></dt><dd><p>rpm-md repository data is generated using SHA-512 checksums.</p></dd><dt id="id-1.2.7.3.4.9.26.2.5.3"><span class="term"><em class="parameter">legacy</em></span></dt><dd><p>rpm-md repository data is generated using SHA-1 checksums. Considered to be unsafe and not anymore recommended.</p></dd><dt id="id-1.2.7.3.4.9.26.2.5.4"><span class="term"><em class="parameter">zchunk</em></span></dt><dd><p>rpm-md repository data gets extended with additional zchunk compressed files.</p></dd><dt id="id-1.2.7.3.4.9.26.2.5.5"><span class="term"><em class="parameter">filelists-ext</em></span></dt><dd><p>rpm-md repository provides additional filelist-ext provides</p></dd><dt id="id-1.2.7.3.4.9.26.2.5.6"><span class="term"><em class="parameter">compression-zstd</em></span></dt><dd><p>rpm-md repository data is compressed using zstd instead of gz</p></dd><dt id="id-1.2.7.3.4.9.26.2.5.7"><span class="term"><em class="parameter">deltainfo</em></span></dt><dd><p>rpm-md repository provides additional rpm delta informations for incremental rpm updates.</p></dd><dt id="id-1.2.7.3.4.9.26.2.5.8"><span class="term"><em class="parameter">splitdebug:SUFFIX</em></span></dt><dd><p>A second repository is generated where all debuginfo and debugsource packages get moved to. The specified SUFFIX is added to the repository name. For example:</p><div class="verbatim-wrap"><pre class="screen">Repotype: rpm-md splitdebug:-debuginfo</pre></div></dd><dt id="id-1.2.7.3.4.9.26.2.5.9"><span class="term"><em class="parameter">rsyncable</em></span></dt><dd><p>rpm-md repository gets recompressed using rsyncable format.</p></dd><dt id="id-1.2.7.3.4.9.26.2.5.10"><span class="term"><em class="parameter">rawsig</em></span></dt><dd><p>checksumsfile repository provides binary signatures instead of ascii signatures</p></dd></dl></div></dd><dt id="id-1.2.7.3.4.9.27"><span class="term"><em class="parameter">RepoURL: <em class="replaceable">[TYPE@]URL</em></em></span></dt><dd><p>
+     </p><div class="variablelist"><dl class="variablelist"><dt id="vl-prjconfig-repotype-rpm-md"><span class="term"><em class="parameter">rpm-md</em></span></dt><dd><p>rpm-md repository data is generated as invented by YUM originaly.</p></dd><dt id="vl-prjconfig-repotype-suse"><span class="term"><em class="parameter">suse</em></span></dt><dd><p>suse tag repository data is generated as used until SUSE Linux 10 generation.</p></dd><dt id="vl-prjconfig-repotype-hdlist2"><span class="term"><em class="parameter">hdlist2</em></span></dt><dd><p>Mandriva repository format</p></dd><dt id="vl-prjconfig-repotype-debian"><span class="term"><em class="parameter">debian</em></span></dt><dd><p>Debian repository format</p></dd><dt id="vl-prjconfig-repotype-arch"><span class="term"><em class="parameter">arch</em></span></dt><dd><p>Arch Linux repository format</p></dd><dt id="vl-prjconfig-repotype-vagrant"><span class="term"><em class="parameter">vagrant</em></span></dt><dd><p>Vagrant image repository format</p></dd><dt id="vl-prjconfig-repotype-staticlinks"><span class="term"><em class="parameter">staticlinks</em></span></dt><dd><p>Additional links to build results excluding version and build numbers are created.</p></dd><dt id="vl-prjconfig-repotype-zyppservice"><span class="term"><em class="parameter">zyppservice</em></span></dt><dd><p>Generate zypp service files, publishing all used repository pathes to the zypp client.</p></dd><dt id="vl-prjconfig-repotype-helm"><span class="term"><em class="parameter">helm</em></span></dt><dd><p>Helm repository metadata</p></dd><dt id="vl-prjconfig-repotype-checksumsfile"><span class="term"><em class="parameter">checksumsfile</em></span></dt><dd><p>Checksums file with signatures of repository content</p></dd><dt id="vl-prjconfig-repotype-ymp"><span class="term"><em class="parameter">ymp</em></span></dt><dd><p>YaST single install ymp file generation. Zypp services should be used instead.</p></dd><dt id="vl-prjconfig-repotype-comps"><span class="term"><em class="parameter">comps</em></span></dt><dd><p>Generate comps files, Fedora style patterns</p></dd></dl></div><p>
+      This is the list of repository options to modify the way the repository type is generated:</p><div class="variablelist"><dl class="variablelist"><dt id="vl-prjconfig-repotype-sha256"><span class="term"><em class="parameter">sha256</em></span></dt><dd><p>rpm-md repository data is generated using SHA-256 checksums. This is the default.</p></dd><dt id="vl-prjconfig-repotype-sha512"><span class="term"><em class="parameter">sha512</em></span></dt><dd><p>rpm-md repository data is generated using SHA-512 checksums.</p></dd><dt id="vl-prjconfig-repotype-legacy"><span class="term"><em class="parameter">legacy</em></span></dt><dd><p>rpm-md repository data is generated using SHA-1 checksums. Considered to be unsafe and not anymore recommended.</p></dd><dt id="vl-prjconfig-repotype-zchunk"><span class="term"><em class="parameter">zchunk</em></span></dt><dd><p>rpm-md repository data gets extended with additional zchunk compressed files.</p></dd><dt id="vl-prjconfig-repotype-filelists-ext"><span class="term"><em class="parameter">filelists-ext</em></span></dt><dd><p>rpm-md repository provides additional filelist-ext provides</p></dd><dt id="vl-prjconfig-repotype-compression-zstd"><span class="term"><em class="parameter">compression-zstd</em></span></dt><dd><p>rpm-md repository data is compressed using zstd instead of gz</p></dd><dt id="vl-prjconfig-repotype-deltainfo"><span class="term"><em class="parameter">deltainfo</em></span></dt><dd><p>rpm-md repository provides additional rpm delta informations for incremental rpm updates.</p></dd><dt id="vl-prjconfig-repotype-splitdebug"><span class="term"><em class="parameter">splitdebug:SUFFIX</em></span></dt><dd><p>A second repository is generated where all debuginfo and debugsource packages get moved to. The specified SUFFIX is added to the repository name. For example:</p><div class="verbatim-wrap"><pre class="screen">Repotype: rpm-md splitdebug:-debuginfo</pre></div></dd><dt id="vl-prjconfig-repotype-rsyncable"><span class="term"><em class="parameter">rsyncable</em></span></dt><dd><p>rpm-md repository gets recompressed using rsyncable format.</p></dd><dt id="vl-prjconfig-repotype-rawsig"><span class="term"><em class="parameter">rawsig</em></span></dt><dd><p>checksumsfile repository provides binary signatures instead of ascii signatures</p></dd></dl></div></dd><dt id="vl-prjconfig-repourl"><span class="term"><em class="parameter">RepoURL: <em class="replaceable">[TYPE@]URL</em></em></span></dt><dd><p>
        Define a url for the downloading of repository packages. Supported types
        are currently `arch`, `debian`, `hdlist2`, `rpmmd`, `suse`. If the
        type is not specified, it is guessed from the build type.
-     </p></dd><dt id="id-1.2.7.3.4.9.28"><span class="term"><em class="parameter">Required: <em class="replaceable">PACKAGE</em></em></span></dt><dd><p>
+     </p></dd><dt id="vl-prjconfig-required"><span class="term"><em class="parameter">Required: <em class="replaceable">PACKAGE</em></em></span></dt><dd><p>
       Specify a package that always is installed for package builds.
       A change in one of these packages triggers a new build.
-     </p></dd><dt id="id-1.2.7.3.4.9.29"><span class="term"><em class="parameter">Runscripts: <em class="replaceable">PACKAGES</em></em></span></dt><dd><p>
+     </p></dd><dt id="vl-prjconfig-runscripts"><span class="term"><em class="parameter">Runscripts: <em class="replaceable">PACKAGES</em></em></span></dt><dd><p>
       Defines the scripts of preinstalled packages which needs to be executed
       directly after the preinstall phase, but before installing the
       remaining packages.
-     </p></dd><dt id="id-1.2.7.3.4.9.30"><span class="term"><em class="parameter">Substitute: <em class="replaceable">OLD_DEPENDENCY</em> <em class="replaceable">NEW_DEPENDENCY</em></em></span></dt><dd><p>
+     </p></dd><dt id="vl-prjconfig-substitute"><span class="term"><em class="parameter">Substitute: <em class="replaceable">OLD_DEPENDENCY</em> <em class="replaceable">NEW_DEPENDENCY</em></em></span></dt><dd><p>
        It is possible to replace BuildRequires dependencies with other
        dependencies. This will have only an effect on directly BuildRequired
        packages, not on indirectly required packages.
-     </p></dd><dt id="id-1.2.7.3.4.9.31"><span class="term"><em class="parameter">Support: <em class="replaceable">PACKAGE</em></em></span></dt><dd><p>
+     </p></dd><dt id="vl-prjconfig-support"><span class="term"><em class="parameter">Support: <em class="replaceable">PACKAGE</em></em></span></dt><dd><p>
        Specify a package that always is installed for package builds.
        Unlike Required:, a change in one of these packages does not trigger an
        automatic rebuild.
      </p><p>
       This is useful for packages that most likely do not influence the build
       result, for example <span class="package">make</span> or <span class="package">coreutils</span>.
-     </p></dd><dt id="id-1.2.7.3.4.9.32"><span class="term"><em class="parameter">Target: <em class="replaceable">TARGET_ARCH</em></em></span></dt><dd><p>Defines the target architecture. This can be used to build for i686
+     </p></dd><dt id="vl-prjconfig-target-arch"><span class="term"><em class="parameter">Target: <em class="replaceable">TARGET_ARCH</em></em></span></dt><dd><p>Defines the target architecture. This can be used to build for i686
       on i586 schedulers for example. Please note that on rpm based systems just the architecture needs
-      to be specified, but on debian systems the gnu triplet, for example arm-linux-gnueabihf.</p></dd><dt id="id-1.2.7.3.4.9.33"><span class="term"><em class="parameter">Target: <em class="replaceable">GNU_TRIPLET</em></em></span></dt><dd><p>Defines the target architecture. This can be used to build for i686
+      to be specified, but on debian systems the gnu triplet, for example arm-linux-gnueabihf.</p></dd><dt id="vl-prjconfig-target-gnu-triplet"><span class="term"><em class="parameter">Target: <em class="replaceable">GNU_TRIPLET</em></em></span></dt><dd><p>Defines the target architecture. This can be used to build for i686
       on i586 schedulers for example. Please note that on rpm based systems just the architecture needs
-      to be specified, but on debian systems the gnu triplet, for example arm-linux-gnueabihf.</p></dd><dt id="id-1.2.7.3.4.9.34"><span class="term"><em class="parameter">Type: <em class="replaceable">TYPE</em></em></span></dt><dd><p>
+      to be specified, but on debian systems the gnu triplet, for example arm-linux-gnueabihf.</p></dd><dt id="vl-prjconfig-type"><span class="term"><em class="parameter">Type: <em class="replaceable">TYPE</em></em></span></dt><dd><p>
       Build recipe type. This is the format of the file which provides the
       build description. This gets usually autodetected, but in some rare cases
       it can be set here to either one of these: spec, dsc, kiwi, livebuild,
       arch, preinstallimage, mkosi.
      </p><p>Defines the build recipe format. Valid values are currently: none, spec,
       dsc, arch, kiwi, preinstallimage. If no type is specified, OBS deduces a
-      type from the binary type. </p></dd><dt id="id-1.2.7.3.4.9.35"><span class="term"><em class="parameter">VMInstall: <em class="replaceable">PACKAGE</em></em></span></dt><dd><p>
+      type from the binary type. </p></dd><dt id="vl-prjconfig-vminstall"><span class="term"><em class="parameter">VMInstall: <em class="replaceable">PACKAGE</em></em></span></dt><dd><p>
       Like <em class="parameter">Preinstall</em>, but these packages get only
       installed when a virtual machine like Xen or KVM is used for building.
       Usually  packages like <span class="package">mount</span> are listed here.
