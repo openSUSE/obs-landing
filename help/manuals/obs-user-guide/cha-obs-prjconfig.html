@@ -230,7 +230,13 @@ Support: pax debbuild</pre></div></dd><dt id="vl-prjconfig-buildflags"><span cla
       default. This is mostly done to reduce the amount of memory needed, as
       the package file lists take up a considerable amount of repository meta
       data. As a workaround, FileProvides can be used to tell the systems which
-      packages contain a file. The File needs to have the full path.</p></dd><dt id="vl-prjconfig-expandflags-hostarch"><span class="term"><em class="parameter">HostArch: <em class="replaceable">HOST_ARCH</em></em></span></dt><dd><p>
+      packages contain a file. The File needs to have the full path.</p></dd><dt id="vl-prjconfig-fromscratch"><span class="term"><em class="parameter">FromScratch:</em></span></dt><dd><p> OBS merges all build config parts according to the used 
+      repository path elements. The FromScratch parameter is droping all already
+      read parts and restarts the merging. This must be the first line of a build
+      config snippet. This is useful for example to test changes of a base project
+      where you want to use binaries from the original base project. By providing the
+      modified build config with FromScratch: as first line it drops all former
+      provided config settings.</p></dd><dt id="vl-prjconfig-expandflags-hostarch"><span class="term"><em class="parameter">HostArch: <em class="replaceable">HOST_ARCH</em></em></span></dt><dd><p>
       This is used for cross builds. It defines the host architecture used
       for building, while the scheduler architecture remains the target
       architecture.
