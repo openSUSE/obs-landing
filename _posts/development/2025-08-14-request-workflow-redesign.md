@@ -17,7 +17,7 @@ The request redesign is part of [the beta program](/2018/10/04/the-beta-program/
 We now support linking directly to the RPM lint results of different package multibuild flavors included in a request.
 
 <figure>
-  <img src="/images/posts/2025-08-12/multibuild_flavors_request_workflow_redesing.png" alt="RPM Lints of Multibuild Flavors">
+  <img src="/images/posts/2025-08-14/multibuild_flavors_request_workflow_redesing.png" alt="RPM Lints of Multibuild Flavors">
   <figcaption>RPM Lints of Multibuild Flavors</figcaption>
 </figure>
 
@@ -26,7 +26,7 @@ The summary will link you directly to the line of the RPM lint log that raises t
 You can find the new summary under the RPM lint tab of a package.
 
 <figure>
-  <img src="/images/posts/2025-08-12/rpm_lint_summary.png" alt="RPM Lint Summary">
+  <img src="/images/posts/2025-08-14/rpm_lint_summary.png" alt="RPM Lint Summary">
   <figcaption>RPM Lint Summary</figcaption>
 </figure>
 
