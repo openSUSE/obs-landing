@@ -13,4 +13,4 @@ The year 2024 started with [Revamping the Request Build Status Page and Introduc
 We continued in February with [Build Results Summary Chart Links to Build Results Overview](/2024/02/19/build-results-summary-chart-links-to-build-results) and in April with [Improvements On the Redesigned Request Page](/2024/04/08/improvements-on-the-redesigned-request-page).
 In April 2025 we worked again on the Request Page by [improving UI/UX aspects](/2025/04/02/ui-ux-improvements-for-redesigned-request-page).
 In July, we introduced [Two More Steps Toward a Better Requests Page](/2025/07/16/request-redesign).
-Now, we worked on [RPM Lint Results for Multibuild Flavors and other Improvements](/2025/08/12/request-workflow-redesign).
+And in August we expanded the feature by [RPM Lint Results for Multibuild Flavors and other Improvements](/2025/08/12/request-workflow-redesign) and [RPM Lint Filtering](/2025/08/26/request-workflow-redesign).
