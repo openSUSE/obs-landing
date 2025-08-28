@@ -416,11 +416,11 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("hashchange", hashActivator);
 
   lastScrollPosition = window.scrollY;
-  stickies();
+  // stickies();
   window.addEventListener(
     "scroll",
     function () {
-      stickies();
+      // stickies();
     },
     false
   );
