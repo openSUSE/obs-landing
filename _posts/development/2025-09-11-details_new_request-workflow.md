@@ -106,9 +106,11 @@ The issues mentioned in the changes files are now shown on their own tab. We ext
   <figcaption>Mentioned issues</figcaption>
 </figure>
 
+## Summary of the Re-Design
+
 We realize this is one of the most heavily used workflows of the OBS and a lot of you operated the old interface by muscle memory more
-than anything else. But we want to make this work for everybody, including new collaborators on OBS that come over to us from other tools
-with similar workflows. So we hope, after some time to adjust, you like the new interface and it helps everyone to work better together.
-If not we are looking forward to your feedback!
+than anything else. But we want to make this work for everybody, including new collaborators that come over to OBS from other tools
+with similar workflows. We hope, after some time to adjust, you like the new interface as much as we do and it will help everyone to work
+better together. If there is something we missed we are looking forward to your feedback!
 
 {% include partials/_how-to-give-us-feedback.md %}
