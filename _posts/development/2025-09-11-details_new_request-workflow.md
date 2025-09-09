@@ -4,31 +4,14 @@ title: "The New Request Workflow in Detail"
 category: development
 ---
 
-The new Request Workflow is already enabled for many of you.
+After a couple of months beta testing, the new request workflow user interface is enabled for everyone now.
 Let's take a closer look at the key improvements and what they mean for you.
 
-## Why We Redesigned the Request Page
+Working together on software in an OBS request brings a lot of information. A conversation between people/tools about the changes proposed, the changes to the sources (the patch!) and, as OBS is about building binary packages from sources, the builds of the proposed changes.
 
-With the new UI we introduce an information hierarchy which intends to enhance collaboration.
-The redesign separates the information into four tabs: Conversation, Build Results, Changes, and Mentioned Issues.
-This will provide a clear and broader idea about the request and will make it easier to find what you need without having to scroll through the entire page.
-Users can now focus on important elements like conversations, people involved or workflow steps which were previously lost among other details and code changes.
+With the old user interface (UI) all of this information was stuffed onto one page without any particular order. To enhance collaboration we introduced a hierarchy for the information to help everyone to understand, navigate and collaborate on requests as easy as possible.
 
-Compare these two images:
-
-<figure>
-  <img src="/images/posts/2025-09-11/old-ui.png" alt="Request old UI">
-  <figcaption>Request old UI</figcaption>
-</figure>
-
-<figure>
-  <img src="/images/posts/2025-09-11/new-ui.png" alt="Request new UI">
-  <figcaption>Request new UI with the most relevant details</figcaption>
-</figure>
-
-## Key Improvements
-
-### Request Details Header
+## Request Details
 
 At the top of the page and always visible, you'll find essential request details such as the number, status, and creator, along with messages that provide additional context like "_Waiting to be staged_" or "_This is a Maintenance Release request_".
 
@@ -37,127 +20,86 @@ At the top of the page and always visible, you'll find essential request details
   <figcaption>Request new UI with the most relevant details</figcaption>
 </figure>
 
+## The Default Tab (Conversation)
 
-### Multiple Actions
+### Conversation / History
 
-Sometimes you have to deal with many actions in one single request.
-The new UI provides a dropdown with the whole list of actions and buttons to navigate to the next or previous action. To avoid getting lost, you can mark which of them you have seen already.
+The most important aspect about collaboration on the OBS is the people that talk, critique and find an agreement about proposed changes.
+That is why the new design considers the _Conversation_ and _History_ the most important information about the request.
 
-<figure>
-  <img src="/images/posts/2025-09-11/request-actions-selector.png" alt="Request actions dropdown">
-  <figcaption>Request actions dropdown</figcaption>
-</figure>
-
-### Conversation Tab
-
-Requests are the means to collaborate in OBS.
-The request page is where the contributors talk, review, agree on decisions, and perform actions regarding the proposed changes.
-That's why the new design considers the _Conversation_ as the main area of the request. There you can find, in chronological order, both the comments from the contributors and the history of the request.
-
-Among the items of the conversation you can find:
-
-  - comments from the contributors
-  - who was involved in the decisions and which role they played (package maintainer, group, etc.)
-  - the conversation of a superseded request (collapsed by default)
-  - history elements
+Here you can find the whole history of the request in chronological order.
 
 <figure>
-  <img src="/images/posts/2025-09-11/conversation.png" alt="Request conversation area">
-  <figcaption>Request conversation area</figcaption>
+  <img src="/images/posts/2025-09-11/conversation.png" alt="Conversation">
+  <figcaption>The Conversation/History of a Request</figcaption>
 </figure>
 
-Right before the conversation timeline, you can find the description of the request and the patchinfo details.
+### Reviews
+
+To reach an agreement among people about proposed changes, reviewer need to give a formal verdict. Reviews are an equal important part of the collaboration process. That is why we show the reviews and their status right next to the conversation.
+
+From this section of the page you can also involve more people and give your own verdict on the proposed changes.
 
 <figure>
-  <img src="/images/posts/2025-09-11/patchinfo.png" alt="Patchinfo and description">
-  <figcaption>Patchinfo and description</figcaption>
+  <img src="/images/posts/2025-09-11/conversation_reviews.png" alt="Reviews">
+  <figcaption>Reviews of a Request</figcaption>
 </figure>
 
-### Review Area
+### Making a decision
 
-Next to the Conversation you can find the Review Area.
-From there you can ask for reviews or see the list of reviewers and project maintainers.
+The lower part of the page is all about making a decision after reviewing the requests conversation, reviews, changes and build results.
+
+To help you to understand if you can make this decision, we again display a summary of the build results and the reviews right before the buttons to make a decision.
 
 <figure>
-  <img src="/images/posts/2025-09-11/review_area.png" alt="Review area">
-  <figcaption>Review area</figcaption>
+  <img src="/images/posts/2025-09-11/conversation_decision.png" alt="Making a decision">
+  <figcaption>Making a decision about a Request</figcaption>
 </figure>
 
-### Review Summary
-
-To help you out with the decision-making, we display a summary of the reviews right before the buttons to accept, revoke, decline, etc.
+There are different ways to accept a request, depending on what you want to happen afterward. In the new interface we grouped all the actions together into one "accept button" to make it more obvious what happens afterward.
 
 <figure>
-  <img src="/images/posts/2025-09-11/reviews_summary.png" alt="Reviews summary">
-  <figcaption>Reviews summary</figcaption>
+  <img src="/images/posts/2025-09-11/conversation_accept_button.png" alt="New Accept Button">
+  <figcaption>New Accept Button, grouping different decisions</figcaption>
 </figure>
 
-### Grouped Actions
+## The Build Results Tab
 
-In the old UI there were a wide variety of buttons and checkboxes spread all over the page, that, sometimes combined, allowed you to perform different actions on the current request.
-Right now, all the relevant actions are placed together as buttons or dropdown buttons in the area designated to take a decision regarding the request.
+Depending on the setup, build results are not always a simple affair. In the new build results tab you can drill down into all the builds of the proposed changes. We summarized the results as best as we could so the most relevant information catches your attention first. For instance, results that are disabled/excluded/unknown are not visible at first glance.
 
-<figure>
-  <img src="/images/posts/2025-09-11/grouped_actions.png" alt="Grouped actions">
-  <figcaption>Grouped actions</figcaption>
-</figure>
-
-### Build Results Tab
-
-In the context of a request, the build results used to be displayed on a small area on the right side of the page. There, the scroll was the only tool you had to find what you wanted to focus on.
-
-After the redesign, the build results tab occupies the whole width of the page.
-In this tab you can have a general overview of the status of all the build results.
-We have organized the results in a way that the most relevant information catches your attention first.
-Results that are disabled/excluded/unknown are not visible at first glance.
-Moreover, the build results area comes with a powerful tool: a filter that helps you find what you need easily.
+Moreover, the build results area comes with a powerful tool: a filter to help you find what you need.
 
 <figure>
   <img src="/images/posts/2025-09-11/build-results.png" alt="Build results area">
   <figcaption>Build results area new design</figcaption>
 </figure>
 
-But that's not all; right after you open a request page and before moving to the Build Results tab, you can also see the Build Result Summary chart.
-The chart is only displayed when there is a long list of repositories involved in the builds.
-We invite you to click on the bars to get more information.
+### RPM Lint Interface
 
-<figure>
-  <img src="/images/posts/2025-09-11/build_summary_chart.png" alt="Build Results Chart">
-  <figcaption>Build Results Chart</figcaption>
-</figure>
+TO BE WRITTEN and screenshotted
 
-### RPM Lint
+## The Changes Tab
 
-We applied the same idea we had for the Build Results to the RPM Lint Results: providing an overview first of all.
-You no longer have to dig through the whole file to find problems. We've added a new graphic that gives you a quick overview of all the errors and their severity, so you can see what needs your attention right away.
-
-<figure>
-  <img src="/images/posts/2025-09-11/rpm_lint.png" alt="RPM Lint Chart">
-  <figcaption>RPM Lint Chart</figcaption>
-</figure>
-
-You have the link to the RPM Lint on each build result badge.
-
-<figure>
-  <img src="/images/posts/2025-09-11/rpm-lint-link.png" alt="RPM Lint Link">
-  <figcaption>Link to the RPM Lint on the build results</figcaption>
-</figure>
-
-### Changes Tab
-
-Another key area is the Changes Tab. To have a conversation about code changes, it's important to point out some lines of code.
-That's why now it's possible to add comments on added, changed, and removed lines.
-Those comments added to the changes will also be displayed as part of the Conversation.
+Often, to have a meaningful conversation about code changes, it's important to have the conversation reference a specific line.
+That's why we made it possible to add comments on specific lines of a patch.
 
 <figure>
   <img src="/images/posts/2025-09-11/changes.png" alt="Changes tab">
   <figcaption>Changes tab</figcaption>
 </figure>
 
-### Mentioned Issues
+### Multiple Actions
 
-The issues mentioned in the changes files are shown on their own tab.
-We not only provide the link to the issue but its status and description if any.
+Sometimes a request is changing multiple packages at once. The new changes tab provides an interface to navigate the changes. To avoid getting lost, we made it possible for you to mark which of them you already have seen.
+
+<figure>
+  <img src="/images/posts/2025-09-11/changes_multiple_actions.png" alt="Request actions dropdown">
+  <figcaption>Request actions dropdown</figcaption>
+</figure>
+
+## The Mentioned Issues Tab
+
+The issues mentioned in the changes files are now shown on their own tab. We extended the information with a link to the issue, its status and the description.
 
 <figure>
   <img src="/images/posts/2025-09-11/mentioned-issues.png" alt="Mentioned issues">
