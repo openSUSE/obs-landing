@@ -4,12 +4,12 @@ title: "The New Request Workflow in Detail"
 category: development
 ---
 
-After a couple of months beta testing, the new request workflow user interface is enabled for everyone now.
+After a couple of months of beta testing, the new request workflow user interface is enabled for everyone now.
 Let's take a closer look at the key improvements and what they mean for you.
 
-Working together on software in an OBS request brings a lot of information. A conversation between people/tools about the changes proposed, the changes to the sources (the patch!) and, as OBS is about building binary packages from sources, the builds of the proposed changes.
+Working together on software in an OBS request involves a lot of information. A conversation between people/tools about the changes proposed, the changes to the sources (the patch!) and, as OBS is about building binary packages from sources, the builds of the proposed changes.
 
-With the old user interface (UI) all of this information was stuffed onto one page without any particular order. To enhance collaboration we introduced a hierarchy for the information to help everyone to understand, navigate and collaborate on requests as easy as possible.
+With the old user interface (UI) all of this information was stuffed onto one page without any particular order. To enhance collaboration, we introduced a hierarchy for the information to help everyone to understand, navigate and collaborate on requests as easy as possible.
 
 ## Request Details
 
@@ -24,7 +24,7 @@ At the top of the page and always visible, you'll find essential request details
 
 ### Conversation / History
 
-The most important aspect about collaboration on the OBS is the people that talk, critique and find an agreement about proposed changes.
+The most important aspect about collaboration on the OBS is the people who talk, critique and reach an agreement about proposed changes.
 That is why the new design considers the _Conversation_ and _History_ the most important information about the request.
 
 Here you can find the whole history of the request in chronological order.
@@ -36,7 +36,7 @@ Here you can find the whole history of the request in chronological order.
 
 ### Reviews
 
-To reach an agreement among people about proposed changes, reviewer need to give a formal verdict. Reviews are an equal important part of the collaboration process. That is why we show the reviews and their status right next to the conversation.
+To reach an agreement among people about proposed changes, reviewers need to give a formal verdict. Reviews are an equally important part of the collaboration process. That is why we show the reviews and their status right next to the conversation.
 
 From this section of the page you can also involve more people and give your own verdict on the proposed changes.
 
@@ -47,7 +47,7 @@ From this section of the page you can also involve more people and give your own
 
 ### Making a decision
 
-The lower part of the page is all about making a decision after reviewing the requests conversation, reviews, changes and build results.
+The lower part of the page is all about making a decision after reviewing the request's conversation, reviews, changes and build results.
 
 To help you to understand if you can make this decision, we again display a summary of the build results and the reviews right before the buttons to make a decision.
 
