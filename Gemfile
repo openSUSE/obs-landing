@@ -6,4 +6,4 @@ gem 'rouge'
 # For pagination
 gem 'jekyll-paginate'
 
-gem "webrick", "~> 1.8"
+gem "webrick", "~> 1.9"
