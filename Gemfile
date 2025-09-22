@@ -7,3 +7,4 @@ gem 'rouge'
 gem 'jekyll-paginate'
 
 gem "webrick", "~> 1.8"
+gem "json"
