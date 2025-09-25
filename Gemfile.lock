@@ -76,7 +76,7 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     rexml (3.4.4)
-    rouge (4.6.0)
+    rouge (4.6.1)
     safe_yaml (1.0.5)
     sassc (2.4.0)
       ffi (~> 1.9)
