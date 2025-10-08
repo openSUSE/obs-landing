@@ -2448,6 +2448,11 @@ p {
 .othercredit {
   color: #333; }
 
+a code.literal {
+  text-decoration: underline;
+  text-decoration-thickness: inherit;
+  border-bottom: none; }
+
 article a {
   color: #008657;
   text-decoration: underline;

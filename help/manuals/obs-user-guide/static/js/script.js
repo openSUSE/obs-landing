@@ -373,8 +373,8 @@ $(function() {
 
 
   lastScrollPosition = window.scrollY;
-  stickies();
-  window.addEventListener('scroll', function(){ stickies(); }, false);
+  // stickies();
+  // window.addEventListener('scroll', function(){ stickies(); }, false);
 
 
   if ( document.getElementById('_share-fb') !== null ) {
