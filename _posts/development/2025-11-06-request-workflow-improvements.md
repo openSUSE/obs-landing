@@ -16,7 +16,7 @@ Here’s what’s new in this iteration, starting with our most powerful additio
 Reviewing build results for every repository and architecture combination isn't always feasible or necessary, especially for complex project and package setups.
 We've introduced a powerful new way for project maintainers to define and highlight which build results are truly essential for accepting a submit request.
 
-You can now explicitly set certain repository/architecture tuples as "important."
+You can now explicitly set certain repository architecture as "important."
 Simply go to your project page, click on the Repositories tab, and use the star icon to mark or unmark the desired repositories and architectures.
 When these markers are set, the Request Page will automatically filter the Build Results to show only this critical subset of targets.
 
