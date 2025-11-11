@@ -22,15 +22,15 @@ When these markers are set, the Request Page will automatically filter the Build
 
 #### Select Repository/Architecture Combination
 
-![Important Build Targets - Select Repository/Architecture](/images/posts/2025-11-16-request-workflow-improvements/important-build-targets-1.png)
+<img src="/images/posts/2025-11-16-request-workflow-improvements/important-build-targets-1.png" alt="Important Build Targets - Select Repository/Architecture" style="width:500px" />
 
 #### How Selected Combinations are Shown
 
-![Important Build Targets - Show Repository/Architecture](/images/posts/2025-11-16-request-workflow-improvements/important-build-targets-2.png)
+<img src="/images/posts/2025-11-16-request-workflow-improvements/important-build-targets-2.png" alt="Important Build Targets - Show Repository/Architecture" style="width:500px" />
 
 #### How Build Results are Shown
 
-![Important Build Targets - Show Build Results](/images/posts/2025-11-16-request-workflow-improvements/important-build-targets-3.png)
+<img alt="Important Build Targets - Show Build Results" src="/images/posts/2025-11-16-request-workflow-improvements/important-build-targets-3.png" style="width:500px" />
 
 
 ## Improved General Build Results Usability
@@ -56,7 +56,7 @@ Reviewing long lists of build results in large requests can be overwhelming.
 We've introduced filter improvements to the Build Results view.
 Now, you get clear visual feedback on the filters currently applied.
 
-![Better Filtering for Build Results](/images/posts/2025-11-16-request-workflow-improvements/better-filtering.png)
+<img alt="Better Filtering for Build Results" src="/images/posts/2025-11-16-request-workflow-improvements/better-filtering.png" style="width:500px" />
 
 
 ## Never Lose a Comment: Draft Persistence
