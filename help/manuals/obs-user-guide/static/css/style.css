@@ -1708,6 +1708,11 @@ body.scroll-up header.sticky #_menu {
 body.disable-language-switcher #_utilitynav #_utilitynav-language {
   display: none; }
 
+shared-header {
+  height: 122px; }
+  @media (max-width: 768px) {
+    shared-header {
+      height: 76px; } }
 .crumbs a,
 .crumbs span {
   font-size: 0.8rem; }
@@ -1791,6 +1796,9 @@ body.disable-language-switcher #_utilitynav #_utilitynav-language {
 @media screen and (max-width: 1024px) {
   #_side-toc-page .feedback {
     display: none !important; } }
+
+#_side-toc-page.side-toc .toc ul li ul {
+  margin-left: 2em; }
 
 #_side-toc-overall ol ol {
   background-color: #dedfe0;

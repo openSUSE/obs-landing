@@ -1528,6 +1528,9 @@ footer {
   #_side-toc-page .feedback {
     display: none !important; } }
 
+#_side-toc-page.side-toc .toc ul li ul {
+  margin-left: 2em; }
+
 #_side-toc-overall ol ol {
   background-color: #dedfe0;
   margin-bottom: 0;
