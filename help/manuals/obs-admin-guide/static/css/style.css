@@ -1723,9 +1723,26 @@ shared-header {
   .crumbs a:hover, .crumbs a:focus {
     color: #0c322c;
     text-decoration: underline; }
+  .crumbs a.overview-link {
+    display: inline-flex;
+    align-items: center; }
+    .crumbs a.overview-link::before {
+      content: "";
+      display: block;
+      width: 1.25rem;
+      height: 1.25rem;
+      background: url("../images/home-o.svg") 50%;
+      margin-right: .225rem;
+      position: relative;
+      top: 6px; }
+    .crumbs a.overview-link:hover::before {
+      background-image: url("../images/home.svg"); }
 
 .crumbs span {
   color: #025937; }
+  .crumbs span.sep {
+    margin-left: 0.75rem;
+    margin-right: 0.75rem; }
 
 .side-toc > *:last-child::after {
   content: '';
