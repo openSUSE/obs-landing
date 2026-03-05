@@ -3037,7 +3037,7 @@ ol.orderedlist, ol.substeps {
   margin: 0 0 0 10px;
   padding: 0 0 0 35px; }
 
-ol.orderedlist, ol.procedure {
+ol.procedure {
   list-style-type: decimal; }
 
 ol.substeps {

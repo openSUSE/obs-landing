@@ -1335,10 +1335,17 @@ body {
 .crumbs {
   padding: .5rem 1.25rem;
   background-color: #dedfe0;
-  border-bottom: 1px solid #c0c2c4; }
-
+  border-bottom: 1px solid #c0c2c4;
+  position: fixed;
+  top: 76px;
+  z-index: 5;
+  width: 100%; }
+  @media (min-width: 992px) {
+    .crumbs {
+      top: 122px; } }
 main {
-  display: flex; }
+  display: flex;
+  margin-top: calc(122px + 2.5rem) !important; }
   main article,
   main .side-toc {
     min-height: calc(100vh - 135px); }
@@ -1356,7 +1363,10 @@ main {
     overflow-y: auto;
     position: relative;
     scrollbar-width: thin;
-    scrollbar-color: #0c322c #dedfe0; }
+    scrollbar-color: #0c322c #dedfe0;
+    position: sticky;
+    top: calc(122px + 2.5rem);
+    align-self: start; }
   main #_side-toc-overall:not(.placebo) {
     background-color: #efefef;
     margin-left: 0;
@@ -1364,7 +1374,8 @@ main {
   main #_side-toc-page {
     background-color: #efefef;
     margin-right: 0;
-    padding-left: 1.5rem; }
+    padding-left: 1.5rem;
+    right: 16px; }
   main.sticky article {
     position: relative;
     top: 135px;
@@ -2768,7 +2779,7 @@ ol.orderedlist, ol.substeps {
   margin: 0 0 0 10px;
   padding: 0 0 0 35px; }
 
-ol.orderedlist, ol.procedure {
+ol.procedure {
   list-style-type: decimal; }
 
 ol.substeps {

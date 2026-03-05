@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><title>Build Configuration | User Guide</title><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><link rel="stylesheet" type="text/css" href="static/css/style.css"/>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><title>Build Configuration | User Guide</title><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><link rel="stylesheet" type="text/css" href="static/css/style-new.css"/>
 <link rel="schema.dc" href="http://purl.org/dc/elements/1.1/"/><link rel="schema.dcterms" href="http://purl.org/dc/terms/"/>
 <meta name="dcterms.modified" content=""/><meta name="dcterms.created" content=""/><meta name="title" content="Build Configuration"/>
 <meta name="description" content="Build Configuration"/>
@@ -492,12 +492,16 @@ Support: pax debbuild</pre></div></dd><dt id="vl-prjconfig-buildflags"><span cla
        a path of <span><em class="emphasis">home:user</em></span>, it
        expands to "1" for both of them. In build configuration
        snippets coming from other namespaces, it expands to "0".
+       This macro is useful for guarding lines of the build configuration so
+       they are not applied to builds outside of the project's namespace.
      </p></li><li class="listitem"><p><span class="formalpara-title">%_is_this_project (OBS 2.11 and later). </span>
        This macro expands to "1" only in the build configuration
        snippet the project in which the build is taking place.
-       It is equivalent to the conditional
-       <code class="code">%_project == "PROJECT"</code>, without the need to
-       explicitly mention the project name.
+       Use this macro instead of <code class="code">%_project == "PROJECT"</code>
+       (where <code class="code">"PROJECT"</code> is a literal string containing
+       the name of the project) if you would like to be able to copy-
+       paste your project config into other projects without having to
+       manually adjust the <code class="code">%_project</code> conditionals.
      </p></li><li class="listitem"><p><span class="formalpara-title">%_project. </span>
        This macro is always set to the name of the project in which
        the build is taking place. It can be used in the build
