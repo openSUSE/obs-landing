@@ -1366,7 +1366,8 @@ main {
     scrollbar-color: #0c322c #dedfe0;
     position: sticky;
     top: calc(122px + 2.5rem);
-    align-self: start; }
+    align-self: start;
+    height: calc(100vh - 135px); }
   main #_side-toc-overall:not(.placebo) {
     background-color: #efefef;
     margin-left: 0;

@@ -94,7 +94,17 @@
     Formats of binary packages include RPM and DEB.
     In the OBS context, binary packages are sometimes also called
     <span><em class="emphasis">binaries</em></span>.
-   </p><p>See also <a class="glossseealso" href="obs-glossary.html#obs-glos-container">Container</a>, <a class="glossseealso" href="obs-glossary.html#obs-glos-os-image">Operating System Image</a>, <a class="glossseealso" href="obs-glossary.html#obs-gloss-source-package">Source Package</a>, <a class="glossseealso" href="obs-glossary.html#obs-glos-deb">Deb</a>, <a class="glossseealso" href="obs-glossary.html#obs-glos-rpm">RPM</a>, <a class="glossseealso" href="obs-glossary.html#obs-glos-kiwi">KIWI</a>, <a class="glossseealso" href="obs-glossary.html#obs-glos-archive">Archive (Archive File)</a>.</p></dd><dt id="obs-glos-branch"><span><span class="glossterm">Branch</span> <a title="Permalink" class="permalink" href="obs-glossary.html#obs-glos-branch">#</a></span></dt><dd class="glossdef"><p>
+   </p><em><span class="remark">
+    "Binary package" poses a bit of a question: It is a bit unclear when a
+    package can be considered binary: 1) all archive formats are pretty much
+    always binary-based; 2) interpreted languages actually aren't binary. The
+    terms "installable package"/"distribution package" come to mind.
+    Additionally, the usage of "binary" to mean "binary package" in OBS docs
+    is problematic. Everywhere else, a binary is defined as a single
+    executable file (though whether that file is binary or actually
+    human-readable like a script, usually does not matter). - sknorr,
+    2017-08-30
+   </span></em><p>See also <a class="glossseealso" href="obs-glossary.html#obs-glos-container">Container</a>, <a class="glossseealso" href="obs-glossary.html#obs-glos-os-image">Operating System Image</a>, <a class="glossseealso" href="obs-glossary.html#obs-gloss-source-package">Source Package</a>, <a class="glossseealso" href="obs-glossary.html#obs-glos-deb">Deb</a>, <a class="glossseealso" href="obs-glossary.html#obs-glos-rpm">RPM</a>, <a class="glossseealso" href="obs-glossary.html#obs-glos-kiwi">KIWI</a>, <a class="glossseealso" href="obs-glossary.html#obs-glos-archive">Archive (Archive File)</a>.</p></dd><dt id="obs-glos-branch"><span><span class="glossterm">Branch</span> <a title="Permalink" class="permalink" href="obs-glossary.html#obs-glos-branch">#</a></span></dt><dd class="glossdef"><p>
     Personal copy of another repository that lives on your home project.
     A branch allows you to make changes without affecting the original
     repository. You can either delete the branch or
@@ -118,7 +128,8 @@
    </p><p>See also <a class="glossseealso" href="obs-glossary.html#obs-glos-spec">Spec File</a>.</p></dd><dt id="obs-glos-buildrequirement"><span><span class="glossterm">Build Requirement</span> <a title="Permalink" class="permalink" href="obs-glossary.html#obs-glos-buildrequirement">#</a></span></dt><dd class="glossdef"><p>
     Package requirements that are needed to create or build a specific
     package.
-    
+    <em><span class="remark">For example, a C++ program needs the C++ compiler included in the
+    <span class="package">gcc</span> package.</span></em>
    </p><p>See also <a class="glossseealso" href="obs-glossary.html#obs-glos-installrequirement">Installation Requirement</a>, <a class="glossseealso" href="obs-glossary.html#obs-glos-buildrecipe">Build Recipe</a>.</p></dd><dt id="obs-glos-buildresult"><span><span class="glossterm">Build Result</span> <a title="Permalink" class="permalink" href="obs-glossary.html#obs-glos-buildresult">#</a></span></dt><dd class="glossdef"><p>The current state of a package. Example of a build result could be
    succeeded, failed, blocked, etc.</p></dd><dt id="obs-glos-buildroot"><span><span class="glossterm">Build Root</span> <a title="Permalink" class="permalink" href="obs-glossary.html#obs-glos-buildroot">#</a></span></dt><dd class="glossdef"><p>
     Directory where the <code class="command">osc</code> command copies, patches, builds, and create
@@ -166,7 +177,7 @@
       Container images built on Open Build Service:
       <code class="command">skopeo inspect docker://URL | grep org.openbuildservice.disturl</code>
      </p></li></ul></div></dd><dt id="obs-glos-docker"><span><span class="glossterm">Docker</span> <a title="Permalink" class="permalink" href="obs-glossary.html#obs-glos-docker">#</a></span></dt><dd class="glossdef"><p>
-    
+    <em><span class="remark">toms 2017-09-01: taken from Docker Quick Start</span></em>
     Docker is a lightweight virtualization solution to run multiple virtual
     units (containers) simultaneously on a single control host.
    </p><p>See also <a class="glossseealso" href="obs-glossary.html#obs-glos-container">Container</a>.</p></dd><dt id="obs-glos-downloadrepository"><span><span class="glossterm">Download Repository</span> <a title="Permalink" class="permalink" href="obs-glossary.html#obs-glos-downloadrepository">#</a></span></dt><dd class="glossdef"><p>
