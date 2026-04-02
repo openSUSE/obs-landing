@@ -4,4 +4,5 @@ functionality of [managing labels with the API](/2025/05/05/labels-api). Buildin
 Recently, we’ve introduced package version tracking based on the [Release Monitoring](/2025/09/23/foster-collaboration) which has been enhanced with
 the [Package Version Information](/2025/10/23/foster-collaboration). Then came [label-based filtering and automatic unassignments](2025-11-19-labels_and_assigments)
 when a request is accepted. Following that, [Package Version Tracking gained new capabilities](2026-02-20-version-tracking-improvements) like upstream release notifications
-and user documentation. Most recently, we have introduced [New Version Tracking through API and Automatic Labeling](2026-03-03-foster-collaboration).
+and user documentation. Recently, we have introduced [New Version Tracking through API and Automatic Labeling](2026-03-03-foster-collaboration), now followed by an
+[Quick Update on the Package Version Tracking Feature in OBS](2026-04-02-package-version-tracking-updates).
