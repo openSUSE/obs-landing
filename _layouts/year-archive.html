@@ -1,0 +1,11 @@
+---
+layout: secondary
+---
+
+<div class="ui vertical stripe segment">
+  <div class="ui centered text container">
+    <h2>News from {{ page.date | date: "%Y" }}</h2>
+    {% assign posts = page.posts %}
+    {% include post-listing.html %}
+  </div>
+</div>

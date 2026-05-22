@@ -5,5 +5,6 @@ gem 'kramdown', '~> 2.5'
 gem 'rouge'
 # For pagination
 gem 'jekyll-paginate'
+gem 'jekyll-archives'
 
 gem "webrick", "~> 1.9"
