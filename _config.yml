@@ -14,7 +14,17 @@ include: [ '_redirects' ]
 paginate: 20
 # First page is blog/, second is blog/page2/, and so on...
 paginate_path: "/blog/page:num/"
-
+jekyll-archives:
+  enabled:
+    - year
+    - month
+  layouts:
+    year: year-archive
+    month: month-archive
+  permalinks:
+    year: '/:year/'
+    month: '/:year/:month/'
 plugins:
   - jemoji
   - jekyll-paginate
+  - jekyll-archives
