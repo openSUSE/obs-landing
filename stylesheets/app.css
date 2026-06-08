@@ -36,6 +36,10 @@
   padding: 8em 0em;
 }
 
+.ui.vertical.stripe h1 {
+  font-size: 3em;
+}
+
 .ui.vertical.stripe h2 {
   font-size: 2.5em;
 }
