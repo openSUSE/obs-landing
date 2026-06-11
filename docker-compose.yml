@@ -11,4 +11,4 @@ services:
       JEKYLL_UID: 1000
       JEKYLL_GID: 100
     volumes:
-      - .:/srv/jekyll
+      - .:/srv/jekyll:Z
