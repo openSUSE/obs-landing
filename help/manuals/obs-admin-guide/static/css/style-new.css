@@ -1335,6 +1335,15 @@ body {
   body.single main.sticky.scroll-with-footer::before {
     content: none !important; }
 
+header {
+  height: 122px;
+  position: fixed;
+  top: 0;
+  background-color: #0c322c;
+  width: 100%;
+  z-index: 100;
+  padding-block: 16px; }
+
 .crumbs {
   padding: .5rem 1.25rem;
   background-color: #dedfe0;
@@ -1411,6 +1420,21 @@ main {
 footer {
   background-color: #0c322c;
   position: relative; }
+
+.docsurvey-wrapper {
+  background-color: #008657;
+  font-size: 16px;
+  margin-top: 16px;
+  padding-block: 8px;
+  padding-inline: 8px;
+  width: fit-content; }
+
+.docsurvey-wrapper a.survey-link {
+  color: #fff !important;
+  text-decoration: none; }
+
+.docsurvey-wrapper a.survey-link:hover {
+  background-color: inherit !important; }
 
 @media screen and (max-width: 1024px) {
   main .side-toc#_side-toc-overall {
