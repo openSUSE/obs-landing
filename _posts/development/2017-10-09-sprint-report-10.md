@@ -22,14 +22,14 @@ Take a look into PR<a href="https://github.com/openSUSE/open-build-service/pull/
 Take a look into PR<a href="https://github.com/openSUSE/open-build-service/pull/3884">#3884</a>.
 </p>
 
-<p>The Kiwi Editor documentation was updated with all the new features until now and how to use it. <a href="http://openbuildservice.org/help/manuals/obs-best-practices/cha.obs.best-practices.webuiusage.html#kiwi_editor_how_to">See the documentation</a>.</p>
+<p>The Kiwi Editor documentation was updated with all the new features until now and how to use it. <a href="http://openbuildservice.org/help/manuals/obs-best-practices/cha.obs.best-practices.webuiusage.html#kiwi_editor_how_to" rel="canonical">See the documentation</a>.</p>
 
 <h3>RabbitMQ</h3>
 
 <p>
 It all started with Coolo <a href="https://github.com/openSUSE/open-build-service/pull/2592">requesting</a> a predecessor for the previously used hermes.
 OBS was using <a href="https://github.com/openSUSE/hermes">Hermes</a> to send out notifications. You might have read about it in our very first
-<a href="http://openbuildservice.org/2017/05/05/frontend-sprint-report-1/">Sprint Report</a>.
+<a href="http://openbuildservice.org/2017/05/05/frontend-sprint-report-1/" rel="canonical">Sprint Report</a>.
 </p>
 
 <p>
@@ -58,7 +58,7 @@ prefix of the queue name in the options.yml. Setting the 'amqp_namespace' to 'my
 </p>
 
 <p>
-There are many other options you can configure. All this is documented in our <a href="http://openbuildservice.org/help/manuals/obs-admin-guide/obs.cha.administration.html#_message_bus">admin guide</a>.
+There are many other options you can configure. All this is documented in our <a href="http://openbuildservice.org/help/manuals/obs-admin-guide/obs.cha.administration.html#_message_bus" rel="canonical">admin guide</a>.
 </p>
 
 <h3>Introduced bcrypt as password hash</h3>

@@ -9,7 +9,7 @@ category: development
 
 <h2>OBS 2.8.3 Release</h2>
 
-<p>We have pushed out version 2.8.3. Check out the <a href='https://lists.opensuse.org/opensuse-buildservice/2017-08/msg00087.html'>announcement</a> about all the cool new things we rolled into our stable release and <a href='http://openbuildservice.org/download/'>download</a> it.</p>
+<p>We have pushed out version 2.8.3. Check out the <a href='https://lists.opensuse.org/opensuse-buildservice/2017-08/msg00087.html'>announcement</a> about all the cool new things we rolled into our stable release and <a href='http://openbuildservice.org/download/' rel="canonical">download</a> it.</p>
 
 <h2> Features </h2>
 

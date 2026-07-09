@@ -133,7 +133,7 @@ category: development
 <p>
    Some weeks ago we did one of our continuous deployments and ran into a problem. 
    An additional <a href='http://guides.rubyonrails.org/asset_pipeline.html#manifest-files-and-directives'>asset manifest file</a> broke our assets and we ended up with OBS pages without CSS. 
-   You might have seen us <a href='http://openbuildservice.org/2017/07/19/post-mortem-2/'>blogging</a> about it.
+   You might have seen us <a href='http://openbuildservice.org/2017/07/19/post-mortem-2/' rel="canonical">blogging</a> about it.
 </p>
 <p>
    What we also did was to create a <a href='https://trello.com/c/2HRVCSTJ/481-2-p8-ensure-public-assets-dir-of-our-packages-is-in-clean-state'>story</a> for one of our next sprints. 

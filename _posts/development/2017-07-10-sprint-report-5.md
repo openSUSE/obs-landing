@@ -38,7 +38,7 @@ category: development
     <img src="/images/posts/sprint_19_edit_kiwi_edit.png" style="margin: 30px 0 30px 0;" title='Kiwi editor – edit page' >
 
     And we also started to provide documentation for this feature in our Best Practice Guide, 
-    <a href="http://openbuildservice.org/help/manuals/obs-best-practices/cha.obs.best-practices.webuiusage.html#kiwi_editor_how_to">here</a>.
+    <a href="http://openbuildservice.org/help/manuals/obs-best-practices/cha.obs.best-practices.webuiusage.html#kiwi_editor_how_to" rel="canonical">here</a>.
 </p>
 
 <h4>Your OBS notifications as RSS feed</h4>

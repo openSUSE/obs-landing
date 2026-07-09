@@ -49,7 +49,7 @@ Why is that so important?
  Not a very nice user experience.
 </p>
 <p>
- A few weeks ago we also released a <a href="http://openbuildservice.org/2017/07/04/post-mortem-1/">post mortem report</a> about a downtime caused by a wrong data migration.
+ A few weeks ago we also released a <a href="http://openbuildservice.org/2017/07/04/post-mortem-1/" rel="canonical">post mortem report</a> about a downtime caused by a wrong data migration.
  As we stated out in the post mortem, one reason this happened was that we didn't test this migration with production like data before.
  Therefore we invested some time in this sprint to <a href="https://github.com/openSUSE/open-build-service/pull/3401">develop a script</a> to import database dumps as easy as possible in development environment.
 </p>
