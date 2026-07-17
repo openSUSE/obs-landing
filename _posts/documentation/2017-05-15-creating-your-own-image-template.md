@@ -55,5 +55,5 @@ You can do that by creating a Submit Request:
 
 <img src="/images/posts/image_templates_submit_request.png" style="margin:20px;" title="Image Template Submit Request">
 
-Or send an email to the [OBS admins](admin@opensuse.org) and request that your
+Or send an email to the [OBS admins](mailto:admin@opensuse.org) and request that your
 templates project is added to the templates page.
