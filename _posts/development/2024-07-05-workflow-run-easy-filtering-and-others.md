@@ -34,7 +34,7 @@ GitHub currently supports two types of personal access tokens:
 - personal access tokens (classic)
 
 In OBS you can use any of them for the SCM/CI Integration. However, our documentation was not clear enough in this regard until now.
-You can learn about *fine-grained personal access tokens* [here](https://openbuildservice.org/help/manuals/obs-user-guide/cha.obs.scm_ci_workflow_integration#sec.obs.obs_scm_ci_workflow_integration.setup.token_authentication.how_to_authenticate_obs_with_scm),
+You can learn about *fine-grained personal access tokens* [here](https://openbuildservice.org/help/manuals/obs-user-guide/cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup-token-authentication-how-to-authenticate-obs-with-scm),
 which is [GitHub's recommended option](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token) whenever possible.
 
 {% include partials/_how-to-give-us-feedback.md %}

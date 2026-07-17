@@ -28,7 +28,7 @@ We already created chapters in the user documentation around the placeholder var
 and configuration file url. But we didn't provide a real life example of what is
 possible to do with it. We caught up on it and added a new section where we explain
 what you can achieve with it by using those two features in combination.
-You can find the new chapter [here](https://openbuildservice.org/help/manuals/obs-user-guide/cha.obs.scm_ci_workflow_integration.html#sec.obs.obs_scm_ci_workflow_integration.use_cases.config_url_and_placeholder_variables).
+You can find the new chapter [here](https://openbuildservice.org/help/manuals/obs-user-guide/cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-use-cases-config-url-and-placeholder-variables).
 
 ### No Branches Filter Option for Tag Push Events
 
@@ -37,7 +37,7 @@ This was caused by the usage of the branches filter. Workflows for `tag_push` ev
 don't allow the usage of a branch filter, since the tag's do not have a reference to
 a certain branch, they a referencing a commit. Therefore we can't apply filters for
 branches in these cases. We improved the error messages for this case, so it's not silently erroring
-out without any hint of whats wrong. We also added a note in this [section](https://openbuildservice.org/help/manuals/obs-user-guide/cha.obs.scm_ci_workflow_integration.html#sec.obs.obs_scm_ci_workflow_integration.obs_workflows.filters.branches_filter) of the user documentation.
+out without any hint of whats wrong. We also added a note in this [section](https://openbuildservice.org/help/manuals/obs-user-guide/cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-obs-workflows-filters-branches-filter) of the user documentation.
 
 
 {% include partials/_how-to-give-us-feedback.md %}

@@ -11,10 +11,10 @@ As you know, this is a beta feature. So, do not forget this feature is under [th
 {% include partials/_series-of-posts-about-scm-integration.md %}
 
 ## Support multiple repository paths for the configure_repositories step
-You already know about the `configure_repositories` step. Until now a single path element is defined per repository configured, but we realized for some projects more than one path has to be defined. So, we have made improvements for the support of multiple path elements. The breaking change has been documented and you can check it out [here](https://openbuildservice.org/help/manuals/obs-user-guide/cha.obs.scm_ci_workflow_integration.html#sec.obs.obs_scm_ci_workflow_integration.obs_workflows.steps.configure_repositories_architectures_for_a_project).
+You already know about the `configure_repositories` step. Until now a single path element is defined per repository configured, but we realized for some projects more than one path has to be defined. So, we have made improvements for the support of multiple path elements. The breaking change has been documented and you can check it out [here](https://openbuildservice.org/help/manuals/obs-user-guide/cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-obs-workflows-steps-configure-repositories-architectures-for-a-project).
 
 ## The set_flags step
-Projects and packages can have different flags based on repositories and architectures. With the `set_flags` step, you have the opportunity to manage flags for your projects and packages. There are OBS-wide defaults for each flag type. This step is only necessary if you want to diverge from those [defaults](https://openbuildservice.org/help/manuals/obs-user-guide/cha.obs.scm_ci_workflow_integration.html#sec.obs.obs_scm_ci_workflow_integration.obs_workflows.steps.set_flags.type).
+Projects and packages can have different flags based on repositories and architectures. With the `set_flags` step, you have the opportunity to manage flags for your projects and packages. There are OBS-wide defaults for each flag type. This step is only necessary if you want to diverge from those [defaults](https://openbuildservice.org/help/manuals/obs-user-guide/cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-obs-workflows-steps-set-flags-type).
 
 Here is a simple example of how you can use it:
 ```
@@ -30,7 +30,7 @@ workflow:
             project: home:Admin
 ```
 
-Please refer to the [documentation](https://openbuildservice.org/help/manuals/obs-user-guide/cha.obs.scm_ci_workflow_integration.html#sec.obs.obs_scm_ci_workflow_integration.obs_workflows.steps.set_flags) to learn more.
+Please refer to the [documentation](https://openbuildservice.org/help/manuals/obs-user-guide/cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-obs-workflows-steps-set-flags) to learn more.
 
 ## Improvement for Workflow Runs User Interface
 The Workflow Runs page is the most important place to debug your workflows. It helps you to detect the problems like the wrong configurations in `workflows.yml`.

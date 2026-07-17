@@ -46,6 +46,6 @@ We just released a minor feature to be used with the new 1.1 version! An alias t
 
 # This Just Got Started
 
-We just released v1.1, but as we release more versions and features, please check the [OBS User Guide](https://openbuildservice.org/help/manuals/obs-user-guide/cha.obs.scm_ci_workflow_integration.html#sec.obs.obs_scm_ci_workflow_integration.workflow_version_table) to know more details about each one.
+We just released v1.1, but as we release more versions and features, please check the [OBS User Guide](https://openbuildservice.org/help/manuals/obs-user-guide/cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-workflow-version-table) to know more details about each one.
 
 {% include partials/_how-to-give-us-feedback.md %}
