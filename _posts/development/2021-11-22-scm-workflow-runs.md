@@ -60,7 +60,7 @@ Although this tool will be of great help to you, we recommend that you follow th
 
 Our workflows now accept push events for tags. You could, for example, run a certain workflow only when a tag is pushed to a repository rather than on every push to a branch.
 
-You can filter by this type of event as shown in the following example. Read more [here](https://openbuildservice.org/help/manuals/obs-user-guide/cha.obs.scm_ci_workflow_integration.html#id-1.5.8.5.2.8.10.8).
+You can filter by this type of event as shown in the following example. Read more [here](https://openbuildservice.org/help/manuals/obs-user-guide/cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-obs-workflows-filters-event-filter).
 
 ```
 workflow:
@@ -75,7 +75,7 @@ workflow:
 
 For the branch package and link package steps, the package created by those steps will contain the name of the tag which triggered the webhook event.
 
-Refer to the [documentation about the steps](https://openbuildservice.org/help/manuals/obs-user-guide/cha.obs.scm_ci_workflow_integration.html#sec.obs.obs_scm_ci_workflow_integration.setup.obs_workflows.steps) for details on this.
+Refer to the [documentation about the steps](https://openbuildservice.org/help/manuals/obs-user-guide/cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup-obs-workflows-steps) for details on this.
 
 To ensure this is correctly working, you need to modify your webhook on GitLab to trigger _"Tag push events"_ if this isn't already done. For GitHub, you need nothing apart from _"Pushes"_.
 

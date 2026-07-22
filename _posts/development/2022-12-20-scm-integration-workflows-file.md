@@ -34,7 +34,7 @@ test_build:
 
 We are sure you will come up with a lot of interesting ways to use this. For more
 details on this feature, we invite you to read the [user
-documentation](https://openbuildservice.org/help/manuals/obs-user-guide/cha.obs.scm_ci_workflow_integration.html#sec.obs.obs_scm_ci_workflow_integration.setup.obs_workflows.placeholder_variables).
+documentation](https://openbuildservice.org/help/manuals/obs-user-guide/cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-setup-obs-workflows-placeholder-variables).
 
 ## A New Path
 

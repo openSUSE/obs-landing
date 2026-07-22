@@ -72,7 +72,7 @@ Inside the SCM configuration file, simply indicate which repositories you want f
 
 - Set up the integration between GitHub/GitLab and OBS. If you have not yet, please refer to this [blog post](/2021/05/31/scm-integration/).
 - Add the new step to `.obs/workflows.yml` as explained in the [user
-  documentation](https://openbuildservice.org/help/manuals/obs-user-guide/cha.obs.scm_ci_workflow_integration.html#sec.obs.obs_scm_ci_workflow_integration.obs_workflows.steps.configure_repositories_architectures_for_a_project).
+  documentation](https://openbuildservice.org/help/manuals/obs-user-guide/cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-obs-workflows-steps-configure-repositories-architectures-for-a-project).
 
 ## More to Come!
 

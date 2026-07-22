@@ -19,13 +19,13 @@ workflow:
         target_project: home:jane_doe
 ```
 
-This step will submit the `ctris` package from project `games` to project `home:jane_doe` every time you trigger the token. Of course you can select to run this step on [certain events (push, pull request etc.)](https://openbuildservice.org/help/manuals/obs-user-guide/cha.obs.scm_ci_workflow_integration#sec.obs.obs_scm_ci_workflow_integration.obs_workflows.filters.event_filter) or [only for some branches](https://openbuildservice.org/help/manuals/obs-user-guide/cha.obs.scm_ci_workflow_integration#sec.obs.obs_scm_ci_workflow_integration.obs_workflows.filters.branches_filter) too.
+This step will submit the `ctris` package from project `games` to project `home:jane_doe` every time you trigger the token. Of course you can select to run this step on [certain events (push, pull request etc.)](https://openbuildservice.org/help/manuals/obs-user-guide/cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-obs-workflows-filters-event-filter) or [only for some branches](https://openbuildservice.org/help/manuals/obs-user-guide/cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-obs-workflows-filters-branches-filter) too.
 
 This is useful in many ways. For instance create a Submit Request every time you push a new commit to a branch. Or make accepting a Submit Request on OBS an approval step in your PRs CI. Or Submit Request the newest tag/release of your software.
 
 ## How Do I Learn More?
 
-For a more extensive look into this, please check the [OBS User Guide](https://openbuildservice.org/help/manuals/obs-user-guide/cha.obs.scm_ci_workflow_integration#sec.obs.obs_scm_ci_workflow_integration.obs_workflows.steps.submit_request).
+For a more extensive look into this, please check the [OBS User Guide](https://openbuildservice.org/help/manuals/obs-user-guide/cha-obs-scm-ci-workflow-integration.html#sec-obs-obs-scm-ci-workflow-integration-obs-workflows-steps-submit-request).
 
 And don't forget to let us know how you make use of this!
 
