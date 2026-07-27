@@ -1,0 +1,74 @@
+---
+layout: post
+title: "Tiny Wins for Packagers: End-of-Week Update (YYYY-MM-DD)"
+category: tiny-wins
+author: the OBS Team
+---
+
+## 🙇‍♀️ New Contributors
+*The most important thing in Free Software, new people!*
+
+We had a **N** new contributor to OBS this week! 🚀  Please give a warm welcome to
+
+-  
+
+who got their first commit merged. Maybe it be followed by many more. Thank you so much! 💐
+
+## 🚢 Shipped this week
+*Fixed issues, small features, security updates, minor releases, new external contributors...*
+
+### OBS
+
+- [closed PRs](https://github.com/openSUSE/open-build-service/pulls?q=is%3Apr+is%3Aclosed+sort%3Aupdated-desc+is%3Amerged)
+- [closed issues](https://github.com/openSUSE/open-build-service/issues?q=is%3Aissue%20state%3Aclosed%20sort%3Aupdated-desc)
+
+### osc
+
+- [closed PRs](https://github.com/openSUSE/osc/pulls?q=is%3Apr+is%3Aclosed+sort%3Aupdated-desc+is%3Amerged)
+- [closed issues](https://github.com/openSUSE/osc/issues?q=is%3Aissue%20state%3Aclosed%20sort%3Aupdated-desc)
+- [package revisions](https://build.opensuse.org/package/revisions/openSUSE:Tools/osc)
+
+### obs-build
+
+- [closed PRs](https://github.com/openSUSE/obs-build/pulls?q=is%3Apr+is%3Aclosed+sort%3Aupdated-desc+is%3Amerged)
+- [closed issues](https://github.com/openSUSE/obs-build/issues?q=is%3Aissue%20state%3Aclosed%20sort%3Aupdated-desc)
+
+### build-compare
+
+- [closed PRs](https://github.com/openSUSE/build-compare/pulls?q=is%3Apr+is%3Aclosed+sort%3Aupdated-desc+is%3Amerged)
+- [closed issues](https://github.com/openSUSE/build-compare/issues?q=is%3Aissue%20state%3Aclosed%20sort%3Aupdated-desc)
+
+### openbuildservice.org
+
+- [landing closed PRs](https://github.com/openSUSE/obs-landing/pulls?q=is%3Apr+is%3Aclosed+sort%3Aupdated-desc+is%3Amerged)
+- [docu closed PRs](https://github.com/openSUSE/obs-docu/pulls?q=is%3Apr+is%3Aclosed+sort%3Aupdated-desc+is%3Amerged)
+
+### OBS Packaging Projects
+
+- https://build.opensuse.org/projects/openSUSE:Tools/pulse
+- https://build.opensuse.org/projects/OBS:Server:Unstable/pulse
+- https://build.opensuse.org/projects/OBS:Server:2.10:Staging/pulse
+
+## 👩‍💻 Operations this week
+*Statistics, deployments and incidents of https://build.opensuse.org/*
+
+In the last 7 days build.opensuse.org served **NN.N** million HTTP requests resulting in **N.NN** million package builds.
+
+All [trends](https://obs-measure.opensuse.org/d/bG1tPpM7z/trends) are moving sideways.
+
+We ran **N** [deployments](https://github.com/openSUSE/open-build-service/deployments/activity_log?environment=production) of build.opensuse.org.
+
+## 🧨 Incidents / Service Degradation
+
+All [Service Level Indicators](https://obs-measure.opensuse.org/d/-bpP1KOGk/overview?orgId=1&from=N&to=N) are green.
+
+## 👷‍♀️ In Progress
+*Things in the pipeline, not yet there but soon...*
+
+-
+
+##  📖 Recommended Reading
+*Things in /dev/internet we think you should check out...*
+
+-
+
