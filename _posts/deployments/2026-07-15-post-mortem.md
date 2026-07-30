@@ -27,6 +27,7 @@ Once the source of the excessive load was identified, we brought the backend bac
 
 ## Timeline (All Time in UTC)
 
+- 2026-07-15 15:08: Automated performance alerts where raised
 - 2026-07-15 15:10: Incident reported to the team.
 - 2026-07-15 15:20: High load observed on the backend coming through the `/public` endpoints (interconnect).
 - 2026-07-15 15:44: The backend stopped responding due to the high load coming through the interconnect.
