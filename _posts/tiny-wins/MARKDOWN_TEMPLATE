@@ -1,8 +1,9 @@
 ---
 layout: post
-title: "Tiny Wins for Packagers: End-of-Week Update (YYYY-MM-DD)"
+title: "Tiny Wins for Packagers: End-of-Week Update (LAST_DAY)"
 category: tiny-wins
 author: the OBS Team
+excerpt: "All the cool OBS Packaging stuff from last week!"
 ---
 
 ## 🙇‍♀️ New Contributors
@@ -17,40 +18,31 @@ who got their first commit merged. Maybe it be followed by many more. Thank you 
 ## 🚢 Shipped this week
 *Fixed issues, small features, security updates, minor releases, new external contributors...*
 
-### OBS
+<!--
+Search and replace:
+- `FIRST_DAY` with the day (`YYYY-MM-DD`) this report starts, e.g. `2026-07-31`
+- `LAST_DAY` with the day (`YYYY-MM-DD`) of this report ends, e.g. `2026-08-07`
 
-- [closed PRs](https://github.com/openSUSE/open-build-service/pulls?q=is%3Apr+is%3Aclosed+sort%3Aupdated-desc+is%3Amerged)
-- [closed issues](https://github.com/openSUSE/open-build-service/issues?q=is%3Aissue%20state%3Aclosed%20sort%3Aupdated-desc)
+Uncomment this and you have a list of URLs to check for changes...
 
-### osc
-
-- [closed PRs](https://github.com/openSUSE/osc/pulls?q=is%3Apr+is%3Aclosed+sort%3Aupdated-desc+is%3Amerged)
-- [closed issues](https://github.com/openSUSE/osc/issues?q=is%3Aissue%20state%3Aclosed%20sort%3Aupdated-desc)
-- [package revisions](https://build.opensuse.org/package/revisions/openSUSE:Tools/osc)
-
-### obs-build
-
-- [closed PRs](https://github.com/openSUSE/obs-build/pulls?q=is%3Apr+is%3Aclosed+sort%3Aupdated-desc+is%3Amerged)
-- [closed issues](https://github.com/openSUSE/obs-build/issues?q=is%3Aissue%20state%3Aclosed%20sort%3Aupdated-desc)
-
-### build-compare
-
-- [closed PRs](https://github.com/openSUSE/build-compare/pulls?q=is%3Apr+is%3Aclosed+sort%3Aupdated-desc+is%3Amerged)
-- [closed issues](https://github.com/openSUSE/build-compare/issues?q=is%3Aissue%20state%3Aclosed%20sort%3Aupdated-desc)
-
-### openbuildservice.org
-
-- [landing closed PRs](https://github.com/openSUSE/obs-landing/pulls?q=is%3Apr+is%3Aclosed+sort%3Aupdated-desc+is%3Amerged)
-- [docu closed PRs](https://github.com/openSUSE/obs-docu/pulls?q=is%3Apr+is%3Aclosed+sort%3Aupdated-desc+is%3Amerged)
-
-### OBS Packaging Projects
-
-- https://build.opensuse.org/projects/openSUSE:Tools/pulse
-- https://build.opensuse.org/projects/OBS:Server:Unstable/pulse
-- https://build.opensuse.org/projects/OBS:Server:2.10:Staging/pulse
+- [OBS PRs](https://github.com/openSUSE/open-build-service/pulls?q=is%3Apr++sort%3Aupdated-desc+merged%3A>FIRST_DAY)
+- [OBS issues](https://github.com/openSUSE/open-build-service/issues?q=is%3Aissue%20sort%3Aupdated-desc%20closed%3A%3E%40today-1w)
+- [osc PRs](https://github.com/openSUSE/osc/pulls?q=is%3Apr+sort%3Aupdated-desc+merged%3A>FIRST_DAY)
+- [osc issues](https://github.com/openSUSE/osc/issues?q=is%3Aissue%20sort%3Aupdated-desc%20closed%3A%3E%40today-1w)
+- [osc package revisions](https://build.opensuse.org/package/revisions/openSUSE:Tools/osc)
+- [build PRs](https://github.com/openSUSE/obs-build/pulls?q=is%3Apr+sort%3Aupdated-desc+merged%3A>FIRST_DAY)
+- [build issues](https://github.com/openSUSE/obs-build/issues?q=is%3Aissue%20sort%3Aupdated-desc%20closed%3A%3E%40today-1w)
+- [build-compare PRs](https://github.com/openSUSE/build-compare/pulls?q=is%3Apr+sort%3Aupdated-desc+merged%3A>FIRST_DAY)
+- [build-compare issues](https://github.com/openSUSE/build-compare/issues?q=is%3Aissue%20sort%3Aupdated-desc%20closed%3A%3E%40today-1w)
+- [landing PRs](https://github.com/openSUSE/obs-landing/pulls?q=is%3Apr+sort%3Aupdated-desc+merged%3A>FIRST_DAY)
+- [docu PRs](https://github.com/openSUSE/obs-docu/pulls?q=is%3Apr+sort%3Aupdated-desc+merged%3A>FIRST_DAY)
+- [openSUSE:Tools pulse](https://build.opensuse.org/projects/openSUSE:Tools/pulse?from=FIRST_DAY&to=LAST_DAY)
+- [Unstable pulse](https://build.opensuse.org/projects/OBS:Server:Unstable/pulse?from=FIRST_DAY&to=LAST_DAY)
+- [2.10:Staging pulse](https://build.opensuse.org/projects/OBS:Server:2.10:Staging/pulse?from=FIRST_DAY&to=LAST_DAY)
+-->
 
 ## 👩‍💻 Operations this week
-*Statistics, deployments and incidents of https://build.opensuse.org/*
+*Statistics, deployments and incidents of [https://build.opensuse.org/](https://build.opensuse.org/)*
 
 In the last 7 days build.opensuse.org served **NN.N** million HTTP requests resulting in **N.NN** million package builds.
 
