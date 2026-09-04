@@ -6,24 +6,10 @@ author: the OBS Team
 excerpt: "All the cool OBS Packaging stuff from last week!"
 ---
 
-## 🙇‍♀️ New Contributors
-*The most important thing in Free Software, new people!*
-
-We had a **N** new contributor to OBS this week! 🚀  Please give a warm welcome to
-
--  
-
-who got their first commit merged. Maybe it be followed by many more. Thank you so much! 💐
-
-## 🚢 Shipped this week
-*Fixed issues, small features, security updates, minor releases, new external contributors...*
-
-<!--
+## REMOVE THIS SECTION
 Search and replace:
 - `FIRST_DAY` with the day (`YYYY-MM-DD`) this report starts, e.g. `2026-07-31`
 - `LAST_DAY` with the day (`YYYY-MM-DD`) of this report ends, e.g. `2026-08-07`
-
-Uncomment this and you have a list of URLs to check for changes...
 
 - [OBS PRs](https://github.com/openSUSE/open-build-service/pulls?q=is%3Apr++sort%3Aupdated-desc+merged%3A>FIRST_DAY)
 - [OBS issues](https://github.com/openSUSE/open-build-service/issues?q=is%3Aissue%20sort%3Aupdated-desc%20closed%3A%3E%40today-1w)
@@ -39,7 +25,21 @@ Uncomment this and you have a list of URLs to check for changes...
 - [openSUSE:Tools pulse](https://build.opensuse.org/projects/openSUSE:Tools/pulse?from=FIRST_DAY&to=LAST_DAY)
 - [Unstable pulse](https://build.opensuse.org/projects/OBS:Server:Unstable/pulse?from=FIRST_DAY&to=LAST_DAY)
 - [2.10:Staging pulse](https://build.opensuse.org/projects/OBS:Server:2.10:Staging/pulse?from=FIRST_DAY&to=LAST_DAY)
--->
+
+
+## 🙇‍♀️ New Contributors
+*The most important thing in Free Software, new people!*
+
+We had a **N** new contributor to OBS this week! 🚀  Please give a warm welcome to
+
+-  
+
+who got their first commit merged. May it be followed by many more. Thank you so much! 💐
+
+## 🚢 Shipped this week
+*Fixed issues, small features, security updates, minor releases, new external contributors...*
+
+- 
 
 ## 👩‍💻 Operations this week
 *Statistics, deployments and incidents of [https://build.opensuse.org/](https://build.opensuse.org/)*
@@ -57,10 +57,10 @@ All [Service Level Indicators](https://obs-measure.opensuse.org/d/-bpP1KOGk/over
 ## 👷‍♀️ In Progress
 *Things in the pipeline, not yet there but soon...*
 
--
+- 
 
 ##  📖 Recommended Reading
 *Things in /dev/internet we think you should check out...*
 
--
+- 
 
