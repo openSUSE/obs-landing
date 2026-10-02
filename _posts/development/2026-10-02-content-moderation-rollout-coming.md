@@ -4,7 +4,7 @@ title: "We Are Launching the Content Moderation Feature"
 category: development
 ---
 
-On XX, January XXth, the Content Moderation feature will be moved out of the beta program
+On Monday, October 12th, the Content Moderation feature will be moved out of the beta program
 to make it accessible for all the OBS users.
 Unfortunately, OBS is not free from spam, scam, malicious packages or other forms of users misconduct.
 The Content Moderation tools help users and moderators to keep them under control.
@@ -13,7 +13,7 @@ OBS users can easily report any problematic content. After some in-site conversa
 remove the malicious item and even remove the user account.
 
 <figure>
-  <img src="/images/posts/2025-12-11/report-comments.png" alt="Content moderation in OBS">
+  <img src="/images/posts/2026-10-02/report-comments.png" alt="Content moderation in OBS">
   <figcaption>Content moderation in OBS</figcaption>
 </figure>
 
