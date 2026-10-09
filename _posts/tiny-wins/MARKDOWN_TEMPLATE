@@ -20,6 +20,7 @@ Search and replace:
 - [build issues](https://github.com/openSUSE/obs-build/issues?q=is%3Aissue%20sort%3Aupdated-desc%20closed%3A%3E%40today-1w)
 - [build-compare PRs](https://github.com/openSUSE/build-compare/pulls?q=is%3Apr+sort%3Aupdated-desc+merged%3A>FIRST_DAY)
 - [build-compare issues](https://github.com/openSUSE/build-compare/issues?q=is%3Aissue%20sort%3Aupdated-desc%20closed%3A%3E%40today-1w)
+- [obs-scm-bridge](https://github.com/openSUSE/obs-scm-bridge/pulls?q=is%3Apr+sort%3Aupdated-desc+merged%3A%3EFIRST_DAY)
 - [landing PRs](https://github.com/openSUSE/obs-landing/pulls?q=is%3Apr+sort%3Aupdated-desc+merged%3A>FIRST_DAY)
 - [docu PRs](https://github.com/openSUSE/obs-docu/pulls?q=is%3Apr+sort%3Aupdated-desc+merged%3A>FIRST_DAY)
 - [openSUSE:Tools pulse](https://build.opensuse.org/projects/openSUSE:Tools/pulse?from=FIRST_DAY&to=LAST_DAY)
