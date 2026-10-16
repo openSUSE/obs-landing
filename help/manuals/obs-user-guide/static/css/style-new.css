@@ -1287,6 +1287,11 @@ body {
   font-size: 18px;
   scroll-behavior: smooth; }
 
+html {
+  scroll-padding-top: 122px; }
+  @media (max-width: 992px) {
+    html {
+      scroll-padding-top: 76px; } }
 body {
   background-color: white;
   font-family: SUSE, Suse, Roboto, sans-serif;
