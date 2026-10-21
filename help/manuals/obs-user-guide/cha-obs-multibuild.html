@@ -2,7 +2,7 @@
 <!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><title>Multiple Build Description File Handling | User Guide</title><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><link rel="stylesheet" type="text/css" href="static/css/style-new.css"/>
 <link rel="schema.dc" href="http://purl.org/dc/elements/1.1/"/><link rel="schema.dcterms" href="http://purl.org/dc/terms/"/>
 <meta name="dcterms.modified" content=""/>
-<meta name="dcterms.dateSubmitted" content="2026-10-16"/>
+<meta name="dcterms.dateSubmitted" content="2026-10-21"/>
 <meta name="title" content="Multiple Build Description File Handling"/>
 <meta name="description" content="Multiple Build Description File Handling"/>
 <meta name="book-title" content="User Guide"/>
@@ -34,7 +34,7 @@
         "url": "https://documentation.suse.com"
       }
     ],
-    "datePublished": "2026-10-16T14:26+02:00",
+    "datePublished": "2026-10-21T14:31+02:00",
     "about": [
 
     ],
@@ -77,7 +77,8 @@
    also to transfer all sources including a possible changed flavor from one
    project to another with a standard copy or submit request. </p><p> The _multibuild file lists all build container names, each of them
    will be built as usual for each defined repository and each scheduler
-   architecture. </p><p> For example, inside the <code class="command">kernel</code> source package we
+   architecture. Note that because all flavors share the same package sources,
+   triggering a build or committing changes to the package affects all flavors. </p><p> For example, inside the <code class="command">kernel</code> source package we
    can build both <code class="command">kernel-source</code> and
     <code class="command">kernel-obs-build</code> packages by listing them inside the
    file. </p><p> Multibuild packages are defined with the
