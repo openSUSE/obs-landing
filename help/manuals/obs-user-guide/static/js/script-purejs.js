@@ -305,7 +305,7 @@ function copyToClipboard(elm) {
       // (Notably, if we have deeper nesting of inline elements, this
       // detection will fail but it should be good enough for common cases)
       if (getComputedStyle(node)["user-select"] !== "none") {
-        target.textContent += node.textContent;
+        target.textContent += node.textContent.replace(/^>\s*/gm, '');
       }
     } catch (e) {
       // It's not an element node but a text node, so we always want it

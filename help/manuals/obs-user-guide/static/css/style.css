@@ -3355,6 +3355,9 @@ article a:hover code {
 .verbatim-wrap.copy-success > pre {
   background-color: #0b41b8; }
 
+.verbatim-wrap span.hide {
+  display: none; }
+
 @media screen {
   .hljs {
     display: block;

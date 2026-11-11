@@ -2,7 +2,7 @@
 <!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><title>Build Configuration | User Guide</title><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><link rel="stylesheet" type="text/css" href="static/css/style-new.css"/>
 <link rel="schema.dc" href="http://purl.org/dc/elements/1.1/"/><link rel="schema.dcterms" href="http://purl.org/dc/terms/"/>
 <meta name="dcterms.modified" content=""/>
-<meta name="dcterms.dateSubmitted" content="2026-10-21"/>
+<meta name="dcterms.dateSubmitted" content="2026-11-11"/>
 <meta name="title" content="Build Configuration"/>
 <meta name="description" content="Build Configuration"/>
 <meta name="book-title" content="User Guide"/>
@@ -34,7 +34,7 @@
         "url": "https://documentation.suse.com"
       }
     ],
-    "datePublished": "2026-10-21T14:31+02:00",
+    "datePublished": "2026-11-11T08:21+02:00",
     "about": [
 
     ],
@@ -150,7 +150,8 @@ Support: pax debbuild</pre></div></dd><dt id="vl-prjconfig-buildflags"><span cla
                the corresponding flavor can be specified via the `package:flavor` syntax.</p></dd><dt id="vl-prjconfig-buildflags-nouseforbuild"><span class="term"><em class="parameter">nouseforbuild:PACKAGE</em></span></dt><dd><p>This can be used to specify that a package is to be built, but not used
                for building other packages. The package may get published anyway.</p></dd><dt id="vl-prjconfig-buildflags-onlybuild"><span class="term"><em class="parameter">onlybuild:PACKAGE</em></span></dt><dd><p>DANGER: this may remove many build results when introduced the first time!
                It can be used to maintain a whitelist of packages to be built. All other packages
-               will turn to excluded state and get removed if available.</p></dd><dt id="vl-prjconfig-buildflags-useccache"><span class="term"><em class="parameter">useccache:PACKAGE</em></span></dt><dd><p>Configure usage of ccache when building the specified package.</p></dd><dt id="vl-prjconfig-buildflags-ccachetype"><span class="term"><em class="parameter">ccachetype:TYPE</em></span></dt><dd><p>Defines the ccache implementation, possible values are: ccache, sccache</p></dd><dt id="vl-prjconfig-buildflags-obsgendiff"><span class="term"><em class="parameter">obsgendiff</em></span></dt><dd><p>OBS can run an external program that has access to the current build
+               will turn to excluded state and get removed if available.</p></dd><dt id="vl-prjconfig-buildflags-useccache"><span class="term"><em class="parameter">useccache:PACKAGE</em></span></dt><dd><p>Configure usage of ccache when building the specified package.</p></dd><dt id="vl-prjconfig-buildflags-ccachetype"><span class="term"><em class="parameter">ccachetype:TYPE</em></span></dt><dd><p>Defines the ccache implementation, possible values are: ccache, sccache</p></dd><dt id="vl-prjconfig-buildflags-dockerarg"><span class="term"><em class="parameter">dockerarg:KEY=VALUE</em></span></dt><dd><p>Defines a key value pair for Dockerfile based builds. This can be used inside of
+               the Dockerfile like a local defined variable via the ARG directive.</p></dd><dt id="vl-prjconfig-buildflags-obsgendiff"><span class="term"><em class="parameter">obsgendiff</em></span></dt><dd><p>OBS can run an external program that has access to the current build
                and the previously successful result, e.g. to generate a difference or
                a changelog from the diff.</p><p>OBS will run all scripts in <code class="filename">/usr/lib/build/obsgendiff.d/</code>
                on the build host (not in the <span><em class="emphasis">%buildroot</em></span>) when this flag
