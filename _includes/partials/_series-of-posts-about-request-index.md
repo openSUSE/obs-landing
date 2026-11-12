@@ -1,2 +1,3 @@
 We started the [redesign of the request index](/2024/08/06/introduction-request-index) in August 2024 introducing a new UI to list all the requests replacing the "Tasks" place in the menu.
 In December 2024, we introduced [additional filters and improved search functionality by including review data](/2024/12/23/request-index) and in February 2025 we added [even more filters](/2025/02/07/request-index), followed shortly by the [request index page for groups](/2025/03/07/request-index) in March 2025.
+In November 2026, we revisited this feature and proposed a [UI revamping of the Requests list](/2026/11/13/revamped-requests-list).
