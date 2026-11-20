@@ -67,7 +67,7 @@ GEM
       html-pipeline (~> 2.2)
       jekyll (>= 3.0, < 5.0)
     json (2.19.9)
-    kramdown (2.5.2)
+    kramdown (2.6.1)
       rexml (>= 3.4.4)
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
@@ -109,7 +109,7 @@ DEPENDENCIES
   jekyll-archives
   jekyll-paginate
   jemoji
-  kramdown (~> 2.5)
+  kramdown (~> 2.6)
   rouge
   webrick (~> 1.9)
 
