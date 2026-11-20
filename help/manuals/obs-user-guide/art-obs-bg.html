@@ -2,7 +2,7 @@
 <!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><title>Beginnerʼs Guide | User Guide | Open Build Service</title><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/><link rel="stylesheet" type="text/css" href="static/css/style-new.css"/>
 <link rel="schema.dc" href="http://purl.org/dc/elements/1.1/"/><link rel="schema.dcterms" href="http://purl.org/dc/terms/"/>
 <meta name="dcterms.modified" content=""/>
-<meta name="dcterms.dateSubmitted" content="2026-11-11"/>
+<meta name="dcterms.dateSubmitted" content="2026-11-20"/>
 <meta name="title" content="Beginnerʼs Guide | Open Build Service"/>
 <meta name="description" content="This guide describes basic workflows for working with packages on Open Build Service. This includes checking out an upstream package from a public source …"/>
 <meta name="product-name" content="Open Build Service"/>
@@ -35,7 +35,7 @@
         "url": "https://documentation.suse.com"
       }
     ],
-    "datePublished": "2026-11-11T08:21+02:00",
+    "datePublished": "2026-11-20T10:24+02:00",
     "about": [
 
     ],
@@ -446,7 +446,7 @@ Fri Aug 23 12:31:41 UTC 2017 - <code class="systemitem">geeko</code>@example.com
     </p><p>
      Save the file and leave the editor. <code class="command">osc</code> then
      creates the file <code class="filename">my-first-obs-package.changes</code>.
-    </p><p>Your project directory should now look something like this:</p><div class="verbatim-wrap"><pre class="screen"><span><em class="emphasis">project directory</em></span>
+    </p><p>Your package directory should now look something like this:</p><div class="verbatim-wrap"><pre class="screen"><span><em class="emphasis">package directory</em></span>
      ├── my-first-obs-package-0.1.0.tar.gz
      ├── my-first-obs-package.changes
      └── my-first-obs-package.spec</pre></div></li><li class="step"><p>Add all the files to your working directory:</p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">osc</code> add *.spec *.changes *.tar.gz</pre></div></li><li class="step"><p>Build the package for the default build target:</p><div class="verbatim-wrap"><pre class="screen"><code class="prompt user">geeko &gt; </code><code class="command">osc</code> build --local-package</pre></div><p>
@@ -488,9 +488,9 @@ Fri Aug 23 12:31:41 UTC 2017 - <code class="systemitem">geeko</code>@example.com
      which files changes were applied to.
     </p></li></ul></div><p>
    We assume that you already have a project as described in
-  <a class="xref" href="art-obs-bg.html#sec-obsbg-uc-newprj" title="1.7. Creating a New Package Within Your Home Project">Section 1.7, “Creating a New Package Within Your Home Project”</a>. The project directory should look
+  <a class="xref" href="art-obs-bg.html#sec-obsbg-uc-newprj" title="1.7. Creating a New Package Within Your Home Project">Section 1.7, “Creating a New Package Within Your Home Project”</a>. The package directory should look
    similar to this:
-  </p><div class="verbatim-wrap"><pre class="screen"><span><em class="emphasis">project directory</em></span>
+  </p><div class="verbatim-wrap"><pre class="screen"><span><em class="emphasis">package directory</em></span>
 ├── my-first-obs-package-0.1.0.tar.gz
 ├── my-first-obs-package.changes
 └── my-first-obs-package.spec</pre></div><p>In our case, we want to modify the source code under
